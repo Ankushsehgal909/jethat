@@ -353,6 +353,18 @@ html {
   z-index: 1030;
 }
 
+/* Navbar text colors - Light theme */
+[data-bs-theme="light"] .navbar .nav-link,
+.light-theme .navbar .nav-link {
+  color: #000000 !important;
+}
+
+/* Navbar text colors - Dark theme */
+[data-bs-theme="dark"] .navbar .nav-link,
+.dark-theme .navbar .nav-link {
+  color: #ffffff !important;
+}
+
 /* Scrolled state - Blurred background with theme colors */
 .navbar.navbar-scrolled {
   background: rgba(26, 26, 26, 0.85) !important;

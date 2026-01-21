@@ -169,13 +169,18 @@ class ThemeManager {
             }
         }
 
-        // Update navbar links
+        // Fix navbar colors with proper specificity
+        this.fixNavbarColors(theme);
+    }
+
+    // Fix navbar colors specifically
+    fixNavbarColors(theme = this.currentTheme) {
         const navLinks = document.querySelectorAll('.nav-link, .nav-link-enhanced, .navbar-nav .nav-link');
         navLinks.forEach(link => {
             if (theme === 'dark') {
-                link.style.color = '#ffffff !important';
+                link.style.setProperty('color', '#ffffff', 'important');
             } else {
-                link.style.color = '#000000 !important';
+                link.style.setProperty('color', '#000000', 'important');
             }
         });
 
@@ -183,11 +188,24 @@ class ThemeManager {
         const navTexts = document.querySelectorAll('.nav-text');
         navTexts.forEach(text => {
             if (theme === 'dark') {
-                text.style.color = '#ffffff';
+                text.style.setProperty('color', '#ffffff', 'important');
             } else {
-                text.style.color = '#000000';
+                text.style.setProperty('color', '#000000', 'important');
             }
         });
+
+        // Update navbar brand text
+        const navbarBrand = document.querySelector('.navbar-brand');
+        if (navbarBrand) {
+            const brandText = navbarBrand.querySelector('span, .fw-bold');
+            if (brandText) {
+                if (theme === 'dark') {
+                    brandText.style.setProperty('color', '#ffffff', 'important');
+                } else {
+                    brandText.style.setProperty('color', '#000000', 'important');
+                }
+            }
+        }
 
         // Update dropdown menus
         const dropdowns = document.querySelectorAll('.dropdown-menu, .dropdown-menu-theme');
@@ -207,9 +225,9 @@ class ThemeManager {
         const dropdownItems = document.querySelectorAll('.dropdown-item');
         dropdownItems.forEach(item => {
             if (theme === 'dark') {
-                item.style.color = '#ffffff';
+                item.style.setProperty('color', '#ffffff', 'important');
             } else {
-                item.style.color = '#333333';
+                item.style.setProperty('color', '#333333', 'important');
             }
         });
     }
@@ -579,11 +597,39 @@ class ThemeManager {
     }
 }
 
+// IMMEDIATE THEME INITIALIZATION - Runs before DOM ready
+(function() {
+    const storedTheme = localStorage.getItem('jethat-theme');
+    const preferredTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    const theme = storedTheme || preferredTheme;
+    
+    // Apply theme to HTML immediately
+    const html = document.documentElement;
+    html.setAttribute('data-bs-theme', theme);
+    
+    if (theme === 'dark') {
+        html.classList.add('dark-theme');
+        html.classList.remove('light-theme');
+    } else {
+        html.classList.add('light-theme');
+        html.classList.remove('dark-theme');
+    }
+})();
+
 // Initialize theme manager when DOM is loaded
 let themeManager;
 
 document.addEventListener('DOMContentLoaded', () => {
     themeManager = new ThemeManager();
+    // Fix navbar colors immediately after DOM ready
+    themeManager.fixNavbarColors();
+});
+
+// Also fix navbar colors when components load
+window.addEventListener('load', () => {
+    if (themeManager) {
+        themeManager.fixNavbarColors();
+    }
 });
 
 // Make theme manager globally available
