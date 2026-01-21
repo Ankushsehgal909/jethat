@@ -1,0 +1,552 @@
+<section id="tech-section" class="position-relative overflow-hidden py-5 mt-5 ">
+    <div class="container  px-md-3">
+        <div class="row g-5 align-items-center mb-5">
+            <div class="col-lg-6">
+                <h1 class="display-1 mb-4 theme-text wow slideInRight" data-wow-delay="0.1s">
+                    Better <span class="text-gradient">Technology</span>
+                </h1>
+                <h5 class="d-inline-block border border-2 border-primary py-3 px-5 mb-0 wow slideInRight" data-wow-delay="0.3s" style="color: var(--accent-primary); border-color: var(--accent-primary) !important;">
+                    An Award Winning Tech Company Since 2018
+                </h5>
+                 <!-- CTA Section -->
+        <div class="row mt-5">
+            <div class="col-12 text-left fadeInUp" >
+                <a href="tech.html" class=" text-gradient border-2  text-decoration-none " >
+                    <i class="bi bi-arrow-right me-2"></i>
+                    Explore Our Technology
+                </a>
+            </div>
+        </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="header-carousel position-relative">
+                    <div class="owl-carousel header-carousel animated fadeIn">
+                        <div class="carousel-slide-content">
+                            <img class="img-fluid" src="assets/images/cyber.jpg" alt="">
+                            <div class="carousel-text-overlay">
+                                <h3 class="carousel-heading text-white mb-2">Cutting-Edge Innovation</h3>
+                                <p class="carousel-description text-white">Pioneering technology solutions that transform businesses and drive digital transformation.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide-content">
+                            <img class="img-fluid" src="assets/images/cyber2.jpg" alt="">
+                            <div class="carousel-text-overlay">
+                                <h3 class="carousel-heading text-white mb-2">Advanced Security</h3>
+                                <p class="carousel-description text-white">Enterprise-grade cybersecurity solutions protecting your business from emerging threats.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide-content">
+                            <img class="img-fluid" src="assets/images/cyber3.jpg" alt="">
+                            <div class="carousel-text-overlay">
+                                <h3 class="carousel-heading text-white mb-2">AI-Powered Solutions</h3>
+                                <p class="carousel-description text-white">Harnessing the power of artificial intelligence to unlock new possibilities.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+     
+        
+       
+    </div>
+</section>
+
+<style>
+/* ================= TECH SECTION STYLES (Theme Compatible) ================= */
+
+/* Header Carousel Styles from tech.html */
+.header-carousel {
+    position: relative;
+    padding: 45px 90px 45px 0;
+    background-color: transparent;
+}
+
+.header-carousel::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    width: calc(50% + 45px);
+    height: 100%;
+    background: linear-gradient(180deg, var(--bs-primary) 0%, #ffffff 100%);
+    border-radius: 0 0 0 0;
+    z-index: -1;
+}
+
+/* Carousel Slide Content */
+.carousel-slide-content {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0rem;
+    width: 100%;
+    max-width: 100%;
+}
+
+.carousel-slide-content img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .carousel-slide-content img {
+        height: 250px;
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel-slide-content img {
+        height: 200px;
+    }
+}
+
+/* Carousel Text Overlay */
+.carousel-text-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    border-radius: 0 0 1rem 1rem;
+}
+
+.carousel-heading {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-description {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.header-carousel .owl-dots {
+    position: absolute;
+    top: 50%;
+    right: 38px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-carousel .owl-dot {
+    position: relative;
+    display: inline-block;
+    margin: 5px 0;
+    width: 15px;
+    height: 15px;
+    border: 2px solid var(--bs-white);
+    transition: .5s;
+    background-color: #fff;
+}
+
+.header-carousel .owl-dot.active {
+    height: 30px;
+    background: var(--bs-white);
+}
+
+/* Tech Section Base */
+#tech-section {
+    min-height: auto;
+    position: relative;
+    padding: 3rem 0;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Ensure text is visible */
+#tech-section .display-1,
+#tech-section h5,
+#tech-section h5.theme-text {
+    opacity: 1 !important;
+    visibility: visible !important;
+    color: var(--text-primary, #333) !important;
+}
+
+[data-bs-theme="dark"] #tech-section .theme-text {
+    color: var(--text-primary, #fff) !important;
+}
+
+[data-bs-theme="light"] #tech-section .theme-text {
+    color: var(--text-light-primary, #333) !important;
+}
+
+/* Ensure CTA button is visible */
+#tech-section .tech-cta-btn {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: inline-block !important;
+}
+
+/* Tech Carousel Container */
+.tech-carousel-container {
+    position: relative;
+    max-width: 100%;
+}
+
+.tech-carousel {
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+[data-bs-theme="dark"] .tech-carousel {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.tech-slide img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.tech-slide:hover img {
+    transform: scale(1.05);
+}
+
+/* Tech Feature Items */
+.tech-feature-item {
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.tech-feature-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-primary);
+    box-shadow: 0 15px 35px rgba(215, 113, 4, 0.15);
+}
+
+[data-bs-theme="dark"] .tech-feature-item:hover {
+    box-shadow: 0 15px 35px rgba(215, 113, 4, 0.25);
+}
+
+/* Tech Icon Wrapper */
+.tech-icon-wrapper {
+    width: 50px;
+    height: 50px;
+    background: var(--gradient-primary, linear-gradient(135deg, #d77104, #ff8c00));
+    transition: all 0.3s ease;
+}
+
+.tech-feature-item:hover .tech-icon-wrapper {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 8px 20px rgba(215, 113, 4, 0.3);
+}
+
+/* CTA Button */
+.tech-cta-btn {
+    background: var(--gradient-primary, linear-gradient(135deg, #d77104, #ff8c00));
+    border: none;
+    color: white !important;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    opacity: 1;
+    visibility: visible;
+}
+
+.tech-cta-btn:hover {
+    background: var(--gradient-secondary, linear-gradient(135deg, #ff8c00, #FFD700));
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(215, 113, 4, 0.3);
+    color: white !important;
+}
+
+/* Owl Carousel Custom Styles */
+.tech-carousel.owl-carousel .owl-dots {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.tech-carousel.owl-carousel .owl-dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+    background: rgba(255, 255, 254, 0.3);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.tech-carousel.owl-carousel .owl-dot.active,
+.tech-carousel.owl-carousel .owl-dot:hover {
+    background: var(--accent-primary);
+    transform: scale(1.2);
+}
+
+.tech-carousel.owl-carousel .owl-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.tech-carousel.owl-carousel .owl-nav button {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: rgba(245, 127, 1, 0.9);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    pointer-events: all;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tech-carousel.owl-carousel .owl-nav button:hover {
+    background: var(--accent-primary);
+    transform: scale(1.1);
+}
+
+.tech-carousel.owl-carousel .owl-nav .owl-prev {
+    left: -25px;
+}
+
+.tech-carousel.owl-carousel .owl-nav .owl-next {
+    right: -25px;
+}
+
+.tech-carousel.owl-carousel .owl-nav button span {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* WOW.js Animation Classes */
+.wow {
+    visibility: hidden;
+}
+
+.wow.animated {
+    visibility: visible;
+}
+
+.animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+/* Fallback for when WOW.js doesn't load */
+.wow:not(.animated) {
+    animation: none !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+/* Slide In Right Animation */
+@keyframes slideInRight {
+    from {
+        transform: translate3d(100%, 0, 0);
+        visibility: visible;
+    }
+    to {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.slideInRight {
+    animation-name: slideInRight;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    animation-name: fadeIn;
+}
+
+/* Fade In Up Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.fadeInUp {
+    animation-name: fadeInUp;
+}
+
+/* Text Gradient */
+.text-gradient {
+    background: var(--gradient-primary, linear-gradient(135deg, #d77104, #ff8c00));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+    display: inline-block;
+}
+
+/* Fallback for browsers that don't support background-clip */
+@supports not (-webkit-background-clip: text) {
+    .text-gradient {
+        color: var(--accent-primary, #d77104);
+        -webkit-text-fill-color: initial;
+    }
+}
+
+/* Button Gradient */
+.btn-gradient {
+    background: var(--gradient-primary, linear-gradient(135deg, #d77104, #ff8c00)) !important;
+    border: none !important;
+    color: white !important;
+    display: inline-block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.btn-gradient:hover {
+    background: var(--gradient-secondary, linear-gradient(135deg, #ff8c00, #FFD700)) !important;
+    color: white !important;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .tech-slide img {
+        height: 350px;
+    }
+    
+    .tech-carousel.owl-carousel .owl-nav .owl-prev {
+        left: -15px;
+    }
+    
+    .tech-carousel.owl-carousel .owl-nav .owl-next {
+        right: -15px;
+    }
+    
+    .tech-carousel.owl-carousel .owl-nav button {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .display-1 {
+        font-size: 2.5rem !important;
+    }
+    
+    .tech-slide img {
+        height: 300px;
+    }
+    
+    .tech-feature-item {
+        margin-bottom: 1rem;
+    }
+    
+    .tech-icon-wrapper {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .tech-icon-wrapper i {
+        font-size: 1.1rem !important;
+    }
+    
+    .tech-carousel.owl-carousel .owl-nav {
+        display: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .display-1 {
+        font-size: 2rem !important;
+    }
+    
+    .tech-slide img {
+        height: 250px;
+    }
+    
+    .tech-icon-wrapper {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .tech-icon-wrapper i {
+        font-size: 1rem !important;
+    }
+    
+    .lh-base {
+        font-size: 0.9rem;
+    }
+    
+    .tech-cta-btn {
+        padding: 0.75rem 2rem !important;
+        font-size: 0.9rem;
+    }
+}
+
+/* Loading States */
+.tech-section-loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Focus States for Accessibility */
+.tech-feature-item:focus-within,
+.tech-cta-btn:focus {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 4px;
+}
+
+/* Print Styles */
+@media print {
+    .header-carousel .owl-nav,
+    .header-carousel .owl-dots {
+        display: none !important;
+    }
+    
+    .tech-cta-btn {
+        display: none !important;
+    }
+}
+</style>
+
+<script>
+// Header carousel initialization
+$(document).ready(function() {
+    $(".header-carousel .owl-carousel").owlCarousel({
+        autoplay: true,
+        smartSpeed: 1000,
+        loop: true,
+        dots: true,
+        items: 1
+    });
+    
+    // Fallback to ensure content is visible
+    setTimeout(function() {
+        const wowElements = document.querySelectorAll('#tech-section .wow:not(.animated)');
+        wowElements.forEach(function(element) {
+            element.style.visibility = 'visible';
+            element.style.opacity = '1';
+            element.style.transform = 'none';
+            element.classList.add('animated');
+        });
+    }, 2000);
+});
+</script>

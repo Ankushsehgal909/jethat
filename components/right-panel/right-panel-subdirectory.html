@@ -1,0 +1,138 @@
+<!-- Fixed Right Arrow Button -->
+<button id="rightArrowBtn" class="btn position-fixed d-flex align-items-center justify-content-center shadow-lg" 
+        data-bs-toggle="offcanvas" data-bs-target="#rightPanel"
+        style="right: 0; top: 50%; transform: translateY(-50%); width: 15px; height: 60px; border-radius: 5px 0 0 20px; z-index: 1040; border: none;">
+    <i class="bi bi-chevron-left fs-4 text-white"></i>
+</button>
+
+<!-- Right Panel -->
+<div class="offcanvas offcanvas-end right-panel-theme" tabindex="-1" id="rightPanel" aria-labelledby="rightPanelLabel" style="z-index: 9999;">
+    <div class="offcanvas-header right-panel-header">
+        <h5 class="offcanvas-title text-white fw-bold" id="rightPanelLabel">
+            <i class="bi bi-rocket-takeoff me-2"></i>
+            JetHat Solutions
+        </h5>
+        <button type="button" class="btn-close right-panel-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body right-panel-body" onclick="event.stopPropagation();">
+        <!-- Quick Stats -->
+        <div class="mb-4">
+            <h6 class="right-panel-section-title mb-3">
+                <i class="bi bi-graph-up me-2"></i>
+                Company Stats
+            </h6>
+            <div class="row g-2 text-center">
+                <div class="col-4">
+                    <div class="right-panel-stat-card">
+                        <div class="h5 fw-bold mb-1">500+</div>
+                        <small class="text-muted">Projects</small>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="right-panel-stat-card">
+                        <div class="h5 fw-bold mb-1">50+</div>
+                        <small class="text-muted">Clients</small>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="right-panel-stat-card">
+                        <div class="h5 fw-bold mb-1">6+</div>
+                        <small class="text-muted">Years</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Access -->
+        <div class="mb-4">
+            <h6 class="right-panel-section-title mb-3">
+                <i class="bi bi-lightning me-2"></i>
+                Quick Access
+            </h6>
+            <div class="row g-2">
+                <div class="col-6">
+                    <a href="../services/cybersecurity.html" class="right-panel-btn w-100" onclick="event.stopPropagation();">
+                        <i class="bi bi-shield-check me-1"></i>
+                        Security
+                    </a>
+                </div>
+                <div class="col-6">
+                    <a href="../services/ai-ml.html" class="right-panel-btn w-100" onclick="event.stopPropagation();">
+                        <i class="bi bi-brain me-1"></i>
+                        AI/ML
+                    </a>
+                </div>
+                <div class="col-6">
+                    <a href="../services/web-development.html" class="right-panel-btn w-100" onclick="event.stopPropagation();">
+                        <i class="bi bi-code-slash me-1"></i>
+                        Web Dev
+                    </a>
+                </div>
+                <div class="col-6">
+                    <a href="../services/mobile-development.html" class="right-panel-btn w-100" onclick="event.stopPropagation();">
+                        <i class="bi bi-phone me-1"></i>
+                        Mobile
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="mb-4">
+            <h6 class="right-panel-section-title mb-3">
+                <i class="bi bi-headset me-2"></i>
+                Contact Info
+            </h6>
+            <div class="right-panel-contact-item mb-2" onclick="event.stopPropagation();">
+                <i class="bi bi-telephone me-2"></i>
+                <a href="tel:+911204188947" class="right-panel-contact-link" onclick="event.stopPropagation();">+91-120-4188947</a>
+            </div>
+            <div class="right-panel-contact-item mb-2" onclick="event.stopPropagation();">
+                <i class="bi bi-envelope me-2"></i>
+                <a href="mailto:info@jethat.in" class="right-panel-contact-link" onclick="event.stopPropagation();">info@jethat.in</a>
+            </div>
+            <div class="right-panel-contact-item" onclick="event.stopPropagation();">
+                <i class="bi bi-geo-alt me-2"></i>
+                <span class="right-panel-contact-text">Noida, India</span>
+            </div>
+        </div>
+
+        <!-- Social Media -->
+        <div class="mb-4">
+            <h6 class="right-panel-section-title mb-3">
+                <i class="bi bi-share me-2"></i>
+                Follow Us
+            </h6>
+            <div class="d-flex justify-content-center gap-2">
+                <a href="#" class="right-panel-social-btn" onclick="event.stopPropagation();">
+                    <i class="bi bi-twitter"></i>
+                </a>
+                <a href="#" class="right-panel-social-btn" onclick="event.stopPropagation();">
+                    <i class="bi bi-linkedin"></i>
+                </a>
+                <a href="#" class="right-panel-social-btn" onclick="event.stopPropagation();">
+                    <i class="bi bi-github"></i>
+                </a>
+                <a href="#" class="right-panel-social-btn" onclick="event.stopPropagation();">
+                    <i class="bi bi-instagram"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="mt-auto">
+            <button class="right-panel-cta-primary w-100 mb-2" onclick="event.stopPropagation();">
+                <i class="bi bi-chat-dots me-2"></i>
+                Start Conversation
+            </button>
+            <button class="right-panel-cta-secondary w-100 mb-2" onclick="event.stopPropagation(); window.open('tel:+911204188947');">
+                <i class="bi bi-telephone me-2"></i>
+                Call Now
+            </button>
+            <button class="right-panel-cta-tertiary w-100" data-bs-dismiss="offcanvas" onclick="event.stopPropagation();">
+                <i class="bi bi-x-circle me-2"></i>
+                Close Panel
+            </button>
+        </div>
+    </div>
+</div>

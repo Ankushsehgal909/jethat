@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success Stories - JetHat Cyber Security</title>
+    <meta name="description" content="Explore JetHat's success stories and case studies showcasing our impact in cybersecurity, AI/ML, and digital transformation.">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <!-- Breadcrumb Badge -->
+    <script src="../scripts/breadcrumb-badge.js"></script>
+    
+    <!-- Universal Loader -->
+    <script src="../scripts/universal-loader.js"></script>
+    <script src="../scripts/about-shared.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/about-dark-mode.css">
+    <link rel="stylesheet" href="../styles/loader.css">
+    
+    <style>
+        /* Success Stories specific styles only - removing duplicates from main.css */
+        
+        .success-hero {
+            position: relative;
+            overflow: hidden;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        /* Scanning Line Animation - Success specific */
+        .scanning-line {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #dc143c, #ffd700, transparent);
+            box-shadow: 0 0 20px rgba(220, 20, 60, 0.8);
+            animation: scan 3s linear infinite;
+            z-index: 10;
+            pointer-events: none;
+        }
+        
+        @keyframes scan {
+            0% { top: 0%; opacity: 1; }
+            100% { top: 100%; opacity: 0; }
+        }
+
+        /* Success-specific icon styles */
+        .success-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .success-icon::after {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            border-radius: 50%;
+            opacity: 0;
+            transition: all 0.4s ease;
+            z-index: -1;
+        }
+
+        .success-icon:hover {
+            transform: scale(1.2) rotate(360deg);
+        }
+
+        .success-icon:hover::after {
+            opacity: 0.3;
+            transform: scale(1.2);
+        }
+        
+        /* Terminal styles - Success specific */
+        .terminal-container {
+            background: #1a1a2e;
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 20px;
+            font-family: 'Courier New', monospace;
+            color: #00ff00;
+            font-size: 0.9rem;
+            max-width: 500px;
+        }
+        
+        .terminal-header {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+        
+        .terminal-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        
+        .terminal-dot:nth-child(1) { background: #ff5f56; }
+        .terminal-dot:nth-child(2) { background: #ffbd2e; }
+        .terminal-dot:nth-child(3) { background: #27ca40; }
+        
+        .terminal-content {
+            min-height: 60px;
+        }
+        
+        .typing-cursor {
+            display: inline-block;
+            width: 10px;
+            height: 18px;
+            background: #00ff00;
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+        
+        /* Enhanced Info Card Styles - Success specific */
+        .cyber-info-card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .cyber-info-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.1), rgba(236, 72, 153, 0.1));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .cyber-info-card:hover::before {
+            opacity: 1;
+        }
+        
+        .cyber-info-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+        }
+        
+        .cyber-info-card .card-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        
+        .cyber-info-card .card-icon::after {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border: 2px solid #dc143c;
+            border-radius: 50%;
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+        
+        .cyber-info-card:hover .card-icon {
+            transform: scale(1.1) rotate(360deg);
+        }
+        
+        .cyber-info-card:hover .card-icon::after {
+            opacity: 0.3;
+            transform: scale(1.2);
+        }
+        
+        /* Tech Status Indicator - Success specific */
+        .tech-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 5px 12px;
+            background: rgba(34, 197, 94, 0.1);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: #22c55e;
+        }
+        
+        .tech-status::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: #22c55e;
+            border-radius: 50%;
+            animation: statusPulse 2s infinite;
+        }
+        
+        @keyframes statusPulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.8); }
+        }
+        
+        /* Success card styles - Success specific */
+        .success-card {
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(220, 20, 60, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .success-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.2);
+        }
+
+        .success-feature-card {
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(220, 20, 60, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .success-feature-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.2);
+        }
+
+        .stats-counter {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            transition: all 0.3s ease;
+        }
+        
+        .stats-counter:hover {
+            transform: scale(1.1);
+        }
+
+        /* Cyber Grid Background - Success specific */
+        .cyber-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(220, 20, 60, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(220, 20, 60, 0.03) 1px, transparent 1px);
+            background-size: 25px 25px;
+            z-index: 0;
+        }
+
+        /* Stagger delays for animations */
+        .stagger-1 { transition-delay: 0.1s; }
+        .stagger-2 { transition-delay: 0.2s; }
+        .stagger-3 { transition-delay: 0.3s; }
+        .stagger-4 { transition-delay: 0.4s; }
+        .stagger-5 { transition-delay: 0.5s; }
+        .stagger-6 { transition-delay: 0.6s; }
+
+        /* Visible state for animations - using main.css reveal classes */
+        .reveal-up.visible,
+        .reveal-left.visible,
+        .reveal-right.visible,
+        .reveal-zoom.visible {
+            opacity: 1;
+            transform: translate(0, 0) scale(1);
+        }
+
+        /* Success-specific feature items */
+        .feature-item {
+            transition: all 0.3s ease;
+            padding: 0.5rem;
+            border-radius: 8px;
+        }
+
+        .feature-item:hover {
+            background: rgba(220, 20, 60, 0.05);
+            transform: translateX(5px);
+        }
+
+        .check-icon {
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover .check-icon {
+            transform: scale(1.1);
+            background: #22c55e !important;
+            color: white !important;
+        }
+
+        /* 3D Tilt Effect - Success specific */
+        .tilt-card {
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+        
+        .tilt-card:hover {
+            transform: rotateY(5deg) rotateX(5deg);
+        }
+    </style>
+
+    <!-- Navigation Fix Script -->
+    <script src="../scripts/navigation-fix.js"></script>
+    <script src="../scripts/navbar-scroll.js"></script>
+</head>
+<body style=" color: #333333;">
+    <!-- Navigation -->
+    <div id="navigation-component"></div>
+
+    <!-- Right Panel -->
+    <div id="right-panel-component"></div>
+
+    <!-- Main Content -->
+    <main >
+        <!-- Hero Section -->
+        <section class="success-hero py-5 h position-relative overflow-hidden">
+            
+            
+            <div class="container position-relative" style="z-index: 2; margin-top: 2.5rem; ">
+               
+                <div class="row align-items-center " style="z-index: 2; margin-top: 2.5rem; ">
+               
+                    <div class="mb-4" data-breadcrumb data-separator="arrow">
+                        <!-- Breadcrumb will be dynamically generated here -->
+                    </div>
+                    
+                    <!-- left side  -->
+                    <div class="col-lg-6 animate-on-scroll">
+                        <h1 class="display-3 fw-bold mb-4 reveal-up" 
+                        style="color: #333333; line-height: 1.2;">
+                            Our Success <span class="d-block text-gradient">Stories</span>
+                        </h1>
+                     
+                       
+                        
+                          <div class="d-flex flex-wrap gap-3 mb-4 mt-4 reveal-up stagger-3">
+                            <div class="d-flex align-items-center tech-status" style="color: #333333;">
+                                <i class="bi bi-check-circle-fill me-2"></i>
+                                <span>Innovation First</span>
+                            </div>
+                            <div class="d-flex align-items-center tech-status" style="color: #333333;">
+                                <i class="bi bi-check-circle-fill me-2"></i>
+                                <span>Security Focused</span>
+                            </div>
+                            <div class="d-flex align-items-center tech-status" style="color: #333333;">
+                                <i class="bi bi-check-circle-fill me-2"></i>
+                                <span>Team Collaboration</span>
+                            </div>
+                        </div>
+                      
+                    </div>
+                    <!-- right side  -->
+                      <!-- Right Animated Image Cards -->
+                    <div class="col-lg-6 order-1 order-lg-1 animate-on-scroll position-relative">
+                        <div class="position-relative">
+                            
+                            <!-- Main Large Card (500px) -->
+                            <div class="success-card-main position-relative mb-4 reveal-zoom" data-aos="fade-up" data-aos-delay="100">
+                                <div class="success-image-container glow-border" style="width: 350px; height: 250px; background: white; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); overflow: hidden; position: relative;">
+                                    <div class="scanning-line"></div>
+                                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978" alt="Success Stories" class="success-main-image" style="width: 100%; height: 100%; object-fit: cover; transition: all 0.6s ease;">
+                                    <div class="success-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(124,58,237,0.2), rgba(236,72,153,0.2)); opacity: 0; transition: all 0.4s ease;"></div>
+                                    <div class="success-content" style="position: absolute; bottom: 20px; left: 20px; color: white; z-index: 2; transform: translateY(20px); opacity: 0; transition: all 0.4s ease;">
+                                        <h4 class="fw-bold mb-2">Success Stories</h4>
+                                        <p class="mb-0">Transforming Digital Futures</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Secondary Card (350px) -->
+                            <div class="success-card-secondary position-absolute reveal-right" style="top: 50px; right: 30px; z-index: 2;" data-aos="fade-left" data-aos-delay="300">
+                                <div class="success-image-container" style="width: 200px; height: 150px; background: white; border-radius: 15px; box-shadow: 0 15px 30px rgba(0,0,0,0.15); overflow: hidden; position: relative;">
+                                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f" alt="Case Studies" class="success-secondary-image" style="width: 100%; height: 100%; object-fit: cover; transition: all 0.6s ease;">
+                                    <div class="success-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(239,68,68,0.2), rgba(249,115,22,0.2)); opacity: 0; transition: all 0.4s ease;"></div>
+                                    <div class="success-badge" style="position: absolute; top: 15px; right: 15px; background: rgba(255,255,255,0.9); padding: 8px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; color: #1f2937;">
+                                        Case Studies
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Floating Mini Card -->
+                            <div class="success-card-mini position-absolute reveal-zoom" style="bottom: 30px; left: -30px; z-index: 3;" data-aos="zoom-in" data-aos-delay="500">
+                                <div class="success-image-container" style="width: 120px; height: 120px; background: white; border-radius: 50%; box-shadow: 0 10px 25px rgba(0,0,0,0.2); overflow: hidden; position: relative;">
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d" alt="Client Success" class="success-mini-image" style="width: 100%; height: 100%; object-fit: cover; transition: all 0.6s ease;">
+                                    <div class="success-pulse" style="position: absolute; top: -2px; left: -2px; width: calc(100% + 4px); height: calc(100% + 4px); border: 2px solid #7c3aed; border-radius: 50%; animation: pulse 2s infinite;"></div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                  
+                </div>
+            </div>
+        </section>
+
+        <!-- Success Metrics Section -->
+        <section class="py-5 py-lg-6 position-relative" >
+            <!-- Cyber Grid Background -->
+            <div class="cyber-grid" style="opacity: 0.5;"></div>
+            
+            <div class="container position-relative" style="z-index: 2;">
+                <div class="row align-items-center g-5">
+
+                    <!-- Left Content - Success Metrics -->
+                    <div class="col-lg-6 order-2 order-lg-1">
+                        <!-- <h2 class="fw-bold mb-4 text-dark reveal-left">
+                            Our Impact in
+                            <span class="d-block fw-bold display-3" style="font-family: 'Dancing Script', cursive; background: linear-gradient(to right,#7c3aed,#ec4899,#ef4444,#f97316,#eab308,#22c55e); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                                Numbers
+                            </span>
+                        </h2>
+                         -->
+                        <!-- Terminal Effect for Success -->
+                        <div class="terminal-container reveal-up stagger-2 mb-4">
+                            <div class="terminal-header">
+                                <div class="terminal-dot"></div>
+                                <div class="terminal-dot"></div>
+                                <div class="terminal-dot"></div>
+                            </div>
+                            <div class="terminal-content" id="typing-effect">
+                                <span id="typed-text"></span><span class="typing-cursor"></span>
+                            </div>
+                        </div>
+                        
+
+                        <!-- Success Metrics --> 
+                        <div class="mb-4"> 
+                            <div class="d-flex gap-3 mb-3 feature-item reveal-right stagger-1" data-delay="600"> 
+                                <div class="rounded-circle d-flex align-items-center justify-content-center check-icon" style="width:24px;height:24px;background:#dcfce7;color:#16a34a;"> ✓ </div> 
+                                <div> 
+                                    <span class="fw-semibold">500+ Projects Completed</span> 
+                                    <p class="text-muted small mb-0">Successfully delivered across multiple industries</p> 
+                                </div> 
+                            </div> 
+                            <div class="d-flex gap-3 mb-3 feature-item reveal-right stagger-2" data-delay="700"> 
+                                <div class="rounded-circle d-flex align-items-center justify-content-center check-icon" style="width:24px;height:24px;background:#dcfce7;color:#16a34a;"> ✓ </div> 
+                                <div> 
+                                    <span class="fw-semibold">95% Success Rate</span> 
+                                    <p class="text-muted small mb-0">Consistently exceeding client expectations</p> 
+                                </div> 
+                            </div> 
+                            <div class="d-flex gap-3 feature-item reveal-right stagger-3" data-delay="800"> 
+                                <div class="rounded-circle d-flex align-items-center justify-content-center check-icon" style="width:24px;height:24px;background:#dcfce7;color:#16a34a;"> ✓ </div> 
+                                <div> 
+                                    <span class="fw-semibold">50+ Happy Clients</span> 
+                                    <p class="text-muted small mb-0">Long-term partnerships built on trust</p> 
+                                </div> 
+                            </div> 
+                        </div>
+
+                        
+                    </div>
+
+                    <!-- Right - Success Stats Cards -->
+                    <div class="col-lg-6 order-2 order-lg-2">
+                       <!-- Success Stats Grid -->
+                        <div class="row g-3 reveal-up stagger-4">
+                            <div class="col-6">
+                                <div class="success-card p-4 text-center">
+                                    <div class="stats-counter" data-count="500">0</div>
+                                    <h6 class="fw-semibold text-muted">Projects</h6>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="success-card p-4 text-center">
+                                    <div class="stats-counter" data-count="95">0</div>
+                                    <h6 class="fw-semibold text-muted">Success Rate %</h6>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="success-card p-4 text-center">
+                                    <div class="stats-counter" data-count="50">0</div>
+                                    <h6 class="fw-semibold text-muted">Happy Clients</h6>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="success-card p-4 text-center">
+                                    <div class="stats-counter" data-count="6">0</div>
+                                    <h6 class="fw-semibold text-muted">Years Experience</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- Case Studies Grid - Using Contact Page Card Style -->
+        <section class="py-5 position-relative" >
+            <!-- Cyber Grid -->
+            <div class="cyber-grid" style="opacity: 0.3;"></div>
+            
+            <div class="container position-relative" style="z-index: 2;">
+                <div class="text-left mb-5 reveal-up">
+                    <h2 class="display-5 fw-bold mb-3" style="color: #333;">
+                        <span class="text-gradient">Featured</span> Case Studies
+                    </h2>
+                    <p class="lead text-muted">Transformative solutions across industries</p>
+                </div>
+                
+                <div class="row g-4">
+                    
+                    <!-- Case Study 1 - Financial Services -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="success-feature-card reveal-up stagger-1">
+                            <div class="cyber-info-card tilt-card" style="width: 100%; height: 380px;">
+                                <div class="card-icon mt-4">
+                                    <i class="bi bi-bank text-white fs-4"></i>
+                                </div>
+                                <div style="padding: 20px; text-align: center;">
+                                    <h5 class="fw-bold mb-2 text-dark">Financial Services</h5>
+                                    <p class="text-muted mb-2 small">Major Banking Corporation</p>
+                                    <p class="text-muted small mb-3">Comprehensive cybersecurity framework and AI-powered fraud detection system</p>
+                                    <div class="row text-center mb-3">
+                                        <div class="col-4">
+                                            <div class="fw-bold text-gradient">85%</div>
+                                            <small class="text-muted">Incident Reduction</small>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="fw-bold text-gradient">60%</div>
+                                            <small class="text-muted">Faster Response</small>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="fw-bold text-gradient">$2M</div>
+                                            <small class="text-muted">Cost Savings</small>
+                                        </div>
+                                    </div>
+                                    <div class="tech-status justify-content-center">
+                                        <span>Cybersecurity • AI/ML</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Case Study 2 - Healthcare -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="success-feature-card reveal-up stagger-2">
+                            <div class="cyber-info-card tilt-card" style="width: 100%; height: 380px;">
+                                <div class="card-icon mt-4">
+                                    <i class="bi bi-heart-pulse text-white fs-4"></i>
+                                </div>
+                                <div style="padding: 20px; text-align: center;">
+                                    <h5 class="fw-bold mb-2 text-dark">Healthcare</h5>
+                                    <p class="text-muted mb-2 small">Regional Medical Center</p>
+                                    <p class="text-muted small mb-3">AI-powered patient care system with advanced security protocols</p>
+                                    <div class="row text-center mb-3">
+                                        <div class="col-4">
+                                            <div class="fw-bold text-gradient">40%</div>
+                                            <small class="text-muted">Faster Diagnosis</small>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="fw-bold text-gradient">99%</div>
+                                            <small class="text-muted">Data Security</small>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="fw-bold text-gradient">30%</div>
+                                            <small class="text-muted">Cost Reduction</small>
+                                        </div>
+                                    </div>
+                                    <div class="tech-status justify-content-center">
+                                        <span>AI/ML • Security</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Case Study 3 - E-commerce -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="success-feature-card reveal-up stagger-3">
+                            <div class="cyber-info-card tilt-card" style="width: 100%; height: 380px;">
+                                <div class="card-icon mt-4">
+                                    <i class="bi bi-cart-check text-white fs-4"></i>
+                                </div>
+                                <div style="padding: 20px; text-align: center;">
+                                    <h5 class="fw-bold mb-2 text-dark">E-commerce</h5>
+                                    <p class="text-muted mb-2 small">Online Retail Platform</p>
+                                    <p class="text-muted small mb-3">Scalable web platform with integrated payment security</p>
+                                    <div class="row text-center mb-3">
+                                        <div class="col-4">
+                                            <div class="fw-bold text-gradient">200%</div>
+                                            <small class="text-muted">Traffic Growth</small>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="fw-bold text-gradient">50%</div>
+                                            <small class="text-muted">Load Time</small>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="fw-bold text-gradient">0</div>
+                                            <small class="text-muted">Security Breaches</small>
+                                        </div>
+                                    </div>
+                                    <div class="tech-status justify-content-center">
+                                        <span>Web Dev • Security</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Case Study 4 - Manufacturing -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="success-feature-card reveal-up stagger-4">
+                            <div class="cyber-info-card tilt-card" style="width: 100%; height: 380px;">
+                                <div class="card-icon mt-4">
+                                    <i class="bi bi-gear text-white fs-4"></i>
+                                </div>
+                                <div style="padding: 20px; text-align: center;">
+                                    <h5 class="fw-bold mb-2 text-dark">Manufacturing</h5>
+                                    <p class="text-muted mb-2 small">Industrial Automation</p>
+                                    <p class="text-muted small mb-3">IoT security and predictive maintenance AI system</p>
+                                    <div class="row text-center mb-3">
+                                        <div class="col-4">
+                                            <div class="fw-bold text-gradient">35%</div>
+                                            <small class="text-muted">Efficiency Gain</small>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="fw-bold text-gradient">70%</div>
+                                            <small class="text-muted">Downtime Cut</small>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="fw-bold text-gradient">$1.5M</div>
+                                            <small class="text-muted">Annual Savings</small>
+                                        </div>
+                                    </div>
+                                    <div class="tech-status justify-content-center">
+                                        <span>IoT • AI/ML</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+         <!-- Development Roadmap -->
+        <section class="py-5 bg-light">
+            <div class="container px-4">
+                <div class="text-left mb-5 reveal-up">
+                    <h2 class="display-5 fw-bold text-light-primary-theme mb-3 font-playfair">Development Roadmap</h2>
+                    <p class="fs-5 text-light-secondary-theme font-quicksand">Our planned releases and milestones for 2024-2025</p>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <!-- Timeline -->
+                        <div class="position-relative">
+                            <!-- Timeline Line -->
+                            <div class="position-absolute start-50 translate-middle-x bg-primary" style="width: 2px; height: 100%; top: 0;"></div>
+                            
+                            <!-- Q2 2024 -->
+                            <div class="d-flex align-items-center mb-5 reveal-up stagger-1">
+                                <div class="flex-shrink-0 me-4 text-end" style="width: 45%;">
+                                    <div class="card-animated  rounded-lg-theme p-3 shadow-sm-theme">
+                                        <h6 class="fw-bold accent-primary mb-2">Q2 2024</h6>
+                                        <h5 class="fw-semibold mb-2">Quantum Security Suite</h5>
+                                        <p class="text-muted small mb-0">Launch of quantum-resistant security framework</p>
+                                    </div>
+                                </div>
+                                <div class="flex-shrink-0 bg-gradient-primary rounded-circle p-3 position-relative z-content">
+                                    <i class="bi bi-shield-check text-white fs-5"></i>
+                                </div>
+                                <div class="flex-grow-1 ms-4" style="width: 45%;"></div>
+                            </div>
+
+                            <!-- Q3 2024 -->
+                            <div class="d-flex align-items-center mb-5 reveal-up stagger-2">
+                                <div class="flex-grow-1 me-4" style="width: 45%;"></div>
+                                <div class="flex-shrink-0 bg-gradient-secondary rounded-circle p-3 position-relative z-content">
+                                    <i class="bi bi-robot text-white fs-5"></i>
+                                </div>
+                                <div class="flex-shrink-0 ms-4" style="width: 45%;">
+                                    <div class="card-animated rounded-lg-theme p-3 shadow-sm-theme">
+                                        <h6 class="fw-bold accent-secondary mb-2">Q3 2024</h6>
+                                        <h5 class="fw-semibold mb-2">Neural Network Optimizer</h5>
+                                        <p class="text-muted small mb-0">AI performance enhancement platform</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Q4 2024 -->
+                            <div class="d-flex align-items-center mb-5 reveal-up stagger-3">
+                                <div class="flex-shrink-0 me-4 text-end" style="width: 45%;">
+                                    <div class="card-animated  rounded-lg-theme p-3 shadow-sm-theme">
+                                        <h6 class="fw-bold accent-gold mb-2">Q4 2024</h6>
+                                        <h5 class="fw-semibold mb-2">Metaverse Security Suite</h5>
+                                        <p class="text-muted small mb-0">Virtual world security solutions</p>
+                                    </div>
+                                </div>
+                                <div class="flex-shrink-0 bg-gradient-gold rounded-circle p-3 position-relative z-content">
+                                    <i class="bi bi-globe text-white fs-5"></i>
+                                </div>
+                                <div class="flex-grow-1 ms-4" style="width: 45%;"></div>
+                            </div>
+
+                            <!-- Q1 2025 -->
+                            <div class="d-flex align-items-center mb-5 reveal-up stagger-4">
+                                <div class="flex-grow-1 me-4" style="width: 45%;"></div>
+                                <div class="flex-shrink-0 bg-gradient-primary rounded-circle p-3 position-relative z-content">
+                                    <i class="bi bi-lightning text-white fs-5"></i>
+                                </div>
+                                <div class="flex-shrink-0 ms-4" style="width: 45%;">
+                                    <div class="card-animated  rounded-lg-theme p-3 shadow-sm-theme">
+                                        <h6 class="fw-bold accent-primary mb-2">Q1 2025</h6>
+                                        <h5 class="fw-semibold mb-2">Quantum ML Platform</h5>
+                                        <p class="text-muted small mb-0">Quantum-enhanced machine learning</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <!-- testimonial -->
+
+        <section>
+            <!-- Testimonials Section -->
+                    <div class="row py-5 justify-content-center w-100">
+                        <div class="col-lg-10 animate-on-scroll">
+                            <div class="text-left mb-5 reveal-up">
+                                <h2 class="display-5 fw-bold mb-3" style="color: #333;">
+                                    <span class="text-gradient">What Our Clients</span> Say
+                                </h2>
+                                <p class="lead text-muted">Testimonials from satisfied partners</p>
+                            </div>
+
+                             <!-- Testimonials Section -->
+                            <div id="testimonials"></div>
+                            
+                    
+                        </div>
+
+                    </div>
+        </section>
+       
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-component"></div>
+
+       <!-- Theme Toggle -->
+    <button id="theme-toggle" class="btn  position-fixed bottom-0 start-0 m-4 rounded-circle  shadow-lg" style="z-index: 1050;">
+        <i id="sun-icon" class="bi bi-sun-fill d-none"></i>
+        <i id="moon-icon" class="bi bi-moon-fill"></i>
+    </button>
+    <script src="../scripts/theme-toggle.js"></script>
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Testimonial Carousel Script -->
+    <script src="../scripts/testimonial-carousel.js"></script>
+
+    <!-- Theme Toggle Script -->
+    <script src="../scripts/theme-toggle.js"></script>
+
+
+
+    <!-- Advanced Animation Script - Exact Copy from Contact Page -->
+    <script>
+        // Advanced scroll animations with multiple effects
+        function initAdvancedAnimations() {
+            const animationElements = document.querySelectorAll([
+                '.slide-in-left', '.slide-in-right', '.slide-in-up', '.slide-in-down',
+                '.zoom-in', '.zoom-out', '.rotate-in', '.fade-in', '.bounce-in', '.form-group',
+                '.reveal-up', '.reveal-left', '.reveal-right', '.reveal-zoom'
+            ].join(', '));
+            
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            animationElements.forEach(element => {
+                observer.observe(element);
+            });
+        }
+
+        // Parallax scrolling effects
+        function initParallaxEffects() {
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                const parallaxSlow = document.querySelectorAll('.parallax-slow');
+                const parallaxFast = document.querySelectorAll('.parallax-fast');
+                const securityIcons = document.querySelectorAll('.security-icon');
+
+                parallaxSlow.forEach(element => {
+                    const speed = 0.5;
+                    element.style.transform = `translateY(${scrolled * speed}px)`;
+                });
+
+                parallaxFast.forEach(element => {
+                    const speed = 0.8;
+                    element.style.transform = `translateY(${scrolled * speed}px)`;
+                });
+
+                securityIcons.forEach((icon, index) => {
+                    const speed = 0.3 + (index * 0.1);
+                    icon.style.transform = `translateY(${-scrolled * speed}px)`;
+                });
+            });
+        }
+
+        // Counter animation for statistics (enhanced for counter-value class)
+        function animateCounters() {
+            const counters = document.querySelectorAll('.counter-value[data-count], .stats-counter[data-count]');
+            
+            const observerOptions = {
+                threshold: 0.5
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+                        entry.target.classList.add('counted');
+                        const target = parseInt(entry.target.getAttribute('data-count'));
+                        const textContent = entry.target.textContent;
+                        const suffix = textContent.includes('+') ? '+' : '';
+                        const duration = 2000;
+                        const increment = target / (duration / 16);
+                        let current = 0;
+
+                        const timer = setInterval(() => {
+                            current += increment;
+                            if (current >= target) {
+                                current = target;
+                                clearInterval(timer);
+                            }
+                            entry.target.textContent = Math.floor(current) + suffix;
+                        }, 16);
+                    }
+                });
+            }, observerOptions);
+
+            counters.forEach(counter => {
+                observer.observe(counter);
+            });
+        }
+
+        // 3D Tilt Effect for cards
+        function initTiltEffects() {
+            const tiltCards = document.querySelectorAll('.tilt-card');
+            
+            tiltCards.forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    const rotateX = (y - centerY) / 20;
+                    const rotateY = (centerX - x) / 20;
+
+                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px)`;
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px)';
+                });
+            });
+        }
+
+        // Typing Animation for terminal effect
+        function initTypingAnimation() {
+            const typedTextElement = document.getElementById('typed-text');
+            if (!typedTextElement) return;
+            
+            const text = "> Analyzing success metrics...\n> Compiling case studies\n> Success stories loaded successfully";
+            let index = 0;
+            let lineIndex = 0;
+            const lines = text.split('\n');
+            
+            function typeWriter() {
+                if (lineIndex < lines.length) {
+                    if (index < lines[lineIndex].length) {
+                        if (index === 0) {
+                            typedTextElement.innerHTML += '<span class="text-success">➜</span> <span class="text-info">~</span> ';
+                        }
+                        typedTextElement.innerHTML += lines[lineIndex].charAt(index).replace(/</g, '<').replace(/>/g, '>');
+                        index++;
+                        setTimeout(typeWriter, 30);
+                    } else {
+                        typedTextElement.innerHTML += '<br>';
+                        lineIndex++;
+                        index = 0;
+                        setTimeout(typeWriter, 200);
+                    }
+                }
+            }
+            
+            // Start typing when element is visible
+            const observer = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting) {
+                    typeWriter();
+                    observer.disconnect();
+                }
+            });
+            
+            const terminalContainer = document.querySelector('.terminal-container');
+            if (terminalContainer) {
+                observer.observe(terminalContainer);
+            }
+        }
+        // Enhanced hover effects
+        function initHoverEffects() {
+            // Contact cards 3D hover effect
+            document.querySelectorAll('.info-card, .contact-card, .cyber-info-card').forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    const rotateX = (y - centerY) / 10;
+                    const rotateY = (centerX - x) / 10;
+
+                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px)`;
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px)';
+                });
+            });
+
+            // Button magnetic effect
+            document.querySelectorAll('.btn-gradient').forEach(button => {
+                button.addEventListener('mousemove', (e) => {
+                    const rect = button.getBoundingClientRect();
+                    const x = e.clientX - rect.left - rect.width / 2;
+                    const y = e.clientY - rect.top - rect.height / 2;
+
+                    button.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px) scale(1.05)`;
+                });
+
+                button.addEventListener('mouseleave', () => {
+                    button.style.transform = 'translate(0px, 0px) scale(1)';
+                });
+            });
+        }
+
+        // Floating shapes advanced animation
+        function initFloatingShapes() {
+            const shapes = document.querySelectorAll('.shape');
+            
+            shapes.forEach((shape, index) => {
+                // Random movement
+                setInterval(() => {
+                    const randomX = Math.random() * 20 - 10;
+                    const randomY = Math.random() * 20 - 10;
+                    const randomRotate = Math.random() * 360;
+                    const randomScale = 0.8 + Math.random() * 0.4;
+                    
+                    shape.style.transform = `translate(${randomX}px, ${randomY}px) rotate(${randomRotate}deg) scale(${randomScale})`;
+                }, 3000 + index * 500);
+            });
+        }
+
+        // Staggered animations for grid items
+        function initStaggeredAnimations() {
+            const staggerGroups = document.querySelectorAll('[class*="stagger-"]');
+            
+            staggerGroups.forEach(element => {
+                const staggerClass = Array.from(element.classList).find(cls => cls.startsWith('stagger-'));
+                if (staggerClass) {
+                    const delay = parseInt(staggerClass.split('-')[1]) * 100;
+                    
+                    // Add transition delay
+                    element.style.transitionDelay = `${delay}ms`;
+                }
+            });
+        }
+
+        // Page load animations
+        function initPageLoadAnimations() {
+            // Staggered entrance animations
+            const staggerElements = document.querySelectorAll('[class*="stagger-"]');
+            
+            staggerElements.forEach(element => {
+                const staggerClass = Array.from(element.classList).find(cls => cls.startsWith('stagger-'));
+                const delay = parseInt(staggerClass.split('-')[1]) * 100;
+                
+                setTimeout(() => {
+                    element.classList.add('visible');
+                }, delay);
+            });
+        }
+
+        // Initialize all animations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Hide fallback content
+            const fallbackContent = document.getElementById('fallback-content');
+            if (fallbackContent) {
+                setTimeout(() => {
+                    fallbackContent.style.display = 'none';
+                }, 1000);
+            }
+
+            // Initialize all animation systems
+            initAdvancedAnimations();
+            initParallaxEffects();
+            animateCounters();
+            initHoverEffects();
+            initFloatingShapes();
+            initTiltEffects();
+            initTypingAnimation();
+            initStaggeredAnimations();
+            initPageLoadAnimations();
+            
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Performance optimization - throttle scroll events
+        let ticking = false;
+        function updateAnimations() {
+            // Update any scroll-based animations here
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(updateAnimations);
+                ticking = true;
+            }
+        });
+    </script>
+
+    <!-- Component Loader Script -->
+    <script type="module">
+        async function loadComponent(id, path) {
+            try {
+                const res = await fetch(path);
+                if (!res.ok) throw new Error(`${path} (${res.status})`);
+                const html = await res.text();
+
+                const el = document.getElementById(id);
+                if (el) el.innerHTML = html;
+                else console.warn(`Missing container #${id}`);
+            } catch (err) {
+                console.error(`Component load failed: ${path}`, err);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            
+            const components = [
+                ['navigation-component', '../components/navigation/navigation.html'],
+                ['footer-component', '../components/footer/footer-subdirectory.html'],
+                ['right-panel-component', '../components/right-panel/right-panel-subdirectory.html'],
+                ['testimonials', '../components/testimonial/testimonial-section.html']
+            ];
+
+            try {
+                await Promise.all(components.map(([id, path]) => loadComponent(id, path)));
+                console.log('✅ All components loaded successfully');
+                
+                // Trigger navigation fix after components are loaded
+                if (window.fixNavigationPaths) {
+                    setTimeout(() => {
+                        window.fixNavigationPaths();
+                        console.log('Navigation paths fixed after component loading');
+                    }, 100);
+                }
+                
+                // Dispatch custom event for navigation fix
+                document.dispatchEvent(new CustomEvent('navigationLoaded'));
+                
+                console.log('✅ Success Stories page initialized successfully');
+            } catch (error) {
+                console.error('❌ Error loading components:', error);
+            }
+        });
+    </script>
+</body>
+</html>

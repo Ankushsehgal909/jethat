@@ -1,0 +1,184 @@
+<!-- Products Section -->
+<section id="products-section" class="product-theme section-bg-theme">
+    <div class="container py-4">
+       
+          <!-- Header -->
+    <div class="mb-5  text-left" >
+       <!-- Badge -->
+              <!-- <span
+                class="badge bg-gradient text-dark mb-3 badge-glow floating-text"
+              >
+                Certified & Registered
+              </span> -->
+      <h2 class="fw-bold  display-3 mb-3">
+        Our <span class="text-gradient fw-bold display-3">Products </span>
+      </h2>
+      <p class="lead text-muted">
+                Fortify your digital fortress with our cutting-edge cybersecurity solutions.
+                Elevate your business through bespoke software development, where innovation meets functionality.
+      </p>
+    </div>
+        
+        <div class="position-sticky" style="top: 10rem;">
+            <div class="container">
+                <div id="cardsContainer" class="position-relative d-flex align-items-center justify-content-center" style="height: 500px;"></div>
+            </div>
+        </div>
+        
+        <div style="height: 80vh;"></div>
+    </div>
+</section>
+
+<style>
+#products-section {
+    position: relative;
+}
+
+#cardsContainer .card {
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border-radius: 1.5rem;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Light theme card styling */
+.light-theme #cardsContainer .card,
+[data-bs-theme="light"] #cardsContainer .card {
+    background: rgba(255, 255, 255, 0.95) !important;
+    border: 1px solid rgba(220, 20, 60, 0.1);
+    color: #333 !important;
+}
+
+/* Dark theme card styling */
+.dark-theme #cardsContainer .card {
+    background: rgba(30, 30, 30, 0.95) !important;
+    border: 1px solid rgba(220, 20, 60, 0.2);
+    color: #e0e0e0 !important;
+}
+
+/* Auto theme detection */
+@media (prefers-color-scheme: dark) {
+    #cardsContainer .card {
+        background: rgba(30, 30, 30, 0.95) !important;
+        border: 1px solid rgba(220, 20, 60, 0.2);
+        color: #e0e0e0 !important;
+    }
+}
+
+#cardsContainer .card:hover {
+    transform: translateY(-8px) scale(1.02) !important;
+    box-shadow: 0 25px 50px rgba(220, 20, 60, 0.15) !important;
+    border-color: rgba(220, 20, 60, 0.3);
+}
+
+#cardsContainer .card img {
+    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border-radius: 1rem;
+}
+
+#cardsContainer .card:hover img {
+    transform: scale(1.08) rotate(1deg);
+}
+
+/* Enhanced text styling for dark theme */
+.dark-theme #cardsContainer .card .card-title,
+.dark-theme #cardsContainer .card h3 {
+    color: #ffffff !important;
+}
+
+.dark-theme #cardsContainer .card .text-muted,
+.dark-theme #cardsContainer .card .list-unstyled li span {
+    color: #b0b0b0 !important;
+}
+
+/* Enhanced button styling */
+#cardsContainer .card .btn {
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 0 4px 15px rgba(220, 20, 60, 0.3);
+}
+
+#cardsContainer .card .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(220, 20, 60, 0.4);
+}
+
+/* Smooth gradient animations */
+#cardsContainer .card .gradient-icon {
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-gold));
+    transition: all 0.4s ease;
+}
+
+#cardsContainer .card:hover .gradient-icon {
+    background: linear-gradient(135deg, var(--accent-gold), var(--accent-primary));
+    transform: rotate(5deg) scale(1.1);
+}
+
+/* Enhanced bullet points */
+#cardsContainer .card .bullet-point {
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-gold));
+    transition: all 0.3s ease;
+}
+
+#cardsContainer .card:hover .bullet-point {
+    transform: scale(1.2);
+    box-shadow: 0 2px 8px rgba(220, 20, 60, 0.3);
+}
+
+/* Smooth stacking animation */
+#cardsContainer .card {
+    will-change: transform, opacity;
+    transform-origin: center center;
+}
+
+/* Loading animation */
+@keyframes cardSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+#cardsContainer .card.animate-in {
+    animation: cardSlideIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* Enhanced responsive design */
+@media (max-width: 991.98px) {
+    #products-section .position-sticky {
+        position: relative !important;
+        top: auto !important;
+    }
+    
+    #cardsContainer {
+        height: 400px !important;
+    }
+    
+    #cardsContainer .card {
+        border-radius: 1rem;
+        margin: 0 1rem;
+    }
+    
+    #products-section .container {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+}
+
+@media (max-width: 767.98px) {
+    #cardsContainer .card {
+        margin: 0 0.5rem;
+        border-radius: 0.75rem;
+    }
+    
+    #cardsContainer .card .card-body {
+        padding: 1.5rem !important;
+    }
+}
+</style>

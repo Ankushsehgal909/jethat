@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Library Solutions - Digital Library Management - JetHat Cyber Security</title>
+    <meta name="description" content="JetHat's E-Library Solutions empower institutions to create seamless, user-friendly digital libraries with advanced search, multilingual support, and comprehensive content management.">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <!-- Breadcrumb Badge -->
+    <script src="../scripts/breadcrumb-badge.js"></script>
+    
+    <!-- Universal Loader -->
+    <script src="../scripts/universal-loader.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/products-dark-mode.css">
+    <link rel="stylesheet" href="../styles/loader.css">
+    
+    <!-- Navigation Fix Script -->
+    <script src="../scripts/navigation-fix.js"></script>
+    <script src="../scripts/navbar-scroll.js"></script>
+    
+    <style>
+        /* Cyber Security Theme Styles */
+        .product-hero {
+            background: linear-gradient(135deg, #fff7ed 0%, #ffffff 50%, #fffbeb 100%);
+            position: relative;
+            overflow: hidden;
+            min-height: 60vh;
+        }
+        
+        /* Circuit Pattern Overlay */
+        .circuit-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(90deg, rgba(220, 20, 60, 0.03) 1px, transparent 1px),
+                linear-gradient(rgba(220, 20, 60, 0.03) 1px, transparent 1px),
+                radial-gradient(circle at 50% 50%, rgba(220, 20, 60, 0.02) 1px, transparent 1px);
+            background-size: 50px 50px, 50px 50px, 20px 20px;
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        /* Grid Pattern */
+        .grid-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(90deg, rgba(124, 58, 237, 0.05) 1px, transparent 1px),
+                linear-gradient(rgba(124, 58, 237, 0.05) 1px, transparent 1px);
+            background-size: 30px 30px;
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        /* Floating Security Icons */
+        .floating-security-icons {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+            pointer-events: none;
+        }
+        
+        .security-icon {
+            position: absolute;
+            font-size: 2rem;
+            opacity: 0.15;
+            animation: orbit 20s linear infinite, floatIcon 6s ease-in-out infinite;
+        }
+        
+        .security-icon:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s, 0s; }
+        .security-icon:nth-child(2) { top: 30%; right: 10%; animation-delay: 2s, 1s; }
+        .security-icon:nth-child(3) { bottom: 20%; left: 15%; animation-delay: 4s, 2s; }
+        .security-icon:nth-child(4) { top: 50%; right: 5%; animation-delay: 1s, 3s; }
+        .security-icon:nth-child(5) { bottom: 30%; right: 20%; animation-delay: 3s, 4s; }
+        .security-icon:nth-child(6) { top: 15%; left: 30%; animation-delay: 5s, 5s; }
+        
+        @keyframes orbit {
+            0% { transform: rotate(0deg) translateX(50px) rotate(0deg); }
+            100% { transform: rotate(360deg) translateX(50px) rotate(-360deg); }
+        }
+        
+        @keyframes floatIcon {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        /* Scanning Line Animation */
+        .scanning-line {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #dc143c, #ffd700, transparent);
+            box-shadow: 0 0 20px rgba(220, 20, 60, 0.8);
+            animation: scan 3s linear infinite;
+            z-index: 10;
+            pointer-events: none;
+        }
+        
+        @keyframes scan {
+            0% { top: 0%; opacity: 1; }
+            100% { top: 100%; opacity: 0; }
+        }
+        
+        /* Particle Effects */
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #dc143c;
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: particleFloat 8s ease-in-out infinite;
+        }
+        
+        .particle:nth-child(1) { left: 10%; top: 20%; animation-delay: 0s; }
+        .particle:nth-child(2) { left: 30%; top: 40%; animation-delay: 1s; }
+        .particle:nth-child(3) { left: 50%; top: 60%; animation-delay: 2s; }
+        .particle:nth-child(4) { left: 70%; top: 30%; animation-delay: 3s; }
+        .particle:nth-child(5) { left: 90%; top: 50%; animation-delay: 4s; }
+        .particle:nth-child(6) { left: 20%; top: 70%; animation-delay: 5s; }
+        .particle:nth-child(7) { left: 40%; top: 10%; animation-delay: 6s; }
+        .particle:nth-child(8) { left: 60%; top: 80%; animation-delay: 7s; }
+        
+        @keyframes particleFloat {
+            0%, 100% { 
+                transform: translateY(0) translateX(0);
+                opacity: 0.3;
+            }
+            25% { 
+                transform: translateY(-30px) translateX(20px);
+                opacity: 0.6;
+            }
+            50% { 
+                transform: translateY(-60px) translateX(-20px);
+                opacity: 0.3;
+            }
+            75% { 
+                transform: translateY(-30px) translateX(20px);
+                opacity: 0.6;
+            }
+        }
+        
+        /* Terminal Typing Effect */
+        .terminal-container {
+            background: #1a1a2e;
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 20px;
+            font-family: 'Courier New', monospace;
+            color: #00ff00;
+            font-size: 0.9rem;
+            max-width: 500px;
+        }
+        
+        .terminal-header {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+        
+        .terminal-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        
+        .terminal-dot:nth-child(1) { background: #ff5f56; }
+        .terminal-dot:nth-child(2) { background: #ffbd2e; }
+        .terminal-dot:nth-child(3) { background: #27ca40; }
+        
+        .terminal-content {
+            min-height: 60px;
+        }
+        
+        .typing-cursor {
+            display: inline-block;
+            width: 10px;
+            height: 18px;
+            background: #00ff00;
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+        
+        /* Enhanced Feature Cards */
+        .feature-card {
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(220, 20, 60, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(220, 20, 60, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .feature-card:hover::before {
+            left: 100%;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-15px) scale(1.05) rotateY(5deg);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        
+        .feature-icon::after {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            border-radius: 50%;
+            opacity: 0;
+            transition: all 0.4s ease;
+            z-index: -1;
+        }
+        
+        .feature-card:hover .feature-icon {
+            transform: scale(1.2) rotate(360deg);
+        }
+        
+        .feature-card:hover .feature-icon::after {
+            opacity: 0.3;
+            transform: scale(1.2);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .btn-gradient {
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            border: none;
+            color: white;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-gradient::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .btn-gradient:hover::before {
+            left: 100%;
+        }
+        
+        .btn-gradient:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(220, 20, 60, 0.4);
+        }
+        
+        /* Tech Status Indicator */
+        .tech-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 5px 12px;
+            background: rgba(34, 197, 94, 0.1);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: #22c55e;
+        }
+        
+        .tech-status::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: #22c55e;
+            border-radius: 50%;
+            animation: statusPulse 2s infinite;
+        }
+        
+        @keyframes statusPulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.8); }
+        }
+        
+        /* Floating Badge */
+        .floating-badge {
+            position: absolute;
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: 0 10px 30px rgba(220, 20, 60, 0.3);
+            animation: badgeFloat 4s ease-in-out infinite;
+        }
+        
+        @keyframes badgeFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        /* Reveal Animations */
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-100px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(100px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .reveal-zoom {
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .reveal-up.visible,
+        .reveal-left.visible,
+        .reveal-right.visible,
+        .reveal-zoom.visible {
+            opacity: 1;
+            transform: translate(0, 0) scale(1);
+        }
+        
+        /* Stagger Animation Delays */
+        .stagger-1 { transition-delay: 0.1s; }
+        .stagger-2 { transition-delay: 0.2s; }
+        .stagger-3 { transition-delay: 0.3s; }
+        .stagger-4 { transition-delay: 0.4s; }
+        .stagger-5 { transition-delay: 0.5s; }
+        .stagger-6 { transition-delay: 0.6s; }
+        
+        /* Cyber Grid Background */
+        .cyber-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(220, 20, 60, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(220, 20, 60, 0.03) 1px, transparent 1px);
+            background-size: 25px 25px;
+            z-index: 0;
+        }
+        
+        /* Floating Shapes */
+        .floating-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .shape {
+            position: absolute;
+            background: linear-gradient(45deg, #dc143c, #ffd700);
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 8s ease-in-out infinite;
+        }
+        
+        .shape:nth-child(1) { width: 80px; height: 80px; top: 20%; left: 10%; animation-delay: 0s; }
+        .shape:nth-child(2) { width: 120px; height: 120px; top: 60%; right: 15%; animation-delay: 2s; }
+        .shape:nth-child(3) { width: 60px; height: 60px; bottom: 30%; left: 20%; animation-delay: 4s; }
+        .shape:nth-child(4) { width: 100px; height: 100px; top: 40%; right: 30%; animation-delay: 1s; }
+        .shape:nth-child(5) { width: 90px; height: 90px; bottom: 20%; right: 10%; animation-delay: 3s; }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); }
+            25% { transform: translateY(-30px) rotate(90deg) scale(1.1); }
+            50% { transform: translateY(-20px) rotate(180deg) scale(0.9); }
+            75% { transform: translateY(-40px) rotate(270deg) scale(1.05); }
+        }
+    </style>
+</head>
+<body style="background: linear-gradient(135deg,#fff7ed,#ffffff,#fffbeb); color: #333333;">
+    <!-- Navigation -->
+    <div id="navigation-component"></div>
+
+    <!-- Right Panel -->
+    <div id="right-panel-component"></div>
+
+    <!-- Main Content -->
+    <main class="pt-5">
+        <!-- Hero Section -->
+        <section class="product-hero py-5 position-relative">
+           
+            
+            <div class="container px-4 position-relative" style="z-index: 2;margin-top: 2.5rem;">
+                <div class="row align-items-center py-5">
+                    <div class="col-12 mb-4" data-breadcrumb data-separator="arrow">
+                        <!-- Breadcrumb will be dynamically generated here -->
+                    </div>
+                    <div class="col-lg-6">
+                        <h1 class="display-3 fw-bold mb-4 reveal-up" style="color: #333333;">
+                            E-Library
+                            <span class="d-block text-gradient">Solutions</span>
+                        </h1>
+                        <p class="lead mb-4 reveal-up stagger-1" style="color: #666666;">
+                            JetHat's E-Library Solutions empower institutions, publishers, and educators to create seamless, user-friendly digital libraries that are accessible anytime, anywhere. Designed with scalability, security, and simplicity in mind, our platform makes digital content management effortless and engaging.
+                        </p>
+                       
+                        
+                        <!-- Terminal Effect -->
+                        <div class="terminal-container reveal-up stagger-2">
+                            <div class="terminal-header">
+                                <div class="terminal-dot"></div>
+                                <div class="terminal-dot"></div>
+                                <div class="terminal-dot"></div>
+                            </div>
+                            <div class="terminal-content">
+                                <span class="text-success">➜</span> <span class="text-info">~</span> e-library --digital-collection<br>
+                                <span class="text-success">➜</span> <span class="text-info">~</span> content: <span class="text-warning">multimedia supported</span><br>
+                                <span class="text-success">➜</span> <span class="text-info">~</span> <span class="text-warning">indexing library...</span><span class="typing-cursor"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex flex-wrap gap-3 mb-4 mt-4 reveal-up stagger-3">
+                            <div class="tech-status">
+                                <span>Multilingual Interface</span>
+                            </div>
+                            <div class="tech-status">
+                                <span>Advanced Search</span>
+                            </div>
+                            <div class="tech-status">
+                                <span>DRM Protected</span>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex flex-column flex-sm-row gap-3 reveal-up stagger-4">
+                            <button class="btn btn-gradient btn-lg px-4 py-3">
+                                <i class="bi bi-play-circle me-2"></i>
+                                Request Demo
+                            </button>
+                            <button class="btn btn-outline-danger btn-lg px-4 py-3">
+                                <i class="bi bi-chat-dots me-2"></i>
+                                Contact Us
+                            </button>
+                        </div>
+                        
+                        
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="text-center reveal-up stagger-3">
+                            <div class="feature-icon mx-auto mb-4" style="width: 120px; height: 120px;">
+                                <i class="bi bi-book text-white fs-1"></i>
+                            </div>
+                            <!-- Floating Badge -->
+                            <div class="floating-badge reveal-left" style="top: 20%; right: 10%;">
+                                📚 Digital Knowledge
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="py-5" style="background: linear-gradient(135deg,#fff7ed,#ffffff,#fffbeb);">
+            <!-- Cyber Grid Background -->
+            <div class="cyber-grid" style="opacity: 0.5;"></div>
+            
+            <div class="container position-relative" style="z-index: 2;">
+                <div class="text-left mb-5 reveal-up">
+                    <h2 class="display-5 fw-bold mb-3" style="color: #333;">
+                        Key <span class="text-gradient">Features</span>
+                    </h2>
+                    <p class="lead text-muted">Comprehensive digital library management capabilities</p>
+                </div>
+                
+                <div class="row g-4">
+                    <!-- Centralized Digital Collection -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feature-card p-4 h-100 reveal-up stagger-1">
+                            <div class="feature-icon">
+                                <i class="bi bi-collection text-white fs-2"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3 text-center">Centralized Digital Collection</h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Books & Journals</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Magazines & Multimedia</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Searchable Cloud Library</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Organized Collections</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Easy Content Upload</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Advanced Search & Filters -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feature-card p-4 h-100 reveal-up stagger-2">
+                            <div class="feature-icon">
+                                <i class="bi bi-search text-white fs-2"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3 text-center">Advanced Search & Filters</h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Smart Search Engine</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Tag-Based Filtering</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Metadata Filtering</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Instant Results</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Advanced Query Options</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Multilingual Interface -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feature-card p-4 h-100 reveal-up stagger-3">
+                            <div class="feature-icon">
+                                <i class="bi bi-translate text-white fs-2"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3 text-center">Multilingual Interface</h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Diverse Language Support</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Localized User Experience</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Multilingual Content Display</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Cultural Adaptation</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Global Accessibility</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Audio & Interactive Media Support -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feature-card p-4 h-100 reveal-up stagger-4">
+                            <div class="feature-icon">
+                                <i class="bi bi-play-circle text-white fs-2"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3 text-center">Audio & Interactive Media Support</h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Audio Books Hosting</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Video Lectures</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Interactive Learning Materials</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Enriched Reading Experience</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Multimedia Integration</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Access Control & DRM -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feature-card p-4 h-100 reveal-up stagger-1">
+                            <div class="feature-icon">
+                                <i class="bi bi-shield-lock text-white fs-2"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3 text-center">Access Control & DRM</h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Content Security</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Role-Based Access</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Digital Rights Management</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Usage Tracking</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>License Management</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Admin Panel & Analytics -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feature-card p-4 h-100 reveal-up stagger-2">
+                            <div class="feature-icon">
+                                <i class="bi bi-graph-up text-white fs-2"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3 text-center">Admin Panel & Analytics</h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>User Activity Tracking</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Content Popularity Reports</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>System Performance Metrics</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Built-in Dashboards</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Custom Reports</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Additional Features Section -->
+        <section class="py-5" style="background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);">
+            <div class="container">
+                <div class="text-center mb-5 reveal-up">
+                    <h2 class="display-5 fw-bold mb-3" style="color: #333;">
+                        Advanced <span class="text-gradient">Capabilities</span>
+                    </h2>
+                    <p class="lead text-muted">Enterprise-grade features for modern digital libraries</p>
+                </div>
+                
+                <div class="row g-4 justify-content-center">
+                    <!-- Subscription & Payment Integration -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feature-card p-4 h-100 reveal-up stagger-1">
+                            <div class="feature-icon">
+                                <i class="bi bi-credit-card text-white fs-2"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3 text-center">Subscription & Payment Integration</h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Free & Paid Access Options</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Membership Management</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Payment Gateway Integration</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Subscription Tiers</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Automated Billing</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Cloud Infrastructure -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feature-card p-4 h-100 reveal-up stagger-2">
+                            <div class="feature-icon">
+                                <i class="bi bi-cloud text-white fs-2"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3 text-center">Scalable Cloud Infrastructure</h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>High Availability</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Auto-Scaling</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Global CDN</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Backup & Recovery</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>99.9% Uptime</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- API & Integration -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feature-card p-4 h-100 reveal-up stagger-3">
+                            <div class="feature-icon">
+                                <i class="bi bi-gear text-white fs-2"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3 text-center">API & Third-Party Integration</h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>RESTful APIs</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>LMS Integration</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>SSO Support</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Custom Integrations</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Webhook Support</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Built For Section -->
+        <section class="py-5" style="background: linear-gradient(135deg, #fff7ed 0%, #ffffff 50%, #fffbeb 100%);">
+            <div class="container">
+                <div class="text-center mb-5 reveal-up">
+                    <h2 class="display-5 fw-bold mb-3" style="color: #333;">
+                        Built <span class="text-gradient">For</span>
+                    </h2>
+                    <p class="lead text-muted">Designed for diverse educational and knowledge institutions</p>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="text-center reveal-up stagger-1">
+                            <div class="feature-icon mx-auto mb-3" style="width: 80px; height: 80px;">
+                                <i class="bi bi-building text-white fs-2"></i>
+                            </div>
+                            <h5 class="fw-bold mb-2">Schools & Universities</h5>
+                            <p class="text-muted small">Academic institutions seeking comprehensive digital library solutions</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="text-center reveal-up stagger-2">
+                            <div class="feature-icon mx-auto mb-3" style="width: 80px; height: 80px;">
+                                <i class="bi bi-book text-white fs-2"></i>
+                            </div>
+                            <h5 class="fw-bold mb-2">Public & Private Libraries</h5>
+                            <p class="text-muted small">Traditional libraries transitioning to digital platforms</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="text-center reveal-up stagger-3">
+                            <div class="feature-icon mx-auto mb-3" style="width: 80px; height: 80px;">
+                                <i class="bi bi-bank text-white fs-2"></i>
+                            </div>
+                            <h5 class="fw-bold mb-2">Government & NGO Knowledge Centers</h5>
+                            <p class="text-muted small">Public sector organizations managing knowledge resources</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="text-center reveal-up stagger-4">
+                            <div class="feature-icon mx-auto mb-3" style="width: 80px; height: 80px;">
+                                <i class="bi bi-briefcase text-white fs-2"></i>
+                            </div>
+                            <h5 class="fw-bold mb-2">Publishers & Educational Startups</h5>
+                            <p class="text-muted small">Content creators and educational technology companies</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="py-5" style="background: linear-gradient(135deg, #dc143c, #ffd700);">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-8">
+                        <h2 class="display-5 fw-bold text-white mb-3 reveal-up">
+                            Build a Smarter, More Connected Digital Knowledge Space
+                        </h2>
+                        <p class="lead text-white mb-4 reveal-up stagger-1">
+                            JetHat's E-Library Solutions give you the tools to create seamless, user-friendly digital libraries that transform how people access and interact with knowledge.
+                        </p>
+                    </div>
+                    <div class="col-lg-4 text-center">
+                        <div class="d-flex flex-column gap-3 reveal-up stagger-2">
+                            <button class="btn btn-light btn-lg px-4 py-3">
+                                <i class="bi bi-play-circle me-2"></i>
+                                Request Demo
+                            </button>
+                            <button class="btn btn-outline-light btn-lg px-4 py-3">
+                                <i class="bi bi-chat-dots me-2"></i>
+                                Contact Us
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="py-5" style="background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);">
+            <div class="container">
+                <div class="text-center mb-5 reveal-up">
+                    <h2 class="display-5 fw-bold mb-3" style="color: #333;">
+                        Why Choose <span class="text-gradient">JetHat E-Library</span>
+                    </h2>
+                    <p class="lead text-muted">Transform your digital knowledge management with proven results</p>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="text-center reveal-up stagger-1">
+                            <div class="feature-icon mx-auto mb-3" style="width: 60px; height: 60px;">
+                                <span class="text-white fw-bold fs-4">24/7</span>
+                            </div>
+                            <h5 class="fw-bold mb-2">Always Accessible</h5>
+                            <p class="text-muted small">Round-the-clock access to digital resources from anywhere</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="text-center reveal-up stagger-2">
+                            <div class="feature-icon mx-auto mb-3" style="width: 60px; height: 60px;">
+                                <span class="text-white fw-bold fs-4">90%</span>
+                            </div>
+                            <h5 class="fw-bold mb-2">Cost Reduction</h5>
+                            <p class="text-muted small">Significant reduction in operational and maintenance costs</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="text-center reveal-up stagger-3">
+                            <div class="feature-icon mx-auto mb-3" style="width: 60px; height: 60px;">
+                                <span class="text-white fw-bold fs-4">∞</span>
+                            </div>
+                            <h5 class="fw-bold mb-2">Unlimited Scalability</h5>
+                            <p class="text-muted small">Grow your digital collection without infrastructure limits</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="text-center reveal-up stagger-4">
+                            <div class="feature-icon mx-auto mb-3" style="width: 60px; height: 60px;">
+                                <span class="text-white fw-bold fs-4">99.9%</span>
+                            </div>
+                            <h5 class="fw-bold mb-2">Uptime Guarantee</h5>
+                            <p class="text-muted small">Reliable service with enterprise-grade infrastructure</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-component"></div>
+
+       <!-- Theme Toggle -->
+    <button id="theme-toggle" class="btn btn-dark position-fixed bottom-0 start-0 m-4 rounded-circle p-3 shadow-lg" style="z-index: 1050;">
+        <i id="sun-icon" class="bi bi-sun-fill d-none"></i>
+        <i id="moon-icon" class="bi bi-moon-fill"></i>
+    </button>
+    <script src="../scripts/theme-toggle.js"></script>
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Animation Script -->
+    <script>
+        function initAnimations() {
+            const animationElements = document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right, .reveal-zoom');
+            
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            animationElements.forEach(element => {
+                observer.observe(element);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            initAnimations();
+        });
+    </script>
+
+    <!-- Component Loader Script -->
+    <script type="module">
+        async function loadComponent(id, path) {
+            try {
+                const res = await fetch(path);
+                if (!res.ok) throw new Error(`${path} (${res.status})`);
+                const html = await res.text();
+
+                const el = document.getElementById(id);
+                if (el) el.innerHTML = html;
+                else console.warn(`Missing container #${id}`);
+            } catch (err) {
+                console.error(`Component load failed: ${path}`, err);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            const components = [
+                ['navigation-component', '../components/navigation/navigation.html'],
+                ['footer-component', '../components/footer/footer.html'],
+                ['right-panel-component', '../components/right-panel/right-panel.html']
+            ];
+
+            await Promise.all(components.map(([id, path]) => loadComponent(id, path)));
+            
+            // Trigger navigation fix after components are loaded
+            if (window.fixNavigationPaths) {
+                setTimeout(() => {
+                    window.fixNavigationPaths();
+                    console.log('Navigation paths fixed after component loading');
+                }, 100);
+            }
+            
+            // Dispatch custom event for navigation fix
+            document.dispatchEvent(new CustomEvent('navigationLoaded'));
+            
+            console.log('✅ E-Library page initialized successfully');
+        });
+    </script>
+</body>
+</html>

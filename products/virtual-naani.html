@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Naani - Smart Safety App for Children - JetHat Cyber Security</title>
+    <meta name="description" content="Virtual Naani: Smart safety app for children with live location tracking, emergency SOS, smart alerts, and consent-based monitoring for peace of mind.">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <!-- Breadcrumb Badge -->
+    <script src="../scripts/breadcrumb-badge.js"></script>
+    
+    <!-- Universal Loader -->
+    <script src="../scripts/universal-loader.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/products-dark-mode.css">
+    <link rel="stylesheet" href="../styles/loader.css">
+    
+    <!-- Navigation Fix Script -->
+    <script src="../scripts/navigation-fix.js"></script>
+    <script src="../scripts/navbar-scroll.js"></script>
+    
+    <style>
+        /* Cyber Security Theme Styles */
+        .product-hero {
+            /* background: linear-gradient(135deg, #fff7ed 0%, #ffffff 50%, #fffbeb 100%); */
+            position: relative;
+            overflow: hidden;
+            min-height: 60vh;
+        }
+        
+        /* Circuit Pattern Overlay */
+        .circuit-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(90deg, rgba(220, 20, 60, 0.03) 1px, transparent 1px),
+                linear-gradient(rgba(220, 20, 60, 0.03) 1px, transparent 1px),
+                radial-gradient(circle at 50% 50%, rgba(220, 20, 60, 0.02) 1px, transparent 1px);
+            background-size: 50px 50px, 50px 50px, 20px 20px;
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        /* Grid Pattern */
+        .grid-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(90deg, rgba(124, 58, 237, 0.05) 1px, transparent 1px),
+                linear-gradient(rgba(124, 58, 237, 0.05) 1px, transparent 1px);
+            background-size: 30px 30px;
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        /* Floating Security Icons */
+        .floating-security-icons {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+            pointer-events: none;
+        }
+        
+        .security-icon {
+            position: absolute;
+            font-size: 2rem;
+            opacity: 0.15;
+            animation: orbit 20s linear infinite, floatIcon 6s ease-in-out infinite;
+        }
+        
+        .security-icon:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s, 0s; }
+        .security-icon:nth-child(2) { top: 30%; right: 10%; animation-delay: 2s, 1s; }
+        .security-icon:nth-child(3) { bottom: 20%; left: 15%; animation-delay: 4s, 2s; }
+        .security-icon:nth-child(4) { top: 50%; right: 5%; animation-delay: 1s, 3s; }
+        .security-icon:nth-child(5) { bottom: 30%; right: 20%; animation-delay: 3s, 4s; }
+        .security-icon:nth-child(6) { top: 15%; left: 30%; animation-delay: 5s, 5s; }
+        
+        @keyframes orbit {
+            0% { transform: rotate(0deg) translateX(50px) rotate(0deg); }
+            100% { transform: rotate(360deg) translateX(50px) rotate(-360deg); }
+        }
+        
+        @keyframes floatIcon {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        /* Scanning Line Animation */
+        .scanning-line {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #dc143c, #ffd700, transparent);
+            box-shadow: 0 0 20px rgba(220, 20, 60, 0.8);
+            animation: scan 3s linear infinite;
+            z-index: 10;
+            pointer-events: none;
+        }
+        
+        @keyframes scan {
+            0% { top: 0%; opacity: 1; }
+            100% { top: 100%; opacity: 0; }
+        }
+        
+        /* Particle Effects */
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #dc143c;
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: particleFloat 8s ease-in-out infinite;
+        }
+        
+        .particle:nth-child(1) { left: 10%; top: 20%; animation-delay: 0s; }
+        .particle:nth-child(2) { left: 30%; top: 40%; animation-delay: 1s; }
+        .particle:nth-child(3) { left: 50%; top: 60%; animation-delay: 2s; }
+        .particle:nth-child(4) { left: 70%; top: 30%; animation-delay: 3s; }
+        .particle:nth-child(5) { left: 90%; top: 50%; animation-delay: 4s; }
+        .particle:nth-child(6) { left: 20%; top: 70%; animation-delay: 5s; }
+        .particle:nth-child(7) { left: 40%; top: 10%; animation-delay: 6s; }
+        .particle:nth-child(8) { left: 60%; top: 80%; animation-delay: 7s; }
+        
+        @keyframes particleFloat {
+            0%, 100% { 
+                transform: translateY(0) translateX(0);
+                opacity: 0.3;
+            }
+            25% { 
+                transform: translateY(-30px) translateX(20px);
+                opacity: 0.6;
+            }
+            50% { 
+                transform: translateY(-60px) translateX(-20px);
+                opacity: 0.3;
+            }
+            75% { 
+                transform: translateY(-30px) translateX(20px);
+                opacity: 0.6;
+            }
+        }
+        
+        /* Terminal Typing Effect */
+        .terminal-container {
+            background: #1a1a2e;
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 20px;
+            font-family: 'Courier New', monospace;
+            color: #00ff00;
+            font-size: 0.9rem;
+            max-width: 500px;
+        }
+        
+        .terminal-header {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+        
+        .terminal-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        
+        .terminal-dot:nth-child(1) { background: #ff5f56; }
+        .terminal-dot:nth-child(2) { background: #ffbd2e; }
+        .terminal-dot:nth-child(3) { background: #27ca40; }
+        
+        .terminal-content {
+            min-height: 60px;
+        }
+        
+        .typing-cursor {
+            display: inline-block;
+            width: 10px;
+            height: 18px;
+            background: #00ff00;
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+        
+        /* Enhanced Feature Cards */
+        .feature-card {
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(220, 20, 60, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(220, 20, 60, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .feature-card:hover::before {
+            left: 100%;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-15px) scale(1.05) rotateY(5deg);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        
+        .feature-icon::after {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            border-radius: 50%;
+            opacity: 0;
+            transition: all 0.4s ease;
+            z-index: -1;
+        }
+        
+        .feature-card:hover .feature-icon {
+            transform: scale(1.2) rotate(360deg);
+        }
+        
+        .feature-card:hover .feature-icon::after {
+            opacity: 0.3;
+            transform: scale(1.2);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .btn-gradient {
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            border: none;
+            color: white;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-gradient::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .btn-gradient:hover::before {
+            left: 100%;
+        }
+        
+        .btn-gradient:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(220, 20, 60, 0.4);
+        }
+        
+        /* Tech Status Indicator */
+        .tech-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 5px 12px;
+            background: rgba(34, 197, 94, 0.1);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: #22c55e;
+        }
+        
+        .tech-status::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: #22c55e;
+            border-radius: 50%;
+            animation: statusPulse 2s infinite;
+        }
+        
+        @keyframes statusPulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.8); }
+        }
+        
+        /* Floating Badge */
+        .floating-badge {
+            position: absolute;
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: 0 10px 30px rgba(220, 20, 60, 0.3);
+            animation: badgeFloat 4s ease-in-out infinite;
+        }
+        
+        @keyframes badgeFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        /* Reveal Animations */
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-100px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(100px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .reveal-zoom {
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .reveal-up.visible,
+        .reveal-left.visible,
+        .reveal-right.visible,
+        .reveal-zoom.visible {
+            opacity: 1;
+            transform: translate(0, 0) scale(1);
+        }
+        
+        /* Stagger Animation Delays */
+        .stagger-1 { transition-delay: 0.1s; }
+        .stagger-2 { transition-delay: 0.2s; }
+        .stagger-3 { transition-delay: 0.3s; }
+        .stagger-4 { transition-delay: 0.4s; }
+        .stagger-5 { transition-delay: 0.5s; }
+        .stagger-6 { transition-delay: 0.6s; }
+        
+        /* Cyber Grid Background */
+        .cyber-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(220, 20, 60, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(220, 20, 60, 0.03) 1px, transparent 1px);
+            background-size: 25px 25px;
+            z-index: 0;
+        }
+        
+        /* Floating Shapes */
+        .floating-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .shape {
+            position: absolute;
+            background: linear-gradient(45deg, #dc143c, #ffd700);
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 8s ease-in-out infinite;
+        }
+        
+        .shape:nth-child(1) { width: 80px; height: 80px; top: 20%; left: 10%; animation-delay: 0s; }
+        .shape:nth-child(2) { width: 120px; height: 120px; top: 60%; right: 15%; animation-delay: 2s; }
+        .shape:nth-child(3) { width: 60px; height: 60px; bottom: 30%; left: 20%; animation-delay: 4s; }
+        .shape:nth-child(4) { width: 100px; height: 100px; top: 40%; right: 30%; animation-delay: 1s; }
+        .shape:nth-child(5) { width: 90px; height: 90px; bottom: 20%; right: 10%; animation-delay: 3s; }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); }
+            25% { transform: translateY(-30px) rotate(90deg) scale(1.1); }
+            50% { transform: translateY(-20px) rotate(180deg) scale(0.9); }
+            75% { transform: translateY(-40px) rotate(270deg) scale(1.05); }
+        }
+
+        /* Safety Card Animations */
+        .safety-card-main:hover .safety-main-image {
+            transform: scale(1.1);
+        }
+
+        .safety-card-main:hover .safety-overlay {
+            opacity: 1;
+        }
+
+        .safety-card-main:hover .safety-content {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .safety-card-secondary:hover .safety-secondary-image {
+            transform: scale(1.15) rotate(2deg);
+        }
+
+        .safety-card-secondary:hover .safety-overlay {
+            opacity: 1;
+        }
+
+        .safety-card-mini:hover .safety-mini-image {
+            transform: scale(1.2);
+        }
+
+        /* Safety Image Container Hover Effects */
+        .safety-image-container {
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .safety-image-container:hover {
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+        }
+
+        /* Responsive Design for Safety Cards */
+        @media (max-width: 768px) {
+            .safety-card-main .safety-image-container {
+                width: 100% !important;
+                height: 300px !important;
+            }
+
+            .safety-card-secondary {
+                position: relative !important;
+                top: 0 !important;
+                right: 0 !important;
+                margin-top: 20px;
+            }
+
+            .safety-card-secondary .safety-image-container {
+                width: 100% !important;
+                height: 200px !important;
+            }
+
+            .safety-card-mini {
+                position: relative !important;
+                bottom: 0 !important;
+                left: 0 !important;
+                margin-top: 20px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body style="background: linear-gradient(135deg,#fff7ed,#ffffff,#fffbeb); color: #333333;">
+    <!-- Navigation -->
+    <div id="navigation-component"></div>
+
+    <!-- Right Panel -->
+    <div id="right-panel-component"></div>
+
+    <!-- Main Content -->
+    <main class="pt-5">
+        <!-- Hero Section -->
+        <section class="product-hero py-5 position-relative">
+            
+            
+            <div class="container px-4 position-relative" style="z-index: 2;">
+                <div class="row align-items-center py-5">
+                    <div class="col-12 mb-4" data-breadcrumb data-separator="arrow">
+                        <!-- Breadcrumb will be dynamically generated here -->
+                    </div>
+                    <div class="col-lg-6">
+                        <h1 class="display-3 fw-bold mb-4 reveal-up" style="color: #333333;">
+                            Virtual Naani
+                            <span class="d-block text-gradient">Smart Safety App for Children</span>
+                        </h1>
+                        <p class="lead mb-4 reveal-up stagger-1" style="color: #666666;">
+                            A virtual guardian for the real world. Virtual Naani offers peace of mind for parents and proactive protection for children. From school to playtime, this app ensures safety without sacrificing trust.
+                        </p>
+                        
+                        <!-- Terminal Effect -->
+                        <div class="terminal-container reveal-up stagger-2">
+                            <div class="terminal-header">
+                                <div class="terminal-dot"></div>
+                                <div class="terminal-dot"></div>
+                                <div class="terminal-dot"></div>
+                            </div>
+                            <div class="terminal-content">
+                                <span class="text-success">➜</span> <span class="text-info">~</span> naani --safety-mode<br>
+                                <span class="text-success">➜</span> <span class="text-info">~</span> status: <span class="text-warning">protecting & monitoring</span><br>
+                                <span class="text-success">➜</span> <span class="text-info">~</span> <span class="text-warning">child safety active...</span><span class="typing-cursor"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex flex-wrap gap-3 mb-4 mt-4 reveal-up stagger-3">
+                            <div class="tech-status">
+                                <span>Live Tracking</span>
+                            </div>
+                            <div class="tech-status">
+                                <span>Emergency SOS</span>
+                            </div>
+                            <div class="tech-status">
+                                <span>Smart Alerts</span>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex flex-column flex-sm-row gap-3 reveal-up stagger-4">
+                            <button class="btn btn-gradient btn-lg px-4 py-3">
+                                <i class="bi bi-download me-2"></i>
+                                Get the App Now
+                            </button>
+                            <button class="btn btn-outline-danger btn-lg px-4 py-3">
+                                <i class="bi bi-info-circle me-2"></i>
+                                Learn More
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="text-center reveal-up stagger-3">
+                            <div class="feature-icon mx-auto mb-4" style="width: 120px; height: 120px;">
+                                <i class="bi bi-shield-check text-white fs-1"></i>
+                            </div>
+                            <!-- Floating Badge -->
+                            <div class="floating-badge reveal-left" style="top: 20%; right: 10%;">
+                                🛡️ Child Safety
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="py-5" style="background: linear-gradient(135deg,#fff7ed,#ffffff,#fffbeb);">
+            <!-- Cyber Grid Background -->
+            <div class="cyber-grid" style="opacity: 0.5;"></div>
+            
+            <div class="container position-relative" style="z-index: 2;">
+                <div class="text-left mb-5 reveal-up">
+                    <h2 class="display-5 fw-bold mb-3" style="color: #333;">
+                        Key <span class="text-gradient">Features</span>
+                    </h2>
+                    <p class="lead text-muted">Your child's safety, one tap away</p>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feature-card p-4 h-100 reveal-up stagger-1">
+                            <div class="feature-icon">
+                                <i class="bi bi-geo-alt text-white fs-2"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3 text-center">Live Location Tracking</h4>
+                            <p class="text-muted text-center mb-3">Know your child's whereabouts in real-time with interactive maps.</p>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Real-time GPS tracking</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Interactive maps</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Location history</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Geofencing alerts</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feature-card p-4 h-100 reveal-up stagger-2">
+                            <div class="feature-icon">
+                                <i class="bi bi-exclamation-triangle text-white fs-2"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3 text-center">Emergency SOS Button</h4>
+                            <p class="text-muted text-center mb-3">One-tap SOS instantly alerts parents with live location and optional audio/video snippet.</p>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>One-tap emergency alert</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Instant parent notification</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Audio/video recording</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Emergency contacts</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feature-card p-4 h-100 reveal-up stagger-3">
+                            <div class="feature-icon">
+                                <i class="bi bi-bell text-white fs-2"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3 text-center">Smart Alerts</h4>
+                            <p class="text-muted text-center mb-3">Receive notifications for unsafe zones, route changes, or inactivity.</p>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Unsafe zone alerts</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Route change notifications</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Inactivity monitoring</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Custom alert settings</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feature-card p-4 h-100 reveal-up stagger-4">
+                            <div class="feature-icon">
+                                <i class="bi bi-clipboard-data text-white fs-2"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3 text-center">Daily Movement Reports</h4>
+                            <p class="text-muted text-center mb-3">Track travel history, timing, and duration at each stop.</p>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Travel history tracking</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Time spent at locations</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Daily activity summary</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Weekly/monthly reports</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feature-card p-4 h-100 reveal-up stagger-5">
+                            <div class="feature-icon">
+                                <i class="bi bi-person-check text-white fs-2"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3 text-center">Consent-Based Monitoring</h4>
+                            <p class="text-muted text-center mb-3">Children stay in control—monitoring starts only with their informed consent.</p>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Child consent required</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Privacy controls</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Transparent monitoring</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Trust-based approach</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feature-card p-4 h-100 reveal-up stagger-6">
+                            <div class="feature-icon">
+                                <i class="bi bi-speedometer2 text-white fs-2"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3 text-center">Optimized Performance</h4>
+                            <p class="text-muted text-center mb-3">Lightweight and efficient, designed to run seamlessly in the background.</p>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Battery optimized</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Low data usage</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Background operation</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Minimal resource usage</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section with Images -->
+        <section class="py-5" style="background: rgba(220, 20, 60, 0.02);">
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <!-- Left Animated Image Cards -->
+                    <div class="col-lg-6 order-2 order-lg-1">
+                        <div class="position-relative">
+                            <!-- Main Large Card -->
+                            <div class="safety-card-main position-relative mb-4 reveal-up">
+                                <div class="safety-image-container" style="width: 500px; height: 350px; background: white; border-radius: 20px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); overflow: hidden; position: relative;">
+                                    <img src="../assets/images/cyber1.jpg" alt="Child Safety Monitoring" class="safety-main-image" style="width: 100%; height: 100%; object-fit: cover; transition: all 0.6s ease;" />
+                                    <div class="safety-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(220, 20, 60, 0.2), rgba(255, 215, 0, 0.2)); opacity: 0; transition: all 0.4s ease;"></div>
+                                    <div class="safety-content" style="position: absolute; bottom: 20px; left: 20px; color: white; z-index: 2; transform: translateY(20px); opacity: 0; transition: all 0.4s ease;">
+                                        <h4 class="fw-bold mb-2">Smart Protection</h4>
+                                        <p class="mb-0">AI-Powered Child Safety</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Secondary Card -->
+                            <div class="safety-card-secondary position-absolute reveal-left stagger-2" style="top: 50px; right: -30px; z-index: 2;">
+                                <div class="safety-image-container" style="width: 350px; height: 250px; background: white; border-radius: 15px; box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); overflow: hidden; position: relative;">
+                                    <img src="../assets/images/cyber2.jpg" alt="Location Tracking" class="safety-secondary-image" style="width: 100%; height: 100%; object-fit: cover; transition: all 0.6s ease;" />
+                                    <div class="safety-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(34, 197, 94, 0.2), rgba(59, 130, 246, 0.2)); opacity: 0; transition: all 0.4s ease;"></div>
+                                    <div class="safety-badge" style="position: absolute; top: 15px; right: 15px; background: rgba(255, 255, 255, 0.9); padding: 8px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; color: #1f2937;">
+                                        Live Tracking
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Floating Mini Card -->
+                            <div class="safety-card-mini position-absolute reveal-zoom stagger-3" style="bottom: 30px; left: -30px; z-index: 3;">
+                                <div class="safety-image-container" style="width: 120px; height: 120px; background: white; border-radius: 50%; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); overflow: hidden; position: relative;">
+                                    <img src="../assets/images/cyber3.jpg" alt="Emergency SOS" class="safety-mini-image" style="width: 100%; height: 100%; object-fit: cover; transition: all 0.6s ease;" />
+                                    <div class="safety-pulse" style="position: absolute; top: -2px; left: -2px; width: calc(100% + 4px); height: calc(100% + 4px); border: 2px solid #dc143c; border-radius: 50%; animation: pulse 2s infinite;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Content -->
+                    <div class="col-lg-6 order-1 order-lg-2">
+                        <div class="reveal-up">
+                            <h2 class="fw-bold display-3 mb-4" style="color: #333;">
+                                Smart Child
+                                <span class="d-block fw-bold display-2 text-gradient">Safety Solution</span>
+                            </h2>
+                            <p class="fs-5 text-muted mb-4" style="max-width: 520px;">
+                                Our advanced AI engine continuously monitors your child's location and activities, providing real-time insights and instant alerts to ensure their safety while respecting their privacy and independence.
+                            </p>
+                            <p class="fs-6 text-muted mb-5" style="max-width: 520px;">
+                                From intelligent geofencing to emergency SOS features, Virtual Naani creates a protective digital bubble around your child, giving you peace of mind without being intrusive. The app learns your family's routines and adapts to provide personalized safety recommendations.
+                            </p>
+                            <div class="d-flex flex-wrap gap-3">
+                                <div class="d-flex align-items-center">
+                                    <div class="feature-icon me-2" style="width: 40px; height: 40px;">
+                                        <i class="bi bi-shield-check text-white fs-6"></i>
+                                    </div>
+                                    <span class="fw-semibold">24/7 Protection</span>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <div class="feature-icon me-2" style="width: 40px; height: 40px;">
+                                        <i class="bi bi-geo-alt text-white fs-6"></i>
+                                    </div>
+                                    <span class="fw-semibold">Real-time Tracking</span>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <div class="feature-icon me-2" style="width: 40px; height: 40px;">
+                                        <i class="bi bi-heart text-white fs-6"></i>
+                                    </div>
+                                    <span class="fw-semibold">Trust-Based</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Parent Dashboard Section -->
+        <section class="py-5" style="background: rgba(220, 20, 60, 0.05);">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="reveal-up">
+                            <h2 class="display-5 fw-bold mb-4" style="color: #333;">
+                                Parent <span class="text-gradient">Dashboard</span>
+                            </h2>
+                            <p class="lead mb-4" style="color: #666;">
+                                Manage alerts, view reports, and set preferences from an intuitive interface designed for busy parents.
+                            </p>
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-3 d-flex align-items-center">
+                                    <div class="feature-icon me-3" style="width: 50px; height: 50px;">
+                                        <i class="bi bi-speedometer2 text-white fs-5"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="mb-1">Real-time Dashboard</h5>
+                                        <p class="text-muted mb-0">Monitor all activities from a single, intuitive interface</p>
+                                    </div>
+                                </li>
+                                <li class="mb-3 d-flex align-items-center">
+                                    <div class="feature-icon me-3" style="width: 50px; height: 50px;">
+                                        <i class="bi bi-gear text-white fs-5"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="mb-1">Custom Preferences</h5>
+                                        <p class="text-muted mb-0">Set personalized alerts and monitoring preferences</p>
+                                    </div>
+                                </li>
+                                <li class="mb-3 d-flex align-items-center">
+                                    <div class="feature-icon me-3" style="width: 50px; height: 50px;">
+                                        <i class="bi bi-graph-up text-white fs-5"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="mb-1">Detailed Reports</h5>
+                                        <p class="text-muted mb-0">Access comprehensive activity and safety reports</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="text-center reveal-up stagger-2">
+                            <div class="feature-icon mx-auto mb-4" style="width: 150px; height: 150px;">
+                                <i class="bi bi-tablet text-white" style="font-size: 4rem;"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="py-5" style="background: linear-gradient(135deg, #dc143c, #ffd700); color: white;">
+            <div class="container text-center">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="reveal-up">
+                            <h2 class="display-4 fw-bold mb-4">
+                                A Virtual Guardian for the Real World
+                            </h2>
+                            <p class="lead mb-5">
+                                Virtual Naani offers peace of mind for parents and proactive protection for children. 
+                                From school to playtime, this app ensures safety without sacrificing trust.
+                            </p>
+                            <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center">
+                                <button class="btn btn-light btn-lg px-5 py-3" style="color: #dc143c; font-weight: 600;">
+                                    <i class="bi bi-download me-2"></i>
+                                    Get the App Now
+                                </button>
+                                <button class="btn btn-outline-light btn-lg px-5 py-3">
+                                    <i class="bi bi-play-circle me-2"></i>
+                                    Watch Demo
+                                </button>
+                            </div>
+                            <p class="mt-4 mb-0" style="font-size: 1.1rem; font-weight: 500;">
+                                Your Child's Safety, One Tap Away
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+   
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-component"></div>
+       <!-- Theme Toggle -->
+    <button id="theme-toggle" class="btn btn-dark position-fixed bottom-0 start-0 m-4 rounded-circle p-3 shadow-lg" style="z-index: 1050;">
+        <i id="sun-icon" class="bi bi-sun-fill d-none"></i>
+        <i id="moon-icon" class="bi bi-moon-fill"></i>
+    </button>
+    <script src="../scripts/theme-toggle.js"></script>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Animation Script -->
+    <script>
+        function initAnimations() {
+            const animationElements = document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right, .reveal-zoom');
+            
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            animationElements.forEach(element => {
+                observer.observe(element);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            initAnimations();
+        });
+    </script>
+
+    <!-- Component Loader Script -->
+    <script type="module">
+        async function loadComponent(id, path) {
+            try {
+                const res = await fetch(path);
+                if (!res.ok) throw new Error(`${path} (${res.status})`);
+                const html = await res.text();
+
+                const el = document.getElementById(id);
+                if (el) el.innerHTML = html;
+                else console.warn(`Missing container #${id}`);
+            } catch (err) {
+                console.error(`Component load failed: ${path}`, err);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            const components = [
+                ['navigation-component', '../components/navigation/navigation.html'],
+                ['footer-component', '../components/footer/footer.html'],
+                ['right-panel-component', '../components/right-panel/right-panel.html']
+            ];
+
+            await Promise.all(components.map(([id, path]) => loadComponent(id, path)));
+            
+            // Trigger navigation fix after components are loaded
+            if (window.fixNavigationPaths) {
+                setTimeout(() => {
+                    window.fixNavigationPaths();
+                    console.log('Navigation paths fixed after component loading');
+                }, 100);
+            }
+            
+            // Dispatch custom event for navigation fix
+            document.dispatchEvent(new CustomEvent('navigationLoaded'));
+            
+            console.log('✅ Virtual Naani page initialized successfully');
+        });
+    </script>
+</body>
+</html>

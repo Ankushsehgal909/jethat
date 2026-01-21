@@ -1,0 +1,124 @@
+<section id="hero-section" class="min-vh-100 d-flex flex-column justify-content-center position-relative overflow-hidden hero-section-theme" data-hero-container>
+    <!-- Video Background -->
+    <div class="position-absolute top-0 start-0 w-100 h-100 overflow-hidden" style="z-index: 0;">
+        <!-- Fallback gradient background -->
+        <div class="position-absolute top-0 start-0 w-100 h-100 video-fallback-theme"></div>
+        <video id="hero-video" autoplay loop muted playsinline preload="auto" 
+               class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover" 
+               style="transform: scale(1.1); will-change: transform;" 
+               onerror="this.style.display='none'; document.getElementById('video-fallback').classList.remove('d-none');">
+            <source src="assets/videos/jet_video_5.mp4" type="video/mp4">
+        </video>
+        
+        <!-- Video Fallback -->
+        <div id="video-fallback" class="position-absolute top-0 start-0 w-100 h-100 video-fallback-theme d-none d-flex align-items-center justify-content-center">
+            <div class="text-center text-white">
+                <div class="mx-auto mb-4 rounded-circle bg-gradient d-flex align-items-center justify-content-center animate-pulse" 
+                     style="width: 6rem; height: 6rem; background: linear-gradient(135deg, #FF8C00, #FFB300);">
+                    <i class="bi bi-play-fill fs-1"></i>
+                </div>
+                <h3 class="h4 fw-semibold mb-2">Cybersecurity Innovation</h3>
+                <p class="text-muted">Securing Tomorrow's Digital Landscape</p>
+            </div>
+        </div>
+        
+        <!-- Overlay -->
+        <div class="position-absolute top-0 start-0 w-100 h-100 hero-overlay" style="z-index: 1;"></div>
+    </div>
+
+    <!-- Hero Content -->
+    <div class="container px-4 position-relative" style="z-index: 10;">
+        <div class="row align-items-center g-4 g-lg-5">
+            <!-- Content -->
+            <div class="col-lg-6 text-left text-lg-start">
+                <div class="mb-4">
+                    <h1 class="hero-title display-1 fw-bold text-white text-hero mb-4">
+                        <span class="">Empowering Tomorrow,</span> 
+                        <span class="text-gradient display-1 ">Securing Today</span>
+                    </h1>
+                    <p class="hero-subtitle fs-5 text-white mb-4 font-quicksand" style="max-width: 600px;">
+                        <!-- Innovate boldly with JetHat Cyber—where cybersecurity,
+                        AI, and cloud solutions protect your  -->
+                    <p class="fs-4 accent-gold fw-semibold font-caveat">
+                        <span id="typing-text"></span><span class="typing-cursor">|</span>
+                    </p>
+                </div>
+                <div class="hero-buttons d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start">
+                    <button class=" rounded-2 btn-primary btn-lg px-3 py-2 fw-semibold font-poppins">
+                        Free Consulting
+                    </button>
+                    <button class="rounded-2 btn-outline-primary btn-lg px-3 py-2 fw-semibold font-montserrat">
+                        Learn More
+                    </button>
+                </div>
+            </div>
+
+            <!-- Visual Elements -->
+            <div class="col-lg-6 d-none d-lg-block">
+                <div class="position-relative d-flex align-items-center justify-content-center" style="height: 24rem;">
+                    <!-- Central Security Sphere -->
+                    <div class="position-relative" style="width: 18rem; height: 18rem;">
+                        <!-- Outer Gradient Ring -->
+                        <div class="position-absolute top-0 start-0 w-100 h-100 border border-3 rounded-circle animate-spin-slow" style="border-color: transparent transparent var(--accent-gold) transparent;"></div>
+                        
+                        <!-- Second Outer Ring -->
+                        <div class="position-absolute top-0 start-0 w-100 h-100 border border-2 border-warning border-opacity-30 rounded-circle animate-spin-slow-reverse"></div>
+                        
+                        <!-- Middle Ring -->
+                        <div class="position-absolute border border-3 rounded-circle animate-spin-slow border-primary-theme border-opacity-75" 
+                             style="top: 2rem; left: 2rem; right: 2rem; bottom: 2rem;"></div>
+                        
+                        <!-- Inner Ring -->
+                        <div class="position-absolute border border-2 border-primary border-opacity-50 rounded-circle animate-spin-slow-reverse" 
+                             style="top: 4rem; left: 4rem; right: 4rem; bottom: 4rem;"></div>
+                        
+                        <!-- Stacked Text Animation -->
+                        <div class="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center overflow-hidden" style="z-index: 9999;">
+                            <div id="stacked-text-1" class="display-4 fw-bold font-monospace text-gradient text-opacity-75 animate-stack-slide-down" 
+                                 style="animation-delay: 0s; animation-duration: 2s;">
+                                अनुक्षणं
+                            </div>
+                            <div id="stacked-text-2" class="display-4 fw-bold font-monospace text-gradient text-opacity-75 animate-stack-slide-down" 
+                                 style="animation-delay: 1s; animation-duration: 2s;">
+                                रक्षामहे
+                            </div>
+                        </div>
+        
+                        <!-- Orbiting Elements - Outer Orbit -->
+                        <div class="position-absolute top-0 start-0 w-100 h-100 animate-orbit-container">
+                            <div class="orbit-item orbit-item-1">
+                                <div class="bg-primary-20 rounded-circle d-flex align-items-center justify-content-center" 
+                                     style="width: 2.5rem; height: 2.5rem;">
+                                    <i class="bi bi-lock-fill text-gradient"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Orbiting Elements - Inner Orbit -->
+                        <div class="position-absolute top-0 start-0 w-100 h-100 animate-orbit-inner-reverse">
+                            <div class="orbit-item orbit-item-4">
+                                <div class="bg-secondary-20 rounded-circle d-flex align-items-center justify-content-center" 
+                                     style="width: 2rem; height: 2rem;">
+                                    <i class="bi bi-cpu accent-primary"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Additional Small Orbiting Particles -->
+                        <div class="position-absolute top-0 start-0 w-100 h-100 animate-particle-orbit">
+                            <div class="particle particle-1" style="background: var(--accent-gold); box-shadow: 0 0 10px var(--accent-gold);"></div>
+                        </div>
+                        <div class="position-absolute top-0 start-0 w-100 h-100 animate-particle-orbit-reverse">
+                            <div class="particle particle-2" style="background: var(--accent-primary); box-shadow: 0 0 10px var(--accent-primary);"></div>
+                        </div>
+                        <div class="position-absolute top-0 start-0 w-100 h-100 animate-particle-orbit-delayed">
+                            <div class="particle particle-3" style="background: var(--accent-secondary); box-shadow: 0 0 10px var(--accent-secondary);"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+

@@ -1,0 +1,1992 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innovation Technologies - JetHat Cyber Security</title>
+    <meta name="description" content="Explore JetHat's innovation technology stack and cutting-edge frameworks. Deep dive into our advanced technologies powering AI, cybersecurity, and breakthrough solutions.">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <!-- Breadcrumb Badge -->
+    <script src="../scripts/breadcrumb-badge.js"></script>
+    
+    <!-- Universal Loader -->
+    <script src="../scripts/universal-loader.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/loader.css">
+    
+    <!-- Navigation Fix Script -->
+    <script src="../scripts/navigation-fix.js"></script>
+    <script src="../scripts/navbar-scroll.js"></script>
+
+    <style>
+        :root {
+            --innovation-primary: #DC143C;
+            --innovation-secondary: #FFD700;
+            --innovation-dark: #1A1A1A;
+            --innovation-light: #F8F8F8;
+        }
+
+        /* Light Theme (Default) */
+        [data-bs-theme="light"] {
+            --bg-gradient: linear-gradient(135deg, #fff7ed 0%, #ffffff 50%, #fffbeb 100%);
+            --text-primary: #333333;
+            --text-secondary: #666666;
+            --text-muted: #999999;
+            --card-bg: #ffffff;
+            --card-border: rgba(220, 20, 60, 0.1);
+            --card-shadow: rgba(0, 0, 0, 0.1);
+        }
+
+        /* Dark Theme */
+        [data-bs-theme="dark"] {
+            --bg-gradient: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 50%, #1a1a1a 100%);
+            --text-primary: #f0f0f0;
+            --text-secondary: #cccccc;
+            --text-muted: #999999;
+            --card-bg: #2a2a2a;
+            --card-border: rgba(220, 20, 60, 0.3);
+            --card-shadow: rgba(0, 0, 0, 0.5);
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-gradient);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        /* Hero Section */
+        .innovation-hero {
+            background: var(--bg-gradient);
+            position: relative;
+            overflow: hidden;
+            padding: 100px 0;
+            min-height: 60vh;
+        }
+
+        .innovation-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(90deg, rgba(220, 20, 60, 0.03) 1px, transparent 1px),
+                linear-gradient(rgba(220, 20, 60, 0.03) 1px, transparent 1px),
+                radial-gradient(circle at 50% 50%, rgba(220, 20, 60, 0.02) 1px, transparent 1px);
+            background-size: 50px 50px, 50px 50px, 20px 20px;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Floating Shapes */
+        .floating-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .shape {
+            position: absolute;
+            background: linear-gradient(45deg, #dc143c, #ffd700);
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 8s ease-in-out infinite;
+        }
+        
+        .shape:nth-child(1) { width: 80px; height: 80px; top: 20%; left: 10%; animation-delay: 0s; }
+        .shape:nth-child(2) { width: 120px; height: 120px; top: 60%; right: 15%; animation-delay: 2s; }
+        .shape:nth-child(3) { width: 60px; height: 60px; bottom: 30%; left: 20%; animation-delay: 4s; }
+        .shape:nth-child(4) { width: 100px; height: 100px; top: 40%; right: 30%; animation-delay: 1s; }
+        .shape:nth-child(5) { width: 90px; height: 90px; bottom: 20%; right: 10%; animation-delay: 3s; }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); }
+            25% { transform: translateY(-30px) rotate(90deg) scale(1.1); }
+            50% { transform: translateY(-20px) rotate(180deg) scale(0.9); }
+            75% { transform: translateY(-40px) rotate(270deg) scale(1.05); }
+        }
+
+        .innovation-hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            backdrop-filter: blur(10px);
+            border-radius: 50px;
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+            border: 1px solid rgba(220, 20, 60, 0.2);
+            box-shadow: 0 10px 30px rgba(220, 20, 60, 0.3);
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            color: #333333;
+            margin-bottom: 20px;
+        }
+
+        .hero-title .gradient-text {
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-description {
+            font-size: 1.25rem;
+            color: #666666;
+            max-width: 600px;
+            margin-bottom: 40px;
+            line-height: 1.7;
+        }
+        /* Hero Buttons */
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-hero-primary {
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            color: white;
+            padding: 16px 36px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            border: none;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(220, 20, 60, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-hero-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn-hero-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-hero-primary:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(220, 20, 60, 0.4);
+            color: white;
+        }
+
+        .btn-hero-secondary {
+            background: transparent;
+            color: #dc143c;
+            padding: 16px 36px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            border: 2px solid #dc143c;
+            transition: all 0.4s ease;
+        }
+
+        .btn-hero-secondary:hover {
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            border-color: #dc143c;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(220, 20, 60, 0.3);
+        }
+
+        /* Innovation Tech Cards */
+        .tech-marquee-section {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .tech-marquee-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .tech-marquee {
+            display: flex;
+            animation: marquee 30s linear infinite;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .tech-marquee-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            min-width: 120px;
+            padding: 20px;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .tech-marquee-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-color: rgba(220, 20, 60, 0.3);
+        }
+
+        .tech-logo {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            filter: grayscale(100%);
+            transition: all 0.3s ease;
+        }
+
+        .tech-marquee-item:hover .tech-logo {
+            filter: grayscale(0%);
+            transform: scale(1.1);
+        }
+
+        .tech-marquee-item span {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* Pause marquee on hover */
+        .tech-marquee-container:hover .tech-marquee {
+            animation-play-state: paused;
+        }
+        /* Tech Visual Container */
+        .tech-visual-container {
+            position: relative;
+        }
+
+        .tech-hero-image {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+
+        .tech-hero-image img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+
+        .tech-hero-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .tech-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(220, 20, 60, 0.8), rgba(255, 215, 0, 0.8));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+
+        .tech-hero-image:hover .tech-overlay {
+            opacity: 1;
+        }
+
+        .overlay-content {
+            text-align: center;
+            color: white;
+            transform: translateY(20px);
+            transition: all 0.4s ease;
+        }
+
+        .tech-hero-image:hover .overlay-content {
+            transform: translateY(0);
+        }
+
+        .overlay-content h5 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .overlay-content p {
+            font-size: 1rem;
+            margin: 0;
+            opacity: 0.9;
+        }
+
+        .tech-timeline {
+            position: relative;
+        }
+
+        .tech-section {
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .tech-section:not(:last-child) {
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .tech-content {
+            padding: 20px 0;
+        }
+
+        .tech-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: linear-gradient(135deg, rgba(220, 20, 60, 0.1), rgba(255, 215, 0, 0.1));
+            border: 1px solid rgba(220, 20, 60, 0.2);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #dc143c;
+            margin-bottom: 20px;
+        }
+
+        .tech-section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .tech-section-description {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .tech-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .stat-item {
+            text-align: left;
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 20px 0;
+        }
+
+        .tech-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tech-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(220, 20, 60, 0.05), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .tech-item:hover::before {
+            left: 100%;
+        }
+
+        .tech-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-color: rgba(220, 20, 60, 0.3);
+        }
+
+        .tech-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+
+        .tech-icon.quantum { background: linear-gradient(135deg, #6366f1, #8b5cf6); color: white; }
+        .tech-icon.ai { background: linear-gradient(135deg, #ff6f00, #ff8f00); color: white; }
+        .tech-icon.security { background: linear-gradient(135deg, #dc143c, #b71c1c); color: white; }
+        .tech-icon.edge { background: linear-gradient(135deg, #059669, #10b981); color: white; }
+        .tech-icon.blockchain { background: linear-gradient(135deg, #7c3aed, #a855f7); color: white; }
+        .tech-icon.biometric { background: linear-gradient(135deg, #0891b2, #06b6d4); color: white; }
+        .tech-icon.tensorflow { background: linear-gradient(135deg, #ff6f00, #ff8f00); color: white; }
+        .tech-icon.pytorch { background: linear-gradient(135deg, #ee4c2c, #ff6b35); color: white; }
+        .tech-icon.jupyter { background: linear-gradient(135deg, #f37626, #da5b0b); color: white; }
+        .tech-icon.kubernetes { background: linear-gradient(135deg, #326ce5, #3970e4); color: white; }
+        .tech-icon.mobile { background: linear-gradient(135deg, #02569b, #0175c2); color: white; }
+
+        .tech-info h5 {
+            margin: 0 0 5px 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .tech-info span {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .tech-metrics {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 40px;
+            margin-top: 60px;
+        }
+
+        .metric-item {
+            text-align: center;
+            padding: 20px 10px;
+        }
+
+        .metric-number {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+            line-height: 1;
+        }
+
+        .metric-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            margin-top: 10px;
+        }
+        /* Innovation Lab Styles */
+        .innovation-content {
+            padding: 20px 0;
+        }
+
+        .innovation-highlights {
+            margin-top: 30px;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 25px;
+            padding: 20px;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .highlight-item:hover {
+            transform: translateX(10px);
+            border-color: rgba(220, 20, 60, 0.3);
+        }
+
+        .highlight-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, rgba(220, 20, 60, 0.1), rgba(255, 215, 0, 0.1));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #dc143c;
+            flex-shrink: 0;
+        }
+
+        .highlight-content h5 {
+            margin: 0 0 8px 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .highlight-content p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .innovation-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .innovation-stat-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 15px;
+            padding: 25px 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .innovation-stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #dc143c, #ffd700);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .innovation-stat-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .innovation-stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .innovation-stat-card .stat-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, rgba(220, 20, 60, 0.1), rgba(255, 215, 0, 0.1));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: #dc143c;
+            margin: 0 auto 15px;
+        }
+
+        .innovation-stat-card .stat-number {
+            font-size: 2.2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+            line-height: 1;
+        }
+
+        .innovation-stat-card .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            margin-top: 8px;
+        }
+        .research-areas h5 {
+            color: var(--text-primary);
+            font-size: 1.2rem;
+        }
+
+        .research-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .research-tag {
+            padding: 8px 16px;
+            background: linear-gradient(135deg, rgba(220, 20, 60, 0.1), rgba(255, 215, 0, 0.1));
+            border: 1px solid rgba(220, 20, 60, 0.2);
+            border-radius: 25px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #dc143c;
+            transition: all 0.3s ease;
+        }
+
+        .research-tag:hover {
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Technology Categories Summary */
+        .tech-categories-summary {
+            border-top: 1px solid var(--card-border);
+            padding-top: 40px;
+        }
+
+        .category-summary {
+            text-align: center;
+            padding: 30px 20px;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 15px;
+            height: 100%;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-summary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #dc143c, #ffd700);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .category-summary:hover::before {
+            transform: scaleX(1);
+        }
+
+        .category-summary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            border-color: rgba(220, 20, 60, 0.3);
+        }
+
+        .category-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 15px;
+            background: linear-gradient(135deg, rgba(220, 20, 60, 0.1), rgba(255, 215, 0, 0.1));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #dc143c;
+            margin: 0 auto 20px;
+            transition: all 0.3s ease;
+        }
+
+        .category-summary:hover .category-icon {
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .category-summary h5 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+        }
+
+        .category-summary p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+        }
+
+        .innovation-technologies-section {
+            padding: 100px 0;
+            background: var(--bg-gradient);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .innovation-technologies-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(90deg, rgba(220, 20, 60, 0.02) 1px, transparent 1px),
+                linear-gradient(rgba(220, 20, 60, 0.02) 1px, transparent 1px);
+            background-size: 25px 25px;
+            z-index: 0;
+            pointer-events: none;
+        }
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .innovation-hero {
+                padding: 60px 0;
+                text-align: left;
+            }
+
+            .hero-description {
+                margin: 0 auto 40px;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .tech-section {
+                padding: 60px 0;
+            }
+
+            .tech-section-title {
+                font-size: 2rem;
+            }
+
+            .tech-stats {
+                gap: 20px;
+            }
+
+            .tech-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .innovation-stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tech-hero-image img {
+                height: 250px;
+            }
+
+            .tech-marquee {
+                gap: 40px;
+            }
+
+            .tech-marquee-item {
+                min-width: 100px;
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .tech-section-title {
+                font-size: 1.8rem;
+            }
+
+            .tech-section-description {
+                font-size: 1rem;
+            }
+
+            .tech-stats {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .stat-item {
+                text-align: center;
+            }
+
+            .tech-item {
+                padding: 15px;
+            }
+
+            .tech-metrics {
+                padding: 30px 20px;
+            }
+
+            .metric-number {
+                font-size: 2.5rem;
+            }
+
+            .innovation-stat-card {
+                padding: 20px 15px;
+            }
+
+            .highlight-item {
+                padding: 15px;
+            }
+
+            .research-tags {
+                justify-content: center;
+            }
+
+            .tech-hero-image img {
+                height: 200px;
+            }
+
+            .tech-marquee {
+                gap: 30px;
+                animation-duration: 25s;
+            }
+
+            .tech-marquee-item {
+                min-width: 80px;
+                padding: 12px;
+            }
+
+            .tech-logo {
+                width: 30px;
+                height: 30px;
+            }
+
+            .overlay-content h5 {
+                font-size: 1.2rem;
+            }
+
+            .overlay-content p {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .tech-section {
+                padding: 40px 0;
+            }
+
+            .tech-section-title {
+                font-size: 1.6rem;
+            }
+
+            .tech-grid {
+                gap: 15px;
+            }
+
+            .tech-item {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+
+            .tech-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+
+            .innovation-stats-grid {
+                gap: 15px;
+            }
+
+            .highlight-item {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+
+            .tech-hero-image img {
+                height: 180px;
+            }
+
+            .tech-marquee {
+                gap: 20px;
+                animation-duration: 20s;
+            }
+
+            .tech-marquee-item {
+                min-width: 70px;
+                padding: 10px;
+            }
+
+            .tech-marquee-item span {
+                font-size: 0.8rem;
+            }
+
+            .tech-logo {
+                width: 25px;
+                height: 25px;
+            }
+
+            .overlay-content h5 {
+                font-size: 1rem;
+            }
+
+            .overlay-content p {
+                font-size: 0.8rem;
+            }
+        }
+        /* Animation Classes */
+        .gsap-fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .gsap-fade-left {
+            opacity: 0;
+            transform: translateX(-30px);
+        }
+
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal-on-scroll.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <div id="navigation-component"></div>
+
+    <!-- Right Panel -->
+    <div id="right-panel-component"></div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="innovation-hero">
+            <div class="floating-shapes">
+                <div class="shape"></div>
+                <div class="shape"></div>
+                <div class="shape"></div>
+                <div class="shape"></div>
+                <div class="shape"></div>
+            </div>
+
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-12 mb-4" data-breadcrumb data-separator="arrow" style="margin-top: 2.5rem;">
+                        <!-- Breadcrumb will be dynamically generated here -->
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="innovation-hero-content" style="margin-top: 2.5rem;">
+                            <div class="hero-badge gsap-fade-up">
+                                <i class="bi bi-lightbulb me-2"></i>
+                                Innovation Technology 
+                            </div>
+                            <h1 class="hero-title gsap-fade-up" data-delay="100">
+                                Innovation 
+                                <span class="gradient-text">Technologies</span>
+                            </h1>
+                            <p class="hero-description gsap-fade-up" data-delay="200">
+                                Explore our cutting-edge innovation technology stack that powers breakthrough solutions, from advanced AI frameworks to quantum computing research.
+                            </p>
+                            <div class="hero-buttons gsap-fade-up" data-delay="300">
+                                <a href="../contact.html" class="btn btn-hero-primary">
+                                    Explore Innovation Stack
+                                    <i class="bi bi-arrow-right ms-2"></i>
+                                </a>
+                                <a href="core.html" class="btn btn-hero-secondary">
+                                    Core Technologies
+                                    <i class="bi bi-arrow-right ms-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="text-center gsap-fade-left" data-delay="400">
+                            <div class="innovation-tech-icon mx-auto" style="width: 200px; height: 200px; font-size: 4rem;">
+                                <i class="bi bi-lightbulb text-warning"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Technology Marquee Section -->
+        <section class="tech-marquee-section" style="padding: 60px 0; background: var(--card-bg); border-top: 1px solid var(--card-border); border-bottom: 1px solid var(--card-border);">
+            <div class="container-fluid">
+                <div class="text-center mb-4">
+                    <h3 class="fw-bold mb-3">
+                        Powered by <span class="text-gradient">Innovation Technologies</span>
+                    </h3>
+                </div>
+                
+                <!-- Innovation Technology Marquee -->
+                <div class="tech-marquee-container">
+                    <div class="tech-marquee">
+                        <div class="tech-marquee-item">
+                            <img src="../assets/images/logo.png" alt="Quantum Computing" class="tech-logo">
+                            <span>Quantum Computing</span>
+                        </div>
+                        <div class="tech-marquee-item">
+                            <img src="../assets/images/logo.png" alt="Advanced AI" class="tech-logo">
+                            <span>Advanced AI</span>
+                        </div>
+                        <div class="tech-marquee-item">
+                            <img src="../assets/images/logo.png" alt="Neural Networks" class="tech-logo">
+                            <span>Neural Networks</span>
+                        </div>
+                        <div class="tech-marquee-item">
+                            <img src="../assets/images/logo.png" alt="Edge Computing" class="tech-logo">
+                            <span>Edge Computing</span>
+                        </div>
+                        <div class="tech-marquee-item">
+                            <img src="../assets/images/logo.png" alt="Blockchain" class="tech-logo">
+                            <span>Blockchain</span>
+                        </div>
+                        <div class="tech-marquee-item">
+                            <img src="../assets/images/logo.png" alt="Zero Trust" class="tech-logo">
+                            <span>Zero Trust</span>
+                        </div>
+                        <div class="tech-marquee-item">
+                            <img src="../assets/images/logo.png" alt="Biometrics" class="tech-logo">
+                            <span>Biometrics</span>
+                        </div>
+                        <div class="tech-marquee-item">
+                            <img src="../assets/images/logo.png" alt="IoT Security" class="tech-logo">
+                            <span>IoT Security</span>
+                        </div>
+                        <div class="tech-marquee-item">
+                            <img src="../assets/images/logo.png" alt="Federated Learning" class="tech-logo">
+                            <span>Federated Learning</span>
+                        </div>
+                        <div class="tech-marquee-item">
+                            <img src="../assets/images/logo.png" alt="Explainable AI" class="tech-logo">
+                            <span>Explainable AI</span>
+                        </div>
+                        <div class="tech-marquee-item">
+                            <img src="../assets/images/logo.png" alt="Autonomous Systems" class="tech-logo">
+                            <span>Autonomous Systems</span>
+                        </div>
+                        <div class="tech-marquee-item">
+                            <img src="../assets/images/logo.png" alt="Threat Intelligence" class="tech-logo">
+                            <span>Threat Intelligence</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Innovation Technologies Section -->
+        <section class="innovation-technologies-section" style="padding-top: 4rem;">
+            <div class="container">
+                <div class="text-left mb-5">
+                    <h2 class="display-4 fw-bold mb-3">
+                        Our <span class="text-gradient">Innovation Technology Ecosystem</span>
+                    </h2>
+                    <p class="lead reveal-on-scroll" style=" margin: 0 auto; font-size: 1.2rem; line-height: 1.8;">
+                        Discover our comprehensive innovation technology stack that powers next-generation breakthrough solutions. 
+                        From quantum computing research to advanced AI frameworks, we leverage the most cutting-edge tools 
+                        and emerging technologies to deliver revolutionary digital experiences that transform industries 
+                        and shape the future of technology.
+                    </p>
+                </div>
+
+                <!-- Technology Timeline -->
+                <div class="tech-timeline">
+                    <!-- Advanced AI & Machine Learning -->
+                    <div class="tech-section reveal-on-scroll">
+                        <div class="row align-items-center g-5">
+                            <div class="col-lg-6">
+                                <div class="tech-content">
+                                    <div class="tech-badge">
+                                        <i class="bi bi-robot"></i>
+                                        <span>AI Innovation Layer</span>
+                                    </div>
+                                    <h3 class="tech-section-title">Advanced AI & Machine Learning</h3>
+                                    <p class="tech-section-description" style="font-size: 1.15rem; line-height: 1.8; margin-bottom: 25px;">
+                                        At the forefront of artificial intelligence innovation, our advanced AI ecosystem encompasses 
+                                        next-generation machine learning frameworks, neural architecture search, and breakthrough 
+                                        research in explainable AI, federated learning, and autonomous intelligent systems that 
+                                        push the boundaries of what's possible.
+                                    </p>
+                                    <p class="tech-section-description" style="font-size: 1.05rem; line-height: 1.7; color: var(--text-muted); margin-bottom: 30px;">
+                                        From transformer architectures and large language models to computer vision breakthroughs 
+                                        and reinforcement learning systems, our AI innovation lab develops cutting-edge solutions 
+                                        that redefine industry standards and create new possibilities for intelligent automation.
+                                    </p>
+                                    <div class="tech-stats">
+                                        <div class="stat-item">
+                                            <span class="stat-number">50+</span>
+                                            <span class="stat-label">AI Models</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-number">95%</span>
+                                            <span class="stat-label">Accuracy Rate</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="tech-visual-container">
+                                    <div class="tech-hero-image">
+                                        <img src="../assets/images/cyber1.jpg" alt="Advanced AI & Machine Learning" class="img-fluid rounded-4 shadow-lg">
+                                        <div class="tech-overlay">
+                                            <div class="overlay-content">
+                                                <h5>Next-Gen AI Systems</h5>
+                                                <p>Breakthrough artificial intelligence research</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tech-grid mt-4">
+                                        <div class="tech-item">
+                                            <div class="tech-icon tensorflow">
+                                                <i class="bi bi-cpu-fill"></i>
+                                            </div>
+                                            <div class="tech-info">
+                                                <h5>TensorFlow/PyTorch</h5>
+                                                <span>Advanced Deep Learning</span>
+                                            </div>
+                                        </div>
+                                        <div class="tech-item">
+                                            <div class="tech-icon ai">
+                                                <i class="bi bi-brain"></i>
+                                            </div>
+                                            <div class="tech-info">
+                                                <h5>Transformers/LLMs</h5>
+                                                <span>Large Language Models</span>
+                                            </div>
+                                        </div>
+                                        <div class="tech-item">
+                                            <div class="tech-icon pytorch">
+                                                <i class="bi bi-lightning-fill"></i>
+                                            </div>
+                                            <div class="tech-info">
+                                                <h5>Computer Vision</h5>
+                                                <span>Advanced Image Processing</span>
+                                            </div>
+                                        </div>
+                                        <div class="tech-item">
+                                            <div class="tech-icon jupyter">
+                                                <i class="bi bi-graph-up-arrow"></i>
+                                            </div>
+                                            <div class="tech-info">
+                                                <h5>AutoML/NAS</h5>
+                                                <span>Neural Architecture Search</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Quantum Computing & Security -->
+                    <div class="tech-section reveal-on-scroll">
+                        <div class="row align-items-center g-5">
+                            <div class="col-lg-6 order-lg-2">
+                                <div class="tech-content">
+                                    <div class="tech-badge">
+                                        <i class="bi bi-cpu"></i>
+                                        <span>Quantum Innovation Layer</span>
+                                    </div>
+                                    <h3 class="tech-section-title">Quantum Computing & Security</h3>
+                                    <p class="tech-section-description" style="font-size: 1.15rem; line-height: 1.8; margin-bottom: 25px;">
+                                        Pioneering the quantum revolution with cutting-edge quantum computing research, 
+                                        post-quantum cryptography development, and quantum-resistant security protocols. 
+                                        Our quantum innovation lab explores quantum algorithms, quantum machine learning, 
+                                        and quantum key distribution systems for the post-quantum era.
+                                    </p>
+                                    <p class="tech-section-description" style="font-size: 1.05rem; line-height: 1.7; color: var(--text-muted); margin-bottom: 30px;">
+                                        From quantum supremacy algorithms to hybrid quantum-classical systems, we develop 
+                                        quantum solutions that will revolutionize computing, cryptography, and optimization 
+                                        across industries while ensuring security in the quantum age.
+                                    </p>
+                                    <div class="tech-stats">
+                                        <div class="stat-item">
+                                            <span class="stat-number">10+</span>
+                                            <span class="stat-label">Quantum Algorithms</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-number">100%</span>
+                                            <span class="stat-label">Quantum-Safe</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 order-lg-1">
+                                <div class="tech-visual-container">
+                                    <div class="tech-hero-image">
+                                        <img src="../assets/images/cyber2.jpg" alt="Quantum Computing" class="img-fluid rounded-4 shadow-lg">
+                                        <div class="tech-overlay">
+                                            <div class="overlay-content">
+                                                <h5>Quantum Innovation</h5>
+                                                <p>Next-generation quantum systems</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tech-grid mt-4">
+                                        <div class="tech-item">
+                                            <div class="tech-icon quantum">
+                                                <i class="bi bi-cpu"></i>
+                                            </div>
+                                            <div class="tech-info">
+                                                <h5>Quantum Algorithms</h5>
+                                                <span>Quantum Computing Research</span>
+                                            </div>
+                                        </div>
+                                        <div class="tech-item">
+                                            <div class="tech-icon security">
+                                                <i class="bi bi-shield-lock"></i>
+                                            </div>
+                                            <div class="tech-info">
+                                                <h5>Post-Quantum Crypto</h5>
+                                                <span>Quantum-Resistant Security</span>
+                                            </div>
+                                        </div>
+                                        <div class="tech-item">
+                                            <div class="tech-icon biometric">
+                                                <i class="bi bi-key"></i>
+                                            </div>
+                                            <div class="tech-info">
+                                                <h5>Quantum Key Distribution</h5>
+                                                <span>Secure Quantum Communication</span>
+                                            </div>
+                                        </div>
+                                        <div class="tech-item">
+                                            <div class="tech-icon ai">
+                                                <i class="bi bi-diagram-3"></i>
+                                            </div>
+                                            <div class="tech-info">
+                                                <h5>Quantum ML</h5>
+                                                <span>Quantum Machine Learning</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Zero Trust & Advanced Security -->
+                    <div class="tech-section reveal-on-scroll">
+                        <div class="row align-items-center g-5">
+                            <div class="col-lg-6">
+                                <div class="tech-content">
+                                    <div class="tech-badge">
+                                        <i class="bi bi-shield-check"></i>
+                                        <span>Security Innovation Layer</span>
+                                    </div>
+                                    <h3 class="tech-section-title">Zero Trust & Advanced Security</h3>
+                                    <p class="tech-section-description" style="font-size: 1.15rem; line-height: 1.8; margin-bottom: 25px;">
+                                        Revolutionary security architecture built on zero trust principles, autonomous threat 
+                                        detection, and AI-powered security orchestration. Our advanced security innovation 
+                                        encompasses behavioral analytics, continuous authentication, and self-healing security 
+                                        systems that adapt and evolve with emerging threats.
+                                    </p>
+                                    <p class="tech-section-description" style="font-size: 1.05rem; line-height: 1.7; color: var(--text-muted); margin-bottom: 30px;">
+                                        From micro-segmentation and identity-centric security to predictive threat intelligence 
+                                        and automated incident response, we create security solutions that provide comprehensive 
+                                        protection while enabling seamless user experiences and business operations.
+                                    </p>
+                                    <div class="tech-stats">
+                                        <div class="stat-item">
+                                            <span class="stat-number">99.9%</span>
+                                            <span class="stat-label">Threat Detection</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-number">24/7</span>
+                                            <span class="stat-label">AI Monitoring</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="tech-visual-container">
+                                    <div class="tech-hero-image">
+                                        <img src="../assets/images/cyber3.jpg" alt="Zero Trust Security" class="img-fluid rounded-4 shadow-lg">
+                                        <div class="tech-overlay">
+                                            <div class="overlay-content">
+                                                <h5>Zero Trust Architecture</h5>
+                                                <p>Advanced security innovation</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tech-grid mt-4">
+                                        <div class="tech-item">
+                                            <div class="tech-icon security">
+                                                <i class="bi bi-shield-lock"></i>
+                                            </div>
+                                            <div class="tech-info">
+                                                <h5>Zero Trust Framework</h5>
+                                                <span>Never Trust, Always Verify</span>
+                                            </div>
+                                        </div>
+                                        <div class="tech-item">
+                                            <div class="tech-icon ai">
+                                                <i class="bi bi-eye"></i>
+                                            </div>
+                                            <div class="tech-info">
+                                                <h5>Behavioral Analytics</h5>
+                                                <span>AI-Powered User Analysis</span>
+                                            </div>
+                                        </div>
+                                        <div class="tech-item">
+                                            <div class="tech-icon edge">
+                                                <i class="bi bi-robot"></i>
+                                            </div>
+                                            <div class="tech-info">
+                                                <h5>Autonomous Response</h5>
+                                                <span>Self-Healing Security</span>
+                                            </div>
+                                        </div>
+                                        <div class="tech-item">
+                                            <div class="tech-icon blockchain">
+                                                <i class="bi bi-diagram-2"></i>
+                                            </div>
+                                            <div class="tech-info">
+                                                <h5>Micro-Segmentation</h5>
+                                                <span>Granular Network Control</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Edge Computing & IoT Innovation -->
+                    <div class="tech-section reveal-on-scroll">
+                        <div class="row align-items-center g-5">
+                            <div class="col-lg-6 order-lg-2">
+                                <div class="tech-content">
+                                    <div class="tech-badge">
+                                        <i class="bi bi-globe"></i>
+                                        <span>Edge Innovation Layer</span>
+                                    </div>
+                                    <h3 class="tech-section-title">Edge Computing & IoT Innovation</h3>
+                                    <p class="tech-section-description" style="font-size: 1.15rem; line-height: 1.8; margin-bottom: 25px;">
+                                        Revolutionary edge computing architecture that brings intelligence to the network edge, 
+                                        enabling real-time processing, ultra-low latency applications, and distributed AI 
+                                        deployment. Our edge innovation encompasses intelligent IoT ecosystems, edge AI 
+                                        optimization, and autonomous edge orchestration systems.
+                                    </p>
+                                    <p class="tech-section-description" style="font-size: 1.05rem; line-height: 1.7; color: var(--text-muted); margin-bottom: 30px;">
+                                        From 5G-enabled edge computing to federated learning at the edge, we develop solutions 
+                                        that process data where it's generated, reducing latency, improving privacy, and 
+                                        enabling new classes of real-time intelligent applications across industries.
+                                    </p>
+                                    <div class="tech-stats">
+                                        <div class="stat-item">
+                                            <span class="stat-number">&lt;1ms</span>
+                                            <span class="stat-label">Edge Latency</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-number">1M+</span>
+                                            <span class="stat-label">IoT Devices</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 order-lg-1">
+                                <div class="tech-visual-container">
+                                    <div class="tech-hero-image">
+                                        <img src="../assets/images/cyber.jpg" alt="Edge Computing" class="img-fluid rounded-4 shadow-lg">
+                                        <div class="tech-overlay">
+                                            <div class="overlay-content">
+                                                <h5>Edge Intelligence</h5>
+                                                <p>Distributed computing innovation</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tech-grid mt-4">
+                                        <div class="tech-item">
+                                            <div class="tech-icon kubernetes">
+                                                <i class="bi bi-globe"></i>
+                                            </div>
+                                            <div class="tech-info">
+                                                <h5>Edge Orchestration</h5>
+                                                <span>Distributed Edge Management</span>
+                                            </div>
+                                        </div>
+                                        <div class="tech-item">
+                                            <div class="tech-icon ai">
+                                                <i class="bi bi-cpu"></i>
+                                            </div>
+                                            <div class="tech-info">
+                                                <h5>Edge AI</h5>
+                                                <span>Intelligence at the Edge</span>
+                                            </div>
+                                        </div>
+                                        <div class="tech-item">
+                                            <div class="tech-icon mobile">
+                                                <i class="bi bi-router"></i>
+                                            </div>
+                                            <div class="tech-info">
+                                                <h5>5G Integration</h5>
+                                                <span>Ultra-Low Latency Networks</span>
+                                            </div>
+                                        </div>
+                                        <div class="tech-item">
+                                            <div class="tech-icon security">
+                                                <i class="bi bi-shield-check"></i>
+                                            </div>
+                                            <div class="tech-info">
+                                                <h5>IoT Security</h5>
+                                                <span>Secure Device Management</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Blockchain & Web3 Innovation -->
+                    <div class="tech-section reveal-on-scroll">
+                        <div class="row align-items-center g-5">
+                            <div class="col-lg-6">
+                                <div class="tech-content">
+                                    <div class="tech-badge">
+                                        <i class="bi bi-link"></i>
+                                        <span>Blockchain Innovation Layer</span>
+                                    </div>
+                                    <h3 class="tech-section-title">Blockchain & Web3 Innovation</h3>
+                                    <p class="tech-section-description" style="font-size: 1.15rem; line-height: 1.8; margin-bottom: 25px;">
+                                        Next-generation blockchain architecture and Web3 innovation that redefines digital 
+                                        ownership, decentralized governance, and trustless systems. Our blockchain innovation 
+                                        lab develops advanced consensus mechanisms, smart contract security frameworks, 
+                                        and interoperable blockchain solutions for the decentralized future.
+                                    </p>
+                                    <p class="tech-section-description" style="font-size: 1.05rem; line-height: 1.7; color: var(--text-muted); margin-bottom: 30px;">
+                                        From layer-2 scaling solutions to cross-chain interoperability protocols, we create 
+                                        blockchain infrastructure that enables secure, scalable, and sustainable decentralized 
+                                        applications while maintaining the core principles of decentralization and security.
+                                    </p>
+                                    <div class="tech-stats">
+                                        <div class="stat-item">
+                                            <span class="stat-number">1000+</span>
+                                            <span class="stat-label">TPS Throughput</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-number">99.99%</span>
+                                            <span class="stat-label">Uptime</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="tech-visual-container">
+                                    <div class="tech-hero-image">
+                                        <img src="../assets/images/cyber1.jpg" alt="Blockchain Innovation" class="img-fluid rounded-4 shadow-lg">
+                                        <div class="tech-overlay">
+                                            <div class="overlay-content">
+                                                <h5>Web3 Innovation</h5>
+                                                <p>Decentralized future technology</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tech-grid mt-4">
+                                        <div class="tech-item">
+                                            <div class="tech-icon blockchain">
+                                                <i class="bi bi-link"></i>
+                                            </div>
+                                            <div class="tech-info">
+                                                <h5>Smart Contracts</h5>
+                                                <span>Automated Trustless Systems</span>
+                                            </div>
+                                        </div>
+                                        <div class="tech-item">
+                                            <div class="tech-icon edge">
+                                                <i class="bi bi-layers"></i>
+                                            </div>
+                                            <div class="tech-info">
+                                                <h5>Layer-2 Solutions</h5>
+                                                <span>Scalable Blockchain Networks</span>
+                                            </div>
+                                        </div>
+                                        <div class="tech-item">
+                                            <div class="tech-icon quantum">
+                                                <i class="bi bi-arrow-left-right"></i>
+                                            </div>
+                                            <div class="tech-info">
+                                                <h5>Cross-Chain Bridges</h5>
+                                                <span>Interoperable Protocols</span>
+                                            </div>
+                                        </div>
+                                        <div class="tech-item">
+                                            <div class="tech-icon security">
+                                                <i class="bi bi-shield-lock"></i>
+                                            </div>
+                                            <div class="tech-info">
+                                                <h5>DeFi Security</h5>
+                                                <span>Secure Financial Protocols</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Biometric & Identity Innovation -->
+                    <div class="tech-section reveal-on-scroll">
+                        <div class="row align-items-center g-5">
+                            <div class="col-lg-6 order-lg-2">
+                                <div class="tech-content">
+                                    <div class="tech-badge">
+                                        <i class="bi bi-eye"></i>
+                                        <span>Identity Innovation Layer</span>
+                                    </div>
+                                    <h3 class="tech-section-title">Biometric & Identity Innovation</h3>
+                                    <p class="tech-section-description" style="font-size: 1.15rem; line-height: 1.8; margin-bottom: 25px;">
+                                        Revolutionary biometric authentication and digital identity systems that combine 
+                                        advanced AI with privacy-preserving technologies. Our identity innovation lab develops 
+                                        multi-modal biometric fusion, behavioral biometrics, and decentralized identity 
+                                        solutions that provide seamless yet secure authentication experiences.
+                                    </p>
+                                    <p class="tech-section-description" style="font-size: 1.05rem; line-height: 1.7; color: var(--text-muted); margin-bottom: 30px;">
+                                        From liveness detection and anti-spoofing technologies to privacy-preserving identity 
+                                        verification and self-sovereign identity systems, we create authentication solutions 
+                                        that balance security, privacy, and user experience in the digital age.
+                                    </p>
+                                    <div class="tech-stats">
+                                        <div class="stat-item">
+                                            <span class="stat-number">99.9%</span>
+                                            <span class="stat-label">Accuracy Rate</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-number">&lt;100ms</span>
+                                            <span class="stat-label">Auth Speed</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 order-lg-1">
+                                <div class="tech-visual-container">
+                                    <div class="tech-hero-image">
+                                        <img src="../assets/images/cyber2.jpg" alt="Biometric Innovation" class="img-fluid rounded-4 shadow-lg">
+                                        <div class="tech-overlay">
+                                            <div class="overlay-content">
+                                                <h5>Identity Innovation</h5>
+                                                <p>Next-gen authentication systems</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tech-grid mt-4">
+                                        <div class="tech-item">
+                                            <div class="tech-icon biometric">
+                                                <i class="bi bi-eye"></i>
+                                            </div>
+                                            <div class="tech-info">
+                                                <h5>Multi-Modal Biometrics</h5>
+                                                <span>Advanced Identity Fusion</span>
+                                            </div>
+                                        </div>
+                                        <div class="tech-item">
+                                            <div class="tech-icon ai">
+                                                <i class="bi bi-person-check"></i>
+                                            </div>
+                                            <div class="tech-info">
+                                                <h5>Behavioral Analytics</h5>
+                                                <span>Continuous Authentication</span>
+                                            </div>
+                                        </div>
+                                        <div class="tech-item">
+                                            <div class="tech-icon security">
+                                                <i class="bi bi-shield-check"></i>
+                                            </div>
+                                            <div class="tech-info">
+                                                <h5>Liveness Detection</h5>
+                                                <span>Anti-Spoofing Technology</span>
+                                            </div>
+                                        </div>
+                                        <div class="tech-item">
+                                            <div class="tech-icon blockchain">
+                                                <i class="bi bi-key"></i>
+                                            </div>
+                                            <div class="tech-info">
+                                                <h5>Self-Sovereign ID</h5>
+                                                <span>Decentralized Identity</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Technology Metrics -->
+                <div class="tech-metrics reveal-on-scroll mt-5">
+                    <div class="row g-4">
+                        <div class="col-md-3 col-6">
+                            <div class="metric-item">
+                                <div class="metric-number counter" data-target="100">0</div>
+                                <div class="metric-label">Innovation Technologies</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <div class="metric-item">
+                                <div class="metric-number counter" data-target="50">0</div>
+                                <div class="metric-label">Research Projects</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <div class="metric-item">
+                                <div class="metric-number counter" data-target="25">0</div>
+                                <div class="metric-label">Patents Filed</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <div class="metric-item">
+                                <div class="metric-number counter" data-target="15">0</div>
+                                <div class="metric-label">Global Partnerships</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Technology Categories Summary -->
+                    <div class="tech-categories-summary mt-5">
+                        <div class="row g-4">
+                            <div class="col-lg-3 col-md-6">
+                                <div class="category-summary">
+                                    <div class="category-icon">
+                                        <i class="bi bi-robot"></i>
+                                    </div>
+                                    <h5>Advanced AI</h5>
+                                    <p>Next-generation artificial intelligence and machine learning breakthroughs</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <div class="category-summary">
+                                    <div class="category-icon">
+                                        <i class="bi bi-cpu"></i>
+                                    </div>
+                                    <h5>Quantum Computing</h5>
+                                    <p>Quantum algorithms and post-quantum security research</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <div class="category-summary">
+                                    <div class="category-icon">
+                                        <i class="bi bi-shield-check"></i>
+                                    </div>
+                                    <h5>Zero Trust Security</h5>
+                                    <p>Advanced security architecture and autonomous threat detection</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <div class="category-summary">
+                                    <div class="category-icon">
+                                        <i class="bi bi-globe"></i>
+                                    </div>
+                                    <h5>Edge Innovation</h5>
+                                    <p>Distributed computing and intelligent IoT ecosystems</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Innovation Lab Section -->
+        <section class="py-5" style="background: var(--bg-gradient); border-top: 1px solid var(--card-border);">
+            <div class="container">
+                <div class="text-left mb-5">
+                    <h2 class="section-title reveal-on-scroll">
+                        Innovation <span class="text-gradient">Laboratory</span>
+                    </h2>
+                    <p class="lead reveal-on-scroll" style="color: var(--text-secondary);  margin: 0 auto;">
+                        Pioneering tomorrow's technologies through cutting-edge research and development initiatives
+                    </p>
+                </div>
+                
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6 reveal-on-scroll">
+                        <div class="innovation-content">
+                            <div class="tech-badge mb-4">
+                                <i class="bi bi-lightbulb"></i>
+                                <span>Research & Development</span>
+                            </div>
+                            <h3 class="fw-bold mb-4" style="font-size: 2rem;">Shaping the Future of Technology</h3>
+                            <p class="mb-4" style="font-size: 1.1rem; line-height: 1.7; color: var(--text-secondary);">
+                                Our Innovation Lab serves as the epicenter of technological advancement, where our research teams 
+                                explore emerging technologies, develop proof-of-concepts, and create breakthrough solutions that 
+                                define the next generation of digital experiences and transform entire industries.
+                            </p>
+                            
+                            <div class="innovation-highlights">
+                                <div class="highlight-item">
+                                    <div class="highlight-icon">
+                                        <i class="bi bi-cpu"></i>
+                                    </div>
+                                    <div class="highlight-content">
+                                        <h5>Quantum Computing Research</h5>
+                                        <p>Developing quantum algorithms and post-quantum security protocols</p>
+                                    </div>
+                                </div>
+                                <div class="highlight-item">
+                                    <div class="highlight-icon">
+                                        <i class="bi bi-robot"></i>
+                                    </div>
+                                    <div class="highlight-content">
+                                        <h5>Advanced AI Systems</h5>
+                                        <p>Creating next-generation artificial intelligence and neural networks</p>
+                                    </div>
+                                </div>
+                                <div class="highlight-item">
+                                    <div class="highlight-icon">
+                                        <i class="bi bi-shield-lock"></i>
+                                    </div>
+                                    <div class="highlight-content">
+                                        <h5>Zero Trust Architecture</h5>
+                                        <p>Pioneering autonomous security and behavioral analytics systems</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6 reveal-on-scroll">
+                        <div class="innovation-stats-grid">
+                            <div class="innovation-stat-card">
+                                <div class="stat-icon">
+                                    <i class="bi bi-lightbulb-fill"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-number counter" data-target="50">0</div>
+                                    <div class="stat-label">Active Research Projects</div>
+                                </div>
+                            </div>
+                            
+                            <div class="innovation-stat-card">
+                                <div class="stat-icon">
+                                    <i class="bi bi-award"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-number counter" data-target="25">0</div>
+                                    <div class="stat-label">Patents Filed</div>
+                                </div>
+                            </div>
+                            
+                            <div class="innovation-stat-card">
+                                <div class="stat-icon">
+                                    <i class="bi bi-people"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-number counter" data-target="30">0</div>
+                                    <div class="stat-label">Research Scientists</div>
+                                </div>
+                            </div>
+                            
+                            <div class="innovation-stat-card">
+                                <div class="stat-icon">
+                                    <i class="bi bi-globe"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-number counter" data-target="15">0</div>
+                                    <div class="stat-label">Global Partnerships</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Research Areas -->
+                        <div class="research-areas mt-4">
+                            <h5 class="fw-bold mb-3">Current Research Focus</h5>
+                            <div class="research-tags">
+                                <span class="research-tag">Quantum Security</span>
+                                <span class="research-tag">Advanced AI</span>
+                                <span class="research-tag">Edge Computing</span>
+                                <span class="research-tag">Blockchain Innovation</span>
+                                <span class="research-tag">Neural Networks</span>
+                                <span class="research-tag">Zero Trust</span>
+                                <span class="research-tag">Biometric Auth</span>
+                                <span class="research-tag">Autonomous Systems</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+      
+    </main>
+    <!-- Theme Toggle Button -->
+    <button id="theme-toggle" class="btn btn-dark position-fixed bottom-0 start-0 m-4 rounded-circle p-3 shadow-lg" style="z-index: 1050;">
+        <i id="sun-icon" class="bi bi-sun-fill d-none"></i>
+        <i id="moon-icon" class="bi bi-moon-fill"></i>
+    </button>
+
+    <!-- Footer -->
+    <div id="footer-component"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Theme Toggle Script -->
+    <script src="../scripts/theme-toggle.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize GSAP
+            if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+                gsap.registerPlugin(ScrollTrigger);
+
+                // Animate elements with gsap classes
+                const gsapElements = document.querySelectorAll('.gsap-fade-up, .gsap-fade-left');
+                gsapElements.forEach(element => {
+                    const delay = element.getAttribute('data-delay') || 0;
+                    
+                    if (element.classList.contains('gsap-fade-up')) {
+                        gsap.to(element, {
+                            opacity: 1,
+                            y: 0,
+                            duration: 0.8,
+                            delay: delay / 1000,
+                            ease: 'power3.out'
+                        });
+                    } else if (element.classList.contains('gsap-fade-left')) {
+                        gsap.to(element, {
+                            opacity: 1,
+                            x: 0,
+                            duration: 0.8,
+                            delay: delay / 1000,
+                            ease: 'power3.out'
+                        });
+                    }
+                });
+
+                // Scroll-triggered reveal animations
+                const revealElements = document.querySelectorAll('.reveal-on-scroll');
+                revealElements.forEach((element, index) => {
+                    const delay = element.getAttribute('data-delay') || index * 100;
+                    ScrollTrigger.create({
+                        trigger: element,
+                        start: 'top 85%',
+                        onEnter: () => {
+                            setTimeout(() => {
+                                element.classList.add('revealed');
+                            }, delay);
+                        }
+                    });
+                });
+
+                // Counter animation
+                const counters = document.querySelectorAll('.counter');
+                counters.forEach(counter => {
+                    const target = parseInt(counter.getAttribute('data-target'));
+                    const duration = 2000;
+                    const increment = target / (duration / 16);
+                    let current = 0;
+
+                    const updateCounter = () => {
+                        current += increment;
+                        if (current < target) {
+                            counter.textContent = Math.floor(current);
+                            requestAnimationFrame(updateCounter);
+                        } else {
+                            counter.textContent = target;
+                        }
+                    };
+
+                    ScrollTrigger.create({
+                        trigger: counter,
+                        start: 'top 90%',
+                        onEnter: () => updateCounter()
+                    });
+                });
+            }
+        });
+    </script>
+
+    <script type="module">
+        async function loadComponent(id, path) {
+            try {
+                const res = await fetch(path);
+                if (!res.ok) throw new Error(`${path} (${res.status})`);
+                const html = await res.text();
+                const el = document.getElementById(id);
+                if (el) el.innerHTML = html;
+                else console.warn(`Missing container #${id}`);
+            } catch (err) {
+                console.error(`Component load failed: ${path}`, err);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            const components = [
+                ['navigation-component', '../components/navigation/navigation.html'],
+                ['footer-component', '../components/footer/footer.html'],
+                ['right-panel-component', '../components/right-panel/right-panel.html']
+            ];
+
+            await Promise.all(components.map(([id, path]) => loadComponent(id, path)));
+            
+            if (window.fixNavigationPaths) {
+                setTimeout(() => {
+                    window.fixNavigationPaths();
+                }, 100);
+            }
+            
+            document.dispatchEvent(new CustomEvent('navigationLoaded'));
+            console.log('✅ Innovation Technologies page initialized successfully');
+        });
+    </script>
+</body>
+</html>

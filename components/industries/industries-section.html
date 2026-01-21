@@ -1,0 +1,466 @@
+<!-- Professional Industries Section with Scroll-based Card Animation -->
+<section id="industries-section" class="industries-main-section">
+    <div class="container">
+        <!-- Section Header -->
+        <div class="industries-header text-center mb-5">
+            <h2 class="industries-title">
+                Industries We 
+                <span class="text-gradient">Serve</span>
+            </h2>
+            <p class="industries-subtitle">
+                JetHat supports diverse sectors with tailored solutions addressing unique challenges across multiple industries.
+            </p>
+        </div>
+
+        <!-- Industries Animation Container -->
+        <div class="industries-animation-wrapper" id="industriesAnimationWrapper">
+            <!-- Progress Indicator -->
+            <div class="industries-progress-indicator">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="industriesProgressFill"></div>
+                </div>
+                <span class="progress-text">
+                    <span id="currentIndustryIndex">1</span> / <span id="totalIndustries">8</span>
+                </span>
+            </div>
+
+            <!-- Cards Display Area -->
+            <div class="industries-cards-display" id="industriesCardsDisplay">
+                
+                <!-- Industry Card 1: Education & E-Learning -->
+                <div class="industry-card" data-industry="0">
+                    <div class="card-content">
+                        <div class="card-image-section">
+                            <div class="image-container">
+                                <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=600&q=80" 
+                                     alt="Education & E-Learning" class="card-image">
+                                <div class="image-overlay"></div>
+                                <div class="industry-badge">
+                                    <i class="bi bi-mortarboard"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-info-section">
+                            <div class="industry-icon">
+                                <i class="bi bi-mortarboard"></i>
+                            </div>
+                            <h3 class="industry-name">Education & E-Learning</h3>
+                            <p class="industry-description">
+                                Virtual classrooms and multilingual content for remote and rural education providers, 
+                                optimized for low connectivity environments.
+                            </p>
+                            <div class="industry-features">
+                                <div class="feature-item">
+                                    <i class="bi bi-check-circle-fill"></i>
+                                    <span>Virtual Classrooms</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="bi bi-check-circle-fill"></i>
+                                    <span>Multilingual Content</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="bi bi-check-circle-fill"></i>
+                                    <span>Low Connectivity Support</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="bi bi-check-circle-fill"></i>
+                                    <span>Interactive Learning</span>
+                                </div>
+                            </div>
+                            <button class="industry-cta-button">
+                                <span>Learn More</span>
+                                <i class="bi bi-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Industry Card 2: Healthcare & Telemedicine -->
+                <div class="industry-card" data-industry="1">
+                    <div class="card-content">
+                        <div class="card-info-section">
+                            <div class="industry-icon healthcare">
+                                <i class="bi bi-heart-pulse"></i>
+                            </div>
+                            <h3 class="industry-name">Healthcare & Telemedicine</h3>
+                            <p class="industry-description">
+                                Privacy-focused solutions for sensitive medical data with HIPAA compliance and 
+                                secure patient management systems.
+                            </p>
+                            <div class="industry-features">
+                                <div class="feature-item">
+                                    <i class="bi bi-check-circle-fill"></i>
+                                    <span>HIPAA Compliance</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="bi bi-check-circle-fill"></i>
+                                    <span>Patient Data Security</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="bi bi-check-circle-fill"></i>
+                                    <span>Telemedicine Platforms</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="bi bi-check-circle-fill"></i>
+                                    <span>Medical Records Management</span>
+                                </div>
+                            </div>
+                            <button class="industry-cta-button">
+                                <span>Learn More</span>
+                                <i class="bi bi-arrow-right"></i>
+                            </button>
+                        </div>
+                        <div class="card-image-section">
+                            <div class="image-container">
+                                <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80" 
+                                     alt="Healthcare & Telemedicine" class="card-image">
+                                <div class="image-overlay"></div>
+                                <div class="industry-badge healthcare">
+                                    <i class="bi bi-heart-pulse"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Industry Card 3: Banking & Finance -->
+                <div class="industry-card" data-industry="2">
+                    <div class="card-content">
+                        <div class="card-image-section">
+                            <div class="image-container">
+                                <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80" 
+                                     alt="Banking & Finance" class="card-image">
+                                <div class="image-overlay"></div>
+                                <div class="industry-badge finance">
+                                    <i class="bi bi-bank"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-info-section">
+                            <div class="industry-icon finance">
+                                <i class="bi bi-bank"></i>
+                            </div>
+                            <h3 class="industry-name">Banking & Finance</h3>
+                            <p class="industry-description">
+                                Secure financial systems with advanced fraud detection, regulatory compliance, 
+                                and real-time transaction monitoring.
+                            </p>
+                            <div class="industry-features">
+                                <div class="feature-item">
+                                    <i class="bi bi-check-circle-fill"></i>
+                                    <span>Fraud Detection</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="bi bi-check-circle-fill"></i>
+                                    <span>Regulatory Compliance</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="bi bi-check-circle-fill"></i>
+                                    <span>Secure Transactions</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="bi bi-check-circle-fill"></i>
+                                    <span>Risk Management</span>
+                                </div>
+                            </div>
+                            <button class="industry-cta-button">
+                                <span>Learn More</span>
+                                <i class="bi bi-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Industry Card 4: Government & Public Sector -->
+                <div class="industry-card" data-industry="3">
+                    <div class="card-content">
+                        <div class="card-info-section">
+                            <div class="industry-icon government">
+                                <i class="bi bi-building"></i>
+                            </div>
+                            <h3 class="industry-name">Government & Public Sector</h3>
+                            <p class="industry-description">
+                                Secure document digitization, identity management, and compliance solutions 
+                                for public services.
+                            </p>
+                            <div class="industry-features">
+                                <div class="feature-item">
+                                    <i class="bi bi-check-circle-fill"></i>
+                                    <span>Document Digitization</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="bi bi-check-circle-fill"></i>
+                                    <span>Identity Management</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="bi bi-check-circle-fill"></i>
+                                    <span>Compliance Solutions</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="bi bi-check-circle-fill"></i>
+                                    <span>Public Service Portals</span>
+                                </div>
+                            </div>
+                            <button class="industry-cta-button">
+                                <span>Learn More</span>
+                                <i class="bi bi-arrow-right"></i>
+                            </button>
+                        </div>
+                        <div class="card-image-section">
+                            <div class="image-container">
+                                <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=600&q=80" 
+                                     alt="Government & Public Sector" class="card-image">
+                                <div class="image-overlay"></div>
+                                <div class="industry-badge government">
+                                    <i class="bi bi-building"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Industry Card 5: Retail & E-Commerce -->
+                <div class="industry-card" data-industry="4">
+                    <div class="card-content">
+                        <div class="card-image-section">
+                            <div class="image-container">
+                                <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=600&q=80" 
+                                     alt="Retail & E-Commerce" class="card-image">
+                                <div class="image-overlay"></div>
+                                <div class="industry-badge retail">
+                                    <i class="bi bi-bag-check"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-info-section">
+                            <div class="industry-icon retail">
+                                <i class="bi bi-bag-check"></i>
+                            </div>
+                            <h3 class="industry-name">Retail & E-Commerce</h3>
+                            <p class="industry-description">
+                                Scalable e-commerce platforms with AI-powered recommendations, inventory management, 
+                                and secure payment gateways.
+                            </p>
+                            <div class="industry-features">
+                                <div class="feature-item">
+                                    <i class="bi bi-check-circle-fill"></i>
+                                    <span>AI Recommendations</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="bi bi-check-circle-fill"></i>
+                                    <span>Inventory Management</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="bi bi-check-circle-fill"></i>
+                                    <span>Secure Payments</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="bi bi-check-circle-fill"></i>
+                                    <span>Customer Analytics</span>
+                                </div>
+                            </div>
+                            <button class="industry-cta-button">
+                                <span>Learn More</span>
+                                <i class="bi bi-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Industry Card 6: Manufacturing & Industry -->
+                <div class="industry-card" data-industry="5">
+                    <div class="card-content">
+                        <div class="card-info-section">
+                            <div class="industry-icon manufacturing">
+                                <i class="bi bi-gear-fill"></i>
+                            </div>
+                            <h3 class="industry-name">Manufacturing & Industry</h3>
+                            <p class="industry-description">
+                                IoT-enabled smart manufacturing solutions with predictive maintenance and 
+                                supply chain optimization.
+                            </p>
+                            <div class="industry-features">
+                                <div class="feature-item">
+                                    <i class="bi bi-check-circle-fill"></i>
+                                    <span>IoT Integration</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="bi bi-check-circle-fill"></i>
+                                    <span>Predictive Maintenance</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="bi bi-check-circle-fill"></i>
+                                    <span>Supply Chain Optimization</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="bi bi-check-circle-fill"></i>
+                                    <span>Quality Control</span>
+                                </div>
+                            </div>
+                            <button class="industry-cta-button">
+                                <span>Learn More</span>
+                                <i class="bi bi-arrow-right"></i>
+                            </button>
+                        </div>
+                        <div class="card-image-section">
+                            <div class="image-container">
+                                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80" 
+                                     alt="Manufacturing & Industry" class="card-image">
+                                <div class="image-overlay"></div>
+                                <div class="industry-badge manufacturing">
+                                    <i class="bi bi-gear-fill"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Industry Card 7: Enterprises & Startups -->
+                <div class="industry-card" data-industry="6">
+                    <div class="card-content">
+                        <div class="card-image-section">
+                            <div class="image-container">
+                                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80" 
+                                     alt="Enterprises & Startups" class="card-image">
+                                <div class="image-overlay"></div>
+                                <div class="industry-badge enterprise">
+                                    <i class="bi bi-briefcase"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-info-section">
+                            <div class="industry-icon enterprise">
+                                <i class="bi bi-briefcase"></i>
+                            </div>
+                            <h3 class="industry-name">Enterprises & Startups</h3>
+                            <p class="industry-description">
+                                Scalable, secure web, mobile, and cloud systems with continuous threat monitoring 
+                                and DevOps automation.
+                            </p>
+                            <div class="industry-features">
+                                <div class="feature-item">
+                                    <i class="bi bi-check-circle-fill"></i>
+                                    <span>Cloud Infrastructure</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="bi bi-check-circle-fill"></i>
+                                    <span>Threat Monitoring</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="bi bi-check-circle-fill"></i>
+                                    <span>DevOps Automation</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="bi bi-check-circle-fill"></i>
+                                    <span>Scalable Architecture</span>
+                                </div>
+                            </div>
+                            <button class="industry-cta-button">
+                                <span>Learn More</span>
+                                <i class="bi bi-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Industry Card 8: Media & Entertainment -->
+                <div class="industry-card" data-industry="7">
+                    <div class="card-content">
+                        <div class="card-info-section">
+                            <div class="industry-icon media">
+                                <i class="bi bi-play-circle"></i>
+                            </div>
+                            <h3 class="industry-name">Media & Entertainment</h3>
+                            <p class="industry-description">
+                                Content delivery networks, streaming platforms, and digital rights management 
+                                for media companies.
+                            </p>
+                            <div class="industry-features">
+                                <div class="feature-item">
+                                    <i class="bi bi-check-circle-fill"></i>
+                                    <span>Content Delivery</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="bi bi-check-circle-fill"></i>
+                                    <span>Streaming Solutions</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="bi bi-check-circle-fill"></i>
+                                    <span>DRM Protection</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="bi bi-check-circle-fill"></i>
+                                    <span>Analytics Dashboard</span>
+                                </div>
+                            </div>
+                            <button class="industry-cta-button">
+                                <span>Learn More</span>
+                                <i class="bi bi-arrow-right"></i>
+                            </button>
+                        </div>
+                        <div class="card-image-section">
+                            <div class="image-container">
+                                <img src="https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?auto=format&fit=crop&w=600&q=80" 
+                                     alt="Media & Entertainment" class="card-image">
+                                <div class="image-overlay"></div>
+                                <div class="industry-badge media">
+                                    <i class="bi bi-play-circle"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Scroll Trigger Area -->
+            <div class="industries-scroll-trigger" id="industriesScrollTrigger">
+                <div class="scroll-content">
+                    <div class="scroll-step" data-step="0">
+                        <h4>Education & E-Learning</h4>
+                        <p>Transforming education through technology</p>
+                    </div>
+                    <div class="scroll-step" data-step="1">
+                        <h4>Healthcare & Telemedicine</h4>
+                        <p>Secure healthcare solutions</p>
+                    </div>
+                    <div class="scroll-step" data-step="2">
+                        <h4>Banking & Finance</h4>
+                        <p>Advanced financial security</p>
+                    </div>
+                    <div class="scroll-step" data-step="3">
+                        <h4>Government & Public Sector</h4>
+                        <p>Digital government solutions</p>
+                    </div>
+                    <div class="scroll-step" data-step="4">
+                        <h4>Retail & E-Commerce</h4>
+                        <p>Smart retail experiences</p>
+                    </div>
+                    <div class="scroll-step" data-step="5">
+                        <h4>Manufacturing & Industry</h4>
+                        <p>Smart manufacturing solutions</p>
+                    </div>
+                    <div class="scroll-step" data-step="6">
+                        <h4>Enterprises & Startups</h4>
+                        <p>Scalable business solutions</p>
+                    </div>
+                    <div class="scroll-step" data-step="7">
+                        <h4>Media & Entertainment</h4>
+                        <p>Digital content solutions</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Controls -->
+            <div class="industries-navigation">
+                <button class="nav-btn prev-btn" id="prevIndustry">
+                    <i class="bi bi-chevron-left"></i>
+                </button>
+                <button class="nav-btn next-btn" id="nextIndustry">
+                    <i class="bi bi-chevron-right"></i>
+                </button>
+            </div>
+
+        </div>
+    </div>
+</section>

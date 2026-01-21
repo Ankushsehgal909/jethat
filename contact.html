@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - JetHat Cyber Security</title>
+    <meta name="description" content="Get in touch with JetHat Cyber Security. Contact our experts for cybersecurity, AI/ML, and digital transformation solutions.">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/loader.css">
+    
+    <!-- Universal Loader -->
+    <script src="scripts/universal-loader.js"></script>
+    
+    <!-- Breadcrumb Badge -->
+    <script src="scripts/breadcrumb-badge.js"></script>
+    
+    <style>
+        /* Contact Page Specific Styles */
+        .contact-hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            padding: 100px 0 80px;
+        }
+
+        .contact-card, .contact-form {
+            background: var(--bg-card);
+            border-radius: 10px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
+        }
+
+        .info-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 auto 20px;
+        }
+
+        /* Contact Image Cards */
+        .contact-card-main:hover .contact-main-image {
+            transform: scale(1.1);
+        }
+        
+        .contact-card-main:hover .contact-overlay {
+            opacity: 1;
+        }
+        
+        .contact-card-main:hover .contact-content {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .contact-card-secondary:hover .contact-secondary-image {
+            transform: scale(1.1);
+        }
+        
+        .contact-card-secondary:hover .contact-overlay {
+            opacity: 1;
+        }
+        
+        .contact-card-mini:hover .contact-mini-image {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .contact-hero {
+                padding: 120px 0;
+                text-align: left;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .contact-hero {
+                min-height: auto;
+                padding: 120px 0 20px;
+            }
+            
+            h1 {
+                font-size: 2.5rem !important;
+            }
+            
+            .contact-card-main {
+                margin-bottom: 1rem !important;
+            }
+            
+            .contact-card-main .contact-image-container {
+                width: 380px !important;
+                height: 240px !important;
+            }
+            
+            .contact-card-secondary {
+                position: absolute !important;
+                top: 40px !important;
+                right: 10px !important;
+                margin-top: 0;
+            }
+            
+            .contact-card-secondary .contact-image-container {
+                width: 180px !important;
+                height: 130px !important;
+            }
+            
+            .contact-card-mini {
+                position: absolute !important;
+                bottom: 20px !important;
+                left: -20px !important;
+                margin-top: 0;
+            }
+            
+            .contact-card-mini .contact-image-container {
+                width: 100px !important;
+                height: 100px !important;
+            }
+            
+            .contact-card, .contact-form {
+                padding: 25px;
+            }
+            
+            .col-lg-6.order-1.order-lg-1 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 2rem;
+            }
+            
+            .col-lg-6.order-1.order-lg-1 .position-relative {
+                transform: scale(0.95);
+                transform-origin: center;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .contact-card-main {
+                margin-bottom: 0.5rem !important;
+            }
+            
+            .contact-card-main .contact-image-container {
+                width: 320px !important;
+                height: 200px !important;
+            }
+            
+            .contact-card-secondary .contact-image-container {
+                width: 150px !important;
+                height: 110px !important;
+            }
+            
+            .contact-card-mini .contact-image-container {
+                width: 90px !important;
+                height: 90px !important;
+            }
+            
+            .col-lg-6.order-1.order-lg-1 {
+                margin-bottom: 1.5rem;
+            }
+            
+            .col-lg-6.order-1.order-lg-1 .position-relative {
+                transform: scale(0.85);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <div id="navigation-component"></div>
+
+    <!-- Right Panel -->
+    <div id="right-panel-component"></div>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Hero Section -->
+        <section class="contact-hero position-relative overflow-hidden">
+            <div class="container position-relative" style="z-index: 2;  ">
+                <div class="row align-items-center">
+                    <div class="mb-4" data-breadcrumb data-separator="arrow">
+                        <!-- Breadcrumb will be dynamically generated here -->
+                    </div>
+                    
+                    <!-- Left Side Content -->
+                    <div class="col-lg-6 mb-5 mb-lg-0">
+                        <h1 class="display-4 fw-bold mb-4" style="line-height: 1.1;">
+                            Let's Build 
+                            <span class="d-block text-gradient"> Together</span>
+                        </h1>
+                        
+                       
+                        
+                        <div class="d-flex flex-wrap gap-3 mb-4 mt-4">
+                            <div class="d-flex align-items-center tech-status">
+                                <i class="bi bi-check-circle-fill me-2"></i>
+                                <span>24/7 Support Available</span>
+                            </div>
+                            <div class="d-flex align-items-center tech-status">
+                                <i class="bi bi-check-circle-fill me-2"></i>
+                                <span>Free Consultation</span>
+                            </div>
+                            <div class="d-flex align-items-center tech-status">
+                                <i class="bi bi-check-circle-fill me-2"></i>
+                                <span>Expert Team</span>
+                            </div>
+                        </div>
+                    </div>
+                      <!-- Right Side - Animated Image Cards -->
+                    <div class="col-lg-6 order-1 order-lg-1 position-relative">
+                        <div class="position-relative">
+                            
+                            <!-- Main Large Card -->
+                            <div class="contact-card-main position-relative mb-4">
+                                <div class="contact-image-container" style="width: 400px; height: 250px; background: var(--bg-card); border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); overflow: hidden; position: relative;">
+                                    <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902" alt="Career Opportunities" class="contact-main-image" style="width: 100%; height: 100%; object-fit: cover; transition: all 0.6s ease;">
+                                    <div class="contact-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(124,58,237,0.2), rgba(236,72,153,0.2)); opacity: 0; transition: all 0.4s ease;"></div>
+                                    <div class="contact-content" style="position: absolute; bottom: 20px; left: 20px; color: white; z-index: 2; transform: translateY(20px); opacity: 0; transition: all 0.4s ease;">
+                                        <h4 class="fw-bold mb-2">Join Our Team</h4>
+                                        <p class="mb-0">Elite Cyber Defense Careers</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Secondary Card -->
+                            <div class="contact-card-secondary position-absolute" style="top: 50px; right: 20px; z-index: 2;">
+                                <div class="contact-image-container" style="width: 200px; height: 150px; background: var(--bg-card); border-radius: 15px; box-shadow: 0 15px 30px rgba(0,0,0,0.15); overflow: hidden; position: relative;">
+                                    <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72" alt="Team Growth" class="contact-secondary-image" style="width: 100%; height: 100%; object-fit: cover; transition: all 0.6s ease;">
+                                    <div class="contact-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(239,68,68,0.2), rgba(249,115,22,0.2)); opacity: 0; transition: all 0.4s ease;"></div>
+                                    <div class="contact-badge" style="position: absolute; top: 15px; right: 15px; background: rgba(255,255,255,0.9); padding: 8px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; color: #1f2937;">
+                                        Team Growth
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Floating Mini Card -->
+                            <div class="contact-card-mini position-absolute" style="bottom: 30px; left: -30px; z-index: 3;">
+                                <div class="contact-image-container" style="width: 120px; height: 120px; background: var(--bg-card); border-radius: 50%; box-shadow: 0 10px 25px rgba(0,0,0,0.2); overflow: hidden; position: relative;">
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d" alt="Career Success" class="contact-mini-image" style="width: 100%; height: 100%; object-fit: cover; transition: all 0.6s ease;">
+                                    <div class="contact-pulse" style="position: absolute; top: -2px; left: -2px; width: calc(100% + 4px); height: calc(100% + 4px); border: 2px solid #7c3aed; border-radius: 50%; animation: pulse 2s infinite;"></div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <!-- Background Elements -->
+            <div class="position-absolute top-0 start-0 w-100 h-100" style="z-index: 0; opacity: 0.05;">
+                <div class="cyber-grid h-100"></div>
+            </div>
+        </section>
+       
+
+  
+
+      
+
+        <!-- Contact Information Section -->
+        <section class="py-5 py-lg-6" style="background: linear-gradient(135deg, rgba(220, 20, 60, 0.05), rgba(255, 215, 0, 0.05));">
+            <div class="container">
+                <div class="text-left mb-5">
+                    
+                     
+                        <h2 class="display-4 fw-bold mb-3">
+                            Send Us a <span class="text-gradient">Message</span>
+                        </h2>
+                        <!-- <p class="lead text-muted">
+                            Fill out the form below and our team will get back to you within 24 hours
+                        </p> -->
+                    
+                    <p class="lead text-muted">Get in touch with our cybersecurity experts</p>
+                </div>
+                
+                <div class="row g-5 align-items-start">
+                    <!-- Left Side - Address Details (Order 2 on mobile, 1 on desktop) -->
+                    <div class="col-lg-6 order-2 order-lg-1">
+                        <div class="contact-card h-100">
+                            <h3 class="fw-bold mb-4">Contact Information</h3>
+                            
+                            <!-- Address -->
+                            <div class="d-flex align-items-start mb-4">
+                                <div class="icon-box me-3 flex-shrink-0">
+                                    <i class="bi bi-geo-alt-fill"></i>
+                                </div>
+                                <div>
+                                    <p class="mb-0" style="color: inherit;">Sector 62, Noida<br>Uttar Pradesh - 201301, India</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Phone -->
+                            <div class="d-flex align-items-start mb-4">
+                                <div class="icon-box me-3 flex-shrink-0">
+                                    <i class="bi bi-telephone-fill"></i>
+                                </div>
+                                <div>
+                                    <p class="mb-0" style="color: inherit;">+91-120-4188947<br>Mon-Fri: 9AM-6PM IST</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Email -->
+                            <div class="d-flex align-items-start mb-4">
+                                <div class="icon-box me-3 flex-shrink-0">
+                                    <i class="bi bi-envelope-fill"></i>
+                                </div>
+                                <div>
+                                    <p class="mb-0" style="color: inherit;">info@jethat.in<br>sales@jethat.in</p>
+                                <!-- </div><p class="text-muted mb-0">info@jethat.in<br>sales@jethat.in</p> -->
+                                </div>
+                            </div>
+                            
+                            <!-- Support -->
+                            <div class="d-flex align-items-start mb-4">
+                                <div class="icon-box me-3 flex-shrink-0">
+                                    <i class="bi bi-headset"></i>
+                                </div>
+                                <div>
+                                    <p class="mb-0" style="color: inherit;">24/7 Emergency Support<br>Rapid Response Team</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Why Choose JetHat Box -->
+                            <div class="mt-5 p-4 rounded-3" style="background: linear-gradient(135deg, rgba(220, 20, 60, 0.05), rgba(255, 215, 0, 0.05)); border: 1px solid rgba(220, 20, 60, 0.1);">
+                                <h5 class="fw-bold mb-3 text-gradient">Why Choose JetHat?</h5>
+                                <ul class="list-unstyled mb-0">
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>AI-Powered Security Solutions</li>
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>24/7 Monitoring & Support</li>
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Expert Cybersecurity Team</li>
+                                    <li class="mb-0"><i class="bi bi-check-circle-fill text-success me-2"></i>99.9% Threat Prevention</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Side - Contact Form (Order 1 on mobile, 2 on desktop) -->
+                    <div class="col-lg-6 order-1 order-lg-2">
+                        <div class="contact-form h-100">
+                            <form id="contactInfoForm">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="firstNameInfo" class="form-label">First Name *</label>
+                                        <input type="text" class="form-control" id="firstNameInfo" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="lastNameInfo" class="form-label">Last Name *</label>
+                                        <input type="text" class="form-control" id="lastNameInfo" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="emailInfo" class="form-label">Email Address *</label>
+                                        <input type="email" class="form-control" id="emailInfo" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="phoneInfo" class="form-label">Phone Number</label>
+                                        <input type="tel" class="form-control" id="phoneInfo">
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="companyInfo" class="form-label">Company</label>
+                                        <input type="text" class="form-control" id="companyInfo">
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="messageInfo" class="form-label">Message *</label>
+                                        <textarea class="form-control" id="messageInfo" rows="4" 
+                                                placeholder="Tell us about your cybersecurity needs..." required></textarea>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="checkbox" id="privacyInfo" required>
+                                            <label class="form-check-label small" for="privacyInfo">
+                                                I agree to the <a href="legal/privacy-policy.html" class="text-danger text-decoration-none">Privacy Policy</a>
+                                            </label>
+                                        </div>
+                                        <button type="submit" class="btn btn-gradient w-100 py-3 fw-semibold">
+                                            <i class="bi bi-send-fill me-2"></i>
+                                            Send Message
+                                        </button>
+                                        <p class="text-center text-muted small mt-3 mb-0">
+                                            <i class="bi bi-shield-lock-fill me-1"></i>
+                                            Your information is secure and encrypted
+                                        </p>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-5" >
+            <div class="container">
+                <div class="text-left mb-5">
+                    <h2 class="display-5 fw-bold mb-3">
+                        Find Us <span class="text-gradient">Here</span>
+                    </h2>
+                    <p class="lead text-muted">Visit our office or get directions</p>
+                </div>
+                
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                        <div class="contact-card p-0 overflow-hidden">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.2396328!2d77.3671!3d28.6273!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDM3JzM4LjMiTiA3N8KwMjInMDEuNiJF!5e0!3m2!1sen!2sin!4v1234567890"
+                                width="100%" 
+                                height="350" 
+                                style="border: 1px;;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="py-5 py-lg-6">
+            <div class="container">
+                <div class="text-left mb-5">
+                    <h2 class="display-4 fw-bold mb-3">
+                        <span class="text-gradient">Frequently Asked</span> Questions
+                    </h2>
+                    <p class="lead text-muted">Get answers to common questions about our services</p>
+                </div>
+                
+                <div class="row justify-content-left">
+                    <div class="col-lg-12">
+                        <div class="accordion" id="faqAccordion">
+                            <div class="accordion-item border-0 mb-3 shadow-sm rounded-3" style="background: var(--bg-card); transition: all 0.3s ease;">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" style="background: var(--bg-card); color: var(--text-primary);">
+                                        <i class="bi bi-shield-check text-danger me-3"></i>
+                                        What cybersecurity services do you offer?
+                                    </button>
+                                </h2>
+                                <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body" style="background: var(--bg-card); color: var(--text-secondary);">
+                                        We offer comprehensive cybersecurity solutions including threat assessment, penetration testing, security audits, incident response, managed security services, compliance consulting, and 24/7 monitoring.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item border-0 mb-3 shadow-sm rounded-3" style="background: var(--bg-card); transition: all 0.3s ease;">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" style="background: var(--bg-card); color: var(--text-primary);">
+                                        <i class="bi bi-clock text-danger me-3"></i>
+                                        How quickly can you respond to security incidents?
+                                    </button>
+                                </h2>
+                                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body" style="background: var(--bg-card); color: var(--text-secondary);">
+                                        Our incident response team is available 24/7 and can respond to critical security incidents within 15 minutes. For standard issues, we guarantee a response within 2 hours during business hours.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item border-0 mb-3 shadow-sm rounded-3" style="background: var(--bg-card); transition: all 0.3s ease;">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" style="background: var(--bg-card); color: var(--text-primary);">
+                                        <i class="bi bi-currency-dollar text-danger me-3"></i>
+                                        What are your pricing models?
+                                    </button>
+                                </h2>
+                                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body" style="background: var(--bg-card); color: var(--text-secondary);">
+                                        We offer flexible pricing models including project-based pricing, monthly retainers, and annual contracts. Contact us for a free consultation and customized quote.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item border-0 mb-3 shadow-sm rounded-3" style="background: var(--bg-card); transition: all 0.3s ease;">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" style="background: var(--bg-card); color: var(--text-primary);">
+                                        <i class="bi bi-people text-danger me-3"></i>
+                                        Do you work with small businesses?
+                                    </button>
+                                </h2>
+                                <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body" style="background: var(--bg-card); color: var(--text-secondary);">
+                                        Yes, we work with businesses of all sizes. We offer scalable cybersecurity solutions tailored to small and medium businesses, including affordable managed security services and consultation packages.
+                                    </div>
+                                </div>
+                            </div>        
+              
+                            <div class="accordion-item border-0 mb-3 shadow-sm rounded-3" style="background: var(--bg-card); transition: all 0.3s ease;">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" style="background: var(--bg-card); color: var(--text-primary);">
+                                        <i class="bi bi-award text-danger me-3"></i>
+                                        What certifications do your team members have?
+                                    </button>
+                                </h2>
+                                <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body" style="background: var(--bg-card); color: var(--text-secondary);">
+                                        Our team holds industry-leading certifications including CISSP, CISM, CEH, OSCP, SANS GIAC, and AWS/Azure security certifications. We continuously invest in training to stay current with the latest security technologies.
+                                    </div>
+                                </div>
+                            </div>
+            </div>
+
+                        
+                        <!-- Contact CTA -->
+                        <div class="text-center mt-5">
+                            <div class="contact-card p-5">
+                                <h4 class="fw-bold mb-3">Still Have Questions?</h4>
+                                <p class="text-muted mb-4">Our cybersecurity experts are here to help you find the right solution for your business.</p>
+                                <div class="d-flex flex-wrap gap-3 justify-content-center">
+                                    <a href="#contact-form" class="btn btn-gradient px-5 py-3">
+                                        <i class="bi bi-chat-dots me-2"></i>
+                                        Contact Our Experts
+                                    </a>
+                                    <a href="tel:+911204188947" class="btn btn-outline-danger px-5 py-3">
+                                        <i class="bi bi-telephone me-2"></i>
+                                        Schedule a Call
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+      
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-component"></div>
+
+    <!-- Theme Toggle -->
+     <!-- Theme Toggle -->
+    <button id="theme-toggle" class=" position-fixed bottom-0 start-0 m-4 rounded-circle p-1 shadow-lg" style="z-index: 1050;">
+        <i id="sun-icon" class="bi bi-sun-fill d-none"></i>
+        <i id="moon-icon" class="bi bi-moon-fill"></i>
+    </button>
+
+    <!-- Scroll Progress -->
+    <div id="scroll-progress" class="position-fixed top-0 start-0 w-100" style="height: 4px; z-index: 1050; background: rgba(0,0,0,0.1);">
+        <div id="scroll-bar" class="h-100" style="width: 0%; background: linear-gradient(90deg, #dc143c, #ffd700);"></div>
+    </div>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Navigation Loader -->
+    <script src="scripts/navigation-loader.js"></script>
+
+    <!-- Theme Toggle Script -->
+    <script src="scripts/navbar-scroll.js"></script>
+    <script src="scripts/theme-toggle.js"></script>
+
+    <!-- Scroll Progress Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const scrollBar = document.getElementById('scroll-bar');
+            if (scrollBar) {
+                window.addEventListener('scroll', () => {
+                    const scrollTop = window.pageYOffset;
+                    const docHeight = document.body.scrollHeight - window.innerHeight;
+                    const scrollPercent = (scrollTop / docHeight) * 100;
+                    scrollBar.style.width = scrollPercent + '%';
+                });
+            }
+        });
+    </script>
+
+    <!-- Counter Animation -->
+    <script>
+        function animateCounters() {
+            const counters = document.querySelectorAll('.counter-value[data-count]');
+            
+            const observerOptions = {
+                threshold: 0.5
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+                        entry.target.classList.add('counted');
+                        const target = parseInt(entry.target.getAttribute('data-count'));
+                        const duration = 2000;
+                        const increment = target / (duration / 16);
+                        let current = 0;
+
+                        const timer = setInterval(() => {
+                            current += increment;
+                            if (current >= target) {
+                                current = target;
+                                clearInterval(timer);
+                            }
+                            entry.target.textContent = Math.floor(current) + '+';
+                        }, 16);
+                    }
+                });
+            }, observerOptions);
+
+            counters.forEach(counter => {
+                observer.observe(counter);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', animateCounters);
+    </script>
+
+    <!-- Form Submission -->
+    <script>
+        // Contact Info Form Submission
+        document.getElementById('contactInfoForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show success message
+            const successMsg = document.createElement('div');
+            successMsg.className = 'alert alert-success text-center mt-3';
+            successMsg.innerHTML = '<i class="bi bi-check-circle-fill me-2"></i>Thank you! Your message has been sent successfully. We\'ll get back to you soon.';
+            
+            this.appendChild(successMsg);
+            
+            // Reset form after 3 seconds
+            setTimeout(() => {
+                this.reset();
+                successMsg.remove();
+            }, 3000);
+        });
+    </script>
+
+    <!-- Component Loader Script -->
+    <script type="module">
+        async function loadComponent(id, path) {
+            try {
+                const res = await fetch(path);
+                if (!res.ok) throw new Error(`${path} (${res.status})`);
+                const html = await res.text();
+
+                const el = document.getElementById(id);
+                if (el) el.innerHTML = html;
+                else console.warn(`Missing container #${id}`);
+            } catch (err) {
+                console.error(`Component load failed: ${path}`, err);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            const components = [
+                ['navigation-component', 'components/navigation/navigation.html'],
+                ['footer-component', 'components/footer/footer.html'],
+                ['right-panel-component', 'components/right-panel/right-panel.html']
+            ];
+
+            await Promise.all(components.map(([id, path]) => loadComponent(id, path)));
+            
+            // Initialize animations after components are loaded
+            initializeAnimations();
+            
+            console.log('✅ Contact page initialized successfully');
+        });
+
+        /* Animation initialization */
+        function initializeAnimations() {
+            // Simple fade-in animations for elements
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe fade-in elements
+            document.querySelectorAll('.fade-in-up').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Trigger animations on page load for elements in viewport
+            setTimeout(() => {
+                document.querySelectorAll('.fade-in-up').forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight && rect.bottom > 0) {
+                        el.classList.add('visible');
+                    }
+                });
+            }, 100);
+        }
+    </script>
+    
+</body>
+</html>

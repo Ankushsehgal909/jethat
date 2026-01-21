@@ -1,0 +1,430 @@
+/* ===================================
+   SERVICE PAGES DARK MODE SUPPORT
+   ================================== */
+
+/* Body and Base Styles */
+body {
+    background: var(--section-bg-light) !important;
+    color: var(--text-light-primary) !important;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+[data-bs-theme="dark"] body {
+    background: var(--section-bg-dark) !important;
+    color: var(--text-primary) !important;
+}
+
+/* Hero Sections */
+.cyber-hero,
+.ai-hero {
+    background: var(--section-bg-light) !important;
+    transition: background 0.3s ease;
+}
+
+[data-bs-theme="dark"] .cyber-hero,
+[data-bs-theme="dark"] .ai-hero {
+    background: var(--section-bg-dark) !important;
+}
+
+/* Hero Title */
+.hero-title {
+    color: var(--text-light-primary) !important;
+    transition: color 0.3s ease;
+}
+
+[data-bs-theme="dark"] .hero-title {
+    color: var(--text-primary) !important;
+}
+
+/* Hero Description */
+.hero-description {
+    color: var(--text-light-secondary) !important;
+    transition: color 0.3s ease;
+}
+
+[data-bs-theme="dark"] .hero-description {
+    color: var(--text-secondary) !important;
+}
+
+/* Section Titles */
+.section-title {
+    color: var(--text-light-primary) !important;
+    transition: color 0.3s ease;
+}
+
+[data-bs-theme="dark"] .section-title {
+    color: var(--text-primary) !important;
+}
+
+/* Section Subtitles */
+.section-subtitle {
+    color: var(--text-light-secondary) !important;
+    transition: color 0.3s ease;
+}
+
+[data-bs-theme="dark"] .section-subtitle {
+    color: var(--text-secondary) !important;
+}
+
+/* Services Section */
+.services-section {
+    background: var(--section-bg-light) !important;
+    transition: background 0.3s ease;
+}
+
+[data-bs-theme="dark"] .services-section {
+    background: var(--section-bg-dark) !important;
+}
+
+/* Service Cards */
+.service-card {
+    background: white !important;
+    border-color: rgba(220, 20, 60, 0.1) !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-bs-theme="dark"] .service-card {
+    background: var(--bg-card) !important;
+    border-color: rgba(220, 20, 60, 0.3) !important;
+}
+
+.service-title {
+    color: var(--text-light-primary) !important;
+    transition: color 0.3s ease;
+}
+
+[data-bs-theme="dark"] .service-title {
+    color: var(--text-primary) !important;
+}
+
+.service-description {
+    color: var(--text-light-secondary) !important;
+    transition: color 0.3s ease;
+}
+
+[data-bs-theme="dark"] .service-description {
+    color: var(--text-secondary) !important;
+}
+
+/* Why Us Section */
+.why-us-section {
+    background: var(--section-bg-light) !important;
+    transition: background 0.3s ease;
+}
+
+[data-bs-theme="dark"] .why-us-section {
+    background: var(--section-bg-dark) !important;
+}
+
+/* Feature Items */
+.feature-item {
+    background: rgba(255, 255, 255, 0.8) !important;
+    border-color: rgba(220, 20, 60, 0.1) !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-bs-theme="dark"] .feature-item {
+    background: rgba(42, 42, 42, 0.8) !important;
+    border-color: rgba(220, 20, 60, 0.3) !important;
+}
+
+.feature-content h5 {
+    color: var(--text-light-primary) !important;
+    transition: color 0.3s ease;
+}
+
+[data-bs-theme="dark"] .feature-content h5 {
+    color: var(--text-primary) !important;
+}
+
+.feature-content p {
+    color: var(--text-light-secondary) !important;
+    transition: color 0.3s ease;
+}
+
+[data-bs-theme="dark"] .feature-content p {
+    color: var(--text-secondary) !important;
+}
+
+/* Process Section */
+.process-section {
+    background: var(--section-bg-light) !important;
+    transition: background 0.3s ease;
+}
+
+[data-bs-theme="dark"] .process-section {
+    background: var(--section-bg-dark) !important;
+}
+
+/* Process Cards */
+.process-card {
+    background: rgba(255, 255, 255, 0.8) !important;
+    border-color: rgba(220, 20, 60, 0.1) !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-bs-theme="dark"] .process-card {
+    background: rgba(42, 42, 42, 0.8) !important;
+    border-color: rgba(220, 20, 60, 0.3) !important;
+}
+
+.process-title {
+    color: var(--text-light-primary) !important;
+    transition: color 0.3s ease;
+}
+
+[data-bs-theme="dark"] .process-title {
+    color: var(--text-primary) !important;
+}
+
+.process-description {
+    color: var(--text-light-secondary) !important;
+    transition: color 0.3s ease;
+}
+
+[data-bs-theme="dark"] .process-description {
+    color: var(--text-secondary) !important;
+}
+
+/* Stats Section - Already has dark background */
+.stats-section {
+    background: linear-gradient(135deg, #1A1A1A, #2A2A2A) !important;
+}
+
+[data-bs-theme="dark"] .stats-section {
+    background: linear-gradient(135deg, #0A0A0A, #1A1A1A) !important;
+}
+
+/* Tech Stack Section - Already has dark background */
+.tech-stack-section {
+    background: linear-gradient(135deg, #1A1A1A, #2A2A2A) !important;
+}
+
+[data-bs-theme="dark"] .tech-stack-section {
+    background: linear-gradient(135deg, #0A0A0A, #1A1A1A) !important;
+}
+
+.tech-stack-section .section-title {
+    color: white !important;
+}
+
+.tech-stack-section .section-subtitle {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Tech Category */
+.tech-category {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-color: rgba(220, 20, 60, 0.2) !important;
+}
+
+[data-bs-theme="dark"] .tech-category {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border-color: rgba(220, 20, 60, 0.4) !important;
+}
+
+.tech-category-title {
+    color: white !important;
+}
+
+.tech-item {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+[data-bs-theme="dark"] .tech-item {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+.tech-item span {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.tech-item:hover span {
+    color: white !important;
+}
+
+/* Floating Cards */
+.floating-card {
+    background: rgba(255, 255, 255, 0.95) !important;
+    border-color: rgba(220, 20, 60, 0.1) !important;
+    transition: all 0.4s ease;
+}
+
+[data-bs-theme="dark"] .floating-card {
+    background: rgba(42, 42, 42, 0.95) !important;
+    border-color: rgba(220, 20, 60, 0.3) !important;
+}
+
+[data-bs-theme="dark"] .floating-card h6,
+[data-bs-theme="dark"] .floating-card p,
+[data-bs-theme="dark"] .floating-card span {
+    color: var(--text-primary) !important;
+}
+
+/* Hero Badge */
+.hero-badge {
+    background: linear-gradient(135deg, #dc143c, #ffd700) !important;
+    color: white !important;
+    border-color: rgba(220, 20, 60, 0.2) !important;
+}
+
+[data-bs-theme="dark"] .hero-badge {
+    border-color: rgba(220, 20, 60, 0.4) !important;
+}
+
+/* Buttons - Keep gradient colors but adjust shadows */
+.btn-hero-primary {
+    background: linear-gradient(135deg, #dc143c, #ffd700) !important;
+    color: white !important;
+}
+
+.btn-hero-secondary {
+    background: transparent !important;
+    color: #dc143c !important;
+    border-color: #dc143c !important;
+}
+
+[data-bs-theme="dark"] .btn-hero-secondary {
+    color: #ff8c00 !important;
+    border-color: #ff8c00 !important;
+}
+
+.btn-hero-secondary:hover {
+    background: linear-gradient(135deg, #dc143c, #ffd700) !important;
+    color: white !important;
+}
+
+/* Circuit Pattern - Adjust opacity for dark mode */
+.circuit-pattern {
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+[data-bs-theme="dark"] .circuit-pattern {
+    opacity: 0.3;
+}
+
+/* Grid Pattern - Adjust opacity for dark mode */
+.grid-pattern {
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+[data-bs-theme="dark"] .grid-pattern {
+    opacity: 0.3;
+}
+
+/* Floating Shapes - Adjust opacity for dark mode */
+.floating-shapes .shape {
+    opacity: 0.1;
+}
+
+[data-bs-theme="dark"] .floating-shapes .shape {
+    opacity: 0.15;
+}
+
+/* Particles - Adjust for dark mode */
+.particle {
+    background: #dc143c !important;
+    opacity: 0.3;
+}
+
+[data-bs-theme="dark"] .particle {
+    background: #ff8c00 !important;
+    opacity: 0.5;
+}
+
+/* Security/AI Icons - Adjust opacity */
+.security-icon,
+.ai-icon {
+    opacity: 0.15;
+}
+
+[data-bs-theme="dark"] .security-icon,
+[data-bs-theme="dark"] .ai-icon {
+    opacity: 0.25;
+    color: var(--accent-gold) !important;
+}
+
+/* Main Image Card */
+.main-image-card {
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-bs-theme="dark"] .main-image-card {
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* Scanning Line - Adjust for dark mode */
+.scanning-line {
+    background: linear-gradient(90deg, transparent, #dc143c, #ffd700, transparent) !important;
+}
+
+[data-bs-theme="dark"] .scanning-line {
+    background: linear-gradient(90deg, transparent, #ff8c00, #ffd700, transparent) !important;
+    box-shadow: 0 0 20px rgba(255, 140, 0, 0.8) !important;
+}
+
+/* Cyber Grid Background */
+.cyber-grid {
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+[data-bs-theme="dark"] .cyber-grid {
+    opacity: 0.3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .floating-card {
+        display: none;
+    }
+}
+
+/* Smooth transitions for theme switching */
+* {
+    transition-property: background-color, color, border-color, box-shadow;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+}
+
+/* Preserve animations */
+@keyframes float {
+    /* Keep original animations */
+}
+
+@keyframes orbit {
+    /* Keep original animations */
+}
+
+@keyframes floatIcon {
+    /* Keep original animations */
+}
+
+@keyframes scan {
+    /* Keep original animations */
+}
+
+@keyframes particleFloat {
+    /* Keep original animations */
+}
+
+@keyframes float-card {
+    /* Keep original animations */
+}
+
+@keyframes fadeInUp {
+    /* Keep original animations */
+}
+
+@keyframes slideInLeft {
+    /* Keep original animations */
+}
+
+@keyframes slideInRight {
+    /* Keep original animations */
+}

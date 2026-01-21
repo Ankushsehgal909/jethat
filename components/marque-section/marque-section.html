@@ -1,0 +1,439 @@
+<section id="clients-marquee"
+class=" overflow-hidden">
+  <div class="container">
+
+
+    <!-- Client Logos Marquee -->
+    <div class="position-relative overflow-hidden" style="width: 100%;">
+
+
+
+      <div class="d-flex marquee-container " style="animation: marquee 30s linear infinite; width: max-content;">
+        <!-- First Set -->
+        <div class="client-logo-container me-4">
+          <div class="client-logo-circle">
+            <img src="assets/images/cyber.jpg" alt="Tech Innovations" class="client-logo grayscale" 
+                 onmouseover="this.classList.remove('grayscale')" 
+                 onmouseout="this.classList.add('grayscale')">
+          </div>
+        </div>
+
+        <div class="client-logo-container me-4">
+          <div class="client-logo-circle">
+            <img src="assets/images/logo.png" alt="Global Banking" class="client-logo grayscale"
+                 onmouseover="this.classList.remove('grayscale')" 
+                 onmouseout="this.classList.add('grayscale')">
+          </div>
+        </div>
+
+        <div class="client-logo-container me-4">
+          <div class="client-logo-circle">
+            <img src="assets/images/cyber.jpg" alt="Healthcare Solutions" class="client-logo grayscale"
+                 onmouseover="this.classList.remove('grayscale')" 
+                 onmouseout="this.classList.add('grayscale')">
+          </div>
+        </div>
+
+        <div class="client-logo-container me-4">
+          <div class="client-logo-circle">
+            <img src="assets/images/logo.png" alt="E-commerce Platform" class="client-logo grayscale"
+                 onmouseover="this.classList.remove('grayscale')" 
+                 onmouseout="this.classList.add('grayscale')">
+          </div>
+        </div>
+
+        <div class="client-logo-container me-4">
+          <div class="client-logo-circle">
+            <img src="assets/images/cyber.jpg" alt="Manufacturing Corp" class="client-logo grayscale"
+                 onmouseover="this.classList.remove('grayscale')" 
+                 onmouseout="this.classList.add('grayscale')">
+          </div>
+        </div>
+
+        <div class="client-logo-container me-4">
+          <div class="client-logo-circle">
+            <img src="assets/images/logo.png" alt="Education Institute" class="client-logo grayscale"
+                 onmouseover="this.classList.remove('grayscale')" 
+                 onmouseout="this.classList.add('grayscale')">
+          </div>
+        </div>
+
+        <!-- Second Set (Duplicates for seamless loop) -->
+        <div class="client-logo-container me-4">
+          <div class="client-logo-circle">
+            <img src="assets/images/cyber.jpg" alt="Tech Innovations" class="client-logo grayscale"
+                 onmouseover="this.classList.remove('grayscale')" 
+                 onmouseout="this.classList.add('grayscale')">
+          </div>
+        </div>
+
+        <div class="client-logo-container me-4">
+          <div class="client-logo-circle">
+            <img src="assets/images/logo.png" alt="Global Banking" class="client-logo grayscale"
+                 onmouseover="this.classList.remove('grayscale')" 
+                 onmouseout="this.classList.add('grayscale')">
+          </div>
+        </div>
+
+        <div class="client-logo-container me-4">
+          <div class="client-logo-circle">
+            <img src="assets/images/cyber.jpg" alt="Healthcare Solutions" class="client-logo grayscale"
+                 onmouseover="this.classList.remove('grayscale')" 
+                 onmouseout="this.classList.add('grayscale')">
+          </div>
+        </div>
+
+        <div class="client-logo-container me-4">
+          <div class="client-logo-circle">
+            <img src="assets/images/logo.png" alt="E-commerce Platform" class="client-logo grayscale"
+                 onmouseover="this.classList.remove('grayscale')" 
+                 onmouseout="this.classList.add('grayscale')">
+          </div>
+        </div>
+
+        <div class="client-logo-container me-4">
+          <div class="client-logo-circle">
+            <img src="assets/images/cyber.jpg" alt="Manufacturing Corp" class="client-logo grayscale"
+                 onmouseover="this.classList.remove('grayscale')" 
+                 onmouseout="this.classList.add('grayscale')">
+          </div>
+        </div>
+
+        <div class="client-logo-container me-4">
+          <div class="client-logo-circle">
+            <img src="assets/images/logo.png" alt="Education Institute" class="client-logo grayscale"
+                 onmouseover="this.classList.remove('grayscale')" 
+                 onmouseout="this.classList.add('grayscale')">
+          </div>
+        </div>
+
+        <!-- Third Set (Additional duplicates for extra smoothness) -->
+        <div class="client-logo-container me-4">
+          <div class="client-logo-circle">
+            <img src="assets/images/cyber.jpg" alt="Tech Innovations" class="client-logo grayscale"
+                 onmouseover="this.classList.remove('grayscale')" 
+                 onmouseout="this.classList.add('grayscale')">
+          </div>
+        </div>
+
+        <div class="client-logo-container me-4">
+          <div class="client-logo-circle">
+            <img src="assets/images/logo.png" alt="Global Banking" class="client-logo grayscale"
+                 onmouseover="this.classList.remove('grayscale')" 
+                 onmouseout="this.classList.add('grayscale')">
+          </div>
+        </div>
+
+        <div class="client-logo-container me-4">
+          <div class="client-logo-circle">
+            <img src="assets/images/cyber.jpg" alt="Healthcare Solutions" class="client-logo grayscale"
+                 onmouseover="this.classList.remove('grayscale')" 
+                 onmouseout="this.classList.add('grayscale')">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+                       
+
+<style>
+/* Client Logo Containers */
+.client-logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.5s ease;
+}
+
+.client-logo-container:hover {
+  transform: translateY(-4px) scale(1.03);
+}
+
+/* Circular Logo Styling */
+.client-logo-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #ffffff;
+  border: 2px solid rgba(220, 20, 60, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.client-logo-circle:hover {
+  border-color: rgba(220, 20, 60, 0.3);
+  box-shadow: 0 4px 15px rgba(220, 20, 60, 0.2);
+  transform: scale(1.05);
+}
+
+/* Logo Image Styling */
+.client-logo {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+  transition: all 0.3s ease;
+}
+
+/* Grayscale effect */
+.grayscale {
+  filter: grayscale(100%);
+  transition: filter 0.3s;
+}
+
+.client-logo-container:hover .grayscale {
+  filter: grayscale(0%);
+}
+
+/* Theme-aware styling for dark mode */
+[data-bs-theme="dark"] .client-logo-circle,
+.dark-theme .client-logo-circle {
+  background: var(--bg-card);
+  border-color: rgba(255, 140, 0, 0.2);
+}
+
+[data-bs-theme="dark"] .client-logo-circle:hover,
+.dark-theme .client-logo-circle:hover {
+  border-color: rgba(255, 140, 0, 0.4);
+  box-shadow: 0 8px 25px rgba(255, 140, 0, 0.3);
+}
+
+[data-bs-theme="dark"] .grayscale,
+.dark-theme .grayscale {
+  filter: grayscale(100%) brightness(0.8);
+}
+
+[data-bs-theme="dark"] .client-logo-container:hover .grayscale,
+.dark-theme .client-logo-container:hover .grayscale {
+  filter: grayscale(0%) brightness(1);
+}
+
+/* Enhanced marquee animation for seamless continuous scrolling */
+@keyframes marquee {
+  0% { 
+    transform: translateX(0); 
+  }
+  100% { 
+    transform: translateX(-33.33%); 
+  }
+}
+
+/* Marquee container styling */
+.marquee-container {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+/* Pause animation on hover */
+.marquee-container:hover {
+  animation-play-state: paused;
+}
+
+/* Responsive sizing */
+@media (max-width: 768px) {
+  .client-logo-circle {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .marquee-container {
+    animation-duration: 25s;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .client-logo-circle {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .marquee-container {
+    animation-duration: 20s;
+    gap: 0.8rem;
+  }
+}
+
+/* Loading animation for logos */
+.client-logo-circle::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, var(--accent-primary), var(--accent-gold), var(--accent-secondary));
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.client-logo-container:hover .client-logo-circle::before {
+  opacity: 1;
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Floating animation for variety */
+.client-logo-container:nth-child(odd) {
+  animation: float-gentle 4s ease-in-out infinite;
+}
+
+.client-logo-container:nth-child(even) {
+  animation: float-gentle 4s ease-in-out infinite reverse;
+}
+
+@keyframes float-gentle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+/* Scroll Animation Styles */
+.animate-slide-up {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease;
+}
+
+.animate-slide-up.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-animate-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.8s ease;
+}
+
+.scroll-animate-left.animate-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scroll-animate-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.8s ease;
+}
+
+.scroll-animate-right.animate-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Cyber Cards Responsive */
+.cyber-image-container {
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .cyber-card-main .cyber-image-container {
+    width: 100% !important;
+    max-width: 400px;
+    height: 280px !important;
+  }
+  
+  .cyber-card-secondary .cyber-image-container {
+    width: 100% !important;
+    max-width: 300px;
+    height: 200px !important;
+  }
+  
+  .cyber-card-secondary {
+    position: relative !important;
+    top: 0 !important;
+    right: 0 !important;
+    margin-top: 20px;
+  }
+  
+  .cyber-card-mini {
+    position: relative !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    margin-top: 20px;
+    text-align: center;
+  }
+}
+
+/* Cyber card hover effects */
+.cyber-card-main:hover .cyber-overlay {
+  opacity: 1;
+}
+
+.cyber-card-main:hover .cyber-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cyber-card-secondary:hover .cyber-overlay {
+  opacity: 1;
+}
+
+/* Pulse animation for mini card */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+</style>
+
+
+<script>
+// Scroll Animation Observer
+document.addEventListener('DOMContentLoaded', function() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const delay = entry.target.getAttribute('data-delay') || 0;
+                
+                setTimeout(() => {
+                    entry.target.classList.add('animate-in');
+                }, delay);
+                
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // Observe all animated elements
+    const animatedElements = document.querySelectorAll('.animate-slide-up, .scroll-animate-left, .scroll-animate-right');
+    animatedElements.forEach(el => observer.observe(el));
+});
+</script>

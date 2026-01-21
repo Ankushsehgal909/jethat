@@ -1,0 +1,1624 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Services - JetHat Cyber Security</title>
+    <meta name="description" content="Professional cloud services by JetHat. Scalable cloud infrastructure, migration services, and cloud-native solutions for high availability and cost-effective operations.">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <!-- Breadcrumb Badge -->
+    <script src="../scripts/breadcrumb-badge.js"></script>
+    
+    <!-- Universal Loader -->
+    <script src="../scripts/universal-loader.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/services-dark-mode.css">
+    <link rel="stylesheet" href="../styles/loader.css">
+    
+    <!-- Navigation Fix Script -->
+    <script src="../scripts/navigation-fix.js"></script>
+    <script src="../scripts/navbar-scroll.js"></script>
+
+    <style>
+        /* Enhanced Cybersecurity Theme Styles - Applied to Cloud Services */
+        :root {
+            --cyber-primary: #DC143C;
+            --cyber-secondary: #FFD700;
+            --cyber-gold: #FFD700;
+            --cyber-dark: #1A1A1A;
+            --cyber-light: #F8F8F8;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #fff7ed 0%, #ffffff 50%, #fffbeb 100%);
+            color: #333333;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section - Enhanced with Contact Page Theme */
+        .cyber-hero {
+            background: linear-gradient(135deg, #fff7ed 0%, #ffffff 50%, #fffbeb 100%);
+            position: relative;
+            overflow: hidden;
+            padding: 100px 0;
+            min-height: 60vh;
+        }
+
+       
+
+        /* Circuit Pattern Overlay */
+        .circuit-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(90deg, rgba(220, 20, 60, 0.03) 1px, transparent 1px),
+                linear-gradient(rgba(220, 20, 60, 0.03) 1px, transparent 1px),
+                radial-gradient(circle at 50% 50%, rgba(220, 20, 60, 0.02) 1px, transparent 1px);
+            background-size: 50px 50px, 50px 50px, 20px 20px;
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        /* Grid Pattern */
+        .grid-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(90deg, rgba(124, 58, 237, 0.05) 1px, transparent 1px),
+                linear-gradient(rgba(124, 58, 237, 0.05) 1px, transparent 1px);
+            background-size: 30px 30px;
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        /* Floating Security Icons */
+        .floating-security-icons {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+            pointer-events: none;
+        }
+        
+        .security-icon {
+            position: absolute;
+            font-size: 2rem;
+            opacity: 0.15;
+            animation: orbit 20s linear infinite, floatIcon 6s ease-in-out infinite;
+        }
+        
+        .security-icon:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s, 0s; }
+        .security-icon:nth-child(2) { top: 30%; right: 10%; animation-delay: 2s, 1s; }
+        .security-icon:nth-child(3) { bottom: 20%; left: 15%; animation-delay: 4s, 2s; }
+        .security-icon:nth-child(4) { top: 50%; right: 5%; animation-delay: 1s, 3s; }
+        .security-icon:nth-child(5) { bottom: 30%; right: 20%; animation-delay: 3s, 4s; }
+        .security-icon:nth-child(6) { top: 15%; left: 30%; animation-delay: 5s, 5s; }
+        
+        @keyframes orbit {
+            0% { transform: rotate(0deg) translateX(50px) rotate(0deg); }
+            100% { transform: rotate(360deg) translateX(50px) rotate(-360deg); }
+        }
+        
+        @keyframes floatIcon {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        /* Scanning Line Animation */
+        .scanning-line {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #dc143c, #ffd700, transparent);
+            box-shadow: 0 0 20px rgba(220, 20, 60, 0.8);
+            animation: scan 3s linear infinite;
+            z-index: 10;
+            pointer-events: none;
+        }
+        
+        @keyframes scan {
+            0% { top: 0%; opacity: 1; }
+            100% { top: 100%; opacity: 0; }
+        }
+        
+        /* Particle Effects */
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #dc143c;
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: particleFloat 8s ease-in-out infinite;
+        }
+        
+        .particle:nth-child(1) { left: 10%; top: 20%; animation-delay: 0s; }
+        .particle:nth-child(2) { left: 30%; top: 40%; animation-delay: 1s; }
+        .particle:nth-child(3) { left: 50%; top: 60%; animation-delay: 2s; }
+        .particle:nth-child(4) { left: 70%; top: 30%; animation-delay: 3s; }
+        .particle:nth-child(5) { left: 90%; top: 50%; animation-delay: 4s; }
+        .particle:nth-child(6) { left: 20%; top: 70%; animation-delay: 5s; }
+        .particle:nth-child(7) { left: 40%; top: 10%; animation-delay: 6s; }
+        .particle:nth-child(8) { left: 60%; top: 80%; animation-delay: 7s; }
+        
+        @keyframes particleFloat {
+            0%, 100% { 
+                transform: translateY(0) translateX(0);
+                opacity: 0.3;
+            }
+            25% { 
+                transform: translateY(-30px) translateX(20px);
+                opacity: 0.6;
+            }
+            50% { 
+                transform: translateY(-60px) translateX(-20px);
+                opacity: 0.3;
+            }
+            75% { 
+                transform: translateY(-30px) translateX(20px);
+                opacity: 0.6;
+            }
+        }
+        
+        /* Floating Shapes */
+        .floating-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .shape {
+            position: absolute;
+            background: linear-gradient(45deg, #dc143c, #ffd700);
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 8s ease-in-out infinite;
+        }
+        
+        .shape:nth-child(1) { width: 80px; height: 80px; top: 20%; left: 10%; animation-delay: 0s; }
+        .shape:nth-child(2) { width: 120px; height: 120px; top: 60%; right: 15%; animation-delay: 2s; }
+        .shape:nth-child(3) { width: 60px; height: 60px; bottom: 30%; left: 20%; animation-delay: 4s; }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); }
+            25% { transform: translateY(-30px) rotate(90deg) scale(1.1); }
+            50% { transform: translateY(-20px) rotate(180deg) scale(0.9); }
+            75% { transform: translateY(-40px) rotate(270deg) scale(1.05); }
+        }
+
+        /* Hero Content */
+        .cyber-hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            backdrop-filter: blur(10px);
+            border-radius: 50px;
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+            border: 1px solid rgba(220, 20, 60, 0.2);
+            box-shadow: 0 10px 30px rgba(220, 20, 60, 0.3);
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            color: #333333;
+            margin-bottom: 20px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-description {
+            font-size: 1.25rem;
+            color: #666666;
+            max-width: 600px;
+            margin-bottom: 40px;
+            line-height: 1.7;
+        }
+
+        /* Hero Buttons */
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-hero-primary {
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            color: white;
+            padding: 16px 36px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            border: none;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(220, 20, 60, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-hero-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn-hero-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-hero-primary:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(220, 20, 60, 0.4);
+            color: white;
+        }
+
+        .btn-hero-secondary {
+            background: transparent;
+            color: #dc143c;
+            padding: 16px 36px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            border: 2px solid #dc143c;
+            transition: all 0.4s ease;
+        }
+
+        .btn-hero-secondary:hover {
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            border-color: #dc143c;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(220, 20, 60, 0.3);
+        }
+
+        /* Floating Shield Icon */
+        .floating-shield {
+            position: relative;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .shield-icon {
+            width: 100%;
+            max-width: 450px;
+            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: linear-gradient(135deg, #1A1A1A, #2A2A2A);
+            padding: 60px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+      
+        .stat-item {
+            text-align: center;
+            padding: 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .stat-number:hover {
+            transform: scale(1.1);
+        }
+
+        .stat-label {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Section Titles */
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #333333;
+            margin-bottom: 15px;
+        }
+
+        .section-subtitle {
+            color: #666666;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 50px;
+        }
+
+        /* Services Grid */
+        .services-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #fff7ed 0%, #ffffff 50%, #fffbeb 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            height: 100%;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(220, 20, 60, 0.1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            z-index: 2;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #dc143c, #ffd700);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .service-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(220, 20, 60, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover::after {
+            left: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            background: linear-gradient(135deg, rgba(220, 20, 60, 0.1), rgba(255, 215, 0, 0.1));
+            transition: all 0.4s ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(360deg);
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+        }
+
+        .service-card:hover .service-icon i {
+            color: white !important;
+        }
+
+        .service-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #333333;
+            margin-bottom: 15px;
+        }
+
+        .service-description {
+            color: #666666;
+            line-height: 1.7;
+            margin-bottom: 0;
+        }
+
+        /* Why Choose Us */
+        .why-us-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #fff7ed 0%, #ffffff 50%, #fffbeb 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            margin-bottom: 20px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(220, 20, 60, 0.1);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+            z-index: 2;
+        }
+
+        .feature-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(220, 20, 60, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .feature-item:hover::before {
+            left: 100%;
+        }
+
+        .feature-item:hover {
+            background: rgba(255, 255, 255, 0.95);
+            transform: translateX(15px) translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .check-icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-weight: bold;
+            transition: all 0.4s ease;
+        }
+
+        .feature-item:hover .check-icon {
+            transform: scale(1.2) rotate(360deg);
+        }
+
+        .feature-content h5 {
+            font-weight: 700;
+            color: #333333;
+            margin-bottom: 5px;
+        }
+
+        .feature-content p {
+            color: #666666;
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        /* Image Card */
+        .image-card-wrapper {
+            position: relative;
+        }
+
+        .main-image-card {
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .main-image-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(220, 20, 60, 0.1), rgba(255, 215, 0, 0.1));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 1;
+        }
+
+        .main-image-card:hover::before {
+            opacity: 1;
+        }
+
+        .main-image-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.25);
+        }
+
+        .main-image-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: all 0.4s ease;
+        }
+
+        .main-image-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .floating-card {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            animation: float-card 4s ease-in-out infinite;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(220, 20, 60, 0.1);
+        }
+
+        .floating-card-1 {
+            top: 10%;
+            right: -30px;
+            animation-delay: 0s;
+        }
+
+        .floating-card-2 {
+            bottom: 15%;
+            left: -40px;
+            animation-delay: 2s;
+        }
+
+        @keyframes float-card {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+
+
+        .process-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(90deg, rgba(220, 20, 60, 0.02) 1px, transparent 1px),
+                linear-gradient(rgba(220, 20, 60, 0.02) 1px, transparent 1px);
+            background-size: 25px 25px;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .process-card {
+            text-align: center;
+            padding: 40px 30px;
+            position: relative;
+            z-index: 2;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(220, 20, 60, 0.1);
+            backdrop-filter: blur(10px);
+            overflow: hidden;
+        }
+
+        .process-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(220, 20, 60, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .process-card:hover::before {
+            left: 100%;
+        }
+
+        .process-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .process-number {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 25px;
+            transition: all 0.4s ease;
+        }
+
+        .process-card:hover .process-number {
+            transform: scale(1.2) rotate(360deg);
+        }
+
+        .process-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #333333;
+            margin-bottom: 15px;
+        }
+
+        .process-description {
+            color: #666666;
+            line-height: 1.7;
+        }
+
+        /* CTA Section Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .fade-in-up {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .slide-in-left {
+            opacity: 0;
+            animation: slideInLeft 0.8s ease-out forwards;
+        }
+
+        .slide-in-right {
+            opacity: 0;
+            animation: slideInRight 0.8s ease-out forwards;
+        }
+
+        .fade-in-text {
+            opacity: 0;
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .animated-btn {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border-radius: 25px;
+        }
+
+        .animated-btn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.3),
+                transparent
+            );
+            transition: left 0.5s;
+        }
+
+        .animated-btn:hover::before {
+            left: 100%;
+        }
+
+        .animated-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(220, 20, 60, 0.4);
+        }
+
+        .primary-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            background: linear-gradient(135deg, #dc143c, #ffd700) !important;
+        }
+
+        .secondary-btn {
+            border: 2px solid #dc143c;
+            color: #dc143c;
+            transition: all 0.3s ease;
+        }
+
+        .secondary-btn:hover {
+            background: linear-gradient(135deg, #dc143c, #ffd700) !important;
+            color: white;
+            transform: translateY(-3px);
+            border-color: #dc143c;
+        }
+
+        .btn-arrow {
+            display: inline-block;
+            transition: all 0.3s ease;
+            margin-left: 8px;
+        }
+
+        .animated-btn:hover .btn-arrow {
+            transform: translateX(5px);
+        }
+
+        /* Cyber Grid Background */
+        .cyber-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(220, 20, 60, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(220, 20, 60, 0.03) 1px, transparent 1px);
+            background-size: 25px 25px;
+            z-index: 0;
+        }
+
+        /* Tech Stack Section - Enhanced with Contact Theme */
+        .tech-stack-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #1A1A1A, #2A2A2A);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tech-stack-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(90deg, rgba(220, 20, 60, 0.1) 1px, transparent 1px),
+                linear-gradient(rgba(220, 20, 60, 0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .tech-stack-section .section-title {
+            color: white;
+        }
+
+        .tech-stack-section .section-subtitle {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .tech-category {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 30px 25px;
+            height: 100%;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(220, 20, 60, 0.2);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            z-index: 2;
+        }
+
+    
+        .tech-category::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(220, 20, 60, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .tech-category:hover::before {
+            transform: scaleX(1);
+        }
+
+        .tech-category:hover::after {
+            left: 100%;
+        }
+
+        .tech-category:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .tech-category-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, rgba(220, 20, 60, 0.2), rgba(255, 215, 0, 0.2));
+            transition: all 0.4s ease;
+        }
+
+        .tech-category:hover .tech-category-icon {
+            transform: scale(1.1) rotate(360deg);
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+        }
+
+        .tech-category:hover .tech-category-icon i {
+            color: white !important;
+        }
+
+        .tech-category-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .tech-items {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .tech-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .tech-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(10px);
+            border-color: rgba(220, 20, 60, 0.3);
+        }
+
+        .tech-item img {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+            filter: brightness(1.2);
+        }
+
+        .tech-item span {
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .tech-item:hover span {
+            color: white;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .cyber-hero {
+                padding: 60px 0;
+                text-align: left;
+            }
+
+            .hero-description {
+                margin: 0 auto 40px;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .floating-shield {
+                margin-top: 50px;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+
+            .floating-card {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .service-card {
+                padding: 30px 25px;
+            }
+
+            .process-card {
+                margin-bottom: 30px;
+            }
+        }
+
+        /* Animation Classes */
+        .gsap-fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .gsap-fade-left {
+            opacity: 0;
+            transform: translateX(-30px);
+        }
+
+        .gsap-fade-right {
+            opacity: 0;
+            transform: translateX(30px);
+        }
+
+        /* Scroll animations */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal-on-scroll.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <div id="navigation-component"></div>
+
+    <!-- Right Panel -->
+    <div id="right-panel-component"></div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="cyber-hero">
+           
+            
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-12 mb-4" data-breadcrumb data-separator="arrow" style="margin-top: 2.5rem;">
+                        <!-- Breadcrumb will be dynamically generated here -->
+                    </div>
+                    <!-- left side --> 
+                    <div class="col-lg-6">
+                        <div class="cyber-hero-content" style="margin-top: 2.5rem;">
+                            <!-- <div class="hero-badge gsap-fade-up">
+                                <i class="bi bi-cloud me-2"></i>
+                                Enterprise Cloud Solutions
+                            </div> -->
+                            <h1 class="hero-title gsap-fade-up" data-delay="100">
+                                Scale Your
+                                <span class="gradient-text">Cloud Infrastructure</span>
+                                With Confidence
+                            </h1>
+                            <p class="hero-description gsap-fade-up" data-delay="200">
+                                Scalable cloud infrastructure, migration services, and cloud-native solutions. 
+                                Transform your business with high availability and cost-effective cloud operations.
+                            </p>
+                            <!-- <div class="hero-buttons gsap-fade-up" data-delay="300">
+                                <a href="../contact.html" class="btn btn-hero-primary">
+                                    Get Cloud Assessment
+                                    <i class="bi bi-arrow-right ms-2"></i>
+                                </a>
+                                <a href="#services" class="btn btn-hero-secondary">
+                                    Explore Solutions
+                                    <i class="bi bi-arrow-right ms-2"></i>
+                                </a>
+                            </div> -->
+                        </div>
+                    </div>
+                    <!-- right side -->
+                    <div class="col-lg-6">
+                        <div class=" gsap-fade-left" data-delay="400" style="margin-top: 2.5rem;">
+                            <div class="position-relative">
+                                <div class="main-image-card">
+                                    <img src="../assets/images/cyber.jpg" alt="Cloud Services" class="img-fluid">
+                                </div>
+                                <div class="floating-card floating-card-1">
+                                    <div class="d-flex align-items-center gap-3">
+                                        <div class="bg-success bg-opacity-10 rounded-circle p-2">
+                                            <i class="bi bi-cloud-check text-success fs-5"></i>
+                                        </div>
+                                        <div>
+                                            <div class="fw-bold text-dark">99.9%</div>
+                                            <div class="text-muted small">Uptime SLA</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="floating-card floating-card-2">
+                                    <div class="d-flex align-items-center gap-3">
+                                        <div class="bg-warning bg-opacity-10 rounded-circle p-2">
+                                            <i class="bi bi-graph-up text-warning fs-5"></i>
+                                        </div>
+                                        <div>
+                                            <div class="fw-bold text-dark">Auto</div>
+                                            <div class="text-muted small">Scaling</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+      
+
+        <!-- Services Section -->
+        <section id="services" class="services-section">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="section-title reveal-on-scroll">Our Cloud Services</h2>
+                    <p class="section-subtitle reveal-on-scroll">
+                        Comprehensive cloud solutions designed to accelerate your digital transformation
+                    </p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card reveal-on-scroll">
+                            <div class="service-icon">
+                                <i class="bi bi-cloud-arrow-up text-danger"></i>
+                            </div>
+                            <h3 class="service-title">Cloud Migration</h3>
+                            <p class="service-description">
+                                Seamless migration of your applications and data to the cloud with minimal downtime. 
+                                Expert planning and execution for smooth transitions.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card reveal-on-scroll" data-delay="100">
+                            <div class="service-icon">
+                                <i class="bi bi-diagram-3 text-warning"></i>
+                            </div>
+                            <h3 class="service-title">Infrastructure as Code</h3>
+                            <p class="service-description">
+                                Automated infrastructure provisioning and management using modern IaC tools. 
+                                Consistent, scalable, and version-controlled infrastructure.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card reveal-on-scroll" data-delay="200">
+                            <div class="service-icon">
+                                <i class="bi bi-shield-lock text-success"></i>
+                            </div>
+                            <h3 class="service-title">Cloud Security</h3>
+                            <p class="service-description">
+                                Comprehensive cloud security implementation including identity management, 
+                                encryption, and compliance with industry standards.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card reveal-on-scroll">
+                            <div class="service-icon">
+                                <i class="bi bi-speedometer2 text-danger"></i>
+                            </div>
+                            <h3 class="service-title">Performance Optimization</h3>
+                            <p class="service-description">
+                                Cloud performance tuning and cost optimization to ensure maximum efficiency 
+                                and minimal operational expenses.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card reveal-on-scroll" data-delay="100">
+                            <div class="service-icon">
+                                <i class="bi bi-graph-up text-warning"></i>
+                            </div>
+                            <h3 class="service-title">Auto Scaling</h3>
+                            <p class="service-description">
+                                Intelligent auto-scaling solutions that adapt to your workload demands 
+                                automatically, ensuring optimal performance and cost efficiency.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card reveal-on-scroll" data-delay="200">
+                            <div class="service-icon">
+                                <i class="bi bi-headset text-success"></i>
+                            </div>
+                            <h3 class="service-title">24/7 Support</h3>
+                            <p class="service-description">
+                                Round-the-clock monitoring and support for your cloud infrastructure 
+                                with proactive issue resolution and maintenance.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section class="why-us-section">
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <!-- left side -->
+                    <div class="col-lg-6">
+                        <div class="image-card-wrapper reveal-on-scroll">
+                            <div class="main-image-card">
+                                <img src="../assets/images/cyber.jpg" alt="Why Choose JetHat Cloud Services">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- right side -->
+                    <div class="col-lg-6">
+                        <h2 class="section-title reveal-on-scroll">Why Choose JetHat for Cloud Services?</h2>
+                        <p class="section-subtitle mb-4 reveal-on-scroll" style="margin-left: 0; text-align: left;">
+                            We deliver enterprise-grade cloud solutions with proven expertise and industry best practices
+                        </p>
+                        
+                        <div class="feature-item reveal-on-scroll" data-delay="100">
+                            <div class="check-icon">
+                                <i class="bi bi-check"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h5>Multi-Cloud Expertise</h5>
+                                <p>Certified professionals in AWS, Azure, Google Cloud, and hybrid cloud solutions</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item reveal-on-scroll" data-delay="200">
+                            <div class="check-icon">
+                                <i class="bi bi-check"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h5>Cost Optimization</h5>
+                                <p>Proven strategies to reduce cloud costs by up to 50% while improving performance</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item reveal-on-scroll" data-delay="300">
+                            <div class="check-icon">
+                                <i class="bi bi-check"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h5>Security First</h5>
+                                <p>Enterprise-grade security implementation with compliance and governance</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item reveal-on-scroll" data-delay="400">
+                            <div class="check-icon">
+                                <i class="bi bi-check"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h5>Scalable Architecture</h5>
+                                <p>Future-proof cloud architecture that grows with your business needs</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Section -->
+        <div id="tech-section-component"></div>
+
+        <!-- Cloud Benefits Section -->
+        <section class="cloud-benefits-section" style="padding: 100px 0;  position: relative; overflow: hidden;">
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <!-- left side - Content -->
+                    <div class="col-lg-6">
+                        <h2 class="reveal-on-scroll" style="font-size: 2.5rem; font-weight: 700; color: #ffffff; margin-bottom: 20px;">
+                            Cloud Security & <span class="gradient-text">Compliance</span>
+                        </h2>
+                        <p class="reveal-on-scroll" data-delay="100" style="color: rgba(255, 255, 255, 0.7); font-size: 1.1rem; line-height: 1.8; margin-bottom: 25px;">
+                            Our cloud solutions prioritize security and compliance at every layer. From identity management to data encryption, we implement robust security measures that protect your infrastructure while maintaining regulatory compliance. Our 24/7 monitoring ensures proactive threat detection and rapid response to potential vulnerabilities.
+                        </p>
+                        <div class="row g-3 reveal-on-scroll" data-delay="200">
+                            <div class="col-6">
+                                <div class="d-flex align-items-center gap-3 p-3 bg-white rounded-3 shadow-sm" style="border: 1px solid rgba(220, 20, 60, 0.1);">
+                                    <div class="bg-success bg-opacity-10 rounded-circle p-2">
+                                        <i class="bi bi-shield-check text-success fs-5"></i>
+                                    </div>
+                                    <div>
+                                        <div class="fw-bold text-dark" style="font-size: 1.5rem;">24/7</div>
+                                        <div class="text-muted small">Active Monitoring</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="d-flex align-items-center gap-3 p-3 bg-white rounded-3 shadow-sm" style="border: 1px solid rgba(220, 20, 60, 0.1);">
+                                    <div class="bg-warning bg-opacity-10 rounded-circle p-2">
+                                        <i class="bi bi-patch-check text-warning fs-5"></i>
+                                    </div>
+                                    <div>
+                                        <div class="fw-bold text-dark" style="font-size: 1.5rem;">100%</div>
+                                        <div class="text-muted small">Compliance Rate</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-4 reveal-on-scroll" data-delay="300">
+                            <a href="../contact.html" class="btn btn-hero-primary" style="background: linear-gradient(135deg, #dc143c, #ffd700); color: white; padding: 14px 32px; border-radius: 50px; font-weight: 600; border: none; transition: all 0.4s ease; box-shadow: 0 10px 30px rgba(220, 20, 60, 0.3);">
+                                <i class="bi bi-cloud-check me-2"></i>
+                                Get Cloud Assessment
+                            </a>
+                        </div>
+                    </div>
+                    <!-- right side - Image -->
+                    <div class="col-lg-6">
+                        <div class="reveal-on-scroll" data-delay="400" style="position: relative;">
+                            <div class="main-image-card" style="border-radius: 25px; overflow: hidden; box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);">
+                                <img src="../assets/images/cyber.jpg" alt="Cloud Security" class="img-fluid" style="width: 100%; display: block; transition: all 0.4s ease;">
+                            </div>
+                            <div class="floating-card" style="position: absolute; top: 10%; right: -20px; background: rgba(255, 255, 255, 0.95); border-radius: 20px; padding: 20px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); animation: float-card 4s ease-in-out infinite;">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="bg-danger bg-opacity-10 rounded-circle p-2">
+                                        <i class="bi bi-shield-lock text-danger fs-5"></i>
+                                    </div>
+                                    <div>
+                                        <div class="fw-bold text-dark">99.9%</div>
+                                        <div class="text-muted small">Uptime SLA</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="floating-card" style="position: absolute; bottom: 15%; left: -30px; background: rgba(255, 255, 255, 0.95); border-radius: 20px; padding: 20px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); animation: float-card 4s ease-in-out infinite; animation-delay: 2s;">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="bg-success bg-opacity-10 rounded-circle p-2">
+                                        <i class="bi bi-graph-up text-success fs-5"></i>
+                                    </div>
+                                    <div>
+                                        <div class="fw-bold text-dark">50%</div>
+                                        <div class="text-muted small">Cost Savings</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <style>
+                @keyframes float-card {
+                    0%, 100% { transform: translateY(0px); }
+                    50% { transform: translateY(-15px); }
+                }
+                .gradient-text {
+                    background: linear-gradient(135deg, #dc143c, #ffd700);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-clip: text;
+                }
+                .main-image-card:hover img {
+                    transform: scale(1.05);
+                }
+            </style>
+        </section>
+     
+        <!-- Process Section -->
+        <section class="process-section bg-light">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-title reveal-on-scroll">Our Cloud Migration Process</h2>
+                    <p class="section-subtitle reveal-on-scroll">
+                        A proven methodology for successful cloud transformation
+                    </p>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="process-card reveal-on-scroll" data-delay="100">
+                            <div class="process-number">1</div>
+                            <h4 class="process-title">Assessment</h4>
+                            <p class="process-description">
+                                Comprehensive analysis of your current infrastructure and cloud readiness evaluation
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="process-card reveal-on-scroll" data-delay="150">
+                            <div class="process-number">2</div>
+                            <h4 class="process-title">Planning</h4>
+                            <p class="process-description">
+                                Detailed migration strategy and architecture design for optimal cloud deployment
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="process-card reveal-on-scroll" data-delay="200">
+                            <div class="process-number">3</div>
+                            <h4 class="process-title">Migration</h4>
+                            <p class="process-description">
+                                Phased migration execution with minimal downtime and comprehensive testing
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="process-card reveal-on-scroll" data-delay="300">
+                            <div class="process-number">4</div>
+                            <h4 class="process-title">Optimization</h4>
+                            <p class="process-description">
+                                Continuous monitoring, optimization, and support for peak performance
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+     
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-component"></div>
+
+       <!-- Theme Toggle -->
+    <button id="theme-toggle" class="btn btn-dark position-fixed bottom-0 start-0 m-4 rounded-circle p-3 shadow-lg" style="z-index: 1050;">
+        <i id="sun-icon" class="bi bi-sun-fill d-none"></i>
+        <i id="moon-icon" class="bi bi-moon-fill"></i>
+    </button>
+    <script src="../scripts/theme-toggle.js"></script>
+    
+    <!-- jQuery (required for Owl Carousel) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    
+    <!-- Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Component Loader Script -->
+    <script type="module">
+        async function loadComponent(id, path) {
+            try {
+                const res = await fetch(path);
+                if (!res.ok) throw new Error(`${path} (${res.status})`);
+                const html = await res.text();
+
+                const el = document.getElementById(id);
+                if (el) el.innerHTML = html;
+                else console.warn(`Missing container #${id}`);
+            } catch (err) {
+                console.error(`Component load failed: ${path}`, err);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            const components = [
+                ['navigation-component', '../components/navigation/navigation.html'],
+                ['tech-section-component', '../components/tech-section/tech-section.html'],
+                ['footer-component', '../components/footer/footer.html'],
+                ['right-panel-component', '../components/right-panel/right-panel-subdirectory.html']
+            ];
+
+            await Promise.all(components.map(([id, path]) => loadComponent(id, path)));
+
+            // Initialize Owl Carousel after tech section component loads
+            setTimeout(() => {
+                if (typeof $ !== 'undefined' && $.fn.owlCarousel) {
+                    $(".header-carousel .owl-carousel").owlCarousel({
+                        autoplay: true,
+                        smartSpeed: 1000,
+                        loop: true,
+                        dots: true,
+                        nav: true,
+                        navText: ['<span>‹</span>', '<span>›</span>'],
+                        items: 1,
+                        responsive: {
+                            0: { nav: false },
+                            768: { nav: true }
+                        }
+                    });
+                    console.log('✅ Owl Carousel initialized successfully');
+                } else {
+                    console.warn('⚠️ Owl Carousel not available');
+                }
+            }, 500);
+
+            // Trigger navigation fix after components are loaded
+            if (window.fixNavigationPaths) {
+                setTimeout(() => {
+                    window.fixNavigationPaths();
+                    console.log('Navigation paths fixed after component loading');
+                }, 100);
+            }
+
+            // Dispatch custom event for navigation fix
+            document.dispatchEvent(new CustomEvent('navigationLoaded'));
+
+            console.log('✅ Cloud services page initialized successfully');
+        });
+    </script>
+
+    <!-- Page Animations -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize GSAP
+            if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+                gsap.registerPlugin(ScrollTrigger);
+
+                // Animate elements with gsap classes
+                const gsapElements = document.querySelectorAll('.gsap-fade-up, .gsap-fade-left, .gsap-fade-right');
+                
+                gsapElements.forEach(element => {
+                    const delay = element.getAttribute('data-delay') || 0;
+                    
+                    if (element.classList.contains('gsap-fade-up')) {
+                        gsap.to(element, {
+                            opacity: 1,
+                            y: 0,
+                            duration: 0.8,
+                            delay: delay / 1000,
+                            ease: 'power3.out'
+                        });
+                    } else if (element.classList.contains('gsap-fade-left')) {
+                        gsap.to(element, {
+                            opacity: 1,
+                            x: 0,
+                            duration: 0.8,
+                            delay: delay / 1000,
+                            ease: 'power3.out'
+                        });
+                    } else if (element.classList.contains('gsap-fade-right')) {
+                        gsap.to(element, {
+                            opacity: 1,
+                            x: 0,
+                            duration: 0.8,
+                            delay: delay / 1000,
+                            ease: 'power3.out'
+                        });
+                    }
+                });
+
+                // Scroll-triggered reveal animations
+                const revealElements = document.querySelectorAll('.reveal-on-scroll');
+                
+                revealElements.forEach((element, index) => {
+                    const delay = element.getAttribute('data-delay') || index * 100;
+
+                    ScrollTrigger.create({
+                        trigger: element,
+                        start: 'top 85%',
+                        onEnter: () => {
+                            setTimeout(() => {
+                                element.classList.add('revealed');
+                            }, delay);
+                        }
+                    });
+                });
+            }
+
+            // Counter animation
+            const counters = document.querySelectorAll('.counter');
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const duration = 2000;
+                const increment = target / (duration / 16);
+                let current = 0;
+
+                const updateCounter = () => {
+                    current += increment;
+                    if (current < target) {
+                        counter.textContent = Math.floor(current);
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target;
+                    }
+                };
+
+                ScrollTrigger.create({
+                    trigger: counter,
+                    start: 'top 90%',
+                    onEnter: () => updateCounter()
+                });
+            });
+
+            // Smooth hover effects for service cards
+            const serviceCards = document.querySelectorAll('.service-card');
+            serviceCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px)';
+                });
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

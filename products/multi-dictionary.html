@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Lingual Dictionary Solutions - JetHat Cyber Security</title>
+    <meta name="description" content="Multi-Lingual Dictionary Solutions by JetHat - Bridging cultures, word by word. Create, manage, and expand digital dictionaries across 22 official Indian languages with collaborative platform and AI-enhanced features.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <!-- Breadcrumb Badge -->
+    <script src="../scripts/breadcrumb-badge.js"></script>
+    
+    <!-- Universal Loader -->
+    <script src="../scripts/universal-loader.js"></script>
+    
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/products-dark-mode.css">
+    <link rel="stylesheet" href="../styles/loader.css">
+    
+    <!-- Navigation Fix Script -->
+    <script src="../scripts/navigation-fix.js"></script>
+    <script src="../scripts/navbar-scroll.js"></script>
+    
+    <style>
+        /* Cyber Security Theme Styles */
+        .product-hero {
+            /* background: linear-gradient(135deg, #fff7ed 0%, #ffffff 50%, #fffbeb 100%); */
+            position: relative;
+            overflow: hidden;
+            min-height: 60vh;
+        }
+        
+        /* Circuit Pattern Overlay */
+        .circuit-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(90deg, rgba(220, 20, 60, 0.03) 1px, transparent 1px),
+                linear-gradient(rgba(220, 20, 60, 0.03) 1px, transparent 1px),
+                radial-gradient(circle at 50% 50%, rgba(220, 20, 60, 0.02) 1px, transparent 1px);
+            background-size: 50px 50px, 50px 50px, 20px 20px;
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        /* Grid Pattern */
+        .grid-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(90deg, rgba(124, 58, 237, 0.05) 1px, transparent 1px),
+                linear-gradient(rgba(124, 58, 237, 0.05) 1px, transparent 1px);
+            background-size: 30px 30px;
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        /* Floating Security Icons */
+        .floating-security-icons {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+            pointer-events: none;
+        }
+        
+        .security-icon {
+            position: absolute;
+            font-size: 2rem;
+            opacity: 0.15;
+            animation: orbit 20s linear infinite, floatIcon 6s ease-in-out infinite;
+        }
+        
+        .security-icon:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s, 0s; }
+        .security-icon:nth-child(2) { top: 30%; right: 10%; animation-delay: 2s, 1s; }
+        .security-icon:nth-child(3) { bottom: 20%; left: 15%; animation-delay: 4s, 2s; }
+        .security-icon:nth-child(4) { top: 50%; right: 5%; animation-delay: 1s, 3s; }
+        .security-icon:nth-child(5) { bottom: 30%; right: 20%; animation-delay: 3s, 4s; }
+        .security-icon:nth-child(6) { top: 15%; left: 30%; animation-delay: 5s, 5s; }
+        
+        @keyframes orbit {
+            0% { transform: rotate(0deg) translateX(50px) rotate(0deg); }
+            100% { transform: rotate(360deg) translateX(50px) rotate(-360deg); }
+        }
+        
+        @keyframes floatIcon {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        /* Scanning Line Animation */
+        .scanning-line {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #dc143c, #ffd700, transparent);
+            box-shadow: 0 0 20px rgba(220, 20, 60, 0.8);
+            animation: scan 3s linear infinite;
+            z-index: 10;
+            pointer-events: none;
+        }
+        
+        @keyframes scan {
+            0% { top: 0%; opacity: 1; }
+            100% { top: 100%; opacity: 0; }
+        }
+        
+        /* Particle Effects */
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #dc143c;
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: particleFloat 8s ease-in-out infinite;
+        }
+        
+        .particle:nth-child(1) { left: 10%; top: 20%; animation-delay: 0s; }
+        .particle:nth-child(2) { left: 30%; top: 40%; animation-delay: 1s; }
+        .particle:nth-child(3) { left: 50%; top: 60%; animation-delay: 2s; }
+        .particle:nth-child(4) { left: 70%; top: 30%; animation-delay: 3s; }
+        .particle:nth-child(5) { left: 90%; top: 50%; animation-delay: 4s; }
+        .particle:nth-child(6) { left: 20%; top: 70%; animation-delay: 5s; }
+        .particle:nth-child(7) { left: 40%; top: 10%; animation-delay: 6s; }
+        .particle:nth-child(8) { left: 60%; top: 80%; animation-delay: 7s; }
+        
+        @keyframes particleFloat {
+            0%, 100% { 
+                transform: translateY(0) translateX(0);
+                opacity: 0.3;
+            }
+            25% { 
+                transform: translateY(-30px) translateX(20px);
+                opacity: 0.6;
+            }
+            50% { 
+                transform: translateY(-60px) translateX(-20px);
+                opacity: 0.3;
+            }
+            75% { 
+                transform: translateY(-30px) translateX(20px);
+                opacity: 0.6;
+            }
+        }
+        
+        /* Terminal Typing Effect */
+        .terminal-container {
+            background: #1a1a2e;
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 20px;
+            font-family: 'Courier New', monospace;
+            color: #00ff00;
+            font-size: 0.9rem;
+            max-width: 500px;
+        }
+        
+        .terminal-header {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+        
+        .terminal-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        
+        .terminal-dot:nth-child(1) { background: #ff5f56; }
+        .terminal-dot:nth-child(2) { background: #ffbd2e; }
+        .terminal-dot:nth-child(3) { background: #27ca40; }
+        
+        .terminal-content {
+            min-height: 60px;
+        }
+        
+        .typing-cursor {
+            display: inline-block;
+            width: 10px;
+            height: 18px;
+            background: #00ff00;
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+        
+        /* Enhanced Feature Cards */
+        .feature-card {
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(220, 20, 60, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(220, 20, 60, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .feature-card:hover::before {
+            left: 100%;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-15px) scale(1.05) rotateY(5deg);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        
+        .feature-icon::after {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            border-radius: 50%;
+            opacity: 0;
+            transition: all 0.4s ease;
+            z-index: -1;
+        }
+        
+        .feature-card:hover .feature-icon {
+            transform: scale(1.2) rotate(360deg);
+        }
+        
+        .feature-card:hover .feature-icon::after {
+            opacity: 0.3;
+            transform: scale(1.2);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .btn-gradient {
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            border: none;
+            color: white;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-gradient::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .btn-gradient:hover::before {
+            left: 100%;
+        }
+        
+        .btn-gradient:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(220, 20, 60, 0.4);
+        }
+        
+        /* Tech Status Indicator */
+        .tech-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 5px 12px;
+            background: rgba(34, 197, 94, 0.1);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: #22c55e;
+        }
+        
+        .tech-status::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: #22c55e;
+            border-radius: 50%;
+            animation: statusPulse 2s infinite;
+        }
+        
+        @keyframes statusPulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.8); }
+        }
+        
+        /* Floating Badge */
+        .floating-badge {
+            position: absolute;
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: 0 10px 30px rgba(220, 20, 60, 0.3);
+            animation: badgeFloat 4s ease-in-out infinite;
+        }
+        
+        @keyframes badgeFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        /* Reveal Animations */
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-100px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(100px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .reveal-zoom {
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .reveal-up.visible,
+        .reveal-left.visible,
+        .reveal-right.visible,
+        .reveal-zoom.visible {
+            opacity: 1;
+            transform: translate(0, 0) scale(1);
+        }
+        
+        /* Stagger Animation Delays */
+        .stagger-1 { transition-delay: 0.1s; }
+        .stagger-2 { transition-delay: 0.2s; }
+        .stagger-3 { transition-delay: 0.3s; }
+        .stagger-4 { transition-delay: 0.4s; }
+        .stagger-5 { transition-delay: 0.5s; }
+        .stagger-6 { transition-delay: 0.6s; }
+        
+        /* Cyber Grid Background */
+        .cyber-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(220, 20, 60, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(220, 20, 60, 0.03) 1px, transparent 1px);
+            background-size: 25px 25px;
+            z-index: 0;
+        }
+        
+        /* Floating Shapes */
+        .floating-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .shape {
+            position: absolute;
+            background: linear-gradient(45deg, #dc143c, #ffd700);
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 8s ease-in-out infinite;
+        }
+        
+        .shape:nth-child(1) { width: 80px; height: 80px; top: 20%; left: 10%; animation-delay: 0s; }
+        .shape:nth-child(2) { width: 120px; height: 120px; top: 60%; right: 15%; animation-delay: 2s; }
+        .shape:nth-child(3) { width: 60px; height: 60px; bottom: 30%; left: 20%; animation-delay: 4s; }
+        .shape:nth-child(4) { width: 100px; height: 100px; top: 40%; right: 30%; animation-delay: 1s; }
+        .shape:nth-child(5) { width: 90px; height: 90px; bottom: 20%; right: 10%; animation-delay: 3s; }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); }
+            25% { transform: translateY(-30px) rotate(90deg) scale(1.1); }
+            50% { transform: translateY(-20px) rotate(180deg) scale(0.9); }
+            75% { transform: translateY(-40px) rotate(270deg) scale(1.05); }
+        }
+        
+        /* AI Card Animations */
+        .ai-card-main:hover .ai-overlay {
+            opacity: 1;
+        }
+        
+        .ai-card-main:hover .ai-content {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .ai-card-main:hover .ai-main-image {
+            transform: scale(1.1);
+        }
+        
+        .ai-card-secondary:hover .ai-overlay {
+            opacity: 1;
+        }
+        
+        .ai-card-secondary:hover .ai-secondary-image {
+            transform: scale(1.1);
+        }
+        
+        .ai-card-mini:hover .ai-mini-image {
+            transform: scale(1.2);
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 0.7;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body style="background: linear-gradient(135deg,#fff7ed,#ffffff,#fffbeb); color: #333333;">
+    <div id="navigation-component"></div>
+    <div id="right-panel-component"></div>
+
+    <main class="pt-5">
+        <section class="product-hero py-5 position-relative">
+           
+            
+            <div class="container px-4 position-relative" style="z-index: 2; margin-top: 2.5rem;">
+                <div class="row align-items-center py-5">
+                    <div class="col-12 mb-4" data-breadcrumb data-separator="arrow">
+                        <!-- Breadcrumb will be dynamically generated here -->
+                    </div>
+                    <div class="col-lg-6">
+                        <h1 class="display-3 fw-bold mb-4 reveal-up" style="color: #333333;">
+                            Multi-Lingual Dictionary
+                            <span class="d-block text-gradient">Solutions</span>
+                        </h1>
+                        <p class="lead mb-4 reveal-up stagger-1" style="color: #666666;">
+                            Bridging Cultures, Word by Word. JetHat's Multi-Lingual Dictionary Solutions offer a modern, collaborative platform to create, manage, and expand digital dictionaries across 22 official Indian languages and multiple international languages.
+                        </p>
+                        <!-- <p class="lead mb-4 reveal-up stagger-1" style="color: #666666;">
+                            Advanced AI-powered multilingual dictionary with contextual translations, 
+                            cultural insights, and comprehensive language learning tools for global communication.
+                        </p> -->
+                        
+                        <!-- Terminal Effect -->
+                        <div class="terminal-container reveal-up stagger-2">
+                            <div class="terminal-header">
+                                <div class="terminal-dot"></div>
+                                <div class="terminal-dot"></div>
+                                <div class="terminal-dot"></div>
+                            </div>
+                            <div class="terminal-content">
+                                <span class="text-success">➜</span> <span class="text-info">~</span> dictionary --create --lang=hi,bn,te<br>
+                                <span class="text-success">➜</span> <span class="text-info">~</span> languages: <span class="text-warning">22 Indian + international</span><br>
+                                <span class="text-success">➜</span> <span class="text-info">~</span> <span class="text-warning">building dictionary...</span><span class="typing-cursor"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex flex-wrap gap-3 mb-4 mt-4 reveal-up stagger-3">
+                            <div class="tech-status">
+                                <span>22 Indian Languages</span>
+                            </div>
+                            <div class="tech-status">
+                                <span>Collaborative Platform</span>
+                            </div>
+                            <div class="tech-status">
+                                <span>AI-Enhanced</span>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex flex-column flex-sm-row gap-3 reveal-up stagger-4">
+                            <button class="btn btn-gradient btn-lg px-4 py-3">
+                                <i class="bi bi-play-circle me-2"></i>
+                                Try Platform
+                            </button>
+                            <button class="btn btn-outline-danger btn-lg px-4 py-3">
+                                <i class="bi bi-chat-dots me-2"></i>
+                                Contact Us
+                            </button>
+                        </div>
+<!--                    -->
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="text-center reveal-up stagger-3">
+                            <div class="feature-icon mx-auto mb-4" style="width: 120px; height: 120px;">
+                                <i class="bi bi-book text-white fs-1"></i>
+                            </div>
+                            <!-- Floating Badge -->
+                            <div class="floating-badge reveal-left" style="top: 20%; right: 10%;">
+                                📖 Language Bridge
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Features Section -->
+        <section class="py-5" style="background: linear-gradient(135deg,#fff7ed,#ffffff,#fffbeb);">
+            <div class="container">
+                <div class="text-center mb-5 reveal-up">
+                    <h2 class="display-5 fw-bold mb-3" style="color: #333;">
+                        Core <span class="text-gradient">Features</span>
+                    </h2>
+                    <p class="lead text-muted">Empowering institutions, researchers, linguists, and organizations to preserve, promote, and connect languages</p>
+                </div>
+                
+                <div class="row g-4">
+                    <!-- 22 Indian Languages Support -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feature-card p-4 h-100 reveal-up stagger-1">
+                            <div class="feature-icon">
+                                <i class="bi bi-globe text-white fs-2"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3 text-center">22 Indian Languages Support</h4>
+                            <p class="text-muted text-center mb-3">Complete coverage of official Indian languages plus international options.</p>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Hindi, Bengali, Telugu, Marathi</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Tamil, Urdu, Gujarati, Kannada</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Malayalam, Odia, Punjabi, Assamese</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Sanskrit, Kashmiri, Nepali, Konkani</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>International Language Options</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Collaborative Dictionary Building -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feature-card p-4 h-100 reveal-up stagger-2">
+                            <div class="feature-icon">
+                                <i class="bi bi-people text-white fs-2"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3 text-center">Collaborative Dictionary Building</h4>
+                            <p class="text-muted text-center mb-3">Multiple contributors with role-based permissions for quality control.</p>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Multiple Contributors</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Linguists & Educators</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Students & Scholars</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Role-Based Permissions</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Quality Validation</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- AI-Enhanced Word Suggestions -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feature-card p-4 h-100 reveal-up stagger-3">
+                            <div class="feature-icon">
+                                <i class="bi bi-cpu text-white fs-2"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3 text-center">AI-Enhanced Word Suggestions</h4>
+                            <p class="text-muted text-center mb-3">Leverage AI for deeper linguistic connections and contextual meanings.</p>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Synonyms & Antonyms</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Contextual Meanings</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Related Phrases</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Example Sentences</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Linguistic Connections</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Advanced Multilingual Search -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feature-card p-4 h-100 reveal-up stagger-4">
+                            <div class="feature-icon">
+                                <i class="bi bi-search text-white fs-2"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3 text-center">Advanced Multilingual Search</h4>
+                            <p class="text-muted text-center mb-3">Smart search capabilities with comprehensive filtering options.</p>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Language Filters</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Part-of-Speech Tagging</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Phonetic Search</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Translation Matching</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Smart Suggestions</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Audio Pronunciations -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feature-card p-4 h-100 reveal-up stagger-5">
+                            <div class="feature-icon">
+                                <i class="bi bi-mic text-white fs-2"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3 text-center">Audio Pronunciations</h4>
+                            <p class="text-muted text-center mb-3">Native-language pronunciation recordings for multiple dialects.</p>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Native Pronunciation</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Multiple Dialects</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Speaking Skills Aid</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Listening Practice</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Audio Quality Control</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Role-Based Access Control -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feature-card p-4 h-100 reveal-up stagger-6">
+                            <div class="feature-icon">
+                                <i class="bi bi-shield-check text-white fs-2"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3 text-center">Role-Based Access Control</h4>
+                            <p class="text-muted text-center mb-3">Secure collaboration with defined roles and permissions.</p>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Admin & Editor Roles</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Reviewer & Contributor</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Public User Access</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Data Accuracy Control</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Secure Collaboration</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Advanced Features Section -->
+        <section class="py-5" style="background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);">
+            <div class="container">
+                <div class="text-center mb-5 reveal-up">
+                    <h2 class="display-5 fw-bold mb-3" style="color: #333;">
+                        Advanced <span class="text-gradient">Capabilities</span>
+                    </h2>
+                    <p class="lead text-muted">Enterprise-grade features for comprehensive dictionary management</p>
+                </div>
+                
+                <div class="row g-4">
+                    <!-- Cross-Referencing -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feature-card p-4 h-100 reveal-up stagger-1">
+                            <div class="feature-icon">
+                                <i class="bi bi-diagram-3 text-white fs-2"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3 text-center">Cross-Referencing & Linked Entries</h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Cross-Language Links</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Dialect Connections</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Synonym Networks</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Category Grouping</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Linguistic Network</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Version Control -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feature-card p-4 h-100 reveal-up stagger-2">
+                            <div class="feature-icon">
+                                <i class="bi bi-clock-history text-white fs-2"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3 text-center">Version Control & Moderation</h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Complete Edit History</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Approval Workflows</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Moderation Tools</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Quality Assurance</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Verified Content</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Web and Mobile Access -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feature-card p-4 h-100 reveal-up stagger-3">
+                            <div class="feature-icon">
+                                <i class="bi bi-phone text-white fs-2"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3 text-center">Web and Mobile Accessibility</h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Fully Responsive Design</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Mobile Optimized</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Smartphone Access</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Tablet Support</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Desktop Interface</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Cloud Infrastructure -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feature-card p-4 h-100 reveal-up stagger-4">
+                            <div class="feature-icon">
+                                <i class="bi bi-cloud text-white fs-2"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3 text-center">Cloud-Based Infrastructure</h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Highly Scalable</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Millions of Words Support</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Cross-Platform Access</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>National Expansion Ready</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>International Deployment</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Integration Ready -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feature-card p-4 h-100 reveal-up stagger-5">
+                            <div class="feature-icon">
+                                <i class="bi bi-gear text-white fs-2"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3 text-center">Integration-Ready APIs</h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>E-learning Platforms</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Publishing Systems</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Research Projects</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Mobile Apps</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Third-party Integration</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vision and Mission Section -->
+        <section class="py-5" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+            <div class="container">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6">
+                        <div class="reveal-up">
+                            <h2 class="display-5 fw-bold mb-4" style="color: #333;">
+                                Our <span class="text-gradient">Vision</span>
+                            </h2>
+                            <p class="fs-5 text-muted mb-4">
+                                To create a world where every language thrives in the digital age, where linguistic diversity is celebrated and preserved through innovative technology solutions that connect cultures and communities globally.
+                            </p>
+                            <div class="d-flex align-items-center mb-4">
+                                <div class="feature-icon me-3" style="width: 60px; height: 60px;">
+                                    <i class="bi bi-eye text-white fs-3"></i>
+                                </div>
+                                <div>
+                                    <h5 class="fw-bold mb-1">Global Language Preservation</h5>
+                                    <p class="text-muted mb-0 small">Empowering communities to preserve their linguistic heritage</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="reveal-up stagger-2">
+                            <h2 class="display-5 fw-bold mb-4" style="color: #333;">
+                                Our <span class="text-gradient">Mission</span>
+                            </h2>
+                            <p class="fs-5 text-muted mb-4">
+                                To democratize language learning and documentation by providing cutting-edge, collaborative dictionary solutions that bridge linguistic gaps, support multilingual education, and foster cross-cultural understanding through technology.
+                            </p>
+                            <div class="d-flex align-items-center mb-4">
+                                <div class="feature-icon me-3" style="width: 60px; height: 60px;">
+                                    <i class="bi bi-target text-white fs-3"></i>
+                                </div>
+                                <div>
+                                    <h5 class="fw-bold mb-1">Collaborative Language Building</h5>
+                                    <p class="text-muted mb-0 small">Uniting linguists, educators, and communities worldwide</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Core Values -->
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <div class="text-center mb-4 reveal-up">
+                            <h3 class="fw-bold" style="color: #333;">Core Values</h3>
+                        </div>
+                        <div class="row g-4">
+                            <div class="col-md-4">
+                                <div class="text-center reveal-up stagger-1">
+                                    <div class="feature-icon mx-auto mb-3" style="width: 70px; height: 70px;">
+                                        <i class="bi bi-people-fill text-white fs-2"></i>
+                                    </div>
+                                    <h5 class="fw-bold mb-2">Inclusivity</h5>
+                                    <p class="text-muted small">Every language and dialect deserves digital representation</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="text-center reveal-up stagger-2">
+                                    <div class="feature-icon mx-auto mb-3" style="width: 70px; height: 70px;">
+                                        <i class="bi bi-lightbulb-fill text-white fs-2"></i>
+                                    </div>
+                                    <h5 class="fw-bold mb-2">Innovation</h5>
+                                    <p class="text-muted small">Leveraging AI and technology for linguistic advancement</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="text-center reveal-up stagger-3">
+                                    <div class="feature-icon mx-auto mb-3" style="width: 70px; height: 70px;">
+                                        <i class="bi bi-shield-check-fill text-white fs-2"></i>
+                                    </div>
+                                    <h5 class="fw-bold mb-2">Quality</h5>
+                                    <p class="text-muted small">Maintaining accuracy and authenticity in every translation</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Smart Dictionary Intelligence Solution Section -->
+        <section class="py-5" style="background: rgba(220, 20, 60, 0.02);">
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <!-- Left Animated Image Cards -->
+                    <div class="col-lg-6 order-2 order-lg-1">
+                        <div class="position-relative">
+                            <!-- Main Large Card -->
+                            <div class="ai-card-main position-relative mb-4 reveal-up">
+                                <div class="ai-image-container" style="width: 500px; height: 350px; background: white; border-radius: 20px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); overflow: hidden; position: relative;">
+                                    <img src="../assets/images/cyber1.jpg" alt="Dictionary Intelligence" class="ai-main-image" style="width: 100%; height: 100%; object-fit: cover; transition: all 0.6s ease;" />
+                                    <div class="ai-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(220, 20, 60, 0.2), rgba(255, 215, 0, 0.2)); opacity: 0; transition: all 0.4s ease;"></div>
+                                    <div class="ai-content" style="position: absolute; bottom: 20px; left: 20px; color: white; z-index: 2; transform: translateY(20px); opacity: 0; transition: all 0.4s ease;">
+                                        <h4 class="fw-bold mb-2">Smart Dictionary Creation</h4>
+                                        <p class="mb-0">AI-Powered Language Processing</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Secondary Card -->
+                            <div class="ai-card-secondary position-absolute reveal-left stagger-2" style="top: 50px; right: -30px; z-index: 2;">
+                                <div class="ai-image-container" style="width: 350px; height: 250px; background: white; border-radius: 15px; box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); overflow: hidden; position: relative;">
+                                    <img src="../assets/images/cyber2.jpg" alt="Multilingual Processing" class="ai-secondary-image" style="width: 100%; height: 100%; object-fit: cover; transition: all 0.6s ease;" />
+                                    <div class="ai-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(34, 197, 94, 0.2), rgba(59, 130, 246, 0.2)); opacity: 0; transition: all 0.4s ease;"></div>
+                                    <div class="ai-badge" style="position: absolute; top: 15px; right: 15px; background: rgba(255, 255, 255, 0.9); padding: 8px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; color: #1f2937;">
+                                        Multilingual AI
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Floating Mini Card -->
+                            <div class="ai-card-mini position-absolute reveal-zoom stagger-3" style="bottom: 30px; left: -30px; z-index: 3;">
+                                <div class="ai-image-container" style="width: 120px; height: 120px; background: white; border-radius: 50%; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); overflow: hidden; position: relative;">
+                                    <img src="../assets/images/cyber3.jpg" alt="Language Network" class="ai-mini-image" style="width: 100%; height: 100%; object-fit: cover; transition: all 0.6s ease;" />
+                                    <div class="ai-pulse" style="position: absolute; top: -2px; left: -2px; width: calc(100% + 4px); height: calc(100% + 4px); border: 2px solid #dc143c; border-radius: 50%; animation: pulse 2s infinite;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Content -->
+                    <div class="col-lg-6 order-1 order-lg-2">
+                        <div class="reveal-up">
+                            <h2 class="fw-bold display-3 mb-4" style="color: #333;">
+                                Smart Dictionary
+                                <span class="d-block fw-bold display-2 text-gradient">Intelligence Solution</span>
+                            </h2>
+                            <p class="fs-5 text-muted mb-4" style="max-width: 520px;">
+                                Our advanced AI engine revolutionizes dictionary creation by automating word relationships, contextual meanings, and cross-language connections using cutting-edge natural language processing models. Transform linguistic data into comprehensive, interconnected knowledge networks.
+                            </p>
+                            <p class="fs-6 text-muted mb-5" style="max-width: 520px;">
+                                From intelligent word suggestions to semantic relationship mapping, our Dictionary Intelligence creates seamless multilingual experiences. The platform learns from linguistic patterns and adapts to provide personalized dictionary recommendations for maximum learning effectiveness.
+                            </p>
+                            <div class="d-flex flex-wrap gap-3">
+                                <div class="d-flex align-items-center">
+                                    <div class="capability-icon me-2" style="width: 40px; height: 40px; background: linear-gradient(135deg, #dc143c, #ffd700); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                        <i class="bi bi-lightning-charge text-white fs-6"></i>
+                                    </div>
+                                    <span class="fw-semibold">Instant Processing</span>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <div class="capability-icon me-2" style="width: 40px; height: 40px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                        <i class="bi bi-diagram-3 text-white fs-6"></i>
+                                    </div>
+                                    <span class="fw-semibold">Smart Connections</span>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <div class="capability-icon me-2" style="width: 40px; height: 40px; background: linear-gradient(135deg, #4facfe, #00f2fe); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                        <i class="bi bi-translate text-white fs-6"></i>
+                                    </div>
+                                    <span class="fw-semibold">22+ Languages</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Best Suited For Section -->
+        <section class="py-5" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+            <div class="container">
+                <div class="text-center mb-5 reveal-up">
+                    <h2 class="display-5 fw-bold mb-3 text-white">
+                        Best Suited <span style="color: #ffd700;">For</span>
+                    </h2>
+                    <p class="lead text-light">Designed for diverse educational and research institutions</p>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="text-center text-white reveal-up stagger-1">
+                            <div class="feature-icon mx-auto mb-3" style="width: 80px; height: 80px; background: rgba(255, 255, 255, 0.2);">
+                                <i class="bi bi-building text-white fs-2"></i>
+                            </div>
+                            <h5 class="fw-bold mb-2">Universities & Research Institutions</h5>
+                            <p class="text-light small">Academic institutions conducting linguistic research and language studies</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="text-center text-white reveal-up stagger-2">
+                            <div class="feature-icon mx-auto mb-3" style="width: 80px; height: 80px; background: rgba(255, 255, 255, 0.2);">
+                                <i class="bi bi-journal-text text-white fs-2"></i>
+                            </div>
+                            <h5 class="fw-bold mb-2">Language Documentation Projects</h5>
+                            <p class="text-light small">Projects focused on preserving and documenting endangered languages</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="text-center text-white reveal-up stagger-3">
+                            <div class="feature-icon mx-auto mb-3" style="width: 80px; height: 80px; background: rgba(255, 255, 255, 0.2);">
+                                <i class="bi bi-bank text-white fs-2"></i>
+                            </div>
+                            <h5 class="fw-bold mb-2">Government Language Missions</h5>
+                            <p class="text-light small">Government initiatives for language preservation and promotion</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="text-center text-white reveal-up stagger-4">
+                            <div class="feature-icon mx-auto mb-3" style="width: 80px; height: 80px; background: rgba(255, 255, 255, 0.2);">
+                                <i class="bi bi-book text-white fs-2"></i>
+                            </div>
+                            <h5 class="fw-bold mb-2">Public Libraries & Educational Platforms</h5>
+                            <p class="text-light small">Libraries and educational institutions serving diverse communities</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="text-center text-white reveal-up stagger-5">
+                            <div class="feature-icon mx-auto mb-3" style="width: 80px; height: 80px; background: rgba(255, 255, 255, 0.2);">
+                                <i class="bi bi-heart text-white fs-2"></i>
+                            </div>
+                            <h5 class="fw-bold mb-2">NGOs & Cultural Organizations</h5>
+                            <p class="text-light small">Organizations working on cultural preservation and language promotion</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="text-center text-white reveal-up stagger-6">
+                            <div class="feature-icon mx-auto mb-3" style="width: 80px; height: 80px; background: rgba(255, 255, 255, 0.2);">
+                                <i class="bi bi-briefcase text-white fs-2"></i>
+                            </div>
+                            <h5 class="fw-bold mb-2">Publishers & Digital Media</h5>
+                            <p class="text-light small">Publishing companies and digital media organizations</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="py-5" style="background: linear-gradient(135deg, #dc143c, #ffd700);">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-8">
+                        <h2 class="display-5 fw-bold text-white mb-3 reveal-up">
+                            Celebrate Language Diversity with Technology
+                        </h2>
+                        <p class="lead text-white mb-4 reveal-up stagger-1">
+                            With JetHat's Multi-Lingual Dictionary Solutions, you can preserve linguistic heritage, empower education, and promote multilingual communication—all through a secure, scalable, and collaborative digital platform.
+                        </p>
+                    </div>
+                    <div class="col-lg-4 text-center">
+                        <div class="d-flex flex-column gap-3 reveal-up stagger-2">
+                            <button class="btn btn-light btn-lg px-4 py-3">
+                                <i class="bi bi-play-circle me-2"></i>
+                                Try Platform
+                            </button>
+                            <button class="btn btn-outline-light btn-lg px-4 py-3">
+                                <i class="bi bi-chat-dots me-2"></i>
+                                Contact Us to Learn More
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="footer-component"></div>
+       <!-- Theme Toggle -->
+    <button id="theme-toggle" class="btn btn-dark position-fixed bottom-0 start-0 m-4 rounded-circle p-3 shadow-lg" style="z-index: 1050;">
+        <i id="sun-icon" class="bi bi-sun-fill d-none"></i>
+        <i id="moon-icon" class="bi bi-moon-fill"></i>
+    </button>
+    <script src="../scripts/theme-toggle.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function initAnimations() {
+            const animationElements = document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right, .reveal-zoom');
+            const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); } });
+            }, observerOptions);
+            animationElements.forEach(element => { observer.observe(element); });
+        }
+        document.addEventListener('DOMContentLoaded', function() { initAnimations(); });
+    </script>
+
+    <script type="module">
+        async function loadComponent(id, path) {
+            try {
+                const res = await fetch(path);
+                if (!res.ok) throw new Error(`${path} (${res.status})`);
+                const html = await res.text();
+                const el = document.getElementById(id);
+                if (el) el.innerHTML = html;
+                else console.warn(`Missing container #${id}`);
+            } catch (err) { console.error(`Component load failed: ${path}`, err); }
+        }
+        document.addEventListener('DOMContentLoaded', async () => {
+            const components = [
+                ['navigation-component', '../components/navigation/navigation.html'],
+                ['footer-component', '../components/footer/footer.html'],
+                ['right-panel-component', '../components/right-panel/right-panel.html']
+            ];
+            await Promise.all(components.map(([id, path]) => loadComponent(id, path)));
+            
+            // Trigger navigation fix after components are loaded
+            if (window.fixNavigationPaths) {
+                setTimeout(() => {
+                    window.fixNavigationPaths();
+                    console.log('Navigation paths fixed after component loading');
+                }, 100);
+            }
+            
+            // Dispatch custom event for navigation fix
+            document.dispatchEvent(new CustomEvent('navigationLoaded'));
+            
+            console.log('✅ Multi-Dictionary page initialized successfully');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Services Demo - JetHat Cyber</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #f8fafc;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .demo-header {
+            background: linear-gradient(135deg, #1e293b, #334155);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .demo-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .demo-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .demo-features {
+            background: white;
+            padding: 40px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .feature-item {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            color: white;
+            font-size: 24px;
+        }
+        
+        .feature-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #1f2937;
+        }
+        
+        .feature-desc {
+            color: #6b7280;
+            font-size: 14px;
+        }
+        
+        .demo-footer {
+            background: #1e293b;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .back-btn {
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .back-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(220, 20, 60, 0.4);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Demo Header -->
+    <header class="demo-header">
+        <div class="container">
+            <h1 class="demo-title">Enhanced Services Section</h1>
+            <p class="demo-subtitle">
+                Interactive service cards with fixed text, hover effects, explore buttons, 
+                and smooth image slide animations from bottom to top
+            </p>
+        </div>
+    </header>
+
+    <!-- Demo Features -->
+    <section class="demo-features">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="feature-item">
+                        <div class="feature-icon">✨</div>
+                        <h5 class="feature-title">Fixed Text Cards</h5>
+                        <p class="feature-desc">Clean, readable text that stays consistent across all cards</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="feature-item">
+                        <div class="feature-icon">🎯</div>
+                        <h5 class="feature-title">Hover Effects</h5>
+                        <p class="feature-desc">Smooth animations and interactive elements on hover</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="feature-item">
+                        <div class="feature-icon">🚀</div>
+                        <h5 class="feature-title">Explore Buttons</h5>
+                        <p class="feature-desc">Call-to-action buttons that appear on hover with animations</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="feature-item">
+                        <div class="feature-icon">📱</div>
+                        <h5 class="feature-title">Image Animations</h5>
+                        <p class="feature-desc">Images slide from bottom to top with scale effects</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Services Section -->
+    <div id="enhanced-services-container"></div>
+
+    <!-- Demo Footer -->
+    <footer class="demo-footer">
+        <div class="container">
+            <p class="mb-3">Enhanced Services Section Demo</p>
+            <a href="index.html" class="back-btn">
+                <span>←</span>
+                <span>Back to Home</span>
+            </a>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Load Enhanced Services Component -->
+    <script>
+        // Load the enhanced services component
+        fetch('components/services/enhanced-services.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('enhanced-services-container').innerHTML = html;
+                
+                // Load and execute the JavaScript
+                const script = document.createElement('script');
+                script.src = 'scripts/enhanced-services.js';
+                document.head.appendChild(script);
+            })
+            .catch(error => {
+                console.error('Error loading enhanced services:', error);
+                document.getElementById('enhanced-services-container').innerHTML = `
+                    <div class="container py-5 text-center">
+                        <h3>Error Loading Component</h3>
+                        <p>Please make sure the enhanced services files are in the correct location.</p>
+                    </div>
+                `;
+            });
+    </script>
+</body>
+</html>

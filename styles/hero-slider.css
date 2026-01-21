@@ -1,0 +1,483 @@
+/* ===============================================
+   HERO SLIDER STYLES - Bootstrap 5 Enhanced
+   =============================================== */
+
+/* Hero Slider Container */
+.hero-slider-container {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    background: #000;
+}
+
+/* Background Slides */
+.hero-slider-backgrounds {
+    z-index: 0;
+}
+
+.hero-slide-bg {
+    opacity: 0;
+    transition: opacity 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+    background-attachment: fixed !important;
+    will-change: opacity;
+}
+
+.hero-slide-bg.active {
+    opacity: 1;
+}
+
+/* Content Slides */
+.hero-slide-content {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+}
+
+.hero-slide-content.active {
+    opacity: 1;
+    transform: translateY(0);
+    position: relative;
+    pointer-events: all;
+}
+
+/* Hero Title Animations */
+.hero-title {
+    line-height: 1.1;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero-subtitle {
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+.hero-buttons {
+    animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+/* Badge Styles */
+.hero-badge .badge {
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    animation: fadeInUp 1s ease-out 0.1s both;
+}
+
+.bg-gradient-primary {
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary)) !important;
+}
+
+.bg-gradient-secondary {
+    background: linear-gradient(135deg, var(--accent-secondary), var(--accent-gold)) !important;
+}
+
+.bg-gradient-warning {
+    background: linear-gradient(135deg, var(--accent-gold), var(--accent-secondary)) !important;
+}
+
+/* Button Enhancements */
+.hero-buttons .btn {
+    border-radius: 50px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.hero-buttons .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.hero-buttons .btn-primary:hover {
+    box-shadow: 0 8px 25px rgba(220,20,60,0.4);
+}
+
+.hero-buttons .btn-secondary:hover {
+    box-shadow: 0 8px 25px rgba(255,140,0,0.4);
+}
+
+.hero-buttons .btn-warning:hover {
+    box-shadow: 0 8px 25px rgba(255,215,0,0.4);
+}
+
+/* Right Side Animation Container */
+.hero-animation-container {
+    perspective: 1000px;
+}
+
+.security-hub {
+    transform-style: preserve-3d;
+}
+
+/* Rotating Rings */
+.rotating-ring {
+    border-width: 3px !important;
+    filter: drop-shadow(0 0 10px rgba(255,255,255,0.1));
+}
+
+.outer-ring {
+    animation: spin-slow 20s linear infinite;
+}
+
+.middle-ring {
+    animation: spin-slow-reverse 15s linear infinite;
+}
+
+.inner-ring {
+    animation: spin-slow 10s linear infinite;
+}
+
+/* Central Text Animation */
+.central-text .slide-text {
+    opacity: 0;
+    transform: scale(0.8) rotateY(90deg);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: center;
+    width: 100%;
+}
+
+.central-text .slide-text.active {
+    opacity: 1;
+    transform: scale(1) rotateY(0deg) translate(-50%, -50%);
+    position: absolute;
+}
+
+/* Orbit Container */
+.orbit-container {
+    animation: orbit-container 25s linear infinite;
+}
+
+.orbit-icon {
+    transition: all 0.3s ease;
+    animation: float 3s ease-in-out infinite;
+}
+
+.orbit-icon:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 30px currentColor !important;
+}
+
+/* Particles Animation */
+.particles-container .particle {
+    box-shadow: 0 0 10px currentColor;
+    animation-delay: calc(var(--i, 0) * 0.5s);
+}
+
+/* Navigation Controls */
+.hero-controls {
+    backdrop-filter: blur(10px);
+    background: linear-gradient(to top, rgba(0,0,0,0.3), transparent);
+}
+
+.slide-nav-buttons .btn {
+    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.1) !important;
+    border: 1px solid rgba(255,255,255,0.2) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slide-nav-buttons .btn:hover {
+    background: rgba(255,255,255,0.2) !important;
+    border-color: var(--accent-gold) !important;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255,215,0,0.3);
+}
+
+.slide-nav-buttons .btn:active {
+    transform: scale(0.95);
+}
+
+/* Slide Indicators */
+.slide-indicators {
+    gap: 12px;
+}
+
+.slide-indicator {
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.slide-indicator:hover {
+    background: rgba(255,255,255,0.6) !important;
+    transform: scaleY(1.5);
+}
+
+.slide-indicator.active {
+    background: var(--accent-gold) !important;
+    box-shadow: 0 0 15px rgba(255,215,0,0.5);
+}
+
+.slide-indicator.active::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    animation: shimmer 2s ease-in-out infinite;
+}
+
+/* Autoplay Controls */
+.autoplay-toggle {
+    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.1) !important;
+    border: 1px solid rgba(255,255,255,0.2) !important;
+    transition: all 0.3s ease;
+}
+
+.autoplay-toggle:hover {
+    background: rgba(255,255,255,0.2) !important;
+    border-color: var(--accent-gold) !important;
+}
+
+.autoplay-toggle.paused .autoplay-icon::before {
+    content: '\f4c4'; /* play icon */
+}
+
+/* Progress Bar */
+.slide-progress {
+    overflow: hidden;
+}
+
+.progress-bar {
+    transition: width 0.1s linear;
+    background: linear-gradient(90deg, var(--accent-primary), var(--accent-gold)) !important;
+    box-shadow: 0 0 10px rgba(255,215,0,0.3);
+}
+
+/* Keyframe Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes spin-slow-reverse {
+    from { transform: rotate(360deg); }
+    to { transform: rotate(0deg); }
+}
+
+@keyframes orbit-container {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+@keyframes pulse-glow {
+    0%, 100% { 
+        box-shadow: 0 0 20px rgba(255,215,0,0.3);
+        transform: scale(1);
+    }
+    50% { 
+        box-shadow: 0 0 40px rgba(255,215,0,0.6);
+        transform: scale(1.05);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1199.98px) {
+    .hero-title {
+        font-size: 3.5rem;
+    }
+    
+    .security-hub {
+        width: 250px !important;
+        height: 250px !important;
+    }
+    
+    .orbit-icon {
+        width: 35px !important;
+        height: 35px !important;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .hero-slider-container {
+        min-height: 80vh;
+    }
+    
+    .hero-title {
+        font-size: 3rem;
+        text-align: center;
+    }
+    
+    .hero-subtitle {
+        text-align: center;
+        font-size: 1.1rem;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+    }
+    
+    .hero-controls .container-fluid .row .col-12 > div {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+    
+    .slide-nav-buttons {
+        order: 2;
+    }
+    
+    .slide-indicators {
+        order: 1;
+    }
+    
+    .autoplay-controls {
+        order: 3;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .hero-title {
+        font-size: 2.5rem;
+        line-height: 1.2;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .hero-buttons .btn {
+        width: 100%;
+        max-width: 280px;
+    }
+    
+    .slide-nav-buttons .btn {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .slide-nav-buttons .btn i {
+        font-size: 1.2rem;
+    }
+    
+    .slide-indicator {
+        width: 30px !important;
+        height: 6px !important;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.95rem;
+    }
+    
+    .hero-badge .badge {
+        font-size: 0.8rem;
+    }
+    
+    .hero-controls {
+        padding-bottom: 1rem !important;
+    }
+}
+
+/* Accessibility Enhancements */
+@media (prefers-reduced-motion: reduce) {
+    .hero-slide-bg,
+    .hero-slide-content,
+    .rotating-ring,
+    .orbit-container,
+    .particle,
+    .orbit-icon {
+        animation: none !important;
+        transition: opacity 0.3s ease !important;
+    }
+    
+    .slide-indicator::after {
+        animation: none !important;
+    }
+}
+
+/* Focus States for Accessibility */
+.slide-nav-buttons .btn:focus,
+.slide-indicator:focus,
+.autoplay-toggle:focus {
+    outline: 2px solid var(--accent-gold);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px rgba(255,215,0,0.2);
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+    .hero-slide-bg {
+        filter: contrast(1.2);
+    }
+    
+    .hero-title,
+    .hero-subtitle {
+        text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000;
+    }
+    
+    .slide-nav-buttons .btn,
+    .autoplay-toggle {
+        background: rgba(0,0,0,0.8) !important;
+        border-color: #fff !important;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .hero-slider-container {
+        min-height: auto;
+        background: #fff !important;
+        color: #000 !important;
+    }
+    
+    .hero-slide-bg,
+    .hero-controls,
+    .slide-progress,
+    .hero-animation-container {
+        display: none !important;
+    }
+    
+    .hero-slide-content {
+        position: static !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+    
+    .hero-title,
+    .hero-subtitle {
+        color: #000 !important;
+        text-shadow: none !important;
+    }
+}

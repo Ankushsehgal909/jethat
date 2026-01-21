@@ -1,0 +1,2245 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technology Case Studies - JetHat Cyber Security</title>
+    <meta name="description" content="Real-world technology implementations and case studies by JetHat. Discover how our cutting-edge solutions have transformed businesses across industries.">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <!-- Breadcrumb Badge -->
+    <script src="../scripts/breadcrumb-badge.js"></script>
+    
+    <!-- Universal Loader -->
+    <script src="../scripts/universal-loader.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/loader.css">
+    
+    <!-- Navigation Fix Script -->
+    <script src="../scripts/navbar-scroll.js"></script>
+    <script src="../scripts/navigation-fix.js"></script>
+    
+    <style>
+        :root {
+            --case-primary: #DC143C;
+            --case-secondary: #FFD700;
+            --case-dark: #1A1A1A;
+            --case-light: #F8F8F8;
+        }
+
+        /* Light Theme (Default) */
+        [data-bs-theme="light"] {
+            --bg-gradient: linear-gradient(135deg, #fff7ed 0%, #ffffff 50%, #fffbeb 100%);
+            --text-primary: #333333;
+            --text-secondary: #666666;
+            --text-muted: #999999;
+            --card-bg: #ffffff;
+            --card-border: rgba(220, 20, 60, 0.1);
+            --card-shadow: rgba(0, 0, 0, 0.1);
+        }
+
+        /* Dark Theme */
+        [data-bs-theme="dark"] {
+            --bg-gradient: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 50%, #1a1a1a 100%);
+            --text-primary: #f0f0f0;
+            --text-secondary: #cccccc;
+            --text-muted: #999999;
+            --card-bg: #2a2a2a;
+            --card-border: rgba(220, 20, 60, 0.3);
+            --card-shadow: rgba(0, 0, 0, 0.5);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-gradient);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        /* Hero Section */
+        .case-hero {
+            background: var(--bg-gradient);
+            position: relative;
+            overflow: hidden;
+            padding: 100px 0;
+            min-height: 60vh;
+        }
+
+        .case-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(90deg, rgba(220, 20, 60, 0.03) 1px, transparent 1px),
+                linear-gradient(rgba(220, 20, 60, 0.03) 1px, transparent 1px),
+                radial-gradient(circle at 50% 50%, rgba(220, 20, 60, 0.02) 1px, transparent 1px);
+            background-size: 50px 50px, 50px 50px, 20px 20px;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Card Styles */
+        .tech-marquee-section {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .tech-marquee-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .tech-marquee {
+            display: flex;
+            animation: marquee 25s linear infinite;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .tech-marquee-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            min-width: 120px;
+            padding: 20px;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .tech-marquee-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-color: rgba(220, 20, 60, 0.3);
+        }
+
+        .tech-logo {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            filter: grayscale(100%);
+            transition: all 0.3s ease;
+        }
+
+        .tech-marquee-item:hover .tech-logo {
+            filter: grayscale(0%);
+            transform: scale(1.1);
+        }
+
+        .tech-marquee-item span {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* Pause marquee on hover */
+        .tech-marquee-container:hover .tech-marquee {
+            animation-play-state: paused;
+        }
+
+        /* Case Studies Counter */
+        .case-studies-counter {
+            margin-bottom: 30px;
+        }
+
+        .counter-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, rgba(220, 20, 60, 0.1), rgba(255, 215, 0, 0.1));
+            border: 2px solid rgba(220, 20, 60, 0.2);
+            border-radius: 50px;
+            font-weight: 600;
+            color: #dc143c;
+            box-shadow: 0 5px 15px rgba(220, 20, 60, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .counter-badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(220, 20, 60, 0.2);
+        }
+
+        .counter-badge i {
+            font-size: 1.2rem;
+            color: #dc143c;
+        }
+
+        .counter-number {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #dc143c;
+        }
+
+        .counter-separator {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .counter-total {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffd700;
+        }
+
+        .counter-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Compact Success Stories Slider Styles */
+        .success-stories-slider-compact {
+            position: relative;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+
+        .slider-container-compact {
+            position: relative;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .slider-wrapper-compact {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            gap: 20px;
+        }
+
+        .slider-item-compact {
+            min-width: calc(50% - 10px); /* Show 2 cards on desktop */
+            flex-shrink: 0;
+        }
+
+        /* Compact Slider Card Styles */
+        .case-study-card-compact {
+            background: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid var(--card-border);
+            position: relative;
+            box-shadow: 0 6px 20px var(--card-shadow);
+            height: 100%;
+        }
+
+        .case-study-card-compact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #dc143c, #ffd700);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+            z-index: 2;
+        }
+
+        .case-study-card-compact:hover::before {
+            transform: scaleX(1);
+        }
+
+        .case-study-card-compact:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .case-study-image-compact {
+            position: relative;
+            height: 180px;
+            overflow: hidden;
+        }
+
+        .case-image-compact {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.6s ease;
+            transform: translateY(15px);
+        }
+
+        .case-study-card-compact:hover .case-image-compact {
+            transform: translateY(0) scale(1.08);
+        }
+
+        .case-overlay-compact {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(220, 20, 60, 0.7), rgba(255, 215, 0, 0.7));
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-start;
+            padding: 15px;
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+
+        .case-study-card-compact:hover .case-overlay-compact {
+            opacity: 1;
+        }
+
+        .case-category-compact {
+            background: rgba(255, 255, 255, 0.95);
+            color: #dc143c;
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transform: translateY(15px);
+            transition: all 0.4s ease;
+        }
+
+        .case-study-card-compact:hover .case-category-compact {
+            transform: translateY(0);
+        }
+
+        /* Case Number Badge */
+        .case-number {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 35px;
+            height: 35px;
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: 700;
+            box-shadow: 0 4px 12px rgba(220, 20, 60, 0.3);
+            z-index: 3;
+        }
+
+        /* Read More Overlay */
+        .read-more-overlay-compact {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.85);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.4s ease;
+            z-index: 4;
+        }
+
+        .case-study-card-compact:hover .read-more-overlay-compact {
+            opacity: 1;
+        }
+
+        .btn-read-more-compact {
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            transform: translateY(15px);
+            box-shadow: 0 8px 20px rgba(220, 20, 60, 0.3);
+        }
+
+        .case-study-card-compact:hover .btn-read-more-compact {
+            transform: translateY(0) scale(1.05);
+            box-shadow: 0 12px 30px rgba(220, 20, 60, 0.4);
+        }
+
+        .btn-read-more-compact:hover {
+            transform: translateY(0) scale(1.1);
+            box-shadow: 0 15px 35px rgba(220, 20, 60, 0.5);
+        }
+
+        .case-study-content-compact {
+            padding: 20px 18px;
+            position: relative;
+        }
+
+        .case-icon-compact {
+            width: 45px;
+            height: 45px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            margin: -32px auto 15px;
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 6px 18px rgba(220, 20, 60, 0.3);
+        }
+
+        .case-title {
+            color: var(--text-primary);
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .case-description {
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .case-metrics-compact {
+            display: flex;
+            justify-content: space-between;
+            background: rgba(220, 20, 60, 0.05);
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 15px;
+        }
+
+        .metric-item-compact {
+            text-align: center;
+            flex: 1;
+        }
+
+        .metric-value-compact {
+            display: block;
+            font-size: 1rem;
+            font-weight: 700;
+            color: #dc143c;
+            line-height: 1;
+        }
+
+        .metric-label-compact {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            margin-top: 2px;
+        }
+
+        .case-technologies-compact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .tech-tag-compact {
+            padding: 4px 8px;
+            background: linear-gradient(135deg, rgba(220, 20, 60, 0.1), rgba(255, 215, 0, 0.1));
+            border: 1px solid rgba(220, 20, 60, 0.2);
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: #dc143c;
+            transition: all 0.3s ease;
+        }
+
+        .tech-tag-compact:hover {
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            color: white;
+            transform: translateY(-1px);
+        }
+
+        /* Compact Slider Navigation */
+        .slider-navigation-compact {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        .slider-btn-compact {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            border: none;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            pointer-events: all;
+            box-shadow: 0 4px 12px rgba(220, 20, 60, 0.3);
+        }
+
+        .slider-btn-compact:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 18px rgba(220, 20, 60, 0.4);
+        }
+
+        .prev-btn-compact {
+            margin-left: -20px;
+        }
+
+        .next-btn-compact {
+            margin-right: -20px;
+        }
+
+        /* Enhanced Progress and Dots */
+        .slider-progress-container {
+            margin-top: 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .slider-progress-bar {
+            width: 200px;
+            height: 4px;
+            background: rgba(220, 20, 60, 0.2);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #dc143c, #ffd700);
+            border-radius: 2px;
+            transition: width 0.5s ease;
+            width: 16.67%; /* 1/6 for first slide */
+        }
+
+        .slider-dots-compact {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .dot-compact {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(220, 20, 60, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .dot-compact.active {
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            transform: scale(1.3);
+        }
+
+        .dot-compact:hover {
+            background: rgba(220, 20, 60, 0.6);
+            transform: scale(1.2);
+        }
+
+        .dot-compact.active::after {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            border: 2px solid rgba(220, 20, 60, 0.3);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1.4);
+                opacity: 0;
+            }
+        }
+
+        .tech-tag {
+            padding: 6px 12px;
+            background: linear-gradient(135deg, rgba(220, 20, 60, 0.1), rgba(255, 215, 0, 0.1));
+            border: 1px solid rgba(220, 20, 60, 0.2);
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #dc143c;
+            transition: all 0.3s ease;
+        }
+
+        .tech-tag:hover {
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Impact Metrics Styles */
+        .impact-metric-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+        }
+
+        .impact-metric-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #dc143c, #ffd700);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .impact-metric-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .impact-metric-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            border-color: rgba(220, 20, 60, 0.3);
+        }
+
+        .metric-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, rgba(220, 20, 60, 0.1), rgba(255, 215, 0, 0.1));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #dc143c;
+            margin: 0 auto 25px;
+            transition: all 0.4s ease;
+        }
+
+        .impact-metric-card:hover .metric-icon {
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .metric-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+            line-height: 1;
+            margin-bottom: 15px;
+        }
+
+        .metric-number::after {
+            content: '%';
+            font-size: 2rem;
+        }
+
+        .metric-number[data-target="750"]::after,
+        .metric-number[data-target="75"]::after {
+            content: '+';
+        }
+
+        .metric-number[data-target="99"]::after {
+            content: '.9%';
+        }
+
+        .metric-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+        }
+
+        .metric-description {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* Industry Breakdown */
+        .industry-breakdown {
+            background: var(--bg-gradient);
+            border-radius: 20px;
+            padding: 40px 30px;
+            border: 1px solid var(--card-border);
+        }
+
+        .industry-breakdown h3 {
+            color: var(--text-primary);
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .industry-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            padding: 20px 15px;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .industry-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-color: rgba(220, 20, 60, 0.3);
+        }
+
+        .industry-item i {
+            font-size: 2rem;
+            color: #dc143c;
+            transition: all 0.3s ease;
+        }
+
+        .industry-item:hover i {
+            transform: scale(1.2);
+            color: #ffd700;
+        }
+
+        .industry-item span {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .case-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 40px 30px;
+            height: 100%;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid var(--card-border);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 25px var(--card-shadow);
+            z-index: 2;
+        }
+
+        .case-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #dc143c, #ffd700);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .case-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(220, 20, 60, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .case-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .case-card:hover::after {
+            left: 100%;
+        }
+
+        .case-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .case-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 25px;
+            background: linear-gradient(135deg, rgba(220, 20, 60, 0.1), rgba(255, 215, 0, 0.1));
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .case-card:hover .case-icon {
+            transform: scale(1.1) rotate(360deg);
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+        }
+
+        .case-card:hover .case-icon i {
+            color: white !important;
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .btn-gradient {
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            border: none;
+            color: white;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-gradient::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn-gradient:hover::before {
+            left: 100%;
+        }
+
+        .btn-gradient:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(220, 20, 60, 0.4);
+        }
+
+        /* Animations */
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stagger-1 { transition-delay: 0.1s; }
+        .stagger-2 { transition-delay: 0.2s; }
+        .stagger-3 { transition-delay: 0.3s; }
+        .stagger-4 { transition-delay: 0.4s; }
+
+        /* Floating Shapes */
+        .floating-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .shape {
+            position: absolute;
+            background: linear-gradient(45deg, #dc143c, #ffd700);
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 8s ease-in-out infinite;
+        }
+        
+        .shape:nth-child(1) { width: 80px; height: 80px; top: 20%; left: 10%; animation-delay: 0s; }
+        .shape:nth-child(2) { width: 120px; height: 120px; top: 60%; right: 15%; animation-delay: 2s; }
+        .shape:nth-child(3) { width: 60px; height: 60px; bottom: 30%; left: 20%; animation-delay: 4s; }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); }
+            25% { transform: translateY(-30px) rotate(90deg) scale(1.1); }
+            50% { transform: translateY(-20px) rotate(180deg) scale(0.9); }
+            75% { transform: translateY(-40px) rotate(270deg) scale(1.05); }
+        }
+
+        /* Hero Buttons */
+        .btn-hero-primary {
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            color: white;
+            padding: 16px 36px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            border: none;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(220, 20, 60, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-hero-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn-hero-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-hero-primary:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(220, 20, 60, 0.4);
+            color: white;
+        }
+
+        .btn-hero-secondary {
+            background: transparent;
+            color: #dc143c;
+            padding: 16px 36px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            border: 2px solid #dc143c;
+            transition: all 0.4s ease;
+        }
+
+        .btn-hero-secondary:hover {
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            border-color: #dc143c;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(220, 20, 60, 0.3);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .slider-item-compact {
+                min-width: calc(50% - 10px); /* Still 2 cards on large tablets */
+            }
+        }
+
+        @media (max-width: 992px) {
+            .case-hero {
+                padding: 60px 0;
+                text-align: left;
+            }
+
+            .tech-marquee {
+                gap: 30px;
+                animation-duration: 20s;
+            }
+
+            .slider-item-compact {
+                min-width: calc(50% - 10px); /* 2 cards on medium tablets */
+            }
+
+            .case-study-image-compact {
+                height: 160px;
+            }
+
+            .case-study-content-compact {
+                padding: 18px 15px;
+            }
+
+            .impact-metric-card {
+                padding: 30px 20px;
+            }
+
+            .metric-number {
+                font-size: 3rem;
+            }
+
+            .slider-btn-compact {
+                width: 35px;
+                height: 35px;
+                font-size: 0.9rem;
+            }
+
+            .counter-badge {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .case-card {
+                padding: 30px 25px;
+            }
+
+            .slider-item-compact {
+                min-width: calc(100% - 20px); /* 1 card on mobile */
+            }
+
+            .case-study-image-compact {
+                height: 200px; /* Larger image on mobile since we have more space */
+            }
+
+            .case-study-content-compact {
+                padding: 20px 18px; /* More padding on mobile */
+            }
+
+            .case-icon-compact {
+                width: 50px;
+                height: 50px;
+                margin: -35px auto 15px;
+                font-size: 1.3rem;
+            }
+
+            .case-title {
+                font-size: 1.2rem; /* Larger title on mobile */
+            }
+
+            .case-description {
+                font-size: 0.95rem; /* Larger description on mobile */
+            }
+
+            .tech-marquee {
+                gap: 20px;
+                animation-duration: 15s;
+            }
+
+            .tech-marquee-item {
+                min-width: 80px;
+                padding: 15px 10px;
+            }
+
+            .tech-logo {
+                width: 30px;
+                height: 30px;
+            }
+
+            .tech-marquee-item span {
+                font-size: 0.8rem;
+            }
+
+            .metric-number {
+                font-size: 2.5rem;
+            }
+
+            .industry-item {
+                padding: 15px 10px;
+            }
+
+            .industry-item i {
+                font-size: 1.5rem;
+            }
+
+            .industry-item span {
+                font-size: 0.8rem;
+            }
+
+            .slider-btn-compact {
+                width: 32px;
+                height: 32px;
+                font-size: 0.8rem;
+            }
+
+            .prev-btn-compact {
+                margin-left: -16px;
+            }
+
+            .next-btn-compact {
+                margin-right: -16px;
+            }
+
+            .btn-read-more-compact {
+                padding: 12px 24px; /* Larger button on mobile */
+                font-size: 0.9rem;
+            }
+
+            .case-number {
+                width: 35px;
+                height: 35px;
+                font-size: 0.9rem;
+                top: 15px;
+                right: 15px;
+            }
+
+            .slider-progress-bar {
+                width: 150px;
+            }
+
+            .counter-badge {
+                padding: 8px 16px;
+                font-size: 0.85rem;
+            }
+
+            .counter-badge i {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .slider-item-compact {
+                min-width: calc(100% - 15px); /* Full width on small mobile */
+            }
+
+            .case-study-content-compact {
+                padding: 18px 15px;
+            }
+
+            .case-metrics-compact {
+                padding: 12px;
+            }
+
+            .tech-tag-compact {
+                font-size: 0.7rem;
+                padding: 4px 8px;
+            }
+
+            .impact-metric-card {
+                padding: 25px 15px;
+            }
+
+            .metric-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+
+            .metric-number {
+                font-size: 2rem;
+            }
+
+            .industry-breakdown {
+                padding: 30px 20px;
+            }
+
+            .slider-navigation-compact {
+                display: none; /* Hide navigation buttons on very small screens */
+            }
+
+            .success-stories-slider-compact {
+                padding: 10px 0;
+            }
+
+            .slider-wrapper-compact {
+                gap: 15px;
+            }
+
+            .btn-read-more-compact {
+                padding: 10px 20px;
+                font-size: 0.85rem;
+            }
+
+            .case-study-image-compact {
+                height: 180px;
+            }
+
+            .case-number {
+                width: 32px;
+                height: 32px;
+                font-size: 0.85rem;
+                top: 12px;
+                right: 12px;
+            }
+
+            .slider-progress-bar {
+                width: 120px;
+                height: 3px;
+            }
+
+            .counter-badge {
+                padding: 6px 12px;
+                font-size: 0.8rem;
+            }
+
+            .counter-badge i {
+                font-size: 0.9rem;
+            }
+
+            .case-studies-counter {
+                margin-bottom: 20px;
+            }
+        }
+
+        .gsap-fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal-on-scroll.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <div id="navigation-component"></div>
+
+    <!-- Right Panel -->
+    <div id="right-panel-component"></div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="case-hero position-relative">
+           
+        
+            
+            <div class="container position-relative" style="z-index: 2;">
+                <div class="row align-items-center" style="margin-top: 2.5rem;">
+                    <div class="col-12 mb-4" data-breadcrumb data-separator="arrow">
+                        <!-- Breadcrumb will be dynamically generated here -->
+                    </div>
+                    <div class="col-lg-6">
+                        <!-- <div class="hero-badge gsap-fade-up">
+                            <i class="bi bi-gear me-2"></i>
+                            Core Technology 
+                        </div> -->
+                        <h1 class="display-3 fw-bold mb-4 reveal-up" style="color: var(--text-primary);">
+                            Technology
+                            <span class="d-block text-gradient">Case Studies</span>
+                        </h1>
+                        <p class="lead mb-4 reveal-up stagger-1" style="color: var(--text-secondary);">
+                            Explore real-world implementations of our cutting-edge technologies. 
+                            Discover how we've transformed businesses across industries with innovative solutions.
+                        </p>
+                        
+                        <!-- <div class="d-flex flex-column flex-sm-row gap-3 reveal-up stagger-2">
+                            <a href="../contact.html" class="btn btn-gradient btn-lg px-4 py-3">
+                                <i class="bi bi-file-earmark-text me-2"></i>
+                                View All Studies
+                            </a>
+                            <a href="innovation.html" class="btn btn-outline-danger btn-lg px-4 py-3">
+                                <i class="bi bi-lightbulb me-2"></i>
+                                Innovation Lab
+                            </a>
+                        </div> -->
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="text-center reveal-up stagger-3">
+                            <div class="case-icon mx-auto" style="width: 200px; height: 200px; font-size: 4rem;">
+                                <i class="bi bi-graph-up text-success"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> 
+                          
+        <!-- Technology Showcase Marquee -->
+        <section class="tech-marquee-section" style="padding: 60px 0; background: var(--card-bg); border-top: 1px solid var(--card-border); border-bottom: 1px solid var(--card-border);">
+            <div class="container-fluid">
+                <div class="text-center mb-4">
+                    <h3 class="fw-bold mb-3">
+                        Technologies <span class="text-gradient">Implemented</span>
+                    </h3>
+                    <p class="text-muted">Real-world applications of cutting-edge technologies</p>
+                </div>
+                
+                <!-- Technology Marquee -->
+                <div class="tech-marquee-container">
+                    <div class="tech-marquee">
+                        <div class="tech-marquee-item">
+                            <img src="../assets/images/logo.png" alt="AI/ML" class="tech-logo">
+                            <span>AI/ML</span>
+                        </div>
+                        <div class="tech-marquee-item">
+                            <img src="../assets/images/logo.png" alt="Blockchain" class="tech-logo">
+                            <span>Blockchain</span>
+                        </div>
+                        <div class="tech-marquee-item">
+                            <img src="../assets/images/logo.png" alt="Cloud Security" class="tech-logo">
+                            <span>Cloud Security</span>
+                        </div>
+                        <div class="tech-marquee-item">
+                            <img src="../assets/images/logo.png" alt="IoT" class="tech-logo">
+                            <span>IoT</span>
+                        </div>
+                        <div class="tech-marquee-item">
+                            <img src="../assets/images/logo.png" alt="Mobile Apps" class="tech-logo">
+                            <span>Mobile Apps</span>
+                        </div>
+                        <div class="tech-marquee-item">
+                            <img src="../assets/images/logo.png" alt="Web Platforms" class="tech-logo">
+                            <span>Web Platforms</span>
+                        </div>
+                        <div class="tech-marquee-item">
+                            <img src="../assets/images/logo.png" alt="Data Analytics" class="tech-logo">
+                            <span>Data Analytics</span>
+                        </div>
+                        <div class="tech-marquee-item">
+                            <img src="../assets/images/logo.png" alt="Cybersecurity" class="tech-logo">
+                            <span>Cybersecurity</span>
+                        </div>
+                        <div class="tech-marquee-item">
+                            <img src="../assets/images/logo.png" alt="DevOps" class="tech-logo">
+                            <span>DevOps</span>
+                        </div>
+                        <div class="tech-marquee-item">
+                            <img src="../assets/images/logo.png" alt="Quantum Computing" class="tech-logo">
+                            <span>Quantum Computing</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Success Stories Section -->
+        <section class="py-5" style="background: var(--bg-gradient);">
+            <div class="container">
+                <div class="text-center mb-5 reveal-up">
+                    <h2 class="display-4 fw-bold mb-3" style="color: var(--text-primary);">
+                        Success <span class="text-gradient">Stories</span>
+                    </h2>
+                    <p class="lead" style="color: var(--text-secondary); max-width: 800px; margin: 0 auto;">
+                        Discover how our innovative technology solutions have transformed businesses across industries, 
+                        delivering measurable results and driving digital transformation success stories.
+                    </p>
+                </div>
+                
+        <!-- Success Stories Section -->
+        <section class="py-5" style="background: var(--bg-gradient);">
+            <div class="container">
+                <div class="text-center mb-4 reveal-up">
+                    <h2 class="display-4 fw-bold mb-3" style="color: var(--text-primary);">
+                        Success <span class="text-gradient">Stories</span>
+                    </h2>
+                    <p class="lead mb-3" style="color: var(--text-secondary); max-width: 700px; margin: 0 auto;">
+                        Discover how our innovative technology solutions have transformed businesses across industries.
+                    </p>
+                    <!-- Case Studies Counter -->
+                    <div class="case-studies-counter">
+                        <div class="counter-badge">
+                            <i class="bi bi-folder-check me-2"></i>
+                            <span class="counter-number" id="currentSlideNum">1</span>
+                            <span class="counter-separator">of</span>
+                            <span class="counter-total" id="totalSlidesNum">6</span>
+                            <span class="counter-label">Case Studies</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Compact Success Stories Slider -->
+                <div class="success-stories-slider-compact">
+                    <div class="slider-container-compact">
+                        <div class="slider-wrapper-compact" id="successStoriesSlider">
+                            <!-- Financial Institution Security -->
+                            <div class="slider-item-compact">
+                                <div class="case-study-card-compact reveal-up stagger-1">
+                                    <div class="case-study-image-compact">
+                                        <img src="../assets/images/cyber1.jpg" alt="Financial Security" class="img-fluid case-image-compact">
+                                        <div class="case-overlay-compact">
+                                            <div class="case-category-compact">Financial Services</div>
+                                        </div>
+                                        <div class="read-more-overlay-compact">
+                                            <button class="btn-read-more-compact">
+                                                <i class="bi bi-arrow-right me-2"></i>
+                                                Read More
+                                            </button>
+                                        </div>
+                                        <div class="case-number">01</div>
+                                    </div>
+                                    <div class="case-study-content-compact">
+                                        <div class="case-icon-compact">
+                                            <i class="bi bi-shield-check text-white"></i>
+                                        </div>
+                                        <h4 class="case-title">AI-Powered Banking Security</h4>
+                                        <p class="case-description">
+                                            Comprehensive AI-driven threat detection system reducing security incidents by 85% 
+                                            while maintaining zero downtime for a major financial institution.
+                                        </p>
+                                        <div class="case-metrics-compact">
+                                            <div class="metric-item-compact">
+                                                <span class="metric-value-compact">85%</span>
+                                                <span class="metric-label-compact">Threat Reduction</span>
+                                            </div>
+                                            <div class="metric-item-compact">
+                                                <span class="metric-value-compact">100%</span>
+                                                <span class="metric-label-compact">Uptime</span>
+                                            </div>
+                                            <div class="metric-item-compact">
+                                                <span class="metric-value-compact">&lt;1s</span>
+                                                <span class="metric-label-compact">Response Time</span>
+                                            </div>
+                                        </div>
+                                        <div class="case-technologies-compact">
+                                            <span class="tech-tag-compact">Machine Learning</span>
+                                            <span class="tech-tag-compact">Real-time Analytics</span>
+                                            <span class="tech-tag-compact">Cloud Security</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Healthcare AI Platform -->
+                            <div class="slider-item-compact">
+                                <div class="case-study-card-compact reveal-up stagger-2">
+                                    <div class="case-study-image-compact">
+                                        <img src="../assets/images/cyber2.jpg" alt="Healthcare AI" class="img-fluid case-image-compact">
+                                        <div class="case-overlay-compact">
+                                            <div class="case-category-compact">Healthcare</div>
+                                        </div>
+                                        <div class="read-more-overlay-compact">
+                                            <button class="btn-read-more-compact">
+                                                <i class="bi bi-arrow-right me-2"></i>
+                                                Read More
+                                            </button>
+                                        </div>
+                                        <div class="case-number">02</div>
+                                    </div>
+                                    <div class="case-study-content-compact">
+                                        <div class="case-icon-compact">
+                                            <i class="bi bi-robot text-white"></i>
+                                        </div>
+                                        <h4 class="case-title">Multilingual Healthcare Assistant</h4>
+                                        <p class="case-description">
+                                            Advanced AI-powered healthcare assistant supporting 15 languages, improving 
+                                            patient satisfaction by 70% while maintaining HIPAA compliance.
+                                        </p>
+                                        <div class="case-metrics-compact">
+                                            <div class="metric-item-compact">
+                                                <span class="metric-value-compact">70%</span>
+                                                <span class="metric-label-compact">Satisfaction</span>
+                                            </div>
+                                            <div class="metric-item-compact">
+                                                <span class="metric-value-compact">15</span>
+                                                <span class="metric-label-compact">Languages</span>
+                                            </div>
+                                            <div class="metric-item-compact">
+                                                <span class="metric-value-compact">50%</span>
+                                                <span class="metric-label-compact">Cost Reduction</span>
+                                            </div>
+                                        </div>
+                                        <div class="case-technologies-compact">
+                                            <span class="tech-tag-compact">NLP</span>
+                                            <span class="tech-tag-compact">Voice Recognition</span>
+                                            <span class="tech-tag-compact">HIPAA Compliance</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- E-commerce Cloud Migration -->
+                            <div class="slider-item-compact">
+                                <div class="case-study-card-compact reveal-up stagger-3">
+                                    <div class="case-study-image-compact">
+                                        <img src="../assets/images/cyber3.jpg" alt="Cloud Migration" class="img-fluid case-image-compact">
+                                        <div class="case-overlay-compact">
+                                            <div class="case-category-compact">E-commerce</div>
+                                        </div>
+                                        <div class="read-more-overlay-compact">
+                                            <button class="btn-read-more-compact">
+                                                <i class="bi bi-arrow-right me-2"></i>
+                                                Read More
+                                            </button>
+                                        </div>
+                                        <div class="case-number">03</div>
+                                    </div>
+                                    <div class="case-study-content-compact">
+                                        <div class="case-icon-compact">
+                                            <i class="bi bi-cloud text-white"></i>
+                                        </div>
+                                        <h4 class="case-title">Enterprise Cloud Transformation</h4>
+                                        <p class="case-description">
+                                            Large-scale e-commerce platform migration achieving 99.9% uptime, 40% cost 
+                                            savings, and 3x performance improvement with auto-scaling.
+                                        </p>
+                                        <div class="case-metrics-compact">
+                                            <div class="metric-item-compact">
+                                                <span class="metric-value-compact">99.9%</span>
+                                                <span class="metric-label-compact">Uptime</span>
+                                            </div>
+                                            <div class="metric-item-compact">
+                                                <span class="metric-value-compact">40%</span>
+                                                <span class="metric-label-compact">Cost Savings</span>
+                                            </div>
+                                            <div class="metric-item-compact">
+                                                <span class="metric-value-compact">3x</span>
+                                                <span class="metric-label-compact">Performance</span>
+                                            </div>
+                                        </div>
+                                        <div class="case-technologies-compact">
+                                            <span class="tech-tag-compact">AWS</span>
+                                            <span class="tech-tag-compact">Kubernetes</span>
+                                            <span class="tech-tag-compact">Auto-scaling</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Educational LMS Platform -->
+                            <div class="slider-item-compact">
+                                <div class="case-study-card-compact reveal-up stagger-4">
+                                    <div class="case-study-image-compact">
+                                        <img src="../assets/images/cyber.jpg" alt="Educational Platform" class="img-fluid case-image-compact">
+                                        <div class="case-overlay-compact">
+                                            <div class="case-category-compact">Education</div>
+                                        </div>
+                                        <div class="read-more-overlay-compact">
+                                            <button class="btn-read-more-compact">
+                                                <i class="bi bi-arrow-right me-2"></i>
+                                                Read More
+                                            </button>
+                                        </div>
+                                        <div class="case-number">04</div>
+                                    </div>
+                                    <div class="case-study-content-compact">
+                                        <div class="case-icon-compact">
+                                            <i class="bi bi-mortarboard text-white"></i>
+                                        </div>
+                                        <h4 class="case-title">AI-Enhanced Learning Platform</h4>
+                                        <p class="case-description">
+                                            Intelligent learning management system with adaptive algorithms serving 10,000+ 
+                                            students and increasing engagement by 60%.
+                                        </p>
+                                        <div class="case-metrics-compact">
+                                            <div class="metric-item-compact">
+                                                <span class="metric-value-compact">60%</span>
+                                                <span class="metric-label-compact">Engagement</span>
+                                            </div>
+                                            <div class="metric-item-compact">
+                                                <span class="metric-value-compact">10K+</span>
+                                                <span class="metric-label-compact">Students</span>
+                                            </div>
+                                            <div class="metric-item-compact">
+                                                <span class="metric-value-compact">85%</span>
+                                                <span class="metric-label-compact">Completion</span>
+                                            </div>
+                                        </div>
+                                        <div class="case-technologies-compact">
+                                            <span class="tech-tag-compact">Adaptive AI</span>
+                                            <span class="tech-tag-compact">Mobile First</span>
+                                            <span class="tech-tag-compact">Analytics</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Mobile Banking App -->
+                            <div class="slider-item-compact">
+                                <div class="case-study-card-compact reveal-up stagger-1">
+                                    <div class="case-study-image-compact">
+                                        <img src="../assets/images/cyber1.jpg" alt="Mobile Banking" class="img-fluid case-image-compact">
+                                        <div class="case-overlay-compact">
+                                            <div class="case-category-compact">FinTech</div>
+                                        </div>
+                                        <div class="read-more-overlay-compact">
+                                            <button class="btn-read-more-compact">
+                                                <i class="bi bi-arrow-right me-2"></i>
+                                                Read More
+                                            </button>
+                                        </div>
+                                        <div class="case-number">05</div>
+                                    </div>
+                                    <div class="case-study-content-compact">
+                                        <div class="case-icon-compact">
+                                            <i class="bi bi-phone text-white"></i>
+                                        </div>
+                                        <h4 class="case-title">Secure Mobile Banking Suite</h4>
+                                        <p class="case-description">
+                                            Comprehensive mobile banking application with biometric authentication and 
+                                            real-time fraud detection, achieving 1M+ downloads.
+                                        </p>
+                                        <div class="case-metrics-compact">
+                                            <div class="metric-item-compact">
+                                                <span class="metric-value-compact">1M+</span>
+                                                <span class="metric-label-compact">Downloads</span>
+                                            </div>
+                                            <div class="metric-item-compact">
+                                                <span class="metric-value-compact">4.8★</span>
+                                                <span class="metric-label-compact">Rating</span>
+                                            </div>
+                                            <div class="metric-item-compact">
+                                                <span class="metric-value-compact">99.9%</span>
+                                                <span class="metric-label-compact">Security</span>
+                                            </div>
+                                        </div>
+                                        <div class="case-technologies-compact">
+                                            <span class="tech-tag-compact">Biometrics</span>
+                                            <span class="tech-tag-compact">Real-time ML</span>
+                                            <span class="tech-tag-compact">Cross-platform</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Manufacturing IoT Solution -->
+                            <div class="slider-item-compact">
+                                <div class="case-study-card-compact reveal-up stagger-2">
+                                    <div class="case-study-image-compact">
+                                        <img src="../assets/images/cyber2.jpg" alt="IoT Manufacturing" class="img-fluid case-image-compact">
+                                        <div class="case-overlay-compact">
+                                            <div class="case-category-compact">Manufacturing</div>
+                                        </div>
+                                        <div class="read-more-overlay-compact">
+                                            <button class="btn-read-more-compact">
+                                                <i class="bi bi-arrow-right me-2"></i>
+                                                Read More
+                                            </button>
+                                        </div>
+                                        <div class="case-number">06</div>
+                                    </div>
+                                    <div class="case-study-content-compact">
+                                        <div class="case-icon-compact">
+                                            <i class="bi bi-gear text-white"></i>
+                                        </div>
+                                        <h4 class="case-title">Smart Manufacturing IoT</h4>
+                                        <p class="case-description">
+                                            IoT-based predictive maintenance system with real-time monitoring, reducing 
+                                            equipment downtime by 75% and achieving 300% ROI.
+                                        </p>
+                                        <div class="case-metrics-compact">
+                                            <div class="metric-item-compact">
+                                                <span class="metric-value-compact">75%</span>
+                                                <span class="metric-label-compact">Downtime Cut</span>
+                                            </div>
+                                            <div class="metric-item-compact">
+                                                <span class="metric-value-compact">500+</span>
+                                                <span class="metric-label-compact">Sensors</span>
+                                            </div>
+                                            <div class="metric-item-compact">
+                                                <span class="metric-value-compact">300%</span>
+                                                <span class="metric-label-compact">ROI</span>
+                                            </div>
+                                        </div>
+                                        <div class="case-technologies-compact">
+                                            <span class="tech-tag-compact">IoT Sensors</span>
+                                            <span class="tech-tag-compact">Predictive AI</span>
+                                            <span class="tech-tag-compact">Edge Computing</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Compact Slider Navigation -->
+                        <div class="slider-navigation-compact">
+                            <button class="slider-btn-compact prev-btn-compact" id="prevBtn">
+                                <i class="bi bi-chevron-left"></i>
+                            </button>
+                            <button class="slider-btn-compact next-btn-compact" id="nextBtn">
+                                <i class="bi bi-chevron-right"></i>
+                            </button>
+                        </div>
+
+                        <!-- Enhanced Slider Dots with Progress -->
+                        <div class="slider-progress-container">
+                            <div class="slider-progress-bar">
+                                <div class="progress-fill" id="progressFill"></div>
+                            </div>
+                            <div class="slider-dots-compact" id="sliderDots">
+                                <!-- Dots will be generated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+            </div>
+        </section>
+
+        <!-- Impact Metrics Section -->
+        <section class="py-5" style="background: var(--card-bg); border-top: 1px solid var(--card-border);">
+            <div class="container">
+                <div class="text-center mb-5 reveal-up">
+                    <h2 class="display-4 fw-bold mb-3" style="color: var(--text-primary);">
+                        Impact <span class="text-gradient">Metrics</span>
+                    </h2>
+                    <p class="lead" style="color: var(--text-secondary); max-width: 700px; margin: 0 auto;">
+                        Quantifiable results that demonstrate the transformative power of our technology solutions 
+                        across diverse industries and business challenges.
+                    </p>
+                </div>
+                
+                <div class="row g-4 mb-5">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="impact-metric-card reveal-up stagger-1">
+                            <div class="metric-icon">
+                                <i class="bi bi-graph-up-arrow"></i>
+                            </div>
+                            <div class="metric-number counter" data-target="750">0</div>
+                            <h5 class="metric-title">Projects Delivered</h5>
+                            <p class="metric-description">Successful technology implementations across industries</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="impact-metric-card reveal-up stagger-2">
+                            <div class="metric-icon">
+                                <i class="bi bi-speedometer2"></i>
+                            </div>
+                            <div class="metric-number counter" data-target="85">0</div>
+                            <h5 class="metric-title">Average Improvement</h5>
+                            <p class="metric-description">Performance enhancement across all projects</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="impact-metric-card reveal-up stagger-3">
+                            <div class="metric-icon">
+                                <i class="bi bi-shield-check"></i>
+                            </div>
+                            <div class="metric-number counter" data-target="99">0</div>
+                            <h5 class="metric-title">Uptime Achieved</h5>
+                            <p class="metric-description">Reliability across all deployments</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="impact-metric-card reveal-up stagger-4">
+                            <div class="metric-icon">
+                                <i class="bi bi-building"></i>
+                            </div>
+                            <div class="metric-number counter" data-target="75">0</div>
+                            <h5 class="metric-title">Industries Served</h5>
+                            <p class="metric-description">Diverse sector expertise and solutions</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Industry Breakdown -->
+                <div class="industry-breakdown reveal-up">
+                    <h3 class="text-center mb-4">Industries We've Transformed</h3>
+                    <div class="row g-3">
+                        <div class="col-md-2 col-4">
+                            <div class="industry-item">
+                                <i class="bi bi-bank"></i>
+                                <span>Banking</span>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-4">
+                            <div class="industry-item">
+                                <i class="bi bi-heart-pulse"></i>
+                                <span>Healthcare</span>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-4">
+                            <div class="industry-item">
+                                <i class="bi bi-mortarboard"></i>
+                                <span>Education</span>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-4">
+                            <div class="industry-item">
+                                <i class="bi bi-cart"></i>
+                                <span>E-commerce</span>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-4">
+                            <div class="industry-item">
+                                <i class="bi bi-gear-wide-connected"></i>
+                                <span>Manufacturing</span>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-4">
+                            <div class="industry-item">
+                                <i class="bi bi-building-gear"></i>
+                                <span>Enterprise</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Development Roadmap -->
+        <section class="py-5 bg-light">
+            <div class="container px-4">
+                <div class="text-center mb-5 reveal-up">
+                    <h2 class="display-5 fw-bold mb-3">Development Roadmap</h2>
+                    <p class="fs-5 text-muted">Our planned releases and milestones for 2024-2025</p>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="position-relative">
+                            <div class="position-absolute start-50 translate-middle-x bg-primary" style="width: 2px; height: 100%; top: 0;"></div>
+                            
+                            <!-- Q2 2024 -->
+                            <div class="d-flex align-items-center mb-5 reveal-up stagger-1">
+                                <div class="flex-shrink-0 me-4 text-end" style="width: 45%;">
+                                    <div class="bg-white rounded p-3 shadow-sm">
+                                        <h6 class="fw-bold text-danger mb-2">Q2 2024</h6>
+                                        <h5 class="fw-semibold mb-2">Quantum Security Suite</h5>
+                                        <p class="text-muted small mb-0">Launch of quantum-resistant security framework</p>
+                                    </div>
+                                </div>
+                                <div class="flex-shrink-0 bg-gradient rounded-circle p-3 position-relative" style="z-index: 2; background: linear-gradient(135deg, #dc143c, #ffd700);">
+                                    <i class="bi bi-shield-check text-white fs-5"></i>
+                                </div>
+                                <div class="flex-grow-1 ms-4" style="width: 45%;"></div>
+                            </div>
+
+                            <!-- Q3 2024 -->
+                            <div class="d-flex align-items-center mb-5 reveal-up stagger-2">
+                                <div class="flex-grow-1 me-4" style="width: 45%;"></div>
+                                <div class="flex-shrink-0 rounded-circle p-3 position-relative" style="z-index: 2; background: linear-gradient(135deg, #dc143c, #ffd700);">
+                                    <i class="bi bi-robot text-white fs-5"></i>
+                                </div>
+                                <div class="flex-shrink-0 ms-4" style="width: 45%;">
+                                    <div class="bg-white rounded p-3 shadow-sm">
+                                        <h6 class="fw-bold text-danger mb-2">Q3 2024</h6>
+                                        <h5 class="fw-semibold mb-2">Neural Network Optimizer</h5>
+                                        <p class="text-muted small mb-0">AI performance enhancement platform</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Q4 2024 -->
+                            <div class="d-flex align-items-center mb-5 reveal-up stagger-3">
+                                <div class="flex-shrink-0 me-4 text-end" style="width: 45%;">
+                                    <div class="bg-white rounded p-3 shadow-sm">
+                                        <h6 class="fw-bold text-warning mb-2">Q4 2024</h6>
+                                        <h5 class="fw-semibold mb-2">Metaverse Security Suite</h5>
+                                        <p class="text-muted small mb-0">Virtual world security solutions</p>
+                                    </div>
+                                </div>
+                                <div class="flex-shrink-0 rounded-circle p-3 position-relative" style="z-index: 2; background: linear-gradient(135deg, #dc143c, #ffd700);">
+                                    <i class="bi bi-globe text-white fs-5"></i>
+                                </div>
+                                <div class="flex-grow-1 ms-4" style="width: 45%;"></div>
+                            </div>
+
+                            <!-- Q1 2025 -->
+                            <div class="d-flex align-items-center mb-5 reveal-up stagger-4">
+                                <div class="flex-grow-1 me-4" style="width: 45%;"></div>
+                                <div class="flex-shrink-0 rounded-circle p-3 position-relative" style="z-index: 2; background: linear-gradient(135deg, #dc143c, #ffd700);">
+                                    <i class="bi bi-lightning text-white fs-5"></i>
+                                </div>
+                                <div class="flex-shrink-0 ms-4" style="width: 45%;">
+                                    <div class="bg-white rounded p-3 shadow-sm">
+                                        <h6 class="fw-bold text-danger mb-2">Q1 2025</h6>
+                                        <h5 class="fw-semibold mb-2">Quantum ML Platform</h5>
+                                        <p class="text-muted small mb-0">Quantum-enhanced machine learning</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Innovation Lab Section -->
+        <section class="py-5" >
+            <div class="container">
+                <div class="text-left mb-5">
+                    <h2 class="display-5 fw-bold mb-3 reveal-on-scroll">
+                        Innovation <span class="text-gradient">Laboratory</span>
+                    </h2>
+                    <p class="lead reveal-on-scroll" style="color: var(--text-secondary);">
+                        Exploring tomorrow's technologies today through research and development
+                    </p>
+                </div>
+                
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6 reveal-on-scroll">
+                        <h3 class="fw-bold mb-4">Research & Development</h3>
+                        <p class="mb-4">
+                            Our Innovation Lab is where we experiment with emerging technologies, 
+                            develop proof-of-concepts, and create the next generation of solutions.
+                        </p>
+                        <div class="row g-3">
+                            <div class="col-6">
+                                <div class="text-center">
+                                    <div class="display-6 fw-bold text-gradient counter" data-target="50">0</div>
+                                    <small class="text-muted">Research Projects</small>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="text-center">
+                                    <div class="display-6 fw-bold text-gradient counter" data-target="15">0</div>
+                                    <small class="text-muted">Patents Filed</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 reveal-on-scroll">
+                        <div class="case-card">
+                            <h5 class="fw-bold mb-3">Current Research Areas</h5>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">
+                                    <i class="bi bi-check-circle text-success me-2"></i>
+                                    <span>Quantum Computing Security</span>
+                                </li>
+                                <li class="mb-2">
+                                    <i class="bi bi-check-circle text-success me-2"></i>
+                                    <span>Edge AI & IoT Security</span>
+                                </li>
+                                <li class="mb-2">
+                                    <i class="bi bi-check-circle text-success me-2"></i>
+                                    <span>Blockchain Integration</span>
+                                </li>
+                                <li class="mb-2">
+                                    <i class="bi bi-check-circle text-success me-2"></i>
+                                    <span>Advanced Threat Detection</span>
+                                </li>
+                                <li class="mb-2">
+                                    <i class="bi bi-check-circle text-success me-2"></i>
+                                    <span>Neural Network Optimization</span>
+                                </li>
+                                <li class="mb-2">
+                                    <i class="bi bi-check-circle text-success me-2"></i>
+                                    <span>Autonomous Security Systems</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       
+    </main>
+
+    <!-- Theme Toggle Button -->
+    <button id="theme-toggle" class="btn btn-dark position-fixed bottom-0 start-0 m-4 rounded-circle p-3 shadow-lg" style="z-index: 1050;">
+        <i id="sun-icon" class="bi bi-sun-fill d-none"></i>
+        <i id="moon-icon" class="bi bi-moon-fill"></i>
+    </button>
+
+    <div id="footer-component"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Theme Toggle Script -->
+    <script src="../scripts/theme-toggle.js"></script>
+
+    <script>
+        function initAnimations() {
+            const animationElements = document.querySelectorAll('.reveal-up');
+            const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => { 
+                    if (entry.isIntersecting) { 
+                        entry.target.classList.add('visible'); 
+                    } 
+                });
+            }, observerOptions);
+            animationElements.forEach(element => { observer.observe(element); });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            initAnimations();
+
+            // Initialize Success Stories Slider
+            initSuccessStoriesSlider();
+
+            // Initialize GSAP
+            if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+                gsap.registerPlugin(ScrollTrigger);
+
+                // Animate elements with gsap classes
+                const gsapElements = document.querySelectorAll('.gsap-fade-up');
+                gsapElements.forEach(element => {
+                    gsap.to(element, {
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.8,
+                        ease: 'power3.out'
+                    });
+                });
+
+                // Scroll-triggered reveal animations
+                const revealElements = document.querySelectorAll('.reveal-on-scroll');
+                revealElements.forEach((element, index) => {
+                    const delay = index * 100;
+                    ScrollTrigger.create({
+                        trigger: element,
+                        start: 'top 85%',
+                        onEnter: () => {
+                            setTimeout(() => {
+                                element.classList.add('revealed');
+                            }, delay);
+                        }
+                    });
+                });
+
+                // Counter animation
+                const counters = document.querySelectorAll('.counter');
+                counters.forEach(counter => {
+                    const target = parseInt(counter.getAttribute('data-target'));
+                    const duration = 2000;
+                    const increment = target / (duration / 16);
+                    let current = 0;
+
+                    const updateCounter = () => {
+                        current += increment;
+                        if (current < target) {
+                            counter.textContent = Math.floor(current);
+                            requestAnimationFrame(updateCounter);
+                        } else {
+                            counter.textContent = target;
+                        }
+                    };
+
+                    ScrollTrigger.create({
+                        trigger: counter,
+                        start: 'top 90%',
+                        onEnter: () => updateCounter()
+                    });
+                });
+            }
+        });
+
+        // Success Stories Slider Functionality
+        function initSuccessStoriesSlider() {
+            const slider = document.getElementById('successStoriesSlider');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const dotsContainer = document.getElementById('sliderDots');
+            const progressFill = document.getElementById('progressFill');
+            const currentSlideNum = document.getElementById('currentSlideNum');
+            const totalSlidesNum = document.getElementById('totalSlidesNum');
+            const slides = slider.querySelectorAll('.slider-item-compact');
+            
+            let currentSlide = 0;
+            const totalSlides = slides.length;
+            let slidesToShow = getSlidesToShow();
+            let maxSlide = Math.max(0, totalSlides - slidesToShow);
+
+            // Update total slides display
+            totalSlidesNum.textContent = totalSlides;
+
+            // Create dots based on number of slide groups
+            function createDots() {
+                dotsContainer.innerHTML = '';
+                const totalGroups = Math.ceil(totalSlides / slidesToShow);
+                for (let i = 0; i < totalGroups; i++) {
+                    const dot = document.createElement('div');
+                    dot.classList.add('dot-compact');
+                    if (i === 0) dot.classList.add('active');
+                    dot.addEventListener('click', () => goToSlideGroup(i));
+                    dotsContainer.appendChild(dot);
+                }
+            }
+
+            // Get slides to show based on screen size
+            function getSlidesToShow() {
+                if (window.innerWidth >= 768) return 2; // 2 cards on desktop/tablet
+                return 1; // 1 card on mobile
+            }
+
+            // Update slider position and indicators
+            function updateSlider() {
+                const slideWidth = slider.querySelector('.slider-item-compact').offsetWidth + 20; // 20px gap
+                const translateX = -currentSlide * slideWidth;
+                slider.style.transform = `translateX(${translateX}px)`;
+                
+                // Update current slide number (show the first visible slide number)
+                currentSlideNum.textContent = currentSlide + 1;
+                
+                // Update progress bar based on slide groups
+                const currentGroup = Math.floor(currentSlide / slidesToShow);
+                const totalGroups = Math.ceil(totalSlides / slidesToShow);
+                const progressPercent = ((currentGroup + 1) / totalGroups) * 100;
+                progressFill.style.width = `${progressPercent}%`;
+                
+                // Update dots
+                const dots = dotsContainer.querySelectorAll('.dot-compact');
+                dots.forEach((dot, index) => {
+                    const groupIndex = Math.floor(currentSlide / slidesToShow);
+                    dot.classList.toggle('active', index === groupIndex);
+                });
+            }
+
+            // Go to specific slide
+            function goToSlide(slideIndex) {
+                currentSlide = Math.max(0, Math.min(slideIndex, maxSlide));
+                updateSlider();
+            }
+
+            // Go to specific slide group (for dot navigation)
+            function goToSlideGroup(groupIndex) {
+                const slideIndex = groupIndex * slidesToShow;
+                goToSlide(slideIndex);
+            }
+
+            // Next slide (move by slidesToShow)
+            function nextSlide() {
+                if (currentSlide + slidesToShow < totalSlides) {
+                    currentSlide += slidesToShow;
+                } else {
+                    currentSlide = 0; // Loop back to start
+                }
+                updateSlider();
+            }
+
+            // Previous slide (move by slidesToShow)
+            function prevSlide() {
+                if (currentSlide >= slidesToShow) {
+                    currentSlide -= slidesToShow;
+                } else {
+                    // Go to last complete group
+                    const totalGroups = Math.ceil(totalSlides / slidesToShow);
+                    currentSlide = (totalGroups - 1) * slidesToShow;
+                }
+                updateSlider();
+            }
+
+            // Event listeners
+            nextBtn.addEventListener('click', nextSlide);
+            prevBtn.addEventListener('click', prevSlide);
+
+            // Auto-play functionality
+            let autoPlayInterval;
+            function startAutoPlay() {
+                autoPlayInterval = setInterval(nextSlide, 4000); // Change slide every 4 seconds
+            }
+
+            function stopAutoPlay() {
+                clearInterval(autoPlayInterval);
+            }
+
+            // Pause auto-play on hover
+            slider.addEventListener('mouseenter', stopAutoPlay);
+            slider.addEventListener('mouseleave', startAutoPlay);
+
+            // Handle window resize
+            window.addEventListener('resize', () => {
+                const newSlidesToShow = getSlidesToShow();
+                if (newSlidesToShow !== slidesToShow) {
+                    slidesToShow = newSlidesToShow;
+                    maxSlide = Math.max(0, totalSlides - slidesToShow);
+                    // Adjust current slide to fit new layout
+                    currentSlide = Math.min(currentSlide, maxSlide);
+                    // Snap to nearest group boundary
+                    currentSlide = Math.floor(currentSlide / slidesToShow) * slidesToShow;
+                    createDots();
+                    updateSlider();
+                }
+            });
+
+            // Touch/swipe support for mobile
+            let startX = 0;
+            let isDragging = false;
+
+            slider.addEventListener('touchstart', (e) => {
+                startX = e.touches[0].clientX;
+                isDragging = true;
+                stopAutoPlay();
+            });
+
+            slider.addEventListener('touchmove', (e) => {
+                if (!isDragging) return;
+                e.preventDefault();
+            });
+
+            slider.addEventListener('touchend', (e) => {
+                if (!isDragging) return;
+                isDragging = false;
+                
+                const endX = e.changedTouches[0].clientX;
+                const diffX = startX - endX;
+                
+                if (Math.abs(diffX) > 50) { // Minimum swipe distance
+                    if (diffX > 0) {
+                        nextSlide();
+                    } else {
+                        prevSlide();
+                    }
+                }
+                
+                startAutoPlay();
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft') {
+                    prevSlide();
+                } else if (e.key === 'ArrowRight') {
+                    nextSlide();
+                }
+            });
+
+            // Initialize
+            createDots();
+            updateSlider();
+            startAutoPlay();
+        }
+    </script>
+
+    <script type="module">
+        async function loadComponent(id, path) {
+            try {
+                const res = await fetch(path);
+                if (!res.ok) throw new Error(`${path} (${res.status})`);
+                const html = await res.text();
+                const el = document.getElementById(id);
+                if (el) el.innerHTML = html;
+                else console.warn(`Missing container #${id}`);
+            } catch (err) { 
+                console.error(`Component load failed: ${path}`, err); 
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            const components = [
+                ['navigation-component', '../components/navigation/navigation.html'],
+                ['footer-component', '../components/footer/footer.html'],
+                ['right-panel-component', '../components/right-panel/right-panel.html']
+            ];
+            await Promise.all(components.map(([id, path]) => loadComponent(id, path)));
+            
+            if (window.fixNavigationPaths) {
+                setTimeout(() => {
+                    window.fixNavigationPaths();
+                }, 100);
+            }
+            
+            document.dispatchEvent(new CustomEvent('navigationLoaded'));
+            console.log('✅ Case Study page initialized successfully');
+        });
+    </script>
+</body>
+</html>

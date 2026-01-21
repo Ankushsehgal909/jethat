@@ -1,0 +1,58 @@
+/**
+ * Breadcrumb Badge Styles
+ * Clean, minimal breadcrumb styling without background
+ */
+
+.breadcrumb-text {
+    display: inline-flex;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 500;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+.breadcrumb-text i {
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.breadcrumb-text:hover i {
+    transform: scale(1.1);
+}
+
+/* Separator styling */
+.breadcrumb-text .mx-2 {
+    opacity: 0.6;
+    font-weight: 400;
+}
+
+/* Dark mode support */
+[data-bs-theme="dark"] .breadcrumb-text {
+    color: #ffffff;
+}
+
+[data-bs-theme="dark"] .breadcrumb-text .text-muted {
+    color: #b0b0b0 !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .breadcrumb-text {
+        font-size: 0.9rem;
+    }
+    
+    .breadcrumb-text i {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .breadcrumb-text {
+        font-size: 0.85rem;
+    }
+    
+    .breadcrumb-text i {
+        font-size: 0.85rem;
+    }
+}
