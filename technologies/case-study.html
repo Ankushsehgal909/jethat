@@ -21,6 +21,10 @@
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    
     <!-- Breadcrumb Badge -->
     <script src="../scripts/breadcrumb-badge.js"></script>
     
@@ -870,7 +874,7 @@
         .reveal-up {
             opacity: 0;
             transform: translateY(50px);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .reveal-up.visible {
@@ -1223,6 +1227,669 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* ================= CASE STUDIES CAROUSEL STYLES (Products-section inspired) ================= */
+
+        /* Case Studies Carousel Styles (Desktop) */
+        .case-studies-carousel {
+            position: relative;
+            padding: 45px 90px 45px 0;
+            background-color: transparent;
+        }
+
+        .case-studies-carousel::before {
+            position: absolute;
+            content: "";
+            top: 0;
+            right: 0;
+            width: calc(50% + 45px);
+            height: 100%;
+            background: linear-gradient(135deg, var(--case-primary), var(--case-secondary));
+            border-radius: 0;
+            z-index: -1;
+            opacity: 0.1;
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 991.98px) {
+            .case-studies-carousel {
+                padding: 20px 40px 20px 0;
+            }
+            
+            .case-studies-carousel::before {
+                width: calc(50% + 20px);
+            }
+        }
+
+        /* Hide carousel on mobile, show cards instead */
+        @media (max-width: 991.98px) {
+            .case-studies-carousel {
+                display: none !important;
+            }
+            
+            .mobile-case-studies-grid {
+                display: block !important;
+            }
+        }
+
+        /* Case Slide Content (Desktop Carousel) */
+        .case-slide-content {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0;
+            width: 100%;
+            max-width: 100%;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .case-slide-content:hover {
+            transform: scale(1.02);
+        }
+
+        .case-slide-content img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        /* Case Text Overlay (Desktop) */
+        .case-text-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+            border-radius: 0;
+        }
+
+        .case-badge {
+            position: absolute;
+            top: -3rem;
+            right: 1rem;
+            background: linear-gradient(135deg, var(--case-primary), var(--case-secondary));
+            color: white;
+            padding: 0.5rem 1rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border-radius: 0;
+            z-index: 10;
+        }
+
+        .case-heading {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .case-description {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+            margin-bottom: 1rem;
+        }
+
+        .case-features {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .feature-tag {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+            border-radius: 0;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        /* Owl Carousel Dots */
+        .case-studies-carousel .owl-dots {
+            display: none !important; /* Hide default dots, we'll use custom indicators */
+        }
+
+        /* Manual Navigation Controls - Split layout */
+        .carousel-controls {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 1rem;
+            z-index: 10;
+        }
+
+        /* Navigation Arrows - Positioned on left side */
+        .carousel-nav-arrows {
+            position: absolute;
+            left: 20px;
+            bottom: 20px;
+            display: flex;
+            flex-direction: row;
+            gap: 0.75rem;
+            z-index: 10;
+        }
+
+        .carousel-nav-btn {
+            width: 40px;
+            height: 40px;
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel-nav-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--case-primary), var(--case-secondary));
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+
+        .carousel-nav-btn:hover::before {
+            left: 0;
+        }
+
+        .carousel-nav-btn:hover {
+            border-color: var(--case-primary);
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(220, 20, 60, 0.3);
+        }
+
+        .carousel-nav-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* Slide Indicators - Bottom right only */
+        .carousel-indicators {
+            display: flex;
+            flex-direction: row;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            max-width: 300px;
+        }
+
+        .indicator-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 0.8rem;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            min-width: auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .indicator-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--case-primary), var(--case-secondary));
+            transition: left 0.4s ease;
+            z-index: -1;
+        }
+
+        .indicator-item.active::before,
+        .indicator-item:hover::before {
+            left: 0;
+        }
+
+        .indicator-item.active {
+            background: rgba(220, 20, 60, 0.2);
+            border-color: var(--case-primary);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(220, 20, 60, 0.2);
+        }
+
+        .indicator-number {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .indicator-item.active .indicator-number {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .indicator-label {
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.9);
+            white-space: nowrap;
+            display: none; /* Hide labels on small indicators */
+        }
+
+        .indicator-item.active .indicator-label {
+            color: white;
+            font-weight: 600;
+        }
+
+        /* Show labels on hover for better UX */
+        .indicator-item:hover .indicator-label {
+            display: block;
+        }
+
+        /* Mobile Case Studies Cards (Service-like layout) */
+        .mobile-case-studies-grid {
+            display: none;
+        }
+
+        .mobile-case-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px var(--card-shadow);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            height: 100%;
+            border: 1px solid var(--card-border);
+        }
+
+        .mobile-case-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .mobile-card-image {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .mobile-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .mobile-case-card:hover .mobile-card-image img {
+            transform: scale(1.05);
+        }
+
+        .mobile-card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(220, 20, 60, 0.2), rgba(255, 215, 0, 0.2));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .mobile-case-card:hover .mobile-card-overlay {
+            opacity: 1;
+        }
+
+        .mobile-card-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: linear-gradient(135deg, var(--case-primary), var(--case-secondary));
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(220, 20, 60, 0.3);
+            z-index: 10;
+        }
+
+        .mobile-card-content {
+            padding: 1.5rem;
+        }
+
+        .mobile-card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .mobile-card-description {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+
+        .mobile-card-features {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .mobile-feature-tag {
+            background: linear-gradient(135deg, var(--case-primary), var(--case-secondary));
+            color: white;
+            padding: 0.25rem 0.75rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+            border-radius: 15px;
+        }
+
+        /* Dynamic Case Study Info Styles */
+        .case-info-container {
+            position: relative;
+            min-height: 200px;
+            overflow: hidden;
+        }
+
+        .case-info-item {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            pointer-events: none;
+        }
+
+        .case-info-item.active {
+            opacity: 1;
+            transform: translateX(0);
+            pointer-events: auto;
+        }
+
+        .case-info-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .case-info-description {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .case-info-features {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .info-feature-tag {
+            background: linear-gradient(135deg, var(--case-primary), var(--case-secondary));
+            color: white;
+            padding: 0.4rem 1rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border-radius: 20px;
+            box-shadow: 0 2px 8px rgba(220, 20, 60, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .info-feature-tag:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Dynamic CTA Styling */
+        #explore-current-case {
+            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        #explore-current-case:hover {
+            transform: translateX(5px);
+        }
+
+        #current-case-cta {
+            transition: all 0.3s ease;
+        }
+
+        /* Text Visibility */
+        .display-1,
+        h5,
+        h5.theme-text {
+            opacity: 1 !important;
+            visibility: visible !important;
+            color: var(--text-primary) !important;
+        }
+
+        /* WOW.js Animation Classes */
+        .wow {
+            visibility: hidden;
+        }
+
+        .wow.animated {
+            visibility: visible;
+        }
+
+        .animated {
+            animation-duration: 1s;
+            animation-fill-mode: both;
+        }
+
+        /* Fallback for when WOW.js doesn't load */
+        .wow:not(.animated) {
+            animation: none !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            transform: none !important;
+        }
+
+        /* Animation Keyframes */
+        @keyframes slideInLeft {
+            from {
+                transform: translate3d(-100%, 0, 0);
+                visibility: visible;
+            }
+            to {
+                transform: translate3d(0, 0, 0);
+            }
+        }
+
+        .slideInLeft {
+            animation-name: slideInLeft;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .fadeIn {
+            animation-name: fadeIn;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translate3d(0, 100%, 0);
+            }
+            to {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+            }
+        }
+
+        .fadeInUp {
+            animation-name: fadeInUp;
+        }
+
+        /* Responsive Design for Carousel */
+        @media (max-width: 991.98px) {
+            .display-1 {
+                font-size: 3rem !important;
+            }
+            
+            .carousel-controls {
+                bottom: 15px;
+                right: 15px;
+            }
+            
+            .carousel-nav-arrows {
+                left: 15px;
+                bottom: 15px;
+            }
+            
+            .carousel-nav-btn {
+                width: 35px;
+                height: 35px;
+                font-size: 0.9rem;
+            }
+            
+            .indicator-item {
+                padding: 0.3rem 0.6rem;
+            }
+            
+            .indicator-number {
+                width: 18px;
+                height: 18px;
+                font-size: 0.7rem;
+            }
+            
+            .indicator-label {
+                font-size: 0.7rem;
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            .display-1 {
+                font-size: 2.5rem !important;
+                color: var(--text-primary) !important;
+                text-shadow: none;
+            }
+            
+            h5 {
+                font-size: 1rem !important;
+                padding: 0.75rem 1.25rem !important;
+                color: var(--case-primary) !important;
+                background-color: transparent;
+                border-color: var(--case-primary) !important;
+                text-shadow: none;
+            }
+            
+            .mobile-case-card {
+                margin-bottom: 1rem;
+            }
+            
+            /* Hide carousel controls on mobile since carousel is hidden */
+            .carousel-controls,
+            .carousel-nav-arrows {
+                display: none;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            .display-1 {
+                font-size: 2rem !important;
+            }
+            
+            h5 {
+                font-size: 0.9rem !important;
+                padding: 0.5rem 1rem !important;
+            }
+            
+            .mobile-card-content {
+                padding: 1rem;
+            }
+            
+            .mobile-card-title {
+                font-size: 1.1rem;
+            }
+            
+            .mobile-card-description {
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Large screens - maintain split positioning */
+        @media (min-width: 1400px) {
+            .carousel-controls {
+                bottom: 25px;
+                right: 25px;
+            }
+            
+            .carousel-nav-arrows {
+                left: 25px;
+                bottom: 25px;
+            }
+            
+            .carousel-nav-btn {
+                width: 45px;
+                height: 45px;
+                font-size: 1.1rem;
+            }
+            
+            .indicator-item {
+                padding: 0.4rem 0.8rem;
+            }
+            
+            .indicator-number {
+                width: 22px;
+                height: 22px;
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Tablet landscape - adjust for better fit */
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .carousel-indicators {
+                max-width: 250px;
+            }
+            
+            .carousel-nav-arrows {
+                left: 15px;
+                bottom: 15px;
+            }
+            
+            .indicator-item {
+                padding: 0.3rem 0.6rem;
+            }
+            
+            .indicator-label {
+                font-size: 0.7rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1280,7 +1947,7 @@
         </section> 
                           
         <!-- Technology Showcase Marquee -->
-        <section class="tech-marquee-section" style="padding: 60px 0; background: var(--card-bg); border-top: 1px solid var(--card-border); border-bottom: 1px solid var(--card-border);">
+        <section class="tech-marquee-section" style="padding: 60px 0; background: var(--card-bg);">
             <div class="container-fluid">
                 <div class="text-center mb-4">
                     <h3 class="fw-bold mb-3">
@@ -1337,364 +2004,369 @@
             </div>
         </section>
 
+      
         <!-- Success Stories Section -->
         <section class="py-5" style="background: var(--bg-gradient);">
             <div class="container">
-                <div class="text-center mb-5 reveal-up">
-                    <h2 class="display-4 fw-bold mb-3" style="color: var(--text-primary);">
-                        Success <span class="text-gradient">Stories</span>
-                    </h2>
-                    <p class="lead" style="color: var(--text-secondary); max-width: 800px; margin: 0 auto;">
-                        Discover how our innovative technology solutions have transformed businesses across industries, 
-                        delivering measurable results and driving digital transformation success stories.
-                    </p>
-                </div>
-                
-        <!-- Success Stories Section -->
-        <section class="py-5" style="background: var(--bg-gradient);">
-            <div class="container">
-                <div class="text-center mb-4 reveal-up">
-                    <h2 class="display-4 fw-bold mb-3" style="color: var(--text-primary);">
-                        Success <span class="text-gradient">Stories</span>
-                    </h2>
-                    <p class="lead mb-3" style="color: var(--text-secondary); max-width: 700px; margin: 0 auto;">
-                        Discover how our innovative technology solutions have transformed businesses across industries.
-                    </p>
-                    <!-- Case Studies Counter -->
-                    <div class="case-studies-counter">
-                        <div class="counter-badge">
-                            <i class="bi bi-folder-check me-2"></i>
-                            <span class="counter-number" id="currentSlideNum">1</span>
-                            <span class="counter-separator">of</span>
-                            <span class="counter-total" id="totalSlidesNum">6</span>
-                            <span class="counter-label">Case Studies</span>
+                <!-- Header -->
+                <div class="row g-5 align-items-center mb-5">
+                    <div class="col-lg-6">
+                        <h1 class="display-1 mb-4 theme-text wow slideInLeft" data-wow-delay="0.1s">
+                            Success <span class="text-gradient">Stories</span>
+                        </h1>
+                        <h5 class="d-inline-block border border-2 border-primary py-3 px-5 mb-0 wow slideInLeft" data-wow-delay="0.3s" style="color: var(--accent-primary); border-color: var(--accent-primary) !important;">
+                            Real-World Technology Implementations Since 2018
+                        </h5>
+                        
+                        <!-- Dynamic Case Study Info -->
+                        <div class="case-info-container mt-4">
+                            <div class="case-info-item active" data-case="0">
+                                <h3 class="case-info-title">AI-Powered Banking Security</h3>
+                                <p class="case-info-description">Comprehensive AI-driven threat detection system reducing security incidents by 85% while maintaining zero downtime for a major financial institution.</p>
+                                <div class="case-info-features">
+                                    <span class="info-feature-tag">85% Threat Reduction</span>
+                                    <span class="info-feature-tag">100% Uptime</span>
+                                    <span class="info-feature-tag">&lt;1s Response</span>
+                                </div>
+                            </div>
+                            
+                            <div class="case-info-item" data-case="1">
+                                <h3 class="case-info-title">Multilingual Healthcare Assistant</h3>
+                                <p class="case-info-description">Advanced AI-powered healthcare assistant supporting 15 languages, improving patient satisfaction by 70% while maintaining HIPAA compliance.</p>
+                                <div class="case-info-features">
+                                    <span class="info-feature-tag">70% Satisfaction</span>
+                                    <span class="info-feature-tag">15 Languages</span>
+                                    <span class="info-feature-tag">HIPAA Compliant</span>
+                                </div>
+                            </div>
+                            
+                            <div class="case-info-item" data-case="2">
+                                <h3 class="case-info-title">Enterprise Cloud Transformation</h3>
+                                <p class="case-info-description">Large-scale e-commerce platform migration achieving 99.9% uptime, 40% cost savings, and 3x performance improvement with auto-scaling.</p>
+                                <div class="case-info-features">
+                                    <span class="info-feature-tag">99.9% Uptime</span>
+                                    <span class="info-feature-tag">40% Cost Savings</span>
+                                    <span class="info-feature-tag">3x Performance</span>
+                                </div>
+                            </div>
+                            
+                            <div class="case-info-item" data-case="3">
+                                <h3 class="case-info-title">AI-Enhanced Learning Platform</h3>
+                                <p class="case-info-description">Intelligent learning management system with adaptive algorithms serving 10,000+ students and increasing engagement by 60%.</p>
+                                <div class="case-info-features">
+                                    <span class="info-feature-tag">60% Engagement</span>
+                                    <span class="info-feature-tag">10K+ Students</span>
+                                    <span class="info-feature-tag">85% Completion</span>
+                                </div>
+                            </div>
+                            
+                            <div class="case-info-item" data-case="4">
+                                <h3 class="case-info-title">Secure Mobile Banking Suite</h3>
+                                <p class="case-info-description">Comprehensive mobile banking application with biometric authentication and real-time fraud detection, achieving 1M+ downloads.</p>
+                                <div class="case-info-features">
+                                    <span class="info-feature-tag">1M+ Downloads</span>
+                                    <span class="info-feature-tag">4.8★ Rating</span>
+                                    <span class="info-feature-tag">99.9% Security</span>
+                                </div>
+                            </div>
+                            
+                            <div class="case-info-item" data-case="5">
+                                <h3 class="case-info-title">Smart Manufacturing IoT</h3>
+                                <p class="case-info-description">IoT-based predictive maintenance system with real-time monitoring, reducing equipment downtime by 75% and achieving 300% ROI.</p>
+                                <div class="case-info-features">
+                                    <span class="info-feature-tag">75% Downtime Cut</span>
+                                    <span class="info-feature-tag">500+ Sensors</span>
+                                    <span class="info-feature-tag">300% ROI</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Dynamic CTA Section -->
+                        <div class="row mt-5">
+                            <div class="col-12 text-left fadeInUp">
+                                <a href="#" id="explore-current-case" class="text-gradient border-2 text-decoration-none me-4">
+                                    <i class="bi bi-arrow-right me-2"></i>
+                                    <span id="current-case-cta">View Full Case Study</span>
+                                </a>
+                                <a href="../contact.html" class="text-muted text-decoration-none">
+                                    <i class="bi bi-file-earmark-text me-2"></i>
+                                    Request Case Studies
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="case-studies-carousel position-relative">
+                            <div class="owl-carousel case-studies-carousel-slider animated fadeIn">
+                                <!-- Case Study 1: Financial Institution Security -->
+                                <div class="case-slide-content" data-case="0">
+                                    <img class="img-fluid" src="../assets/images/cyber1.jpg" alt="Financial Security">
+                                    <div class="case-text-overlay">
+                                        <div class="case-badge">Financial Services</div>
+                                        <h3 class="case-heading text-white mb-2">AI-Powered Banking Security</h3>
+                                        <p class="case-description text-white">Comprehensive AI-driven threat detection system reducing security incidents by 85%.</p>
+                                        <div class="case-features">
+                                            <span class="feature-tag">Machine Learning</span>
+                                            <span class="feature-tag">Real-time Analytics</span>
+                                            <span class="feature-tag">Cloud Security</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Case Study 2: Healthcare AI Platform -->
+                                <div class="case-slide-content" data-case="1">
+                                    <img class="img-fluid" src="../assets/images/cyber2.jpg" alt="Healthcare AI">
+                                    <div class="case-text-overlay">
+                                        <div class="case-badge">Healthcare</div>
+                                        <h3 class="case-heading text-white mb-2">Multilingual Healthcare Assistant</h3>
+                                        <p class="case-description text-white">Advanced AI-powered healthcare assistant supporting 15 languages.</p>
+                                        <div class="case-features">
+                                            <span class="feature-tag">NLP</span>
+                                            <span class="feature-tag">Voice Recognition</span>
+                                            <span class="feature-tag">HIPAA Compliance</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Case Study 3: E-commerce Cloud Migration -->
+                                <div class="case-slide-content" data-case="2">
+                                    <img class="img-fluid" src="../assets/images/cyber3.jpg" alt="Cloud Migration">
+                                    <div class="case-text-overlay">
+                                        <div class="case-badge">E-commerce</div>
+                                        <h3 class="case-heading text-white mb-2">Enterprise Cloud Transformation</h3>
+                                        <p class="case-description text-white">Large-scale e-commerce platform migration achieving 99.9% uptime.</p>
+                                        <div class="case-features">
+                                            <span class="feature-tag">AWS</span>
+                                            <span class="feature-tag">Kubernetes</span>
+                                            <span class="feature-tag">Auto-scaling</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Case Study 4: Educational LMS Platform -->
+                                <div class="case-slide-content" data-case="3">
+                                    <img class="img-fluid" src="../assets/images/cyber.jpg" alt="Educational Platform">
+                                    <div class="case-text-overlay">
+                                        <div class="case-badge">Education</div>
+                                        <h3 class="case-heading text-white mb-2">AI-Enhanced Learning Platform</h3>
+                                        <p class="case-description text-white">Intelligent learning management system serving 10,000+ students.</p>
+                                        <div class="case-features">
+                                            <span class="feature-tag">Adaptive AI</span>
+                                            <span class="feature-tag">Mobile First</span>
+                                            <span class="feature-tag">Analytics</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Case Study 5: Mobile Banking App -->
+                                <div class="case-slide-content" data-case="4">
+                                    <img class="img-fluid" src="../assets/images/cyber1.jpg" alt="Mobile Banking">
+                                    <div class="case-text-overlay">
+                                        <div class="case-badge">FinTech</div>
+                                        <h3 class="case-heading text-white mb-2">Secure Mobile Banking Suite</h3>
+                                        <p class="case-description text-white">Comprehensive mobile banking application with biometric authentication.</p>
+                                        <div class="case-features">
+                                            <span class="feature-tag">Biometrics</span>
+                                            <span class="feature-tag">Real-time ML</span>
+                                            <span class="feature-tag">Cross-platform</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Case Study 6: Manufacturing IoT Solution -->
+                                <div class="case-slide-content" data-case="5">
+                                    <img class="img-fluid" src="../assets/images/cyber2.jpg" alt="IoT Manufacturing">
+                                    <div class="case-text-overlay">
+                                        <div class="case-badge">Manufacturing</div>
+                                        <h3 class="case-heading text-white mb-2">Smart Manufacturing IoT</h3>
+                                        <p class="case-description text-white">IoT-based predictive maintenance system reducing downtime by 75%.</p>
+                                        <div class="case-features">
+                                            <span class="feature-tag">IoT Sensors</span>
+                                            <span class="feature-tag">Predictive AI</span>
+                                            <span class="feature-tag">Edge Computing</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Manual Navigation Controls -->
+                            <div class="carousel-controls">
+                                <!-- Navigation Arrows -->
+                                <div class="carousel-nav-arrows">
+                                    <button class="carousel-nav-btn carousel-prev" id="carousel-prev">
+                                        <i class="bi bi-chevron-left"></i>
+                                    </button>
+                                    <button class="carousel-nav-btn carousel-next" id="carousel-next">
+                                        <i class="bi bi-chevron-right"></i>
+                                    </button>
+                                </div>
+                                
+                                <!-- Slide Indicators -->
+                                <div class="carousel-indicators">
+                                    <div class="indicator-item active" data-slide="0">
+                                        <span class="indicator-number">1</span>
+                                        <span class="indicator-label">Banking Security</span>
+                                    </div>
+                                    <div class="indicator-item" data-slide="1">
+                                        <span class="indicator-number">2</span>
+                                        <span class="indicator-label">Healthcare AI</span>
+                                    </div>
+                                    <div class="indicator-item" data-slide="2">
+                                        <span class="indicator-number">3</span>
+                                        <span class="indicator-label">Cloud Migration</span>
+                                    </div>
+                                    <div class="indicator-item" data-slide="3">
+                                        <span class="indicator-number">4</span>
+                                        <span class="indicator-label">Learning Platform</span>
+                                    </div>
+                                    <div class="indicator-item" data-slide="4">
+                                        <span class="indicator-number">5</span>
+                                        <span class="indicator-label">Mobile Banking</span>
+                                    </div>
+                                    <div class="indicator-item" data-slide="5">
+                                        <span class="indicator-number">6</span>
+                                        <span class="indicator-label">Manufacturing IoT</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Compact Success Stories Slider -->
-                <div class="success-stories-slider-compact">
-                    <div class="slider-container-compact">
-                        <div class="slider-wrapper-compact" id="successStoriesSlider">
-                            <!-- Financial Institution Security -->
-                            <div class="slider-item-compact">
-                                <div class="case-study-card-compact reveal-up stagger-1">
-                                    <div class="case-study-image-compact">
-                                        <img src="../assets/images/cyber1.jpg" alt="Financial Security" class="img-fluid case-image-compact">
-                                        <div class="case-overlay-compact">
-                                            <div class="case-category-compact">Financial Services</div>
-                                        </div>
-                                        <div class="read-more-overlay-compact">
-                                            <button class="btn-read-more-compact">
-                                                <i class="bi bi-arrow-right me-2"></i>
-                                                Read More
-                                            </button>
-                                        </div>
-                                        <div class="case-number">01</div>
-                                    </div>
-                                    <div class="case-study-content-compact">
-                                        <div class="case-icon-compact">
-                                            <i class="bi bi-shield-check text-white"></i>
-                                        </div>
-                                        <h4 class="case-title">AI-Powered Banking Security</h4>
-                                        <p class="case-description">
-                                            Comprehensive AI-driven threat detection system reducing security incidents by 85% 
-                                            while maintaining zero downtime for a major financial institution.
-                                        </p>
-                                        <div class="case-metrics-compact">
-                                            <div class="metric-item-compact">
-                                                <span class="metric-value-compact">85%</span>
-                                                <span class="metric-label-compact">Threat Reduction</span>
-                                            </div>
-                                            <div class="metric-item-compact">
-                                                <span class="metric-value-compact">100%</span>
-                                                <span class="metric-label-compact">Uptime</span>
-                                            </div>
-                                            <div class="metric-item-compact">
-                                                <span class="metric-value-compact">&lt;1s</span>
-                                                <span class="metric-label-compact">Response Time</span>
-                                            </div>
-                                        </div>
-                                        <div class="case-technologies-compact">
-                                            <span class="tech-tag-compact">Machine Learning</span>
-                                            <span class="tech-tag-compact">Real-time Analytics</span>
-                                            <span class="tech-tag-compact">Cloud Security</span>
-                                        </div>
-                                    </div>
+                <!-- Mobile Case Studies Cards (Service-like layout) -->
+                <div class="mobile-case-studies-grid d-lg-none">
+                    <div class="row g-4">
+                        <!-- Case Study 1: Financial Institution Security -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="mobile-case-card" data-link="#">
+                                <div class="mobile-card-image">
+                                    <img src="../assets/images/cyber1.jpg" alt="Financial Security" class="img-fluid">
+                                    <div class="mobile-card-overlay"></div>
+                                    <div class="mobile-card-badge">Financial Services</div>
                                 </div>
-                            </div>
-
-                            <!-- Healthcare AI Platform -->
-                            <div class="slider-item-compact">
-                                <div class="case-study-card-compact reveal-up stagger-2">
-                                    <div class="case-study-image-compact">
-                                        <img src="../assets/images/cyber2.jpg" alt="Healthcare AI" class="img-fluid case-image-compact">
-                                        <div class="case-overlay-compact">
-                                            <div class="case-category-compact">Healthcare</div>
-                                        </div>
-                                        <div class="read-more-overlay-compact">
-                                            <button class="btn-read-more-compact">
-                                                <i class="bi bi-arrow-right me-2"></i>
-                                                Read More
-                                            </button>
-                                        </div>
-                                        <div class="case-number">02</div>
-                                    </div>
-                                    <div class="case-study-content-compact">
-                                        <div class="case-icon-compact">
-                                            <i class="bi bi-robot text-white"></i>
-                                        </div>
-                                        <h4 class="case-title">Multilingual Healthcare Assistant</h4>
-                                        <p class="case-description">
-                                            Advanced AI-powered healthcare assistant supporting 15 languages, improving 
-                                            patient satisfaction by 70% while maintaining HIPAA compliance.
-                                        </p>
-                                        <div class="case-metrics-compact">
-                                            <div class="metric-item-compact">
-                                                <span class="metric-value-compact">70%</span>
-                                                <span class="metric-label-compact">Satisfaction</span>
-                                            </div>
-                                            <div class="metric-item-compact">
-                                                <span class="metric-value-compact">15</span>
-                                                <span class="metric-label-compact">Languages</span>
-                                            </div>
-                                            <div class="metric-item-compact">
-                                                <span class="metric-value-compact">50%</span>
-                                                <span class="metric-label-compact">Cost Reduction</span>
-                                            </div>
-                                        </div>
-                                        <div class="case-technologies-compact">
-                                            <span class="tech-tag-compact">NLP</span>
-                                            <span class="tech-tag-compact">Voice Recognition</span>
-                                            <span class="tech-tag-compact">HIPAA Compliance</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- E-commerce Cloud Migration -->
-                            <div class="slider-item-compact">
-                                <div class="case-study-card-compact reveal-up stagger-3">
-                                    <div class="case-study-image-compact">
-                                        <img src="../assets/images/cyber3.jpg" alt="Cloud Migration" class="img-fluid case-image-compact">
-                                        <div class="case-overlay-compact">
-                                            <div class="case-category-compact">E-commerce</div>
-                                        </div>
-                                        <div class="read-more-overlay-compact">
-                                            <button class="btn-read-more-compact">
-                                                <i class="bi bi-arrow-right me-2"></i>
-                                                Read More
-                                            </button>
-                                        </div>
-                                        <div class="case-number">03</div>
-                                    </div>
-                                    <div class="case-study-content-compact">
-                                        <div class="case-icon-compact">
-                                            <i class="bi bi-cloud text-white"></i>
-                                        </div>
-                                        <h4 class="case-title">Enterprise Cloud Transformation</h4>
-                                        <p class="case-description">
-                                            Large-scale e-commerce platform migration achieving 99.9% uptime, 40% cost 
-                                            savings, and 3x performance improvement with auto-scaling.
-                                        </p>
-                                        <div class="case-metrics-compact">
-                                            <div class="metric-item-compact">
-                                                <span class="metric-value-compact">99.9%</span>
-                                                <span class="metric-label-compact">Uptime</span>
-                                            </div>
-                                            <div class="metric-item-compact">
-                                                <span class="metric-value-compact">40%</span>
-                                                <span class="metric-label-compact">Cost Savings</span>
-                                            </div>
-                                            <div class="metric-item-compact">
-                                                <span class="metric-value-compact">3x</span>
-                                                <span class="metric-label-compact">Performance</span>
-                                            </div>
-                                        </div>
-                                        <div class="case-technologies-compact">
-                                            <span class="tech-tag-compact">AWS</span>
-                                            <span class="tech-tag-compact">Kubernetes</span>
-                                            <span class="tech-tag-compact">Auto-scaling</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Educational LMS Platform -->
-                            <div class="slider-item-compact">
-                                <div class="case-study-card-compact reveal-up stagger-4">
-                                    <div class="case-study-image-compact">
-                                        <img src="../assets/images/cyber.jpg" alt="Educational Platform" class="img-fluid case-image-compact">
-                                        <div class="case-overlay-compact">
-                                            <div class="case-category-compact">Education</div>
-                                        </div>
-                                        <div class="read-more-overlay-compact">
-                                            <button class="btn-read-more-compact">
-                                                <i class="bi bi-arrow-right me-2"></i>
-                                                Read More
-                                            </button>
-                                        </div>
-                                        <div class="case-number">04</div>
-                                    </div>
-                                    <div class="case-study-content-compact">
-                                        <div class="case-icon-compact">
-                                            <i class="bi bi-mortarboard text-white"></i>
-                                        </div>
-                                        <h4 class="case-title">AI-Enhanced Learning Platform</h4>
-                                        <p class="case-description">
-                                            Intelligent learning management system with adaptive algorithms serving 10,000+ 
-                                            students and increasing engagement by 60%.
-                                        </p>
-                                        <div class="case-metrics-compact">
-                                            <div class="metric-item-compact">
-                                                <span class="metric-value-compact">60%</span>
-                                                <span class="metric-label-compact">Engagement</span>
-                                            </div>
-                                            <div class="metric-item-compact">
-                                                <span class="metric-value-compact">10K+</span>
-                                                <span class="metric-label-compact">Students</span>
-                                            </div>
-                                            <div class="metric-item-compact">
-                                                <span class="metric-value-compact">85%</span>
-                                                <span class="metric-label-compact">Completion</span>
-                                            </div>
-                                        </div>
-                                        <div class="case-technologies-compact">
-                                            <span class="tech-tag-compact">Adaptive AI</span>
-                                            <span class="tech-tag-compact">Mobile First</span>
-                                            <span class="tech-tag-compact">Analytics</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Mobile Banking App -->
-                            <div class="slider-item-compact">
-                                <div class="case-study-card-compact reveal-up stagger-1">
-                                    <div class="case-study-image-compact">
-                                        <img src="../assets/images/cyber1.jpg" alt="Mobile Banking" class="img-fluid case-image-compact">
-                                        <div class="case-overlay-compact">
-                                            <div class="case-category-compact">FinTech</div>
-                                        </div>
-                                        <div class="read-more-overlay-compact">
-                                            <button class="btn-read-more-compact">
-                                                <i class="bi bi-arrow-right me-2"></i>
-                                                Read More
-                                            </button>
-                                        </div>
-                                        <div class="case-number">05</div>
-                                    </div>
-                                    <div class="case-study-content-compact">
-                                        <div class="case-icon-compact">
-                                            <i class="bi bi-phone text-white"></i>
-                                        </div>
-                                        <h4 class="case-title">Secure Mobile Banking Suite</h4>
-                                        <p class="case-description">
-                                            Comprehensive mobile banking application with biometric authentication and 
-                                            real-time fraud detection, achieving 1M+ downloads.
-                                        </p>
-                                        <div class="case-metrics-compact">
-                                            <div class="metric-item-compact">
-                                                <span class="metric-value-compact">1M+</span>
-                                                <span class="metric-label-compact">Downloads</span>
-                                            </div>
-                                            <div class="metric-item-compact">
-                                                <span class="metric-value-compact">4.8★</span>
-                                                <span class="metric-label-compact">Rating</span>
-                                            </div>
-                                            <div class="metric-item-compact">
-                                                <span class="metric-value-compact">99.9%</span>
-                                                <span class="metric-label-compact">Security</span>
-                                            </div>
-                                        </div>
-                                        <div class="case-technologies-compact">
-                                            <span class="tech-tag-compact">Biometrics</span>
-                                            <span class="tech-tag-compact">Real-time ML</span>
-                                            <span class="tech-tag-compact">Cross-platform</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Manufacturing IoT Solution -->
-                            <div class="slider-item-compact">
-                                <div class="case-study-card-compact reveal-up stagger-2">
-                                    <div class="case-study-image-compact">
-                                        <img src="../assets/images/cyber2.jpg" alt="IoT Manufacturing" class="img-fluid case-image-compact">
-                                        <div class="case-overlay-compact">
-                                            <div class="case-category-compact">Manufacturing</div>
-                                        </div>
-                                        <div class="read-more-overlay-compact">
-                                            <button class="btn-read-more-compact">
-                                                <i class="bi bi-arrow-right me-2"></i>
-                                                Read More
-                                            </button>
-                                        </div>
-                                        <div class="case-number">06</div>
-                                    </div>
-                                    <div class="case-study-content-compact">
-                                        <div class="case-icon-compact">
-                                            <i class="bi bi-gear text-white"></i>
-                                        </div>
-                                        <h4 class="case-title">Smart Manufacturing IoT</h4>
-                                        <p class="case-description">
-                                            IoT-based predictive maintenance system with real-time monitoring, reducing 
-                                            equipment downtime by 75% and achieving 300% ROI.
-                                        </p>
-                                        <div class="case-metrics-compact">
-                                            <div class="metric-item-compact">
-                                                <span class="metric-value-compact">75%</span>
-                                                <span class="metric-label-compact">Downtime Cut</span>
-                                            </div>
-                                            <div class="metric-item-compact">
-                                                <span class="metric-value-compact">500+</span>
-                                                <span class="metric-label-compact">Sensors</span>
-                                            </div>
-                                            <div class="metric-item-compact">
-                                                <span class="metric-value-compact">300%</span>
-                                                <span class="metric-label-compact">ROI</span>
-                                            </div>
-                                        </div>
-                                        <div class="case-technologies-compact">
-                                            <span class="tech-tag-compact">IoT Sensors</span>
-                                            <span class="tech-tag-compact">Predictive AI</span>
-                                            <span class="tech-tag-compact">Edge Computing</span>
-                                        </div>
+                                <div class="mobile-card-content">
+                                    <h4 class="mobile-card-title">AI-Powered Banking Security</h4>
+                                    <p class="mobile-card-description">Comprehensive AI-driven threat detection system reducing security incidents by 85% while maintaining zero downtime.</p>
+                                    <div class="mobile-card-features">
+                                        <span class="mobile-feature-tag">Machine Learning</span>
+                                        <span class="mobile-feature-tag">Real-time Analytics</span>
+                                        <span class="mobile-feature-tag">Cloud Security</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Compact Slider Navigation -->
-                        <div class="slider-navigation-compact">
-                            <button class="slider-btn-compact prev-btn-compact" id="prevBtn">
-                                <i class="bi bi-chevron-left"></i>
-                            </button>
-                            <button class="slider-btn-compact next-btn-compact" id="nextBtn">
-                                <i class="bi bi-chevron-right"></i>
-                            </button>
+                        <!-- Case Study 2: Healthcare AI Platform -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="mobile-case-card" data-link="#">
+                                <div class="mobile-card-image">
+                                    <img src="../assets/images/cyber2.jpg" alt="Healthcare AI" class="img-fluid">
+                                    <div class="mobile-card-overlay"></div>
+                                    <div class="mobile-card-badge">Healthcare</div>
+                                </div>
+                                <div class="mobile-card-content">
+                                    <h4 class="mobile-card-title">Multilingual Healthcare Assistant</h4>
+                                    <p class="mobile-card-description">Advanced AI-powered healthcare assistant supporting 15 languages, improving patient satisfaction by 70%.</p>
+                                    <div class="mobile-card-features">
+                                        <span class="mobile-feature-tag">NLP</span>
+                                        <span class="mobile-feature-tag">Voice Recognition</span>
+                                        <span class="mobile-feature-tag">HIPAA Compliance</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
-                        <!-- Enhanced Slider Dots with Progress -->
-                        <div class="slider-progress-container">
-                            <div class="slider-progress-bar">
-                                <div class="progress-fill" id="progressFill"></div>
+                        <!-- Case Study 3: E-commerce Cloud Migration -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="mobile-case-card" data-link="#">
+                                <div class="mobile-card-image">
+                                    <img src="../assets/images/cyber3.jpg" alt="Cloud Migration" class="img-fluid">
+                                    <div class="mobile-card-overlay"></div>
+                                    <div class="mobile-card-badge">E-commerce</div>
+                                </div>
+                                <div class="mobile-card-content">
+                                    <h4 class="mobile-card-title">Enterprise Cloud Transformation</h4>
+                                    <p class="mobile-card-description">Large-scale e-commerce platform migration achieving 99.9% uptime, 40% cost savings, and 3x performance improvement.</p>
+                                    <div class="mobile-card-features">
+                                        <span class="mobile-feature-tag">AWS</span>
+                                        <span class="mobile-feature-tag">Kubernetes</span>
+                                        <span class="mobile-feature-tag">Auto-scaling</span>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="slider-dots-compact" id="sliderDots">
-                                <!-- Dots will be generated by JavaScript -->
+                        </div>
+
+                        <!-- Case Study 4: Educational LMS Platform -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="mobile-case-card" data-link="#">
+                                <div class="mobile-card-image">
+                                    <img src="../assets/images/cyber.jpg" alt="Educational Platform" class="img-fluid">
+                                    <div class="mobile-card-overlay"></div>
+                                    <div class="mobile-card-badge">Education</div>
+                                </div>
+                                <div class="mobile-card-content">
+                                    <h4 class="mobile-card-title">AI-Enhanced Learning Platform</h4>
+                                    <p class="mobile-card-description">Intelligent learning management system with adaptive algorithms serving 10,000+ students and increasing engagement by 60%.</p>
+                                    <div class="mobile-card-features">
+                                        <span class="mobile-feature-tag">Adaptive AI</span>
+                                        <span class="mobile-feature-tag">Mobile First</span>
+                                        <span class="mobile-feature-tag">Analytics</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Case Study 5: Mobile Banking App -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="mobile-case-card" data-link="#">
+                                <div class="mobile-card-image">
+                                    <img src="../assets/images/cyber1.jpg" alt="Mobile Banking" class="img-fluid">
+                                    <div class="mobile-card-overlay"></div>
+                                    <div class="mobile-card-badge">FinTech</div>
+                                </div>
+                                <div class="mobile-card-content">
+                                    <h4 class="mobile-card-title">Secure Mobile Banking Suite</h4>
+                                    <p class="mobile-card-description">Comprehensive mobile banking application with biometric authentication and real-time fraud detection, achieving 1M+ downloads.</p>
+                                    <div class="mobile-card-features">
+                                        <span class="mobile-feature-tag">Biometrics</span>
+                                        <span class="mobile-feature-tag">Real-time ML</span>
+                                        <span class="mobile-feature-tag">Cross-platform</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Case Study 6: Manufacturing IoT Solution -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="mobile-case-card" data-link="#">
+                                <div class="mobile-card-image">
+                                    <img src="../assets/images/cyber2.jpg" alt="IoT Manufacturing" class="img-fluid">
+                                    <div class="mobile-card-overlay"></div>
+                                    <div class="mobile-card-badge">Manufacturing</div>
+                                </div>
+                                <div class="mobile-card-content">
+                                    <h4 class="mobile-card-title">Smart Manufacturing IoT</h4>
+                                    <p class="mobile-card-description">IoT-based predictive maintenance system with real-time monitoring, reducing equipment downtime by 75% and achieving 300% ROI.</p>
+                                    <div class="mobile-card-features">
+                                        <span class="mobile-feature-tag">IoT Sensors</span>
+                                        <span class="mobile-feature-tag">Predictive AI</span>
+                                        <span class="mobile-feature-tag">Edge Computing</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-            </div>
-        </section>
+          
+       
 
         <!-- Impact Metrics Section -->
-        <section class="py-5" style="background: var(--card-bg); border-top: 1px solid var(--card-border);">
+        <section class="py-5" style="background: var(--card-bg); ">
             <div class="container">
-                <div class="text-center mb-5 reveal-up">
+                <div class="text-left mb-5 reveal-up">
                     <h2 class="display-4 fw-bold mb-3" style="color: var(--text-primary);">
                         Impact <span class="text-gradient">Metrics</span>
                     </h2>
@@ -1795,7 +2467,7 @@
         <!-- Development Roadmap -->
         <section class="py-5 bg-light">
             <div class="container px-4">
-                <div class="text-center mb-5 reveal-up">
+                <div class="text-left mb-5 reveal-up">
                     <h2 class="display-5 fw-bold mb-3">Development Roadmap</h2>
                     <p class="fs-5 text-muted">Our planned releases and milestones for 2024-2025</p>
                 </div>
@@ -1869,7 +2541,613 @@
                 </div>
             </div>
         </section>
+ <!-- Innovation Technologies Section -->
+        <section class="innovation-technologies-section" style="padding-top: 4rem;">
+            <div class="container">
+                <div class="text-left mb-5">
+                    <h2 class="display-4 fw-bold mb-3">
+                        Our <span class="text-gradient">Innovation Technology Ecosystem</span>
+                    </h2>
+                    <p class="lead " style=" margin: 0 auto; font-size: 1.2rem; line-height: 1.8;">
+                        Discover our comprehensive innovation technology stack that powers next-generation breakthrough solutions. 
+                        From quantum computing research to advanced AI frameworks, we leverage the most cutting-edge tools 
+                        and emerging technologies to deliver revolutionary digital experiences that transform industries 
+                        and shape the future of technology.
+                    </p>
+                </div>
 
+                <!-- Technology Timeline -->
+                <div class="tech-timeline">
+                    <!-- Advanced AI & Machine Learning -->
+                    <div class="tech-section reveal-on-scroll">
+                        <div class="row align-items-center g-5">
+                            <div class="col-lg-6">
+                                <div class="tech-content">
+                                    <div class="tech-badge">
+                                        <i class="bi bi-robot"></i>
+                                        <span>AI Innovation Layer</span>
+                                    </div>
+                                    <h3 class="tech-section-title">Advanced AI & Machine Learning</h3>
+                                    <p class="tech-section-description" style="font-size: 1.15rem; line-height: 1.8; margin-bottom: 25px;">
+                                        At the forefront of artificial intelligence innovation, our advanced AI ecosystem encompasses 
+                                        next-generation machine learning frameworks, neural architecture search, and breakthrough 
+                                        research in explainable AI, federated learning, and autonomous intelligent systems that 
+                                        push the boundaries of what's possible.
+                                    </p>
+                                    <p class="tech-section-description" style="font-size: 1.05rem; line-height: 1.7; color: var(--text-muted); margin-bottom: 30px;">
+                                        From transformer architectures and large language models to computer vision breakthroughs 
+                                        and reinforcement learning systems, our AI innovation lab develops cutting-edge solutions 
+                                        that redefine industry standards and create new possibilities for intelligent automation.
+                                    </p>
+                                    <div class="tech-stats">
+                                        <div class="stat-item">
+                                            <span class="stat-number">50+</span>
+                                            <span class="stat-label">AI Models</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-number">95%</span>
+                                            <span class="stat-label">Accuracy Rate</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="tech-visual-container">
+                                    <div class="tech-hero-image">
+                                        <img src="../assets/images/cyber1.jpg" alt="Advanced AI & Machine Learning" class="img-fluid  shadow-lg">
+                                        <div class="tech-overlay">
+                                            <div class="overlay-content">
+                                                <h5>Next-Gen AI Systems</h5>
+                                                <p>Breakthrough artificial intelligence research</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tech-grid mt-4">
+                                        <div class="tech-item">
+                                            <div class="tech-icon tensorflow">
+                                                <i class="bi bi-cpu-fill"></i>
+                                            </div>
+                                            <div class="tech-info">
+                                                <h5>TensorFlow/PyTorch</h5>
+                                                <span>Advanced Deep Learning</span>
+                                            </div>
+                                        </div>
+                                        <div class="tech-item">
+                                            <div class="tech-icon ai">
+                                                <i class="bi bi-brain"></i>
+                                            </div>
+                                            <div class="tech-info">
+                                                <h5>Transformers/LLMs</h5>
+                                                <span>Large Language Models</span>
+                                            </div>
+                                        </div>
+                                        <div class="tech-item">
+                                            <div class="tech-icon pytorch">
+                                                <i class="bi bi-lightning-fill"></i>
+                                            </div>
+                                            <div class="tech-info">
+                                                <h5>Computer Vision</h5>
+                                                <span>Advanced Image Processing</span>
+                                            </div>
+                                        </div>
+                                        <div class="tech-item">
+                                            <div class="tech-icon jupyter">
+                                                <i class="bi bi-graph-up-arrow"></i>
+                                            </div>
+                                            <div class="tech-info">
+                                                <h5>AutoML/NAS</h5>
+                                                <span>Neural Architecture Search</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Quantum Computing & Security -->
+                    <div class="tech-section reveal-on-scroll">
+                        <div class="row align-items-center g-5">
+                            <div class="col-lg-6 order-lg-2">
+                                <div class="tech-content">
+                                    <div class="tech-badge">
+                                        <i class="bi bi-cpu"></i>
+                                        <span>Quantum Innovation Layer</span>
+                                    </div>
+                                    <h3 class="tech-section-title">Quantum Computing & Security</h3>
+                                    <p class="tech-section-description" style="font-size: 1.15rem; line-height: 1.8; margin-bottom: 25px;">
+                                        Pioneering the quantum revolution with cutting-edge quantum computing research, 
+                                        post-quantum cryptography development, and quantum-resistant security protocols. 
+                                        Our quantum innovation lab explores quantum algorithms, quantum machine learning, 
+                                        and quantum key distribution systems for the post-quantum era.
+                                    </p>
+                                    <p class="tech-section-description" style="font-size: 1.05rem; line-height: 1.7; color: var(--text-muted); margin-bottom: 30px;">
+                                        From quantum supremacy algorithms to hybrid quantum-classical systems, we develop 
+                                        quantum solutions that will revolutionize computing, cryptography, and optimization 
+                                        across industries while ensuring security in the quantum age.
+                                    </p>
+                                    <div class="tech-stats">
+                                        <div class="stat-item">
+                                            <span class="stat-number">10+</span>
+                                            <span class="stat-label">Quantum Algorithms</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-number">100%</span>
+                                            <span class="stat-label">Quantum-Safe</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 order-lg-1">
+                                <div class="tech-visual-container">
+                                    <div class="tech-hero-image">
+                                        <img src="../assets/images/cyber2.jpg" alt="Quantum Computing" class="img-fluid  shadow-lg">
+                                        <div class="tech-overlay">
+                                            <div class="overlay-content">
+                                                <h5>Quantum Innovation</h5>
+                                                <p>Next-generation quantum systems</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tech-grid mt-4">
+                                        <div class="tech-item">
+                                            <div class="tech-icon quantum">
+                                                <i class="bi bi-cpu"></i>
+                                            </div>
+                                            <div class="tech-info">
+                                                <h5>Quantum Algorithms</h5>
+                                                <span>Quantum Computing Research</span>
+                                            </div>
+                                        </div>
+                                        <div class="tech-item">
+                                            <div class="tech-icon security">
+                                                <i class="bi bi-shield-lock"></i>
+                                            </div>
+                                            <div class="tech-info">
+                                                <h5>Post-Quantum Crypto</h5>
+                                                <span>Quantum-Resistant Security</span>
+                                            </div>
+                                        </div>
+                                        <div class="tech-item">
+                                            <div class="tech-icon biometric">
+                                                <i class="bi bi-key"></i>
+                                            </div>
+                                            <div class="tech-info">
+                                                <h5>Quantum Key Distribution</h5>
+                                                <span>Secure Quantum Communication</span>
+                                            </div>
+                                        </div>
+                                        <div class="tech-item">
+                                            <div class="tech-icon ai">
+                                                <i class="bi bi-diagram-3"></i>
+                                            </div>
+                                            <div class="tech-info">
+                                                <h5>Quantum ML</h5>
+                                                <span>Quantum Machine Learning</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Zero Trust & Advanced Security -->
+                    <div class="tech-section reveal-on-scroll">
+                        <div class="row align-items-center g-5">
+                            <div class="col-lg-6">
+                                <div class="tech-content">
+                                    <div class="tech-badge">
+                                        <i class="bi bi-shield-check"></i>
+                                        <span>Security Innovation Layer</span>
+                                    </div>
+                                    <h3 class="tech-section-title">Zero Trust & Advanced Security</h3>
+                                    <p class="tech-section-description" style="font-size: 1.15rem; line-height: 1.8; margin-bottom: 25px;">
+                                        Revolutionary security architecture built on zero trust principles, autonomous threat 
+                                        detection, and AI-powered security orchestration. Our advanced security innovation 
+                                        encompasses behavioral analytics, continuous authentication, and self-healing security 
+                                        systems that adapt and evolve with emerging threats.
+                                    </p>
+                                    <p class="tech-section-description" style="font-size: 1.05rem; line-height: 1.7; color: var(--text-muted); margin-bottom: 30px;">
+                                        From micro-segmentation and identity-centric security to predictive threat intelligence 
+                                        and automated incident response, we create security solutions that provide comprehensive 
+                                        protection while enabling seamless user experiences and business operations.
+                                    </p>
+                                    <div class="tech-stats">
+                                        <div class="stat-item">
+                                            <span class="stat-number">99.9%</span>
+                                            <span class="stat-label">Threat Detection</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-number">24/7</span>
+                                            <span class="stat-label">AI Monitoring</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="tech-visual-container">
+                                    <div class="tech-hero-image">
+                                        <img src="../assets/images/cyber3.jpg" alt="Zero Trust Security" class="img-fluid  shadow-lg">
+                                        <div class="tech-overlay">
+                                            <div class="overlay-content">
+                                                <h5>Zero Trust Architecture</h5>
+                                                <p>Advanced security innovation</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tech-grid mt-4">
+                                        <div class="tech-item">
+                                            <div class="tech-icon security">
+                                                <i class="bi bi-shield-lock"></i>
+                                            </div>
+                                            <div class="tech-info">
+                                                <h5>Zero Trust Framework</h5>
+                                                <span>Never Trust, Always Verify</span>
+                                            </div>
+                                        </div>
+                                        <div class="tech-item">
+                                            <div class="tech-icon ai">
+                                                <i class="bi bi-eye"></i>
+                                            </div>
+                                            <div class="tech-info">
+                                                <h5>Behavioral Analytics</h5>
+                                                <span>AI-Powered User Analysis</span>
+                                            </div>
+                                        </div>
+                                        <div class="tech-item">
+                                            <div class="tech-icon edge">
+                                                <i class="bi bi-robot"></i>
+                                            </div>
+                                            <div class="tech-info">
+                                                <h5>Autonomous Response</h5>
+                                                <span>Self-Healing Security</span>
+                                            </div>
+                                        </div>
+                                        <div class="tech-item">
+                                            <div class="tech-icon blockchain">
+                                                <i class="bi bi-diagram-2"></i>
+                                            </div>
+                                            <div class="tech-info">
+                                                <h5>Micro-Segmentation</h5>
+                                                <span>Granular Network Control</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Edge Computing & IoT Innovation -->
+                    <div class="tech-section reveal-on-scroll">
+                        <div class="row align-items-center g-5">
+                            <div class="col-lg-6 order-lg-2">
+                                <div class="tech-content">
+                                    <div class="tech-badge">
+                                        <i class="bi bi-globe"></i>
+                                        <span>Edge Innovation Layer</span>
+                                    </div>
+                                    <h3 class="tech-section-title">Edge Computing & IoT Innovation</h3>
+                                    <p class="tech-section-description" style="font-size: 1.15rem; line-height: 1.8; margin-bottom: 25px;">
+                                        Revolutionary edge computing architecture that brings intelligence to the network edge, 
+                                        enabling real-time processing, ultra-low latency applications, and distributed AI 
+                                        deployment. Our edge innovation encompasses intelligent IoT ecosystems, edge AI 
+                                        optimization, and autonomous edge orchestration systems.
+                                    </p>
+                                    <p class="tech-section-description" style="font-size: 1.05rem; line-height: 1.7; color: var(--text-muted); margin-bottom: 30px;">
+                                        From 5G-enabled edge computing to federated learning at the edge, we develop solutions 
+                                        that process data where it's generated, reducing latency, improving privacy, and 
+                                        enabling new classes of real-time intelligent applications across industries.
+                                    </p>
+                                    <div class="tech-stats">
+                                        <div class="stat-item">
+                                            <span class="stat-number">&lt;1ms</span>
+                                            <span class="stat-label">Edge Latency</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-number">1M+</span>
+                                            <span class="stat-label">IoT Devices</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 order-lg-1">
+                                <div class="tech-visual-container">
+                                    <div class="tech-hero-image">
+                                        <img src="../assets/images/cyber.jpg" alt="Edge Computing" class="img-fluid  shadow-lg">
+                                        <div class="tech-overlay">
+                                            <div class="overlay-content">
+                                                <h5>Edge Intelligence</h5>
+                                                <p>Distributed computing innovation</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tech-grid mt-4">
+                                        <div class="tech-item">
+                                            <div class="tech-icon kubernetes">
+                                                <i class="bi bi-globe"></i>
+                                            </div>
+                                            <div class="tech-info">
+                                                <h5>Edge Orchestration</h5>
+                                                <span>Distributed Edge Management</span>
+                                            </div>
+                                        </div>
+                                        <div class="tech-item">
+                                            <div class="tech-icon ai">
+                                                <i class="bi bi-cpu"></i>
+                                            </div>
+                                            <div class="tech-info">
+                                                <h5>Edge AI</h5>
+                                                <span>Intelligence at the Edge</span>
+                                            </div>
+                                        </div>
+                                        <div class="tech-item">
+                                            <div class="tech-icon mobile">
+                                                <i class="bi bi-router"></i>
+                                            </div>
+                                            <div class="tech-info">
+                                                <h5>5G Integration</h5>
+                                                <span>Ultra-Low Latency Networks</span>
+                                            </div>
+                                        </div>
+                                        <div class="tech-item">
+                                            <div class="tech-icon security">
+                                                <i class="bi bi-shield-check"></i>
+                                            </div>
+                                            <div class="tech-info">
+                                                <h5>IoT Security</h5>
+                                                <span>Secure Device Management</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Blockchain & Web3 Innovation -->
+                    <div class="tech-section reveal-on-scroll">
+                        <div class="row align-items-center g-5">
+                            <div class="col-lg-6">
+                                <div class="tech-content">
+                                    <div class="tech-badge">
+                                        <i class="bi bi-link"></i>
+                                        <span>Blockchain Innovation Layer</span>
+                                    </div>
+                                    <h3 class="tech-section-title">Blockchain & Web3 Innovation</h3>
+                                    <p class="tech-section-description" style="font-size: 1.15rem; line-height: 1.8; margin-bottom: 25px;">
+                                        Next-generation blockchain architecture and Web3 innovation that redefines digital 
+                                        ownership, decentralized governance, and trustless systems. Our blockchain innovation 
+                                        lab develops advanced consensus mechanisms, smart contract security frameworks, 
+                                        and interoperable blockchain solutions for the decentralized future.
+                                    </p>
+                                    <p class="tech-section-description" style="font-size: 1.05rem; line-height: 1.7; color: var(--text-muted); margin-bottom: 30px;">
+                                        From layer-2 scaling solutions to cross-chain interoperability protocols, we create 
+                                        blockchain infrastructure that enables secure, scalable, and sustainable decentralized 
+                                        applications while maintaining the core principles of decentralization and security.
+                                    </p>
+                                    <div class="tech-stats">
+                                        <div class="stat-item">
+                                            <span class="stat-number">1000+</span>
+                                            <span class="stat-label">TPS Throughput</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-number">99.99%</span>
+                                            <span class="stat-label">Uptime</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="tech-visual-container">
+                                    <div class="tech-hero-image">
+                                        <img src="../assets/images/cyber1.jpg" alt="Blockchain Innovation" class="img-fluid  shadow-lg">
+                                        <div class="tech-overlay">
+                                            <div class="overlay-content">
+                                                <h5>Web3 Innovation</h5>
+                                                <p>Decentralized future technology</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tech-grid mt-4">
+                                        <div class="tech-item">
+                                            <div class="tech-icon blockchain">
+                                                <i class="bi bi-link"></i>
+                                            </div>
+                                            <div class="tech-info">
+                                                <h5>Smart Contracts</h5>
+                                                <span>Automated Trustless Systems</span>
+                                            </div>
+                                        </div>
+                                        <div class="tech-item">
+                                            <div class="tech-icon edge">
+                                                <i class="bi bi-layers"></i>
+                                            </div>
+                                            <div class="tech-info">
+                                                <h5>Layer-2 Solutions</h5>
+                                                <span>Scalable Blockchain Networks</span>
+                                            </div>
+                                        </div>
+                                        <div class="tech-item">
+                                            <div class="tech-icon quantum">
+                                                <i class="bi bi-arrow-left-right"></i>
+                                            </div>
+                                            <div class="tech-info">
+                                                <h5>Cross-Chain Bridges</h5>
+                                                <span>Interoperable Protocols</span>
+                                            </div>
+                                        </div>
+                                        <div class="tech-item">
+                                            <div class="tech-icon security">
+                                                <i class="bi bi-shield-lock"></i>
+                                            </div>
+                                            <div class="tech-info">
+                                                <h5>DeFi Security</h5>
+                                                <span>Secure Financial Protocols</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Biometric & Identity Innovation -->
+                    <div class="tech-section reveal-on-scroll">
+                        <div class="row align-items-center g-5">
+                            <div class="col-lg-6 order-lg-2">
+                                <div class="tech-content">
+                                    <div class="tech-badge">
+                                        <i class="bi bi-eye"></i>
+                                        <span>Identity Innovation Layer</span>
+                                    </div>
+                                    <h3 class="tech-section-title">Biometric & Identity Innovation</h3>
+                                    <p class="tech-section-description" style="font-size: 1.15rem; line-height: 1.8; margin-bottom: 25px;">
+                                        Revolutionary biometric authentication and digital identity systems that combine 
+                                        advanced AI with privacy-preserving technologies. Our identity innovation lab develops 
+                                        multi-modal biometric fusion, behavioral biometrics, and decentralized identity 
+                                        solutions that provide seamless yet secure authentication experiences.
+                                    </p>
+                                    <p class="tech-section-description" style="font-size: 1.05rem; line-height: 1.7; color: var(--text-muted); margin-bottom: 30px;">
+                                        From liveness detection and anti-spoofing technologies to privacy-preserving identity 
+                                        verification and self-sovereign identity systems, we create authentication solutions 
+                                        that balance security, privacy, and user experience in the digital age.
+                                    </p>
+                                    <div class="tech-stats">
+                                        <div class="stat-item">
+                                            <span class="stat-number">99.9%</span>
+                                            <span class="stat-label">Accuracy Rate</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-number">&lt;100ms</span>
+                                            <span class="stat-label">Auth Speed</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 order-lg-1">
+                                <div class="tech-visual-container">
+                                    <div class="tech-hero-image">
+                                        <img src="../assets/images/cyber2.jpg" alt="Biometric Innovation" class="img-fluid  shadow-lg">
+                                        <div class="tech-overlay">
+                                            <div class="overlay-content">
+                                                <h5>Identity Innovation</h5>
+                                                <p>Next-gen authentication systems</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tech-grid mt-4">
+                                        <div class="tech-item">
+                                            <div class="tech-icon biometric">
+                                                <i class="bi bi-eye"></i>
+                                            </div>
+                                            <div class="tech-info">
+                                                <h5>Multi-Modal Biometrics</h5>
+                                                <span>Advanced Identity Fusion</span>
+                                            </div>
+                                        </div>
+                                        <div class="tech-item">
+                                            <div class="tech-icon ai">
+                                                <i class="bi bi-person-check"></i>
+                                            </div>
+                                            <div class="tech-info">
+                                                <h5>Behavioral Analytics</h5>
+                                                <span>Continuous Authentication</span>
+                                            </div>
+                                        </div>
+                                        <div class="tech-item">
+                                            <div class="tech-icon security">
+                                                <i class="bi bi-shield-check"></i>
+                                            </div>
+                                            <div class="tech-info">
+                                                <h5>Liveness Detection</h5>
+                                                <span>Anti-Spoofing Technology</span>
+                                            </div>
+                                        </div>
+                                        <div class="tech-item">
+                                            <div class="tech-icon blockchain">
+                                                <i class="bi bi-key"></i>
+                                            </div>
+                                            <div class="tech-info">
+                                                <h5>Self-Sovereign ID</h5>
+                                                <span>Decentralized Identity</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Technology Metrics -->
+                <div class="tech-metrics reveal-on-scroll mt-5">
+                    <div class="row g-4">
+                        <div class="col-md-3 col-6">
+                            <div class="metric-item">
+                                <div class="metric-number counter" data-target="100">0</div>
+                                <div class="metric-label">Innovation Technologies</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <div class="metric-item">
+                                <div class="metric-number counter" data-target="50">0</div>
+                                <div class="metric-label">Research Projects</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <div class="metric-item">
+                                <div class="metric-number counter" data-target="25">0</div>
+                                <div class="metric-label">Patents Filed</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <div class="metric-item">
+                                <div class="metric-number counter" data-target="15">0</div>
+                                <div class="metric-label">Global Partnerships</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Technology Categories Summary -->
+                    <div class="tech-categories-summary mt-5">
+                        <div class="row g-4">
+                            <div class="col-lg-3 col-md-6">
+                                <div class="category-summary">
+                                    <div class="category-icon">
+                                        <i class="bi bi-robot"></i>
+                                    </div>
+                                    <h5>Advanced AI</h5>
+                                    <p>Next-generation artificial intelligence and machine learning breakthroughs</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <div class="category-summary">
+                                    <div class="category-icon">
+                                        <i class="bi bi-cpu"></i>
+                                    </div>
+                                    <h5>Quantum Computing</h5>
+                                    <p>Quantum algorithms and post-quantum security research</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <div class="category-summary">
+                                    <div class="category-icon">
+                                        <i class="bi bi-shield-check"></i>
+                                    </div>
+                                    <h5>Zero Trust Security</h5>
+                                    <p>Advanced security architecture and autonomous threat detection</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <div class="category-summary">
+                                    <div class="category-icon">
+                                        <i class="bi bi-globe"></i>
+                                    </div>
+                                    <h5>Edge Innovation</h5>
+                                    <p>Distributed computing and intelligent IoT ecosystems</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <!-- Innovation Lab Section -->
         <section class="py-5" >
             <div class="container">
@@ -1951,6 +3229,12 @@
     <div id="footer-component"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- jQuery (required for Owl Carousel) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <!-- Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
     <!-- Theme Toggle Script -->
     <script src="../scripts/theme-toggle.js"></script>
@@ -1972,8 +3256,8 @@
         document.addEventListener('DOMContentLoaded', function() {
             initAnimations();
 
-            // Initialize Success Stories Slider
-            initSuccessStoriesSlider();
+            // Initialize Case Studies Carousel
+            initCaseStudiesCarousel();
 
             // Initialize GSAP
             if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
@@ -2032,181 +3316,159 @@
             }
         });
 
-        // Success Stories Slider Functionality
-        function initSuccessStoriesSlider() {
-            const slider = document.getElementById('successStoriesSlider');
-            const prevBtn = document.getElementById('prevBtn');
-            const nextBtn = document.getElementById('nextBtn');
-            const dotsContainer = document.getElementById('sliderDots');
-            const progressFill = document.getElementById('progressFill');
-            const currentSlideNum = document.getElementById('currentSlideNum');
-            const totalSlidesNum = document.getElementById('totalSlidesNum');
-            const slides = slider.querySelectorAll('.slider-item-compact');
-            
+        // Case Studies Carousel Functionality
+        function initCaseStudiesCarousel() {
+            if (typeof jQuery === 'undefined' || typeof jQuery.fn.owlCarousel === 'undefined') {
+                console.warn('jQuery or Owl Carousel not loaded');
+                return;
+            }
+
+            const $carousel = $('.case-studies-carousel-slider');
+            const $indicators = $('.indicator-item');
+            const $prevBtn = $('#carousel-prev');
+            const $nextBtn = $('#carousel-next');
+            const $currentCaseCTA = $('#current-case-cta');
+            const $exploreCurrentCase = $('#explore-current-case');
+
+            // Case study data for dynamic content
+            const caseStudies = [
+                {
+                    title: 'AI-Powered Banking Security',
+                    cta: 'View Banking Case Study',
+                    link: '#'
+                },
+                {
+                    title: 'Multilingual Healthcare Assistant',
+                    cta: 'View Healthcare Case Study',
+                    link: '#'
+                },
+                {
+                    title: 'Enterprise Cloud Transformation',
+                    cta: 'View Cloud Case Study',
+                    link: '#'
+                },
+                {
+                    title: 'AI-Enhanced Learning Platform',
+                    cta: 'View Education Case Study',
+                    link: '#'
+                },
+                {
+                    title: 'Secure Mobile Banking Suite',
+                    cta: 'View FinTech Case Study',
+                    link: '#'
+                },
+                {
+                    title: 'Smart Manufacturing IoT',
+                    cta: 'View IoT Case Study',
+                    link: '#'
+                }
+            ];
+
             let currentSlide = 0;
-            const totalSlides = slides.length;
-            let slidesToShow = getSlidesToShow();
-            let maxSlide = Math.max(0, totalSlides - slidesToShow);
 
-            // Update total slides display
-            totalSlidesNum.textContent = totalSlides;
+            // Initialize Owl Carousel
+            $carousel.owlCarousel({
+                items: 1,
+                loop: true,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                autoplayHoverPause: true,
+                smartSpeed: 800,
+                nav: false,
+                dots: false,
+                mouseDrag: true,
+                touchDrag: true,
+                pullDrag: true,
+                animateOut: 'fadeOut',
+                animateIn: 'fadeIn',
+                onChanged: function(event) {
+                    currentSlide = event.item.index;
+                    updateIndicators();
+                    updateCaseInfo();
+                    updateCTA();
+                }
+            });
 
-            // Create dots based on number of slide groups
-            function createDots() {
-                dotsContainer.innerHTML = '';
-                const totalGroups = Math.ceil(totalSlides / slidesToShow);
-                for (let i = 0; i < totalGroups; i++) {
-                    const dot = document.createElement('div');
-                    dot.classList.add('dot-compact');
-                    if (i === 0) dot.classList.add('active');
-                    dot.addEventListener('click', () => goToSlideGroup(i));
-                    dotsContainer.appendChild(dot);
+            // Update indicators
+            function updateIndicators() {
+                $indicators.removeClass('active');
+                $indicators.eq(currentSlide).addClass('active');
+            }
+
+            // Update case info
+            function updateCaseInfo() {
+                $('.case-info-item').removeClass('active');
+                $(`.case-info-item[data-case="${currentSlide}"]`).addClass('active');
+            }
+
+            // Update CTA
+            function updateCTA() {
+                const currentCase = caseStudies[currentSlide];
+                if (currentCase) {
+                    $currentCaseCTA.text(currentCase.cta);
+                    $exploreCurrentCase.attr('href', currentCase.link);
                 }
             }
 
-            // Get slides to show based on screen size
-            function getSlidesToShow() {
-                if (window.innerWidth >= 768) return 2; // 2 cards on desktop/tablet
-                return 1; // 1 card on mobile
-            }
+            // Manual navigation
+            $prevBtn.on('click', function() {
+                $carousel.trigger('prev.owl.carousel');
+            });
 
-            // Update slider position and indicators
-            function updateSlider() {
-                const slideWidth = slider.querySelector('.slider-item-compact').offsetWidth + 20; // 20px gap
-                const translateX = -currentSlide * slideWidth;
-                slider.style.transform = `translateX(${translateX}px)`;
-                
-                // Update current slide number (show the first visible slide number)
-                currentSlideNum.textContent = currentSlide + 1;
-                
-                // Update progress bar based on slide groups
-                const currentGroup = Math.floor(currentSlide / slidesToShow);
-                const totalGroups = Math.ceil(totalSlides / slidesToShow);
-                const progressPercent = ((currentGroup + 1) / totalGroups) * 100;
-                progressFill.style.width = `${progressPercent}%`;
-                
-                // Update dots
-                const dots = dotsContainer.querySelectorAll('.dot-compact');
-                dots.forEach((dot, index) => {
-                    const groupIndex = Math.floor(currentSlide / slidesToShow);
-                    dot.classList.toggle('active', index === groupIndex);
+            $nextBtn.on('click', function() {
+                $carousel.trigger('next.owl.carousel');
+            });
+
+            // Indicator clicks
+            $indicators.on('click', function() {
+                const slideIndex = $(this).data('slide');
+                $carousel.trigger('to.owl.carousel', [slideIndex, 800]);
+            });
+
+            // Initialize first slide
+            updateIndicators();
+            updateCaseInfo();
+            updateCTA();
+
+            // Fallback initialization
+            setTimeout(function() {
+                if (!$carousel.hasClass('owl-loaded')) {
+                    console.log('Case Studies: Fallback initialization');
+                    $carousel.owlCarousel({
+                        items: 1,
+                        loop: true,
+                        autoplay: true,
+                        autoplayTimeout: 5000,
+                        nav: false,
+                        dots: false
+                    });
+                }
+            }, 2000);
+
+            // Ensure content visibility
+            setTimeout(function() {
+                const wowElements = document.querySelectorAll('.wow:not(.animated)');
+                wowElements.forEach(function(element) {
+                    element.style.visibility = 'visible';
+                    element.style.opacity = '1';
+                    element.style.transform = 'none';
+                    element.classList.add('animated');
                 });
-            }
-
-            // Go to specific slide
-            function goToSlide(slideIndex) {
-                currentSlide = Math.max(0, Math.min(slideIndex, maxSlide));
-                updateSlider();
-            }
-
-            // Go to specific slide group (for dot navigation)
-            function goToSlideGroup(groupIndex) {
-                const slideIndex = groupIndex * slidesToShow;
-                goToSlide(slideIndex);
-            }
-
-            // Next slide (move by slidesToShow)
-            function nextSlide() {
-                if (currentSlide + slidesToShow < totalSlides) {
-                    currentSlide += slidesToShow;
-                } else {
-                    currentSlide = 0; // Loop back to start
-                }
-                updateSlider();
-            }
-
-            // Previous slide (move by slidesToShow)
-            function prevSlide() {
-                if (currentSlide >= slidesToShow) {
-                    currentSlide -= slidesToShow;
-                } else {
-                    // Go to last complete group
-                    const totalGroups = Math.ceil(totalSlides / slidesToShow);
-                    currentSlide = (totalGroups - 1) * slidesToShow;
-                }
-                updateSlider();
-            }
-
-            // Event listeners
-            nextBtn.addEventListener('click', nextSlide);
-            prevBtn.addEventListener('click', prevSlide);
-
-            // Auto-play functionality
-            let autoPlayInterval;
-            function startAutoPlay() {
-                autoPlayInterval = setInterval(nextSlide, 4000); // Change slide every 4 seconds
-            }
-
-            function stopAutoPlay() {
-                clearInterval(autoPlayInterval);
-            }
-
-            // Pause auto-play on hover
-            slider.addEventListener('mouseenter', stopAutoPlay);
-            slider.addEventListener('mouseleave', startAutoPlay);
-
-            // Handle window resize
-            window.addEventListener('resize', () => {
-                const newSlidesToShow = getSlidesToShow();
-                if (newSlidesToShow !== slidesToShow) {
-                    slidesToShow = newSlidesToShow;
-                    maxSlide = Math.max(0, totalSlides - slidesToShow);
-                    // Adjust current slide to fit new layout
-                    currentSlide = Math.min(currentSlide, maxSlide);
-                    // Snap to nearest group boundary
-                    currentSlide = Math.floor(currentSlide / slidesToShow) * slidesToShow;
-                    createDots();
-                    updateSlider();
-                }
-            });
-
-            // Touch/swipe support for mobile
-            let startX = 0;
-            let isDragging = false;
-
-            slider.addEventListener('touchstart', (e) => {
-                startX = e.touches[0].clientX;
-                isDragging = true;
-                stopAutoPlay();
-            });
-
-            slider.addEventListener('touchmove', (e) => {
-                if (!isDragging) return;
-                e.preventDefault();
-            });
-
-            slider.addEventListener('touchend', (e) => {
-                if (!isDragging) return;
-                isDragging = false;
                 
-                const endX = e.changedTouches[0].clientX;
-                const diffX = startX - endX;
+                const textElements = document.querySelectorAll('.display-1, h5, .text-gradient');
+                textElements.forEach(function(element) {
+                    element.style.visibility = 'visible';
+                    element.style.opacity = '1';
+                });
                 
-                if (Math.abs(diffX) > 50) { // Minimum swipe distance
-                    if (diffX > 0) {
-                        nextSlide();
-                    } else {
-                        prevSlide();
-                    }
+                // Ensure first case info is visible
+                const firstCaseInfo = document.querySelector('.case-info-item[data-case="0"]');
+                if (firstCaseInfo) {
+                    firstCaseInfo.classList.add('active');
                 }
-                
-                startAutoPlay();
-            });
-
-            // Keyboard navigation
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'ArrowLeft') {
-                    prevSlide();
-                } else if (e.key === 'ArrowRight') {
-                    nextSlide();
-                }
-            });
-
-            // Initialize
-            createDots();
-            updateSlider();
-            startAutoPlay();
+            }, 1000);
         }
+
     </script>
 
     <script type="module">

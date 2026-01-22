@@ -21,6 +21,27 @@
     }
   ];
 
+  // Utility functions
+  function isMobile() {
+    return window.innerWidth <= 991.98;
+  }
+
+  function isReducedMotion() {
+    return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  }
+
+  function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+      const later = () => {
+        clearTimeout(timeout);
+        func(...args);
+      };
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+    };
+  }
+
   function initWhoWeAre() {
     const titleElement = document.getElementById('active-title');
     const descElement = document.getElementById('active-desc');
@@ -36,14 +57,14 @@
 
     console.log('Who We Are: Initializing with', sections.length, 'sections');
 
-    // Add smooth transition to active box
-    if (activeBox) {
+    // Add smooth transition to active box (only if motion is allowed)
+    if (activeBox && !isReducedMotion()) {
       activeBox.style.transition = 'all 0.3s ease';
     }
 
-    // Sticky detection for visual feedback
-    if (stickyElement) {
-      const observer = new IntersectionObserver(
+    // Sticky detection for visual feedback (desktop only)
+    if (stickyElement && !isMobile()) {
+      const stickyObserver = new IntersectionObserver(
         ([entry]) => {
           if (entry.intersectionRatio < 1) {
             stickyElement.classList.add('stuck');
@@ -53,10 +74,27 @@
         },
         { threshold: [1] }
       );
-      observer.observe(stickyElement);
+      stickyObserver.observe(stickyElement);
     }
 
-    // Create intersection observer with better settings for full-height sections
+    // Responsive intersection observer settings
+    const getObserverOptions = () => {
+      if (isMobile()) {
+        return {
+          root: null,
+          rootMargin: '-10% 0px -10% 0px',
+          threshold: 0.5
+        };
+      } else {
+        return {
+          root: null,
+          rootMargin: '-20% 0px -20% 0px',
+          threshold: 0.3
+        };
+      }
+    };
+
+    // Create intersection observer
     const observer = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) {
         if (entry.isIntersecting) {
@@ -66,30 +104,32 @@
           if (data && titleElement && descElement) {
             console.log('Updating to section:', index, data.title);
             
-            // Add fade effect
-            if (activeBox) {
+            // Add fade effect (only if motion is allowed)
+            if (activeBox && !isReducedMotion()) {
               activeBox.style.opacity = '0.7';
               activeBox.style.transform = 'translateY(5px)';
             }
             
-            setTimeout(function() {
+            const updateContent = () => {
               titleElement.textContent = data.title;
               descElement.textContent = data.desc;
               
               // Reset fade effect
-              if (activeBox) {
+              if (activeBox && !isReducedMotion()) {
                 activeBox.style.opacity = '1';
                 activeBox.style.transform = 'translateY(0)';
               }
-            }, 150);
+            };
+
+            if (isReducedMotion()) {
+              updateContent();
+            } else {
+              setTimeout(updateContent, 150);
+            }
           }
         }
       });
-    }, {
-      root: null,
-      rootMargin: '-20% 0px -20% 0px', // Trigger when section is more centered
-      threshold: 0.3 // Lower threshold for better detection
-    });
+    }, getObserverOptions());
 
     // Observe all sections
     sections.forEach(function(section) {
@@ -97,19 +137,73 @@
       console.log('Observing section:', section.getAttribute('data-index'));
     });
 
-    // Add hover effects to images
+    // Add touch and hover effects
     sections.forEach(function(section) {
       const img = section.querySelector('img');
-      if (img) {
+      if (img && !isReducedMotion()) {
         img.style.transition = 'transform 0.3s ease';
+        
+        // Mouse events for desktop
         section.addEventListener('mouseenter', function() {
-          img.style.transform = 'scale(1.05)';
+          if (!isMobile()) {
+            img.style.transform = 'scale(1.05)';
+          }
         });
+        
         section.addEventListener('mouseleave', function() {
-          img.style.transform = 'scale(1)';
+          if (!isMobile()) {
+            img.style.transform = 'scale(1)';
+          }
         });
+
+        // Touch events for mobile
+        section.addEventListener('touchstart', function() {
+          if (isMobile()) {
+            img.style.transform = 'scale(1.02)';
+          }
+        }, { passive: true });
+        
+        section.addEventListener('touchend', function() {
+          if (isMobile()) {
+            setTimeout(() => {
+              img.style.transform = 'scale(1)';
+            }, 150);
+          }
+        }, { passive: true });
       }
     });
+
+    // Handle resize events
+    const handleResize = debounce(() => {
+      // Reinitialize observer with new settings if needed
+      observer.disconnect();
+      sections.forEach(section => observer.observe(section));
+    }, 250);
+
+    window.addEventListener('resize', handleResize, { passive: true });
+
+    // Performance optimization: Lazy load images
+    if ('IntersectionObserver' in window) {
+      const imageObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            if (img.dataset.src) {
+              img.src = img.dataset.src;
+              img.removeAttribute('data-src');
+              imageObserver.unobserve(img);
+            }
+          }
+        });
+      });
+
+      sections.forEach(section => {
+        const img = section.querySelector('img');
+        if (img) {
+          imageObserver.observe(img);
+        }
+      });
+    }
 
     console.log('Who We Are: Initialization complete');
   }

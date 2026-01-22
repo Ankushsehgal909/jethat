@@ -21,6 +21,10 @@
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    
     <!-- Breadcrumb Badge -->
     <script src="../scripts/breadcrumb-badge.js"></script>
     
@@ -326,7 +330,7 @@
         .tech-hero-image {
             position: relative;
             overflow: hidden;
-            border-radius: 20px;
+            border-radius: 0px;
             margin-bottom: 20px;
         }
 
@@ -412,6 +416,7 @@
             color: #dc143c;
             margin-bottom: 20px;
         }
+      
 
         .tech-section-title {
             font-size: 2.5rem;
@@ -742,7 +747,7 @@
 
         /* Technology Categories Summary */
         .tech-categories-summary {
-            border-top: 1px solid var(--card-border);
+            
             padding-top: 40px;
         }
 
@@ -1045,22 +1050,676 @@
             transform: translateX(-30px);
         }
 
-        .reveal-on-scroll {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s ease;
-        }
-
-        .reveal-on-scroll.revealed {
-            opacity: 1;
-            transform: translateY(0);
-        }
+       
 
         .text-gradient {
             background: linear-gradient(135deg, #dc143c, #ffd700);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+        }
+
+        /* ================= TECHNOLOGY SHOWCASE CAROUSEL STYLES ================= */
+
+        /* Technology Showcase Carousel Styles (Desktop) */
+        .tech-showcase-carousel {
+            position: relative;
+            padding: 45px 90px 45px 0;
+            background-color: transparent;
+        }
+
+        .tech-showcase-carousel::before {
+            position: absolute;
+            content: "";
+            top: 0;
+            right: 0;
+            width: calc(50% + 45px);
+            height: 100%;
+            background: linear-gradient(135deg, var(--core-primary), var(--core-secondary));
+            border-radius: 0;
+            z-index: -1;
+            opacity: 0.1;
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 991.98px) {
+            .tech-showcase-carousel {
+                padding: 20px 40px 20px 0;
+            }
+            
+            .tech-showcase-carousel::before {
+                width: calc(50% + 20px);
+            }
+        }
+
+        /* Hide carousel on mobile, show cards instead */
+        @media (max-width: 991.98px) {
+            .tech-showcase-carousel {
+                display: none !important;
+            }
+            
+            .mobile-tech-studies-grid {
+                display: block !important;
+            }
+        }
+
+        /* Technology Slide Content (Desktop Carousel) */
+        .tech-slide-content {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0;
+            width: 100%;
+            max-width: 100%;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .tech-slide-content:hover {
+            transform: scale(1.02);
+        }
+
+        .tech-slide-content img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        /* Technology Text Overlay (Desktop) */
+        .tech-text-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+            border-radius: 0;
+        }
+
+        .tech-badge {
+            position: absolute;
+            top: -3rem;
+            right: 1rem;
+            background: linear-gradient(135deg, var(--core-primary), var(--core-secondary));
+            color: white;
+            padding: 0.5rem 1rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border-radius: 0;
+            z-index: 10;
+        }
+
+        .tech-heading {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .tech-description {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+            margin-bottom: 1rem;
+        }
+
+        .tech-features {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .feature-tag {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+            border-radius: 0;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        /* Owl Carousel Dots */
+        .tech-showcase-carousel .owl-dots {
+            display: none !important; /* Hide default dots, we'll use custom indicators */
+        }
+
+        /* Manual Navigation Controls - Split layout */
+        .carousel-controls {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 1rem;
+            z-index: 10;
+        }
+
+        /* Navigation Arrows - Positioned on left side */
+        .carousel-nav-arrows {
+            position: absolute;
+            left: 20px;
+            bottom: 20px;
+            display: flex;
+            flex-direction: row;
+            gap: 0.75rem;
+            z-index: 10;
+        }
+
+        .carousel-nav-btn {
+            width: 40px;
+            height: 40px;
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel-nav-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--core-primary), var(--core-secondary));
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+
+        .carousel-nav-btn:hover::before {
+            left: 0;
+        }
+
+        .carousel-nav-btn:hover {
+            border-color: var(--core-primary);
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(220, 20, 60, 0.3);
+        }
+
+        .carousel-nav-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* Slide Indicators - Bottom right only */
+        .carousel-indicators {
+            display: flex;
+            flex-direction: row;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            max-width: 300px;
+        }
+
+        .indicator-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 0.8rem;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            min-width: auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .indicator-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--core-primary), var(--core-secondary));
+            transition: left 0.4s ease;
+            z-index: -1;
+        }
+
+        .indicator-item.active::before,
+        .indicator-item:hover::before {
+            left: 0;
+        }
+
+        .indicator-item.active {
+            background: rgba(220, 20, 60, 0.2);
+            border-color: var(--core-primary);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(220, 20, 60, 0.2);
+        }
+
+        .indicator-number {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .indicator-item.active .indicator-number {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .indicator-label {
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.9);
+            white-space: nowrap;
+            display: none; /* Hide labels on small indicators */
+        }
+
+        .indicator-item.active .indicator-label {
+            color: white;
+            font-weight: 600;
+        }
+
+        /* Show labels on hover for better UX */
+        .indicator-item:hover .indicator-label {
+            display: block;
+        }
+
+        /* Mobile Technology Cards (Service-like layout) */
+        .mobile-tech-studies-grid {
+            display: none;
+        }
+
+        .mobile-tech-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px var(--card-shadow);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            height: 100%;
+            border: 1px solid var(--card-border);
+        }
+
+        .mobile-tech-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .mobile-card-image {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .mobile-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .mobile-tech-card:hover .mobile-card-image img {
+            transform: scale(1.05);
+        }
+
+        .mobile-card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(220, 20, 60, 0.2), rgba(255, 215, 0, 0.2));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .mobile-tech-card:hover .mobile-card-overlay {
+            opacity: 1;
+        }
+
+        .mobile-card-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: linear-gradient(135deg, var(--core-primary), var(--core-secondary));
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(220, 20, 60, 0.3);
+            z-index: 10;
+        }
+
+        .mobile-card-content {
+            padding: 1.5rem;
+        }
+
+        .mobile-card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .mobile-card-description {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+
+        .mobile-card-features {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .mobile-feature-tag {
+            background: linear-gradient(135deg, var(--core-primary), var(--core-secondary));
+            color: white;
+            padding: 0.25rem 0.75rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+            border-radius: 15px;
+        }
+
+        /* Dynamic Technology Info Styles */
+        .tech-info-container {
+            position: relative;
+            min-height: 200px;
+            overflow: hidden;
+        }
+
+        .tech-info-item {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            pointer-events: none;
+        }
+
+        .tech-info-item.active {
+            opacity: 1;
+            transform: translateX(0);
+            pointer-events: auto;
+        }
+
+        .tech-info-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .tech-info-description {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-info-features {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .info-feature-tag {
+            background: linear-gradient(135deg, var(--core-primary), var(--core-secondary));
+            color: white;
+            padding: 0.4rem 1rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border-radius: 20px;
+            box-shadow: 0 2px 8px rgba(220, 20, 60, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .info-feature-tag:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Dynamic CTA Styling */
+        #explore-current-tech {
+            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        #explore-current-tech:hover {
+            transform: translateX(5px);
+        }
+
+        #current-tech-cta {
+            transition: all 0.3s ease;
+        }
+
+        /* Text Visibility */
+        .display-1,
+        h5,
+        h5.theme-text {
+            opacity: 1 !important;
+            visibility: visible !important;
+            color: var(--text-primary) !important;
+        }
+
+        /* WOW.js Animation Classes */
+        .wow {
+            visibility: hidden;
+        }
+
+        .wow.animated {
+            visibility: visible;
+        }
+
+        .animated {
+            animation-duration: 1s;
+            animation-fill-mode: both;
+        }
+
+        /* Fallback for when WOW.js doesn't load */
+        .wow:not(.animated) {
+            animation: none !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            transform: none !important;
+        }
+
+        /* Animation Keyframes */
+        @keyframes slideInLeft {
+            from {
+                transform: translate3d(-100%, 0, 0);
+                visibility: visible;
+            }
+            to {
+                transform: translate3d(0, 0, 0);
+            }
+        }
+
+        .slideInLeft {
+            animation-name: slideInLeft;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .fadeIn {
+            animation-name: fadeIn;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translate3d(0, 100%, 0);
+            }
+            to {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+            }
+        }
+
+        .fadeInUp {
+            animation-name: fadeInUp;
+        }
+
+        /* Responsive Design for Technology Carousel */
+        @media (max-width: 991.98px) {
+            .display-1 {
+                font-size: 3rem !important;
+            }
+            
+            .carousel-controls {
+                bottom: 15px;
+                right: 15px;
+            }
+            
+            .carousel-nav-arrows {
+                left: 15px;
+                bottom: 15px;
+            }
+            
+            .carousel-nav-btn {
+                width: 35px;
+                height: 35px;
+                font-size: 0.9rem;
+            }
+            
+            .indicator-item {
+                padding: 0.3rem 0.6rem;
+            }
+            
+            .indicator-number {
+                width: 18px;
+                height: 18px;
+                font-size: 0.7rem;
+            }
+            
+            .indicator-label {
+                font-size: 0.7rem;
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            .display-1 {
+                font-size: 2.5rem !important;
+                color: var(--text-primary) !important;
+                text-shadow: none;
+            }
+            
+            h5 {
+                font-size: 1rem !important;
+                padding: 0.75rem 1.25rem !important;
+                color: var(--core-primary) !important;
+                background-color: transparent;
+                border-color: var(--core-primary) !important;
+                text-shadow: none;
+            }
+            
+            .mobile-tech-card {
+                margin-bottom: 1rem;
+            }
+            
+            /* Hide carousel controls on mobile since carousel is hidden */
+            .carousel-controls,
+            .carousel-nav-arrows {
+                display: none;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            .display-1 {
+                font-size: 2rem !important;
+            }
+            
+            h5 {
+                font-size: 0.9rem !important;
+                padding: 0.5rem 1rem !important;
+            }
+            
+            .mobile-card-content {
+                padding: 1rem;
+            }
+            
+            .mobile-card-title {
+                font-size: 1.1rem;
+            }
+            
+            .mobile-card-description {
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Large screens - maintain split positioning */
+        @media (min-width: 1400px) {
+            .carousel-controls {
+                bottom: 25px;
+                right: 25px;
+            }
+            
+            .carousel-nav-arrows {
+                left: 25px;
+                bottom: 25px;
+            }
+            
+            .carousel-nav-btn {
+                width: 45px;
+                height: 45px;
+                font-size: 1.1rem;
+            }
+            
+            .indicator-item {
+                padding: 0.4rem 0.8rem;
+            }
+            
+            .indicator-number {
+                width: 22px;
+                height: 22px;
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Tablet landscape - adjust for better fit */
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .carousel-indicators {
+                max-width: 250px;
+            }
+            
+            .carousel-nav-arrows {
+                left: 15px;
+                bottom: 15px;
+            }
+            
+            .indicator-item {
+                padding: 0.3rem 0.6rem;
+            }
+            
+            .indicator-label {
+                font-size: 0.7rem;
+            }
         }
     </style>
 </head>
@@ -1119,13 +1778,9 @@
         </section>
 
         <!-- Technology Marquee Section -->
-        <section class="tech-marquee-section" style="padding: 60px 0; background: var(--card-bg); border-top: 1px solid var(--card-border); border-bottom: 1px solid var(--card-border);">
+        <section class="tech-marquee-section" style="padding: 60px 0; background: var(--card-bg); ">
             <div class="container-fluid">
-                <div class="text-center mb-4">
-                    <h3 class="fw-bold mb-3">
-                        Powered by <span class="text-gradient">Industry-Leading Technologies</span>
-                    </h3>
-                </div>
+               
                 
                 <!-- Technology Marquee -->
                 <div class="tech-marquee-container">
@@ -1198,7 +1853,361 @@
                 </div>
             </div>
         </section>
+     <!-- Technology Showcase Section -->
+        <section class="py-5" style="background: var(--bg-gradient);">
+            <div class="container">
+                <!-- Header -->
+                <div class="row g-5 align-items-center mb-5">
+                    <div class="col-lg-6">
+                        <h1 class="display-1 mb-4 theme-text wow slideInLeft" data-wow-delay="0.1s">
+                            Technology <span class="text-gradient">Showcase</span>
+                        </h1>
+                        <h5 class="d-inline-block border border-2 border-primary py-3 px-5 mb-0 wow slideInLeft" data-wow-delay="0.3s" style="color: var(--core-primary); border-color: var(--core-primary) !important;">
+                            Cutting-Edge Solutions & Implementations Since 2018
+                        </h5>
+                        
+                        <!-- Dynamic Technology Info -->
+                        <div class="tech-info-container mt-4">
+                            <div class="tech-info-item active" data-tech="0">
+                                <h3 class="tech-info-title">AI-Powered Development</h3>
+                                <p class="tech-info-description">Advanced artificial intelligence and machine learning frameworks powering intelligent applications with TensorFlow, PyTorch, and custom neural networks for breakthrough solutions.</p>
+                                <div class="tech-info-features">
+                                    <span class="info-feature-tag">TensorFlow</span>
+                                    <span class="info-feature-tag">PyTorch</span>
+                                    <span class="info-feature-tag">Neural Networks</span>
+                                </div>
+                            </div>
+                            
+                            <div class="tech-info-item" data-tech="1">
+                                <h3 class="tech-info-title">Cloud-Native Architecture</h3>
+                                <p class="tech-info-description">Scalable cloud infrastructure using AWS, Docker, and Kubernetes for enterprise-grade applications with 99.9% uptime and global reach capabilities.</p>
+                                <div class="tech-info-features">
+                                    <span class="info-feature-tag">AWS/Azure</span>
+                                    <span class="info-feature-tag">Docker</span>
+                                    <span class="info-feature-tag">Kubernetes</span>
+                                </div>
+                            </div>
+                            
+                            <div class="tech-info-item" data-tech="2">
+                                <h3 class="tech-info-title">Full-Stack Web Solutions</h3>
+                                <p class="tech-info-description">Modern web development using React, Node.js, and progressive frameworks delivering responsive, high-performance applications with exceptional user experiences.</p>
+                                <div class="tech-info-features">
+                                    <span class="info-feature-tag">React/Next.js</span>
+                                    <span class="info-feature-tag">Node.js</span>
+                                    <span class="info-feature-tag">Progressive Web Apps</span>
+                                </div>
+                            </div>
+                            
+                            <div class="tech-info-item" data-tech="3">
+                                <h3 class="tech-info-title">Mobile Development Excellence</h3>
+                                <p class="tech-info-description">Cross-platform mobile applications using Flutter, React Native, and native iOS/Android development for seamless user experiences across all devices.</p>
+                                <div class="tech-info-features">
+                                    <span class="info-feature-tag">Flutter</span>
+                                    <span class="info-feature-tag">React Native</span>
+                                    <span class="info-feature-tag">Native iOS/Android</span>
+                                </div>
+                            </div>
+                            
+                            <div class="tech-info-item" data-tech="4">
+                                <h3 class="tech-info-title">Database & Analytics</h3>
+                                <p class="tech-info-description">Robust data solutions using PostgreSQL, MongoDB, and advanced analytics platforms for real-time insights and scalable data processing capabilities.</p>
+                                <div class="tech-info-features">
+                                    <span class="info-feature-tag">PostgreSQL</span>
+                                    <span class="info-feature-tag">MongoDB</span>
+                                    <span class="info-feature-tag">Real-time Analytics</span>
+                                </div>
+                            </div>
+                            
+                            <div class="tech-info-item" data-tech="5">
+                                <h3 class="tech-info-title">DevOps & Automation</h3>
+                                <p class="tech-info-description">Streamlined development workflows with CI/CD pipelines, infrastructure as code, and automated testing for rapid, reliable software delivery.</p>
+                                <div class="tech-info-features">
+                                    <span class="info-feature-tag">CI/CD Pipelines</span>
+                                    <span class="info-feature-tag">Infrastructure as Code</span>
+                                    <span class="info-feature-tag">Automated Testing</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Dynamic CTA Section -->
+                        <div class="row mt-5">
+                            <div class="col-12 text-left fadeInUp">
+                                <a href="#" id="explore-current-tech" class="text-gradient border-2 text-decoration-none me-4">
+                                    <i class="bi bi-arrow-right me-2"></i>
+                                    <span id="current-tech-cta">Explore AI Solutions</span>
+                                </a>
+                                <a href="../contact.html" class="text-muted text-decoration-none">
+                                    <i class="bi bi-gear me-2"></i>
+                                    View All Technologies
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="tech-showcase-carousel position-relative">
+                            <div class="owl-carousel tech-showcase-carousel-slider animated fadeIn">
+                                <!-- Technology 1: AI/ML -->
+                                <div class="tech-slide-content" data-tech="0">
+                                    <img class="img-fluid" src="../assets/images/cyber1.jpg" alt="AI/ML Technologies">
+                                    <div class="tech-text-overlay">
+                                        <div class="tech-badge">Artificial Intelligence</div>
+                                        <h3 class="tech-heading text-white mb-2">AI-Powered Development</h3>
+                                        <p class="tech-description text-white">Advanced machine learning frameworks and neural networks for intelligent solutions.</p>
+                                        <div class="tech-features">
+                                            <span class="feature-tag">TensorFlow</span>
+                                            <span class="feature-tag">PyTorch</span>
+                                            <span class="feature-tag">Neural Networks</span>
+                                        </div>
+                                    </div>
+                                </div>
 
+                                <!-- Technology 2: Cloud Infrastructure -->
+                                <div class="tech-slide-content" data-tech="1">
+                                    <img class="img-fluid" src="../assets/images/cyber2.jpg" alt="Cloud Infrastructure">
+                                    <div class="tech-text-overlay">
+                                        <div class="tech-badge">Cloud Native</div>
+                                        <h3 class="tech-heading text-white mb-2">Cloud-Native Architecture</h3>
+                                        <p class="tech-description text-white">Scalable infrastructure using AWS, Docker, and Kubernetes for enterprise solutions.</p>
+                                        <div class="tech-features">
+                                            <span class="feature-tag">AWS/Azure</span>
+                                            <span class="feature-tag">Docker</span>
+                                            <span class="feature-tag">Kubernetes</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Technology 3: Web Development -->
+                                <div class="tech-slide-content" data-tech="2">
+                                    <img class="img-fluid" src="../assets/images/cyber3.jpg" alt="Web Development">
+                                    <div class="tech-text-overlay">
+                                        <div class="tech-badge">Web Development</div>
+                                        <h3 class="tech-heading text-white mb-2">Full-Stack Web Solutions</h3>
+                                        <p class="tech-description text-white">Modern web applications using React, Node.js, and progressive frameworks.</p>
+                                        <div class="tech-features">
+                                            <span class="feature-tag">React/Next.js</span>
+                                            <span class="feature-tag">Node.js</span>
+                                            <span class="feature-tag">Progressive Web Apps</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Technology 4: Mobile Development -->
+                                <div class="tech-slide-content" data-tech="3">
+                                    <img class="img-fluid" src="../assets/images/cyber.jpg" alt="Mobile Development">
+                                    <div class="tech-text-overlay">
+                                        <div class="tech-badge">Mobile Apps</div>
+                                        <h3 class="tech-heading text-white mb-2">Mobile Development Excellence</h3>
+                                        <p class="tech-description text-white">Cross-platform mobile applications for iOS and Android platforms.</p>
+                                        <div class="tech-features">
+                                            <span class="feature-tag">Flutter</span>
+                                            <span class="feature-tag">React Native</span>
+                                            <span class="feature-tag">Native Development</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Technology 5: Database & Analytics -->
+                                <div class="tech-slide-content" data-tech="4">
+                                    <img class="img-fluid" src="../assets/images/cyber1.jpg" alt="Database & Analytics">
+                                    <div class="tech-text-overlay">
+                                        <div class="tech-badge">Data Solutions</div>
+                                        <h3 class="tech-heading text-white mb-2">Database & Analytics</h3>
+                                        <p class="tech-description text-white">Robust data solutions with PostgreSQL, MongoDB, and real-time analytics.</p>
+                                        <div class="tech-features">
+                                            <span class="feature-tag">PostgreSQL</span>
+                                            <span class="feature-tag">MongoDB</span>
+                                            <span class="feature-tag">Real-time Analytics</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Technology 6: DevOps & Automation -->
+                                <div class="tech-slide-content" data-tech="5">
+                                    <img class="img-fluid" src="../assets/images/cyber2.jpg" alt="DevOps & Automation">
+                                    <div class="tech-text-overlay">
+                                        <div class="tech-badge">DevOps</div>
+                                        <h3 class="tech-heading text-white mb-2">DevOps & Automation</h3>
+                                        <p class="tech-description text-white">Streamlined workflows with CI/CD pipelines and infrastructure automation.</p>
+                                        <div class="tech-features">
+                                            <span class="feature-tag">CI/CD Pipelines</span>
+                                            <span class="feature-tag">Infrastructure as Code</span>
+                                            <span class="feature-tag">Automated Testing</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Manual Navigation Controls -->
+                            <div class="carousel-controls">
+                                <!-- Slide Indicators -->
+                                <div class="carousel-indicators">
+                                    <div class="indicator-item active" data-slide="0">
+                                        <span class="indicator-number">1</span>
+                                        <span class="indicator-label">AI/ML</span>
+                                    </div>
+                                    <div class="indicator-item" data-slide="1">
+                                        <span class="indicator-number">2</span>
+                                        <span class="indicator-label">Cloud</span>
+                                    </div>
+                                    <div class="indicator-item" data-slide="2">
+                                        <span class="indicator-number">3</span>
+                                        <span class="indicator-label">Web Dev</span>
+                                    </div>
+                                    <div class="indicator-item" data-slide="3">
+                                        <span class="indicator-number">4</span>
+                                        <span class="indicator-label">Mobile</span>
+                                    </div>
+                                    <div class="indicator-item" data-slide="4">
+                                        <span class="indicator-number">5</span>
+                                        <span class="indicator-label">Database</span>
+                                    </div>
+                                    <div class="indicator-item" data-slide="5">
+                                        <span class="indicator-number">6</span>
+                                        <span class="indicator-label">DevOps</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Navigation Arrows - Left side -->
+                            <div class="carousel-nav-arrows">
+                                <button class="carousel-nav-btn carousel-prev" id="tech-carousel-prev">
+                                    <i class="bi bi-chevron-left"></i>
+                                </button>
+                                <button class="carousel-nav-btn carousel-next" id="tech-carousel-next">
+                                    <i class="bi bi-chevron-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile Technology Cards (Service-like layout) -->
+                <div class="mobile-tech-studies-grid d-lg-none">
+                    <div class="row g-4">
+                        <!-- Technology 1: AI/ML -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="mobile-tech-card" data-link="#">
+                                <div class="mobile-card-image">
+                                    <img src="../assets/images/cyber1.jpg" alt="AI/ML Technologies" class="img-fluid">
+                                    <div class="mobile-card-overlay"></div>
+                                    <div class="mobile-card-badge">Artificial Intelligence</div>
+                                </div>
+                                <div class="mobile-card-content">
+                                    <h4 class="mobile-card-title">AI-Powered Development</h4>
+                                    <p class="mobile-card-description">Advanced machine learning frameworks and neural networks for intelligent solutions and breakthrough applications.</p>
+                                    <div class="mobile-card-features">
+                                        <span class="mobile-feature-tag">TensorFlow</span>
+                                        <span class="mobile-feature-tag">PyTorch</span>
+                                        <span class="mobile-feature-tag">Neural Networks</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Technology 2: Cloud Infrastructure -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="mobile-tech-card" data-link="#">
+                                <div class="mobile-card-image">
+                                    <img src="../assets/images/cyber2.jpg" alt="Cloud Infrastructure" class="img-fluid">
+                                    <div class="mobile-card-overlay"></div>
+                                    <div class="mobile-card-badge">Cloud Native</div>
+                                </div>
+                                <div class="mobile-card-content">
+                                    <h4 class="mobile-card-title">Cloud-Native Architecture</h4>
+                                    <p class="mobile-card-description">Scalable infrastructure using AWS, Docker, and Kubernetes for enterprise-grade applications with global reach.</p>
+                                    <div class="mobile-card-features">
+                                        <span class="mobile-feature-tag">AWS/Azure</span>
+                                        <span class="mobile-feature-tag">Docker</span>
+                                        <span class="mobile-feature-tag">Kubernetes</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Technology 3: Web Development -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="mobile-tech-card" data-link="#">
+                                <div class="mobile-card-image">
+                                    <img src="../assets/images/cyber3.jpg" alt="Web Development" class="img-fluid">
+                                    <div class="mobile-card-overlay"></div>
+                                    <div class="mobile-card-badge">Web Development</div>
+                                </div>
+                                <div class="mobile-card-content">
+                                    <h4 class="mobile-card-title">Full-Stack Web Solutions</h4>
+                                    <p class="mobile-card-description">Modern web applications using React, Node.js, and progressive frameworks for exceptional user experiences.</p>
+                                    <div class="mobile-card-features">
+                                        <span class="mobile-feature-tag">React/Next.js</span>
+                                        <span class="mobile-feature-tag">Node.js</span>
+                                        <span class="mobile-feature-tag">Progressive Web Apps</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Technology 4: Mobile Development -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="mobile-tech-card" data-link="#">
+                                <div class="mobile-card-image">
+                                    <img src="../assets/images/cyber.jpg" alt="Mobile Development" class="img-fluid">
+                                    <div class="mobile-card-overlay"></div>
+                                    <div class="mobile-card-badge">Mobile Apps</div>
+                                </div>
+                                <div class="mobile-card-content">
+                                    <h4 class="mobile-card-title">Mobile Development Excellence</h4>
+                                    <p class="mobile-card-description">Cross-platform mobile applications using Flutter, React Native, and native development for all devices.</p>
+                                    <div class="mobile-card-features">
+                                        <span class="mobile-feature-tag">Flutter</span>
+                                        <span class="mobile-feature-tag">React Native</span>
+                                        <span class="mobile-feature-tag">Native Development</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Technology 5: Database & Analytics -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="mobile-tech-card" data-link="#">
+                                <div class="mobile-card-image">
+                                    <img src="../assets/images/cyber1.jpg" alt="Database & Analytics" class="img-fluid">
+                                    <div class="mobile-card-overlay"></div>
+                                    <div class="mobile-card-badge">Data Solutions</div>
+                                </div>
+                                <div class="mobile-card-content">
+                                    <h4 class="mobile-card-title">Database & Analytics</h4>
+                                    <p class="mobile-card-description">Robust data solutions using PostgreSQL, MongoDB, and advanced analytics for real-time insights.</p>
+                                    <div class="mobile-card-features">
+                                        <span class="mobile-feature-tag">PostgreSQL</span>
+                                        <span class="mobile-feature-tag">MongoDB</span>
+                                        <span class="mobile-feature-tag">Real-time Analytics</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Technology 6: DevOps & Automation -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="mobile-tech-card" data-link="#">
+                                <div class="mobile-card-image">
+                                    <img src="../assets/images/cyber2.jpg" alt="DevOps & Automation" class="img-fluid">
+                                    <div class="mobile-card-overlay"></div>
+                                    <div class="mobile-card-badge">DevOps</div>
+                                </div>
+                                <div class="mobile-card-content">
+                                    <h4 class="mobile-card-title">DevOps & Automation</h4>
+                                    <p class="mobile-card-description">Streamlined development workflows with CI/CD pipelines and infrastructure automation for rapid delivery.</p>
+                                    <div class="mobile-card-features">
+                                        <span class="mobile-feature-tag">CI/CD Pipelines</span>
+                                        <span class="mobile-feature-tag">Infrastructure as Code</span>
+                                        <span class="mobile-feature-tag">Automated Testing</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <!-- Core Technologies Section -->
         <section class="core-technologies-section" style="padding-top: 4rem;">
             <div class="container">
@@ -1217,11 +2226,22 @@
                 <!-- Technology Timeline -->
                 <div class="tech-timeline">
                     <!-- Programming Languages -->
-                    <div class="tech-section reveal-on-scroll">
+                    <div class="tech-section ">
                         <div class="row align-items-center g-5">
                             <div class="col-lg-6">
                                 <div class="tech-content">
-                                    <div class="tech-badge">
+                                    <div 
+                                    
+                                    style="  position: absolute;
+           top:5rem;
+            left: 0rem;
+            background: linear-gradient(135deg, var(--core-primary), var(--core-secondary));
+            color: white;
+            padding: 0.5rem 1rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border-radius: 0;
+            z-index: 10;">
                                         <i class="bi bi-code-slash"></i>
                                         <span>Foundation Layer</span>
                                     </div>
@@ -1252,7 +2272,7 @@
                             <div class="col-lg-6">
                                 <div class="tech-visual-container">
                                     <div class="tech-hero-image">
-                                        <img src="../assets/images/cyber1.jpg" alt="Programming Languages" class="img-fluid rounded-4 shadow-lg">
+                                        <img src="../assets/images/cyber1.jpg" alt="Programming Languages" class="img-fluid  shadow-lg">
                                         <div class="tech-overlay">
                                             <div class="overlay-content">
                                                 <h5>Multi-Language Expertise</h5>
@@ -1304,11 +2324,21 @@
                     </div>
 
                     <!-- Frameworks & Libraries -->
-                    <div class="tech-section reveal-on-scroll">
+                    <div class="tech-section ">
                         <div class="row align-items-center g-5">
                             <div class="col-lg-6 order-lg-2">
                                 <div class="tech-content">
-                                    <div class="tech-badge">
+                                    <div 
+                                      style="  position: absolute;
+           top:5rem;
+            right: 0rem;
+            background: linear-gradient(135deg, var(--core-primary), var(--core-secondary));
+            color: white;
+            padding: 0.5rem 1rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border-radius: 0;
+            z-index: 10;">
                                         <i class="bi bi-layers"></i>
                                         <span>Framework Layer</span>
                                     </div>
@@ -1339,7 +2369,7 @@
                             <div class="col-lg-6 order-lg-1">
                                 <div class="tech-visual-container">
                                     <div class="tech-hero-image">
-                                        <img src="../assets/images/cyber2.jpg" alt="Frameworks & Libraries" class="img-fluid rounded-4 shadow-lg">
+                                        <img src="../assets/images/cyber2.jpg" alt="Frameworks & Libraries" class="img-fluid  shadow-lg">
                                         <div class="tech-overlay">
                                             <div class="overlay-content">
                                                 <h5>Modern Framework Stack</h5>
@@ -1391,11 +2421,22 @@
                     </div>
 
                     <!-- Database & Storage -->
-                    <div class="tech-section reveal-on-scroll">
+                    <div class="tech-section ">
                         <div class="row align-items-center g-5">
                             <div class="col-lg-6">
                                 <div class="tech-content">
-                                    <div class="tech-badge">
+                                    <div 
+
+                                      style="  position: absolute;
+           top:5rem;
+            left: 0rem;
+            background: linear-gradient(135deg, var(--core-primary), var(--core-secondary));
+            color: white;
+            padding: 0.5rem 1rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border-radius: 0;
+            z-index: 10;">
                                         <i class="bi bi-database"></i>
                                         <span>Data Layer</span>
                                     </div>
@@ -1426,7 +2467,7 @@
                             <div class="col-lg-6">
                                 <div class="tech-visual-container">
                                     <div class="tech-hero-image">
-                                        <img src="../assets/images/cyber3.jpg" alt="Database Systems" class="img-fluid rounded-4 shadow-lg">
+                                        <img src="../assets/images/cyber3.jpg" alt="Database Systems" class="img-fluid  shadow-lg">
                                         <div class="tech-overlay">
                                             <div class="overlay-content">
                                                 <h5>Robust Data Architecture</h5>
@@ -1478,11 +2519,21 @@
                     </div>
 
                     <!-- Cloud & Infrastructure -->
-                    <div class="tech-section reveal-on-scroll">
+                    <div class="tech-section ">
                         <div class="row align-items-center g-5">
                             <div class="col-lg-6 order-lg-2">
                                 <div class="tech-content">
-                                    <div class="tech-badge">
+                                    <div 
+                                      style="  position: absolute;
+           top:5rem;
+            right: 0rem;
+            background: linear-gradient(135deg, var(--core-primary), var(--core-secondary));
+            color: white;
+            padding: 0.5rem 1rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border-radius: 0;
+            z-index: 10;">
                                         <i class="bi bi-cloud"></i>
                                         <span>Infrastructure Layer</span>
                                     </div>
@@ -1513,7 +2564,7 @@
                             <div class="col-lg-6 order-lg-1">
                                 <div class="tech-visual-container">
                                     <div class="tech-hero-image">
-                                        <img src="../assets/images/cyber.jpg" alt="Cloud Infrastructure" class="img-fluid rounded-4 shadow-lg">
+                                        <img src="../assets/images/cyber.jpg" alt="Cloud Infrastructure" class="img-fluid  shadow-lg">
                                         <div class="tech-overlay">
                                             <div class="overlay-content">
                                                 <h5>Cloud-Native Excellence</h5>
@@ -1565,11 +2616,20 @@
                     </div>
 
                     <!-- Web Development -->
-                    <div class="tech-section reveal-on-scroll">
+                    <div class="tech-section ">
                         <div class="row align-items-center g-5">
                             <div class="col-lg-6">
                                 <div class="tech-content">
-                                    <div class="tech-badge">
+                                    <div   style="  position: absolute;
+           top:5rem;
+            left: 0rem;
+            background: linear-gradient(135deg, var(--core-primary), var(--core-secondary));
+            color: white;
+            padding: 0.5rem 1rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border-radius: 0;
+            z-index: 10;">
                                         <i class="bi bi-globe"></i>
                                         <span>Web Development</span>
                                     </div>
@@ -1600,7 +2660,7 @@
                             <div class="col-lg-6">
                                 <div class="tech-visual-container">
                                     <div class="tech-hero-image">
-                                        <img src="../assets/images/cyber1.jpg" alt="Web Development" class="img-fluid rounded-4 shadow-lg">
+                                        <img src="../assets/images/cyber1.jpg" alt="Web Development" class="img-fluid  shadow-lg">
                                         <div class="tech-overlay">
                                             <div class="overlay-content">
                                                 <h5>Full-Stack Web Solutions</h5>
@@ -1652,11 +2712,20 @@
                     </div>
 
                     <!-- Mobile Development -->
-                    <div class="tech-section reveal-on-scroll">
+                    <div class="tech-section ">
                         <div class="row align-items-center g-5">
                             <div class="col-lg-6 order-lg-2">
                                 <div class="tech-content">
-                                    <div class="tech-badge">
+                                    <div   style="  position: absolute;
+           top:5rem;
+            right: 0rem;
+            background: linear-gradient(135deg, var(--core-primary), var(--core-secondary));
+            color: white;
+            padding: 0.5rem 1rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border-radius: 0;
+            z-index: 10;">
                                         <i class="bi bi-phone"></i>
                                         <span>Mobile Development</span>
                                     </div>
@@ -1687,7 +2756,7 @@
                             <div class="col-lg-6 order-lg-1">
                                 <div class="tech-visual-container">
                                     <div class="tech-hero-image">
-                                        <img src="../assets/images/cyber2.jpg" alt="Mobile Development" class="img-fluid rounded-4 shadow-lg">
+                                        <img src="../assets/images/cyber2.jpg" alt="Mobile Development" class="img-fluid  shadow-lg">
                                         <div class="tech-overlay">
                                             <div class="overlay-content">
                                                 <h5>Cross-Platform Excellence</h5>
@@ -1739,11 +2808,20 @@
                     </div>
 
                     <!-- AI/ML & Data Science -->
-                    <div class="tech-section reveal-on-scroll">
+                    <div class="tech-section ">
                         <div class="row align-items-center g-5">
                             <div class="col-lg-6">
                                 <div class="tech-content">
-                                    <div class="tech-badge">
+                                    <div   style="  position: absolute;
+           top:5rem;
+            left: 0rem;
+            background: linear-gradient(135deg, var(--core-primary), var(--core-secondary));
+            color: white;
+            padding: 0.5rem 1rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border-radius: 0;
+            z-index: 10;">
                                         <i class="bi bi-robot"></i>
                                         <span>AI/ML & Data Science</span>
                                     </div>
@@ -1774,7 +2852,7 @@
                             <div class="col-lg-6">
                                 <div class="tech-visual-container">
                                     <div class="tech-hero-image">
-                                        <img src="../assets/images/cyber3.jpg" alt="AI/ML & Data Science" class="img-fluid rounded-4 shadow-lg">
+                                        <img src="../assets/images/cyber3.jpg" alt="AI/ML & Data Science" class="img-fluid shadow-lg">
                                         <div class="tech-overlay">
                                             <div class="overlay-content">
                                                 <h5>Intelligent Solutions</h5>
@@ -1827,7 +2905,7 @@
                 </div>
 
                 <!-- Technology Metrics -->
-                <div class="tech-metrics reveal-on-scroll mt-5">
+                <div class="tech-metrics  mt-5">
                     <div class="row g-4">
                         <div class="col-md-3 col-6">
                             <div class="metric-item">
@@ -1901,7 +2979,7 @@
         </section>
 
         <!-- Innovation Lab Section -->
-        <section class="py-5" style="background: var(--bg-gradient); border-top: 1px solid var(--card-border);">
+        <section class="py-5" style="background: var(--bg-gradient); ">
             <div class="container">
                 <div class="text-left mb-5">
                     <h2 class="section-title reveal-on-scroll">
@@ -1915,7 +2993,7 @@
                 <div class="row align-items-center g-5">
                     <div class="col-lg-6 reveal-on-scroll">
                         <div class="innovation-content">
-                            <div class="tech-badge mb-4">
+                            <div class="timeline-badge mb-4">
                                 <i class="bi bi-lightbulb"></i>
                                 <span>Research & Development</span>
                             </div>
@@ -2018,6 +3096,8 @@
             </div>
         </section>
 
+   
+
       
     </main>
 
@@ -2031,12 +3111,21 @@
     <div id="footer-component"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- jQuery (required for Owl Carousel) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <!-- Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
     <!-- Theme Toggle Script -->
     <script src="../scripts/theme-toggle.js"></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Technology Showcase Carousel
+            initTechShowcaseCarousel();
+
             // Initialize GSAP
             if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
                 gsap.registerPlugin(ScrollTrigger);
@@ -2106,6 +3195,159 @@
                 });
             }
         });
+
+        // Technology Showcase Carousel Functionality
+        function initTechShowcaseCarousel() {
+            if (typeof jQuery === 'undefined' || typeof jQuery.fn.owlCarousel === 'undefined') {
+                console.warn('jQuery or Owl Carousel not loaded');
+                return;
+            }
+
+            const $carousel = $('.tech-showcase-carousel-slider');
+            const $indicators = $('.indicator-item');
+            const $prevBtn = $('#tech-carousel-prev');
+            const $nextBtn = $('#tech-carousel-next');
+            const $currentTechCTA = $('#current-tech-cta');
+            const $exploreCurrentTech = $('#explore-current-tech');
+
+            // Technology data for dynamic content
+            const technologies = [
+                {
+                    title: 'AI-Powered Development',
+                    cta: 'Explore AI Solutions',
+                    link: '#'
+                },
+                {
+                    title: 'Cloud-Native Architecture',
+                    cta: 'View Cloud Solutions',
+                    link: '#'
+                },
+                {
+                    title: 'Full-Stack Web Solutions',
+                    cta: 'Explore Web Development',
+                    link: '#'
+                },
+                {
+                    title: 'Mobile Development Excellence',
+                    cta: 'View Mobile Solutions',
+                    link: '#'
+                },
+                {
+                    title: 'Database & Analytics',
+                    cta: 'Explore Data Solutions',
+                    link: '#'
+                },
+                {
+                    title: 'DevOps & Automation',
+                    cta: 'View DevOps Solutions',
+                    link: '#'
+                }
+            ];
+
+            let currentSlide = 0;
+
+            // Initialize Owl Carousel
+            $carousel.owlCarousel({
+                items: 1,
+                loop: true,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                autoplayHoverPause: true,
+                smartSpeed: 800,
+                nav: false,
+                dots: false,
+                mouseDrag: true,
+                touchDrag: true,
+                pullDrag: true,
+                animateOut: 'fadeOut',
+                animateIn: 'fadeIn',
+                onChanged: function(event) {
+                    currentSlide = event.item.index;
+                    updateIndicators();
+                    updateTechInfo();
+                    updateCTA();
+                }
+            });
+
+            // Update indicators
+            function updateIndicators() {
+                $indicators.removeClass('active');
+                $indicators.eq(currentSlide).addClass('active');
+            }
+
+            // Update technology info
+            function updateTechInfo() {
+                $('.tech-info-item').removeClass('active');
+                $(`.tech-info-item[data-tech="${currentSlide}"]`).addClass('active');
+            }
+
+            // Update CTA
+            function updateCTA() {
+                const currentTech = technologies[currentSlide];
+                if (currentTech) {
+                    $currentTechCTA.text(currentTech.cta);
+                    $exploreCurrentTech.attr('href', currentTech.link);
+                }
+            }
+
+            // Manual navigation
+            $prevBtn.on('click', function() {
+                $carousel.trigger('prev.owl.carousel');
+            });
+
+            $nextBtn.on('click', function() {
+                $carousel.trigger('next.owl.carousel');
+            });
+
+            // Indicator clicks
+            $indicators.on('click', function() {
+                const slideIndex = $(this).data('slide');
+                $carousel.trigger('to.owl.carousel', [slideIndex, 800]);
+            });
+
+            // Initialize first slide
+            updateIndicators();
+            updateTechInfo();
+            updateCTA();
+
+            // Fallback initialization
+            setTimeout(function() {
+                if (!$carousel.hasClass('owl-loaded')) {
+                    console.log('Technology Showcase: Fallback initialization');
+                    $carousel.owlCarousel({
+                        items: 1,
+                        loop: true,
+                        autoplay: true,
+                        autoplayTimeout: 5000,
+                        nav: false,
+                        dots: false
+                    });
+                }
+            }, 2000);
+
+            // Ensure content visibility
+            setTimeout(function() {
+                const wowElements = document.querySelectorAll('.wow:not(.animated)');
+                wowElements.forEach(function(element) {
+                    element.style.visibility = 'visible';
+                    element.style.opacity = '1';
+                    element.style.transform = 'none';
+                    element.classList.add('animated');
+                });
+                
+                const textElements = document.querySelectorAll('.display-1, h5, .text-gradient');
+                textElements.forEach(function(element) {
+                    element.style.visibility = 'visible';
+                    element.style.opacity = '1';
+                });
+                
+                // Ensure first tech info is visible
+                const firstTechInfo = document.querySelector('.tech-info-item[data-tech="0"]');
+                if (firstTechInfo) {
+                    firstTechInfo.classList.add('active');
+                }
+            }, 1000);
+        }
     </script>
 
     <script type="module">

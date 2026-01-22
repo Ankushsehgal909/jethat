@@ -10,7 +10,7 @@
         <div class="py-5">
             <div class="row ">
                 <!-- Company Info with Logo -->
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-3 col-md-4">
                     <div class="footer-section footer-logo-section">
                         <div class="mb-2">
                             <div class="d-flex align-items-center justify-content-between mb-3 flex-wrap">
@@ -73,7 +73,7 @@
                 </div>
 
                 <!-- Company -->
-                <div class="col-lg-2 col-md-6">
+                <div class="col-lg-2 col-md-4">
                     <div class="footer-section">
                         <h6 class="fw-bold mb-4 footer-heading">
                             Company <i class="bi bi-chevron-right ms-1"></i>
@@ -99,7 +99,7 @@
                 </div>
 
                 <!-- Services -->
-                <div class="col-lg-2 col-md-6">
+                <div class="col-lg-2 col-md-4">
                     <div class="footer-section">
                         <h6 class="fw-bold mb-4 footer-heading">
                             Services <i class="bi bi-chevron-right ms-1"></i>
@@ -125,7 +125,7 @@
                 </div>
 
                 <!-- Products -->
-                <div class="col-lg-2 col-md-6">
+                <div class="col-lg-2 col-md-4">
                     <div class="footer-section">
                         <h6 class="fw-bold mb-4 footer-heading">
                             Products <i class="bi bi-chevron-right ms-1"></i>
@@ -151,7 +151,7 @@
                 </div>
 
                 <!-- Contact Us -->
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-3 col-md-4">
                     <div class="footer-section">
                         <h6 class="fw-bold mb-4 footer-heading">
                             Contact Us <i class="bi bi-chevron-right ms-1"></i>
@@ -545,9 +545,135 @@
 }
 
 /* Responsive Adjustments */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    /* Tablet/Medium devices - Same layout as mobile */
+    
+    /* Company Info with Logo - Full width with border bottom */
+    .col-lg-3.col-md-4:first-child {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+        margin-bottom: 1.5rem !important;
+        padding-bottom: 1.5rem !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+    }
+    
+    .footer-logo-section {
+        padding-bottom: 1rem !important;
+    }
+    
+    /* Social icons on tablet - smaller and aligned right */
+    .social-icons-mobile {
+        margin-left: auto;
+    }
+    
+    .social-icons-mobile .social-link {
+        width: 36px !important;
+        height: 36px !important;
+        font-size: 0.9rem !important;
+    }
+    
+    /* Hide description text on tablet */
+    .text-footer-theme.lh-relaxed {
+        display: none !important;
+    }
+    
+    /* Company and Services - 50% each (side by side) */
+    .col-lg-2.col-md-4:nth-child(2),
+    .col-lg-2.col-md-4:nth-child(3) {
+        flex: 0 0 50% !important;
+        max-width: 50% !important;
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+    
+    /* Products and Contact Us - 50% each (side by side) */
+    .col-lg-2.col-md-4:nth-child(4),
+    .col-lg-3.col-md-4:last-child {
+        flex: 0 0 50% !important;
+        max-width: 50% !important;
+        margin-bottom: 0 !important;
+        margin-top: 1.5rem !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+    
+    /* Remove Bootstrap g-5 gutter in tablet */
+    .footer-theme .row.g-5 {
+        --bs-gutter-y: 0 !important;
+        --bs-gutter-x: 1rem !important;
+        row-gap: 0 !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+    
+    .footer-section {
+        text-align: left;
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+    }
+    
+    .footer-logo {
+        height: 2.8rem !important;
+    }
+    
+    .footer-section h5 {
+        font-size: 1.4rem !important;
+    }
+    
+    .social-link {
+        margin: 0 0.25rem;
+        width: 38px;
+        height: 38px;
+    }
+    
+    .footer-heading {
+        font-size: 0.95rem;
+        margin-bottom: 0.6rem !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+    
+    .footer-links {
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+    }
+    
+    .footer-links li {
+        margin-bottom: 0.4rem !important;
+    }
+    
+    .footer-links li:last-child {
+        margin-bottom: 0 !important;
+    }
+    
+    .contact-info .d-flex {
+        margin-bottom: 1rem !important;
+    }
+    
+    .py-5 {
+        padding-top: 2.5rem !important;
+        padding-bottom: 2.5rem !important;
+    }
+    
+    .border-top.py-4 {
+        padding-top: 2.5rem !important;
+        padding-bottom: 2.5rem !important;
+    }
+    
+    .footer-link {
+        font-size: 0.85rem;
+    }
+    
+    .text-footer-theme {
+        font-size: 0.9rem !important;
+    }
+}
+
 @media (max-width: 768px) {
     /* Company Info with Logo - Full width with border bottom */
-    .col-lg-3.col-md-6:first-child {
+    .col-lg-3.col-md-4:first-child {
         flex: 0 0 100% !important;
         max-width: 100% !important;
         margin-bottom: 1.5rem !important;
@@ -576,8 +702,8 @@
     }
     
     /* Company and Services - 50% each (side by side) */
-    .col-lg-2.col-md-6:nth-child(2),
-    .col-lg-2.col-md-6:nth-child(3) {
+    .col-lg-2.col-md-4:nth-child(2),
+    .col-lg-2.col-md-4:nth-child(3) {
         flex: 0 0 50% !important;
         max-width: 50% !important;
         margin-bottom: 0 !important;
@@ -587,8 +713,8 @@
     }
     
     /* Products and Contact Us - 50% each (side by side) */
-    .col-lg-2.col-md-6:nth-child(4),
-    .col-lg-3.col-md-6:last-child {
+    .col-lg-2.col-md-4:nth-child(4),
+    .col-lg-3.col-md-4:last-child {
         flex: 0 0 50% !important;
         max-width: 50% !important;
         margin-bottom: 0 !important;
@@ -663,7 +789,7 @@
 
 @media (max-width: 576px) {
     /* Company Info with Logo - Full width with border bottom */
-    .col-lg-3.col-md-6:first-child {
+    .col-lg-3.col-md-4:first-child {
         flex: 0 0 100% !important;
         max-width: 100% !important;
         margin-bottom: 1.5rem !important;
@@ -676,8 +802,8 @@
     }
     
     /* Company and Services - 50% each (side by side) */
-    .col-lg-2.col-md-6:nth-child(2),
-    .col-lg-2.col-md-6:nth-child(3) {
+    .col-lg-2.col-md-4:nth-child(2),
+    .col-lg-2.col-md-4:nth-child(3) {
         flex: 0 0 50% !important;
         max-width: 50% !important;
         margin-bottom: 0 !important;
@@ -687,8 +813,8 @@
     }
     
     /* Products and Contact Us - 50% each (side by side) */
-    .col-lg-2.col-md-6:nth-child(4),
-    .col-lg-3.col-md-6:last-child {
+    .col-lg-2.col-md-4:nth-child(4),
+    .col-lg-3.col-md-4:last-child {
         flex: 0 0 50% !important;
         max-width: 50% !important;
         margin-bottom: 0 !important;

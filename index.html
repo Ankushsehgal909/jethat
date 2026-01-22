@@ -54,26 +54,18 @@
          <!-- Cybersecurity Section -->
         <div id="cyber-security-component"></div>
 
-      
-          <!-- Who We Are Section -->
+        <!-- Who We Are Section -->
         <div id="who-we-are-component"></div>
         
-        <!-- Enhanced Who We Are Section -->
-        <div id="enhanced-who-we-are-component"></div>
-        
-       
-        
-        <!-- Services Section -->
-        <!-- <div id="services"></div> -->
+        <!-- Products Section -->
+        <div id="products-component"></div>
 
         <!-- Enhanced Services Section -->
         <div id="enhanced-services"></div>
 
-        <!-- Industries Section -->
-        <!-- <div id="industries-section-component"></div> -->
+      
 
-        <!-- Products Section -->
-        <!-- <div id="products-component"></div> -->
+     
 
 
 
@@ -269,6 +261,12 @@
                 if (typeof initializeEnhancedServices === 'function') initializeEnhancedServices();
                 if (typeof initializeIndustriesAnimations === 'function') initializeIndustriesAnimations();
                 if (typeof initializeTechSectionAnimations === 'function') initializeTechSectionAnimations();
+                
+                // Initialize Products Section
+                if (typeof initializeProductsSection === 'function') {
+                    console.log('Main: Initializing Products Section');
+                    initializeProductsSection();
+                }
                
             }, 300);
         });
