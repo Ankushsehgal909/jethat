@@ -2,7 +2,7 @@
 <html lang="en" data-bs-theme="light">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>AI-Based Multilingual LMS - JetHat Cyber Security</title>
     <meta name="description" content="AI-Based Multilingual Learning Management System by JetHat. Empowering inclusive, scalable learning with support for 22 Indian languages, AI-driven personalization, and voice-enabled content delivery.">
 
@@ -368,6 +368,153 @@
             animation: badgeFloat 4s ease-in-out infinite;
         }
         
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            .product-hero {
+                min-height: 50vh;
+                padding: 2rem 0;
+            }
+            
+            .display-3 {
+                font-size: 2.5rem !important;
+            }
+            
+            .terminal-container {
+                font-size: 0.8rem;
+                padding: 12px;
+                max-width: 100%;
+                margin-top: 15px;
+            }
+            
+            .feature-icon {
+                width: 60px !important;
+                height: 60px !important;
+            }
+            
+            .feature-card {
+                margin-bottom: 1rem;
+            }
+            
+            .floating-badge {
+                position: relative !important;
+                top: auto !important;
+                right: auto !important;
+                left: auto !important;
+                bottom: auto !important;
+                display: inline-block;
+                margin: 10px auto;
+                animation: none;
+            }
+            
+            .floating-security-icons,
+            .particles,
+            .floating-shapes {
+                display: none;
+            }
+            
+            .tech-status {
+                font-size: 0.75rem;
+                padding: 4px 10px;
+            }
+            
+            .btn-lg {
+                padding: 12px 24px !important;
+                font-size: 1rem !important;
+            }
+            
+            .d-flex.flex-column.flex-sm-row {
+                flex-direction: column !important;
+                align-items: stretch !important;
+            }
+            
+            .d-flex.flex-column.flex-sm-row .btn {
+                width: 100%;
+                margin-bottom: 0.5rem;
+            }
+            
+            .floating-card {
+                position: relative !important;
+                top: auto !important;
+                right: auto !important;
+                left: auto !important;
+                bottom: auto !important;
+                margin: 10px 0;
+                animation: none !important;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .display-3 {
+                font-size: 2rem !important;
+                line-height: 1.2;
+            }
+            
+            .display-5 {
+                font-size: 1.8rem !important;
+            }
+            
+            .lead {
+                font-size: 1rem !important;
+            }
+            
+            .terminal-container {
+                font-size: 0.75rem;
+                padding: 10px;
+            }
+            
+            .feature-icon {
+                width: 50px !important;
+                height: 50px !important;
+            }
+            
+            .feature-icon i {
+                font-size: 1.2rem !important;
+            }
+            
+            .container {
+                padding-left: 15px !important;
+                padding-right: 15px !important;
+            }
+            
+            .py-5 {
+                padding-top: 2rem !important;
+                padding-bottom: 2rem !important;
+            }
+            
+            .mb-5 {
+                margin-bottom: 2rem !important;
+            }
+            
+            .tech-status {
+                font-size: 0.7rem;
+                padding: 3px 8px;
+            }
+            
+            .d-flex.flex-wrap.gap-3 {
+                gap: 0.5rem !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .display-3 {
+                font-size: 1.8rem !important;
+            }
+            
+            .terminal-container {
+                font-size: 0.7rem;
+                padding: 8px;
+            }
+            
+            .feature-card {
+                padding: 1rem !important;
+            }
+            
+            .btn-lg {
+                padding: 10px 20px !important;
+                font-size: 0.9rem !important;
+            }
+        }
+        
         @keyframes badgeFloat {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-15px); }
@@ -482,13 +629,13 @@
                             AI-Based Multilingual
                             <span class="d-block text-gradient">LMS</span>
                         </h1>
-                        <p class="lead mb-4 reveal-up stagger-1" style="color: #666666;">
+                        <p class="lead mb-4 " style="color: #666666;">
                             Empowering Inclusive, Scalable Learning. Next-generation platform designed for higher education, 
                             vocational training, corporate learning, and government-led education programs with support for 22 official Indian languages.
                         </p>
                         
                         <!-- Terminal Effect -->
-                        <div class="terminal-container reveal-up stagger-2">
+                        <div class="terminal-container reveal-up stagger-2 d-none d-md-block">
                             <div class="terminal-header">
                                 <div class="terminal-dot"></div>
                                 <div class="terminal-dot"></div>
@@ -501,14 +648,14 @@
                             </div>
                         </div>
                         
-                        <div class="d-flex flex-wrap gap-3 mb-4 mt-4 reveal-up stagger-3">
+                        <div class="d-flex flex-wrap gap-3 mb-4 mt-4 reveal-up stagger-3 justify-content-center justify-content-lg-start">
                             <div class="tech-status">
                                 <span>22 Indian Languages</span>
                             </div>
                             <div class="tech-status">
                                 <span>AI-Driven Personalization</span>
                             </div>
-                            <div class="tech-status">
+                            <div class="tech-status d-none d-sm-flex">
                                 <span>Voice-Enabled</span>
                             </div>
                         </div>
@@ -529,8 +676,8 @@
                             <div class="feature-icon mx-auto mb-4" style="width: 120px; height: 120px;">
                                 <i class="bi bi-mortarboard text-white fs-1"></i>
                             </div>
-                            <!-- Floating Badge -->
-                            <div class="floating-badge reveal-left" style="top: 20%; right: 10%;">
+                            <!-- Floating Badge - Mobile Friendly -->
+                            <div class="floating-badge reveal-left text-center">
                                 🎓 Inclusive Learning
                             </div>
                         </div>
@@ -544,7 +691,7 @@
             <div class="cyber-grid" style="opacity: 0.5;"></div>
             
             <div class="container position-relative" style="z-index: 2;">
-                <div class="text-left mb-5 reveal-up">
+                <div class="text-center mb-5 reveal-up">
                     <h2 class="display-5 fw-bold mb-3" style="color: #333;">
                         Key <span class="text-gradient">Features</span>
                     </h2>
@@ -554,9 +701,9 @@
                 <div class="row g-4">
                     <!-- 22 Indian Languages -->
                     <div class="col-md-6 col-lg-4">
-                        <div class="feature-card p-4 h-100 reveal-up stagger-1">
-                            <div class="feature-icon">
-                                <i class="bi bi-translate text-white fs-2"></i>
+                        <div class="feature-card p-4 h-100 ">
+                            <div class="feature-icon ">
+                                <i class="bi bi-translate  text-white fs-2"></i>
                             </div>
                             <h4 class="fw-bold mb-3 text-center">22 Indian Languages, One Platform</h4>
                             <ul class="list-unstyled">
@@ -622,7 +769,7 @@
 
                     <!-- Live Analytics & Progress Tracking -->
                     <div class="col-md-6 col-lg-4">
-                        <div class="feature-card p-4 h-100 reveal-up stagger-1">
+                        <div class="feature-card p-4 h-100 ">
                             <div class="feature-icon">
                                 <i class="bi bi-graph-up text-white fs-2"></i>
                             </div>
@@ -657,238 +804,10 @@
             </div>
         </section>
 
-        <!-- Additional Features Section -->
-        <section class="py-5" style="background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);">
-            <div class="container">
-                <div class="text-left mb-5 reveal-up">
-                    <h2 class="display-5 fw-bold mb-3" style="color: #333;">
-                        Advanced <span class="text-gradient">Capabilities</span>
-                    </h2>
-                    <p class="lead text-muted">Enterprise-grade features for scalable learning</p>
-                </div>
-                
-                <div class="row g-4">
-                    <!-- High Scalability Cloud Architecture -->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="feature-card p-4 h-100 reveal-up stagger-1">
-                            <div class="feature-icon">
-                                <i class="bi bi-cloud text-white fs-2"></i>
-                            </div>
-                            <h4 class="fw-bold mb-3 text-center">High Scalability Cloud Architecture</h4>
-                            <ul class="list-unstyled">
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Robust Cloud-Native Platform</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Massive Concurrent Access</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Low-Latency Performance</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Nationwide Deployments</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Auto-Scaling Infrastructure</li>
-                            </ul>
-                        </div>
-                    </div>
 
-                    <!-- Subscription & Payment Management -->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="feature-card p-4 h-100 reveal-up stagger-2">
-                            <div class="feature-icon">
-                                <i class="bi bi-credit-card text-white fs-2"></i>
-                            </div>
-                            <h4 class="fw-bold mb-3 text-center">Subscription & Payment Management</h4>
-                            <ul class="list-unstyled">
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Integrated Payment Tools</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Membership Management</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Payment Tracking</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Receipt Generation</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Precise Access Control</li>
-                            </ul>
-                        </div>
-                    </div>
 
-                    <!-- Mobile-Optimized & Low Bandwidth -->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="feature-card p-4 h-100 reveal-up stagger-3">
-                            <div class="feature-icon">
-                                <i class="bi bi-phone text-white fs-2"></i>
-                            </div>
-                            <h4 class="fw-bold mb-3 text-center">Mobile-Optimized & Low Bandwidth</h4>
-                            <ul class="list-unstyled">
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Smartphone & Tablet Ready</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Offline Sync Capability</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Adaptive Formats</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Rural Area Support</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Low-Connectivity Friendly</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Secure, Modular & Compliant -->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="feature-card p-4 h-100 reveal-up stagger-4">
-                            <div class="feature-icon">
-                                <i class="bi bi-shield-lock text-white fs-2"></i>
-                            </div>
-                            <h4 class="fw-bold mb-3 text-center">Secure, Modular & Compliant</h4>
-                            <ul class="list-unstyled">
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Cloud-Based Security</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Data Encryption</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Privacy Compliance</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Easy API Integration</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Third-Party Systems</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Perfect For Section -->
-        <section class="py-5" style="background: linear-gradient(135deg, #fff7ed 0%, #ffffff 50%, #fffbeb 100%);">
-            <div class="container">
-                <div class="text-left mb-5 reveal-up">
-                    <h2 class="display-5 fw-bold mb-3" style="color: #333;">
-                        Perfect <span class="text-gradient">For</span>
-                    </h2>
-                    <p class="lead text-muted">Designed for diverse educational and training needs</p>
-                </div>
-                
-                <div class="row g-4">
-                    <div class="col-md-6 col-lg-3">
-                        <div class="text-center reveal-up stagger-1">
-                            <div class="feature-icon mx-auto mb-3" style="width: 80px; height: 80px;">
-                                <i class="bi bi-building text-white fs-2"></i>
-                            </div>
-                            <h5 class="fw-bold mb-2">Colleges & Universities</h5>
-                            <p class="text-muted small">Higher education institutions seeking multilingual learning solutions</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="text-center reveal-up stagger-2">
-                            <div class="feature-icon mx-auto mb-3" style="width: 80px; height: 80px;">
-                                <i class="bi bi-briefcase text-white fs-2"></i>
-                            </div>
-                            <h5 class="fw-bold mb-2">Corporate L&D Programs</h5>
-                            <p class="text-muted small">Enterprise learning and development initiatives</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="text-center reveal-up stagger-3">
-                            <div class="feature-icon mx-auto mb-3" style="width: 80px; height: 80px;">
-                                <i class="bi bi-laptop text-white fs-2"></i>
-                            </div>
-                            <h5 class="fw-bold mb-2">Online Training Platforms</h5>
-                            <p class="text-muted small">Digital learning platforms and e-learning providers</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="text-center reveal-up stagger-4">
-                            <div class="feature-icon mx-auto mb-3" style="width: 80px; height: 80px;">
-                                <i class="bi bi-bank text-white fs-2"></i>
-                            </div>
-                            <h5 class="fw-bold mb-2">Government & NGO Missions</h5>
-                            <p class="text-muted small">Public sector education and skill development programs</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="row g-4 mt-3">
-                    <div class="col-md-6 offset-md-3">
-                        <div class="text-center reveal-up stagger-5">
-                            <div class="feature-icon mx-auto mb-3" style="width: 80px; height: 80px;">
-                                <i class="bi bi-tools text-white fs-2"></i>
-                            </div>
-                            <h5 class="fw-bold mb-2">Skill Development & Employment Schemes</h5>
-                            <p class="text-muted small">Vocational training and employment generation programs</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-   <!-- Benefits Section -->
-        <section class="py-5" style="background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);">
-            <div class="container">
-                <div class="text-left mb-5 reveal-up">
-                    <h2 class="display-5 fw-bold mb-3" style="color: #333;">
-                        Why Choose <span class="text-gradient">AI-Based Multilingual LMS</span>
-                    </h2>
-                    <p class="lead text-muted">Transform your learning and development programs with measurable results</p>
-                </div>
-                
-                <div class="row g-4">
-                    <div class="col-md-6 col-lg-3">
-                        <div class="text-center reveal-up stagger-1">
-                            <div class="feature-icon mx-auto mb-3" style="width: 60px; height: 60px;">
-                                <span class="text-white fw-bold fs-4">22</span>
-                            </div>
-                            <h5 class="fw-bold mb-2">Indian Languages</h5>
-                            <p class="text-muted small">Complete linguistic coverage for inclusive education</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="text-center reveal-up stagger-2">
-                            <div class="feature-icon mx-auto mb-3" style="width: 60px; height: 60px;">
-                                <span class="text-white fw-bold fs-4">AI</span>
-                            </div>
-                            <h5 class="fw-bold mb-2">Smart Personalization</h5>
-                            <p class="text-muted small">AI-driven adaptive learning for every student</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="text-center reveal-up stagger-3">
-                            <div class="feature-icon mx-auto mb-3" style="width: 60px; height: 60px;">
-                                <span class="text-white fw-bold fs-4">∞</span>
-                            </div>
-                            <h5 class="fw-bold mb-2">Scalable Architecture</h5>
-                            <p class="text-muted small">Cloud-native platform for unlimited growth</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="text-center reveal-up stagger-4">
-                            <div class="feature-icon mx-auto mb-3" style="width: 60px; height: 60px;">
-                                <span class="text-white fw-bold fs-4">24/7</span>
-                            </div>
-                            <h5 class="fw-bold mb-2">Always Available</h5>
-                            <p class="text-muted small">Learn anytime, anywhere with mobile optimization</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Tech Section -->
-        <div id="tech-section-component"></div>
-
-        <!-- Call to Action Section -->
-        <section class="py-5" style="background: linear-gradient(135deg, #dc143c, #ffd700);">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-8">
-                        <h2 class="display-5 fw-bold text-white mb-3 reveal-up">
-                            Inclusive Learning. Limitless Reach.
-                        </h2>
-                        <p class="lead text-white mb-4 reveal-up stagger-1">
-                            Break down linguistic barriers and scale digital education effortlessly. JetHat's AI-based LMS gives you everything needed to deliver smart, secure, and inclusive learning—nationwide.
-                        </p>
-                    </div>
-                    <div class="col-lg-4 text-center">
-                        <div class="d-flex flex-column gap-3 reveal-up stagger-2">
-                            <button class="btn btn-light btn-lg px-4 py-3">
-                                <i class="bi bi-play-circle me-2"></i>
-                                Request a Demo
-                            </button>
-                            <button class="btn btn-outline-light btn-lg px-4 py-3">
-                                <i class="bi bi-chat-dots me-2"></i>
-                                Talk to Us
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-     
-
-       
-    </main>
-
-    <!-- AI LMS Benefits Section -->
-    <section class="ai-benefits-section" style="padding: 100px 0; background: linear-gradient(135deg, #1A1A1A, #2A2A2A); position: relative; overflow: hidden;">
+        <!-- AI LMS Benefits Section -->
+    <section class="ai-benefits-section" style="padding: 60px 0; background: linear-gradient(135deg, #1A1A1A, #2A2A2A); position: relative; overflow: hidden;">
         <div class="container">
             <div class="row align-items-center g-5">
                 <!-- Left side - Content -->
@@ -935,7 +854,7 @@
                         <div class="main-image-card" style="border-radius: 25px; overflow: hidden; box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);">
                             <img src="../assets/images/cyber1.jpg" alt="AI LMS Platform" class="img-fluid" style="width: 100%; display: block; transition: all 0.4s ease;">
                         </div>
-                        <div class="floating-card" style="position: absolute; top: 10%; right: -20px; background: rgba(255, 255, 255, 0.95); border-radius: 20px; padding: 20px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); animation: float-card 4s ease-in-out infinite;">
+                        <div class="floating-card d-none d-lg-block" style="position: absolute; top: 10%; right: -20px; background: rgba(255, 255, 255, 0.95); border-radius: 20px; padding: 20px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); animation: float-card 4s ease-in-out infinite;">
                             <div class="d-flex align-items-center gap-3">
                                 <div class="bg-danger bg-opacity-10 rounded-circle p-2">
                                     <i class="bi bi-graph-up text-danger fs-5"></i>
@@ -946,7 +865,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="floating-card" style="position: absolute; bottom: 15%; left: -30px; background: rgba(255, 255, 255, 0.95); border-radius: 20px; padding: 20px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); animation: float-card 4s ease-in-out infinite; animation-delay: 2s;">
+                        <div class="floating-card d-none d-lg-block" style="position: absolute; bottom: 15%; left: -30px; background: rgba(255, 255, 255, 0.95); border-radius: 20px; padding: 20px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); animation: float-card 4s ease-in-out infinite; animation-delay: 2s;">
                             <div class="d-flex align-items-center gap-3">
                                 <div class="bg-success bg-opacity-10 rounded-circle p-2">
                                     <i class="bi bi-people text-success fs-5"></i>
@@ -954,6 +873,32 @@
                                 <div>
                                     <div class="fw-bold text-dark">10K+</div>
                                     <div class="text-muted small">Active Learners</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Mobile Stats Cards -->
+                        <div class="row g-2 mt-3 d-lg-none">
+                            <div class="col-6">
+                                <div class="d-flex align-items-center gap-2 p-2 bg-white rounded-3 shadow-sm">
+                                    <div class="bg-danger bg-opacity-10 rounded-circle p-1">
+                                        <i class="bi bi-graph-up text-danger fs-6"></i>
+                                    </div>
+                                    <div>
+                                        <div class="fw-bold text-dark small">95%</div>
+                                        <div class="text-muted" style="font-size: 0.7rem;">Learning Efficiency</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="d-flex align-items-center gap-2 p-2 bg-white rounded-3 shadow-sm">
+                                    <div class="bg-success bg-opacity-10 rounded-circle p-1">
+                                        <i class="bi bi-people text-success fs-6"></i>
+                                    </div>
+                                    <div>
+                                        <div class="fw-bold text-dark small">10K+</div>
+                                        <div class="text-muted" style="font-size: 0.7rem;">Active Learners</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -975,9 +920,288 @@
             .main-image-card:hover img {
                 transform: scale(1.05);
             }
+            
+            /* Mobile Responsive Styles for AI Benefits Section */
+            @media (max-width: 768px) {
+                .ai-benefits-section {
+                    padding: 40px 0 !important;
+                }
+                
+                .ai-benefits-section h2 {
+                    font-size: 1.8rem !important;
+                    margin-bottom: 15px !important;
+                }
+                
+                .ai-benefits-section p {
+                    font-size: 1rem !important;
+                    line-height: 1.6 !important;
+                    margin-bottom: 20px !important;
+                }
+                
+                .ai-benefits-section .btn {
+                    padding: 12px 24px !important;
+                    font-size: 0.9rem !important;
+                }
+                
+                .ai-benefits-section .row.g-3 .col-6 > div {
+                    padding: 0.75rem !important;
+                }
+                
+                .ai-benefits-section .row.g-3 .col-6 .fw-bold {
+                    font-size: 1.2rem !important;
+                }
+            }
+            
+            @media (max-width: 576px) {
+                .ai-benefits-section h2 {
+                    font-size: 1.5rem !important;
+                }
+                
+                .ai-benefits-section .row.g-3 .col-6 > div {
+                    padding: 0.5rem !important;
+                    gap: 0.5rem !important;
+                }
+                
+                .ai-benefits-section .row.g-3 .col-6 .fw-bold {
+                    font-size: 1rem !important;
+                }
+                
+                .ai-benefits-section .row.g-3 .col-6 .small {
+                    font-size: 0.7rem !important;
+                }
+            }
         </style>
     </section>
+       
+    
+    <!-- Additional Features Section -->
+        <section class="py-5" style="background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);">
+            <div class="container">
+                <div class="text-center mb-5 reveal-up">
+                    <h2 class="display-5 fw-bold mb-3" style="color: #333;">
+                        Advanced <span class="text-gradient">Capabilities</span>
+                    </h2>
+                    <p class="lead text-muted">Enterprise-grade features for scalable learning</p>
+                </div>
+                
+                <div class="row g-4">
+                    <!-- High Scalability Cloud Architecture -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="feature-card p-4 h-100 reveal-up stagger-1">
+                            <div class="feature-icon">
+                                <i class="bi bi-cloud text-white fs-2"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3 text-center">High Scalability Cloud Architecture</h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Robust Cloud-Native Platform</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Massive Concurrent Access</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Nationwide Deployments</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Auto-Scaling Infrastructure</li>
+                            </ul>
+                        </div>
+                    </div>
 
+                    <!-- Subscription & Payment Management -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="feature-card p-4 h-100 reveal-up stagger-2">
+                            <div class="feature-icon">
+                                <i class="bi bi-credit-card text-white fs-2"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3 text-center">Subscription & Payment Management</h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Integrated Payment Tools</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Membership Management</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Payment Tracking</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Receipt Generation</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Mobile-Optimized & Low Bandwidth -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="feature-card p-4 h-100 reveal-up stagger-3">
+                            <div class="feature-icon">
+                                <i class="bi bi-phone text-white fs-2"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3 text-center">Mobile-Optimized & Low Bandwidth</h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Smartphone & Tablet Ready</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Offline Sync Capability</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Adaptive Formats</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Rural Area Support</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Secure, Modular & Compliant -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="feature-card p-4 h-100 reveal-up stagger-4">
+                            <div class="feature-icon">
+                                <i class="bi bi-shield-lock text-white fs-2"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3 text-center">Secure, Modular & Compliant</h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Cloud-Based Security</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Data Encryption</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Privacy Compliance</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Easy API Integration</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+  
+
+        <!-- Perfect For Section -->
+        <section class="py-5" style="background: linear-gradient(135deg, #fff7ed 0%, #ffffff 50%, #fffbeb 100%);">
+            <div class="container">
+                <div class="text-center mb-5 reveal-up">
+                    <h2 class="display-5 fw-bold mb-3" style="color: #333;">
+                        Perfect <span class="text-gradient">For</span>
+                    </h2>
+                    <p class="lead text-muted">Designed for diverse educational and training needs</p>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="text-center ">
+                            <div class="feature-icon mx-auto mb-3" style="width: 80px; height: 80px;">
+                                <i class="bi bi-building text-white fs-2"></i>
+                            </div>
+                            <h5 class="fw-bold mb-2">Colleges & Universities</h5>
+                            <p class="text-muted small">Higher education institutions seeking multilingual learning solutions</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="text-center reveal-up stagger-2">
+                            <div class="feature-icon mx-auto mb-3" style="width: 80px; height: 80px;">
+                                <i class="bi bi-briefcase text-white fs-2"></i>
+                            </div>
+                            <h5 class="fw-bold mb-2">Corporate L&D Programs</h5>
+                            <p class="text-muted small">Enterprise learning and development initiatives</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="text-center reveal-up stagger-3">
+                            <div class="feature-icon mx-auto mb-3" style="width: 80px; height: 80px;">
+                                <i class="bi bi-laptop text-white fs-2"></i>
+                            </div>
+                            <h5 class="fw-bold mb-2">Online Training Platforms</h5>
+                            <p class="text-muted small">Digital learning platforms and e-learning providers</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="text-center reveal-up stagger-4">
+                            <div class="feature-icon mx-auto mb-3" style="width: 80px; height: 80px;">
+                                <i class="bi bi-bank text-white fs-2"></i>
+                            </div>
+                            <h5 class="fw-bold mb-2">Government & NGO Missions</h5>
+                            <p class="text-muted small">Public sector education and skill development programs</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row g-4 mt-3">
+                    <div class="col-md-6 offset-md-3 col-lg-4 offset-lg-4">
+                        <div class="text-center reveal-up stagger-5">
+                            <div class="feature-icon mx-auto mb-3" style="width: 80px; height: 80px;">
+                                <i class="bi bi-tools text-white fs-2"></i>
+                            </div>
+                            <h5 class="fw-bold mb-2">Skill Development & Employment Schemes</h5>
+                            <p class="text-muted small">Vocational training and employment generation programs</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+   <!-- Benefits Section -->
+        <section class="py-5" style="background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);">
+            <div class="container">
+                <div class="text-center mb-5 reveal-up">
+                    <h2 class="display-5 fw-bold mb-3" style="color: #333;">
+                        Why Choose <span class="text-gradient">AI-Based Multilingual LMS</span>
+                    </h2>
+                    <p class="lead text-muted">Transform your learning and development programs with measurable results</p>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="text-center ">
+                            <div class="feature-icon mx-auto mb-3" style="width: 60px; height: 60px;">
+                                <span class="text-white fw-bold fs-4">22</span>
+                            </div>
+                            <h5 class="fw-bold mb-2">Indian Languages</h5>
+                            <p class="text-muted small">Complete linguistic coverage for inclusive education</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="text-center reveal-up stagger-2">
+                            <div class="feature-icon mx-auto mb-3" style="width: 60px; height: 60px;">
+                                <span class="text-white fw-bold fs-4">AI</span>
+                            </div>
+                            <h5 class="fw-bold mb-2">Smart Personalization</h5>
+                            <p class="text-muted small">AI-driven adaptive learning for every student</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="text-center reveal-up stagger-3">
+                            <div class="feature-icon mx-auto mb-3" style="width: 60px; height: 60px;">
+                                <span class="text-white fw-bold fs-4">∞</span>
+                            </div>
+                            <h5 class="fw-bold mb-2">Scalable Architecture</h5>
+                            <p class="text-muted small">Cloud-native platform for unlimited growth</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="text-center reveal-up stagger-4">
+                            <div class="feature-icon mx-auto mb-3" style="width: 60px; height: 60px;">
+                                <span class="text-white fw-bold fs-4">24/7</span>
+                            </div>
+                            <h5 class="fw-bold mb-2">Always Available</h5>
+                            <p class="text-muted small">Learn anytime, anywhere with mobile optimization</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Tech Section -->
+        <div id="tech-section-component"></div>
+
+        <!-- Call to Action Section -->
+        <section class="py-5" style="background: linear-gradient(135deg, #dc143c, #ffd700);">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-8 text-center text-lg-start">
+                        <h2 class="display-5 fw-bold text-white mb-3 reveal-up">
+                            Inclusive Learning. Limitless Reach.
+                        </h2>
+                        <p class="lead text-white mb-4 ">
+                            Break down linguistic barriers and scale digital education effortlessly. JetHat's AI-based LMS gives you everything needed to deliver smart, secure, and inclusive learning—nationwide.
+                        </p>
+                    </div>
+                    <div class="col-lg-4 text-center">
+                        <div class="d-flex flex-column gap-3 reveal-up stagger-2">
+                            <button class="btn btn-light btn-lg px-4 py-3">
+                                <i class="bi bi-play-circle me-2"></i>
+                                Request a Demo
+                            </button>
+                            <button class="btn btn-outline-light btn-lg px-4 py-3">
+                                <i class="bi bi-chat-dots me-2"></i>
+                                Talk to Us
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+     
+
+       
+    </main>
+
+  
     <!-- Footer -->
     <div id="footer-component"></div>
    <!-- Theme Toggle -->

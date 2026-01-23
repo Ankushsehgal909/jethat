@@ -266,6 +266,10 @@
                             <img src="assets/images/cyber.jpg" alt="AI-LMS" class="img-fluid">
                             <div class="mobile-card-overlay"></div>
                             <div class="mobile-card-badge">Education</div>
+                            <div class="mobile-explore-btn">
+                                <span>Explore AI-LMS</span>
+                                <i class="bi bi-arrow-right"></i>
+                            </div>
                         </div>
                         <div class="mobile-card-content">
                             <h4 class="mobile-card-title">AI-LMS</h4>
@@ -286,6 +290,10 @@
                             <img src="assets/images/cyber1.jpg" alt="Anukaran AI" class="img-fluid">
                             <div class="mobile-card-overlay"></div>
                             <div class="mobile-card-badge">AI Voice</div>
+                            <div class="mobile-explore-btn">
+                                <span>Explore Anukaran AI</span>
+                                <i class="bi bi-arrow-right"></i>
+                            </div>
                         </div>
                         <div class="mobile-card-content">
                             <h4 class="mobile-card-title">Anukaran AI</h4>
@@ -306,6 +314,10 @@
                             <img src="assets/images/cyber2.jpg" alt="E-Library Solutions" class="img-fluid">
                             <div class="mobile-card-overlay"></div>
                             <div class="mobile-card-badge">Digital</div>
+                            <div class="mobile-explore-btn">
+                                <span>Explore E-Library</span>
+                                <i class="bi bi-arrow-right"></i>
+                            </div>
                         </div>
                         <div class="mobile-card-content">
                             <h4 class="mobile-card-title">E-Library Solutions</h4>
@@ -326,6 +338,10 @@
                             <img src="assets/images/cyber3.jpg" alt="MagAI" class="img-fluid">
                             <div class="mobile-card-overlay"></div>
                             <div class="mobile-card-badge">Publishing</div>
+                            <div class="mobile-explore-btn">
+                                <span>Explore MagAI</span>
+                                <i class="bi bi-arrow-right"></i>
+                            </div>
                         </div>
                         <div class="mobile-card-content">
                             <h4 class="mobile-card-title">MagAI</h4>
@@ -346,6 +362,10 @@
                             <img src="assets/images/logo.png" alt="Multi-Dictionary" class="img-fluid">
                             <div class="mobile-card-overlay"></div>
                             <div class="mobile-card-badge">Language</div>
+                            <div class="mobile-explore-btn">
+                                <span>Explore Multi-Dictionary</span>
+                                <i class="bi bi-arrow-right"></i>
+                            </div>
                         </div>
                         <div class="mobile-card-content">
                             <h4 class="mobile-card-title">Multi-Dictionary</h4>
@@ -366,6 +386,10 @@
                             <img src="assets/images/cyber.jpg" alt="Sambhasini AI" class="img-fluid">
                             <div class="mobile-card-overlay"></div>
                             <div class="mobile-card-badge">Chatbot</div>
+                            <div class="mobile-explore-btn">
+                                <span>Explore Sambhāṣinī AI</span>
+                                <i class="bi bi-arrow-right"></i>
+                            </div>
                         </div>
                         <div class="mobile-card-content">
                             <h4 class="mobile-card-title">Sambhāṣinī AI</h4>
@@ -386,6 +410,10 @@
                             <img src="assets/images/cyber1.jpg" alt="Virtual Naani" class="img-fluid">
                             <div class="mobile-card-overlay"></div>
                             <div class="mobile-card-badge">Safety</div>
+                            <div class="mobile-explore-btn">
+                                <span>Explore Virtual Naani</span>
+                                <i class="bi bi-arrow-right"></i>
+                            </div>
                         </div>
                         <div class="mobile-card-content">
                             <h4 class="mobile-card-title">Virtual Naani</h4>
@@ -687,12 +715,13 @@
 
 .mobile-product-card {
     background: white;
-    border-radius: 15px;
+    border-radius: 0;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
     height: 100%;
+    position: relative;
 }
 
 .mobile-product-card:hover {
@@ -704,6 +733,7 @@
     position: relative;
     height: 200px;
     overflow: hidden;
+    border-radius: 0;
 }
 
 .mobile-card-image img {
@@ -711,6 +741,7 @@
     height: 100%;
     object-fit: cover;
     transition: transform 0.6s ease;
+    border-radius: 0;
 }
 
 .mobile-product-card:hover .mobile-card-image img {
@@ -739,7 +770,7 @@
     background: linear-gradient(135deg, var(--accent-primary), var(--accent-gold));
     color: white;
     padding: 6px 14px;
-    border-radius: 20px;
+    border-radius: 0;
     font-size: 11px;
     font-weight: 700;
     box-shadow: 0 4px 15px rgba(220, 20, 60, 0.3);
@@ -767,7 +798,12 @@
 .mobile-card-features {
     display: flex;
     gap: 0.5rem;
+    border-radius: 5px;
     flex-wrap: wrap;
+    padding: 1rem;
+    background: linear-gradient(135deg, rgba(220, 20, 60, 0.1), rgba(255, 215, 0, 0.1));
+    margin: -1.5rem -1.5rem 0 -1.5rem;
+    margin-top: 1rem;
 }
 
 .mobile-feature-tag {
@@ -776,7 +812,42 @@
     padding: 0.25rem 0.75rem;
     font-size: 0.75rem;
     font-weight: 500;
-    border-radius: 15px;
+    border-radius: 0;
+}
+
+.mobile-explore-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-gold));
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 20;
+    box-shadow: 0 8px 25px rgba(220, 20, 60, 0.3);
+    white-space: nowrap;
+}
+
+.mobile-product-card:hover .mobile-explore-btn {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+.mobile-explore-btn i {
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.mobile-product-card:hover .mobile-explore-btn i {
+    transform: translateX(3px);
 }
 
 /* Text Visibility */
