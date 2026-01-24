@@ -846,6 +846,119 @@
             }
         }
 
+        /* Tech Service Cards Styles */
+        .tech-services-section {
+            position: relative;
+        }
+
+        .tech-service-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 15px;
+            padding: 25px 20px;
+            height: 100%;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .tech-service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #dc143c, #ffd700);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .tech-service-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(220, 20, 60, 0.05), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .tech-service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .tech-service-card:hover::after {
+            left: 100%;
+        }
+
+        .tech-service-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px var(--card-shadow);
+            border-color: rgba(220, 20, 60, 0.3);
+        }
+
+        .tech-service-card .service-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            background: linear-gradient(135deg, rgba(220, 20, 60, 0.1), rgba(255, 215, 0, 0.1));
+            transition: all 0.4s ease;
+        }
+
+        .tech-service-card:hover .service-icon {
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            transform: scale(1.1) rotate(360deg);
+        }
+
+        .tech-service-card .service-icon img {
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+            transition: all 0.4s ease;
+        }
+
+        .tech-service-card:hover .service-icon img {
+            filter: brightness(0) invert(1);
+            transform: scale(1.1);
+        }
+
+        .tech-service-card .service-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .tech-service-card:hover .service-title {
+            color: #dc143c;
+        }
+
+        .tech-service-card .service-description {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* Gradient text for section titles */
+        .gradient-text {
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+
+
         @media (max-width: 768px) {
             .section-title {
                 font-size: 2rem;
@@ -1027,13 +1140,7 @@
     <main>
         <!-- Hero Section -->
         <section class="innovation-hero">
-            <div class="floating-shapes">
-                <div class="shape"></div>
-                <div class="shape"></div>
-                <div class="shape"></div>
-                <div class="shape"></div>
-                <div class="shape"></div>
-            </div>
+
 
             <div class="container">
                 <div class="row align-items-center">
@@ -1078,11 +1185,7 @@
         <!-- Technology Marquee Section -->
         <section class="tech-marquee-section" style="padding: 60px 0; background: var(--card-bg);">
             <div class="container-fluid">
-                <div class="text-center mb-4">
-                    <h3 class="fw-bold mb-3">
-                        Powered by <span class="text-gradient">Innovation Technologies</span>
-                    </h3>
-                </div>
+               
                 
                 <!-- Innovation Technology Marquee -->
                 <div class="tech-marquee-container">
@@ -1154,10 +1257,49 @@
                     </p>
                 </div>
 
+     <section class="py-5" style="background: rgba(220, 20, 60, 0.02);">
+            <div class="container">
+        
+                        <div class="">
+                            <h2 class="fw-bold display-3 mb-4" style="color: #333;">
+                                Smart Child
+                                <span class="d-block fw-bold display-2 text-gradient">Safety Solution</span>
+                            </h2>
+                            <p class="fs-5 text-muted mb-4">
+                                Our advanced AI engine continuously monitors your child's location and activities, providing real-time insights and instant alerts to ensure their safety while respecting their privacy and independence.
+                            </p>
+                            <p class="fs-6 text-muted mb-5">
+                                From intelligent geofencing to emergency SOS features, Virtual Naani creates a protective digital bubble around your child, giving you peace of mind without being intrusive. The app learns your family's routines and adapts to provide personalized safety recommendations.
+                            </p>
+                            <div class="d-flex flex-wrap gap-3">
+                                <div class="d-flex align-items-center">
+                                    <div class="feature-icon me-2" style="width: 40px; height: 40px;">
+                                        <i class="bi bi-shield-check text-white fs-6"></i>
+                                    </div>
+                                    <span class="fw-semibold">24/7 Protection</span>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <div class="feature-icon me-2" style="width: 40px; height: 40px;">
+                                        <i class="bi bi-geo-alt text-white fs-6"></i>
+                                    </div>
+                                    <span class="fw-semibold">Real-time Tracking</span>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <div class="feature-icon me-2" style="width: 40px; height: 40px;">
+                                        <i class="bi bi-heart text-white fs-6"></i>
+                                    </div>
+                                    <span class="fw-semibold">Trust-Based</span>
+                                </div>
+                            </div>
+                        </div>
+                 
+            </div>
+        </section>
+
                 <!-- Technology Timeline -->
                 <div class="tech-timeline">
                     <!-- Advanced AI & Machine Learning -->
-                    <div class="tech-section reveal-on-scroll">
+                    <div class="tech-section ">
                         <div class="row align-items-center g-5">
                             <div class="col-lg-6">
                                 <div class="tech-content">
@@ -1243,7 +1385,7 @@
                         </div>
                     </div>
                     <!-- Quantum Computing & Security -->
-                    <div class="tech-section reveal-on-scroll">
+                    <div class="tech-section ">
                         <div class="row align-items-center g-5">
                             <div class="col-lg-6 order-lg-2">
                                 <div class="tech-content">
@@ -1329,7 +1471,7 @@
                         </div>
                     </div>
                     <!-- Zero Trust & Advanced Security -->
-                    <div class="tech-section reveal-on-scroll">
+                    <div class="tech-section ">
                         <div class="row align-items-center g-5">
                             <div class="col-lg-6">
                                 <div class="tech-content">
@@ -1415,7 +1557,7 @@
                         </div>
                     </div>
                     <!-- Edge Computing & IoT Innovation -->
-                    <div class="tech-section reveal-on-scroll">
+                    <div class="tech-section ">
                         <div class="row align-items-center g-5">
                             <div class="col-lg-6 order-lg-2">
                                 <div class="tech-content">
@@ -1501,7 +1643,7 @@
                         </div>
                     </div>
                     <!-- Blockchain & Web3 Innovation -->
-                    <div class="tech-section reveal-on-scroll">
+                    <div class="tech-section ">
                         <div class="row align-items-center g-5">
                             <div class="col-lg-6">
                                 <div class="tech-content">
@@ -1587,7 +1729,7 @@
                         </div>
                     </div>
                     <!-- Biometric & Identity Innovation -->
-                    <div class="tech-section reveal-on-scroll">
+                    <div class="tech-section ">
                         <div class="row align-items-center g-5">
                             <div class="col-lg-6 order-lg-2">
                                 <div class="tech-content">
@@ -1674,7 +1816,7 @@
                     </div>
                 </div>
                 <!-- Technology Metrics -->
-                <div class="tech-metrics reveal-on-scroll mt-5">
+                <div class="tech-metrics  mt-5">
                     <div class="row g-4">
                         <div class="col-md-3 col-6">
                             <div class="metric-item">
@@ -1750,16 +1892,16 @@
         <section class="py-5" style="background: var(--bg-gradient); border-top: 1px solid var(--card-border);">
             <div class="container">
                 <div class="text-left mb-5">
-                    <h2 class="section-title reveal-on-scroll">
+                    <h2 class="section-title">
                         Innovation <span class="text-gradient">Laboratory</span>
                     </h2>
-                    <p class="lead reveal-on-scroll" style="color: var(--text-secondary);  margin: 0 auto;">
+                    <p class="lead " style="color: var(--text-secondary);  margin: 0 auto;">
                         Pioneering tomorrow's technologies through cutting-edge research and development initiatives
                     </p>
                 </div>
                 
                 <div class="row align-items-center g-5">
-                    <div class="col-lg-6 reveal-on-scroll">
+                    <div class="col-lg-6 ">
                         <div class="innovation-content">
                             <div class="tech-badge mb-4">
                                 <i class="bi bi-lightbulb"></i>
@@ -1804,7 +1946,7 @@
                         </div>
                     </div>
                     
-                    <div class="col-lg-6 reveal-on-scroll">
+                    <div class="col-lg-6 ">
                         <div class="innovation-stats-grid">
                             <div class="innovation-stat-card">
                                 <div class="stat-icon">
@@ -1864,6 +2006,67 @@
                     </div>
                 </div>
             </div>
+        </section>
+         <!-- CTA Section -->
+        <section class="cta-section py-5" style="background: linear-gradient(135deg, #fff7ed 0%, #ffffff 50%, #fffbeb 100%); position: relative; overflow: hidden;">
+            <div class="container">
+                        <div class="cta-content text-left">
+                            <!-- Main Heading -->
+                            <h2 class="fw-bold display-4 mb-4 text-dark fade-in-up" data-delay="0">
+                                Ready to Transform 
+                                <span class="d-block fw-bold gradient-text">
+                                   Your Security?
+                                </span>
+                            </h2>
+                            
+                            <p class="lead text-muted mb-5 fade-in-up">
+                                Join hundreds of businesses that trust JetHat Cybersecurity to protect their digital assets with cutting-edge AI-powered solutions.
+                            </p>
+
+                          
+
+                            <!-- Action Buttons -->
+                            <div class="d-flex gap-3 flex-wrap justify-content-left fade-in-up" data-delay="500">
+                                <a href="../contact.html" class="btn btn-hero-primary animated-btn glow-btn">
+                                    <span class="btn-text">Schedule a Consultation</span>
+                                    <span class="btn-arrow ms-2"><i class="bi bi-arrow-right"></i></span>
+                                </a>
+
+                                <a href="#services" class="btn btn-hero-secondary animated-btn">
+                                    <span class="btn-text">Explore Services</span>
+                                    <span class="btn-icon ms-2"><i class="bi bi-search"></i></span>
+                                </a>
+                            </div>
+                            
+                            <!-- Trust Indicators -->
+                            <div class="row mt-5 justify-content-left fade-in-up" data-delay="600">
+                                <div class="col-lg-8">
+                                    <div class="d-flex justify-content-left align-items-center gap-4 flex-wrap">
+                                        <div class="text-center">
+                                            <div class="fw-bold text-dark" style="font-size: 1.5rem;">500+</div>
+                                            <div class="text-muted small">Clients Protected</div>
+                                        </div>
+                                        <div class="text-center">
+                                            <div class="fw-bold text-dark" style="font-size: 1.5rem;">99.9%</div>
+                                            <div class="text-muted small">Uptime Guarantee</div>
+                                        </div>
+                                        <div class="text-center">
+                                            <div class="fw-bold text-dark" style="font-size: 1.5rem;">24/7</div>
+                                            <div class="text-muted small">Expert Support</div>
+                                        </div>
+                                        <div class="text-center">
+                                            <div class="fw-bold text-dark" style="font-size: 1.5rem;">< 5min</div>
+                                            <div class="text-muted small">Response Time</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+             
+            </div>
+            
+           
         </section>
 
       

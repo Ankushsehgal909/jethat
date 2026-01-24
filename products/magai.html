@@ -266,27 +266,93 @@
             position: relative;
         }
         
-        .feature-icon::after {
+        /* Service Card Styles */
+        .service-card {
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(220, 20, 60, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
             content: '';
             position: absolute;
-            top: -5px;
-            left: -5px;
-            right: -5px;
-            bottom: -5px;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(220, 20, 60, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .service-card:hover::before {
+            left: 100%;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-15px) scale(1.05);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
             background: linear-gradient(135deg, #dc143c, #ffd700);
             border-radius: 50%;
-            opacity: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 0 1rem 0;
             transition: all 0.4s ease;
-            z-index: -1;
+            position: relative;
         }
         
-        .feature-card:hover .feature-icon {
-            transform: scale(1.2) rotate(360deg);
+        .service-title {
+            color: #333;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
         }
-        
-        .feature-card:hover .feature-icon::after {
-            opacity: 0.3;
-            transform: scale(1.2);
+
+        .service-description {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .section-title {
+            color: #333;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        /* Services Section */
+        .services-section {
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Reveal on Scroll Animation */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-on-scroll[data-delay="100"] {
+            transition-delay: 0.1s;
+        }
+
+        .reveal-on-scroll[data-delay="200"] {
+            transition-delay: 0.2s;
         }
         
         .text-gradient {
@@ -465,9 +531,7 @@
     <!-- Main Content -->
     <main class="">
         <!-- Hero Section -->
-        <section class="product-hero py-5 position-relative">
-           
-            
+        <section class="product-hero py-5 position-relative">           
             <div class="container px-4 position-relative" style="z-index: 2; margin-top: 2.5rem;">
                 <div class="row align-items-center py-5">
                     <div class="col-12 mb-4" data-breadcrumb data-separator="arrow">
@@ -478,12 +542,6 @@
                             MagAI
                             <span class="d-block text-gradient">Magazine Management</span>
                         </h1>
-                        <p class="lead mb-4 reveal-up stagger-1" style="color: #666666;">
-                            An AI-powered magazine management system streamlines content organization, subscription tracking, and distribution with intelligent automation.
-                        </p>
-                        <p class="lead mb-4 reveal-up stagger-2" style="color: #666666;">
-                            It features intelligent content categorization, automated subscription tracking, personalized recommendations, and seamless multi-platform distribution.
-                        </p>
                         
                         <!-- Terminal Effect -->
                         <div class="terminal-container reveal-up stagger-3">
@@ -528,10 +586,87 @@
             </div>
         </section>
 
-        <!-- Key Features Section -->
-        <section class="py-5" >
-            
-            <div class="container position-relative" style="z-index: 2;">
+        <!-- MagAI Services Section -->
+        <section id="services" class="services-section py-5" style="background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);">
+            <div class="container">
+                <div class="text-left mb-5">
+                    <h2 class="section-title  display-5 fw-bold mb-3" style="color: #333;">Our MagAI <span class="text-gradient">Services</span></h2>
+                    <p class="lead text-muted">Comprehensive AI-powered magazine publishing solutions to transform your content creation and drive intelligent distribution</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card feature-card p-4 h-100 reveal-on-scroll">
+                            <div class="service-icon feature-icon">
+                                <i class="bi bi-gear text-white fs-2"></i>
+                            </div>
+                            <h3 class="service-title fw-bold mb-3 text-left">Admin Panel Management</h3>
+                            <p class="service-description text-muted">
+                                Central dashboard for content management, user permissions, analytics reports, and comprehensive system settings control.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card feature-card p-4 h-100 reveal-on-scroll" data-delay="100">
+                            <div class="service-icon feature-icon">
+                                <i class="bi bi-pencil-square text-white fs-2"></i>
+                            </div>
+                            <h3 class="service-title fw-bold mb-3 text-left">Editorial Workflow</h3>
+                            <p class="service-description text-muted">
+                                Rich text editor with media integration, workflow management, version control, and editorial calendar for seamless publishing.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card feature-card p-4 h-100 reveal-on-scroll" data-delay="200">
+                            <div class="service-icon feature-icon">
+                                <i class="bi bi-people text-white fs-2"></i>
+                            </div>
+                            <h3 class="service-title fw-bold mb-3 text-left">User Management System</h3>
+                            <p class="service-description text-muted">
+                                Subscriber database management with access control, role management, activity tracking, and secure authentication system.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card feature-card p-4 h-100 reveal-on-scroll">
+                            <div class="service-icon feature-icon">
+                                <i class="bi bi-arrow-repeat text-white fs-2"></i>
+                            </div>
+                            <h3 class="service-title fw-bold mb-3 text-left">Automated Updates</h3>
+                            <p class="service-description text-muted">
+                                Auto content synchronization, version updates, security patches, feature releases, and performance optimization.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card feature-card p-4 h-100 reveal-on-scroll" data-delay="100">
+                            <div class="service-icon feature-icon">
+                                <i class="bi bi-book text-white fs-2"></i>
+                            </div>
+                            <h3 class="service-title fw-bold mb-3 text-left">Digital Publishing</h3>
+                            <p class="service-description text-muted">
+                                E-book format publishing with cross-platform support, interactive elements, offline reading, and responsive design.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card feature-card p-4 h-100 reveal-on-scroll" data-delay="200">
+                            <div class="service-icon feature-icon">
+                                <i class="bi bi-search text-white fs-2"></i>
+                            </div>
+                            <h3 class="service-title fw-bold mb-3 text-left">Smart Search Engine</h3>
+                            <p class="service-description text-muted">
+                                Full-text search with AI-powered indexing, smart filtering, quick navigation, and keyword highlighting capabilities.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Features Section - Simple Layout -->
+        <section class="py-5" style="background: linear-gradient(135deg,#fff7ed,#ffffff,#fffbeb);">
+            <div class="container">
                 <div class="text-left mb-5 reveal-up">
                     <h2 class="display-5 fw-bold mb-3" style="color: #333;">
                         Key <span class="text-gradient">Features</span>
@@ -540,109 +675,196 @@
                 </div>
                 
                 <div class="row g-4">
-                    <div class="col-md-6 col-lg-4">
-                        <div class="feature-card p-4 h-100 reveal-up stagger-1">
-                            <div class="feature-icon">
-                                <i class="bi bi-gear text-white fs-2"></i>
+                    <!-- Left Column -->
+                    <div class="col-lg-6">
+                        <div class="row g-4">
+                            <div class="col-12">
+                                <div class="d-flex align-items-start reveal-up">
+                                    <div class="flex-shrink-0 me-3">
+                                        <div class="bg-gradient rounded-circle p-3" style="background: linear-gradient(135deg, #dc143c, #ffd700);">
+                                            <i class="bi bi-gear text-white fs-4"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h5 class="fw-bold mb-2">Comprehensive Admin Panel</h5>
+                                        <p class="text-muted mb-0">Central dashboard with content management, user permissions, analytics reports, and system settings control.</p>
+                                    </div>
+                                </div>
                             </div>
-                            <h4 class="fw-bold mb-3 text-center">Admin Panel</h4>
-                            <ul class="list-unstyled">
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Central Dashboard</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Content Management</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>User Permissions</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Analytics Reports</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>System Settings</li>
-                            </ul>
+                            
+                            <div class="col-12">
+                                <div class="d-flex align-items-start reveal-up stagger-2">
+                                    <div class="flex-shrink-0 me-3">
+                                        <div class="bg-gradient rounded-circle p-3" style="background: linear-gradient(135deg, #dc143c, #ffd700);">
+                                            <i class="bi bi-pencil-square text-white fs-4"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h5 class="fw-bold mb-2">Advanced Editor Panel</h5>
+                                        <p class="text-muted mb-0">Rich text editor with media integration, workflow management, version control, and editorial calendar.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-12">
+                                <div class="d-flex align-items-start reveal-up stagger-3">
+                                    <div class="flex-shrink-0 me-3">
+                                        <div class="bg-gradient rounded-circle p-3" style="background: linear-gradient(135deg, #dc143c, #ffd700);">
+                                            <i class="bi bi-book text-white fs-4"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h5 class="fw-bold mb-2">E-Book Format Publishing</h5>
+                                        <p class="text-muted mb-0">Digital publishing with cross-platform support, interactive elements, and responsive design for offline reading.</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="col-md-6 col-lg-4">
-                        <div class="feature-card p-4 h-100 reveal-up stagger-2">
-                            <div class="feature-icon">
-                                <i class="bi bi-pencil-square text-white fs-2"></i>
+                    
+                    <!-- Right Column -->
+                    <div class="col-lg-6">
+                        <div class="row g-4">
+                            <div class="col-12">
+                                <div class="d-flex align-items-start reveal-up stagger-4">
+                                    <div class="flex-shrink-0 me-3">
+                                        <div class="bg-gradient rounded-circle p-3" style="background: linear-gradient(135deg, #dc143c, #ffd700);">
+                                            <i class="bi bi-people text-white fs-4"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h5 class="fw-bold mb-2">User Management System</h5>
+                                        <p class="text-muted mb-0">Subscriber database with access control, role management, activity tracking, and secure authentication.</p>
+                                    </div>
+                                </div>
                             </div>
-                            <h4 class="fw-bold mb-3 text-center">Editor Panel</h4>
-                            <ul class="list-unstyled">
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Rich Text Editor</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Media Integration</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Workflow Management</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Version Control</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Editorial Calendar</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4">
-                        <div class="feature-card p-4 h-100 reveal-up stagger-3">
-                            <div class="feature-icon">
-                                <i class="bi bi-people text-white fs-2"></i>
+                            
+                            <div class="col-12">
+                                <div class="d-flex align-items-start reveal-up stagger-5">
+                                    <div class="flex-shrink-0 me-3">
+                                        <div class="bg-gradient rounded-circle p-3" style="background: linear-gradient(135deg, #dc143c, #ffd700);">
+                                            <i class="bi bi-arrow-repeat text-white fs-4"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h5 class="fw-bold mb-2">Automated Updates</h5>
+                                        <p class="text-muted mb-0">Auto content sync, version updates, security patches, and performance optimization for seamless operation.</p>
+                                    </div>
+                                </div>
                             </div>
-                            <h4 class="fw-bold mb-3 text-center">User Management</h4>
-                            <ul class="list-unstyled">
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Subscriber Database</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Access Control</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Role Management</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Activity Tracking</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Auth System</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4">
-                        <div class="feature-card p-4 h-100 reveal-up stagger-4">
-                            <div class="feature-icon">
-                                <i class="bi bi-arrow-repeat text-white fs-2"></i>
+                            
+                            <div class="col-12">
+                                <div class="d-flex align-items-start reveal-up stagger-6">
+                                    <div class="flex-shrink-0 me-3">
+                                        <div class="bg-gradient rounded-circle p-3" style="background: linear-gradient(135deg, #dc143c, #ffd700);">
+                                            <i class="bi bi-search text-white fs-4"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h5 class="fw-bold mb-2">Smart Search Engine</h5>
+                                        <p class="text-muted mb-0">Full-text search with AI-powered indexing, smart filtering, and keyword highlighting for quick navigation.</p>
+                                    </div>
+                                </div>
                             </div>
-                            <h4 class="fw-bold mb-3 text-center">Regular Updates</h4>
-                            <ul class="list-unstyled">
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Auto Content Sync</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Version Updates</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Security Patches</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Feature Releases</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Performance Tuning</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4">
-                        <div class="feature-card p-4 h-100 reveal-up stagger-5">
-                            <div class="feature-icon">
-                                <i class="bi bi-book text-white fs-2"></i>
-                            </div>
-                            <h4 class="fw-bold mb-3 text-center">E-Book Format</h4>
-                            <ul class="list-unstyled">
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Digital Publishing</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Cross-Platform Support</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Interactive Elements</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Offline Reading</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Responsive Design</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4">
-                        <div class="feature-card p-4 h-100 reveal-up stagger-6">
-                            <div class="feature-icon">
-                                <i class="bi bi-search text-white fs-2"></i>
-                            </div>
-                            <h4 class="fw-bold mb-3 text-center">Searchable Format</h4>
-                            <ul class="list-unstyled">
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Full-Text Search</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>AI-Powered Indexing</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Smart Filtering</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Quick Navigation</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Keyword Highlighting</li>
-                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
+        <!-- MagAI Benefits Section -->
+        <section class="magai-benefits-section" style="padding: 100px 0; background: linear-gradient(135deg, #1A1A1A, #2A2A2A); position: relative; overflow: hidden;">
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <!-- Left side - Content -->
+                    <div class="col-lg-6">
+                        <h2 class="reveal-on-scroll" style="font-size: 2.5rem; font-weight: 700; color: #ffffff; margin-bottom: 20px;">
+                            AI-Powered Content & <span class="gradient-text">Smart Generation</span>
+                        </h2>
+                        <p class="reveal-on-scroll" data-delay="100" style="color: rgba(255, 255, 255, 0.7); font-size: 1.1rem; line-height: 1.8; margin-bottom: 25px;">
+                            MagAI revolutionizes content creation with advanced AI algorithms that generate high-quality, contextually relevant content across multiple formats. From articles to multimedia presentations, our platform ensures consistent, engaging content that resonates with your audience.
+                        </p>
+                        <div class="row g-3 reveal-on-scroll" data-delay="200">
+                            <div class="col-6">
+                                <div class="d-flex align-items-center gap-3 p-3  rounded-3 shadow-sm" style="border: 1px solid rgba(220, 20, 60, 0.1);">
+                                    <div class="bg-success bg-opacity-10 rounded-circle p-2">
+                                        <i class="bi bi-magic text-success fs-5"></i>
+                                    </div>
+                                    <div>
+                                        <div class="fw-bold text-dark" style="font-size: 1.5rem;">AI</div>
+                                        <div class="text-muted small">Content Generation</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="d-flex align-items-center gap-3 p-3  rounded-3 shadow-sm" style="border: 1px solid rgba(220, 20, 60, 0.1);">
+                                    <div class="bg-warning bg-opacity-10 rounded-circle p-2">
+                                        <i class="bi bi-lightning-charge text-warning fs-5"></i>
+                                    </div>
+                                    <div>
+                                        <div class="fw-bold text-dark" style="font-size: 1.5rem;">5x</div>
+                                        <div class="text-muted small">Faster Creation</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-4 reveal-on-scroll" data-delay="300">
+                            <a href="../contact.html" class="btn btn-hero-primary" style="background: linear-gradient(135deg, #dc143c, #ffd700); color: white; padding: 14px 32px; border-radius: 50px; font-weight: 600; border: none; transition: all 0.4s ease; box-shadow: 0 10px 30px rgba(220, 20, 60, 0.3);">
+                                <i class="bi bi-stars me-2"></i>Start Creating with AI
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Right side - Image -->
+                    <div class="col-lg-6">
+                        <div class="reveal-on-scroll" data-delay="400" style="position: relative;">
+                            <div class="main-image-card" style="border-radius: 25px; overflow: hidden; box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);">
+                                <img src="../assets/images/cyber.jpg" alt="AI Content Generation" class="img-fluid" style="width: 100%; display: block; transition: all 0.4s ease;">
+                            </div>
+                            <div class="floating-card" style="position: absolute; top: 10%; right: -20px; background: rgba(255, 255, 255, 0.95); border-radius: 20px; padding: 20px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); animation: float-card 4s ease-in-out infinite;">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="bg-danger bg-opacity-10 rounded-circle p-2">
+                                        <i class="bi bi-cpu text-danger fs-5"></i>
+                                    </div>
+                                    <div>
+                                        <div class="fw-bold text-dark">GPT-4</div>
+                                        <div class="text-muted small">AI Model</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="floating-card" style="position: absolute; bottom: 15%; left: -30px; background: rgba(255, 255, 255, 0.95); border-radius: 20px; padding: 20px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); animation: float-card 4s ease-in-out infinite; animation-delay: 2s;">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="bg-success bg-opacity-10 rounded-circle p-2">
+                                        <i class="bi bi-file-text text-success fs-5"></i>
+                                    </div>
+                                    <div>
+                                        <div class="fw-bold text-dark">50+</div>
+                                        <div class="text-muted small">Content Types</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <style>
+                @keyframes float-card {
+                    0%, 100% { transform: translateY(0px); }
+                    50% { transform: translateY(-15px); }
+                }
+                .gradient-text {
+                    background: linear-gradient(135deg, #dc143c, #ffd700);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-clip: text;
+                }
+                .main-image-card:hover img {
+                    transform: scale(1.05);
+                }
+            </style>
+        </section>
         <!-- Who Is It For Section -->
         <section class="py-5" >
             <div class="container">
-                <div class="text-center mb-5 reveal-up">
+                <div class="text-left mb-5 reveal-up">
                     <h2 class="display-5 fw-bold mb-3" style="color: #333;">
                         Who Is It <span class="text-gradient">For?</span>
                     </h2>
@@ -699,7 +921,8 @@
                     </div>
                 </div>
             </div>
-
+        </section>
+        <!-- Transform Your Publishing Section -->
         <section class="py-5" >
             <div class="container">
                 <div class="row g-5 align-items-center">
@@ -741,529 +964,37 @@
                 </div>
             </div>
         </section>
-          <!-- Animated Image Slider Section -->
-        <section class="py-5 position-relative" style="background: linear-gradient(135deg, #fff7ed 0%, #ffffff 50%, #fffbeb 100%);">
-            <!-- Floating Shapes -->
-            <div class="floating-shapes">
-                <div class="shape"></div>
-                <div class="shape"></div>
-                <div class="shape"></div>
-                <div class="shape"></div>
-                <div class="shape"></div>
-            </div>
-            
-            <div class="container position-relative" style="z-index: 2;">
-                <div class="text-center mb-5 reveal-up">
-                    <h2 class="display-5 fw-bold mb-3" style="color: #333;">
-                        MagAI <span class="text-gradient">In Action</span>
-                    </h2>
-                    <p class="lead text-muted">Experience the power of AI-driven magazine management</p>
-                </div>
-                
-                <!-- Animated Image Slider -->
-                <div class="image-slider-container position-relative reveal-up stagger-1">
-                    <div class="slider-track d-flex" id="magai-slider-track">
-                        <!-- Slide 1 -->
-                        <div class="slider-slide flex-shrink-0 px-3">
-                            <div class="image-card" style="
-                                width: 400px;
-                                height: 280px;
-                                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                                border-radius: 20px;
-                                overflow: hidden;
-                                position: relative;
-                                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-                                transition: all 0.4s ease;
-                            ">
-                                <img src="assets/images/cyber.jpg" alt="MagAI Dashboard" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
-                                <div class="image-overlay" style="position: absolute; bottom: 0; left: 0; right: 0; padding: 20px; background: linear-gradient(transparent, rgba(0,0,0,0.7));">
-                                    <h5 class="text-white fw-bold mb-1">Smart Dashboard</h5>
-                                    <p class="text-white-50 small mb-0">Real-time analytics overview</p>
-                                </div>
-                                <div class="floating-badge" style="top: 15px; right: 15px; font-size: 0.8rem;">📊</div>
-                            </div>
-                        </div>
-                        
-                        <!-- Slide 2 -->
-                        <div class="slider-slide flex-shrink-0 px-3">
-                            <div class="image-card" style="
-                                width: 400px;
-                                height: 280px;
-                                background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-                                border-radius: 20px;
-                                overflow: hidden;
-                                position: relative;
-                                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-                                transition: all 0.4s ease;
-                            ">
-                                <img src="assets/images/cyber.jpg" alt="Content Editor" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
-                                <div class="image-overlay" style="position: absolute; bottom: 0; left: 0; right: 0; padding: 20px; background: linear-gradient(transparent, rgba(0,0,0,0.7));">
-                                    <h5 class="text-white fw-bold mb-1">AI Content Editor</h5>
-                                    <p class="text-white-50 small mb-0">Intelligent writing assistance</p>
-                                </div>
-                                <div class="floating-badge" style="top: 15px; right: 15px; font-size: 0.8rem;">✍️</div>
-                            </div>
-                        </div>
-                        
-                        <!-- Slide 3 -->
-                        <div class="slider-slide flex-shrink-0 px-3">
-                            <div class="image-card" style="
-                                width: 400px;
-                                height: 280px;
-                                background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-                                border-radius: 20px;
-                                overflow: hidden;
-                                position: relative;
-                                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-                                transition: all 0.4s ease;
-                            ">
-                                <img src="assets/images/cyber.jpg" alt="Subscriber Management" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
-                                <div class="image-overlay" style="position: absolute; bottom: 0; left: 0; right: 0; padding: 20px; background: linear-gradient(transparent, rgba(0,0,0,0.7));">
-                                    <h5 class="text-white fw-bold mb-1">Subscriber Management</h5>
-                                    <p class="text-white-50 small mb-0">Track and engage readers</p>
-                                </div>
-                                <div class="floating-badge" style="top: 15px; right: 15px; font-size: 0.8rem;">👥</div>
-                            </div>
-                        </div>
-                        
-                        <!-- Slide 4 -->
-                        <div class="slider-slide flex-shrink-0 px-3">
-                            <div class="image-card" style="
-                                width: 400px;
-                                height: 280px;
-                                background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
-                                border-radius: 20px;
-                                overflow: hidden;
-                                position: relative;
-                                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-                                transition: all 0.4s ease;
-                            ">
-                                <img src="assets/images/cyber.jpg" alt="Multi-Platform Publishing" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
-                                <div class="image-overlay" style="position: absolute; bottom: 0; left: 0; right: 0; padding: 20px; background: linear-gradient(transparent, rgba(0,0,0,0.7));">
-                                    <h5 class="text-white fw-bold mb-1">Multi-Platform Publishing</h5>
-                                    <p class="text-white-50 small mb-0">Reach readers everywhere</p>
-                                </div>
-                                <div class="floating-badge" style="top: 15px; right: 15px; font-size: 0.8rem;">📱</div>
-                            </div>
-                        </div>
-                        
-                        <!-- Slide 5 -->
-                        <div class="slider-slide flex-shrink-0 px-3">
-                            <div class="image-card" style="
-                                width: 400px;
-                                height: 280px;
-                                background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
-                                border-radius: 20px;
-                                overflow: hidden;
-                                position: relative;
-                                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-                                transition: all 0.4s ease;
-                            ">
-                                <img src="assets/images/cyber.jpg" alt="Analytics Dashboard" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
-                                <div class="image-overlay" style="position: absolute; bottom: 0; left: 0; right: 0; padding: 20px; background: linear-gradient(transparent, rgba(0,0,0,0.7));">
-                                    <h5 class="text-white fw-bold mb-1">Advanced Analytics</h5>
-                                    <p class="text-white-50 small mb-0">Data-driven decisions</p>
-                                </div>
-                                <div class="floating-badge" style="top: 15px; right: 15px; font-size: 0.8rem;">📈</div>
-                            </div>
-                        </div>
-                        
-                        <!-- Slide 6 -->
-                        <div class="slider-slide flex-shrink-0 px-3">
-                            <div class="image-card" style="
-                                width: 400px;
-                                height: 280px;
-                                background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-                                border-radius: 20px;
-                                overflow: hidden;
-                                position: relative;
-                                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-                                transition: all 0.4s ease;
-                            ">
-                                <img src="assets/images/cyber.jpg" alt="E-Book Publishing" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
-                                <div class="image-overlay" style="position: absolute; bottom: 0; left: 0; right: 0; padding: 20px; background: linear-gradient(transparent, rgba(0,0,0,0.7));">
-                                    <h5 class="text-white fw-bold mb-1">E-Book Publishing</h5>
-                                    <p class="text-white-50 small mb-0">Digital magazine format</p>
-                                </div>
-                                <div class="floating-badge" style="top: 15px; right: 15px; font-size: 0.8rem;">📚</div>
-                            </div>
-                        </div>
+        
+        <!-- Call to Action Section -->
+        <section class="py-5" style="background: linear-gradient(135deg, #dc143c, #ffd700);">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-8">
+                        <h2 class="display-5 fw-bold text-white mb-3 reveal-up">
+                            Build a Smarter, More Connected Digital Knowledge Space
+                        </h2>
+                        <p class="lead text-white mb-4 reveal-up stagger-1">
+                            JetHat's E-Library Solutions give you the tools to create seamless, user-friendly digital libraries that transform how people access and interact with knowledge.
+                        </p>
                     </div>
-                    
-                    <!-- Slider Controls -->
-                    <div class="slider-controls d-flex justify-content-center gap-3 mt-4">
-                        <button class="btn btn-light rounded-circle shadow-sm hover-scale" id="slider-prev" style="width: 50px; height: 50px; border: 2px solid #dc143c;">
-                            <i class="bi bi-chevron-left text-primary"></i>
-                        </button>
-                        <div class="slider-indicators d-flex gap-2 align-items-center">
-                            <span class="slider-dot active" data-index="0" style="width: 12px; height: 12px; background: #dc143c; border-radius: 50%; cursor: pointer; transition: all 0.3s ease;"></span>
-                            <span class="slider-dot" data-index="1" style="width: 12px; height: 12px; background: #ccc; border-radius: 50%; cursor: pointer; transition: all 0.3s ease;"></span>
-                            <span class="slider-dot" data-index="2" style="width: 12px; height: 12px; background: #ccc; border-radius: 50%; cursor: pointer; transition: all 0.3s ease;"></span>
-                            <span class="slider-dot" data-index="3" style="width: 12px; height: 12px; background: #ccc; border-radius: 50%; cursor: pointer; transition: all 0.3s ease;"></span>
-                            <span class="slider-dot" data-index="4" style="width: 12px; height: 12px; background: #ccc; border-radius: 50%; cursor: pointer; transition: all 0.3s ease;"></span>
-                            <span class="slider-dot" data-index="5" style="width: 12px; height: 12px; background: #ccc; border-radius: 50%; cursor: pointer; transition: all 0.3s ease;"></span>
+                    <div class="col-lg-4 text-center">
+                        <div class="d-flex flex-column gap-3 reveal-up stagger-2">
+                            <button class="btn btn-light btn-lg px-4 py-3">
+                                <i class="bi bi-play-circle me-2"></i>
+                                Request Demo
+                            </button>
+                            <button class="btn btn-outline-light btn-lg px-4 py-3">
+                                <i class="bi bi-chat-dots me-2"></i>
+                                Contact Us
+                            </button>
                         </div>
-                        <button class="btn btn-light rounded-circle shadow-sm hover-scale" id="slider-next" style="width: 50px; height: 50px; border: 2px solid #dc143c;">
-                            <i class="bi bi-chevron-right text-primary"></i>
-                        </button>
                     </div>
                 </div>
             </div>
         </section>
-
-        <style>
-            /* Slider Styles */
-            .image-slider-container {
-                overflow: hidden;
-                padding: 20px 0;
-            }
-            
-            .slider-track {
-                transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-                cursor: grab;
-            }
-            
-            .slider-track:active {
-                cursor: grabbing;
-            }
-            
-            .slider-slide {
-                width: 400px;
-                min-width: 400px;
-            }
-            
-            .image-card:hover {
-                transform: translateY(-10px) scale(1.02);
-                box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25) !important;
-            }
-            
-            .image-card:hover img {
-                transform: scale(1.1);
-            }
-            
-            .image-card img {
-                transition: transform 0.6s ease;
-            }
-            
-            .slider-dot:hover {
-                background: #dc143c !important;
-                transform: scale(1.2);
-            }
-            
-            .slider-dot.active {
-                background: #dc143c !important;
-                transform: scale(1.3);
-                box-shadow: 0 0 15px rgba(220, 20, 60, 0.5);
-            }
-            
-            /* Scroll-triggered animations for slider */
-            @keyframes slideInFromBottom {
-                from {
-                    opacity: 0;
-                    transform: translateY(100px);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-            
-            .image-slider-container.in-view .slider-slide {
-                animation: slideInFromBottom 0.6s ease-out forwards;
-            }
-            
-            .image-slider-container.in-view .slider-slide:nth-child(1) { animation-delay: 0.1s; }
-            .image-slider-container.in-view .slider-slide:nth-child(2) { animation-delay: 0.2s; }
-            .image-slider-container.in-view .slider-slide:nth-child(3) { animation-delay: 0.3s; }
-            .image-slider-container.in-view .slider-slide:nth-child(4) { animation-delay: 0.4s; }
-            .image-slider-container.in-view .slider-slide:nth-child(5) { animation-delay: 0.5s; }
-            .image-slider-container.in-view .slider-slide:nth-child(6) { animation-delay: 0.6s; }
-            
-            @media (max-width: 768px) {
-                .slider-slide {
-                    width: calc(100vw - 60px);
-                    min-width: calc(100vw - 60px);
-                }
-            }
-            
-            @media (max-width: 576px) {
-                .slider-slide {
-                    width: calc(100vw - 40px);
-                    min-width: calc(100vw - 40px);
-                }
-            }
-        </style>
-
-        <script>
-            // Initialize Image Slider
-            document.addEventListener('DOMContentLoaded', function() {
-                const sliderTrack = document.getElementById('magai-slider-track');
-                const prevBtn = document.getElementById('slider-prev');
-                const nextBtn = document.getElementById('slider-next');
-                const dots = document.querySelectorAll('.slider-dot');
-                const slides = document.querySelectorAll('.slider-slide');
-                const sliderContainer = document.querySelector('.image-slider-container');
-                
-                let currentSlide = 0;
-                let slidesPerView = getSlidesPerView();
-                let maxSlide = Math.max(0, slides.length - slidesPerView);
-                let autoPlayInterval;
-                
-                function getSlidesPerView() {
-                    const width = window.innerWidth;
-                    if (width >= 1200) return 3;
-                    if (width >= 992) return 2;
-                    if (width >= 768) return 1;
-                    return 1;
-                }
-                
-                function updateSlider() {
-                    const slideWidth = slides[0].offsetWidth + 24; // including gap
-                    const translateX = -currentSlide * slideWidth;
-                    sliderTrack.style.transform = `translateX(${translateX}px)`;
-                    
-                    // Update dots
-                    dots.forEach((dot, index) => {
-                        dot.classList.toggle('active', index === currentSlide);
-                        dot.style.background = index === currentSlide ? '#dc143c' : '#ccc';
-                    });
-                    
-                    // Update button states
-                    prevBtn.style.opacity = currentSlide === 0 ? '0.5' : '1';
-                    nextBtn.style.opacity = currentSlide >= maxSlide ? '0.5' : '1';
-                }
-                
-                function nextSlide() {
-                    if (currentSlide < maxSlide) {
-                        currentSlide++;
-                        updateSlider();
-                    } else {
-                        currentSlide = 0;
-                        updateSlider();
-                    }
-                }
-                
-                function prevSlide() {
-                    if (currentSlide > 0) {
-                        currentSlide--;
-                        updateSlider();
-                    }
-                }
-                
-                function goToSlide(index) {
-                    currentSlide = index;
-                    updateSlider();
-                }
-                
-                // Event listeners
-                prevBtn.addEventListener('click', prevSlide);
-                nextBtn.addEventListener('click', nextSlide);
-                
-                dots.forEach((dot, index) => {
-                    dot.addEventListener('click', () => goToSlide(index));
-                });
-                
-                // Auto-play
-                function startAutoPlay() {
-                    autoPlayInterval = setInterval(() => {
-                        nextSlide();
-                    }, 4000);
-                }
-                
-                function stopAutoPlay() {
-                    if (autoPlayInterval) {
-                        clearInterval(autoPlayInterval);
-                    }
-                }
-                
-                // Pause on hover
-                sliderContainer.addEventListener('mouseenter', stopAutoPlay);
-                sliderContainer.addEventListener('mouseleave', startAutoPlay);
-                
-                // Handle window resize
-                window.addEventListener('resize', () => {
-                    slidesPerView = getSlidesPerView();
-                    maxSlide = Math.max(0, slides.length - slidesPerView);
-                    currentSlide = Math.min(currentSlide, maxSlide);
-                    updateSlider();
-                });
-                
-                // Touch/swipe support
-                let startX = 0;
-                let currentX = 0;
-                let isDragging = false;
-                
-                sliderTrack.addEventListener('touchstart', (e) => {
-                    startX = e.touches[0].clientX;
-                    isDragging = true;
-                    stopAutoPlay();
-                });
-                
-                sliderTrack.addEventListener('touchmove', (e) => {
-                    if (!isDragging) return;
-                    currentX = e.touches[0].clientX;
-                });
-                
-                sliderTrack.addEventListener('touchend', () => {
-                    if (!isDragging) return;
-                    isDragging = false;
-                    
-                    const diffX = startX - currentX;
-                    if (Math.abs(diffX) > 50) {
-                        if (diffX > 0) {
-                            nextSlide();
-                        } else {
-                            prevSlide();
-                        }
-                    }
-                    startAutoPlay();
-                });
-                
-                // Mouse drag support
-                sliderTrack.addEventListener('mousedown', (e) => {
-                    startX = e.clientX;
-                    isDragging = true;
-                    sliderTrack.style.cursor = 'grabbing';
-                    stopAutoPlay();
-                });
-                
-                sliderTrack.addEventListener('mousemove', (e) => {
-                    if (!isDragging) return;
-                    currentX = e.clientX;
-                });
-                
-                sliderTrack.addEventListener('mouseup', () => {
-                    if (!isDragging) return;
-                    isDragging = false;
-                    sliderTrack.style.cursor = 'grab';
-                    
-                    const diffX = startX - currentX;
-                    if (Math.abs(diffX) > 50) {
-                        if (diffX > 0) {
-                            nextSlide();
-                        } else {
-                            prevSlide();
-                        }
-                    }
-                    startAutoPlay();
-                });
-                
-                sliderTrack.addEventListener('mouseleave', () => {
-                    isDragging = false;
-                    sliderTrack.style.cursor = 'grab';
-                    startAutoPlay();
-                });
-                
-                // Initialize
-                updateSlider();
-                startAutoPlay();
-                
-                // Scroll-triggered animation observer
-                const sliderObserver = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            sliderContainer.classList.add('in-view');
-                        }
-                    });
-                }, { threshold: 0.1 });
-                
-                sliderObserver.observe(sliderContainer);
-            });
-        </script>
-
-       
     </main>
 
-    <!-- MagAI Benefits Section -->
-    <section class="magai-benefits-section" style="padding: 100px 0; background: linear-gradient(135deg, #1A1A1A, #2A2A2A); position: relative; overflow: hidden;">
-        <div class="container">
-            <div class="row align-items-center g-5">
-                <!-- Left side - Content -->
-                <div class="col-lg-6">
-                    <h2 class="reveal-on-scroll" style="font-size: 2.5rem; font-weight: 700; color: #ffffff; margin-bottom: 20px;">
-                        AI-Powered Content & <span class="gradient-text">Smart Generation</span>
-                    </h2>
-                    <p class="reveal-on-scroll" data-delay="100" style="color: rgba(255, 255, 255, 0.7); font-size: 1.1rem; line-height: 1.8; margin-bottom: 25px;">
-                        MagAI revolutionizes content creation with advanced AI algorithms that generate high-quality, contextually relevant content across multiple formats. From articles to multimedia presentations, our platform ensures consistent, engaging content that resonates with your audience.
-                    </p>
-                    <div class="row g-3 reveal-on-scroll" data-delay="200">
-                        <div class="col-6">
-                            <div class="d-flex align-items-center gap-3 p-3 bg-white rounded-3 shadow-sm" style="border: 1px solid rgba(220, 20, 60, 0.1);">
-                                <div class="bg-success bg-opacity-10 rounded-circle p-2">
-                                    <i class="bi bi-magic text-success fs-5"></i>
-                                </div>
-                                <div>
-                                    <div class="fw-bold text-dark" style="font-size: 1.5rem;">AI</div>
-                                    <div class="text-muted small">Content Generation</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="d-flex align-items-center gap-3 p-3 bg-white rounded-3 shadow-sm" style="border: 1px solid rgba(220, 20, 60, 0.1);">
-                                <div class="bg-warning bg-opacity-10 rounded-circle p-2">
-                                    <i class="bi bi-lightning-charge text-warning fs-5"></i>
-                                </div>
-                                <div>
-                                    <div class="fw-bold text-dark" style="font-size: 1.5rem;">5x</div>
-                                    <div class="text-muted small">Faster Creation</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mt-4 reveal-on-scroll" data-delay="300">
-                        <a href="../contact.html" class="btn btn-hero-primary" style="background: linear-gradient(135deg, #dc143c, #ffd700); color: white; padding: 14px 32px; border-radius: 50px; font-weight: 600; border: none; transition: all 0.4s ease; box-shadow: 0 10px 30px rgba(220, 20, 60, 0.3);">
-                            <i class="bi bi-stars me-2"></i>Start Creating with AI
-                        </a>
-                    </div>
-                </div>
-                <!-- Right side - Image -->
-                <div class="col-lg-6">
-                    <div class="reveal-on-scroll" data-delay="400" style="position: relative;">
-                        <div class="main-image-card" style="border-radius: 25px; overflow: hidden; box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);">
-                            <img src="../assets/images/cyber.jpg" alt="AI Content Generation" class="img-fluid" style="width: 100%; display: block; transition: all 0.4s ease;">
-                        </div>
-                        <div class="floating-card" style="position: absolute; top: 10%; right: -20px; background: rgba(255, 255, 255, 0.95); border-radius: 20px; padding: 20px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); animation: float-card 4s ease-in-out infinite;">
-                            <div class="d-flex align-items-center gap-3">
-                                <div class="bg-danger bg-opacity-10 rounded-circle p-2">
-                                    <i class="bi bi-cpu text-danger fs-5"></i>
-                                </div>
-                                <div>
-                                    <div class="fw-bold text-dark">GPT-4</div>
-                                    <div class="text-muted small">AI Model</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="floating-card" style="position: absolute; bottom: 15%; left: -30px; background: rgba(255, 255, 255, 0.95); border-radius: 20px; padding: 20px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); animation: float-card 4s ease-in-out infinite; animation-delay: 2s;">
-                            <div class="d-flex align-items-center gap-3">
-                                <div class="bg-success bg-opacity-10 rounded-circle p-2">
-                                    <i class="bi bi-file-text text-success fs-5"></i>
-                                </div>
-                                <div>
-                                    <div class="fw-bold text-dark">50+</div>
-                                    <div class="text-muted small">Content Types</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <style>
-            @keyframes float-card {
-                0%, 100% { transform: translateY(0px); }
-                50% { transform: translateY(-15px); }
-            }
-            .gradient-text {
-                background: linear-gradient(135deg, #dc143c, #ffd700);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-clip: text;
-            }
-            .main-image-card:hover img {
-                transform: scale(1.05);
-            }
-        </style>
-    </section>
+  
 
     <!-- Footer -->
     <div id="footer-component"></div>
@@ -1280,7 +1011,7 @@
     <!-- Animation Script -->
     <script>
         function initAnimations() {
-            const animationElements = document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right, .reveal-zoom');
+            const animationElements = document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right, .reveal-zoom, .reveal-on-scroll');
             
             const observerOptions = {
                 threshold: 0.1,

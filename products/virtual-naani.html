@@ -280,13 +280,96 @@
             z-index: -1;
         }
         
-        .feature-card:hover .feature-icon {
-            transform: scale(1.2) rotate(360deg);
+        
+
+        /* Service Card Styles */
+        .service-card {
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(220, 20, 60, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
         }
         
-        .feature-card:hover .feature-icon::after {
-            opacity: 0.3;
-            transform: scale(1.2);
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(220, 20, 60, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .service-card:hover::before {
+            left: 100%;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-15px) scale(1.05);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 0 1rem 0;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+       
+
+        .service-title {
+            color: #333;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-description {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .section-title {
+            color: #333;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        /* Services Section */
+        .services-section {
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Reveal on Scroll Animation */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-on-scroll[data-delay="100"] {
+            transition-delay: 0.1s;
+        }
+
+        .reveal-on-scroll[data-delay="200"] {
+            transition-delay: 0.2s;
         }
         
         .text-gradient {
@@ -531,8 +614,6 @@
     <main class="pt-5">
         <!-- Hero Section -->
         <section class="product-hero py-5 position-relative">
-            
-            
             <div class="container px-4 position-relative" style="z-index: 2;">
                 <div class="row align-items-center py-5">
                     <div class="col-12 mb-4" data-breadcrumb data-separator="arrow">
@@ -543,10 +624,6 @@
                             Virtual Naani
                             <span class="d-block text-gradient">Smart Safety App for Children</span>
                         </h1>
-                        <p class="lead mb-4 reveal-up stagger-1" style="color: #666666;">
-                            A virtual guardian for the real world. Virtual Naani offers peace of mind for parents and proactive protection for children. From school to playtime, this app ensures safety without sacrificing trust.
-                        </p>
-                        
                         <!-- Terminal Effect -->
                         <div class="terminal-container reveal-up stagger-2">
                             <div class="terminal-header">
@@ -574,11 +651,11 @@
                         </div>
                         
                         <div class="d-flex flex-column flex-sm-row gap-3 reveal-up stagger-4">
-                            <button class="btn btn-gradient btn-lg px-4 py-3">
+                            <button class="btn btn-gradient btn-lg  py-2">
                                 <i class="bi bi-download me-2"></i>
                                 Get the App Now
                             </button>
-                            <button class="btn btn-outline-danger btn-lg px-4 py-3">
+                            <button class="btn btn-outline-danger btn-lg  py-2">
                                 <i class="bi bi-info-circle me-2"></i>
                                 Learn More
                             </button>
@@ -599,170 +676,19 @@
             </div>
         </section>
 
-        <!-- Features Section -->
-        <section class="py-5" style="background: linear-gradient(135deg,#fff7ed,#ffffff,#fffbeb);">
-            <!-- Cyber Grid Background -->
-            <div class="cyber-grid" style="opacity: 0.5;"></div>
-            
-            <div class="container position-relative" style="z-index: 2;">
-                <div class="text-left mb-5 reveal-up">
-                    <h2 class="display-5 fw-bold mb-3" style="color: #333;">
-                        Key <span class="text-gradient">Features</span>
-                    </h2>
-                    <p class="lead text-muted">Your child's safety, one tap away</p>
-                </div>
-                
-                <div class="row g-4">
-                    <div class="col-md-6 col-lg-4">
-                        <div class="feature-card p-4 h-100 reveal-up stagger-1">
-                            <div class="feature-icon">
-                                <i class="bi bi-geo-alt text-white fs-2"></i>
-                            </div>
-                            <h4 class="fw-bold mb-3 text-center">Live Location Tracking</h4>
-                            <p class="text-muted text-center mb-3">Know your child's whereabouts in real-time with interactive maps.</p>
-                            <ul class="list-unstyled">
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Real-time GPS tracking</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Interactive maps</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Location history</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Geofencing alerts</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4">
-                        <div class="feature-card p-4 h-100 reveal-up stagger-2">
-                            <div class="feature-icon">
-                                <i class="bi bi-exclamation-triangle text-white fs-2"></i>
-                            </div>
-                            <h4 class="fw-bold mb-3 text-center">Emergency SOS Button</h4>
-                            <p class="text-muted text-center mb-3">One-tap SOS instantly alerts parents with live location and optional audio/video snippet.</p>
-                            <ul class="list-unstyled">
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>One-tap emergency alert</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Instant parent notification</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Audio/video recording</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Emergency contacts</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4">
-                        <div class="feature-card p-4 h-100 reveal-up stagger-3">
-                            <div class="feature-icon">
-                                <i class="bi bi-bell text-white fs-2"></i>
-                            </div>
-                            <h4 class="fw-bold mb-3 text-center">Smart Alerts</h4>
-                            <p class="text-muted text-center mb-3">Receive notifications for unsafe zones, route changes, or inactivity.</p>
-                            <ul class="list-unstyled">
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Unsafe zone alerts</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Route change notifications</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Inactivity monitoring</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Custom alert settings</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4">
-                        <div class="feature-card p-4 h-100 reveal-up stagger-4">
-                            <div class="feature-icon">
-                                <i class="bi bi-clipboard-data text-white fs-2"></i>
-                            </div>
-                            <h4 class="fw-bold mb-3 text-center">Daily Movement Reports</h4>
-                            <p class="text-muted text-center mb-3">Track travel history, timing, and duration at each stop.</p>
-                            <ul class="list-unstyled">
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Travel history tracking</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Time spent at locations</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Daily activity summary</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Weekly/monthly reports</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4">
-                        <div class="feature-card p-4 h-100 reveal-up stagger-5">
-                            <div class="feature-icon">
-                                <i class="bi bi-person-check text-white fs-2"></i>
-                            </div>
-                            <h4 class="fw-bold mb-3 text-center">Consent-Based Monitoring</h4>
-                            <p class="text-muted text-center mb-3">Children stay in control—monitoring starts only with their informed consent.</p>
-                            <ul class="list-unstyled">
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Child consent required</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Privacy controls</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Transparent monitoring</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Trust-based approach</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4">
-                        <div class="feature-card p-4 h-100 reveal-up stagger-6">
-                            <div class="feature-icon">
-                                <i class="bi bi-speedometer2 text-white fs-2"></i>
-                            </div>
-                            <h4 class="fw-bold mb-3 text-center">Optimized Performance</h4>
-                            <p class="text-muted text-center mb-3">Lightweight and efficient, designed to run seamlessly in the background.</p>
-                            <ul class="list-unstyled">
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Battery optimized</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Low data usage</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Background operation</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Minimal resource usage</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- How It Works Section with Images -->
         <section class="py-5" style="background: rgba(220, 20, 60, 0.02);">
             <div class="container">
-                <div class="row align-items-center g-5">
-                    <!-- Left Animated Image Cards -->
-                    <div class="col-lg-6 order-2 order-lg-1">
-                        <div class="position-relative">
-                            <!-- Main Large Card -->
-                            <div class="safety-card-main position-relative mb-4 reveal-up">
-                                <div class="safety-image-container" style="width: 500px; height: 350px; background: white; border-radius: 20px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); overflow: hidden; position: relative;">
-                                    <img src="../assets/images/cyber1.jpg" alt="Child Safety Monitoring" class="safety-main-image" style="width: 100%; height: 100%; object-fit: cover; transition: all 0.6s ease;" />
-                                    <div class="safety-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(220, 20, 60, 0.2), rgba(255, 215, 0, 0.2)); opacity: 0; transition: all 0.4s ease;"></div>
-                                    <div class="safety-content" style="position: absolute; bottom: 20px; left: 20px; color: white; z-index: 2; transform: translateY(20px); opacity: 0; transition: all 0.4s ease;">
-                                        <h4 class="fw-bold mb-2">Smart Protection</h4>
-                                        <p class="mb-0">AI-Powered Child Safety</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Secondary Card -->
-                            <div class="safety-card-secondary position-absolute reveal-left stagger-2" style="top: 50px; right: -30px; z-index: 2;">
-                                <div class="safety-image-container" style="width: 350px; height: 250px; background: white; border-radius: 15px; box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); overflow: hidden; position: relative;">
-                                    <img src="../assets/images/cyber2.jpg" alt="Location Tracking" class="safety-secondary-image" style="width: 100%; height: 100%; object-fit: cover; transition: all 0.6s ease;" />
-                                    <div class="safety-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(34, 197, 94, 0.2), rgba(59, 130, 246, 0.2)); opacity: 0; transition: all 0.4s ease;"></div>
-                                    <div class="safety-badge" style="position: absolute; top: 15px; right: 15px; background: rgba(255, 255, 255, 0.9); padding: 8px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; color: #1f2937;">
-                                        Live Tracking
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Floating Mini Card -->
-                            <div class="safety-card-mini position-absolute reveal-zoom stagger-3" style="bottom: 30px; left: -30px; z-index: 3;">
-                                <div class="safety-image-container" style="width: 120px; height: 120px; background: white; border-radius: 50%; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); overflow: hidden; position: relative;">
-                                    <img src="../assets/images/cyber3.jpg" alt="Emergency SOS" class="safety-mini-image" style="width: 100%; height: 100%; object-fit: cover; transition: all 0.6s ease;" />
-                                    <div class="safety-pulse" style="position: absolute; top: -2px; left: -2px; width: calc(100% + 4px); height: calc(100% + 4px); border: 2px solid #dc143c; border-radius: 50%; animation: pulse 2s infinite;"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Right Content -->
-                    <div class="col-lg-6 order-1 order-lg-2">
+        
                         <div class="reveal-up">
                             <h2 class="fw-bold display-3 mb-4" style="color: #333;">
                                 Smart Child
                                 <span class="d-block fw-bold display-2 text-gradient">Safety Solution</span>
                             </h2>
-                            <p class="fs-5 text-muted mb-4" style="max-width: 520px;">
+                            <p class="fs-5 text-muted mb-4">
                                 Our advanced AI engine continuously monitors your child's location and activities, providing real-time insights and instant alerts to ensure their safety while respecting their privacy and independence.
                             </p>
-                            <p class="fs-6 text-muted mb-5" style="max-width: 520px;">
+                            <p class="fs-6 text-muted mb-5">
                                 From intelligent geofencing to emergency SOS features, Virtual Naani creates a protective digital bubble around your child, giving you peace of mind without being intrusive. The app learns your family's routines and adapts to provide personalized safety recommendations.
                             </p>
                             <div class="d-flex flex-wrap gap-3">
@@ -786,15 +712,288 @@
                                 </div>
                             </div>
                         </div>
+                 
+            </div>
+        </section>
+        <!-- Virtual Naani Services Section -->
+        <section id="services" class="services-section py-5" style="background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);">
+            <div class="container">
+                <div class="text-left mb-5">
+                    <h2 class="section-title reveal-on-scroll display-5 fw-bold mb-3" style="color: #333;">Our Virtual Naani <span class="text-gradient">Services</span></h2>
+                    <p class="lead text-muted">Comprehensive child safety solutions to transform your family's security and drive intelligent protection</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card feature-card p-4 h-100 reveal-on-scroll">
+                            <div class="service-icon feature-icon">
+                                <i class="bi bi-geo-alt text-white fs-2"></i>
+                            </div>
+                            <h3 class="service-title fw-bold mb-3 text-left">Live Location Tracking</h3>
+                            <p class="service-description text-muted">
+                                Real-time GPS tracking with interactive maps, location history, and intelligent geofencing alerts for complete awareness.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card feature-card p-4 h-100 reveal-on-scroll" data-delay="100">
+                            <div class="service-icon feature-icon">
+                                <i class="bi bi-exclamation-triangle text-white fs-2"></i>
+                            </div>
+                            <h3 class="service-title fw-bold mb-3 text-left">Emergency SOS System</h3>
+                            <p class="service-description text-muted">
+                                One-tap emergency alerts with instant parent notification, live location sharing, and optional audio/video recording.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card feature-card p-4 h-100 reveal-on-scroll" data-delay="200">
+                            <div class="service-icon feature-icon">
+                                <i class="bi bi-bell text-white fs-2"></i>
+                            </div>
+                            <h3 class="service-title fw-bold mb-3 text-left">Smart Alert System</h3>
+                            <p class="service-description text-muted">
+                                Intelligent notifications for unsafe zones, route changes, inactivity monitoring, and customizable alert settings.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card feature-card p-4 h-100 reveal-on-scroll">
+                            <div class="service-icon feature-icon">
+                                <i class="bi bi-clipboard-data text-white fs-2"></i>
+                            </div>
+                            <h3 class="service-title fw-bold mb-3 text-left">Activity Reports</h3>
+                            <p class="service-description text-muted">
+                                Comprehensive daily movement reports with travel history, timing analysis, and detailed activity summaries.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card feature-card p-4 h-100 reveal-on-scroll" data-delay="100">
+                            <div class="service-icon feature-icon">
+                                <i class="bi bi-person-check text-white fs-2"></i>
+                            </div>
+                            <h3 class="service-title fw-bold mb-3 text-left">Consent-Based Monitoring</h3>
+                            <p class="service-description text-muted">
+                                Trust-based approach with child consent requirements, privacy controls, and transparent monitoring practices.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card feature-card p-4 h-100 reveal-on-scroll" data-delay="200">
+                            <div class="service-icon feature-icon">
+                                <i class="bi bi-speedometer2 text-white fs-2"></i>
+                            </div>
+                            <h3 class="service-title fw-bold mb-3 text-left">Optimized Performance</h3>
+                            <p class="service-description text-muted">
+                                Battery-optimized, lightweight design with low data usage and seamless background operation for minimal resource impact.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Key Features Section - Simple Layout -->
+        <section class="py-5" style="background: linear-gradient(135deg,#fff7ed,#ffffff,#fffbeb);">
+            <div class="container">
+                <div class="text-left mb-5 reveal-up">
+                    <h2 class="display-5 fw-bold mb-3" style="color: #333;">
+                        Key <span class="text-gradient">Features</span>
+                    </h2>
+                    <p class="lead text-muted">Your child's safety, one tap away</p>
+                </div>
+                
+                <div class="row g-4">
+                    <!-- Left Column -->
+                    <div class="col-lg-6">
+                        <div class="row g-4">
+                            <div class="col-12">
+                                <div class="d-flex align-items-start reveal-up">
+                                    <div class="flex-shrink-0 me-3">
+                                        <div class="bg-gradient rounded-circle p-3" style="background: linear-gradient(135deg, #dc143c, #ffd700);">
+                                            <i class="bi bi-geo-alt text-white fs-4"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h5 class="fw-bold mb-2">Live Location Tracking</h5>
+                                        <p class="text-muted mb-0">Real-time GPS tracking with interactive maps, location history, and intelligent geofencing alerts.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-12">
+                                <div class="d-flex align-items-start reveal-up stagger-2">
+                                    <div class="flex-shrink-0 me-3">
+                                        <div class="bg-gradient rounded-circle p-3" style="background: linear-gradient(135deg, #dc143c, #ffd700);">
+                                            <i class="bi bi-exclamation-triangle text-white fs-4"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h5 class="fw-bold mb-2">Emergency SOS Button</h5>
+                                        <p class="text-muted mb-0">One-tap emergency alert with instant parent notification and optional audio/video recording.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-12">
+                                <div class="d-flex align-items-start reveal-up stagger-3">
+                                    <div class="flex-shrink-0 me-3">
+                                        <div class="bg-gradient rounded-circle p-3" style="background: linear-gradient(135deg, #dc143c, #ffd700);">
+                                            <i class="bi bi-bell text-white fs-4"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h5 class="fw-bold mb-2">Smart Alerts</h5>
+                                        <p class="text-muted mb-0">Intelligent notifications for unsafe zones, route changes, and inactivity monitoring with custom settings.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Column -->
+                    <div class="col-lg-6">
+                        <div class="row g-4">
+                            <div class="col-12">
+                                <div class="d-flex align-items-start reveal-up stagger-4">
+                                    <div class="flex-shrink-0 me-3">
+                                        <div class="bg-gradient rounded-circle p-3" style="background: linear-gradient(135deg, #dc143c, #ffd700);">
+                                            <i class="bi bi-clipboard-data text-white fs-4"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h5 class="fw-bold mb-2">Daily Movement Reports</h5>
+                                        <p class="text-muted mb-0">Comprehensive travel history tracking with timing analysis and detailed activity summaries.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-12">
+                                <div class="d-flex align-items-start reveal-up stagger-5">
+                                    <div class="flex-shrink-0 me-3">
+                                        <div class="bg-gradient rounded-circle p-3" style="background: linear-gradient(135deg, #dc143c, #ffd700);">
+                                            <i class="bi bi-person-check text-white fs-4"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h5 class="fw-bold mb-2">Consent-Based Monitoring</h5>
+                                        <p class="text-muted mb-0">Trust-based approach with child consent requirements and transparent monitoring practices.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-12">
+                                <div class="d-flex align-items-start reveal-up stagger-6">
+                                    <div class="flex-shrink-0 me-3">
+                                        <div class="bg-gradient rounded-circle p-3" style="background: linear-gradient(135deg, #dc143c, #ffd700);">
+                                            <i class="bi bi-speedometer2 text-white fs-4"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h5 class="fw-bold mb-2">Optimized Performance</h5>
+                                        <p class="text-muted mb-0">Battery-optimized design with low data usage and seamless background operation.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Virtual Naani Benefits Section -->
+        <section class="naani-benefits-section" style="padding: 100px 0; background: linear-gradient(135deg, #1A1A1A, #2A2A2A); position: relative; overflow: hidden;">
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <!-- Left side - Content -->
+                    <div class="col-lg-6">
+                        <h2 class="reveal-on-scroll" style="font-size: 2.5rem; font-weight: 700; color: #ffffff; margin-bottom: 20px;">
+                            AI Storytelling & <span class="gradient-text">Cultural Heritage</span>
+                        </h2>
+                        <p class="reveal-on-scroll" data-delay="100" style="color: rgba(255, 255, 255, 0.7); font-size: 1.1rem; line-height: 1.8; margin-bottom: 25px;">
+                            Virtual Naani preserves and shares cultural wisdom through AI-powered storytelling. Experience traditional tales, moral stories, and cultural heritage in multiple Indian languages with interactive features that bring stories to life for modern audiences.
+                        </p>
+                        <div class="row g-3 reveal-on-scroll" data-delay="200">
+                            <div class="col-6">
+                                <div class="d-flex align-items-center gap-3 p-3  rounded-3 shadow-sm" style="border: 1px solid rgba(220, 20, 60, 0.1);">
+                                    <div class="bg-success bg-opacity-10 rounded-circle p-2">
+                                        <i class="bi bi-book-half text-success fs-5"></i>
+                                    </div>
+                                    <div>
+                                        <div class="fw-bold text-dark" style="font-size: 1.5rem;">1000+</div>
+                                        <div class="text-muted small">Stories</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="d-flex align-items-center gap-3 p-3  rounded-3 shadow-sm" style="border: 1px solid rgba(220, 20, 60, 0.1);">
+                                    <div class="bg-warning bg-opacity-10 rounded-circle p-2">
+                                        <i class="bi bi-palette text-warning fs-5"></i>
+                                    </div>
+                                    <div>
+                                        <div class="fw-bold text-dark" style="font-size: 1.5rem;">AI</div>
+                                        <div class="text-muted small">Interactive Tales</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-4 reveal-on-scroll" data-delay="300">
+                            <a href="../contact.html" class="btn btn-hero-primary" style="background: linear-gradient(135deg, #dc143c, #ffd700); color: white; padding: 14px 32px; border-radius: 50px; font-weight: 600; border: none; transition: all 0.4s ease; box-shadow: 0 10px 30px rgba(220, 20, 60, 0.3);">
+                                <i class="bi bi-play-circle me-2"></i>Listen to Stories
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Right side - Image -->
+                    <div class="col-lg-6">
+                        <div class="reveal-on-scroll" data-delay="400" style="position: relative;">
+                            <div class="main-image-card" style="border-radius: 25px; overflow: hidden; box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);">
+                                <img src="../assets/images/cyber3.jpg" alt="Virtual Storytelling" class="img-fluid" style="width: 100%; display: block; transition: all 0.4s ease;">
+                            </div>
+                            <div class="floating-card" style="position: absolute; top: 10%; right: -20px; background: rgba(255, 255, 255, 0.95); border-radius: 20px; padding: 20px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); animation: float-card 4s ease-in-out infinite;">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="bg-danger bg-opacity-10 rounded-circle p-2">
+                                        <i class="bi bi-emoji-smile text-danger fs-5"></i>
+                                    </div>
+                                    <div>
+                                        <div class="fw-bold text-dark">100K+</div>
+                                        <div class="text-muted small">Happy Children</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="floating-card" style="position: absolute; bottom: 15%; left: -30px; background: rgba(255, 255, 255, 0.95); border-radius: 20px; padding: 20px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); animation: float-card 4s ease-in-out infinite; animation-delay: 2s;">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="bg-success bg-opacity-10 rounded-circle p-2">
+                                        <i class="bi bi-globe2 text-success fs-5"></i>
+                                    </div>
+                                    <div>
+                                        <div class="fw-bold text-dark">15+</div>
+                                        <div class="text-muted small">Cultural Regions</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <style>
+                @keyframes float-card {
+                    0%, 100% { transform: translateY(0px); }
+                    50% { transform: translateY(-15px); }
+                }
+                .gradient-text {
+                    background: linear-gradient(135deg, #dc143c, #ffd700);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-clip: text;
+                }
+                .main-image-card:hover img {
+                    transform: scale(1.05);
+                }
+            </style>
+        </section>
         <!-- Parent Dashboard Section -->
         <section class="py-5" style="background: rgba(220, 20, 60, 0.05);">
             <div class="container">
-                <div class="row align-items-center">
+                <div class="row align-items-left">
                     <div class="col-lg-6">
                         <div class="reveal-up">
                             <h2 class="display-5 fw-bold mb-4" style="color: #333;">
@@ -847,8 +1046,8 @@
 
         <!-- Call to Action Section -->
         <section class="py-5" style="background: linear-gradient(135deg, #dc143c, #ffd700); color: white;">
-            <div class="container text-center">
-                <div class="row justify-content-center">
+            <div class="container text-left">
+                <div class="row justify-content-left">
                     <div class="col-lg-8">
                         <div class="reveal-up">
                             <h2 class="display-4 fw-bold mb-4">
@@ -876,101 +1075,9 @@
                 </div>
             </div>
         </section>
-
-   
     </main>
 
-    <!-- Virtual Naani Benefits Section -->
-    <section class="naani-benefits-section" style="padding: 100px 0; background: linear-gradient(135deg, #1A1A1A, #2A2A2A); position: relative; overflow: hidden;">
-        <div class="container">
-            <div class="row align-items-center g-5">
-                <!-- Left side - Content -->
-                <div class="col-lg-6">
-                    <h2 class="reveal-on-scroll" style="font-size: 2.5rem; font-weight: 700; color: #ffffff; margin-bottom: 20px;">
-                        AI Storytelling & <span class="gradient-text">Cultural Heritage</span>
-                    </h2>
-                    <p class="reveal-on-scroll" data-delay="100" style="color: rgba(255, 255, 255, 0.7); font-size: 1.1rem; line-height: 1.8; margin-bottom: 25px;">
-                        Virtual Naani preserves and shares cultural wisdom through AI-powered storytelling. Experience traditional tales, moral stories, and cultural heritage in multiple Indian languages with interactive features that bring stories to life for modern audiences.
-                    </p>
-                    <div class="row g-3 reveal-on-scroll" data-delay="200">
-                        <div class="col-6">
-                            <div class="d-flex align-items-center gap-3 p-3 bg-white rounded-3 shadow-sm" style="border: 1px solid rgba(220, 20, 60, 0.1);">
-                                <div class="bg-success bg-opacity-10 rounded-circle p-2">
-                                    <i class="bi bi-book-half text-success fs-5"></i>
-                                </div>
-                                <div>
-                                    <div class="fw-bold text-dark" style="font-size: 1.5rem;">1000+</div>
-                                    <div class="text-muted small">Stories</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="d-flex align-items-center gap-3 p-3 bg-white rounded-3 shadow-sm" style="border: 1px solid rgba(220, 20, 60, 0.1);">
-                                <div class="bg-warning bg-opacity-10 rounded-circle p-2">
-                                    <i class="bi bi-palette text-warning fs-5"></i>
-                                </div>
-                                <div>
-                                    <div class="fw-bold text-dark" style="font-size: 1.5rem;">AI</div>
-                                    <div class="text-muted small">Interactive Tales</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mt-4 reveal-on-scroll" data-delay="300">
-                        <a href="../contact.html" class="btn btn-hero-primary" style="background: linear-gradient(135deg, #dc143c, #ffd700); color: white; padding: 14px 32px; border-radius: 50px; font-weight: 600; border: none; transition: all 0.4s ease; box-shadow: 0 10px 30px rgba(220, 20, 60, 0.3);">
-                            <i class="bi bi-play-circle me-2"></i>Listen to Stories
-                        </a>
-                    </div>
-                </div>
-                <!-- Right side - Image -->
-                <div class="col-lg-6">
-                    <div class="reveal-on-scroll" data-delay="400" style="position: relative;">
-                        <div class="main-image-card" style="border-radius: 25px; overflow: hidden; box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);">
-                            <img src="../assets/images/cyber3.jpg" alt="Virtual Storytelling" class="img-fluid" style="width: 100%; display: block; transition: all 0.4s ease;">
-                        </div>
-                        <div class="floating-card" style="position: absolute; top: 10%; right: -20px; background: rgba(255, 255, 255, 0.95); border-radius: 20px; padding: 20px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); animation: float-card 4s ease-in-out infinite;">
-                            <div class="d-flex align-items-center gap-3">
-                                <div class="bg-danger bg-opacity-10 rounded-circle p-2">
-                                    <i class="bi bi-emoji-smile text-danger fs-5"></i>
-                                </div>
-                                <div>
-                                    <div class="fw-bold text-dark">100K+</div>
-                                    <div class="text-muted small">Happy Children</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="floating-card" style="position: absolute; bottom: 15%; left: -30px; background: rgba(255, 255, 255, 0.95); border-radius: 20px; padding: 20px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); animation: float-card 4s ease-in-out infinite; animation-delay: 2s;">
-                            <div class="d-flex align-items-center gap-3">
-                                <div class="bg-success bg-opacity-10 rounded-circle p-2">
-                                    <i class="bi bi-globe2 text-success fs-5"></i>
-                                </div>
-                                <div>
-                                    <div class="fw-bold text-dark">15+</div>
-                                    <div class="text-muted small">Cultural Regions</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <style>
-            @keyframes float-card {
-                0%, 100% { transform: translateY(0px); }
-                50% { transform: translateY(-15px); }
-            }
-            .gradient-text {
-                background: linear-gradient(135deg, #dc143c, #ffd700);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-clip: text;
-            }
-            .main-image-card:hover img {
-                transform: scale(1.05);
-            }
-        </style>
-    </section>
-
+   
     <!-- Footer -->
     <div id="footer-component"></div>
        <!-- Theme Toggle -->
@@ -986,7 +1093,7 @@
     <!-- Animation Script -->
     <script>
         function initAnimations() {
-            const animationElements = document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right, .reveal-zoom');
+            const animationElements = document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right, .reveal-zoom, .reveal-on-scroll');
             
             const observerOptions = {
                 threshold: 0.1,

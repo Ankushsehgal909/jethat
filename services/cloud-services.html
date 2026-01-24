@@ -887,7 +887,7 @@
             padding: 30px 25px;
             height: 100%;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid rgba(220, 20, 60, 0.2);
+            
             position: relative;
             overflow: hidden;
             backdrop-filter: blur(10px);
@@ -947,6 +947,7 @@
             font-weight: 700;
             color: white;
             margin-bottom: 20px;
+            margin-top: 20px;
             text-align: center;
         }
 
@@ -1052,7 +1053,7 @@
         .reveal-on-scroll {
             opacity: 0;
             transform: translateY(50px);
-            transition: all 0.8s ease;
+            transition: all 0.2s ease;
         }
 
         .reveal-on-scroll.revealed {
@@ -1148,9 +1149,9 @@
         <!-- Services Section -->
         <section id="services" class="services-section">
             <div class="container">
-                <div class="text-center mb-5">
+                <div class="text-left mb-5">
                     <h2 class="section-title reveal-on-scroll">Our Cloud Services</h2>
-                    <p class="section-subtitle reveal-on-scroll">
+                    <p class="reveal-on-scroll">
                         Comprehensive cloud solutions designed to accelerate your digital transformation
                     </p>
                 </div>
@@ -1231,6 +1232,45 @@
             </div>
         </section>
 
+          <section class="py-5" style="background: rgba(220, 20, 60, 0.02);">
+            <div class="container">
+        
+                        <div class="">
+                            <h2 class="fw-bold display-3 mb-4" style="color: #333;">
+                                Smart Child
+                                <span class="d-block fw-bold display-2 text-gradient">Safety Solution</span>
+                            </h2>
+                            <p class="fs-5 text-muted mb-4">
+                                Our advanced AI engine continuously monitors your child's location and activities, providing real-time insights and instant alerts to ensure their safety while respecting their privacy and independence.
+                            </p>
+                            <p class="fs-6 text-muted mb-5">
+                                From intelligent geofencing to emergency SOS features, Virtual Naani creates a protective digital bubble around your child, giving you peace of mind without being intrusive. The app learns your family's routines and adapts to provide personalized safety recommendations.
+                            </p>
+                            <div class="d-flex flex-wrap gap-3">
+                                <div class="d-flex align-items-center">
+                                    <div class="feature-icon me-2" style="width: 40px; height: 40px;">
+                                        <i class="bi bi-shield-check text-white fs-6"></i>
+                                    </div>
+                                    <span class="fw-semibold">24/7 Protection</span>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <div class="feature-icon me-2" style="width: 40px; height: 40px;">
+                                        <i class="bi bi-geo-alt text-white fs-6"></i>
+                                    </div>
+                                    <span class="fw-semibold">Real-time Tracking</span>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <div class="feature-icon me-2" style="width: 40px; height: 40px;">
+                                        <i class="bi bi-heart text-white fs-6"></i>
+                                    </div>
+                                    <span class="fw-semibold">Trust-Based</span>
+                                </div>
+                            </div>
+                        </div>
+                 
+            </div>
+        </section>
+
         <!-- Why Choose Us Section -->
         <section class="why-us-section">
             <div class="container">
@@ -1298,10 +1338,269 @@
         <!-- Tech Section -->
         <div id="tech-section-component"></div>
 
+          <!-- Tech Stack Section -->
+        <section class="py-5">
+            <div class="container">
+                <div class="text-left mb-5">
+                    <h2 class="section-title reveal-on-scroll">Our Web Development <span class="gradient-text">Technology Stack</span></h2>
+                    <p class=" reveal-on-scroll">
+                        Modern technologies and frameworks powering exceptional web experiences
+                    </p>
+                </div>
+                <div class="row g-4">
+                    <!-- Frontend Technologies -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="tech-category reveal-on-scroll">
+                          
+                            <h4 class="tech-category-title">Frontend</h4>
+                            <div class="tech-items">
+                                <div class="tech-item">
+                                    <div class="tech-logo">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
+                                    </div>
+                                    <span>React</span>
+                                </div>
+                                <div class="tech-item">
+                                    <div class="tech-logo">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue.js">
+                                    </div>
+                                    <span>Vue.js</span>
+                                </div>
+                                <div class="tech-item">
+                                    <div class="tech-logo">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="Angular">
+                                    </div>
+                                    <span>Angular</span>
+                                </div>
+                                <div class="tech-item">
+                                    <div class="tech-logo">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js">
+                                    </div>
+                                    <span>Next.js</span>
+                                </div>
+                                <div class="tech-item">
+                                    <div class="tech-logo">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript">
+                                    </div>
+                                    <span>TypeScript</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Backend Technologies -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="tech-category reveal-on-scroll" data-delay="100">
+                            
+                            <h4 class="tech-category-title">Backend</h4>
+                            <div class="tech-items">
+                                <div class="tech-item">
+                                    <div class="tech-logo">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
+                                    </div>
+                                    <span>Node.js</span>
+                                </div>
+                                <div class="tech-item">
+                                    <div class="tech-logo">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+                                    </div>
+                                    <span>Python</span>
+                                </div>
+                                <div class="tech-item">
+                                    <div class="tech-logo">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP">
+                                    </div>
+                                    <span>PHP</span>
+                                </div>
+                                <div class="tech-item">
+                                    <div class="tech-logo">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">
+                                    </div>
+                                    <span>Java</span>
+                                </div>
+                                <div class="tech-item">
+                                    <div class="tech-logo">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#">
+                                    </div>
+                                    <span>C#</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Databases -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="tech-category reveal-on-scroll" data-delay="200">
+                            
+                            <h4 class="tech-category-title">Databases</h4>
+                            <div class="tech-items">
+                                <div class="tech-item">
+                                    <div class="tech-logo">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB">
+                                    </div>
+                                    <span>MongoDB</span>
+                                </div>
+                                <div class="tech-item">
+                                    <div class="tech-logo">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL">
+                                    </div>
+                                    <span>PostgreSQL</span>
+                                </div>
+                                <div class="tech-item">
+                                    <div class="tech-logo">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
+                                    </div>
+                                    <span>MySQL</span>
+                                </div>
+                                <div class="tech-item">
+                                    <div class="tech-logo">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" alt="Redis">
+                                    </div>
+                                    <span>Redis</span>
+                                </div>
+                                <div class="tech-item">
+                                    <div class="tech-logo">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase">
+                                    </div>
+                                    <span>Firebase</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DevOps & Cloud -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="tech-category reveal-on-scroll" data-delay="300">
+                           
+                            <h4 class="tech-category-title">DevOps & Cloud</h4>
+                            <div class="tech-items">
+                                <div class="tech-item">
+                                    <div class="tech-logo">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
+                                    </div>
+                                    <span>Docker</span>
+                                </div>
+                                <div class="tech-item">
+                                    <div class="tech-logo">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes">
+                                    </div>
+                                    <span>Kubernetes</span>
+                                </div>
+                                <div class="tech-item">
+                                    <div class="tech-logo">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" alt="AWS">
+                                    </div>
+                                    <span>AWS</span>
+                                </div>
+                                <div class="tech-item">
+                                    <div class="tech-logo">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+                                    </div>
+                                    <span>Git</span>
+                                </div>
+                                <div class="tech-item">
+                                    <div class="tech-logo">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" alt="Nginx">
+                                    </div>
+                                    <span>Nginx</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Additional Tech Categories Row -->
+                <div class="row g-4 mt-4">
+                    <!-- Mobile Development -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="tech-category reveal-on-scroll" data-delay="400">
+                            
+                            <h4 class="tech-category-title">Mobile Development</h4>
+                            <div class="tech-items">
+                                <div class="tech-item">
+                                    <div class="tech-logo">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter">
+                                    </div>
+                                    <span>Flutter</span>
+                                </div>
+                                <div class="tech-item">
+                                    <div class="tech-logo">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React Native">
+                                    </div>
+                                    <span>React Native</span>
+                                </div>
+                                <div class="tech-item">
+                                    <div class="tech-logo">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ionic/ionic-original.svg" alt="Ionic">
+                                    </div>
+                                    <span>Ionic</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testing & Quality -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="tech-category reveal-on-scroll" data-delay="500">
+                            
+                            <h4 class="tech-category-title">Testing & Quality</h4>
+                            <div class="tech-items">
+                                <div class="tech-item">
+                                    <div class="tech-logo">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg" alt="Jest">
+                                    </div>
+                                    <span>Jest</span>
+                                </div>
+                                <div class="tech-item">
+                                    <div class="tech-logo">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg" alt="Selenium">
+                                    </div>
+                                    <span>Selenium</span>
+                                </div>
+                                <div class="tech-item">
+                                    <div class="tech-logo">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cypress/cypress-original.svg" alt="Cypress">
+                                    </div>
+                                    <span>Cypress</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Design & UI/UX -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="tech-category reveal-on-scroll" data-delay="600">
+                           
+                            <h4 class="tech-category-title">Design & UI/UX</h4>
+                            <div class="tech-items">
+                                <div class="tech-item">
+                                    <div class="tech-logo">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma">
+                                    </div>
+                                    <span>Figma</span>
+                                </div>
+                                <div class="tech-item">
+                                    <div class="tech-logo">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap">
+                                    </div>
+                                    <span>Bootstrap</span>
+                                </div>
+                                <div class="tech-item">
+                                    <div class="tech-logo">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" alt="Tailwind CSS">
+                                    </div>
+                                    <span>Tailwind CSS</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <!-- Cloud Benefits Section -->
         <section class="cloud-benefits-section" style="padding: 100px 0;  position: relative; overflow: hidden;">
             <div class="container">
-                <div class="row align-items-center g-5">
+                <div class="row align-items-left g-5">
                     <!-- left side - Content -->
                     <div class="col-lg-6">
                         <h2 class="reveal-on-scroll" style="font-size: 2.5rem; font-weight: 700; color: #ffffff; margin-bottom: 20px;">
@@ -1312,7 +1611,7 @@
                         </p>
                         <div class="row g-3 reveal-on-scroll" data-delay="200">
                             <div class="col-6">
-                                <div class="d-flex align-items-center gap-3 p-3 bg-white rounded-3 shadow-sm" style="border: 1px solid rgba(220, 20, 60, 0.1);">
+                                <div class="d-flex align-items-center gap-3 p-3 rounded-3 shadow-sm" style="border: 1px solid rgba(220, 20, 60, 0.1);">
                                     <div class="bg-success bg-opacity-10 rounded-circle p-2">
                                         <i class="bi bi-shield-check text-success fs-5"></i>
                                     </div>
@@ -1323,7 +1622,7 @@
                                 </div>
                             </div>
                             <div class="col-6">
-                                <div class="d-flex align-items-center gap-3 p-3 bg-white rounded-3 shadow-sm" style="border: 1px solid rgba(220, 20, 60, 0.1);">
+                                <div class="d-flex align-items-center gap-3 p-3  rounded-3 shadow-sm" style="border: 1px solid rgba(220, 20, 60, 0.1);">
                                     <div class="bg-warning bg-opacity-10 rounded-circle p-2">
                                         <i class="bi bi-patch-check text-warning fs-5"></i>
                                     </div>
@@ -1391,11 +1690,11 @@
         </section>
      
         <!-- Process Section -->
-        <section class="process-section bg-light">
+        <section class="process-section py-5">
             <div class="container">
-                <div class="text-center">
+                <div class="text-left">
                     <h2 class="section-title reveal-on-scroll">Our Cloud Migration Process</h2>
-                    <p class="section-subtitle reveal-on-scroll">
+                    <p class="reveal-on-scroll">
                         A proven methodology for successful cloud transformation
                     </p>
                 </div>
@@ -1440,131 +1739,69 @@
             </div>
         </section>
 
-     
+      <!-- CTA Section -->
+        <section class="cta-section py-5" style="background: linear-gradient(135deg, #fff7ed 0%, #ffffff 50%, #fffbeb 100%); position: relative; overflow: hidden;">
+            <div class="container">
+                        <div class="cta-content text-left">
+                            <!-- Main Heading -->
+                            <h2 class="fw-bold display-4 mb-4 text-dark fade-in-up" data-delay="0">
+                                Ready to Transform 
+                                <span class="d-block fw-bold gradient-text">
+                                   Your Security?
+                                </span>
+                            </h2>
+                            
+                            <p class="lead text-muted mb-5 fade-in-up">
+                                Join hundreds of businesses that trust JetHat Cybersecurity to protect their digital assets with cutting-edge AI-powered solutions.
+                            </p>
+
+                          
+
+                            <!-- Action Buttons -->
+                            <div class="d-flex gap-3 flex-wrap justify-content-left fade-in-up" data-delay="500">
+                                <a href="../contact.html" class="btn btn-hero-primary animated-btn glow-btn">
+                                    <span class="btn-text">Schedule a Consultation</span>
+                                    <span class="btn-arrow ms-2"><i class="bi bi-arrow-right"></i></span>
+                                </a>
+
+                                <a href="#services" class="btn btn-hero-secondary animated-btn">
+                                    <span class="btn-text">Explore Services</span>
+                                    <span class="btn-icon ms-2"><i class="bi bi-search"></i></span>
+                                </a>
+                            </div>
+                            
+                            <!-- Trust Indicators -->
+                            <div class="row mt-5 justify-content-left fade-in-up" data-delay="600">
+                                <div class="col-lg-8">
+                                    <div class="d-flex justify-content-left align-items-center gap-4 flex-wrap">
+                                        <div class="text-center">
+                                            <div class="fw-bold text-dark" style="font-size: 1.5rem;">500+</div>
+                                            <div class="text-muted small">Clients Protected</div>
+                                        </div>
+                                        <div class="text-center">
+                                            <div class="fw-bold text-dark" style="font-size: 1.5rem;">99.9%</div>
+                                            <div class="text-muted small">Uptime Guarantee</div>
+                                        </div>
+                                        <div class="text-center">
+                                            <div class="fw-bold text-dark" style="font-size: 1.5rem;">24/7</div>
+                                            <div class="text-muted small">Expert Support</div>
+                                        </div>
+                                        <div class="text-center">
+                                            <div class="fw-bold text-dark" style="font-size: 1.5rem;">< 5min</div>
+                                            <div class="text-muted small">Response Time</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+             
+            </div>
+            
+           
+        </section>
     </main>
 
-    <!-- CTA Section -->
-    <section
-      id="cta-component"
-      class="cta-section overflow-hidden cta-theme section-bg-theme"
-    >
-      <div class="py-5 position-relative">
-        <!-- ================= MAIN CTA ================= -->
-        <section class=" text-dark">
-          <div class="container">
-            <div class="row align-items-center g-5">
-              <!-- Left Side - Content -->
-              <div class="col-lg-12 slide-in-left" data-delay="0">
-                <div class="cta-content">
-                  <!-- Main Heading -->
-                  <h2 class="fw-bold display-3 mb-4 text-dark theme-text">
-                    Ready to Transform 
-                    <span class="d-block fw-bold text-gradient " >
-                       Your Cloud Infrastructure?
-                    </span>
-                  </h2>
-
-                  <!-- Features List -->
-                  <div class="row mb-4">
-                    <!-- Feature 1 -->
-                    <div class="col-lg-4 col-md-6 mb-3">
-                      <div
-                        class="d-flex gap-3 feature-item slide-in-right"
-                        data-delay="600"
-                      >
-                        <div
-                          class="rounded-circle d-flex align-items-center justify-content-center check-icon bg-accent-success"
-                          style="
-                            width: 24px;
-                            height: 24px;
-                            color: white;
-                          "
-                        >
-                          ✓
-                        </div>
-                        <div>
-                          <span class="fw-semibold">Free Cloud Assessment</span>
-                          <p class="text-muted small mb-0">
-                            Comprehensive analysis of your current cloud infrastructure
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- Feature 2 -->
-                    <div class="col-lg-4 col-md-6 mb-3">
-                      <div
-                        class="d-flex gap-3 feature-item slide-in-right"
-                        data-delay="700"
-                      >
-                        <div
-                          class="rounded-circle d-flex align-items-center justify-content-center check-icon bg-accent-success"
-                          style="
-                            width: 24px;
-                            height: 24px;
-                            color: white;
-                          "
-                        >
-                          ✓
-                        </div>
-                        <div>
-                          <span class="fw-semibold">24/7 Cloud Support</span>
-                          <p class="text-muted small mb-0">
-                            Round-the-clock monitoring and cloud optimization
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- Feature 3 -->
-                    <div class="col-lg-4 col-md-6 mb-3">
-                      <div
-                        class="d-flex gap-3 feature-item slide-in-right"
-                        data-delay="800"
-                      >
-                        <div
-                          class="rounded-circle d-flex align-items-center justify-content-center check-icon bg-accent-success"
-                          style="
-                            width: 24px;
-                            height: 24px;
-                            color: white;
-                          "
-                        >
-                          ✓
-                        </div>
-                        <div>
-                          <span class="fw-semibold">Scalable Solutions</span>
-                          <p class="text-muted small mb-0">
-                            Cloud infrastructure that grows with your business
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Action Buttons -->
-                  <div class="d-flex gap-3 flex-wrap fade-in-up" data-delay="900">
-                    <button
-                      class="btn btn-primary text-white px-5 py-3 shadow-lg animated-btn glow-btn primary-btn"
-                    >
-                      <span class="btn-text">Schedule Cloud Consultation</span>
-                      <span class="btn-arrow">→</span>
-                    </button>
-
-                    <button
-                      class="btn btn-outline-warning px-5 py-3 shadow-sm animated-btn secondary-btn"
-                    >
-                      <span class="btn-text">Explore Cloud Services</span>
-                      <span class="btn-icon">☁️</span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-    </section>
 
     <!-- Footer -->
     <div id="footer-component"></div>

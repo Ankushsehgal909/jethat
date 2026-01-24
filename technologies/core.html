@@ -898,6 +898,124 @@
             }
         }
 
+        /* Tech Service Cards Styles */
+        .tech-services-section {
+            position: relative;
+        }
+
+        .tech-service-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 15px;
+            padding: 25px 20px;
+            height: 100%;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .tech-service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #dc143c, #ffd700);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .tech-service-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(220, 20, 60, 0.05), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .tech-service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .tech-service-card:hover::after {
+            left: 100%;
+        }
+
+        .tech-service-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px var(--card-shadow);
+            border-color: rgba(220, 20, 60, 0.3);
+        }
+
+        .tech-service-card .service-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            background: linear-gradient(135deg, rgba(220, 20, 60, 0.1), rgba(255, 215, 0, 0.1));
+            transition: all 0.4s ease;
+        }
+
+        .tech-service-card:hover .service-icon {
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            transform: scale(1.1) rotate(360deg);
+        }
+
+        .tech-service-card .service-icon img {
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+            transition: all 0.4s ease;
+        }
+
+        .tech-service-card:hover .service-icon img {
+            filter: brightness(0) invert(1);
+            transform: scale(1.1);
+        }
+
+        .tech-service-card .service-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .tech-service-card:hover .service-title {
+            color: #dc143c;
+        }
+
+        .tech-service-card .service-description {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* Gradient text for section titles */
+        .gradient-text {
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Animation delays for staggered reveals */
+        .reveal-on-scroll[data-delay="100"] { animation-delay: 100ms; }
+        .reveal-on-scroll[data-delay="200"] { animation-delay: 200ms; }
+        .reveal-on-scroll[data-delay="300"] { animation-delay: 300ms; }
+        .reveal-on-scroll[data-delay="400"] { animation-delay: 400ms; }
+        .reveal-on-scroll[data-delay="500"] { animation-delay: 500ms; }
+
         @media (max-width: 768px) {
             .section-title {
                 font-size: 2rem;
@@ -1754,16 +1872,7 @@
                             <p class="hero-description gsap-fade-up" data-delay="200">
                                 Explore the core technologies and frameworks that power our innovative solutions, from programming languages to databases.
                             </p>
-                            <!-- <div class="hero-buttons gsap-fade-up" data-delay="300">
-                                <a href="../contact.html" class="btn btn-hero-primary">
-                                    Explore Core Stack
-                                    <i class="bi bi-arrow-right ms-2"></i>
-                                </a>
-                                <a href="index.html" class="btn btn-hero-secondary">
-                                    All Technologies
-                                    <i class="bi bi-arrow-right ms-2"></i>
-                                </a>
-                            </div> -->
+                           
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -2211,51 +2320,372 @@
         <!-- Core Technologies Section -->
         <section class="core-technologies-section" style="padding-top: 4rem;">
             <div class="container">
-                <div class="text-left mb-5">
-                    <h2 class="display-4 fw-bold mb-3">
-                        Our <span class="text-gradient">Technology Ecosystem</span>
-                    </h2>
-                    <p class="lead reveal-on-scroll" style=" margin: 0 auto; font-size: 1.2rem; line-height: 1.8;">
-                        Discover our comprehensive technology stack that powers next-generation solutions. 
-                        From cutting-edge programming languages to robust cloud infrastructure, we leverage 
-                        the most advanced tools and frameworks to deliver exceptional digital experiences 
-                        that scale with your business needs.
-                    </p>
-                </div>
+                
+                <!-- Technology Services Section -->
+                <section class="tech-services-section py-5 mb-5">
+                    <div class="text-left mb-5">
+                        <h3 class="section-title">Our <span class="gradient-text">Technology Services</span></h3>
+                        <p class="lead">Comprehensive technology solutions across all development domains</p>
+                    </div>
+                    
+                    <!-- Frontend Technologies -->
+                    <div class="row g-4 mb-5">
+                        <div class="col-12">
+                            <h4 class="text-left mb-4" style="color: var(--text-primary); font-weight: 600;">
+                                <i class="bi bi-palette text-danger me-2"></i>Frontend Development
+                            </h4>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-sm-6">
+                            <div class="service-card tech-service-card reveal-on-scroll">
+                                <div class="service-icon">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
+                                </div>
+                                <h5 class="service-title">React</h5>
+                                <p class="service-description">Modern component-based UI development</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-sm-6">
+                            <div class="service-card tech-service-card reveal-on-scroll" data-delay="100">
+                                <div class="service-icon">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue.js">
+                                </div>
+                                <h5 class="service-title">Vue.js</h5>
+                                <p class="service-description">Progressive framework for building UIs</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-sm-6">
+                            <div class="service-card tech-service-card reveal-on-scroll" data-delay="200">
+                                <div class="service-icon">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="Angular">
+                                </div>
+                                <h5 class="service-title">Angular</h5>
+                                <p class="service-description">Enterprise-grade web applications</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-sm-6">
+                            <div class="service-card tech-service-card reveal-on-scroll" data-delay="300">
+                                <div class="service-icon">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js">
+                                </div>
+                                <h5 class="service-title">Next.js</h5>
+                                <p class="service-description">Full-stack React framework</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-sm-6">
+                            <div class="service-card tech-service-card reveal-on-scroll" data-delay="400">
+                                <div class="service-icon">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript">
+                                </div>
+                                <h5 class="service-title">TypeScript</h5>
+                                <p class="service-description">Type-safe JavaScript development</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-sm-6">
+                            <div class="service-card tech-service-card reveal-on-scroll" data-delay="500">
+                                <div class="service-icon">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" alt="Tailwind CSS">
+                                </div>
+                                <h5 class="service-title">Tailwind CSS</h5>
+                                <p class="service-description">Utility-first CSS framework</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Backend Technologies -->
+                    <div class="row g-4 mb-5">
+                        <div class="col-12">
+                            <h4 class="text-left mb-4" style="color: var(--text-primary); font-weight: 600;">
+                                <i class="bi bi-server text-warning me-2"></i>Backend Development
+                            </h4>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-sm-6">
+                            <div class="service-card tech-service-card reveal-on-scroll">
+                                <div class="service-icon">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
+                                </div>
+                                <h5 class="service-title">Node.js</h5>
+                                <p class="service-description">JavaScript runtime for server-side</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-sm-6">
+                            <div class="service-card tech-service-card reveal-on-scroll" data-delay="100">
+                                <div class="service-icon">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+                                </div>
+                                <h5 class="service-title">Python</h5>
+                                <p class="service-description">Versatile programming language</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-sm-6">
+                            <div class="service-card tech-service-card reveal-on-scroll" data-delay="200">
+                                <div class="service-icon">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP">
+                                </div>
+                                <h5 class="service-title">PHP</h5>
+                                <p class="service-description">Server-side scripting language</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-sm-6">
+                            <div class="service-card tech-service-card reveal-on-scroll" data-delay="300">
+                                <div class="service-icon">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">
+                                </div>
+                                <h5 class="service-title">Java</h5>
+                                <p class="service-description">Enterprise application development</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-sm-6">
+                            <div class="service-card tech-service-card reveal-on-scroll" data-delay="400">
+                                <div class="service-icon">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#">
+                                </div>
+                                <h5 class="service-title">C#</h5>
+                                <p class="service-description">Microsoft .NET development</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-sm-6">
+                            <div class="service-card tech-service-card reveal-on-scroll" data-delay="500">
+                                <div class="service-icon">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg" alt="Go">
+                                </div>
+                                <h5 class="service-title">Go</h5>
+                                <p class="service-description">Fast and efficient backend services</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Database Technologies -->
+                    <div class="row g-4 mb-5">
+                        <div class="col-12">
+                            <h4 class="text-left mb-4" style="color: var(--text-primary); font-weight: 600;">
+                                <i class="bi bi-database text-success me-2"></i>Database & Storage
+                            </h4>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-sm-6">
+                            <div class="service-card tech-service-card reveal-on-scroll">
+                                <div class="service-icon">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB">
+                                </div>
+                                <h5 class="service-title">MongoDB</h5>
+                                <p class="service-description">NoSQL document database</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-sm-6">
+                            <div class="service-card tech-service-card reveal-on-scroll" data-delay="100">
+                                <div class="service-icon">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL">
+                                </div>
+                                <h5 class="service-title">PostgreSQL</h5>
+                                <p class="service-description">Advanced relational database</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-sm-6">
+                            <div class="service-card tech-service-card reveal-on-scroll" data-delay="200">
+                                <div class="service-icon">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
+                                </div>
+                                <h5 class="service-title">MySQL</h5>
+                                <p class="service-description">Popular relational database</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-sm-6">
+                            <div class="service-card tech-service-card reveal-on-scroll" data-delay="300">
+                                <div class="service-icon">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" alt="Redis">
+                                </div>
+                                <h5 class="service-title">Redis</h5>
+                                <p class="service-description">In-memory data structure store</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-sm-6">
+                            <div class="service-card tech-service-card reveal-on-scroll" data-delay="400">
+                                <div class="service-icon">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase">
+                                </div>
+                                <h5 class="service-title">Firebase</h5>
+                                <p class="service-description">Google's app development platform</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-sm-6">
+                            <div class="service-card tech-service-card reveal-on-scroll" data-delay="500">
+                                <div class="service-icon">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/elasticsearch/elasticsearch-original.svg" alt="Elasticsearch">
+                                </div>
+                                <h5 class="service-title">Elasticsearch</h5>
+                                <p class="service-description">Search and analytics engine</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DevOps & Cloud -->
+                    <div class="row g-4 mb-5">
+                        <div class="col-12">
+                            <h4 class="text-left mb-4" style="color: var(--text-primary); font-weight: 600;">
+                                <i class="bi bi-cloud text-info me-2"></i>DevOps & Cloud
+                            </h4>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-sm-6">
+                            <div class="service-card tech-service-card reveal-on-scroll">
+                                <div class="service-icon">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
+                                </div>
+                                <h5 class="service-title">Docker</h5>
+                                <p class="service-description">Containerization platform</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-sm-6">
+                            <div class="service-card tech-service-card reveal-on-scroll" data-delay="100">
+                                <div class="service-icon">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes">
+                                </div>
+                                <h5 class="service-title">Kubernetes</h5>
+                                <p class="service-description">Container orchestration</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-sm-6">
+                            <div class="service-card tech-service-card reveal-on-scroll" data-delay="200">
+                                <div class="service-icon">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" alt="AWS">
+                                </div>
+                                <h5 class="service-title">AWS</h5>
+                                <p class="service-description">Amazon Web Services cloud</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-sm-6">
+                            <div class="service-card tech-service-card reveal-on-scroll" data-delay="300">
+                                <div class="service-icon">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+                                </div>
+                                <h5 class="service-title">Git</h5>
+                                <p class="service-description">Version control system</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-sm-6">
+                            <div class="service-card tech-service-card reveal-on-scroll" data-delay="400">
+                                <div class="service-icon">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" alt="Nginx">
+                                </div>
+                                <h5 class="service-title">Nginx</h5>
+                                <p class="service-description">Web server and reverse proxy</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-sm-6">
+                            <div class="service-card tech-service-card reveal-on-scroll" data-delay="500">
+                                <div class="service-icon">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg" alt="Jenkins">
+                                </div>
+                                <h5 class="service-title">Jenkins</h5>
+                                <p class="service-description">CI/CD automation server</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mobile Development -->
+                    <div class="row g-4 mb-5">
+                        <div class="col-12">
+                            <h4 class="text-left mb-4" style="color: var(--text-primary); font-weight: 600;">
+                                <i class="bi bi-phone text-primary me-2"></i>Mobile Development
+                            </h4>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="service-card tech-service-card reveal-on-scroll">
+                                <div class="service-icon">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter">
+                                </div>
+                                <h5 class="service-title">Flutter</h5>
+                                <p class="service-description">Cross-platform mobile development</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="service-card tech-service-card reveal-on-scroll" data-delay="100">
+                                <div class="service-icon">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React Native">
+                                </div>
+                                <h5 class="service-title">React Native</h5>
+                                <p class="service-description">Native mobile apps with React</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="service-card tech-service-card reveal-on-scroll" data-delay="200">
+                                <div class="service-icon">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ionic/ionic-original.svg" alt="Ionic">
+                                </div>
+                                <h5 class="service-title">Ionic</h5>
+                                <p class="service-description">Hybrid mobile app framework</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="service-card tech-service-card reveal-on-scroll" data-delay="300">
+                                <div class="service-icon">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg" alt="Swift">
+                                </div>
+                                <h5 class="service-title">Swift</h5>
+                                <p class="service-description">Native iOS development</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AI & Machine Learning -->
+                    <div class="row g-4 mb-5">
+                        <div class="col-12">
+                            <h4 class="text-left mb-4" style="color: var(--text-primary); font-weight: 600;">
+                                <i class="bi bi-robot text-danger me-2"></i>AI & Machine Learning
+                            </h4>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="service-card tech-service-card reveal-on-scroll">
+                                <div class="service-icon">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow">
+                                </div>
+                                <h5 class="service-title">TensorFlow</h5>
+                                <p class="service-description">Machine learning framework</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="service-card tech-service-card reveal-on-scroll" data-delay="100">
+                                <div class="service-icon">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch">
+                                </div>
+                                <h5 class="service-title">PyTorch</h5>
+                                <p class="service-description">Deep learning framework</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="service-card tech-service-card reveal-on-scroll" data-delay="200">
+                                <div class="service-icon">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas">
+                                </div>
+                                <h5 class="service-title">Pandas</h5>
+                                <p class="service-description">Data analysis and manipulation</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="service-card tech-service-card reveal-on-scroll" data-delay="300">
+                                <div class="service-icon">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" alt="Jupyter">
+                                </div>
+                                <h5 class="service-title">Jupyter</h5>
+                                <p class="service-description">Interactive computing environment</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
                 <!-- Technology Timeline -->
                 <div class="tech-timeline">
                     <!-- Programming Languages -->
-                    <div class="tech-section ">
+                    <div class="tech-section">
                         <div class="row align-items-center g-5">
                             <div class="col-lg-6">
                                 <div class="tech-content">
-                                    <div 
-                                    
-                                    style="  position: absolute;
-           top:5rem;
-            left: 0rem;
-            background: linear-gradient(135deg, var(--core-primary), var(--core-secondary));
-            color: white;
-            padding: 0.5rem 1rem;
-            font-size: 0.8rem;
-            font-weight: 600;
-            border-radius: 0;
-            z-index: 10;">
+                                    <div class="tech-badge">
                                         <i class="bi bi-code-slash"></i>
                                         <span>Foundation Layer</span>
                                     </div>
                                     <h3 class="tech-section-title">Programming Languages</h3>
-                                    <p class="tech-section-description" style="font-size: 1.15rem; line-height: 1.8; margin-bottom: 25px;">
-                                        At the heart of our development ecosystem lie carefully selected programming languages, 
-                                        each chosen for their unique strengths and capabilities. Our polyglot approach ensures 
-                                        we can tackle any challenge, from high-performance system programming to elegant 
-                                        web applications and cutting-edge AI solutions.
-                                    </p>
-                                    <p class="tech-section-description" style="font-size: 1.05rem; line-height: 1.7; color: var(--text-muted); margin-bottom: 30px;">
-                                        Whether it's Python's versatility for AI/ML development, JavaScript's ubiquity in 
-                                        modern web development, or Rust's memory safety for system-level programming, 
-                                        our language selection reflects our commitment to using the right tool for every job.
+                                    <p class="tech-section-description">
+                                        Our polyglot approach leverages the best programming languages for every challenge - 
+                                        from Python's AI capabilities to JavaScript's web dominance and Go's performance excellence.
                                     </p>
                                     <div class="tech-stats">
                                         <div class="stat-item">
@@ -2272,11 +2702,11 @@
                             <div class="col-lg-6">
                                 <div class="tech-visual-container">
                                     <div class="tech-hero-image">
-                                        <img src="../assets/images/cyber1.jpg" alt="Programming Languages" class="img-fluid  shadow-lg">
+                                        <img src="../assets/images/cyber1.jpg" alt="Programming Languages" class="img-fluid shadow-lg">
                                         <div class="tech-overlay">
                                             <div class="overlay-content">
                                                 <h5>Multi-Language Expertise</h5>
-                                                <p>Leveraging the best of each language</p>
+                                                <p>Right tool for every job</p>
                                             </div>
                                         </div>
                                     </div>
@@ -2287,7 +2717,7 @@
                                             </div>
                                             <div class="tech-info">
                                                 <h5>Python</h5>
-                                                <span>AI/ML & Backend Development</span>
+                                                <span>AI/ML & Backend</span>
                                             </div>
                                         </div>
                                         <div class="tech-item">
@@ -2314,7 +2744,7 @@
                                             </div>
                                             <div class="tech-info">
                                                 <h5>Go</h5>
-                                                <span>Microservices & APIs</span>
+                                                <span>High-Performance APIs</span>
                                             </div>
                                         </div>
                                     </div>
@@ -2324,35 +2754,18 @@
                     </div>
 
                     <!-- Frameworks & Libraries -->
-                    <div class="tech-section ">
+                    <div class="tech-section">
                         <div class="row align-items-center g-5">
                             <div class="col-lg-6 order-lg-2">
                                 <div class="tech-content">
-                                    <div 
-                                      style="  position: absolute;
-           top:5rem;
-            right: 0rem;
-            background: linear-gradient(135deg, var(--core-primary), var(--core-secondary));
-            color: white;
-            padding: 0.5rem 1rem;
-            font-size: 0.8rem;
-            font-weight: 600;
-            border-radius: 0;
-            z-index: 10;">
+                                    <div class="tech-badge">
                                         <i class="bi bi-layers"></i>
                                         <span>Framework Layer</span>
                                     </div>
-                                    <h3 class="tech-section-title">Frameworks & Libraries</h3>
-                                    <p class="tech-section-description" style="font-size: 1.15rem; line-height: 1.8; margin-bottom: 25px;">
-                                        Our framework selection represents the pinnacle of modern software development, 
-                                        combining battle-tested stability with cutting-edge innovation. These powerful 
-                                        tools accelerate development cycles while maintaining the highest standards of 
-                                        code quality, security, and performance.
-                                    </p>
-                                    <p class="tech-section-description" style="font-size: 1.05rem; line-height: 1.7; color: var(--text-muted); margin-bottom: 30px;">
-                                        From React's component-based architecture for dynamic user interfaces to 
-                                        TensorFlow's advanced machine learning capabilities, our framework ecosystem 
-                                        enables rapid prototyping and scalable production deployments.
+                                    <h3 class="tech-section-title">Modern Frameworks</h3>
+                                    <p class="tech-section-description">
+                                        Battle-tested frameworks that accelerate development while maintaining enterprise-grade 
+                                        quality, security, and performance standards.
                                     </p>
                                     <div class="tech-stats">
                                         <div class="stat-item">
@@ -2369,11 +2782,11 @@
                             <div class="col-lg-6 order-lg-1">
                                 <div class="tech-visual-container">
                                     <div class="tech-hero-image">
-                                        <img src="../assets/images/cyber2.jpg" alt="Frameworks & Libraries" class="img-fluid  shadow-lg">
+                                        <img src="../assets/images/cyber2.jpg" alt="Frameworks" class="img-fluid shadow-lg">
                                         <div class="tech-overlay">
                                             <div class="overlay-content">
                                                 <h5>Modern Framework Stack</h5>
-                                                <p>Building tomorrow's applications today</p>
+                                                <p>Accelerated development</p>
                                             </div>
                                         </div>
                                     </div>
@@ -2384,7 +2797,7 @@
                                             </div>
                                             <div class="tech-info">
                                                 <h5>React/Next.js</h5>
-                                                <span>Modern Frontend Development</span>
+                                                <span>Modern Frontend</span>
                                             </div>
                                         </div>
                                         <div class="tech-item">
@@ -2393,7 +2806,7 @@
                                             </div>
                                             <div class="tech-info">
                                                 <h5>Node.js/Express</h5>
-                                                <span>Scalable Backend Services</span>
+                                                <span>Scalable Backend</span>
                                             </div>
                                         </div>
                                         <div class="tech-item">
@@ -2421,36 +2834,18 @@
                     </div>
 
                     <!-- Database & Storage -->
-                    <div class="tech-section ">
+                    <div class="tech-section">
                         <div class="row align-items-center g-5">
                             <div class="col-lg-6">
                                 <div class="tech-content">
-                                    <div 
-
-                                      style="  position: absolute;
-           top:5rem;
-            left: 0rem;
-            background: linear-gradient(135deg, var(--core-primary), var(--core-secondary));
-            color: white;
-            padding: 0.5rem 1rem;
-            font-size: 0.8rem;
-            font-weight: 600;
-            border-radius: 0;
-            z-index: 10;">
+                                    <div class="tech-badge">
                                         <i class="bi bi-database"></i>
                                         <span>Data Layer</span>
                                     </div>
-                                    <h3 class="tech-section-title">Database & Storage Systems</h3>
-                                    <p class="tech-section-description" style="font-size: 1.15rem; line-height: 1.8; margin-bottom: 25px;">
-                                        Data is the lifeblood of modern applications, and our comprehensive database 
-                                        strategy ensures optimal performance, reliability, and scalability across all 
-                                        use cases. From traditional relational databases to cutting-edge NoSQL solutions, 
-                                        we architect data systems that grow with your business.
-                                    </p>
-                                    <p class="tech-section-description" style="font-size: 1.05rem; line-height: 1.7; color: var(--text-muted); margin-bottom: 30px;">
-                                        Our multi-database approach leverages PostgreSQL for complex transactions, 
-                                        MongoDB for flexible document storage, Redis for lightning-fast caching, 
-                                        and specialized solutions like Elasticsearch for advanced search capabilities.
+                                    <h3 class="tech-section-title">Database Systems</h3>
+                                    <p class="tech-section-description">
+                                        Multi-database architecture leveraging PostgreSQL for transactions, MongoDB for flexibility, 
+                                        Redis for speed, and Elasticsearch for advanced search capabilities.
                                     </p>
                                     <div class="tech-stats">
                                         <div class="stat-item">
@@ -2467,11 +2862,11 @@
                             <div class="col-lg-6">
                                 <div class="tech-visual-container">
                                     <div class="tech-hero-image">
-                                        <img src="../assets/images/cyber3.jpg" alt="Database Systems" class="img-fluid  shadow-lg">
+                                        <img src="../assets/images/cyber3.jpg" alt="Database Systems" class="img-fluid shadow-lg">
                                         <div class="tech-overlay">
                                             <div class="overlay-content">
                                                 <h5>Robust Data Architecture</h5>
-                                                <p>Secure, scalable, and lightning-fast</p>
+                                                <p>Secure & scalable</p>
                                             </div>
                                         </div>
                                     </div>
@@ -2482,7 +2877,7 @@
                                             </div>
                                             <div class="tech-info">
                                                 <h5>PostgreSQL</h5>
-                                                <span>Advanced Relational Database</span>
+                                                <span>Advanced Relational DB</span>
                                             </div>
                                         </div>
                                         <div class="tech-item">
@@ -2491,7 +2886,7 @@
                                             </div>
                                             <div class="tech-info">
                                                 <h5>MongoDB</h5>
-                                                <span>Document-Oriented NoSQL</span>
+                                                <span>Document NoSQL</span>
                                             </div>
                                         </div>
                                         <div class="tech-item">
@@ -2500,7 +2895,7 @@
                                             </div>
                                             <div class="tech-info">
                                                 <h5>Redis</h5>
-                                                <span>In-Memory Data Store</span>
+                                                <span>In-Memory Store</span>
                                             </div>
                                         </div>
                                         <div class="tech-item">
@@ -2509,7 +2904,7 @@
                                             </div>
                                             <div class="tech-info">
                                                 <h5>Elasticsearch</h5>
-                                                <span>Search & Analytics Engine</span>
+                                                <span>Search & Analytics</span>
                                             </div>
                                         </div>
                                     </div>
@@ -2519,35 +2914,18 @@
                     </div>
 
                     <!-- Cloud & Infrastructure -->
-                    <div class="tech-section ">
+                    <div class="tech-section">
                         <div class="row align-items-center g-5">
                             <div class="col-lg-6 order-lg-2">
                                 <div class="tech-content">
-                                    <div 
-                                      style="  position: absolute;
-           top:5rem;
-            right: 0rem;
-            background: linear-gradient(135deg, var(--core-primary), var(--core-secondary));
-            color: white;
-            padding: 0.5rem 1rem;
-            font-size: 0.8rem;
-            font-weight: 600;
-            border-radius: 0;
-            z-index: 10;">
+                                    <div class="tech-badge">
                                         <i class="bi bi-cloud"></i>
                                         <span>Infrastructure Layer</span>
                                     </div>
-                                    <h3 class="tech-section-title">Cloud & Infrastructure</h3>
-                                    <p class="tech-section-description" style="font-size: 1.15rem; line-height: 1.8; margin-bottom: 25px;">
-                                        Our cloud-native infrastructure represents the future of scalable, resilient 
-                                        computing. Built on industry-leading platforms and orchestrated with modern 
-                                        DevOps practices, our infrastructure ensures your applications perform 
-                                        flawlessly under any load, anywhere in the world.
-                                    </p>
-                                    <p class="tech-section-description" style="font-size: 1.05rem; line-height: 1.7; color: var(--text-muted); margin-bottom: 30px;">
-                                        From containerized microservices managed by Kubernetes to infrastructure-as-code 
-                                        deployments with Terraform, we embrace automation and best practices that 
-                                        guarantee reliability, security, and cost-effectiveness.
+                                    <h3 class="tech-section-title">Cloud Infrastructure</h3>
+                                    <p class="tech-section-description">
+                                        Cloud-native infrastructure with containerized microservices, Kubernetes orchestration, 
+                                        and infrastructure-as-code for reliable, scalable, and cost-effective deployments.
                                     </p>
                                     <div class="tech-stats">
                                         <div class="stat-item">
@@ -2564,11 +2942,11 @@
                             <div class="col-lg-6 order-lg-1">
                                 <div class="tech-visual-container">
                                     <div class="tech-hero-image">
-                                        <img src="../assets/images/cyber.jpg" alt="Cloud Infrastructure" class="img-fluid  shadow-lg">
+                                        <img src="../assets/images/cyber.jpg" alt="Cloud Infrastructure" class="img-fluid shadow-lg">
                                         <div class="tech-overlay">
                                             <div class="overlay-content">
                                                 <h5>Cloud-Native Excellence</h5>
-                                                <p>Scalable infrastructure for global reach</p>
+                                                <p>Global scalability</p>
                                             </div>
                                         </div>
                                     </div>
@@ -2588,7 +2966,7 @@
                                             </div>
                                             <div class="tech-info">
                                                 <h5>Docker</h5>
-                                                <span>Application Containerization</span>
+                                                <span>Containerization</span>
                                             </div>
                                         </div>
                                         <div class="tech-item">
@@ -2597,7 +2975,7 @@
                                             </div>
                                             <div class="tech-info">
                                                 <h5>Kubernetes</h5>
-                                                <span>Container Orchestration</span>
+                                                <span>Orchestration</span>
                                             </div>
                                         </div>
                                         <div class="tech-item">
@@ -2607,294 +2985,6 @@
                                             <div class="tech-info">
                                                 <h5>Terraform</h5>
                                                 <span>Infrastructure as Code</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Web Development -->
-                    <div class="tech-section ">
-                        <div class="row align-items-center g-5">
-                            <div class="col-lg-6">
-                                <div class="tech-content">
-                                    <div   style="  position: absolute;
-           top:5rem;
-            left: 0rem;
-            background: linear-gradient(135deg, var(--core-primary), var(--core-secondary));
-            color: white;
-            padding: 0.5rem 1rem;
-            font-size: 0.8rem;
-            font-weight: 600;
-            border-radius: 0;
-            z-index: 10;">
-                                        <i class="bi bi-globe"></i>
-                                        <span>Web Development</span>
-                                    </div>
-                                    <h3 class="tech-section-title">Modern Web Development</h3>
-                                    <p class="tech-section-description" style="font-size: 1.15rem; line-height: 1.8; margin-bottom: 25px;">
-                                        We craft exceptional web experiences using cutting-edge technologies and modern 
-                                        development practices. Our full-stack expertise spans from responsive frontend 
-                                        interfaces to robust backend architectures, ensuring seamless user experiences 
-                                        across all devices and platforms.
-                                    </p>
-                                    <p class="tech-section-description" style="font-size: 1.05rem; line-height: 1.7; color: var(--text-muted); margin-bottom: 30px;">
-                                        From progressive web applications to enterprise-grade web platforms, we leverage 
-                                        modern frameworks, responsive design principles, and performance optimization 
-                                        techniques to deliver web solutions that drive business growth.
-                                    </p>
-                                    <div class="tech-stats">
-                                        <div class="stat-item">
-                                            <span class="stat-number">500+</span>
-                                            <span class="stat-label">Web Projects</span>
-                                        </div>
-                                        <div class="stat-item">
-                                            <span class="stat-number">98%</span>
-                                            <span class="stat-label">Performance Score</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="tech-visual-container">
-                                    <div class="tech-hero-image">
-                                        <img src="../assets/images/cyber1.jpg" alt="Web Development" class="img-fluid  shadow-lg">
-                                        <div class="tech-overlay">
-                                            <div class="overlay-content">
-                                                <h5>Full-Stack Web Solutions</h5>
-                                                <p>From concept to deployment</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tech-grid mt-4">
-                                        <div class="tech-item">
-                                            <div class="tech-icon html">
-                                                <i class="bi bi-code-square"></i>
-                                            </div>
-                                            <div class="tech-info">
-                                                <h5>HTML5/CSS3</h5>
-                                                <span>Modern Web Standards</span>
-                                            </div>
-                                        </div>
-                                        <div class="tech-item">
-                                            <div class="tech-icon vue">
-                                                <i class="bi bi-triangle"></i>
-                                            </div>
-                                            <div class="tech-info">
-                                                <h5>Vue.js/Angular</h5>
-                                                <span>Progressive Frameworks</span>
-                                            </div>
-                                        </div>
-                                        <div class="tech-item">
-                                            <div class="tech-icon sass">
-                                                <i class="bi bi-palette"></i>
-                                            </div>
-                                            <div class="tech-info">
-                                                <h5>Sass/Tailwind CSS</h5>
-                                                <span>Advanced Styling</span>
-                                            </div>
-                                        </div>
-                                        <div class="tech-item">
-                                            <div class="tech-icon webpack">
-                                                <i class="bi bi-gear-wide-connected"></i>
-                                            </div>
-                                            <div class="tech-info">
-                                                <h5>Webpack/Vite</h5>
-                                                <span>Build Optimization</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Mobile Development -->
-                    <div class="tech-section ">
-                        <div class="row align-items-center g-5">
-                            <div class="col-lg-6 order-lg-2">
-                                <div class="tech-content">
-                                    <div   style="  position: absolute;
-           top:5rem;
-            right: 0rem;
-            background: linear-gradient(135deg, var(--core-primary), var(--core-secondary));
-            color: white;
-            padding: 0.5rem 1rem;
-            font-size: 0.8rem;
-            font-weight: 600;
-            border-radius: 0;
-            z-index: 10;">
-                                        <i class="bi bi-phone"></i>
-                                        <span>Mobile Development</span>
-                                    </div>
-                                    <h3 class="tech-section-title">iOS & Android Development</h3>
-                                    <p class="tech-section-description" style="font-size: 1.15rem; line-height: 1.8; margin-bottom: 25px;">
-                                        We create powerful mobile applications that deliver exceptional user experiences 
-                                        across iOS and Android platforms. Our mobile development expertise encompasses 
-                                        native development, cross-platform solutions, and progressive web apps that 
-                                        perform seamlessly on any device.
-                                    </p>
-                                    <p class="tech-section-description" style="font-size: 1.05rem; line-height: 1.7; color: var(--text-muted); margin-bottom: 30px;">
-                                        From consumer apps to enterprise mobility solutions, we leverage the latest 
-                                        mobile technologies, design patterns, and development frameworks to create 
-                                        apps that users love and businesses depend on.
-                                    </p>
-                                    <div class="tech-stats">
-                                        <div class="stat-item">
-                                            <span class="stat-number">200+</span>
-                                            <span class="stat-label">Mobile Apps</span>
-                                        </div>
-                                        <div class="stat-item">
-                                            <span class="stat-number">4.8★</span>
-                                            <span class="stat-label">Average Rating</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 order-lg-1">
-                                <div class="tech-visual-container">
-                                    <div class="tech-hero-image">
-                                        <img src="../assets/images/cyber2.jpg" alt="Mobile Development" class="img-fluid  shadow-lg">
-                                        <div class="tech-overlay">
-                                            <div class="overlay-content">
-                                                <h5>Cross-Platform Excellence</h5>
-                                                <p>iOS & Android mastery</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tech-grid mt-4">
-                                        <div class="tech-item">
-                                            <div class="tech-icon swift">
-                                                <i class="bi bi-apple"></i>
-                                            </div>
-                                            <div class="tech-info">
-                                                <h5>Swift/iOS</h5>
-                                                <span>Native iOS Development</span>
-                                            </div>
-                                        </div>
-                                        <div class="tech-item">
-                                            <div class="tech-icon kotlin">
-                                                <i class="bi bi-android2"></i>
-                                            </div>
-                                            <div class="tech-info">
-                                                <h5>Kotlin/Android</h5>
-                                                <span>Native Android Development</span>
-                                            </div>
-                                        </div>
-                                        <div class="tech-item">
-                                            <div class="tech-icon flutter">
-                                                <i class="bi bi-phone-flip"></i>
-                                            </div>
-                                            <div class="tech-info">
-                                                <h5>Flutter</h5>
-                                                <span>Cross-Platform Framework</span>
-                                            </div>
-                                        </div>
-                                        <div class="tech-item">
-                                            <div class="tech-icon reactnative">
-                                                <i class="bi bi-phone-vibrate"></i>
-                                            </div>
-                                            <div class="tech-info">
-                                                <h5>React Native</h5>
-                                                <span>JavaScript Mobile Apps</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- AI/ML & Data Science -->
-                    <div class="tech-section ">
-                        <div class="row align-items-center g-5">
-                            <div class="col-lg-6">
-                                <div class="tech-content">
-                                    <div   style="  position: absolute;
-           top:5rem;
-            left: 0rem;
-            background: linear-gradient(135deg, var(--core-primary), var(--core-secondary));
-            color: white;
-            padding: 0.5rem 1rem;
-            font-size: 0.8rem;
-            font-weight: 600;
-            border-radius: 0;
-            z-index: 10;">
-                                        <i class="bi bi-robot"></i>
-                                        <span>AI/ML & Data Science</span>
-                                    </div>
-                                    <h3 class="tech-section-title">Artificial Intelligence & Machine Learning</h3>
-                                    <p class="tech-section-description" style="font-size: 1.15rem; line-height: 1.8; margin-bottom: 25px;">
-                                        We harness the power of artificial intelligence and machine learning to create 
-                                        intelligent solutions that transform businesses. Our AI/ML expertise spans from 
-                                        predictive analytics and natural language processing to computer vision and 
-                                        deep learning applications that drive innovation.
-                                    </p>
-                                    <p class="tech-section-description" style="font-size: 1.05rem; line-height: 1.7; color: var(--text-muted); margin-bottom: 30px;">
-                                        From data preprocessing and model training to deployment and monitoring, we 
-                                        deliver end-to-end AI solutions using cutting-edge frameworks, cloud platforms, 
-                                        and MLOps practices that ensure scalable and reliable AI systems.
-                                    </p>
-                                    <div class="tech-stats">
-                                        <div class="stat-item">
-                                            <span class="stat-number">100+</span>
-                                            <span class="stat-label">AI Models Deployed</span>
-                                        </div>
-                                        <div class="stat-item">
-                                            <span class="stat-number">95%</span>
-                                            <span class="stat-label">Model Accuracy</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="tech-visual-container">
-                                    <div class="tech-hero-image">
-                                        <img src="../assets/images/cyber3.jpg" alt="AI/ML & Data Science" class="img-fluid shadow-lg">
-                                        <div class="tech-overlay">
-                                            <div class="overlay-content">
-                                                <h5>Intelligent Solutions</h5>
-                                                <p>AI-powered innovation</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tech-grid mt-4">
-                                        <div class="tech-item">
-                                            <div class="tech-icon tensorflow">
-                                                <i class="bi bi-cpu-fill"></i>
-                                            </div>
-                                            <div class="tech-info">
-                                                <h5>TensorFlow/Keras</h5>
-                                                <span>Deep Learning Framework</span>
-                                            </div>
-                                        </div>
-                                        <div class="tech-item">
-                                            <div class="tech-icon pytorch">
-                                                <i class="bi bi-lightning-fill"></i>
-                                            </div>
-                                            <div class="tech-info">
-                                                <h5>PyTorch</h5>
-                                                <span>Research & Production ML</span>
-                                            </div>
-                                        </div>
-                                        <div class="tech-item">
-                                            <div class="tech-icon pandas">
-                                                <i class="bi bi-table"></i>
-                                            </div>
-                                            <div class="tech-info">
-                                                <h5>Pandas/NumPy</h5>
-                                                <span>Data Analysis & Processing</span>
-                                            </div>
-                                        </div>
-                                        <div class="tech-item">
-                                            <div class="tech-icon jupyter">
-                                                <i class="bi bi-journal-code"></i>
-                                            </div>
-                                            <div class="tech-info">
-                                                <h5>Jupyter/MLflow</h5>
-                                                <span>ML Experimentation</span>
                                             </div>
                                         </div>
                                     </div>
@@ -2978,122 +3068,66 @@
             </div>
         </section>
 
-        <!-- Innovation Lab Section -->
-        <section class="py-5" style="background: var(--bg-gradient); ">
+          <!-- CTA Section -->
+        <section class="cta-section py-5" style="background: linear-gradient(135deg, #fff7ed 0%, #ffffff 50%, #fffbeb 100%); position: relative; overflow: hidden;">
             <div class="container">
-                <div class="text-left mb-5">
-                    <h2 class="section-title reveal-on-scroll">
-                        Innovation <span class="text-gradient">Laboratory</span>
-                    </h2>
-                    <p class="lead reveal-on-scroll" style="color: var(--text-secondary);  margin: 0 auto;"></p>
-                        Pioneering tomorrow's technologies through cutting-edge research and development initiatives
-                    </p>
-                </div>
-                
-                <div class="row align-items-center g-5">
-                    <div class="col-lg-6 reveal-on-scroll">
-                        <div class="innovation-content">
-                            <div class="timeline-badge mb-4">
-                                <i class="bi bi-lightbulb"></i>
-                                <span>Research & Development</span>
-                            </div>
-                            <h3 class="fw-bold mb-4" style="font-size: 2rem;">Shaping the Future of Technology</h3>
-                            <p class="mb-4" style="font-size: 1.1rem; line-height: 1.7; color: var(--text-secondary);">
-                                Our Innovation Lab serves as the epicenter of technological advancement, where our research teams 
-                                explore emerging technologies, develop proof-of-concepts, and create breakthrough solutions that 
-                                define the next generation of digital experiences.
+                        <div class="cta-content text-left">
+                            <!-- Main Heading -->
+                            <h2 class="fw-bold display-4 mb-4 text-dark fade-in-up" data-delay="0">
+                                Ready to Transform 
+                                <span class="d-block fw-bold gradient-text">
+                                   Your Security?
+                                </span>
+                            </h2>
+                            
+                            <p class="lead text-muted mb-5 fade-in-up">
+                                Join hundreds of businesses that trust JetHat Cybersecurity to protect their digital assets with cutting-edge AI-powered solutions.
                             </p>
-                            
-                            <div class="innovation-highlights">
-                                <div class="highlight-item">
-                                    <div class="highlight-icon">
-                                        <i class="bi bi-cpu"></i>
-                                    </div>
-                                    <div class="highlight-content">
-                                        <h5>Advanced Computing</h5>
-                                        <p>Quantum computing research and edge AI optimization</p>
-                                    </div>
-                                </div>
-                                <div class="highlight-item">
-                                    <div class="highlight-icon">
-                                        <i class="bi bi-shield-lock"></i>
-                                    </div>
-                                    <div class="highlight-content">
-                                        <h5>Next-Gen Security</h5>
-                                        <p>Zero-trust architectures and autonomous threat detection</p>
-                                    </div>
-                                </div>
-                                <div class="highlight-item">
-                                    <div class="highlight-icon">
-                                        <i class="bi bi-graph-up-arrow"></i>
-                                    </div>
-                                    <div class="highlight-content">
-                                        <h5>Intelligent Systems</h5>
-                                        <p>Self-learning algorithms and predictive analytics</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-lg-6 reveal-on-scroll">
-                        <div class="innovation-stats-grid">
-                            <div class="innovation-stat-card">
-                                <div class="stat-icon">
-                                    <i class="bi bi-lightbulb-fill"></i>
-                                </div>
-                                <div class="stat-content">
-                                    <div class="stat-number counter" data-target="50">0</div>
-                                    <div class="stat-label">Active Research Projects</div>
-                                </div>
-                            </div>
-                            
-                            <div class="innovation-stat-card">
-                                <div class="stat-icon">
-                                    <i class="bi bi-award"></i>
-                                </div>
-                                <div class="stat-content">
-                                    <div class="stat-number counter" data-target="15">0</div>
-                                    <div class="stat-label">Patents Filed</div>
-                                </div>
-                            </div>
-                            
-                            <div class="innovation-stat-card">
-                                <div class="stat-icon">
-                                    <i class="bi bi-people"></i>
-                                </div>
-                                <div class="stat-content">
-                                    <div class="stat-number counter" data-target="25">0</div>
-                                    <div class="stat-label">Research Scientists</div>
-                                </div>
-                            </div>
-                            
-                            <div class="innovation-stat-card">
-                                <div class="stat-icon">
-                                    <i class="bi bi-globe"></i>
-                                </div>
-                                <div class="stat-content">
-                                    <div class="stat-number counter" data-target="8">0</div>
-                                    <div class="stat-label">Global Partnerships</div>
-                                </div>
-                            </div>
-                        </div>
 
-                        <!-- Research Areas -->
-                        <div class="research-areas mt-4">
-                            <h5 class="fw-bold mb-3">Current Research Focus</h5>
-                            <div class="research-tags">
-                                <span class="research-tag">Quantum Security</span>
-                                <span class="research-tag">Edge AI</span>
-                                <span class="research-tag">Blockchain Integration</span>
-                                <span class="research-tag">Neural Networks</span>
-                                <span class="research-tag">IoT Security</span>
-                                <span class="research-tag">Autonomous Systems</span>
+                          
+
+                            <!-- Action Buttons -->
+                            <div class="d-flex gap-3 flex-wrap justify-content-left fade-in-up" data-delay="500">
+                                <a href="../contact.html" class="btn btn-hero-primary animated-btn glow-btn">
+                                    <span class="btn-text">Schedule a Consultation</span>
+                                    <span class="btn-arrow ms-2"><i class="bi bi-arrow-right"></i></span>
+                                </a>
+
+                                <a href="#services" class="btn btn-hero-secondary animated-btn">
+                                    <span class="btn-text">Explore Services</span>
+                                    <span class="btn-icon ms-2"><i class="bi bi-search"></i></span>
+                                </a>
+                            </div>
+                            
+                            <!-- Trust Indicators -->
+                            <div class="row mt-5 justify-content-left fade-in-up" data-delay="600">
+                                <div class="col-lg-8">
+                                    <div class="d-flex justify-content-left align-items-center gap-4 flex-wrap">
+                                        <div class="text-center">
+                                            <div class="fw-bold text-dark" style="font-size: 1.5rem;">500+</div>
+                                            <div class="text-muted small">Clients Protected</div>
+                                        </div>
+                                        <div class="text-center">
+                                            <div class="fw-bold text-dark" style="font-size: 1.5rem;">99.9%</div>
+                                            <div class="text-muted small">Uptime Guarantee</div>
+                                        </div>
+                                        <div class="text-center">
+                                            <div class="fw-bold text-dark" style="font-size: 1.5rem;">24/7</div>
+                                            <div class="text-muted small">Expert Support</div>
+                                        </div>
+                                        <div class="text-center">
+                                            <div class="fw-bold text-dark" style="font-size: 1.5rem;">< 5min</div>
+                                            <div class="text-muted small">Response Time</div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
+                    
+             
             </div>
+            
+           
         </section>
 
    

@@ -3228,33 +3228,31 @@ html {
 
 /* Right panel theme */
 .right-panel-theme {
-    background: linear-gradient(180deg, #000000, #1a1a1a) !important;
-    border-left: 3px solid var(--accent-primary) !important;
-    color: var(--text-primary) !important;
-    backdrop-filter: blur(10px);
-    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(180deg, #000000, #16213e) !important;
+    color: #e8eaed !important;
+    backdrop-filter: blur(15px);
+    box-shadow: -8px 0 32px rgba(0, 0, 0, 0.4);
 }
 
 [data-bs-theme="light"] .right-panel-theme,
 .light-theme .right-panel-theme {
-    background: linear-gradient(180deg, #ffffff, #f8f9fa) !important;
-    border-left: 3px solid var(--accent-primary) !important;
-    color: var(--text-primary) !important;
-    backdrop-filter: blur(10px);
-    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(180deg, #f8f9fa, #ffffff) !important;
+    color: #2c3e50 !important;
+    backdrop-filter: blur(15px);
+    box-shadow: -8px 0 32px rgba(255, 255, 255, 0.316);
 }
 
 /* Right panel header */
 .right-panel-header {
-    background: linear-gradient(135deg, var(--accent-primary), var(--accent-gold)) !important;
-    border-bottom: 2px solid rgba(81, 73, 28, 0.3) !important;
+    background: linear-gradient(135deg, #d09f63, #a2544b) !important;
+    border-bottom: 2px solid rgba(102, 126, 234, 0.3) !important;
     padding: 1.5rem 1rem;
 }
 
 [data-bs-theme="light"] .right-panel-header,
 .light-theme .right-panel-header {
-    background: linear-gradient(135deg, var(--accent-primary), var(--accent-gold)) !important;
-    border-bottom: 2px solid rgba(255, 215, 0, 0.3) !important;
+    background: linear-gradient(135deg, #feb54f, #fe9400) !important;
+    border-bottom: 2px solid rgba(254, 207, 79, 0.3) !important;
 }
 
 .right-panel-close {
@@ -3274,7 +3272,7 @@ html {
     height: calc(100vh - 80px);
     overflow-y: auto;
     scrollbar-width: thin;
-    scrollbar-color: var(--accent-primary) transparent;
+    scrollbar-color: #eaaf66 transparent;
 }
 
 .right-panel-body::-webkit-scrollbar {
@@ -3286,13 +3284,13 @@ html {
 }
 
 .right-panel-body::-webkit-scrollbar-thumb {
-    background: var(--accent-primary);
+    background: #eaa866;
     border-radius: 3px;
 }
 
 /* Section titles */
 .right-panel-section-title {
-    color: var(--accent-gold) !important;
+    color: #eac066 !important;
     font-weight: 600;
     font-size: 0.9rem;
     text-transform: uppercase;
@@ -3302,13 +3300,12 @@ html {
 
 [data-bs-theme="light"] .right-panel-section-title,
 .light-theme .right-panel-section-title {
-    color: var(--accent-primary) !important;
+    color: #fec44f !important;
 }
 
 /* Stats cards */
 .right-panel-stat-card {
-    background: linear-gradient(135deg, var(--accent-primary-10), var(--accent-gold-10));
-    border: 1px solid var(--accent-primary-20);
+    background: linear-gradient(135deg, rgba(234, 172, 102, 0), rgba(118, 75, 162, 0));
     border-radius: 12px;
     padding: 1rem 0.5rem;
     text-align: center;
@@ -3324,14 +3321,14 @@ html {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
-    transition: left 0.5s ease;
+    background: linear-gradient(90deg, transparent, rgba(250, 182, 24, 0.654), transparent);
+    /* transition: left 0.5s ease; */
 }
 
 .right-panel-stat-card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px var(--accent-primary-20);
-    border-color: var(--accent-gold);
+    box-shadow: 0 8px 25px rgba(234, 197, 102, 0.2);
+    border-color: #eaaa66;
 }
 
 .right-panel-stat-card:hover::before {
@@ -3339,20 +3336,20 @@ html {
 }
 
 .right-panel-stat-card .h5 {
-    color: var(--accent-gold) !important;
+    color: #eac066 !important;
     margin-bottom: 0.25rem;
     font-weight: 700;
 }
 
 [data-bs-theme="light"] .right-panel-stat-card,
 .light-theme .right-panel-stat-card {
-    background: linear-gradient(135deg, var(--accent-primary-10), var(--accent-gold-10));
-    border-color: var(--accent-primary-30);
+    background: linear-gradient(135deg, rgba(254, 187, 79, 0.1), rgba(254, 186, 0, 0.1));
+  
 }
 
 [data-bs-theme="light"] .right-panel-stat-card .h5,
 .light-theme .right-panel-stat-card .h5 {
-    color: var(--accent-primary) !important;
+    color: #fed84f !important;
 }
 
 /* Quick access buttons */
@@ -3361,10 +3358,10 @@ html {
     align-items: center;
     justify-content: center;
     padding: 0.75rem 0.5rem;
-    background: linear-gradient(135deg, transparent, var(--accent-primary-10));
-    border: 1px solid var(--accent-primary-20);
+    background: linear-gradient(135deg, transparent, rgba(234, 197, 102, 0.1));
+    border: 1px solid rgba(234, 188, 102, 0.2);
     border-radius: 8px;
-    color: var(--text-primary);
+    color: #e8eaed;
     text-decoration: none;
     font-size: 0.85rem;
     font-weight: 500;
@@ -3380,7 +3377,7 @@ html {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, var(--accent-primary), var(--accent-gold));
+    background: linear-gradient(135deg, #eab566, #a2624b);
     opacity: 0;
     transition: all 0.3s ease;
     z-index: -1;
@@ -3389,8 +3386,8 @@ html {
 .right-panel-btn:hover {
     color: white !important;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px var(--accent-primary-30);
-    border-color: var(--accent-gold);
+    box-shadow: 0 6px 20px rgba(234, 166, 102, 0.3);
+    border-color: #eac966;
 }
 
 .right-panel-btn:hover::before {
@@ -3400,69 +3397,69 @@ html {
 
 [data-bs-theme="light"] .right-panel-btn,
 .light-theme .right-panel-btn {
-    color: var(--text-light-primary);
-    background: linear-gradient(135deg, transparent, var(--accent-primary-10));
+    color: #2c3e50;
+    background: linear-gradient(135deg, transparent, rgba(254, 199, 79, 0.1));
 }
 
 /* Contact items */
 .right-panel-contact-item {
-    display: flex;
+    /* display: flex; */
     align-items: center;
-    padding: 0.75rem;
-    background: linear-gradient(135deg, var(--accent-primary-10), transparent);
-    border: 1px solid var(--accent-primary-20);
-    border-radius: 8px;
-    transition: all 0.3s ease;
+    padding: 0.5rem;
+    /* background: linear-gradient(135deg, rgba(234, 183, 102, 0.1), transparent); */
+    /* border: 1px solid rgba(234, 197, 102, 0.2); */
+    /* border-radius: 8px;
+    transition: all 0.3s ease; */
 }
 
 .right-panel-contact-item:hover {
-    background: linear-gradient(135deg, var(--accent-primary-20), var(--accent-gold-10));
-    border-color: var(--accent-gold);
-    transform: translateX(5px);
+    /* background: linear-gradient(135deg, rgba(234, 212, 102, 0.2), rgba(118, 75, 162, 0.1)); */
+    /* border-color: #eab166; */
+    /* transform: translateX(5px); */
 }
 
 .right-panel-contact-item i {
-    color: var(--accent-gold);
+    color: #eab366;
     font-size: 1.1rem;
 }
 
 .right-panel-contact-link {
-    color: var(--text-primary) !important;
+    color: #e8eaed !important;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .right-panel-contact-link:hover {
-    color: var(--accent-gold) !important;
+    color: #eabe66 !important;
 }
 
 .right-panel-contact-text {
-    color: var(--text-primary);
+    color: #e8eaed;
 }
 
 [data-bs-theme="light"] .right-panel-contact-item,
 .light-theme .right-panel-contact-item {
-    background: linear-gradient(135deg, var(--accent-primary-10), transparent);
+    background: linear-gradient(135deg, rgba(254, 184, 79, 0.1), transparent);
 }
 
 [data-bs-theme="light"] .right-panel-contact-item i,
 .light-theme .right-panel-contact-item i {
-    color: var(--accent-primary);
+    color: #feb84f;
 }
 
 [data-bs-theme="light"] .right-panel-contact-link,
 .light-theme .right-panel-contact-link {
-    color: var(--text-light-primary) !important;
+    color: #2c3e50 !important;
 }
 
 [data-bs-theme="light"] .right-panel-contact-link:hover,
 .light-theme .right-panel-contact-link:hover {
-    color: var(--accent-primary) !important;
+    color: #feb84f !important;
 }
 
 [data-bs-theme="light"] .right-panel-contact-text,
 .light-theme .right-panel-contact-text {
-    color: var(--text-light-primary);
+    color: #2c3e50;
 }
 
 /* Social media buttons */
@@ -3470,9 +3467,9 @@ html {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
-    background: linear-gradient(135deg, var(--accent-primary), var(--accent-gold));
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(135deg, #ea8b66, #a2754b);
     border: none;
     border-radius: 50%;
     color: white;
@@ -3498,7 +3495,7 @@ html {
 
 .right-panel-social-btn:hover {
     transform: translateY(-3px) scale(1.1);
-    box-shadow: 0 8px 25px var(--accent-primary-30);
+    box-shadow: 0 8px 25px rgba(234, 181, 102, 0.3);
     color: white;
 }
 
@@ -3509,7 +3506,7 @@ html {
 
 /* CTA Buttons */
 .right-panel-cta-primary {
-    background: linear-gradient(135deg, var(--accent-primary), var(--accent-gold));
+    background: linear-gradient(135deg, #eaac66, #a2674b);
     border: none;
     border-radius: 8px;
     color: white;
@@ -3527,14 +3524,14 @@ html {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, var(--accent-gold), var(--accent-primary));
+    background: linear-gradient(135deg, #a2834b, #ea9466);
     transition: left 0.3s ease;
     z-index: -1;
 }
 
 .right-panel-cta-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px var(--accent-primary-30);
+    box-shadow: 0 8px 30px rgba(234, 175, 102, 0.3);
     color: white;
 }
 
@@ -3544,34 +3541,34 @@ html {
 
 .right-panel-cta-secondary {
     background: transparent;
-    border: 2px solid var(--accent-primary);
+    border: 2px solid #eab766;
     border-radius: 8px;
-    color: var(--accent-primary);
+    color: #ea9266;
     font-weight: 500;
     padding: 0.75rem 1rem;
     transition: all 0.3s ease;
 }
 
 .right-panel-cta-secondary:hover {
-    background: var(--accent-primary);
+    background: #eaa466;
     color: white;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px var(--accent-primary-30);
+    box-shadow: 0 6px 20px rgba(234, 159, 102, 0.3);
 }
 
 .right-panel-cta-tertiary {
     background: transparent;
-    border: 1px solid var(--text-muted);
+    border: 1px solid #f9fafa;
     border-radius: 8px;
-    color: var(--text-muted);
+    color: #9ca3af;
     font-weight: 400;
     padding: 0.75rem 1rem;
     transition: all 0.3s ease;
 }
 
 .right-panel-cta-tertiary:hover {
-    border-color: var(--accent-gold);
-    color: var(--accent-gold);
+    border-color: #ea9b66;
+    color: #ea9466;
     transform: translateY(-1px);
 }
 

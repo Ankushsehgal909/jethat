@@ -1279,7 +1279,7 @@
     z-index: -1;
   }
 
-        /* Process Section - Enhanced with Contact Theme */
+        /* Process Timeline Section - Enhanced with Contact Theme */
         .process-section {
             padding: 100px 0;
             background: linear-gradient(135deg, #fff7ed 0%, #ffffff 50%, #fffbeb 100%);
@@ -1287,90 +1287,167 @@
             overflow: hidden;
         }
 
-      
-
-        .process-card {
-            text-align: center;
-            padding: 40px 30px;
+        /* Timeline Wrapper */
+        .timeline-wrapper {
             position: relative;
-            z-index: 2;
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 20px;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid rgba(220, 20, 60, 0.1);
-            backdrop-filter: blur(10px);
-            overflow: hidden;
+            padding: 40px 0;
         }
 
-        .process-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
+        /* Timeline Step */
+        .timeline-step {
+            text-align: center;
+            position: relative;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(220, 20, 60, 0.1), transparent);
-            transition: left 0.6s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        .process-card:hover::before {
-            left: 100%;
-        }
-
-        .process-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-            background: rgba(255, 255, 255, 0.95);
-        }
-
-        .process-number {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
+        /* Step Circle */
+        .step-circle {
+            width: 80px;
+            height: 80px;
             background: linear-gradient(135deg, #dc143c, #ffd700);
-            color: white;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin: 0 auto 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 30px rgba(220, 20, 60, 0.3);
             transition: all 0.4s ease;
+            border: 4px solid white;
             position: relative;
+            z-index: 2;
         }
 
-        .process-number::after {
+        .step-circle::before {
             content: '';
             position: absolute;
-            top: -5px;
-            left: -5px;
-            right: -5px;
-            bottom: -5px;
-            border: 2px solid #dc143c;
+            top: -8px;
+            left: -8px;
+            right: -8px;
+            bottom: -8px;
+            background: linear-gradient(135deg, #dc143c, #ffd700);
             border-radius: 50%;
             opacity: 0;
             transition: all 0.4s ease;
+            z-index: -1;
         }
 
-        .process-card:hover .process-number {
-            transform: scale(1.2) rotate(360deg);
+        .step-circle i {
+            font-size: 1.8rem;
+            color: white;
+            transition: all 0.4s ease;
         }
 
-        .process-card:hover .process-number::after {
+        /* Step Content */
+        .step-content {
+            background: rgba(220, 20, 60, 0.1);
+            padding: 25px 20px;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(220, 20, 60, 0.1);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .step-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .step-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 0;
+            font-size: 0.95rem;
+        }
+
+        /* Hover Effects */
+        .timeline-step:hover .step-circle {
+            transform: scale(1.1);
+            box-shadow: 0 15px 40px rgba(220, 20, 60, 0.4);
+        }
+
+        .timeline-step:hover .step-circle::before {
             opacity: 0.3;
             transform: scale(1.2);
         }
 
-        .process-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #333333;
-            margin-bottom: 15px;
+        .timeline-step:hover .step-circle i {
+            transform: scale(1.1);
         }
 
-        .process-description {
-            color: #666666;
-            line-height: 1.7;
+        .timeline-step:hover .step-content {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Animation Effects */
+        .step-circle {
+            animation: stepPulse 3s infinite;
+        }
+
+        @keyframes stepPulse {
+            0%, 100% {
+                box-shadow: 0 10px 30px rgba(220, 20, 60, 0.3);
+            }
+            50% {
+                box-shadow: 0 10px 30px rgba(220, 20, 60, 0.5), 0 0 0 10px rgba(220, 20, 60, 0.1);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .timeline-wrapper {
+                padding: 30px 0;
+            }
+            
+            .timeline-step {
+                margin-bottom: 40px;
+            }
+            
+            .step-circle {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .step-circle i {
+                font-size: 1.4rem;
+            }
+            
+            .step-content {
+                padding: 20px 15px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .step-circle {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .step-circle i {
+                font-size: 1.2rem;
+            }
+            
+            .step-content {
+                padding: 18px 12px;
+            }
+            
+            .step-title {
+                font-size: 1.1rem;
+            }
+            
+            .step-description {
+                font-size: 0.9rem;
+            }
         }
 
         /* Cyber Grid Background */
@@ -1617,10 +1694,7 @@
                   <!-- left side --> 
                     <div class="col-lg-6">
                         <div class="cyber-hero-content" style="margin-top: 2.5rem;">
-                            <!-- <div class="hero-badge gsap-fade-up">
-                                <i class="bi bi-shield-check me-2"></i>
-                                Enterprise Cybersecurity Solutions
-                            </div> -->
+                           
                             <h1 class="hero-title gsap-fade-up" data-delay="100">
                                 Secure Your
                                 <span class="gradient-text">Digital Future</span>
@@ -1677,9 +1751,6 @@
                 </div>
             </div>
         </section>
-
-      
-
         <!-- Services Section -->
         <section id="services" class="services-section">
             <div class="container">
@@ -1766,6 +1837,45 @@
             </div>
         </section>
 
+          <section class="py-5" style="background: rgba(220, 20, 60, 0.02);">
+            <div class="container">
+        
+                        <div >
+                            <h2 class="fw-bold display-3 mb-4" style="color: #333;">
+                                Smart Child
+                                <span class="d-block fw-bold display-2 text-gradient">Safety Solution</span>
+                            </h2>
+                            <p class="fs-5 text-muted mb-4">
+                                Our advanced AI engine continuously monitors your child's location and activities, providing real-time insights and instant alerts to ensure their safety while respecting their privacy and independence.
+                            </p>
+                            <p class="fs-6 text-muted mb-5">
+                                From intelligent geofencing to emergency SOS features, Virtual Naani creates a protective digital bubble around your child, giving you peace of mind without being intrusive. The app learns your family's routines and adapts to provide personalized safety recommendations.
+                            </p>
+                            <div class="d-flex flex-wrap gap-3">
+                                <div class="d-flex align-items-center">
+                                    <div class="feature-icon me-2" style="width: 40px; height: 40px;">
+                                        <i class="bi bi-shield-check text-white fs-6"></i>
+                                    </div>
+                                    <span class="fw-semibold">24/7 Protection</span>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <div class="feature-icon me-2" style="width: 40px; height: 40px;">
+                                        <i class="bi bi-geo-alt text-white fs-6"></i>
+                                    </div>
+                                    <span class="fw-semibold">Real-time Tracking</span>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <div class="feature-icon me-2" style="width: 40px; height: 40px;">
+                                        <i class="bi bi-heart text-white fs-6"></i>
+                                    </div>
+                                    <span class="fw-semibold">Trust-Based</span>
+                                </div>
+                            </div>
+                        </div>
+                 
+            </div>
+        </section>
+
         <!-- Why Choose Us Section -->
         <section class="why-us-section">
             <div class="container">
@@ -1773,7 +1883,7 @@
                   <!-- left side  -->
 
                     <div class="col-lg-6">
-                        <div class="image-card-wrapper reveal-on-scroll">
+                        <div class="image-card-wrapper ">
                             <div class="main-image-card">
                                 <img src="../assets/images/cyber.jpg" alt="Why Choose JetHat">
                             </div>
@@ -1783,7 +1893,7 @@
                     
                     <!-- right side  -->
                     <div class="col-lg-6">
-                        <h2 class="section-title reveal-on-scroll">Why Choose JetHat Cybersecurity?</h2>
+                        <h2 class="section-title ">Why Choose JetHat Cybersecurity?</h2>
                         <p class="section-subtitle mb-4 reveal-on-scroll" style="margin-left: 0; text-align: left;">
                             We combine cutting-edge technology with expertise to deliver unmatched security solutions
                         </p>
@@ -1849,7 +1959,7 @@
                         </p>
                         <div class="row g-3 reveal-on-scroll" data-delay="200">
                             <div class="col-6">
-                                <div class="d-flex align-items-center gap-3 p-3 bg-white rounded-3 shadow-sm" style="border: 1px solid rgba(220, 20, 60, 0.1);">
+                                <div class="d-flex align-items-center gap-3 p-3  rounded-3 shadow-sm" style="border: 1px solid rgba(220, 20, 60, 0.1);">
                                     <div class="bg-danger bg-opacity-10 rounded-circle p-2">
                                         <i class="bi bi-shield-exclamation text-danger fs-5"></i>
                                     </div>
@@ -1860,7 +1970,7 @@
                                 </div>
                             </div>
                             <div class="col-6">
-                                <div class="d-flex align-items-center gap-3 p-3 bg-white rounded-3 shadow-sm" style="border: 1px solid rgba(220, 20, 60, 0.1);">
+                                <div class="d-flex align-items-center gap-3 p-3  rounded-3 shadow-sm" style="border: 1px solid rgba(220, 20, 60, 0.1);">
                                     <div class="bg-success bg-opacity-10 rounded-circle p-2">
                                         <i class="bi bi-clock-history text-success fs-5"></i>
                                     </div>
@@ -1928,183 +2038,153 @@
         </section>
       
 
-        <!-- Process Section -->
-        <section class="process-section bg-light">
+        <!-- Process Timeline Section -->
+        <section class="process-section bg-light py-5">
             <div class="container">
-                <div class="text-center">
+                <div class="text-center mb-5">
                     <h2 class="section-title reveal-on-scroll">Our Process</h2>
                     <p class="section-subtitle reveal-on-scroll">
                         A systematic approach to securing your digital assets
                     </p>
                 </div>
-                <div class="row ">
-                    <div class="col-md-6 col-lg-3">
-                        <div class="process-card reveal-on-scroll" data-delay="100">
-                            <div class="process-number">1</div>
-                            <h4 class="process-title">Assessment</h4>
-                            <p class="process-description">
-                                We analyze your current security posture and identify potential vulnerabilities
-                            </p>
+                
+                <!-- Step-by-Step Timeline with Arrows -->
+                <div class="timeline-wrapper reveal-on-scroll">
+                    <div class="row align-items-center">
+                        <!-- Step 1 -->
+                        <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                            <div class="timeline-step reveal-on-scroll" data-delay="100">
+                                <div class="step-circle">
+                                    <i class="bi bi-search"></i>
+                                </div>
+                                <div class="step-content">
+                                    <h4 class="step-title">Assessment</h4>
+                                    <p class="step-description">
+                                        We analyze your current security posture and identify potential vulnerabilities
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 2 -->
+                        <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                            <div class="timeline-step reveal-on-scroll" data-delay="200">
+                                <div class="step-circle">
+                                    <i class="bi bi-lightbulb"></i>
+                                </div>
+                                <div class="step-content">
+                                    <h4 class="step-title">Strategy</h4>
+                                    <p class="step-description">
+                                        Develop a tailored security strategy aligned with your business objectives
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 3 -->
+                        <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                            <div class="timeline-step reveal-on-scroll" data-delay="300">
+                                <div class="step-circle">
+                                    <i class="bi bi-gear"></i>
+                                </div>
+                                <div class="step-content">
+                                    <h4 class="step-title">Implementation</h4>
+                                    <p class="step-description">
+                                        Deploy security solutions with minimal disruption to your operations
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 4 -->
+                        <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                            <div class="timeline-step reveal-on-scroll" data-delay="400">
+                                <div class="step-circle">
+                                    <i class="bi bi-shield-check"></i>
+                                </div>
+                                <div class="step-content">
+                                    <h4 class="step-title">Monitoring</h4>
+                                    <p class="step-description">
+                                        Continuous monitoring and optimization to maintain optimal protection
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="process-card reveal-on-scroll" data-delay="150">
-                            <div class="process-number">2</div>
-                            <h4 class="process-title">Strategy</h4>
-                            <p class="process-description">
-                                Develop a tailored security strategy aligned with your business objectives
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="process-card reveal-on-scroll" data-delay="200">
-                            <div class="process-number">3</div>
-                            <h4 class="process-title">Implementation</h4>
-                            <p class="process-description">
-                                Deploy security solutions with minimal disruption to your operations
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="process-card reveal-on-scroll" data-delay="300">
-                            <div class="process-number">4</div>
-                            <h4 class="process-title">Monitoring</h4>
-                            <p class="process-description">
-                                Continuous monitoring and optimization to maintain optimal protection
-                            </p>
-                        </div>
-                    </div>
+                    
+                    <!-- Mobile spacing -->
+                    <div class="d-lg-none mt-4"></div>
                 </div>
             </div>
         </section>
+         <!-- CTA Section -->
+        <section class="cta-section py-5" style="background: linear-gradient(135deg, #fff7ed 0%, #ffffff 50%, #fffbeb 100%); position: relative; overflow: hidden;">
+            <div class="container">
+                        <div class="cta-content text-left">
+                            <!-- Main Heading -->
+                            <h2 class="fw-bold display-4 mb-4 text-dark fade-in-up" data-delay="0">
+                                Ready to Transform 
+                                <span class="d-block fw-bold gradient-text">
+                                   Your Security?
+                                </span>
+                            </h2>
+                            
+                            <p class="lead text-muted mb-5 fade-in-up">
+                                Join hundreds of businesses that trust JetHat Cybersecurity to protect their digital assets with cutting-edge AI-powered solutions.
+                            </p>
+
+                          
+
+                            <!-- Action Buttons -->
+                            <div class="d-flex gap-3 flex-wrap justify-content-left fade-in-up" data-delay="500">
+                                <a href="../contact.html" class="btn btn-hero-primary animated-btn glow-btn">
+                                    <span class="btn-text">Schedule a Consultation</span>
+                                    <span class="btn-arrow ms-2"><i class="bi bi-arrow-right"></i></span>
+                                </a>
+
+                                <a href="#services" class="btn btn-hero-secondary animated-btn">
+                                    <span class="btn-text">Explore Services</span>
+                                    <span class="btn-icon ms-2"><i class="bi bi-search"></i></span>
+                                </a>
+                            </div>
+                            
+                            <!-- Trust Indicators -->
+                            <div class="row mt-5 justify-content-left fade-in-up" data-delay="600">
+                                <div class="col-lg-8">
+                                    <div class="d-flex justify-content-left align-items-center gap-4 flex-wrap">
+                                        <div class="text-center">
+                                            <div class="fw-bold text-dark" style="font-size: 1.5rem;">500+</div>
+                                            <div class="text-muted small">Clients Protected</div>
+                                        </div>
+                                        <div class="text-center">
+                                            <div class="fw-bold text-dark" style="font-size: 1.5rem;">99.9%</div>
+                                            <div class="text-muted small">Uptime Guarantee</div>
+                                        </div>
+                                        <div class="text-center">
+                                            <div class="fw-bold text-dark" style="font-size: 1.5rem;">24/7</div>
+                                            <div class="text-muted small">Expert Support</div>
+                                        </div>
+                                        <div class="text-center">
+                                            <div class="fw-bold text-dark" style="font-size: 1.5rem;">< 5min</div>
+                                            <div class="text-muted small">Response Time</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+             
+            </div>
+            
+           
+        </section>
+
 
       
 
-
     </main>
 
-    <!-- CTA Section -->
-    <section
-      id="cta-component"
-      class="cta-section overflow-hidden cta-theme section-bg-theme"
-    >
-      <div class="py-5 position-relative">
-        <!-- ================= MAIN CTA ================= -->
-        <section class=" text-dark">
-          <div class="container">
-            <div class="row align-items-center g-5">
-              <!-- Left Side - Content -->
-              <div class="col-lg-12 slide-in-left" data-delay="0">
-                <div class="cta-content">
-                  <!-- Main Heading -->
-                  <h2 class="fw-bold display-3 mb-4 text-dark theme-text">
-                    Ready to Transform 
-                    <span class="d-block fw-bold text-gradient " >
-                       Your Security?
-                    </span>
-                  </h2>
-
-                  <!-- Features List -->
-                  <div class="row mb-4">
-                    <!-- Feature 1 -->
-                    <div class="col-lg-4 col-md-6 mb-3">
-                      <div
-                        class="d-flex gap-3 feature-item slide-in-right"
-                        data-delay="600"
-                      >
-                        <div
-                          class="rounded-circle d-flex align-items-center justify-content-center check-icon bg-accent-success"
-                          style="
-                            width: 24px;
-                            height: 24px;
-                            color: white;
-                          "
-                        >
-                          ✓
-                        </div>
-                        <div>
-                          <span class="fw-semibold">Free Security Assessment</span>
-                          <p class="text-muted small mb-0">
-                            Comprehensive analysis of your current security posture
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- Feature 2 -->
-                    <div class="col-lg-4 col-md-6 mb-3">
-                      <div
-                        class="d-flex gap-3 feature-item slide-in-right"
-                        data-delay="700"
-                      >
-                        <div
-                          class="rounded-circle d-flex align-items-center justify-content-center check-icon bg-accent-success"
-                          style="
-                            width: 24px;
-                            height: 24px;
-                            color: white;
-                          "
-                        >
-                          ✓
-                        </div>
-                        <div>
-                          <span class="fw-semibold">24/7 Expert Support</span>
-                          <p class="text-muted small mb-0">
-                            Round-the-clock monitoring and incident response
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- Feature 3 -->
-                    <div class="col-lg-4 col-md-6 mb-3">
-                      <div
-                        class="d-flex gap-3 feature-item slide-in-right"
-                        data-delay="800"
-                      >
-                        <div
-                          class="rounded-circle d-flex align-items-center justify-content-center check-icon bg-accent-success"
-                          style="
-                            width: 24px;
-                            height: 24px;
-                            color: white;
-                          "
-                        >
-                          ✓
-                        </div>
-                        <div>
-                          <span class="fw-semibold">Custom Solutions</span>
-                          <p class="text-muted small mb-0">
-                            Tailored security strategies for your business needs
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Action Buttons -->
-                  <div class="d-flex gap-3 flex-wrap fade-in-up" data-delay="900">
-                    <button
-                      class="btn btn-primary text-white px-5 py-3 shadow-lg animated-btn glow-btn primary-btn"
-                    >
-                      <span class="btn-text">Schedule a Consultation</span>
-                      <span class="btn-arrow">→</span>
-                    </button>
-
-                    <button
-                      class="btn btn-outline-warning px-5 py-3 shadow-sm animated-btn secondary-btn"
-                    >
-                      <span class="btn-text">Explore Services</span>
-                      <span class="btn-icon">🔍</span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-    </section>
+   
 
     <!-- Footer -->
     <div id="footer-component"></div>

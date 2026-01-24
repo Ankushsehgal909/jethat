@@ -285,6 +285,118 @@
             opacity: 0.3;
             transform: scale(1.2);
         }
+
+        /* Service Card Styles */
+        .service-card {
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(220, 20, 60, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(220, 20, 60, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .service-card:hover::before {
+            left: 100%;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-15px) scale(1.05);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 0 1rem 0;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        
+        .service-icon::after {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            border-radius: 50%;
+            opacity: 0;
+            transition: all 0.4s ease;
+            z-index: -1;
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.2) rotate(360deg);
+        }
+        
+        .service-card:hover .service-icon::after {
+            opacity: 0.3;
+            transform: scale(1.2);
+        }
+
+        .service-title {
+            color: #333;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-description {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .section-title {
+            color: #333;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        /* Services Section */
+        .services-section {
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Reveal on Scroll Animation */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-on-scroll[data-delay="100"] {
+            transition-delay: 0.1s;
+        }
+
+        .reveal-on-scroll[data-delay="200"] {
+            transition-delay: 0.2s;
+        }
         
         .text-gradient {
             background: linear-gradient(135deg, #dc143c, #ffd700);
@@ -671,7 +783,7 @@
         }
 
         .tech-card {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(220, 20, 60, 0.1);
             border-radius: 15px;
             padding: 25px;
             text-align: center;
@@ -782,9 +894,6 @@
                             Anukaran AI
                             <span class="d-block text-gradient">Voice Revolution</span>
                         </h1>
-                        <p class="lead mb-4 reveal-up stagger-1" style="color: #666666;">
-                            A next-generation AI dubbing, voice cloning, text-to-speech with AI voice, speech-to-text, and lip-sync platform for multilingual video content creation. Revolutionize video localization with advanced AI models supporting 22+ Indian languages.
-                        </p>
                         
                         <!-- Terminal Effect -->
                         <div class="terminal-container reveal-up stagger-2">
@@ -878,10 +987,194 @@
             </div>
         </section>
 
+        <!-- Key Capabilities Section - Simple Layout -->
+        <section class="py-5" style="background: linear-gradient(135deg,#fff7ed,#ffffff,#fffbeb);">
+            <div class="container">
+                <div class="text-left mb-5 reveal-up">
+                    <h2 class="display-5 fw-bold mb-3" style="color: #333;">
+                        Key <span class="text-gradient">Capabilities</span>
+                    </h2>
+                    <p class="lead text-muted">Advanced AI-powered video localization features</p>
+                </div>
+                
+                <div class="row g-4">
+                    <!-- Left Column -->
+                    <div class="col-lg-6">
+                        <div class="row g-4">
+                            <div class="col-12">
+                                <div class="d-flex align-items-start reveal-up">
+                                    <div class="flex-shrink-0 me-3">
+                                        <div class="bg-gradient rounded-circle p-3" style="background: linear-gradient(135deg, #dc143c, #ffd700);">
+                                            <i class="bi bi-mic text-white fs-4"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h5 class="fw-bold mb-2">5-10 Second Voice Cloning</h5>
+                                        <p class="text-muted mb-0">Clone any voice with minimal sample audio while preserving accent, tone, and emotional characteristics.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-12">
+                                <div class="d-flex align-items-start reveal-up stagger-2">
+                                    <div class="flex-shrink-0 me-3">
+                                        <div class="bg-gradient rounded-circle p-3" style="background: linear-gradient(135deg, #dc143c, #ffd700);">
+                                            <i class="bi bi-camera-video text-white fs-4"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h5 class="fw-bold mb-2">Automated Video Processing</h5>
+                                        <p class="text-muted mb-0">Upload videos or YouTube links for automatic transcription, translation, and dubbing with perfect synchronization.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-12">
+                                <div class="d-flex align-items-start reveal-up stagger-3">
+                                    <div class="flex-shrink-0 me-3">
+                                        <div class="bg-gradient rounded-circle p-3" style="background: linear-gradient(135deg, #dc143c, #ffd700);">
+                                            <i class="bi bi-person-video2 text-white fs-4"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h5 class="fw-bold mb-2">Frame-Accurate Lip-Sync</h5>
+                                        <p class="text-muted mb-0">Advanced Wav2Lip technology for realistic lip synchronization with emotion and expression preservation.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Column -->
+                    <div class="col-lg-6">
+                        <div class="row g-4">
+                            <div class="col-12">
+                                <div class="d-flex align-items-start reveal-up stagger-4">
+                                    <div class="flex-shrink-0 me-3">
+                                        <div class="bg-gradient rounded-circle p-3" style="background: linear-gradient(135deg, #dc143c, #ffd700);">
+                                            <i class="bi bi-translate text-white fs-4"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h5 class="fw-bold mb-2">22+ Language Support</h5>
+                                        <p class="text-muted mb-0">Comprehensive support for Indian languages with auto-detection, Hinglish, and native script compatibility.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-12">
+                                <div class="d-flex align-items-start reveal-up stagger-5">
+                                    <div class="flex-shrink-0 me-3">
+                                        <div class="bg-gradient rounded-circle p-3" style="background: linear-gradient(135deg, #dc143c, #ffd700);">
+                                            <i class="bi bi-chat-square-text text-white fs-4"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h5 class="fw-bold mb-2">Natural TTS Generation</h5>
+                                        <p class="text-muted mb-0">Expressive text-to-speech with adjustable speed, pitch, and emotion control for realistic voice output.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-12">
+                                <div class="d-flex align-items-start reveal-up stagger-6">
+                                    <div class="flex-shrink-0 me-3">
+                                        <div class="bg-gradient rounded-circle p-3" style="background: linear-gradient(135deg, #dc143c, #ffd700);">
+                                            <i class="bi bi-gear text-white fs-4"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h5 class="fw-bold mb-2">Enterprise Deployment</h5>
+                                        <p class="text-muted mb-0">Docker containerization and Kubernetes orchestration for scalable on-premise or cloud deployment.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Anukaran AI Services Section -->
+        <section id="services" class="services-section py-5" style="background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);">
+            <div class="container">
+                <div class="text-left mb-5">
+                    <h2 class="section-title reveal-on-scroll display-5 fw-bold mb-3" style="color: #333;">Our Anukaran AI <span class="text-gradient">Services</span></h2>
+                    <p class="lead text-muted">Comprehensive AI-powered video localization solutions to transform your content creation and drive multilingual engagement</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card feature-card p-4 h-100 reveal-on-scroll">
+                            <div class="service-icon feature-icon">
+                                <i class="bi bi-mic text-white fs-2"></i>
+                            </div>
+                            <h3 class="service-title fw-bold mb-3 text-left">AI Voice Cloning</h3>
+                            <p class="service-description text-muted">
+                                Clone any voice with just 5-10 seconds of sample audio while retaining accent, tone, and emotional depth across multiple languages.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card feature-card p-4 h-100 reveal-on-scroll" data-delay="100">
+                            <div class="service-icon feature-icon">
+                                <i class="bi bi-chat-square-text text-white fs-2"></i>
+                            </div>
+                            <h3 class="service-title fw-bold mb-3 text-left">Text-to-Speech (TTS)</h3>
+                            <p class="service-description text-muted">
+                                Generate natural, expressive speech with adjustable speed, pitch, and emotion control using AI and cloned voice options.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card feature-card p-4 h-100 reveal-on-scroll" data-delay="200">
+                            <div class="service-icon feature-icon">
+                                <i class="bi bi-camera-video text-white fs-2"></i>
+                            </div>
+                            <h3 class="service-title fw-bold mb-3 text-left">Automated Video Dubbing</h3>
+                            <p class="service-description text-muted">
+                                Upload videos or YouTube links for automatic audio extraction, transcription, translation, and perfect sync merging.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card feature-card p-4 h-100 reveal-on-scroll">
+                            <div class="service-icon feature-icon">
+                                <i class="bi bi-person-video2 text-white fs-2"></i>
+                            </div>
+                            <h3 class="service-title fw-bold mb-3 text-left">AI Lip-Sync Technology</h3>
+                            <p class="service-description text-muted">
+                                Frame-accurate lip synchronization with support for all expressions, multiple speakers, and emotion preservation.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card feature-card p-4 h-100 reveal-on-scroll" data-delay="100">
+                            <div class="service-icon feature-icon">
+                                <i class="bi bi-translate text-white fs-2"></i>
+                            </div>
+                            <h3 class="service-title fw-bold mb-3 text-left">Multilingual Power</h3>
+                            <p class="service-description text-muted">
+                                Support for 22+ Indian languages with auto language detection, Hinglish support, and native script compatibility.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card feature-card p-4 h-100 reveal-on-scroll" data-delay="200">
+                            <div class="service-icon feature-icon">
+                                <i class="bi bi-gear text-white fs-2"></i>
+                            </div>
+                            <h3 class="service-title fw-bold mb-3 text-left">Enterprise Ready</h3>
+                            <p class="service-description text-muted">
+                                Docker containerization, Kubernetes orchestration, on-premise deployment with scalable API integration.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <!-- Key Benefits Section -->
         <section class="py-5" style="background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);">
             <div class="container">
-                <div class="text-center mb-5 reveal-up">
+                <div class="text-left mb-5 reveal-up">
                     <h2 class="display-5 fw-bold mb-3" style="color: #333;">
                         Key <span class="text-gradient">Benefits</span>
                     </h2>
@@ -928,127 +1221,10 @@
                 </div>
             </div>
         </section>
-
-        <!-- Key Capabilities Section -->
-        <section class="py-5" style="background: linear-gradient(135deg,#fff7ed,#ffffff,#fffbeb);">
-            <div class="container">
-                <div class="text-left mb-5 reveal-up">
-                    <h2 class="display-5 fw-bold mb-3" style="color: #333;">
-                        Key <span class="text-gradient">Capabilities</span>
-                    </h2>
-                    <p class="lead text-muted">Advanced AI-powered video localization features</p>
-                </div>
-                
-                <div class="row g-4">
-                    <!-- AI Voice Cloning -->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="feature-card p-4 h-100 reveal-up stagger-1">
-                            <div class="feature-icon">
-                                <i class="bi bi-mic text-white fs-2"></i>
-                            </div>
-                            <h4 class="fw-bold mb-3 text-center">AI Voice Cloning</h4>
-                            <ul class="list-unstyled">
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>5-10 Second Sample Cloning</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Retain Accent & Tone</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Emotional Depth Preservation</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Multilingual Support</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Voice Library Management</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Text-to-Speech -->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="feature-card p-4 h-100 reveal-up stagger-2">
-                            <div class="feature-icon">
-                                <i class="bi bi-chat-square-text text-white fs-2"></i>
-                            </div>
-                            <h4 class="fw-bold mb-3 text-center">Text-to-Speech (TTS)</h4>
-                            <ul class="list-unstyled">
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Natural Expressive Speech</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Adjustable Speed & Pitch</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Tone & Emotion Control</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>AI & Cloned Voice Options</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Real-time Generation</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Automated Video Dubbing -->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="feature-card p-4 h-100 reveal-up stagger-3">
-                            <div class="feature-icon">
-                                <i class="bi bi-camera-video text-white fs-2"></i>
-                            </div>
-                            <h4 class="fw-bold mb-3 text-center">Automated Video Dubbing</h4>
-                            <ul class="list-unstyled">
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Video & YouTube Upload</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Auto Audio Extraction</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Whisper Transcription</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Multi-language Translation</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Perfect Sync Merging</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- AI Lip-Sync -->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="feature-card p-4 h-100 reveal-up stagger-4">
-                            <div class="feature-icon">
-                                <i class="bi bi-person-video2 text-white fs-2"></i>
-                            </div>
-                            <h4 class="fw-bold mb-3 text-center">AI Lip-Sync (Wav2Lip)</h4>
-                            <ul class="list-unstyled">
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Frame-Accurate Sync</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>All Expression Support</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Multiple Speaker Handling</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Emotion Preservation</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Realistic Output</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Multilingual Power -->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="feature-card p-4 h-100 reveal-up stagger-1">
-                            <div class="feature-icon">
-                                <i class="bi bi-translate text-white fs-2"></i>
-                            </div>
-                            <h4 class="fw-bold mb-3 text-center">Multilingual Power</h4>
-                            <ul class="list-unstyled">
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>22+ Indian Languages</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Auto Language Detection</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Hinglish Support</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Native Script Support</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Code-Mixed Inputs</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Enterprise Features -->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="feature-card p-4 h-100 reveal-up stagger-2">
-                            <div class="feature-icon">
-                                <i class="bi bi-gear text-white fs-2"></i>
-                            </div>
-                            <h4 class="fw-bold mb-3 text-center">Enterprise Ready</h4>
-                            <ul class="list-unstyled">
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Docker Containerization</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Kubernetes Orchestration</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>On-Premise Deployment</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>API Integration</li>
-                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Scalable Architecture</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- Technology Stack Section -->
         <section class="py-5" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
             <div class="container">
-                <div class="text-center mb-5 reveal-up">
+                <div class="text-left mb-5 reveal-up">
                     <h2 class="display-5 fw-bold mb-3 text-white">
                         Powered by Advanced <span style="color: #ffd700;">AI Models</span>
                     </h2>
@@ -1056,22 +1232,22 @@
                 </div>
                 
                 <div class="tech-stack-grid">
-                    <div class="tech-card reveal-up stagger-1">
+                    <div class="tech-card ">
                         <div class="tech-logo">XTTSv2</div>
                         <h5 class="fw-bold mb-2">Text-to-Speech</h5>
                         <p class="text-muted small">Advanced neural TTS with voice cloning capabilities</p>
                     </div>
-                    <div class="tech-card reveal-up stagger-2">
+                    <div class="tech-card ">
                         <div class="tech-logo">Wav2Lip</div>
                         <h5 class="fw-bold mb-2">Lip Synchronization</h5>
                         <p class="text-muted small">State-of-the-art lip-sync technology for realistic dubbing</p>
                     </div>
-                    <div class="tech-card reveal-up stagger-3">
+                    <div class="tech-card ">
                         <div class="tech-logo">Whisper</div>
                         <h5 class="fw-bold mb-2">Speech Recognition</h5>
                         <p class="text-muted small">OpenAI's robust speech-to-text transcription system</p>
                     </div>
-                    <div class="tech-card reveal-up stagger-4">
+                    <div class="tech-card ">
                         <div class="tech-logo">AI</div>
                         <h5 class="fw-bold mb-2">Custom Models</h5>
                         <p class="text-muted small">Proprietary AI models for enhanced performance</p>
@@ -1079,11 +1255,10 @@
                 </div>
             </div>
         </section>
-
         <!-- Language Support Section -->
         <section class="py-5" style="background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);">
             <div class="container">
-                <div class="text-center mb-5 reveal-up">
+                <div class="text-left mb-5 reveal-up">
                     <h2 class="display-5 fw-bold mb-3" style="color: #333;">
                         Comprehensive <span class="text-gradient">Language Support</span>
                     </h2>
@@ -1126,86 +1301,96 @@
                 </div>
             </div>
         </section>
-
-        <!-- Smart Content Safety Solution Section -->
-        <section class="py-5" style="background: rgba(220, 20, 60, 0.02);">
+        <!-- Anukaran AI Benefits Section -->
+        <section class="ai-benefits-section" style="padding: 100px 0; background: linear-gradient(135deg, #1A1A1A, #2A2A2A); position: relative; overflow: hidden;">
             <div class="container">
                 <div class="row align-items-center g-5">
-                    <!-- Left Animated Image Cards -->
-                    <div class="col-lg-6 order-2 order-lg-1">
-                        <div class="position-relative">
-                            <!-- Main Large Card -->
-                            <div class="ai-card-main position-relative mb-4 reveal-up">
-                                <div class="ai-image-container" style="width: 500px; height: 350px; background: white; border-radius: 20px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); overflow: hidden; position: relative;">
-                                    <img src="../assets/images/cyber1.jpg" alt="AI Content Creation" class="ai-main-image" style="width: 100%; height: 100%; object-fit: cover; transition: all 0.6s ease;" />
-                                    <div class="ai-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(220, 20, 60, 0.2), rgba(255, 215, 0, 0.2)); opacity: 0; transition: all 0.4s ease;"></div>
-                                    <div class="ai-content" style="position: absolute; bottom: 20px; left: 20px; color: white; z-index: 2; transform: translateY(20px); opacity: 0; transition: all 0.4s ease;">
-                                        <h4 class="fw-bold mb-2">Smart Content Creation</h4>
-                                        <p class="mb-0">AI-Powered Video Localization</p>
+                    <!-- Left side - Content -->
+                    <div class="col-lg-6">
+                        <h2 class="reveal-on-scroll" style="font-size: 2.5rem; font-weight: 700; color: #ffffff; margin-bottom: 20px;">
+                            AI Voice Cloning & <span class="gradient-text">Multilingual Dubbing</span>
+                        </h2>
+                        <p class="reveal-on-scroll" data-delay="100" style="color: rgba(255, 255, 255, 0.7); font-size: 1.1rem; line-height: 1.8; margin-bottom: 25px;">
+                            Anukaran AI transforms content creation with cutting-edge voice cloning, AI dubbing, and lip-sync technology. Create authentic multilingual content with natural-sounding voices in 22+ Indian languages, revolutionizing video localization and accessibility.
+                        </p>
+                        <div class="row g-3 reveal-on-scroll" data-delay="200">
+                            <div class="col-6">
+                                <div class="d-flex align-items-center gap-3 p-3  rounded-3 shadow-sm" style="border: 1px solid rgba(220, 20, 60, 0.1);">
+                                    <div class="bg-success bg-opacity-10 rounded-circle p-2">
+                                        <i class="bi bi-mic text-success fs-5"></i>
+                                    </div>
+                                    <div>
+                                        <div class="fw-bold text-dark" style="font-size: 1.5rem;">99%</div>
+                                        <div class="text-muted small">Voice Accuracy</div>
                                     </div>
                                 </div>
                             </div>
-
-                            <!-- Secondary Card -->
-                            <div class="ai-card-secondary position-absolute reveal-left stagger-2" style="top: 50px; right: -30px; z-index: 2;">
-                                <div class="ai-image-container" style="width: 350px; height: 250px; background: white; border-radius: 15px; box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); overflow: hidden; position: relative;">
-                                    <img src="../assets/images/cyber2.jpg" alt="Voice Cloning" class="ai-secondary-image" style="width: 100%; height: 100%; object-fit: cover; transition: all 0.6s ease;" />
-                                    <div class="ai-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(34, 197, 94, 0.2), rgba(59, 130, 246, 0.2)); opacity: 0; transition: all 0.4s ease;"></div>
-                                    <div class="ai-badge" style="position: absolute; top: 15px; right: 15px; background: rgba(255, 255, 255, 0.9); padding: 8px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; color: #1f2937;">
-                                        Voice Cloning
+                            <div class="col-6">
+                                <div class="d-flex align-items-center gap-3 p-3  rounded-3 shadow-sm" style="border: 1px solid rgba(220, 20, 60, 0.1);">
+                                    <div class="bg-warning bg-opacity-10 rounded-circle p-2">
+                                        <i class="bi bi-lightning text-warning fs-5"></i>
                                     </div>
-                                </div>
-                            </div>
-
-                            <!-- Floating Mini Card -->
-                            <div class="ai-card-mini position-absolute reveal-zoom stagger-3" style="bottom: 30px; left: -30px; z-index: 3;">
-                                <div class="ai-image-container" style="width: 120px; height: 120px; background: white; border-radius: 50%; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); overflow: hidden; position: relative;">
-                                    <img src="../assets/images/cyber3.jpg" alt="Lip Sync" class="ai-mini-image" style="width: 100%; height: 100%; object-fit: cover; transition: all 0.6s ease;" />
-                                    <div class="ai-pulse" style="position: absolute; top: -2px; left: -2px; width: calc(100% + 4px); height: calc(100% + 4px); border: 2px solid #dc143c; border-radius: 50%; animation: pulse 2s infinite;"></div>
+                                    <div>
+                                        <div class="fw-bold text-dark" style="font-size: 1.5rem;">10x</div>
+                                        <div class="text-muted small">Faster Production</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="mt-4 reveal-on-scroll" data-delay="300">
+                            <a href="../contact.html" class="btn btn-hero-primary" style="background: linear-gradient(135deg, #dc143c, #ffd700); color: white; padding: 14px 32px; border-radius: 50px; font-weight: 600; border: none; transition: all 0.4s ease; box-shadow: 0 10px 30px rgba(220, 20, 60, 0.3);">
+                                <i class="bi bi-play-circle me-2"></i>Try Voice Cloning
+                            </a>
+                        </div>
                     </div>
-
-                    <!-- Right Content -->
-                    <div class="col-lg-6 order-1 order-lg-2">
-                        <div class="reveal-up">
-                            <h2 class="fw-bold display-3 mb-4" style="color: #333;">
-                                Smart Content
-                                <span class="d-block fw-bold display-2 text-gradient">Localization Solution</span>
-                            </h2>
-                            <p class="fs-5 text-muted mb-4" style="max-width: 520px;">
-                                Our advanced AI engine revolutionizes video localization by automating dubbing, voice cloning, and lip synchronization using cutting-edge AI models. Transform your content for global audiences while preserving the original speaker's emotion and style.
-                            </p>
-                            <p class="fs-6 text-muted mb-5" style="max-width: 520px;">
-                                From intelligent voice cloning to frame-accurate lip-sync, Anukaran AI creates a seamless multilingual experience. The platform learns from your content patterns and adapts to provide personalized localization recommendations for maximum audience engagement.
-                            </p>
-                            <div class="d-flex flex-wrap gap-3">
-                                <div class="d-flex align-items-center">
-                                    <div class="capability-icon me-2" style="width: 40px; height: 40px; background: linear-gradient(135deg, #dc143c, #ffd700);">
-                                        <i class="bi bi-lightning-charge text-white fs-6"></i>
+                    <!-- Right side - Image -->
+                    <div class="col-lg-6">
+                        <div class="reveal-on-scroll" data-delay="400" style="position: relative;">
+                            <div class="main-image-card" style="border-radius: 25px; overflow: hidden; box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);">
+                                <img src="../assets/images/cyber2.jpg" alt="AI Voice Technology" class="img-fluid" style="width: 100%; display: block; transition: all 0.4s ease;">
+                            </div>
+                            <div class="floating-card" style="position: absolute; top: 10%; right: -20px; background: rgba(255, 255, 255, 0.95); border-radius: 20px; padding: 20px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); animation: float-card 4s ease-in-out infinite;">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="bg-danger bg-opacity-10 rounded-circle p-2">
+                                        <i class="bi bi-soundwave text-danger fs-5"></i>
                                     </div>
-                                    <span class="fw-semibold">Instant Processing</span>
+                                    <div>
+                                        <div class="fw-bold text-dark">22+</div>
+                                        <div class="text-muted small">Languages</div>
+                                    </div>
                                 </div>
-                                <div class="d-flex align-items-center">
-                                    <div class="capability-icon me-2" style="width: 40px; height: 40px; background: linear-gradient(135deg, #667eea, #764ba2);">
-                                        <i class="bi bi-mic text-white fs-6"></i>
+                            </div>
+                            <div class="floating-card" style="position: absolute; bottom: 15%; left: -30px; background: rgba(255, 255, 255, 0.95); border-radius: 20px; padding: 20px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); animation: float-card 4s ease-in-out infinite; animation-delay: 2s;">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="bg-success bg-opacity-10 rounded-circle p-2">
+                                        <i class="bi bi-clock text-success fs-5"></i>
                                     </div>
-                                    <span class="fw-semibold">Voice Cloning</span>
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <div class="capability-icon me-2" style="width: 40px; height: 40px; background: linear-gradient(135deg, #4facfe, #00f2fe);">
-                                        <i class="bi bi-translate text-white fs-6"></i>
+                                    <div>
+                                        <div class="fw-bold text-dark">5min</div>
+                                        <div class="text-muted small">Voice Training</div>
                                     </div>
-                                    <span class="fw-semibold">22+ Languages</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <style>
+                @keyframes float-card {
+                    0%, 100% { transform: translateY(0px); }
+                    50% { transform: translateY(-15px); }
+                }
+                .gradient-text {
+                    background: linear-gradient(135deg, #dc143c, #ffd700);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-clip: text;
+                }
+                .main-image-card:hover img {
+                    transform: scale(1.05);
+                }
+            </style>
         </section>
-
         <!-- Call to Action Section -->
         <section class="py-5" style="background: linear-gradient(135deg, #dc143c, #ffd700);">
             <div class="container">
@@ -1235,96 +1420,7 @@
         </section>
     </main>
 
-    <!-- Anukaran AI Benefits Section -->
-    <section class="ai-benefits-section" style="padding: 100px 0; background: linear-gradient(135deg, #1A1A1A, #2A2A2A); position: relative; overflow: hidden;">
-        <div class="container">
-            <div class="row align-items-center g-5">
-                <!-- Left side - Content -->
-                <div class="col-lg-6">
-                    <h2 class="reveal-on-scroll" style="font-size: 2.5rem; font-weight: 700; color: #ffffff; margin-bottom: 20px;">
-                        AI Voice Cloning & <span class="gradient-text">Multilingual Dubbing</span>
-                    </h2>
-                    <p class="reveal-on-scroll" data-delay="100" style="color: rgba(255, 255, 255, 0.7); font-size: 1.1rem; line-height: 1.8; margin-bottom: 25px;">
-                        Anukaran AI transforms content creation with cutting-edge voice cloning, AI dubbing, and lip-sync technology. Create authentic multilingual content with natural-sounding voices in 22+ Indian languages, revolutionizing video localization and accessibility.
-                    </p>
-                    <div class="row g-3 reveal-on-scroll" data-delay="200">
-                        <div class="col-6">
-                            <div class="d-flex align-items-center gap-3 p-3 bg-white rounded-3 shadow-sm" style="border: 1px solid rgba(220, 20, 60, 0.1);">
-                                <div class="bg-success bg-opacity-10 rounded-circle p-2">
-                                    <i class="bi bi-mic text-success fs-5"></i>
-                                </div>
-                                <div>
-                                    <div class="fw-bold text-dark" style="font-size: 1.5rem;">99%</div>
-                                    <div class="text-muted small">Voice Accuracy</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="d-flex align-items-center gap-3 p-3 bg-white rounded-3 shadow-sm" style="border: 1px solid rgba(220, 20, 60, 0.1);">
-                                <div class="bg-warning bg-opacity-10 rounded-circle p-2">
-                                    <i class="bi bi-lightning text-warning fs-5"></i>
-                                </div>
-                                <div>
-                                    <div class="fw-bold text-dark" style="font-size: 1.5rem;">10x</div>
-                                    <div class="text-muted small">Faster Production</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mt-4 reveal-on-scroll" data-delay="300">
-                        <a href="../contact.html" class="btn btn-hero-primary" style="background: linear-gradient(135deg, #dc143c, #ffd700); color: white; padding: 14px 32px; border-radius: 50px; font-weight: 600; border: none; transition: all 0.4s ease; box-shadow: 0 10px 30px rgba(220, 20, 60, 0.3);">
-                            <i class="bi bi-play-circle me-2"></i>Try Voice Cloning
-                        </a>
-                    </div>
-                </div>
-                <!-- Right side - Image -->
-                <div class="col-lg-6">
-                    <div class="reveal-on-scroll" data-delay="400" style="position: relative;">
-                        <div class="main-image-card" style="border-radius: 25px; overflow: hidden; box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);">
-                            <img src="../assets/images/cyber2.jpg" alt="AI Voice Technology" class="img-fluid" style="width: 100%; display: block; transition: all 0.4s ease;">
-                        </div>
-                        <div class="floating-card" style="position: absolute; top: 10%; right: -20px; background: rgba(255, 255, 255, 0.95); border-radius: 20px; padding: 20px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); animation: float-card 4s ease-in-out infinite;">
-                            <div class="d-flex align-items-center gap-3">
-                                <div class="bg-danger bg-opacity-10 rounded-circle p-2">
-                                    <i class="bi bi-soundwave text-danger fs-5"></i>
-                                </div>
-                                <div>
-                                    <div class="fw-bold text-dark">22+</div>
-                                    <div class="text-muted small">Languages</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="floating-card" style="position: absolute; bottom: 15%; left: -30px; background: rgba(255, 255, 255, 0.95); border-radius: 20px; padding: 20px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); animation: float-card 4s ease-in-out infinite; animation-delay: 2s;">
-                            <div class="d-flex align-items-center gap-3">
-                                <div class="bg-success bg-opacity-10 rounded-circle p-2">
-                                    <i class="bi bi-clock text-success fs-5"></i>
-                                </div>
-                                <div>
-                                    <div class="fw-bold text-dark">5min</div>
-                                    <div class="text-muted small">Voice Training</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <style>
-            @keyframes float-card {
-                0%, 100% { transform: translateY(0px); }
-                50% { transform: translateY(-15px); }
-            }
-            .gradient-text {
-                background: linear-gradient(135deg, #dc143c, #ffd700);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-clip: text;
-            }
-            .main-image-card:hover img {
-                transform: scale(1.05);
-            }
-        </style>
-    </section>
+   
 
     <div id="footer-component"></div>
 
@@ -1337,7 +1433,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         function initAnimations() {
-            const animationElements = document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right, .reveal-zoom');
+            const animationElements = document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right, .reveal-zoom, .reveal-on-scroll');
             const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); } });
