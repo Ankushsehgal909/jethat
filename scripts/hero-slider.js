@@ -25,7 +25,7 @@ class HeroSlider {
         // Initialize first slide
         this.showSlide(0, false);
         
-        console.log('Hero Slider initialized successfully');
+        
     }
 
     cacheElements() {

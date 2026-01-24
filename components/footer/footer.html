@@ -549,7 +549,7 @@
     /* Tablet/Medium devices - Same layout as mobile */
     
     /* Company Info with Logo - Full width with border bottom */
-    .col-lg-3.col-md-4:first-child {
+    .footer-theme .col-lg-3.col-md-4:first-child {
         flex: 0 0 100% !important;
         max-width: 100% !important;
         margin-bottom: 1.5rem !important;
@@ -557,29 +557,29 @@
         border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
     }
     
-    .footer-logo-section {
+    .footer-theme .footer-logo-section {
         padding-bottom: 1rem !important;
     }
     
     /* Social icons on tablet - smaller and aligned right */
-    .social-icons-mobile {
+    .footer-theme .social-icons-mobile {
         margin-left: auto;
     }
     
-    .social-icons-mobile .social-link {
+    .footer-theme .social-icons-mobile .social-link {
         width: 36px !important;
         height: 36px !important;
         font-size: 0.9rem !important;
     }
     
     /* Hide description text on tablet */
-    .text-footer-theme.lh-relaxed {
+    .footer-theme .text-footer-theme.lh-relaxed {
         display: none !important;
     }
     
     /* Company and Services - 50% each (side by side) */
-    .col-lg-2.col-md-4:nth-child(2),
-    .col-lg-2.col-md-4:nth-child(3) {
+    .footer-theme .col-lg-2.col-md-4:nth-child(2),
+    .footer-theme .col-lg-2.col-md-4:nth-child(3) {
         flex: 0 0 50% !important;
         max-width: 50% !important;
         margin-bottom: 0 !important;
@@ -589,8 +589,8 @@
     }
     
     /* Products and Contact Us - 50% each (side by side) */
-    .col-lg-2.col-md-4:nth-child(4),
-    .col-lg-3.col-md-4:last-child {
+    .footer-theme .col-lg-2.col-md-4:nth-child(4),
+    .footer-theme .col-lg-3.col-md-4:last-child {
         flex: 0 0 50% !important;
         max-width: 50% !important;
         margin-bottom: 0 !important;
@@ -600,7 +600,7 @@
     }
     
     /* Remove Bootstrap g-5 gutter in tablet */
-    .footer-theme .row.g-5 {
+    .footer-theme .row {
         --bs-gutter-y: 0 !important;
         --bs-gutter-x: 1rem !important;
         row-gap: 0 !important;
@@ -608,72 +608,72 @@
         margin-bottom: 0 !important;
     }
     
-    .footer-section {
+    .footer-theme .footer-section {
         text-align: left;
         margin-bottom: 0 !important;
         padding-bottom: 0 !important;
     }
     
-    .footer-logo {
+    .footer-theme .footer-logo {
         height: 2.8rem !important;
     }
     
-    .footer-section h5 {
+    .footer-theme .footer-section h5 {
         font-size: 1.4rem !important;
     }
     
-    .social-link {
+    .footer-theme .social-link {
         margin: 0 0.25rem;
         width: 38px;
         height: 38px;
     }
     
-    .footer-heading {
+    .footer-theme .footer-heading {
         font-size: 0.95rem;
         margin-bottom: 0.6rem !important;
         margin-top: 0 !important;
         padding-top: 0 !important;
     }
     
-    .footer-links {
+    .footer-theme .footer-links {
         margin-bottom: 0 !important;
         padding-bottom: 0 !important;
     }
     
-    .footer-links li {
+    .footer-theme .footer-links li {
         margin-bottom: 0.4rem !important;
     }
     
-    .footer-links li:last-child {
+    .footer-theme .footer-links li:last-child {
         margin-bottom: 0 !important;
     }
     
-    .contact-info .d-flex {
+    .footer-theme .contact-info .d-flex {
         margin-bottom: 1rem !important;
     }
     
-    .py-5 {
+    .footer-theme .py-5 {
         padding-top: 2.5rem !important;
         padding-bottom: 2.5rem !important;
     }
     
-    .border-top.py-4 {
+    .footer-theme .border-top.py-4 {
         padding-top: 2.5rem !important;
         padding-bottom: 2.5rem !important;
     }
     
-    .footer-link {
+    .footer-theme .footer-link {
         font-size: 0.85rem;
     }
     
-    .text-footer-theme {
+    .footer-theme .text-footer-theme {
         font-size: 0.9rem !important;
     }
 }
 
 @media (max-width: 768px) {
     /* Company Info with Logo - Full width with border bottom */
-    .col-lg-3.col-md-4:first-child {
+    .footer-theme .col-lg-3.col-md-4:first-child {
         flex: 0 0 100% !important;
         max-width: 100% !important;
         margin-bottom: 1.5rem !important;
@@ -681,29 +681,29 @@
         border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
     }
     
-    .footer-logo-section {
+    .footer-theme .footer-logo-section {
         padding-bottom: 1rem !important;
     }
     
     /* Social icons on mobile - smaller and aligned right */
-    .social-icons-mobile {
+    .footer-theme .social-icons-mobile {
         margin-left: auto;
     }
     
-    .social-icons-mobile .social-link {
+    .footer-theme .social-icons-mobile .social-link {
         width: 32px !important;
         height: 32px !important;
         font-size: 0.85rem !important;
     }
     
     /* Hide description text on mobile */
-    .text-footer-theme.lh-relaxed {
+    .footer-theme .text-footer-theme.lh-relaxed {
         display: none !important;
     }
     
     /* Company and Services - 50% each (side by side) */
-    .col-lg-2.col-md-4:nth-child(2),
-    .col-lg-2.col-md-4:nth-child(3) {
+    .footer-theme .col-lg-2.col-md-4:nth-child(2),
+    .footer-theme .col-lg-2.col-md-4:nth-child(3) {
         flex: 0 0 50% !important;
         max-width: 50% !important;
         margin-bottom: 0 !important;
@@ -713,8 +713,8 @@
     }
     
     /* Products and Contact Us - 50% each (side by side) */
-    .col-lg-2.col-md-4:nth-child(4),
-    .col-lg-3.col-md-4:last-child {
+    .footer-theme .col-lg-2.col-md-4:nth-child(4),
+    .footer-theme .col-lg-3.col-md-4:last-child {
         flex: 0 0 50% !important;
         max-width: 50% !important;
         margin-bottom: 0 !important;
@@ -724,7 +724,7 @@
     }
     
     /* Remove Bootstrap g-5 gutter in mobile */
-    .footer-theme .row.g-5 {
+    .footer-theme .row {
         --bs-gutter-y: 0 !important;
         --bs-gutter-x: 1rem !important;
         row-gap: 0 !important;
@@ -732,56 +732,56 @@
         margin-bottom: 0 !important;
     }
     
-    .footer-section {
+    .footer-theme .footer-section {
         text-align: left;
         margin-bottom: 0 !important;
         padding-bottom: 0 !important;
     }
     
-    .footer-logo {
+    .footer-theme .footer-logo {
         height: 2.5rem !important;
     }
     
-    .footer-section h5 {
+    .footer-theme .footer-section h5 {
         font-size: 1.5rem !important;
     }
     
-    .social-link {
+    .footer-theme .social-link {
         margin: 0 0.25rem;
         width: 40px;
         height: 40px;
     }
     
-    .footer-heading {
+    .footer-theme .footer-heading {
         font-size: 1rem;
         margin-bottom: 0.5rem !important;
         margin-top: 0 !important;
         padding-top: 0 !important;
     }
     
-    .footer-links {
+    .footer-theme .footer-links {
         margin-bottom: 0 !important;
         padding-bottom: 0 !important;
     }
     
-    .footer-links li {
+    .footer-theme .footer-links li {
         margin-bottom: 0.3rem !important;
     }
     
-    .footer-links li:last-child {
+    .footer-theme .footer-links li:last-child {
         margin-bottom: 0 !important;
     }
     
-    .contact-info .d-flex {
+    .footer-theme .contact-info .d-flex {
         margin-bottom: 1rem !important;
     }
     
-    .py-5 {
+    .footer-theme .py-5 {
         padding-top: 2rem !important;
         padding-bottom: 2rem !important;
     }
     
-    .border-top.py-4 {
+    .footer-theme .border-top.py-4 {
         padding-top: 2rem !important;
         padding-bottom: 2rem !important;
     }
@@ -789,7 +789,7 @@
 
 @media (max-width: 576px) {
     /* Company Info with Logo - Full width with border bottom */
-    .col-lg-3.col-md-4:first-child {
+    .footer-theme .col-lg-3.col-md-4:first-child {
         flex: 0 0 100% !important;
         max-width: 100% !important;
         margin-bottom: 1.5rem !important;
@@ -797,13 +797,13 @@
         border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
     }
     
-    .footer-logo-section {
+    .footer-theme .footer-logo-section {
         padding-bottom: 1rem !important;
     }
     
     /* Company and Services - 50% each (side by side) */
-    .col-lg-2.col-md-4:nth-child(2),
-    .col-lg-2.col-md-4:nth-child(3) {
+    .footer-theme .col-lg-2.col-md-4:nth-child(2),
+    .footer-theme .col-lg-2.col-md-4:nth-child(3) {
         flex: 0 0 50% !important;
         max-width: 50% !important;
         margin-bottom: 0 !important;
@@ -813,8 +813,8 @@
     }
     
     /* Products and Contact Us - 50% each (side by side) */
-    .col-lg-2.col-md-4:nth-child(4),
-    .col-lg-3.col-md-4:last-child {
+    .footer-theme .col-lg-2.col-md-4:nth-child(4),
+    .footer-theme .col-lg-3.col-md-4:last-child {
         flex: 0 0 50% !important;
         max-width: 50% !important;
         margin-bottom: 0 !important;
@@ -824,7 +824,7 @@
     }
     
     /* Remove Bootstrap g-5 gutter in mobile */
-    .footer-theme .row.g-5 {
+    .footer-theme .row {
         --bs-gutter-y: 0 !important;
         --bs-gutter-x: 0.5rem !important;
         row-gap: 0 !important;
@@ -832,50 +832,50 @@
         margin-bottom: 0 !important;
     }
     
-    .footer-section {
+    .footer-theme .footer-section {
         margin-bottom: 0 !important;
         padding-bottom: 0 !important;
     }
     
-    .footer-logo {
+    .footer-theme .footer-logo {
         height: 2rem !important;
     }
     
-    .footer-section h5 {
+    .footer-theme .footer-section h5 {
         font-size: 1.25rem !important;
     }
     
-    .social-link {
+    .footer-theme .social-link {
         width: 36px;
         height: 36px;
         font-size: 0.9rem;
     }
     
-    .footer-heading {
+    .footer-theme .footer-heading {
         font-size: 0.85rem;
         margin-bottom: 0.5rem !important;
         margin-top: 0 !important;
         padding-top: 0 !important;
     }
     
-    .footer-link {
+    .footer-theme .footer-link {
         font-size: 0.75rem;
     }
     
-    .text-footer-theme {
+    .footer-theme .text-footer-theme {
         font-size: 0.8rem !important;
     }
     
-    .footer-links {
+    .footer-theme .footer-links {
         margin-bottom: 0 !important;
         padding-bottom: 0 !important;
     }
     
-    .footer-links li {
+    .footer-theme .footer-links li {
         margin-bottom: 0.3rem !important;
     }
     
-    .footer-links li:last-child {
+    .footer-theme .footer-links li:last-child {
         margin-bottom: 0 !important;
     }
 }

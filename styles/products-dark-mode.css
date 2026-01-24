@@ -420,14 +420,14 @@ p {
 }
 
 /* Footer in Product Pages */
-.footer {
+/* .footer {
     transition: all 0.3s ease;
 }
 
 [data-bs-theme="dark"] .footer {
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.95), rgba(26, 26, 26, 0.95)) !important;
     color: var(--text-primary) !important;
-}
+} */
 
 /* Reveal Animations - Preserve */
 .reveal-up,

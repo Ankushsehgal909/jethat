@@ -120,21 +120,9 @@
     overflow: visible !important;
 }
 
-/* Sticky Element - Left column sticky behavior */
-.who-we-are-sticky {
-    position: sticky;
-    top: 2rem;
-    transition: all 0.3s ease;
-    z-index: 10;
-    height: fit-content;
-    max-height: calc(100vh - 4rem);
-    overflow-y: visible !important;
-}
 
-.who-we-are-sticky.stuck {
-    transform: scale(0.98);
-    opacity: 0.95;
-}
+
+
 
 /* Active Box Styling */
 .who-we-are-active-box {
@@ -259,15 +247,7 @@
         padding: 2.5rem 0;
     }
     
-    /* Disable sticky on tablet and below */
-    section#who-we-are > div > div > div.col-lg-5.order-1.order-lg-1 > div {
-        position: static !important;
-        top: auto !important;
-        margin-bottom: 2rem;
-        height: auto !important;
-        max-height: none !important;
-        overflow: visible !important;
-    }
+ 
     
     /* Disable scroll container on tablet and below */
     section#who-we-are > div > div > div.col-lg-7.order-2.order-lg-2 {
@@ -466,10 +446,7 @@
     .who-we-are-card,
     .who-we-are-image,
     .who-we-are-active-box,
-    .who-we-are-sticky {
-        animation: none !important;
-        transition: none !important;
-    }
+   
 }
 
 /* High Contrast Mode */
