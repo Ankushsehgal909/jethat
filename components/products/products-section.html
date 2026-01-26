@@ -7,7 +7,7 @@
                 <h1 class="display-1 mb-4 theme-text wow slideInLeft" data-wow-delay="0.1s">
                     Our <span class="text-gradient">Products</span>
                 </h1>
-                <h5 class="d-inline-block border border-2 border-primary py-3 px-5 mb-0 wow slideInLeft" data-wow-delay="0.3s" style="color: var(--accent-primary); border-color: var(--accent-primary) !important;">
+                <h5 class="d-inline-block border border-2 border-primary py-3 px-5 mb-0 wow slideInLeft" data-wow-delay="0.3s" style="color: var(--accent-primary) !important; border-color: var(--accent-primary) !important;">
                     Innovative AI-Powered Solutions Since 2018
                 </h5>
                 <!-- Dynamic Product Info -->
@@ -200,10 +200,10 @@
                     </div>
                      <!-- Navigation Arrows -->
                         <div class="carousel-nav-arrows d-flex">
-                            <button class="carousel-nav-btn carousel-prev" id="carousel-prev">
+                            <button class="carousel-nav-btn carousel-prev " id="carousel-prev">
                                 <i class="bi bi-chevron-left"></i>
                             </button>
-                            <button class="carousel-nav-btn carousel-next" id="carousel-next">
+                            <button class="carousel-nav-btn carousel-next " id="carousel-next">
                                 <i class="bi bi-chevron-right"></i>
                             </button>
                         </div>
@@ -536,14 +536,14 @@
 .carousel-nav-btn {
     width: 45px;
     height: 45px;
-    border: 2px solid rgba(255, 255, 255, 0.8);
+    border: 2px solid rgba(109, 22, 0, 0.8);
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    /* color: white; */
     font-size: 1.2rem;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -836,13 +836,13 @@
     transition: all 0.3s ease;
 }
 
-[data-bs-theme="dark"] #products-section .theme-text {
+/* [data-bs-theme="dark"] #products-section .theme-text {
     color: var(--text-primary, #fff) !important;
-}
+} */
 
-[data-bs-theme="light"] #products-section .theme-text {
-    color: var(--text-light-primary, #333) !important;
-}
+/* [data-bs-theme="light"] #products-section .theme-text {
+    color: var(#000000, #333) !important;
+} */
 
 /* Dark theme support for product info */
 [data-bs-theme="dark"] .product-info-title {
