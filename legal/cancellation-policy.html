@@ -6,38 +6,29 @@
     <title>Cancellation Policy - JetHat Cyber Security</title>
     <meta name="description" content="JetHat Cyber Security Cancellation Policy. Learn about our service cancellation terms and refund policies.">
 
-    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="../styles/main.css">
     
-    <!-- Navigation Fix Script -->
     <script src="../scripts/navigation-fix.js"></script>
     <script src="../scripts/navbar-scroll.js"></script>
 </head>
 <body class="bg-d">
-    <!-- Navigation -->
     <div id="navigation-component"></div>
 
-    <!-- Right Panel -->
     <div id="right-panel-component"></div>
 
-    <!-- Main Content -->
     <main class="">
-        <!-- Hero Section -->
         <section class="py-5 position-relative overflow-hidden" style="margin-top: 1.5rem;">
             <div class="container-fluid px-4">
                 <div class="text-center py-5">
-                    <h1 class="display-4 fw-bold mb-4" ">Cancellation Policy</h1>
+                    <h1 class="display-4 fw-bold mb-4" >Cancellation Policy</h1>
                     <div class="w-25 mx-auto" style="height: 4px; background: linear-gradient(to right, var(--accent-primary), var(--accent-gold)); border-radius: 2px;"></div>
                     <p class="lead mt-4 mb-5" style="max-width: 800px; margin: 0 auto; color: #666666;">
                         Our cancellation and refund policy for various services and subscriptions.
@@ -47,8 +38,7 @@
             </div>
         </section>
 
-        <!-- Policy Content -->
-        <section class="py-5" ">
+        <section class="py-5" >
             <div class="container-fluid px-4">
                 <div class="row justify-content-center">
                     <div class="col-lg-10">
@@ -130,14 +120,13 @@
             </div>
         </section>
     </main>
-
-    <!-- Footer -->
     <div id="footer-component"></div>
        <!-- Theme Toggle -->
     <button id="theme-toggle" class="btn btn-dark position-fixed bottom-0 start-0 m-4 rounded-circle p-3 shadow-lg" style="z-index: 1050;">
         <i id="sun-icon" class="bi bi-sun-fill d-none"></i>
         <i id="moon-icon" class="bi bi-moon-fill"></i>
     </button>
+
     <script src="../scripts/theme-toggle.js"></script>
 
     <!-- Bootstrap 5 JS -->
@@ -167,19 +156,15 @@
             ];
 
             await Promise.all(components.map(([id, path]) => loadComponent(id, path)));
-            
-            // Trigger navigation fix after components are loaded
+        
             if (window.fixNavigationPaths) {
                 setTimeout(() => {
                     window.fixNavigationPaths();
                     console.log('Navigation paths fixed after component loading');
                 }, 100);
             }
-            
-            // Dispatch custom event for navigation fix
+    
             document.dispatchEvent(new CustomEvent('navigationLoaded'));
-            
-            console.log('✅ Cancellation Policy page initialized successfully');
         });
     </script>
 </body>

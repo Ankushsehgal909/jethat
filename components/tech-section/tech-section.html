@@ -8,8 +8,6 @@
                 <h5 class="d-inline-block border border-2 border-primary py-3 px-5 mb-0 wow slideInRight" data-wow-delay="0.3s" style="color: var(--accent-primary); border-color: var(--accent-primary) !important;">
                     An Award Winning Tech Company Since 2018
                 </h5>
-                
-                <!-- CTA Section -->
                 <div class="row mt-5">
                     <div class="col-12 text-left fadeInUp">
                         <a href="technologies/core.html" class="text-gradient border-2 text-decoration-none">
@@ -19,7 +17,6 @@
                     </div>
                 </div>
             </div>
-            
             <div class="col-lg-6">
                 <div class="header-carousel position-relative">
                     <div class="owl-carousel header-carousel animated fadeIn">
@@ -52,25 +49,19 @@
 </section>
 
 <style>
-/* ================= TECH SECTION STYLES (Desktop-like on Mobile) ================= */
-
-/* Base Section */
 #tech-section {
     min-height: auto;
     position: relative;
     padding: 3rem 0;
     opacity: 1;
     visibility: visible;
-    background: #000; /* Fallback background */
+   
 }
-
-/* Header Carousel Styles */
 .header-carousel {
     position: relative;
     padding: 45px 90px 45px 0;
     background-color: transparent;
 }
-
 .header-carousel::before {
     position: absolute;
     content: "";
@@ -82,8 +73,6 @@
     border-radius: 0 0 0 0;
     z-index: -1;
 }
-
-/* Mobile adjustments - overlay layout like image */
 @media (max-width: 991.98px) {
     .header-carousel {
         padding: 20px 40px 20px 0;
@@ -140,8 +129,6 @@
         padding: 1.5rem;
     }
 }
-
-/* Carousel Slide Content */
 .carousel-slide-content {
     position: relative;
     overflow: hidden;
@@ -156,7 +143,7 @@
     object-fit: cover;
 }
 
-/* Keep same image height on mobile - full screen */
+
 @media (max-width: 767.98px) {
     .carousel-slide-content {
         border-radius: 0;
@@ -175,7 +162,6 @@
         left: 0;
     }
     
-    /* Ensure carousel container takes full height */
     .header-carousel .owl-carousel,
     .header-carousel .owl-stage-outer,
     .header-carousel .owl-stage,
@@ -190,7 +176,6 @@
     }
 }
 
-/* Carousel Text Overlay */
 .carousel-text-overlay {
     position: absolute;
     bottom: 0;
@@ -201,7 +186,6 @@
     border-radius: 0 0 1rem 1rem;
 }
 
-/* Scale overlay padding for mobile */
 @media (max-width: 767.98px) {
     .carousel-text-overlay {
         padding: 1.5rem;
@@ -221,7 +205,6 @@
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* Scale heading for mobile */
 @media (max-width: 767.98px) {
     .carousel-heading {
         font-size: 1.3rem;
@@ -240,7 +223,6 @@
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-/* Scale description for mobile */
 @media (max-width: 767.98px) {
     .carousel-description {
         font-size: 0.85rem;
@@ -253,7 +235,6 @@
     }
 }
 
-/* Owl Carousel Dots - keep same position */
 .header-carousel .owl-dots {
     position: absolute;
     top: 50%;
@@ -265,7 +246,6 @@
     justify-content: center;
 }
 
-/* Adjust dot position for mobile - bottom right */
 @media (max-width: 991.98px) {
     .header-carousel .owl-dots {
         right: 20px;
@@ -318,7 +298,6 @@
     background: var(--bs-white);
 }
 
-/* Scale dots for mobile */
 @media (max-width: 575.98px) {
     .header-carousel .owl-dot {
         width: 12px;
@@ -331,7 +310,6 @@
     }
 }
 
-/* Text Visibility */
 #tech-section .display-1,
 #tech-section h5,
 #tech-section h5.theme-text {
@@ -348,7 +326,6 @@
     color: var(--text-light-primary, #333) !important;
 }
 
-/* Scale main heading for mobile */
 @media (max-width: 991.98px) {
     .display-1 {
         font-size: 3rem !important;
@@ -369,7 +346,6 @@
     }
 }
 
-/* Scale subtitle for mobile */
 @media (max-width: 767.98px) {
     #tech-section h5 {
         font-size: 1rem !important;
@@ -388,7 +364,6 @@
     }
 }
 
-/* Text Gradient */
 .text-gradient {
     background: var(--gradient-primary, linear-gradient(135deg, #dc143c, #ffd700));
     -webkit-background-clip: text;
@@ -398,7 +373,6 @@
     display: inline-block;
 }
 
-/* Fallback for browsers that don't support background-clip */
 @supports not (-webkit-background-clip: text) {
     .text-gradient {
         color: var(--accent-primary, #dc143c);
@@ -547,7 +521,6 @@
 </style>
 
 <script>
-// Header carousel initialization - same behavior on all devices
 $(document).ready(function() {
     $(".header-carousel .owl-carousel").owlCarousel({
         autoplay: true,
@@ -561,7 +534,6 @@ $(document).ready(function() {
         pullDrag: true
     });
     
-    // Fallback to ensure content is visible
     setTimeout(function() {
         const wowElements = document.querySelectorAll('#tech-section .wow:not(.animated)');
         wowElements.forEach(function(element) {
@@ -571,7 +543,6 @@ $(document).ready(function() {
             element.classList.add('animated');
         });
         
-        // Ensure all text elements are visible
         const textElements = document.querySelectorAll('#tech-section .display-1, #tech-section h5, #tech-section .text-gradient');
         textElements.forEach(function(element) {
             element.style.visibility = 'visible';

@@ -1,28 +1,22 @@
 <section id="who-we-are" class="position-relative overflow-hidden py-5 section-bg-theme">
   <div class="container px-3 px-md-4">
     <div class="row g-4 g-lg-5 align-items-start">
-
-      <!-- LEFT CONTENT -->
       <div class="col-lg-5 order-1 order-lg-1">
         <div class="mt-5">
           <h2 class="fw-bold display-4 display-md-3 mb-3 mb-md-4 text-dark theme-text animated-title">
             Who we
             <span class="fw-bold text-gradient animated-span">Are</span>
           </h2>
-            
           <p class="fs-6 fs-md-5 text-muted mt-3 mb-4 animated-text theme-text lh-base">
             Jethat Cybersecurity Private Limited is a next-generation cybersecurity and software development 
             company delivering secure, scalable, and intelligent technology solutions for modern enterprises.
           </p>
-
           <div id="active-box" class="bg-card-theme p-3 p-md-4 p-lg-5  shadow-lg border theme-text who-we-are-active-box">
             <h4 id="active-title" class="fw-bold mb-2 mb-md-3 theme-text fs-5 fs-md-4">Vision</h4>
             <p id="active-desc" class="theme-text mb-0 fs-6 fs-md-5 lh-base" style="opacity: 0.9;">
               A digitally secure world where businesses thrive without compromise.
             </p>
           </div>
-
-          <!-- CTA Section -->
           <div class="mt-4 mt-md-5">
             <a href="about/index.html" class="text-gradient text-decoration-none d-inline-flex align-items-center fs-6 fs-md-5">
               <i class="bi bi-arrow-right me-2"></i>
@@ -32,7 +26,6 @@
         </div>
       </div>
 
-      <!-- RIGHT CONTENT -->
       <div class="col-lg-7 order-2 order-lg-2">
         <div id="who-we-are-sections-container" class="who-we-are-sections">
           
@@ -111,20 +104,12 @@
 </section>
 
 <style>
-/* ================= WHO WE ARE SECTION STYLES ================= */
-
-/* Base Section Styling */
 #who-we-are {
     min-height: auto;
     padding: 3rem 0;
     overflow: visible !important;
 }
 
-
-
-
-
-/* Active Box Styling */
 .who-we-are-active-box {
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     border: 2px solid var(--accent-primary);
@@ -136,7 +121,6 @@
     box-shadow: 0 15px 35px rgba(220, 20, 60, 0.15);
 }
 
-/* Dark Mode Support */
 [data-bs-theme="dark"] .who-we-are-active-box,
 .dark-theme .who-we-are-active-box {
     background: var(--bg-card) !important;
@@ -149,31 +133,23 @@
     border-color: var(--accent-primary);
 }
 
-/* Image Container */
+
 .who-we-are-image-container {
     height: 280px;
     border-radius: 2px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    /* transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); */
 }
 
 .who-we-are-image-container:hover {
-    /* transform: translateY(-8px); */
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
 }
 
-/* Image Styling */
 .who-we-are-image {
     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: transform;
 }
 
-.who-we-are-card:hover .who-we-are-image {
-    /* transform: scale(1.08); */
-}
-
-/* Overlay Styling */
 .who-we-are-overlay {
     background: linear-gradient(
         135deg,
@@ -193,7 +169,6 @@
     );
 }
 
-/* Content Styling */
 .who-we-are-content {
     transition: all 0.3s ease;
 }
@@ -204,11 +179,9 @@
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
-/* Card Animation */
 .who-we-are-card {
     opacity: 0;
     transform: translateY(5px);
-    /* animation: fadeInUp 0.8s ease-out forwards; */
 }
 
 .who-we-are-card:nth-child(1) { animation-delay: 0.1s; }
@@ -228,9 +201,6 @@
 }
 </style>
 <style>
-/* ================= RESPONSIVE DESIGN ================= */
-
-/* Large Tablets and Small Desktops (992px - 1199px) */
 @media (max-width: 1199.98px) {
     .who-we-are-image-container {
         height: 260px;
@@ -241,15 +211,11 @@
     }
 }
 
-/* Tablets (768px - 991px) */
 @media (max-width: 991.98px) {
     #who-we-are {
         padding: 2.5rem 0;
     }
     
- 
-    
-    /* Disable scroll container on tablet and below */
     section#who-we-are > div > div > div.col-lg-7.order-2.order-lg-2 {
         height: auto !important;
         min-height: auto !important;
@@ -432,21 +398,11 @@
     }
 }
 
-/* ================= ACCESSIBILITY & PERFORMANCE ================= */
-
 /* Focus States */
 .who-we-are-card:focus-within {
     outline: 2px solid var(--accent-primary);
     outline-offset: 4px;
     border-radius: 2px;
-}
-
-/* Reduced Motion Support */
-@media (prefers-reduced-motion: reduce) {
-    .who-we-are-card,
-    .who-we-are-image,
-    .who-we-are-active-box,
-   
 }
 
 /* High Contrast Mode */
@@ -483,4 +439,325 @@
         background: white !important;
     }
 }
+</style>
+<style>
+
+/* ============================================
+   WHO WE ARE ANIMATIONS
+   ============================================ */
+
+/* Who we are animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes cardHover {
+    from {
+        transform: translateY(0) scale(1);
+    }
+    to {
+        transform: translateY(-5px) scale(1.02);
+    }
+}
+
+@keyframes imageZoom {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
+
+/* Animated elements in left panel */
+.animated-title {
+    animation: slideInLeft 0.8s ease-out;
+}
+
+.animated-span {
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.animated-text {
+    animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+/* Enhanced text gradient animation */
+.text-gradient {
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 3s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+    0%, 100% {
+        background: linear-gradient(135deg, var(--accent-primary), var(--accent-gold));
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+    50% {
+        background: linear-gradient(135deg, var(--accent-gold), var(--accent-primary));
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+}
+
+/* ============================================
+   WHO WE ARE SECTION
+   ============================================ */
+
+/* Who we are section */
+#who-we-are {
+    position: relative;
+    /* Normal height, not too tall */
+    min-height: 100vh;
+    overflow: visible;
+}
+
+#who-we-are .container {
+    position: relative;
+    min-height: inherit;
+    overflow: visible;
+}
+
+#who-we-are .row {
+    min-height: 100vh;
+    align-items: flex-start;
+    overflow: visible;
+}
+
+#who-we-are img {
+    transition: transform 0.3s ease;
+}
+
+/* Active box styling */
+#active-box {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid var(--accent-primary-25);
+    background: var(--bg-card);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px var(--accent-primary-15);
+    /* Add entrance animation */
+    animation: scaleIn 0.6s ease-out 0.4s both;
+}
+
+/* Enhanced active box hover effect */
+#active-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px var(--accent-primary-20);
+}
+
+/* Theme-aware active box styling */
+[data-bs-theme="light"] #active-box,
+.light-theme #active-box {
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--text-light-primary);
+}
+
+[data-bs-theme="dark"] #active-box,
+.dark-theme #active-box {
+    background: rgba(42, 42, 42, 0.95);
+    color: var(--text-primary);
+}
+
+#active-title {
+    color: var(--accent-primary) !important;
+}
+
+/* Enhanced card shadows with theme awareness */
+[data-bs-theme="light"] .shadow-lg,
+.light-theme .shadow-lg {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15) !important;
+}
+
+[data-bs-theme="dark"] .shadow-lg,
+.dark-theme .shadow-lg {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Text color improvements for better contrast */
+.text-light {
+    color: #ffffff !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Sticky positioning fix */
+.who-we-are-sticky {
+    position: sticky;
+    top: 2rem;
+    z-index: 10;
+    height: fit-content;
+    max-height: 75vh;
+    align-self: flex-start;
+    will-change: transform;
+    transition: all 0.3s ease;
+    overflow: visible;
+    /* Add entrance animation */
+    animation: slideInLeft 0.8s ease-out;
+}
+
+/* Visual indicator when sticky is active */
+.who-we-are-sticky.stuck {
+    box-shadow: 0 4px 20px rgba(220, 20, 60, 0.1);
+    border-left: 3px solid var(--accent-primary);
+    padding-left: 1rem;
+}
+
+/* Debug: Ensure parent containers don't interfere */
+#who-we-are .col-lg-5 {
+    /* Ensure the column doesn't have overflow hidden */
+    overflow: visible;
+    /* Fixed height to match right side */
+    height: auto;
+    position: relative;
+}
+
+/* Ensure the right column has fixed height with internal scrolling */
+#who-we-are .col-lg-7 {
+    height: calc(100vh - 120px);
+    min-height: 500px;
+    max-height: calc(100vh - 120px);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 100px;
+    align-self: flex-start;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991.98px) {
+    #who-we-are {
+        min-height: auto;
+    }
+    
+    #who-we-are-sections-container {
+        height: auto !important;
+        min-height: auto !important;
+        max-height: none !important;
+        overflow-y: visible !important;
+        gap: 1rem;
+    }
+    
+    #who-we-are-sections-container section {
+        min-height: auto !important;
+        margin-bottom: 0 !important;
+        padding: 0 !important;
+    }
+    
+    section#who-we-are > div > div > div.col-lg-5.order-1.order-lg-1 > div {
+        position: relative !important;
+        top: auto !important;
+        margin-bottom: 2rem;
+        height: auto !important;
+        max-height: none !important;
+    }
+    
+    #who-we-are .col-lg-5,
+    #who-we-are .col-lg-7 {
+        height: auto !important;
+        min-height: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
+    }
+}
+
+/* Ensure proper scrolling container for sticky behavior */
+#who-we-are-sections-container {
+    /* Fixed height with internal scrolling */
+    height: 100%;
+    min-height: auto;
+    max-height: none;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-right: 10px; /* Space for scrollbar */
+    flex: 1;
+    /* Custom scrollbar styling */
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-primary) transparent;
+}
+
+/* Custom scrollbar for webkit browsers */
+#who-we-are-sections-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+#who-we-are-sections-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#who-we-are-sections-container::-webkit-scrollbar-thumb {
+    background: var(--accent-primary);
+    border-radius: 3px;
+}
+
+#who-we-are-sections-container::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-gold);
+}
+
+/* Section cards - maintain size within scrollable container */
+#who-we-are-sections-container section {
+    /* Cards maintain their size within scrollable container */
+    height: auto;
+    min-height: auto;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    flex-shrink: 0; /* Prevent cards from shrinking */
+    opacity: 1;
+    animation: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Card hover animations */
+#who-we-are-sections-container section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+#who-we-are-sections-container section:hover img {
+    transform: scale(1.05);
+}
+
+/* Image animations */
+#who-we-are-sections-container section img {
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 </style>

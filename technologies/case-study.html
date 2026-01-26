@@ -6,1905 +6,37 @@
     <title>Technology Case Studies - JetHat Cyber Security</title>
     <meta name="description" content="Real-world technology implementations and case studies by JetHat. Discover how our cutting-edge solutions have transformed businesses across industries.">
 
-    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
-    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     
-    <!-- Owl Carousel CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     
-    <!-- Breadcrumb Badge -->
-    <script src="../scripts/breadcrumb-badge.js"></script>
-    
-    <!-- Universal Loader -->
-    <script src="../scripts/universal-loader.js"></script>
-
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/loader.css">
-    
-    <!-- Navigation Fix Script -->
+    <link rel="stylesheet" href="technologies/css/case-study.css">
+     <!--Custom JS  -->
     <script src="../scripts/navbar-scroll.js"></script>
     <script src="../scripts/navigation-fix.js"></script>
-    
-    <style>
-        :root {
-            --case-primary: #DC143C;
-            --case-secondary: #FFD700;
-            --case-dark: #1A1A1A;
-            --case-light: #F8F8F8;
-        }
-
-        /* Light Theme (Default) */
-        [data-bs-theme="light"] {
-            --bg-gradient: linear-gradient(135deg, #fff7ed 0%, #ffffff 50%, #fffbeb 100%);
-            --text-primary: #333333;
-            --text-secondary: #666666;
-            --text-muted: #999999;
-            --card-bg: #ffffff;
-            --card-border: rgba(220, 20, 60, 0.1);
-            --card-shadow: rgba(0, 0, 0, 0.1);
-        }
-
-        /* Dark Theme */
-        [data-bs-theme="dark"] {
-            --bg-gradient: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 50%, #1a1a1a 100%);
-            --text-primary: #f0f0f0;
-            --text-secondary: #cccccc;
-            --text-muted: #999999;
-            --card-bg: #2a2a2a;
-            --card-border: rgba(220, 20, 60, 0.3);
-            --card-shadow: rgba(0, 0, 0, 0.5);
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background: var(--bg-gradient);
-            color: var(--text-primary);
-            overflow-x: hidden;
-            transition: background 0.3s ease, color 0.3s ease;
-        }
-
-        /* Hero Section */
-        .case-hero {
-            background: var(--bg-gradient);
-            position: relative;
-            overflow: hidden;
-            padding: 100px 0;
-            min-height: 60vh;
-        }
-
-        .case-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
-                linear-gradient(90deg, rgba(220, 20, 60, 0.03) 1px, transparent 1px),
-                linear-gradient(rgba(220, 20, 60, 0.03) 1px, transparent 1px),
-                radial-gradient(circle at 50% 50%, rgba(220, 20, 60, 0.02) 1px, transparent 1px);
-            background-size: 50px 50px, 50px 50px, 20px 20px;
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        /* Card Styles */
-        .tech-marquee-section {
-            overflow: hidden;
-            position: relative;
-        }
-
-        .tech-marquee-container {
-            width: 100%;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .tech-marquee {
-            display: flex;
-            animation: marquee 25s linear infinite;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .tech-marquee-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-            min-width: 120px;
-            padding: 20px;
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 15px;
-            transition: all 0.3s ease;
-            white-space: nowrap;
-        }
-
-        .tech-marquee-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            border-color: rgba(220, 20, 60, 0.3);
-        }
-
-        .tech-logo {
-            width: 40px;
-            height: 40px;
-            object-fit: contain;
-            filter: grayscale(100%);
-            transition: all 0.3s ease;
-        }
-
-        .tech-marquee-item:hover .tech-logo {
-            filter: grayscale(0%);
-            transform: scale(1.1);
-        }
-
-        .tech-marquee-item span {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        @keyframes marquee {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-100%);
-            }
-        }
-
-        /* Pause marquee on hover */
-        .tech-marquee-container:hover .tech-marquee {
-            animation-play-state: paused;
-        }
-
-        /* Case Studies Counter */
-        .case-studies-counter {
-            margin-bottom: 30px;
-        }
-
-        .counter-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 12px 24px;
-            background: linear-gradient(135deg, rgba(220, 20, 60, 0.1), rgba(255, 215, 0, 0.1));
-            border: 2px solid rgba(220, 20, 60, 0.2);
-            border-radius: 50px;
-            font-weight: 600;
-            color: #dc143c;
-            box-shadow: 0 5px 15px rgba(220, 20, 60, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .counter-badge:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(220, 20, 60, 0.2);
-        }
-
-        .counter-badge i {
-            font-size: 1.2rem;
-            color: #dc143c;
-        }
-
-        .counter-number {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #dc143c;
-        }
-
-        .counter-separator {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-        }
-
-        .counter-total {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #ffd700;
-        }
-
-        .counter-label {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-
-        /* Compact Success Stories Slider Styles */
-        .success-stories-slider-compact {
-            position: relative;
-            overflow: hidden;
-            padding: 20px 0;
-        }
-
-        .slider-container-compact {
-            position: relative;
-            max-width: 100%;
-            margin: 0 auto;
-        }
-
-        .slider-wrapper-compact {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-            gap: 20px;
-        }
-
-        .slider-item-compact {
-            min-width: calc(50% - 10px); /* Show 2 cards on desktop */
-            flex-shrink: 0;
-        }
-
-        /* Compact Slider Card Styles */
-        .case-study-card-compact {
-            background: var(--card-bg);
-            border-radius: 16px;
-            overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid var(--card-border);
-            position: relative;
-            box-shadow: 0 6px 20px var(--card-shadow);
-            height: 100%;
-        }
-
-        .case-study-card-compact::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(90deg, #dc143c, #ffd700);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.4s ease;
-            z-index: 2;
-        }
-
-        .case-study-card-compact:hover::before {
-            transform: scaleX(1);
-        }
-
-        .case-study-card-compact:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .case-study-image-compact {
-            position: relative;
-            height: 180px;
-            overflow: hidden;
-        }
-
-        .case-image-compact {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: all 0.6s ease;
-            transform: translateY(15px);
-        }
-
-        .case-study-card-compact:hover .case-image-compact {
-            transform: translateY(0) scale(1.08);
-        }
-
-        .case-overlay-compact {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(220, 20, 60, 0.7), rgba(255, 215, 0, 0.7));
-            display: flex;
-            align-items: flex-end;
-            justify-content: flex-start;
-            padding: 15px;
-            opacity: 0;
-            transition: all 0.4s ease;
-        }
-
-        .case-study-card-compact:hover .case-overlay-compact {
-            opacity: 1;
-        }
-
-        .case-category-compact {
-            background: rgba(255, 255, 255, 0.95);
-            color: #dc143c;
-            padding: 6px 12px;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            transform: translateY(15px);
-            transition: all 0.4s ease;
-        }
-
-        .case-study-card-compact:hover .case-category-compact {
-            transform: translateY(0);
-        }
-
-        /* Case Number Badge */
-        .case-number {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            width: 35px;
-            height: 35px;
-            background: linear-gradient(135deg, #dc143c, #ffd700);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.9rem;
-            font-weight: 700;
-            box-shadow: 0 4px 12px rgba(220, 20, 60, 0.3);
-            z-index: 3;
-        }
-
-        /* Read More Overlay */
-        .read-more-overlay-compact {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.85);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: all 0.4s ease;
-            z-index: 4;
-        }
-
-        .case-study-card-compact:hover .read-more-overlay-compact {
-            opacity: 1;
-        }
-
-        .btn-read-more-compact {
-            background: linear-gradient(135deg, #dc143c, #ffd700);
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 25px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-            transform: translateY(15px);
-            box-shadow: 0 8px 20px rgba(220, 20, 60, 0.3);
-        }
-
-        .case-study-card-compact:hover .btn-read-more-compact {
-            transform: translateY(0) scale(1.05);
-            box-shadow: 0 12px 30px rgba(220, 20, 60, 0.4);
-        }
-
-        .btn-read-more-compact:hover {
-            transform: translateY(0) scale(1.1);
-            box-shadow: 0 15px 35px rgba(220, 20, 60, 0.5);
-        }
-
-        .case-study-content-compact {
-            padding: 20px 18px;
-            position: relative;
-        }
-
-        .case-icon-compact {
-            width: 45px;
-            height: 45px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            margin: -32px auto 15px;
-            background: linear-gradient(135deg, #dc143c, #ffd700);
-            position: relative;
-            z-index: 2;
-            box-shadow: 0 6px 18px rgba(220, 20, 60, 0.3);
-        }
-
-        .case-title {
-            color: var(--text-primary);
-            margin-bottom: 12px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            line-height: 1.3;
-        }
-
-        .case-description {
-            color: var(--text-secondary);
-            line-height: 1.5;
-            margin-bottom: 15px;
-            font-size: 0.9rem;
-        }
-
-        .case-metrics-compact {
-            display: flex;
-            justify-content: space-between;
-            background: rgba(220, 20, 60, 0.05);
-            border-radius: 8px;
-            padding: 12px;
-            margin-bottom: 15px;
-        }
-
-        .metric-item-compact {
-            text-align: center;
-            flex: 1;
-        }
-
-        .metric-value-compact {
-            display: block;
-            font-size: 1rem;
-            font-weight: 700;
-            color: #dc143c;
-            line-height: 1;
-        }
-
-        .metric-label-compact {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            font-weight: 500;
-            margin-top: 2px;
-        }
-
-        .case-technologies-compact {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-        }
-
-        .tech-tag-compact {
-            padding: 4px 8px;
-            background: linear-gradient(135deg, rgba(220, 20, 60, 0.1), rgba(255, 215, 0, 0.1));
-            border: 1px solid rgba(220, 20, 60, 0.2);
-            border-radius: 12px;
-            font-size: 0.7rem;
-            font-weight: 500;
-            color: #dc143c;
-            transition: all 0.3s ease;
-        }
-
-        .tech-tag-compact:hover {
-            background: linear-gradient(135deg, #dc143c, #ffd700);
-            color: white;
-            transform: translateY(-1px);
-        }
-
-        /* Compact Slider Navigation */
-        .slider-navigation-compact {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            pointer-events: none;
-            z-index: 10;
-        }
-
-        .slider-btn-compact {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #dc143c, #ffd700);
-            border: none;
-            color: white;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            pointer-events: all;
-            box-shadow: 0 4px 12px rgba(220, 20, 60, 0.3);
-        }
-
-        .slider-btn-compact:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 18px rgba(220, 20, 60, 0.4);
-        }
-
-        .prev-btn-compact {
-            margin-left: -20px;
-        }
-
-        .next-btn-compact {
-            margin-right: -20px;
-        }
-
-        /* Enhanced Progress and Dots */
-        .slider-progress-container {
-            margin-top: 25px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .slider-progress-bar {
-            width: 200px;
-            height: 4px;
-            background: rgba(220, 20, 60, 0.2);
-            border-radius: 2px;
-            overflow: hidden;
-        }
-
-        .progress-fill {
-            height: 100%;
-            background: linear-gradient(90deg, #dc143c, #ffd700);
-            border-radius: 2px;
-            transition: width 0.5s ease;
-            width: 16.67%; /* 1/6 for first slide */
-        }
-
-        .slider-dots-compact {
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-        }
-
-        .dot-compact {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: rgba(220, 20, 60, 0.3);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .dot-compact.active {
-            background: linear-gradient(135deg, #dc143c, #ffd700);
-            transform: scale(1.3);
-        }
-
-        .dot-compact:hover {
-            background: rgba(220, 20, 60, 0.6);
-            transform: scale(1.2);
-        }
-
-        .dot-compact.active::after {
-            content: '';
-            position: absolute;
-            top: -3px;
-            left: -3px;
-            right: -3px;
-            bottom: -3px;
-            border: 2px solid rgba(220, 20, 60, 0.3);
-            border-radius: 50%;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-                opacity: 1;
-            }
-            100% {
-                transform: scale(1.4);
-                opacity: 0;
-            }
-        }
-
-        .tech-tag {
-            padding: 6px 12px;
-            background: linear-gradient(135deg, rgba(220, 20, 60, 0.1), rgba(255, 215, 0, 0.1));
-            border: 1px solid rgba(220, 20, 60, 0.2);
-            border-radius: 15px;
-            font-size: 0.75rem;
-            font-weight: 500;
-            color: #dc143c;
-            transition: all 0.3s ease;
-        }
-
-        .tech-tag:hover {
-            background: linear-gradient(135deg, #dc143c, #ffd700);
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        /* Impact Metrics Styles */
-        .impact-metric-card {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 20px;
-            padding: 40px 30px;
-            text-align: center;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-            height: 100%;
-        }
-
-        .impact-metric-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, #dc143c, #ffd700);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.4s ease;
-        }
-
-        .impact-metric-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .impact-metric-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-            border-color: rgba(220, 20, 60, 0.3);
-        }
-
-        .metric-icon {
-            width: 80px;
-            height: 80px;
-            border-radius: 20px;
-            background: linear-gradient(135deg, rgba(220, 20, 60, 0.1), rgba(255, 215, 0, 0.1));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            color: #dc143c;
-            margin: 0 auto 25px;
-            transition: all 0.4s ease;
-        }
-
-        .impact-metric-card:hover .metric-icon {
-            background: linear-gradient(135deg, #dc143c, #ffd700);
-            color: white;
-            transform: scale(1.1);
-        }
-
-        .metric-number {
-            font-size: 3.5rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #dc143c, #ffd700);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            display: block;
-            line-height: 1;
-            margin-bottom: 15px;
-        }
-
-        .metric-number::after {
-            content: '%';
-            font-size: 2rem;
-        }
-
-        .metric-number[data-target="750"]::after,
-        .metric-number[data-target="75"]::after {
-            content: '+';
-        }
-
-        .metric-number[data-target="99"]::after {
-            content: '.9%';
-        }
-
-        .metric-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 10px;
-        }
-
-        .metric-description {
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-            line-height: 1.5;
-            margin: 0;
-        }
-
-        /* Industry Breakdown */
-        .industry-breakdown {
-            background: var(--bg-gradient);
-            border-radius: 20px;
-            padding: 40px 30px;
-            border: 1px solid var(--card-border);
-        }
-
-        .industry-breakdown h3 {
-            color: var(--text-primary);
-            font-weight: 700;
-            margin-bottom: 30px;
-        }
-
-        .industry-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-            padding: 20px 15px;
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 15px;
-            transition: all 0.3s ease;
-            text-align: center;
-        }
-
-        .industry-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            border-color: rgba(220, 20, 60, 0.3);
-        }
-
-        .industry-item i {
-            font-size: 2rem;
-            color: #dc143c;
-            transition: all 0.3s ease;
-        }
-
-        .industry-item:hover i {
-            transform: scale(1.2);
-            color: #ffd700;
-        }
-
-        .industry-item span {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        .case-card {
-            background: var(--card-bg);
-            border-radius: 20px;
-            padding: 40px 30px;
-            height: 100%;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid var(--card-border);
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 8px 25px var(--card-shadow);
-            z-index: 2;
-        }
-
-        .case-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, #dc143c, #ffd700);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.4s ease;
-        }
-
-        .case-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(220, 20, 60, 0.1), transparent);
-            transition: left 0.6s ease;
-        }
-
-        .case-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .case-card:hover::after {
-            left: 100%;
-        }
-
-        .case-card:hover {
-            transform: translateY(-15px) scale(1.02);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
-        }
-
-        .case-icon {
-            width: 80px;
-            height: 80px;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            margin: 0 auto 25px;
-            background: linear-gradient(135deg, rgba(220, 20, 60, 0.1), rgba(255, 215, 0, 0.1));
-            transition: all 0.4s ease;
-            position: relative;
-        }
-
-        .case-card:hover .case-icon {
-            transform: scale(1.1) rotate(360deg);
-            background: linear-gradient(135deg, #dc143c, #ffd700);
-        }
-
-        .case-card:hover .case-icon i {
-            color: white !important;
-        }
-
-        .text-gradient {
-            background: linear-gradient(135deg, #dc143c, #ffd700);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .btn-gradient {
-            background: linear-gradient(135deg, #dc143c, #ffd700);
-            border: none;
-            color: white;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn-gradient::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .btn-gradient:hover::before {
-            left: 100%;
-        }
-
-        .btn-gradient:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 15px 30px rgba(220, 20, 60, 0.4);
-        }
-
-        /* Animations */
-        .reveal-up {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .reveal-up.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .stagger-1 { transition-delay: 0.1s; }
-        .stagger-2 { transition-delay: 0.2s; }
-        .stagger-3 { transition-delay: 0.3s; }
-        .stagger-4 { transition-delay: 0.4s; }
-
-        /* Floating Shapes */
-        .floating-shapes {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: 1;
-        }
-        
-        .shape {
-            position: absolute;
-            background: linear-gradient(45deg, #dc143c, #ffd700);
-            border-radius: 50%;
-            opacity: 0.1;
-            animation: float 8s ease-in-out infinite;
-        }
-        
-        .shape:nth-child(1) { width: 80px; height: 80px; top: 20%; left: 10%; animation-delay: 0s; }
-        .shape:nth-child(2) { width: 120px; height: 120px; top: 60%; right: 15%; animation-delay: 2s; }
-        .shape:nth-child(3) { width: 60px; height: 60px; bottom: 30%; left: 20%; animation-delay: 4s; }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); }
-            25% { transform: translateY(-30px) rotate(90deg) scale(1.1); }
-            50% { transform: translateY(-20px) rotate(180deg) scale(0.9); }
-            75% { transform: translateY(-40px) rotate(270deg) scale(1.05); }
-        }
-
-        /* Hero Buttons */
-        .btn-hero-primary {
-            background: linear-gradient(135deg, #dc143c, #ffd700);
-            color: white;
-            padding: 16px 36px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1rem;
-            border: none;
-            transition: all 0.4s ease;
-            box-shadow: 0 10px 30px rgba(220, 20, 60, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn-hero-primary::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .btn-hero-primary:hover::before {
-            left: 100%;
-        }
-
-        .btn-hero-primary:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 15px 40px rgba(220, 20, 60, 0.4);
-            color: white;
-        }
-
-        .btn-hero-secondary {
-            background: transparent;
-            color: #dc143c;
-            padding: 16px 36px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1rem;
-            border: 2px solid #dc143c;
-            transition: all 0.4s ease;
-        }
-
-        .btn-hero-secondary:hover {
-            background: linear-gradient(135deg, #dc143c, #ffd700);
-            border-color: #dc143c;
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(220, 20, 60, 0.3);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 1200px) {
-            .slider-item-compact {
-                min-width: calc(50% - 10px); /* Still 2 cards on large tablets */
-            }
-        }
-
-        @media (max-width: 992px) {
-            .case-hero {
-                padding: 60px 0;
-                text-align: left;
-            }
-
-            .tech-marquee {
-                gap: 30px;
-                animation-duration: 20s;
-            }
-
-            .slider-item-compact {
-                min-width: calc(50% - 10px); /* 2 cards on medium tablets */
-            }
-
-            .case-study-image-compact {
-                height: 160px;
-            }
-
-            .case-study-content-compact {
-                padding: 18px 15px;
-            }
-
-            .impact-metric-card {
-                padding: 30px 20px;
-            }
-
-            .metric-number {
-                font-size: 3rem;
-            }
-
-            .slider-btn-compact {
-                width: 35px;
-                height: 35px;
-                font-size: 0.9rem;
-            }
-
-            .counter-badge {
-                padding: 10px 20px;
-                font-size: 0.9rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .case-card {
-                padding: 30px 25px;
-            }
-
-            .slider-item-compact {
-                min-width: calc(100% - 20px); /* 1 card on mobile */
-            }
-
-            .case-study-image-compact {
-                height: 200px; /* Larger image on mobile since we have more space */
-            }
-
-            .case-study-content-compact {
-                padding: 20px 18px; /* More padding on mobile */
-            }
-
-            .case-icon-compact {
-                width: 50px;
-                height: 50px;
-                margin: -35px auto 15px;
-                font-size: 1.3rem;
-            }
-
-            .case-title {
-                font-size: 1.2rem; /* Larger title on mobile */
-            }
-
-            .case-description {
-                font-size: 0.95rem; /* Larger description on mobile */
-            }
-
-            .tech-marquee {
-                gap: 20px;
-                animation-duration: 15s;
-            }
-
-            .tech-marquee-item {
-                min-width: 80px;
-                padding: 15px 10px;
-            }
-
-            .tech-logo {
-                width: 30px;
-                height: 30px;
-            }
-
-            .tech-marquee-item span {
-                font-size: 0.8rem;
-            }
-
-            .metric-number {
-                font-size: 2.5rem;
-            }
-
-            .industry-item {
-                padding: 15px 10px;
-            }
-
-            .industry-item i {
-                font-size: 1.5rem;
-            }
-
-            .industry-item span {
-                font-size: 0.8rem;
-            }
-
-            .slider-btn-compact {
-                width: 32px;
-                height: 32px;
-                font-size: 0.8rem;
-            }
-
-            .prev-btn-compact {
-                margin-left: -16px;
-            }
-
-            .next-btn-compact {
-                margin-right: -16px;
-            }
-
-            .btn-read-more-compact {
-                padding: 12px 24px; /* Larger button on mobile */
-                font-size: 0.9rem;
-            }
-
-            .case-number {
-                width: 35px;
-                height: 35px;
-                font-size: 0.9rem;
-                top: 15px;
-                right: 15px;
-            }
-
-            .slider-progress-bar {
-                width: 150px;
-            }
-
-            .counter-badge {
-                padding: 8px 16px;
-                font-size: 0.85rem;
-            }
-
-            .counter-badge i {
-                font-size: 1rem;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .slider-item-compact {
-                min-width: calc(100% - 15px); /* Full width on small mobile */
-            }
-
-            .case-study-content-compact {
-                padding: 18px 15px;
-            }
-
-            .case-metrics-compact {
-                padding: 12px;
-            }
-
-            .tech-tag-compact {
-                font-size: 0.7rem;
-                padding: 4px 8px;
-            }
-
-            .impact-metric-card {
-                padding: 25px 15px;
-            }
-
-            .metric-icon {
-                width: 60px;
-                height: 60px;
-                font-size: 1.5rem;
-            }
-
-            .metric-number {
-                font-size: 2rem;
-            }
-
-            .industry-breakdown {
-                padding: 30px 20px;
-            }
-
-            .slider-navigation-compact {
-                display: none; /* Hide navigation buttons on very small screens */
-            }
-
-            .success-stories-slider-compact {
-                padding: 10px 0;
-            }
-
-            .slider-wrapper-compact {
-                gap: 15px;
-            }
-
-            .btn-read-more-compact {
-                padding: 10px 20px;
-                font-size: 0.85rem;
-            }
-
-            .case-study-image-compact {
-                height: 180px;
-            }
-
-            .case-number {
-                width: 32px;
-                height: 32px;
-                font-size: 0.85rem;
-                top: 12px;
-                right: 12px;
-            }
-
-            .slider-progress-bar {
-                width: 120px;
-                height: 3px;
-            }
-
-            .counter-badge {
-                padding: 6px 12px;
-                font-size: 0.8rem;
-            }
-
-            .counter-badge i {
-                font-size: 0.9rem;
-            }
-
-            .case-studies-counter {
-                margin-bottom: 20px;
-            }
-        }
-
-        .gsap-fade-up {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-
-        .reveal-on-scroll {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s ease;
-        }
-
-        .reveal-on-scroll.revealed {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* ================= CASE STUDIES CAROUSEL STYLES (Products-section inspired) ================= */
-
-        /* Case Studies Carousel Styles (Desktop) */
-        .case-studies-carousel {
-            position: relative;
-            padding: 45px 90px 45px 0;
-            background-color: transparent;
-        }
-
-        .case-studies-carousel::before {
-            position: absolute;
-            content: "";
-            top: 0;
-            right: 0;
-            width: calc(50% + 45px);
-            height: 100%;
-            background: linear-gradient(135deg, var(--case-primary), var(--case-secondary));
-            border-radius: 0;
-            z-index: -1;
-            opacity: 0.1;
-        }
-
-        /* Mobile adjustments */
-        @media (max-width: 991.98px) {
-            .case-studies-carousel {
-                padding: 20px 40px 20px 0;
-            }
-            
-            .case-studies-carousel::before {
-                width: calc(50% + 20px);
-            }
-        }
-
-        /* Hide carousel on mobile, show cards instead */
-        @media (max-width: 991.98px) {
-            .case-studies-carousel {
-                display: none !important;
-            }
-            
-            .mobile-case-studies-grid {
-                display: block !important;
-            }
-        }
-
-        /* Case Slide Content (Desktop Carousel) */
-        .case-slide-content {
-            position: relative;
-            overflow: hidden;
-            border-radius: 0;
-            width: 100%;
-            max-width: 100%;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        .case-slide-content:hover {
-            transform: scale(1.02);
-        }
-
-        .case-slide-content img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-        }
-
-        /* Case Text Overlay (Desktop) */
-        .case-text-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 2rem;
-            background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
-            border-radius: 0;
-        }
-
-        .case-badge {
-            position: absolute;
-            top: -3rem;
-            right: 1rem;
-            background: linear-gradient(135deg, var(--case-primary), var(--case-secondary));
-            color: white;
-            padding: 0.5rem 1rem;
-            font-size: 0.8rem;
-            font-weight: 600;
-            border-radius: 0;
-            z-index: 10;
-        }
-
-        .case-heading {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .case-description {
-            font-size: 0.95rem;
-            line-height: 1.5;
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-            margin-bottom: 1rem;
-        }
-
-        .case-features {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-        }
-
-        .feature-tag {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            padding: 0.25rem 0.75rem;
-            font-size: 0.75rem;
-            font-weight: 500;
-            border-radius: 0;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        /* Owl Carousel Dots */
-        .case-studies-carousel .owl-dots {
-            display: none !important; /* Hide default dots, we'll use custom indicators */
-        }
-
-        /* Manual Navigation Controls - Split layout */
-        .carousel-controls {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            gap: 1rem;
-            z-index: 10;
-        }
-
-        /* Navigation Arrows - Positioned on left side */
-        .carousel-nav-arrows {
-            position: absolute;
-            left: 20px;
-            bottom: 20px;
-            display: flex;
-            flex-direction: row;
-            gap: 0.75rem;
-            z-index: 10;
-        }
-
-        .carousel-nav-btn {
-            width: 40px;
-            height: 40px;
-            border: 2px solid rgba(255, 255, 255, 0.8);
-            background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .carousel-nav-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, var(--case-primary), var(--case-secondary));
-            transition: left 0.3s ease;
-            z-index: -1;
-        }
-
-        .carousel-nav-btn:hover::before {
-            left: 0;
-        }
-
-        .carousel-nav-btn:hover {
-            border-color: var(--case-primary);
-            transform: scale(1.1);
-            box-shadow: 0 5px 15px rgba(220, 20, 60, 0.3);
-        }
-
-        .carousel-nav-btn:active {
-            transform: scale(0.95);
-        }
-
-        /* Slide Indicators - Bottom right only */
-        .carousel-indicators {
-            display: flex;
-            flex-direction: row;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-            justify-content: flex-end;
-            max-width: 300px;
-        }
-
-        .indicator-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.4rem 0.8rem;
-            background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 20px;
-            cursor: pointer;
-            transition: all 0.4s ease;
-            min-width: auto;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .indicator-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, var(--case-primary), var(--case-secondary));
-            transition: left 0.4s ease;
-            z-index: -1;
-        }
-
-        .indicator-item.active::before,
-        .indicator-item:hover::before {
-            left: 0;
-        }
-
-        .indicator-item.active {
-            background: rgba(220, 20, 60, 0.2);
-            border-color: var(--case-primary);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(220, 20, 60, 0.2);
-        }
-
-        .indicator-number {
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: white;
-            flex-shrink: 0;
-        }
-
-        .indicator-item.active .indicator-number {
-            background: rgba(255, 255, 255, 0.3);
-        }
-
-        .indicator-label {
-            font-size: 0.75rem;
-            font-weight: 500;
-            color: rgba(255, 255, 255, 0.9);
-            white-space: nowrap;
-            display: none; /* Hide labels on small indicators */
-        }
-
-        .indicator-item.active .indicator-label {
-            color: white;
-            font-weight: 600;
-        }
-
-        /* Show labels on hover for better UX */
-        .indicator-item:hover .indicator-label {
-            display: block;
-        }
-
-        /* Mobile Case Studies Cards (Service-like layout) */
-        .mobile-case-studies-grid {
-            display: none;
-        }
-
-        .mobile-case-card {
-            background: var(--card-bg);
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px var(--card-shadow);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: pointer;
-            height: 100%;
-            border: 1px solid var(--card-border);
-        }
-
-        .mobile-case-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
-        }
-
-        .mobile-card-image {
-            position: relative;
-            height: 200px;
-            overflow: hidden;
-        }
-
-        .mobile-card-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s ease;
-        }
-
-        .mobile-case-card:hover .mobile-card-image img {
-            transform: scale(1.05);
-        }
-
-        .mobile-card-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(220, 20, 60, 0.2), rgba(255, 215, 0, 0.2));
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-
-        .mobile-case-card:hover .mobile-card-overlay {
-            opacity: 1;
-        }
-
-        .mobile-card-badge {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: linear-gradient(135deg, var(--case-primary), var(--case-secondary));
-            color: white;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 11px;
-            font-weight: 700;
-            box-shadow: 0 4px 15px rgba(220, 20, 60, 0.3);
-            z-index: 10;
-        }
-
-        .mobile-card-content {
-            padding: 1.5rem;
-        }
-
-        .mobile-card-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 0.75rem;
-            color: var(--text-primary);
-        }
-
-        .mobile-card-description {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            line-height: 1.5;
-            margin-bottom: 1rem;
-        }
-
-        .mobile-card-features {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-        }
-
-        .mobile-feature-tag {
-            background: linear-gradient(135deg, var(--case-primary), var(--case-secondary));
-            color: white;
-            padding: 0.25rem 0.75rem;
-            font-size: 0.75rem;
-            font-weight: 500;
-            border-radius: 15px;
-        }
-
-        /* Dynamic Case Study Info Styles */
-        .case-info-container {
-            position: relative;
-            min-height: 200px;
-            overflow: hidden;
-        }
-
-        .case-info-item {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            opacity: 0;
-            transform: translateX(-30px);
-            transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            pointer-events: none;
-        }
-
-        .case-info-item.active {
-            opacity: 1;
-            transform: translateX(0);
-            pointer-events: auto;
-        }
-
-        .case-info-title {
-            font-size: 1.75rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 1rem;
-            line-height: 1.3;
-        }
-
-        .case-info-description {
-            font-size: 1rem;
-            line-height: 1.6;
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-        }
-
-        .case-info-features {
-            display: flex;
-            gap: 0.75rem;
-            flex-wrap: wrap;
-            margin-bottom: 1rem;
-        }
-
-        .info-feature-tag {
-            background: linear-gradient(135deg, var(--case-primary), var(--case-secondary));
-            color: white;
-            padding: 0.4rem 1rem;
-            font-size: 0.8rem;
-            font-weight: 600;
-            border-radius: 20px;
-            box-shadow: 0 2px 8px rgba(220, 20, 60, 0.2);
-            transition: transform 0.3s ease;
-        }
-
-        .info-feature-tag:hover {
-            transform: translateY(-2px);
-        }
-
-        /* Dynamic CTA Styling */
-        #explore-current-case {
-            transition: all 0.3s ease;
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
-
-        #explore-current-case:hover {
-            transform: translateX(5px);
-        }
-
-        #current-case-cta {
-            transition: all 0.3s ease;
-        }
-
-        /* Text Visibility */
-        .display-1,
-        h5,
-        h5.theme-text {
-            opacity: 1 !important;
-            visibility: visible !important;
-            color: var(--text-primary) !important;
-        }
-
-        /* WOW.js Animation Classes */
-        .wow {
-            visibility: hidden;
-        }
-
-        .wow.animated {
-            visibility: visible;
-        }
-
-        .animated {
-            animation-duration: 1s;
-            animation-fill-mode: both;
-        }
-
-        /* Fallback for when WOW.js doesn't load */
-        .wow:not(.animated) {
-            animation: none !important;
-            visibility: visible !important;
-            opacity: 1 !important;
-            transform: none !important;
-        }
-
-        /* Animation Keyframes */
-        @keyframes slideInLeft {
-            from {
-                transform: translate3d(-100%, 0, 0);
-                visibility: visible;
-            }
-            to {
-                transform: translate3d(0, 0, 0);
-            }
-        }
-
-        .slideInLeft {
-            animation-name: slideInLeft;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        .fadeIn {
-            animation-name: fadeIn;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translate3d(0, 100%, 0);
-            }
-            to {
-                opacity: 1;
-                transform: translate3d(0, 0, 0);
-            }
-        }
-
-        .fadeInUp {
-            animation-name: fadeInUp;
-        }
-
-        /* Responsive Design for Carousel */
-        @media (max-width: 991.98px) {
-            .display-1 {
-                font-size: 3rem !important;
-            }
-            
-            .carousel-controls {
-                bottom: 15px;
-                right: 15px;
-            }
-            
-            .carousel-nav-arrows {
-                left: 15px;
-                bottom: 15px;
-            }
-            
-            .carousel-nav-btn {
-                width: 35px;
-                height: 35px;
-                font-size: 0.9rem;
-            }
-            
-            .indicator-item {
-                padding: 0.3rem 0.6rem;
-            }
-            
-            .indicator-number {
-                width: 18px;
-                height: 18px;
-                font-size: 0.7rem;
-            }
-            
-            .indicator-label {
-                font-size: 0.7rem;
-            }
-        }
-
-        @media (max-width: 767.98px) {
-            .display-1 {
-                font-size: 2.5rem !important;
-                color: var(--text-primary) !important;
-                text-shadow: none;
-            }
-            
-            h5 {
-                font-size: 1rem !important;
-                padding: 0.75rem 1.25rem !important;
-                color: var(--case-primary) !important;
-                background-color: transparent;
-                border-color: var(--case-primary) !important;
-                text-shadow: none;
-            }
-            
-            .mobile-case-card {
-                margin-bottom: 1rem;
-            }
-            
-            /* Hide carousel controls on mobile since carousel is hidden */
-            .carousel-controls,
-            .carousel-nav-arrows {
-                display: none;
-            }
-        }
-
-        @media (max-width: 575.98px) {
-            .display-1 {
-                font-size: 2rem !important;
-            }
-            
-            h5 {
-                font-size: 0.9rem !important;
-                padding: 0.5rem 1rem !important;
-            }
-            
-            .mobile-card-content {
-                padding: 1rem;
-            }
-            
-            .mobile-card-title {
-                font-size: 1.1rem;
-            }
-            
-            .mobile-card-description {
-                font-size: 0.85rem;
-            }
-        }
-
-        /* Large screens - maintain split positioning */
-        @media (min-width: 1400px) {
-            .carousel-controls {
-                bottom: 25px;
-                right: 25px;
-            }
-            
-            .carousel-nav-arrows {
-                left: 25px;
-                bottom: 25px;
-            }
-            
-            .carousel-nav-btn {
-                width: 45px;
-                height: 45px;
-                font-size: 1.1rem;
-            }
-            
-            .indicator-item {
-                padding: 0.4rem 0.8rem;
-            }
-            
-            .indicator-number {
-                width: 22px;
-                height: 22px;
-                font-size: 0.8rem;
-            }
-        }
-
-        /* Tablet landscape - adjust for better fit */
-        @media (min-width: 768px) and (max-width: 1024px) {
-            .carousel-indicators {
-                max-width: 250px;
-            }
-            
-            .carousel-nav-arrows {
-                left: 15px;
-                bottom: 15px;
-            }
-            
-            .indicator-item {
-                padding: 0.3rem 0.6rem;
-            }
-            
-            .indicator-label {
-                font-size: 0.7rem;
-            }
-        }
-    </style>
+    <script src="../scripts/breadcrumb-badge.js"></script>
+    <script src="../scripts/universal-loader.js"></script>
 </head>
 <body>
-    <!-- Navigation -->
     <div id="navigation-component"></div>
-
-    <!-- Right Panel -->
     <div id="right-panel-component"></div>
 
     <main>
         <!-- Hero Section -->
-        <section class="case-hero position-relative">
-           
-        
-            
+        <section class="case-hero position-relative">        
             <div class="container position-relative" style="z-index: 2;">
                 <div class="row align-items-center" style="margin-top: 2.5rem;">
                     <div class="col-12 mb-4" data-breadcrumb data-separator="arrow">
@@ -1924,28 +56,58 @@
                             Discover how we've transformed businesses across industries with innovative solutions.
                         </p>
                         
-                        <!-- <div class="d-flex flex-column flex-sm-row gap-3 reveal-up stagger-2">
-                            <a href="../contact.html" class="btn btn-gradient btn-lg px-4 py-3">
+                        <div class="d-flex flex-column flex-sm-row gap-3 reveal-up stagger-2">
+                            <a href="../contact.html" class="btn btn-gradient btn-lg px-4">
                                 <i class="bi bi-file-earmark-text me-2"></i>
                                 View All Studies
                             </a>
-                            <a href="innovation.html" class="btn btn-outline-danger btn-lg px-4 py-3">
+                            <a href="innovation.html" class="btn btn-outline-danger btn-lg px-4">
                                 <i class="bi bi-lightbulb me-2"></i>
                                 Innovation Lab
                             </a>
-                        </div> -->
+                        </div>
                     </div>
+                  
                     <div class="col-lg-6">
                         <div class="text-center reveal-up stagger-3">
-                            <div class="case-icon mx-auto" style="width: 200px; height: 200px; font-size: 4rem;">
-                                <i class="bi bi-graph-up text-success"></i>
+                            <div class="video-like-container mx-auto" style="width: 200px; height: 200px;">
+                                <div class="slide-background"></div>
+                                <div class="icon-slideshow">
+                                    <div class="slide-icon active">
+                                        <i class="bi bi-graph-up"></i>
+                                    </div>
+                                    <div class="slide-icon">
+                                        <i class="bi bi-bar-chart"></i>
+                                    </div>
+                                    <div class="slide-icon">
+                                        <i class="bi bi-pie-chart"></i>
+                                    </div>
+                                    <div class="slide-icon">
+                                        <i class="bi bi-graph-down"></i>
+                                    </div>
+                                    <div class="slide-icon">
+                                        <i class="bi bi-activity"></i>
+                                    </div>
+                                </div>
+                                <div class="progress-ring">
+                                    <svg width="100%" height="100%" viewBox="0 0 200 200">
+                                        <circle cx="100" cy="100" r="95" fill="none" stroke="rgba(220, 20, 60, 0.2)" stroke-width="2"/>
+                                        <circle cx="100" cy="100" r="95" fill="none" stroke="url(#gradient)" stroke-width="3" 
+                                                stroke-dasharray="596" stroke-dashoffset="596" class="progress-circle"/>
+                                        <defs>
+                                            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                                <stop offset="0%" style="stop-color:#dc143c"/>
+                                                <stop offset="100%" style="stop-color:#ffd700"/>
+                                            </linearGradient>
+                                        </defs>
+                                    </svg>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section> 
-                          
+        </section>                  
         <!-- Technology Showcase Marquee -->
         <section class="tech-marquee-section" style="padding: 60px 0; background: var(--card-bg);">
             <div class="container-fluid">
@@ -1996,8 +158,6 @@
                 </div>
             </div>
         </section>
-
-      
         <!-- Success Stories Section -->
         <section class="py-5" style="background: var(--bg-gradient);">
             <div class="container">
@@ -2183,9 +343,7 @@
                                 </div>
                             </div>
                             
-                            <!-- Manual Navigation Controls -->
-                            <div class="carousel-controls">
-                                <!-- Navigation Arrows -->
+                             <!-- Navigation Arrows -->
                                 <div class="carousel-nav-arrows">
                                     <button class="carousel-nav-btn carousel-prev" id="carousel-prev">
                                         <i class="bi bi-chevron-left"></i>
@@ -2194,35 +352,7 @@
                                         <i class="bi bi-chevron-right"></i>
                                     </button>
                                 </div>
-                                
-                                <!-- Slide Indicators -->
-                                <div class="carousel-indicators">
-                                    <div class="indicator-item active" data-slide="0">
-                                        <span class="indicator-number">1</span>
-                                        <span class="indicator-label">Banking Security</span>
-                                    </div>
-                                    <div class="indicator-item" data-slide="1">
-                                        <span class="indicator-number">2</span>
-                                        <span class="indicator-label">Healthcare AI</span>
-                                    </div>
-                                    <div class="indicator-item" data-slide="2">
-                                        <span class="indicator-number">3</span>
-                                        <span class="indicator-label">Cloud Migration</span>
-                                    </div>
-                                    <div class="indicator-item" data-slide="3">
-                                        <span class="indicator-number">4</span>
-                                        <span class="indicator-label">Learning Platform</span>
-                                    </div>
-                                    <div class="indicator-item" data-slide="4">
-                                        <span class="indicator-number">5</span>
-                                        <span class="indicator-label">Mobile Banking</span>
-                                    </div>
-                                    <div class="indicator-item" data-slide="5">
-                                        <span class="indicator-number">6</span>
-                                        <span class="indicator-label">Manufacturing IoT</span>
-                                    </div>
-                                </div>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -2353,9 +483,6 @@
                 </div>
             </div>
         </section>
-          
-       
-
         <!-- Impact Metrics Section -->
         <section class="py-5" style="background: var(--card-bg); ">
             <div class="container">
@@ -2363,7 +490,7 @@
                     <h2 class="display-4 fw-bold mb-3" style="color: var(--text-primary);">
                         Impact <span class="text-gradient">Metrics</span>
                     </h2>
-                    <p class="lead" style="color: var(--text-secondary); max-width: 700px; margin: 0 auto;">
+                    <p class="lead" style="color: var(--text-secondary);  margin: 0 auto;">
                         Quantifiable results that demonstrate the transformative power of our technology solutions 
                         across diverse industries and business challenges.
                     </p>
@@ -2456,7 +583,6 @@
                 </div>
             </div>
         </section>
-
         <!-- Development Roadmap -->
         <section class="py-5 bg-light">
             <div class="container px-4">
@@ -2473,7 +599,7 @@
                             <!-- Q2 2024 -->
                             <div class="d-flex align-items-center mb-5 reveal-up stagger-1">
                                 <div class="flex-shrink-0 me-4 text-end" style="width: 45%;">
-                                    <div class="bg-white rounded p-3 shadow-sm">
+                                    <div class=" rounded p-3 shadow-sm">
                                         <h6 class="fw-bold text-danger mb-2">Q2 2024</h6>
                                         <h5 class="fw-semibold mb-2">Quantum Security Suite</h5>
                                         <p class="text-muted small mb-0">Launch of quantum-resistant security framework</p>
@@ -2492,7 +618,7 @@
                                     <i class="bi bi-robot text-white fs-5"></i>
                                 </div>
                                 <div class="flex-shrink-0 ms-4" style="width: 45%;">
-                                    <div class="bg-white rounded p-3 shadow-sm">
+                                    <div class=" rounded p-3 shadow-sm">
                                         <h6 class="fw-bold text-danger mb-2">Q3 2024</h6>
                                         <h5 class="fw-semibold mb-2">Neural Network Optimizer</h5>
                                         <p class="text-muted small mb-0">AI performance enhancement platform</p>
@@ -2503,7 +629,7 @@
                             <!-- Q4 2024 -->
                             <div class="d-flex align-items-center mb-5 reveal-up stagger-3">
                                 <div class="flex-shrink-0 me-4 text-end" style="width: 45%;">
-                                    <div class="bg-white rounded p-3 shadow-sm">
+                                    <div class=" rounded p-3 shadow-sm">
                                         <h6 class="fw-bold text-warning mb-2">Q4 2024</h6>
                                         <h5 class="fw-semibold mb-2">Metaverse Security Suite</h5>
                                         <p class="text-muted small mb-0">Virtual world security solutions</p>
@@ -2522,7 +648,7 @@
                                     <i class="bi bi-lightning text-white fs-5"></i>
                                 </div>
                                 <div class="flex-shrink-0 ms-4" style="width: 45%;">
-                                    <div class="bg-white rounded p-3 shadow-sm">
+                                    <div class=" rounded p-3 shadow-sm">
                                         <h6 class="fw-bold text-danger mb-2">Q1 2025</h6>
                                         <h5 class="fw-semibold mb-2">Quantum ML Platform</h5>
                                         <p class="text-muted small mb-0">Quantum-enhanced machine learning</p>
@@ -2534,7 +660,7 @@
                 </div>
             </div>
         </section>
- <!-- Innovation Technologies Section -->
+         <!-- Innovation Technologies Section -->
         <section class="innovation-technologies-section" style="padding-top: 4rem;">
             <div class="container">
                 <div class="text-left mb-5">
@@ -2567,11 +693,7 @@
                                         research in explainable AI, federated learning, and autonomous intelligent systems that 
                                         push the boundaries of what's possible.
                                     </p>
-                                    <p class="tech-section-description" style="font-size: 1.05rem; line-height: 1.7; color: var(--text-muted); margin-bottom: 30px;">
-                                        From transformer architectures and large language models to computer vision breakthroughs 
-                                        and reinforcement learning systems, our AI innovation lab develops cutting-edge solutions 
-                                        that redefine industry standards and create new possibilities for intelligent automation.
-                                    </p>
+                                 
                                     <div class="tech-stats">
                                         <div class="stat-item">
                                             <span class="stat-number">50+</span>
@@ -2653,11 +775,7 @@
                                         Our quantum innovation lab explores quantum algorithms, quantum machine learning, 
                                         and quantum key distribution systems for the post-quantum era.
                                     </p>
-                                    <p class="tech-section-description" style="font-size: 1.05rem; line-height: 1.7; color: var(--text-muted); margin-bottom: 30px;">
-                                        From quantum supremacy algorithms to hybrid quantum-classical systems, we develop 
-                                        quantum solutions that will revolutionize computing, cryptography, and optimization 
-                                        across industries while ensuring security in the quantum age.
-                                    </p>
+                                   
                                     <div class="tech-stats">
                                         <div class="stat-item">
                                             <span class="stat-number">10+</span>
@@ -2681,44 +799,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="tech-grid mt-4">
-                                        <div class="tech-item">
-                                            <div class="tech-icon quantum">
-                                                <i class="bi bi-cpu"></i>
-                                            </div>
-                                            <div class="tech-info">
-                                                <h5>Quantum Algorithms</h5>
-                                                <span>Quantum Computing Research</span>
-                                            </div>
-                                        </div>
-                                        <div class="tech-item">
-                                            <div class="tech-icon security">
-                                                <i class="bi bi-shield-lock"></i>
-                                            </div>
-                                            <div class="tech-info">
-                                                <h5>Post-Quantum Crypto</h5>
-                                                <span>Quantum-Resistant Security</span>
-                                            </div>
-                                        </div>
-                                        <div class="tech-item">
-                                            <div class="tech-icon biometric">
-                                                <i class="bi bi-key"></i>
-                                            </div>
-                                            <div class="tech-info">
-                                                <h5>Quantum Key Distribution</h5>
-                                                <span>Secure Quantum Communication</span>
-                                            </div>
-                                        </div>
-                                        <div class="tech-item">
-                                            <div class="tech-icon ai">
-                                                <i class="bi bi-diagram-3"></i>
-                                            </div>
-                                            <div class="tech-info">
-                                                <h5>Quantum ML</h5>
-                                                <span>Quantum Machine Learning</span>
-                                            </div>
-                                        </div>
-                                    </div>
+                                   
                                 </div>
                             </div>
                         </div>
@@ -2739,11 +820,7 @@
                                         encompasses behavioral analytics, continuous authentication, and self-healing security 
                                         systems that adapt and evolve with emerging threats.
                                     </p>
-                                    <p class="tech-section-description" style="font-size: 1.05rem; line-height: 1.7; color: var(--text-muted); margin-bottom: 30px;">
-                                        From micro-segmentation and identity-centric security to predictive threat intelligence 
-                                        and automated incident response, we create security solutions that provide comprehensive 
-                                        protection while enabling seamless user experiences and business operations.
-                                    </p>
+                                 
                                     <div class="tech-stats">
                                         <div class="stat-item">
                                             <span class="stat-number">99.9%</span>
@@ -2767,44 +844,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="tech-grid mt-4">
-                                        <div class="tech-item">
-                                            <div class="tech-icon security">
-                                                <i class="bi bi-shield-lock"></i>
-                                            </div>
-                                            <div class="tech-info">
-                                                <h5>Zero Trust Framework</h5>
-                                                <span>Never Trust, Always Verify</span>
-                                            </div>
-                                        </div>
-                                        <div class="tech-item">
-                                            <div class="tech-icon ai">
-                                                <i class="bi bi-eye"></i>
-                                            </div>
-                                            <div class="tech-info">
-                                                <h5>Behavioral Analytics</h5>
-                                                <span>AI-Powered User Analysis</span>
-                                            </div>
-                                        </div>
-                                        <div class="tech-item">
-                                            <div class="tech-icon edge">
-                                                <i class="bi bi-robot"></i>
-                                            </div>
-                                            <div class="tech-info">
-                                                <h5>Autonomous Response</h5>
-                                                <span>Self-Healing Security</span>
-                                            </div>
-                                        </div>
-                                        <div class="tech-item">
-                                            <div class="tech-icon blockchain">
-                                                <i class="bi bi-diagram-2"></i>
-                                            </div>
-                                            <div class="tech-info">
-                                                <h5>Micro-Segmentation</h5>
-                                                <span>Granular Network Control</span>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -2825,11 +865,7 @@
                                         deployment. Our edge innovation encompasses intelligent IoT ecosystems, edge AI 
                                         optimization, and autonomous edge orchestration systems.
                                     </p>
-                                    <p class="tech-section-description" style="font-size: 1.05rem; line-height: 1.7; color: var(--text-muted); margin-bottom: 30px;">
-                                        From 5G-enabled edge computing to federated learning at the edge, we develop solutions 
-                                        that process data where it's generated, reducing latency, improving privacy, and 
-                                        enabling new classes of real-time intelligent applications across industries.
-                                    </p>
+                                
                                     <div class="tech-stats">
                                         <div class="stat-item">
                                             <span class="stat-number">&lt;1ms</span>
@@ -2853,44 +889,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="tech-grid mt-4">
-                                        <div class="tech-item">
-                                            <div class="tech-icon kubernetes">
-                                                <i class="bi bi-globe"></i>
-                                            </div>
-                                            <div class="tech-info">
-                                                <h5>Edge Orchestration</h5>
-                                                <span>Distributed Edge Management</span>
-                                            </div>
-                                        </div>
-                                        <div class="tech-item">
-                                            <div class="tech-icon ai">
-                                                <i class="bi bi-cpu"></i>
-                                            </div>
-                                            <div class="tech-info">
-                                                <h5>Edge AI</h5>
-                                                <span>Intelligence at the Edge</span>
-                                            </div>
-                                        </div>
-                                        <div class="tech-item">
-                                            <div class="tech-icon mobile">
-                                                <i class="bi bi-router"></i>
-                                            </div>
-                                            <div class="tech-info">
-                                                <h5>5G Integration</h5>
-                                                <span>Ultra-Low Latency Networks</span>
-                                            </div>
-                                        </div>
-                                        <div class="tech-item">
-                                            <div class="tech-icon security">
-                                                <i class="bi bi-shield-check"></i>
-                                            </div>
-                                            <div class="tech-info">
-                                                <h5>IoT Security</h5>
-                                                <span>Secure Device Management</span>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -2911,11 +909,7 @@
                                         lab develops advanced consensus mechanisms, smart contract security frameworks, 
                                         and interoperable blockchain solutions for the decentralized future.
                                     </p>
-                                    <p class="tech-section-description" style="font-size: 1.05rem; line-height: 1.7; color: var(--text-muted); margin-bottom: 30px;">
-                                        From layer-2 scaling solutions to cross-chain interoperability protocols, we create 
-                                        blockchain infrastructure that enables secure, scalable, and sustainable decentralized 
-                                        applications while maintaining the core principles of decentralization and security.
-                                    </p>
+                               
                                     <div class="tech-stats">
                                         <div class="stat-item">
                                             <span class="stat-number">1000+</span>
@@ -2939,44 +933,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="tech-grid mt-4">
-                                        <div class="tech-item">
-                                            <div class="tech-icon blockchain">
-                                                <i class="bi bi-link"></i>
-                                            </div>
-                                            <div class="tech-info">
-                                                <h5>Smart Contracts</h5>
-                                                <span>Automated Trustless Systems</span>
-                                            </div>
-                                        </div>
-                                        <div class="tech-item">
-                                            <div class="tech-icon edge">
-                                                <i class="bi bi-layers"></i>
-                                            </div>
-                                            <div class="tech-info">
-                                                <h5>Layer-2 Solutions</h5>
-                                                <span>Scalable Blockchain Networks</span>
-                                            </div>
-                                        </div>
-                                        <div class="tech-item">
-                                            <div class="tech-icon quantum">
-                                                <i class="bi bi-arrow-left-right"></i>
-                                            </div>
-                                            <div class="tech-info">
-                                                <h5>Cross-Chain Bridges</h5>
-                                                <span>Interoperable Protocols</span>
-                                            </div>
-                                        </div>
-                                        <div class="tech-item">
-                                            <div class="tech-icon security">
-                                                <i class="bi bi-shield-lock"></i>
-                                            </div>
-                                            <div class="tech-info">
-                                                <h5>DeFi Security</h5>
-                                                <span>Secure Financial Protocols</span>
-                                            </div>
-                                        </div>
-                                    </div>
+                                   
                                 </div>
                             </div>
                         </div>
@@ -2997,11 +954,7 @@
                                         multi-modal biometric fusion, behavioral biometrics, and decentralized identity 
                                         solutions that provide seamless yet secure authentication experiences.
                                     </p>
-                                    <p class="tech-section-description" style="font-size: 1.05rem; line-height: 1.7; color: var(--text-muted); margin-bottom: 30px;">
-                                        From liveness detection and anti-spoofing technologies to privacy-preserving identity 
-                                        verification and self-sovereign identity systems, we create authentication solutions 
-                                        that balance security, privacy, and user experience in the digital age.
-                                    </p>
+                                
                                     <div class="tech-stats">
                                         <div class="stat-item">
                                             <span class="stat-number">99.9%</span>
@@ -3025,44 +978,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="tech-grid mt-4">
-                                        <div class="tech-item">
-                                            <div class="tech-icon biometric">
-                                                <i class="bi bi-eye"></i>
-                                            </div>
-                                            <div class="tech-info">
-                                                <h5>Multi-Modal Biometrics</h5>
-                                                <span>Advanced Identity Fusion</span>
-                                            </div>
-                                        </div>
-                                        <div class="tech-item">
-                                            <div class="tech-icon ai">
-                                                <i class="bi bi-person-check"></i>
-                                            </div>
-                                            <div class="tech-info">
-                                                <h5>Behavioral Analytics</h5>
-                                                <span>Continuous Authentication</span>
-                                            </div>
-                                        </div>
-                                        <div class="tech-item">
-                                            <div class="tech-icon security">
-                                                <i class="bi bi-shield-check"></i>
-                                            </div>
-                                            <div class="tech-info">
-                                                <h5>Liveness Detection</h5>
-                                                <span>Anti-Spoofing Technology</span>
-                                            </div>
-                                        </div>
-                                        <div class="tech-item">
-                                            <div class="tech-icon blockchain">
-                                                <i class="bi bi-key"></i>
-                                            </div>
-                                            <div class="tech-info">
-                                                <h5>Self-Sovereign ID</h5>
-                                                <span>Decentralized Identity</span>
-                                            </div>
-                                        </div>
-                                    </div>
+                                   
                                 </div>
                             </div>
                         </div>
@@ -3209,7 +1125,7 @@
                 </div>
             </div>
         </section>
- <!-- CTA Section -->
+         <!-- CTA Section -->
         <section class="cta-section py-5" style="background: linear-gradient(135deg, #fff7ed 0%, #ffffff 50%, #fffbeb 100%); position: relative; overflow: hidden;">
             <div class="container">
                         <div class="cta-content text-left">
@@ -3264,13 +1180,8 @@
                                 </div>
                             </div>
                         </div>
-                    
-             
             </div>
-            
-           
         </section>
-       
     </main>
 
     <!-- Theme Toggle Button -->
@@ -3282,11 +1193,9 @@
     <div id="footer-component"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    
+
     <!-- jQuery (required for Owl Carousel) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    
-    <!-- Owl Carousel JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
     <!-- Theme Toggle Script -->
@@ -3311,6 +1220,9 @@
 
             // Initialize Case Studies Carousel
             initCaseStudiesCarousel();
+
+            // Initialize Icon Slideshow
+            initIconSlideshow();
 
             // Initialize GSAP
             if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
@@ -3522,6 +1434,47 @@
             }, 1000);
         }
 
+        // Icon Slideshow Functionality
+        function initIconSlideshow() {
+            const slideIcons = document.querySelectorAll('.slide-icon');
+            if (slideIcons.length === 0) return;
+
+            let currentSlide = 0;
+            const totalSlides = slideIcons.length;
+
+            function showSlide(index) {
+                slideIcons.forEach((icon, i) => {
+                    icon.classList.remove('active', 'next', 'prev');
+                    
+                    if (i === index) {
+                        icon.classList.add('active');
+                    } else if (i === (index + 1) % totalSlides) {
+                        icon.classList.add('next');
+                    } else if (i === (index - 1 + totalSlides) % totalSlides) {
+                        icon.classList.add('prev');
+                    }
+                });
+            }
+
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                showSlide(currentSlide);
+            }
+
+            // Initialize first slide
+            showSlide(0);
+
+            // Auto-advance slides every 3 seconds
+            setInterval(nextSlide, 3000);
+
+            // Add click interaction
+            const container = document.querySelector('.video-like-container');
+            if (container) {
+                container.addEventListener('click', nextSlide);
+                container.style.cursor = 'pointer';
+            }
+        }
+
     </script>
 
     <script type="module">
@@ -3553,7 +1506,6 @@
             }
             
             document.dispatchEvent(new CustomEvent('navigationLoaded'));
-            console.log('✅ Case Study page initialized successfully');
         });
     </script>
 </body>

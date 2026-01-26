@@ -1,0 +1,157 @@
+/* Contact Page Specific Styles */
+.contact-hero {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    padding: 100px 0 80px;
+}
+
+.contact-card, .contact-form {
+    background: var(--bg-card);
+    border-radius: 10px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
+}
+
+.info-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    margin: 0 auto 20px;
+}
+
+/* Contact Image Cards */
+.contact-card-main:hover .contact-main-image {
+    transform: scale(1.1);
+}
+
+.contact-card-main:hover .contact-overlay {
+    opacity: 1;
+}
+
+.contact-card-main:hover .contact-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.contact-card-secondary:hover .contact-secondary-image {
+    transform: scale(1.1);
+}
+
+.contact-card-secondary:hover .contact-overlay {
+    opacity: 1;
+}
+
+.contact-card-mini:hover .contact-mini-image {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .contact-hero {
+        padding: 120px 0;
+        text-align: left;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-hero {
+        min-height: auto;
+        padding: 120px 0 20px;
+    }
+    
+    h1 {
+        font-size: 2.5rem !important;
+    }
+    
+    .contact-card-main {
+        margin-bottom: 1rem !important;
+    }
+    
+    .contact-card-main .contact-image-container {
+        width: 380px !important;
+        height: 240px !important;
+    }
+    
+    .contact-card-secondary {
+        position: absolute !important;
+        top: 40px !important;
+        right: 10px !important;
+        margin-top: 0;
+    }
+    
+    .contact-card-secondary .contact-image-container {
+        width: 180px !important;
+        height: 130px !important;
+    }
+    
+    .contact-card-mini {
+        position: absolute !important;
+        bottom: 20px !important;
+        left: -20px !important;
+        margin-top: 0;
+    }
+    
+    .contact-card-mini .contact-image-container {
+        width: 100px !important;
+        height: 100px !important;
+    }
+    
+    .contact-card, .contact-form {
+        padding: 25px;
+    }
+    
+    .col-lg-6.order-1.order-lg-1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 2rem;
+    }
+    
+    .col-lg-6.order-1.order-lg-1 .position-relative {
+        transform: scale(0.95);
+        transform-origin: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .contact-card-main {
+        margin-bottom: 0.5rem !important;
+    }
+    
+    .contact-card-main .contact-image-container {
+        width: 320px !important;
+        height: 200px !important;
+    }
+    
+    .contact-card-secondary .contact-image-container {
+        width: 150px !important;
+        height: 110px !important;
+    }
+    
+    .contact-card-mini .contact-image-container {
+        width: 90px !important;
+        height: 90px !important;
+    }
+    
+    .col-lg-6.order-1.order-lg-1 {
+        margin-bottom: 1.5rem;
+    }
+    
+    .col-lg-6.order-1.order-lg-1 .position-relative {
+        transform: scale(0.85);
+    }
+}
+

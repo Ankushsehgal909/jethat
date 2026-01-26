@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Collaborative Solutions for Digitalisation - JetHat Cyber Security</title>
+    <meta name="description" content="JetHat's Collaborative Digitalisation Platform - Powerful solution for digitizing, editing, and managing printed or handwritten documents at scale with OCR, collaborative editing, and secure workflow management.">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <!-- Breadcrumb Badge -->
+    <script src="../scripts/breadcrumb-badge.js"></script>
+    
+    <!-- Universal Loader -->
+    <script src="../scripts/universal-loader.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/products-dark-mode.css">
+    <link rel="stylesheet" href="../styles/loader.css">
+    
+    <!-- Navigation Fix Script -->
+    <script src="../scripts/navigation-fix.js"></script>
+    <script src="../scripts/navbar-scroll.js"></script>
+    
+    <style>
+        /* Product Theme Styles */
+        .product-hero {
+            position: relative;
+            overflow: hidden;
+            min-height: 60vh;
+        }
+        
+        /* Circuit Pattern Overlay */
+        .circuit-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(90deg, rgba(220, 20, 60, 0.03) 1px, transparent 1px),
+                linear-gradient(rgba(220, 20, 60, 0.03) 1px, transparent 1px),
+                radial-gradient(circle at 50% 50%, rgba(220, 20, 60, 0.02) 1px, transparent 1px);
+            background-size: 50px 50px, 50px 50px, 20px 20px;
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        /* Grid Pattern */
+        .grid-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(90deg, rgba(124, 58, 237, 0.05) 1px, transparent 1px),
+                linear-gradient(rgba(124, 58, 237, 0.05) 1px, transparent 1px);
+            background-size: 30px 30px;
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        /* Floating Security Icons */
+        .floating-security-icons {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+            pointer-events: none;
+        }
+        
+        .security-icon {
+            position: absolute;
+            font-size: 2rem;
+            opacity: 0.15;
+            animation: orbit 20s linear infinite, floatIcon 6s ease-in-out infinite;
+        }
+        
+        .security-icon:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s, 0s; }
+        .security-icon:nth-child(2) { top: 30%; right: 10%; animation-delay: 2s, 1s; }
+        .security-icon:nth-child(3) { bottom: 20%; left: 15%; animation-delay: 4s, 2s; }
+        .security-icon:nth-child(4) { top: 50%; right: 5%; animation-delay: 1s, 3s; }
+        .security-icon:nth-child(5) { bottom: 30%; right: 20%; animation-delay: 3s, 4s; }
+        .security-icon:nth-child(6) { top: 15%; left: 30%; animation-delay: 5s, 5s; }
+        
+        @keyframes orbit {
+            0% { transform: rotate(0deg) translateX(50px) rotate(0deg); }
+            100% { transform: rotate(360deg) translateX(50px) rotate(-360deg); }
+        }
+        
+        @keyframes floatIcon {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        /* Scanning Line Animation */
+        .scanning-line {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #dc143c, #ffd700, transparent);
+            box-shadow: 0 0 20px rgba(220, 20, 60, 0.8);
+            animation: scan 3s linear infinite;
+            z-index: 10;
+            pointer-events: none;
+        }
+        
+        @keyframes scan {
+            0% { top: 0%; opacity: 1; }
+            100% { top: 100%; opacity: 0; }
+        }
+        
+        /* Particle Effects */
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #dc143c;
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: particleFloat 8s ease-in-out infinite;
+        }
+        
+        .particle:nth-child(1) { left: 10%; top: 20%; animation-delay: 0s; }
+        .particle:nth-child(2) { left: 30%; top: 40%; animation-delay: 1s; }
+        .particle:nth-child(3) { left: 50%; top: 60%; animation-delay: 2s; }
+        .particle:nth-child(4) { left: 70%; top: 30%; animation-delay: 3s; }
+        .particle:nth-child(5) { left: 90%; top: 50%; animation-delay: 4s; }
+        .particle:nth-child(6) { left: 20%; top: 70%; animation-delay: 5s; }
+        .particle:nth-child(7) { left: 40%; top: 10%; animation-delay: 6s; }
+        .particle:nth-child(8) { left: 60%; top: 80%; animation-delay: 7s; }
+        
+        @keyframes particleFloat {
+            0%, 100% { 
+                transform: translateY(0) translateX(0);
+                opacity: 0.3;
+            }
+            25% { 
+                transform: translateY(-30px) translateX(20px);
+                opacity: 0.6;
+            }
+            50% { 
+                transform: translateY(-60px) translateX(-20px);
+                opacity: 0.3;
+            }
+            75% { 
+                transform: translateY(-30px) translateX(20px);
+                opacity: 0.6;
+            }
+        }
+        
+        /* Terminal Typing Effect */
+        .terminal-container {
+            background: #1a1a2e;
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 20px;
+            font-family: 'Courier New', monospace;
+            color: #00ff00;
+            font-size: 0.9rem;
+            max-width: 500px;
+        }
+        
+        .terminal-header {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+        
+        .terminal-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        
+        .terminal-dot:nth-child(1) { background: #ff5f56; }
+        .terminal-dot:nth-child(2) { background: #ffbd2e; }
+        .terminal-dot:nth-child(3) { background: #27ca40; }
+        
+        .terminal-content {
+            min-height: 60px;
+        }
+        
+        .typing-cursor {
+            display: inline-block;
+            width: 10px;
+            height: 18px;
+            background: #00ff00;
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+        
+        /* Enhanced Feature Cards */
+        .feature-card {
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(220, 20, 60, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(220, 20, 60, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .feature-card:hover::before {
+            left: 100%;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-15px) scale(1.05) rotateY(5deg);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Service Card Styles */
+        .service-card {
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(220, 20, 60, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(220, 20, 60, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .service-card:hover::before {
+            left: 100%;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-15px) scale(1.05);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 0 1rem 0;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        
+        .service-title {
+            color: #333;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-description {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .section-title {
+            color: #333;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        /* Services Section */
+        .services-section {
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Reveal on Scroll Animation */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-on-scroll[data-delay="100"] {
+            transition-delay: 0.1s;
+        }
+
+        .reveal-on-scroll[data-delay="200"] {
+            transition-delay: 0.2s;
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            position: relative;
+        }
+    
+        .text-gradient {
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .btn-gradient {
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            border: none;
+            color: white;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-gradient::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .btn-gradient:hover::before {
+            left: 100%;
+        }
+        
+        .btn-gradient:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(220, 20, 60, 0.4);
+        }
+        
+        /* Tech Status Indicator */
+        .tech-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 5px 12px;
+            background: rgba(34, 197, 94, 0.1);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: #22c55e;
+        }
+        
+        .tech-status::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: #22c55e;
+            border-radius: 50%;
+            animation: statusPulse 2s infinite;
+        }
+        
+        @keyframes statusPulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.8); }
+        }
+        
+        /* Floating Badge */
+        .floating-badge {
+            position: absolute;
+            background: linear-gradient(135deg, #dc143c, #ffd700);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: 0 10px 30px rgba(220, 20, 60, 0.3);
+            animation: badgeFloat 4s ease-in-out infinite;
+        }
+        
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            .product-hero {
+                min-height: 50vh;
+                padding: 2rem 0;
+            }
+            
+            .display-3 {
+                font-size: 2.5rem !important;
+            }
+            
+            .terminal-container {
+                font-size: 0.8rem;
+                padding: 12px;
+                max-width: 100%;
+                margin-top: 15px;
+            }
+            
+            .feature-icon {
+                width: 60px !important;
+                height: 60px !important;
+            }
+            
+            .feature-card {
+                margin-bottom: 1rem;
+            }
+            
+            .floating-badge {
+                position: relative !important;
+                top: auto !important;
+                right: auto !important;
+                left: auto !important;
+                bottom: auto !important;
+                display: inline-block;
+                margin: 10px auto;
+                animation: none;
+            }
+            
+            .floating-security-icons,
+            .particles,
+            .floating-shapes {
+                display: none;
+            }
+            
+            .tech-status {
+                font-size: 0.75rem;
+                padding: 4px 10px;
+            }
+            
+            .btn-lg {
+                padding: 12px 24px !important;
+                font-size: 1rem !important;
+            }
+            
+            .d-flex.flex-column.flex-sm-row {
+                flex-direction: column !important;
+                align-items: stretch !important;
+            }
+            
+            .d-flex.flex-column.flex-sm-row .btn {
+                width: 100%;
+                margin-bottom: 0.5rem;
+            }
+            
+            .floating-card {
+                position: relative !important;
+                top: auto !important;
+                right: auto !important;
+                left: auto !important;
+                bottom: auto !important;
+                margin: 10px 0;
+                animation: none !important;
+            }
+        }
+        
+        @keyframes badgeFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        /* Reveal Animations */
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-100px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(100px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .reveal-zoom {
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .reveal-up.visible,
+        .reveal-left.visible,
+        .reveal-right.visible,
+        .reveal-zoom.visible {
+            opacity: 1;
+            transform: translate(0, 0) scale(1);
+        }
+        
+        /* Stagger Animation Delays */
+        .stagger-1 { transition-delay: 0.1s; }
+        .stagger-2 { transition-delay: 0.2s; }
+        .stagger-3 { transition-delay: 0.3s; }
+        .stagger-4 { transition-delay: 0.4s; }
+        .stagger-5 { transition-delay: 0.5s; }
+        .stagger-6 { transition-delay: 0.6s; }
+        
+        /* Cyber Grid Background */
+        .cyber-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(220, 20, 60, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(220, 20, 60, 0.03) 1px, transparent 1px);
+            background-size: 25px 25px;
+            z-index: 0;
+        }
+        
+        /* Floating Shapes */
+        .floating-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .shape {
+            position: absolute;
+            background: linear-gradient(45deg, #dc143c, #ffd700);
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 8s ease-in-out infinite;
+        }
+        
+        .shape:nth-child(1) { width: 80px; height: 80px; top: 20%; left: 10%; animation-delay: 0s; }
+        .shape:nth-child(2) { width: 120px; height: 120px; top: 60%; right: 15%; animation-delay: 2s; }
+        .shape:nth-child(3) { width: 60px; height: 60px; bottom: 30%; left: 20%; animation-delay: 4s; }
+        .shape:nth-child(4) { width: 100px; height: 100px; top: 40%; right: 30%; animation-delay: 1s; }
+        .shape:nth-child(5) { width: 90px; height: 90px; bottom: 20%; right: 10%; animation-delay: 3s; }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); }
+            25% { transform: translateY(-30px) rotate(90deg) scale(1.1); }
+            50% { transform: translateY(-20px) rotate(180deg) scale(0.9); }
+            75% { transform: translateY(-40px) rotate(270deg) scale(1.05); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <div id="navigation-component"></div>
+
+    <!-- Right Panel -->
+    <div id="right-panel-component"></div>
+
+    <!-- Main Content -->
+    <main class="">
+        <!-- Hero Section -->
+        <section class="product-hero py-5 position-relative" >
+            <div class="container px-4 position-relative" style="z-index: 2; margin-bottom: 2.5rem">
+                <div class="row align-items-center py-5 mt-5" style="margin-bottom: 2.5rem">
+                    <div class="col-12 mb-4" data-breadcrumb data-separator="arrow">
+                        <!-- Breadcrumb will be dynamically generated here -->
+                    </div>
+                    <div class="col-lg-6">
+                        <h1 class="display-3 fw-bold mb-4 reveal-up" style="color: #333333;">
+                            Collaborative Solutions for
+                            <span class="d-block text-gradient">Digitalisation</span>
+                        </h1>
+                        
+                        <!-- Terminal Effect -->
+                        <div class="terminal-container reveal-up stagger-2 d-none d-md-block">
+                            <div class="terminal-header">
+                                <div class="terminal-dot"></div>
+                                <div class="terminal-dot"></div>
+                                <div class="terminal-dot"></div>
+                            </div>
+                            <div class="terminal-content">
+                                <span class="text-success">➜</span> <span class="text-info">~</span> digitalisation --ocr-engine<br>
+                                <span class="text-success">➜</span> <span class="text-info">~</span> workflow: <span class="text-warning">multi-level-roles</span><br>
+                                <span class="text-success">➜</span> <span class="text-info">~</span> <span class="text-warning">processing documents...</span><span class="typing-cursor"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex flex-wrap gap-3 mb-4 mt-4 reveal-up stagger-3 justify-content-center justify-content-lg-start">
+                            <div class="tech-status">
+                                <span>Multi-Language OCR</span>
+                            </div>
+                            <div class="tech-status">
+                                <span>Collaborative Editing</span>
+                            </div>
+                            <div class="tech-status d-none d-sm-flex">
+                                <span>Role-Based Workflow</span>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex flex-column flex-sm-row gap-3 reveal-up stagger-4">
+                            <button class="btn btn-gradient btn-lg px-4 py-3">
+                                <i class="bi bi-play-circle me-2"></i>
+                                Request a Demo
+                            </button>
+                            <button class="btn btn-outline-danger btn-lg px-4 py-3">
+                                <i class="bi bi-chat-dots me-2"></i>
+                                Talk to Us
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="text-center reveal-up stagger-3">
+                            <div class="feature-icon mx-auto mb-4" style="width: 120px; height: 120px;">
+                                <i class="bi bi-file-earmark-text text-white fs-1"></i>
+                            </div>
+                            <!-- Floating Badge - Mobile Friendly -->
+                            <div class="floating-badge reveal-left text-center">
+                                📄 Document Workflow
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Key Features Section -->
+        <section class="py-5" style="background: linear-gradient(135deg,#fff7ed,#ffffff,#fffbeb);">
+            <div class="container">
+                <div class="text-left mb-5 reveal-up">
+                    <h2 class="display-5 fw-bold mb-3" style="color: #333;">
+                        Key <span class="text-gradient">Features</span>
+                    </h2>
+                    <p class="lead text-muted">Powerful capabilities for efficient document workflows</p>
+                </div>
+                
+                <div class="row g-4">
+                    <!-- Left Column -->
+                    <div class="col-lg-6">
+                        <div class="row g-4">
+                            <div class="col-12">
+                                <div class="d-flex align-items-start reveal-up">
+                                    <div class="flex-shrink-0 me-3">
+                                        <div class="bg-gradient rounded-circle p-3" style="background: linear-gradient(135deg, #dc143c, #ffd700);">
+                                            <i class="bi bi-eye text-white fs-4"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h5 class="fw-bold mb-2">Multi-Language OCR Engine</h5>
+                                        <p class="text-muted mb-0">Extracts editable text from scanned documents in multiple Indian and international languages, including complex scripts and handwritten content.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-12">
+                                <div class="d-flex align-items-start reveal-up stagger-2">
+                                    <div class="flex-shrink-0 me-3">
+                                        <div class="bg-gradient rounded-circle p-3" style="background: linear-gradient(135deg, #dc143c, #ffd700);">
+                                            <i class="bi bi-pencil-square text-white fs-4"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h5 class="fw-bold mb-2">Integrated Online Editor</h5>
+                                        <p class="text-muted mb-0">Edit OCR text directly in the browser using a collaborative editor with formatting tools, change tracking, and version control.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-12">
+                                <div class="d-flex align-items-start reveal-up stagger-3">
+                                    <div class="flex-shrink-0 me-3">
+                                        <div class="bg-gradient rounded-circle p-3" style="background: linear-gradient(135deg, #dc143c, #ffd700);">
+                                            <i class="bi bi-people text-white fs-4"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h5 class="fw-bold mb-2">Multi-Level Role Management</h5>
+                                        <p class="text-muted mb-0">Assign structured responsibilities across roles like Team Lead, Proofreader, Reviewer, Manager, Sub-admin, and Admin.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Column -->
+                    <div class="col-lg-6">
+                        <div class="row g-4">
+                            <div class="col-12">
+                                <div class="d-flex align-items-start reveal-up stagger-4">
+                                    <div class="flex-shrink-0 me-3">
+                                        <div class="bg-gradient rounded-circle p-3" style="background: linear-gradient(135deg, #dc143c, #ffd700);">
+                                            <i class="bi bi-file-earmark-check text-white fs-4"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h5 class="fw-bold mb-2">Digitize Any Document Format</h5>
+                                        <p class="text-muted mb-0">Supports scanning and digitization of printed books, rare manuscripts, journals, and archival records—including fragile or aged texts.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-12">
+                                <div class="d-flex align-items-start reveal-up stagger-5">
+                                    <div class="flex-shrink-0 me-3">
+                                        <div class="bg-gradient rounded-circle p-3" style="background: linear-gradient(135deg, #dc143c, #ffd700);">
+                                            <i class="bi bi-check2-square text-white fs-4"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h5 class="fw-bold mb-2">Proofreading Workflow</h5>
+                                        <p class="text-muted mb-0">Line-by-line proofing system that compares OCR output with the original scanned image, enabling precise correction and validation.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-12">
+                                <div class="d-flex align-items-start reveal-up stagger-6">
+                                    <div class="flex-shrink-0 me-3">
+                                        <div class="bg-gradient rounded-circle p-3" style="background: linear-gradient(135deg, #dc143c, #ffd700);">
+                                            <i class="bi bi-graph-up text-white fs-4"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h5 class="fw-bold mb-2">Progress Tracking & Task Assignment</h5>
+                                        <p class="text-muted mb-0">Real-time dashboards and workload tracking for team leads and managers to monitor productivity and workflow health.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="services-section py-5" style="background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);">
+            <div class="container">
+                <div class="text-left mb-5">
+                    <h2 class="section-title reveal-on-scroll display-5 fw-bold mb-3" style="color: #333;">Our Digitalisation <span class="text-gradient">Services</span></h2>
+                    <p class="lead text-muted">Comprehensive document digitization solutions to transform your paper-based workflows</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card feature-card p-4 h-100 reveal-on-scroll">
+                            <div class="service-icon feature-icon">
+                                <i class="bi bi-eye text-white fs-2"></i>
+                            </div>
+                            <h3 class="service-title fw-bold mb-3 text-left">OCR & Text Extraction</h3>
+                            <p class="service-description text-muted">
+                                Advanced OCR technology that accurately extracts text from printed and handwritten documents in multiple languages with high precision.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card feature-card p-4 h-100 reveal-on-scroll" data-delay="100">
+                            <div class="service-icon feature-icon">
+                                <i class="bi bi-people-fill text-white fs-2"></i>
+                            </div>
+                            <h3 class="service-title fw-bold mb-3 text-left">Collaborative Editing</h3>
+                            <p class="service-description text-muted">
+                                Real-time collaborative editing platform where multiple team members can work simultaneously on document digitization and proofreading.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card feature-card p-4 h-100 reveal-on-scroll" data-delay="200">
+                            <div class="service-icon feature-icon">
+                                <i class="bi bi-diagram-3 text-white fs-2"></i>
+                            </div>
+                            <h3 class="service-title fw-bold mb-3 text-left">Workflow Management</h3>
+                            <p class="service-description text-muted">
+                                Structured workflow system with role-based access control, task assignment, and progress tracking for efficient project management.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card feature-card p-4 h-100 reveal-on-scroll">
+                            <div class="service-icon feature-icon">
+                                <i class="bi bi-shield-check text-white fs-2"></i>
+                            </div>
+                            <h3 class="service-title fw-bold mb-3 text-left">Secure Infrastructure</h3>
+                            <p class="service-description text-muted">
+                                Cloud-hosted platform with enterprise-grade security, user-level access control, and scalable deployment for large teams.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card feature-card p-4 h-100 reveal-on-scroll" data-delay="100">
+                            <div class="service-icon feature-icon">
+                                <i class="bi bi-check2-all text-white fs-2"></i>
+                            </div>
+                            <h3 class="service-title fw-bold mb-3 text-left">Quality Assurance</h3>
+                            <p class="service-description text-muted">
+                                Multi-level proofreading and validation system ensuring high accuracy and quality in digitized content with version control.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card feature-card p-4 h-100 reveal-on-scroll" data-delay="200">
+                            <div class="service-icon feature-icon">
+                                <i class="bi bi-archive text-white fs-2"></i>
+                            </div>
+                            <h3 class="service-title fw-bold mb-3 text-left">Document Preservation</h3>
+                            <p class="service-description text-muted">
+                                Specialized handling of rare manuscripts, historical documents, and fragile texts with preservation-focused digitization techniques.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="digitalisation-benefits-section" style="padding: 60px 0; background: linear-gradient(135deg, #1A1A1A, #2A2A2A); position: relative; overflow: hidden;">
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <!-- Left side - Content -->
+                    <div class="col-lg-6">
+                        <h2 class="reveal-on-scroll" style="font-size: 2.5rem; font-weight: 700; color: #ffffff; margin-bottom: 20px;">
+                            Centralized Collaboration Hub & <span class="gradient-text">Secure Workflow</span>
+                        </h2>
+                        <p class="reveal-on-scroll" data-delay="100" style="color: rgba(255, 255, 255, 0.7); font-size: 1.1rem; line-height: 1.8; margin-bottom: 25px;">
+                            Our collaborative digitization platform streamlines the entire document workflow—from OCR extraction to proofreading and approval—through a secure, role-based system. All digitization, editing, and approvals happen on a single platform, eliminating email chains and fragmented workflows.
+                        </p>
+                        <div class="row g-3 reveal-on-scroll" data-delay="200">
+                            <div class="col-6">
+                                <div class="d-flex align-items-center gap-3 p-3 rounded-3 shadow-sm" style="border: 1px solid rgba(220, 20, 60, 0.1);">
+                                    <div class="bg-success bg-opacity-10 rounded-circle p-2">
+                                        <i class="bi bi-people text-success fs-5"></i>
+                                    </div>
+                                    <div>
+                                        <div class="fw-bold text-white" style="font-size: 1.5rem;">Multi</div>
+                                        <div class="text-muted small">Role System</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="d-flex align-items-center gap-3 p-3 rounded-3 shadow-sm" style="border: 1px solid rgba(220, 20, 60, 0.1);">
+                                    <div class="bg-warning bg-opacity-10 rounded-circle p-2">
+                                        <i class="bi bi-cloud text-warning fs-5"></i>
+                                    </div>
+                                    <div>
+                                        <div class="fw-bold text-white" style="font-size: 1.5rem;">Cloud</div>
+                                        <div class="text-muted small">Scalable</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-4 reveal-on-scroll" data-delay="300">
+                            <a href="../contact.html" class="btn btn-hero-primary" style="background: linear-gradient(135deg, #dc143c, #ffd700); color: white; padding: 14px 32px; border-radius: 50px; font-weight: 600; border: none; transition: all 0.4s ease; box-shadow: 0 10px 30px rgba(220, 20, 60, 0.3);">
+                                <i class="bi bi-file-earmark-text me-2"></i>Start Digitisation Project
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Right side - Image -->
+                    <div class="col-lg-6">
+                        <div class="reveal-on-scroll" data-delay="400" style="position: relative;">
+                            <div class="main-image-card" style="border-radius: 25px; overflow: hidden; box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);">
+                                <img src="../assets/images/cyber2.jpg" alt="Digitalisation Platform" class="img-fluid" style="width: 100%; display: block; transition: all 0.4s ease;">
+                            </div>
+                            <div class="floating-card d-none d-lg-block" style="position: absolute; top: 10%; right: -20px; background: rgba(255, 255, 255, 0.95); border-radius: 20px; padding: 20px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); animation: float-card 4s ease-in-out infinite;">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="bg-danger bg-opacity-10 rounded-circle p-2">
+                                        <i class="bi bi-check2-all text-danger fs-5"></i>
+                                    </div>
+                                    <div>
+                                        <div class="fw-bold text-dark">99%</div>
+                                        <div class="text-muted small">OCR Accuracy</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="floating-card d-none d-lg-block" style="position: absolute; bottom: 15%; left: -30px; background: rgba(255, 255, 255, 0.95); border-radius: 20px; padding: 20px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); animation: float-card 4s ease-in-out infinite; animation-delay: 2s;">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="bg-success bg-opacity-10 rounded-circle p-2">
+                                        <i class="bi bi-files text-success fs-5"></i>
+                                    </div>
+                                    <div>
+                                        <div class="fw-bold text-dark">1M+</div>
+                                        <div class="text-muted small">Pages Processed</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <style>
+                @keyframes float-card {
+                    0%, 100% { transform: translateY(0px); }
+                    50% { transform: translateY(-15px); }
+                }
+                .gradient-text {
+                    background: linear-gradient(135deg, #dc143c, #ffd700);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-clip: text;
+                }
+                .main-image-card:hover img {
+                    transform: scale(1.05);
+                }
+            </style>
+        </section>
+
+        <!-- Perfect For Section -->
+        <section class="py-5" style="background: linear-gradient(135deg, #fff7ed 0%, #ffffff 50%, #fffbeb 100%);">
+            <div class="container">
+                <div class="text-left mb-5 reveal-up">
+                    <h2 class="display-5 fw-bold mb-3" style="color: #333;">
+                        Ideal <span class="text-gradient">For</span>
+                    </h2>
+                    <p class="lead text-muted">Perfect for organizations with large-scale document digitization needs</p>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="text-center">
+                            <div class="feature-icon mx-auto mb-3" style="width: 80px; height: 80px;">
+                                <i class="bi bi-building text-white fs-2"></i>
+                            </div>
+                            <h5 class="fw-bold mb-2">Libraries & Archives</h5>
+                            <p class="text-muted small">Digitize historical documents, manuscripts, and rare collections</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="text-center reveal-up stagger-2">
+                            <div class="feature-icon mx-auto mb-3" style="width: 80px; height: 80px;">
+                                <i class="bi bi-book text-white fs-2"></i>
+                            </div>
+                            <h5 class="fw-bold mb-2">Publishing Houses</h5>
+                            <p class="text-muted small">Convert printed books and manuscripts to digital formats</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="text-center reveal-up stagger-3">
+                            <div class="feature-icon mx-auto mb-3" style="width: 80px; height: 80px;">
+                                <i class="bi bi-mortarboard text-white fs-2"></i>
+                            </div>
+                            <h5 class="fw-bold mb-2">Universities & Research Institutes</h5>
+                            <p class="text-muted small">Academic document digitization and research material preservation</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="text-center reveal-up stagger-4">
+                            <div class="feature-icon mx-auto mb-3" style="width: 80px; height: 80px;">
+                                <i class="bi bi-bank text-white fs-2"></i>
+                            </div>
+                            <h5 class="fw-bold mb-2">Government Digitization Projects</h5>
+                            <p class="text-muted small">Large-scale government document digitization initiatives</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="text-center reveal-up stagger-5">
+                            <div class="feature-icon mx-auto mb-3" style="width: 80px; height: 80px;">
+                                <i class="bi bi-globe text-white fs-2"></i>
+                            </div>
+                            <h5 class="fw-bold mb-2">Cultural Heritage Preservation</h5>
+                            <p class="text-muted small">Preserve cultural documents and historical texts for future generations</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="text-center reveal-up stagger-6">
+                            <div class="feature-icon mx-auto mb-3" style="width: 80px; height: 80px;">
+                                <i class="bi bi-briefcase text-white fs-2"></i>
+                            </div>
+                            <h5 class="fw-bold mb-2">Enterprise Document Management</h5>
+                            <p class="text-muted small">Corporate document digitization and workflow automation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="py-5" style="background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);">
+            <div class="container">
+                <div class="text-left mb-5 reveal-up">
+                    <h2 class="display-5 fw-bold mb-3" style="color: #333;">
+                        Why Choose <span class="text-gradient">Collaborative Digitalisation</span>
+                    </h2>
+                    <p class="lead text-muted">Transform paper into structured, searchable, and shareable content</p>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="text-center">
+                            <div class="feature-icon mx-auto mb-3" style="width: 60px; height: 60px;">
+                                <i class="bi bi-eye text-white fs-4"></i>
+                            </div>
+                            <h5 class="fw-bold mb-2">Advanced OCR</h5>
+                            <p class="text-muted small">Multi-language OCR with handwriting recognition</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="text-center reveal-up stagger-2">
+                            <div class="feature-icon mx-auto mb-3" style="width: 60px; height: 60px;">
+                                <i class="bi bi-people text-white fs-4"></i>
+                            </div>
+                            <h5 class="fw-bold mb-2">Team Collaboration</h5>
+                            <p class="text-muted small">Real-time collaborative editing and workflow</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="text-center reveal-up stagger-3">
+                            <div class="feature-icon mx-auto mb-3" style="width: 60px; height: 60px;">
+                                <i class="bi bi-shield-check text-white fs-4"></i>
+                            </div>
+                            <h5 class="fw-bold mb-2">Secure & Scalable</h5>
+                            <p class="text-muted small">Enterprise-grade security with cloud scalability</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="text-center reveal-up stagger-4">
+                            <div class="feature-icon mx-auto mb-3" style="width: 60px; height: 60px;">
+                                <i class="bi bi-graph-up text-white fs-4"></i>
+                            </div>
+                            <h5 class="fw-bold mb-2">Progress Tracking</h5>
+                            <p class="text-muted small">Real-time dashboards and productivity monitoring</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="py-5" style="background: linear-gradient(135deg, #dc143c, #ffd700);">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-8 text-center text-lg-start">
+                        <h2 class="display-5 fw-bold text-white mb-3 reveal-up">
+                            Transform Paper into Structured, Searchable Content
+                        </h2>
+                        <p class="lead text-white mb-4">
+                            JetHat's collaborative digitization platform is built to simplify and accelerate large-scale document digitalisation, while maintaining high accuracy, role clarity, and workflow transparency.
+                        </p>
+                    </div>
+                    <div class="col-lg-4 text-center">
+                        <div class="d-flex flex-column gap-3 reveal-up stagger-2">
+                            <button class="btn btn-light btn-lg px-4 py-3">
+                                <i class="bi bi-play-circle me-2"></i>
+                                Request a Demo
+                            </button>
+                            <button class="btn btn-outline-light btn-lg px-4 py-3">
+                                <i class="bi bi-chat-dots me-2"></i>
+                                Talk to Us
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-component"></div>
+    
+    <!-- Theme Toggle -->
+    <button id="theme-toggle" class="btn btn-dark position-fixed bottom-0 start-0 m-4 rounded-circle p-3 shadow-lg" style="z-index: 1050;">
+        <i id="sun-icon" class="bi bi-sun-fill d-none"></i>
+        <i id="moon-icon" class="bi bi-moon-fill"></i>
+    </button>
+    <script src="../scripts/theme-toggle.js"></script>
+    
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Animation Script -->
+    <script>
+        function initAnimations() {
+            const animationElements = document.querySelectorAll('.reveal-up, .reveal-on-scroll');
+            
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            animationElements.forEach(element => {
+                observer.observe(element);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            initAnimations();
+        });
+    </script>
+
+    <!-- Component Loader Script -->
+    <script type="module">
+        async function loadComponent(id, path) {
+            try {
+                const res = await fetch(path);
+                if (!res.ok) throw new Error(`${path} (${res.status})`);
+                const html = await res.text();
+
+                const el = document.getElementById(id);
+                if (el) el.innerHTML = html;
+                else console.warn(`Missing container #${id}`);
+            } catch (err) {
+                console.error(`Component load failed: ${path}`, err);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            const components = [
+                ['navigation-component', '../components/navigation/navigation.html'],
+                ['footer-component', '../components/footer/footer.html'],
+                ['right-panel-component', '../components/right-panel/right-panel.html']
+            ];
+
+            await Promise.all(components.map(([id, path]) => loadComponent(id, path)));
+            
+            // Trigger navigation fix after components are loaded
+            if (window.fixNavigationPaths) {
+                setTimeout(() => {
+                    window.fixNavigationPaths();
+                    console.log('Navigation paths fixed after component loading');
+                }, 100);
+            }
+            
+            // Dispatch custom event for navigation fix
+            document.dispatchEvent(new CustomEvent('navigationLoaded'));
+            
+            console.log('✅ Collaborative Digitalisation page initialized successfully');
+        });
+    </script>
+
+    <!-- jQuery (required for Owl Carousel) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <!-- Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+</body>
+</html>

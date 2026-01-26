@@ -5,35 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms & Conditions - JetHat Cyber Security</title>
     <meta name="description" content="JetHat Cyber Security Terms & Conditions. Detailed terms and conditions for our services and business relationships.">
-
-    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Fonts -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="../styles/main.css">
     
-    <!-- Navigation Fix Script -->
+
     <script src="../scripts/navigation-fix.js"></script>
     <script src="../scripts/navbar-scroll.js"></script>
 </head>
 <body >
-    <!-- Navigation -->
     <div id="navigation-component"></div>
-
-    <!-- Right Panel -->
     <div id="right-panel-component"></div>
 
-    <!-- Main Content -->
     <main class="">
-        <!-- Hero Section -->
+       
         <section class="py-5 position-relative overflow-hidden" >
             <div class="container-fluid px-4">
                 <div class="text-center py-5">
@@ -116,10 +106,8 @@
             </div>
         </section>
     </main>
-
-    <!-- Footer -->
     <div id="footer-component"></div>
-       <!-- Theme Toggle -->
+
     <button id="theme-toggle" class="btn btn-dark position-fixed bottom-0 start-0 m-4 rounded-circle p-3 shadow-lg" style="z-index: 1050;">
         <i id="sun-icon" class="bi bi-sun-fill d-none"></i>
         <i id="moon-icon" class="bi bi-moon-fill"></i>
@@ -162,10 +150,7 @@
                 }, 100);
             }
             
-            // Dispatch custom event for navigation fix
             document.dispatchEvent(new CustomEvent('navigationLoaded'));
-            
-            console.log('✅ Terms & Conditions page initialized successfully');
         });
     </script>
 </body>

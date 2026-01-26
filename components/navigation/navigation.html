@@ -1,29 +1,23 @@
-<!-- Mobile Offcanvas Menu -->
 <div class="offcanvas offcanvas-end mobile-nav-canvas" id="mobileMenu" tabindex="-1">
-        <div class="offcanvas-header mobile-nav-header">
+    <div class="offcanvas-header mobile-nav-header">
         <div class="d-flex align-items-center gap-2">
             <img src="assets/images/logo.png" alt="JetHat Logo" style="height: 3.5rem;">
             <div>
-                <h5 class="mb-0 fw-bold" style="color: var(--gradient-primary);">JetHat</h5>
-                <small style="color: var(--text-secondary);">Cyber Security</small>
+                <h5 class="mb-0 fw-bold" style="color: black; " >JetHat</h5>
+                <small >Cyber Security</small>
             </div>
         </div>
-        <button type="button" class="btn-close btn-close-white mobile-nav-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        <button type="button" class="btn-close mobile-nav-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
-
 
     <div class="offcanvas-body mobile-nav-body">
         <nav class="mobile-nav" id="mobileAccordion">
-            <!-- Home -->
             <div class="mobile-nav-item">
                 <a href="index.html" class="mobile-nav-link">
-
-                    
                     <span>Home</span>
                 </a>
             </div>
 
-            <!-- Company (Accordion) -->
             <div class="mobile-nav-group">
                 <button class="mobile-nav-group-toggle" data-bs-toggle="collapse" data-bs-target="#mobileCompany" aria-expanded="false" data-bs-parent="#mobileAccordion">
                     <div class="mobile-nav-link">
@@ -44,11 +38,9 @@
                 </div>
             </div>
 
-            <!-- Products (Accordion) -->
             <div class="mobile-nav-group">
                 <button class="mobile-nav-group-toggle" data-bs-toggle="collapse" data-bs-target="#mobileProducts" aria-expanded="false" data-bs-parent="#mobileAccordion">
                     <div class="mobile-nav-link">
-                        
                         <span>Products</span>
                     </div>
                     <i class="bi bi-chevron-down mobile-arrow"></i>
@@ -62,15 +54,15 @@
                         <a href="products/anukaran-ai.html" class="mobile-submenu-link"><i class="bi bi-cpu"></i><span>Anukaran AI</span></a>
                         <a href="products/sambhasini-ai.html" class="mobile-submenu-link"><i class="bi bi-mic"></i><span>Sambhasini AI</span></a>
                         <a href="products/multi-dictionary.html" class="mobile-submenu-link"><i class="bi bi-translate"></i><span>Multilingual Dictionary</span></a>
+                        <a href="products/collaborative-digitalisation.html" class="mobile-submenu-link"><i class="bi bi-file-earmark-text"></i><span>Collaborative Digitalisation</span></a>
+                        <a href="products/virtual-classroom-solution.html" class="mobile-submenu-link"><i class="bi bi-camera-video"></i><span>Virtual Classroom Solution</span></a>
                     </div>
                 </div>
             </div>
 
-            <!-- Services (Accordion) -->
             <div class="mobile-nav-group">
                 <button class="mobile-nav-group-toggle" data-bs-toggle="collapse" data-bs-target="#mobileServices" aria-expanded="false" data-bs-parent="#mobileAccordion">
                     <div class="mobile-nav-link">
-                 
                         <span>Services</span>
                     </div>
                     <i class="bi bi-chevron-down mobile-arrow"></i>
@@ -82,15 +74,15 @@
                         <a href="services/web-development.html" class="mobile-submenu-link"><i class="bi bi-globe"></i><span>Web Development</span></a>
                         <a href="services/mobile-development.html" class="mobile-submenu-link"><i class="bi bi-phone"></i><span>Mobile Development</span></a>
                         <a href="services/cloud-services.html" class="mobile-submenu-link"><i class="bi bi-cloud"></i><span>Cloud Services</span></a>
+                        <a href="services/ecommerce-services.html" class="mobile-submenu-link"><i class="bi bi-cart"></i><span>Ecommerce Services</span></a>
+                        <a href="services/ai-research-development.html" class="mobile-submenu-link"><i class="bi bi-cpu"></i><span>R&D (AI, ML, DL)</span></a>
                     </div>
                 </div>
             </div>
 
-            <!-- Technologies (Accordion) -->
             <div class="mobile-nav-group">
                 <button class="mobile-nav-group-toggle" data-bs-toggle="collapse" data-bs-target="#mobileTechnologies" aria-expanded="false" data-bs-parent="#mobileAccordion">
                     <div class="mobile-nav-link">
-                      
                         <span>Technologies</span>
                     </div>
                     <i class="bi bi-chevron-down mobile-arrow"></i>
@@ -103,25 +95,19 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Career -->
-            <div class="mobile-nav-item">
+            <div class="mobile-nav-group">
                 <a href="careers.html" class="mobile-nav-link">
-                   
-                    <span>Career</span>
+                    <span>Careers</span>
                 </a>
             </div>
-
-            <!-- Contact -->
-            <div class="mobile-nav-item">
-                <a href="contact.html" class="mobile-nav-link">
-                
+            <div class="mobile-nav-group">
+               <a href="contact.html" class="mobile-nav-link">
                     <span>Contact</span>
                 </a>
             </div>
+
         </nav>
 
-        <!-- Mobile CTA Button -->
         <div class="mobile-nav-cta">
             <a href="contact.html" class="btn btn-gradient w-100 py-3">
                 <i class="bi bi-chat-dots-fill me-2"></i>
@@ -129,44 +115,41 @@
             </a>
         </div>
 
-        <!-- Mobile Social Links -->
         <div class="mobile-nav-social">
-            <a href="#" class="social-link"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="social-link"><i class="bi bi-twitter-x"></i></a>
-            <a href="#" class="social-link"><i class="bi bi-linkedin"></i></a>
-            <a href="#" class="social-link"><i class="bi bi-instagram"></i></a>
+            <a href="https://facebook.com/jethat" class="social-link" target="_blank" rel="noopener noreferrer"><i class="bi bi-facebook"></i></a>
+            <a href="https://twitter.com/jethat" class="social-link" target="_blank" rel="noopener noreferrer"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://linkedin.com/company/jethat" class="social-link" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i></a>
+            <a href="https://instagram.com/jethat" class="social-link" target="_blank" rel="noopener noreferrer"><i class="bi bi-instagram"></i></a>
         </div>
     </div>
 </div>
 
-<!-- Main Navigation -->
-<nav class="navbar navbar-expand-lg fixed-top py-2 professional-nav navbar-theme">
+<style>
+.mobile-nav-link span, .mobile-submenu-link span {
+    color: #000 !important;
+}
+
+.mobile-submenu-link {
+    color: #999 !important;
+}
+</style>
+
+<nav class="navbar navbar-expand-lg fixed-top py-3  navbar-theme">
     <div class="container d-flex align-items-center">
-        <!-- Logo (Left) -->
-       <a class="d-flex navbar-brand me-auto align-items-center" href="index.html">
-    <img src="assets/images/logo.png" alt="JetHat Logo"
-         style="height: 3rem; margin-right: 6px;">
+        <a class="d-flex navbar-brand me-auto align-items-center" href="index.html">
+            <img src="assets/images/logo.png" alt="JetHat Logo" style="height: 3rem; margin-right: 6px;">
+            <div class="d-flex flex-column" style="line-height: 1;">
+                <span class="fw-bold" style="font-size: 1.5rem;">JetHat</span>
+                <small style="color: var(--text-secondary) !important; font-size: 0.75rem;">Cyber Security</small>
+            </div>
+        </a>
 
-    <div class="d-flex flex-column" style="line-height: 1;">
-        <span class="fw-bold"
-              style="font-size: 1.5rem; ">
-            JetHat
-        </span>
-        <small style="color: var(--text-secondary) !important; font-size: 0.75rem;">
-            Cyber Security
-        </small>
-    </div>
-</a>
-
-       
-        <!-- Mobile Menu Button (Right on mobile) -->
         <button class="navbar-toggler d-lg-none border-0 order-3 mobile-toggle ms-auto" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
             <span class="hamburger-line"></span>
             <span class="hamburger-line"></span>
             <span class="hamburger-line"></span>
         </button>
 
-        <!-- Desktop Navigation (Right side) -->
         <div class="collapse navbar-collapse order-lg-4" id="navbarNav">
             <ul class="navbar-nav ms-auto professional-nav-menu">
                 <li class="nav-item nav-item-enhanced">
@@ -175,283 +158,253 @@
                     </a>
                 </li>
 
-                <!-- Company Dropdown - Single Column -->
                 <li class="nav-item dropdown dropdown-hover nav-item-enhanced">
                     <a class="nav-link fw-medium font-poppins d-flex align-items-center gap-1 nav-link-enhanced" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <span class="nav-text">Company</span>
                         <i class="bi bi-chevron-down small dropdown-arrow"></i>
                     </a>
-                    <ul class="dropdown-menu single-column-dropdown dropdown-menu-theme bg-white border-bottom border-1 border-primary shadow-lg dropdown-animation professional-dropdown">
+                    <ul class="dropdown-menu  dropdown-menu-theme  border-bottom border-1 border-primary shadow-lg dropdown-animation professional-dropdown">
                         <li><a href="about/index.html" class="dropdown-item smooth-item">
                             <div class="item-content">
-                                
                                 <div class="item-text">
-                                    <div class="item-title">About Us</div>
-                                    <div class="item-subtitle">Learn more about JetHat</div>
+                                    <div class="item-title" style="color: #000;">About Us</div>
+                                    <div class="item-subtitle" style="color: #999;">Learn more about JetHat</div>
                                 </div>
                             </div>
                         </a></li>
-                        
                         <li><a href="about/team.html" class="dropdown-item smooth-item">
                             <div class="item-content">
-                               
                                 <div class="item-text">
-                                    <div class="item-title">Our Team</div>
-                                    <div class="item-subtitle">Meet our experts</div>
+                                    <div class="item-title" style="color: #000;">Our Team</div>
+                                    <div class="item-subtitle" style="color: #999;">Meet our experts</div>
                                 </div>
                             </div>
                         </a></li>
-                        
                         <li><a href="about/culture.html" class="dropdown-item smooth-item">
                             <div class="item-content">
-                                
                                 <div class="item-text">
-                                    <div class="item-title">Company Culture</div>
-                                    <div class="item-subtitle">Our values and environment</div>
+                                    <div class="item-title" style="color: #000;">Company Culture</div>
+                                    <div class="item-subtitle" style="color: #999;">Our values and environment</div>
                                 </div>
                             </div>
                         </a></li>
-                        
                         <li><a href="about/success-stories.html" class="dropdown-item smooth-item">
                             <div class="item-content">
-                              
                                 <div class="item-text">
-                                    <div class="item-title">Success Stories</div>
-                                    <div class="item-subtitle">Case studies & achievements</div>
+                                    <div class="item-title" style="color: #000;">Success Stories</div>
+                                    <div class="item-subtitle" style="color: #999;">Case studies & achievements</div>
                                 </div>
                             </div>
                         </a></li>
-                        
                         <li><a href="about/projects-showcase.html" class="dropdown-item smooth-item">
                             <div class="item-content">
-                               
                                 <div class="item-text">
-                                    <div class="item-title">Projects Showcase</div>
-                                    <div class="item-subtitle">Our project portfolio</div>
+                                    <div class="item-title" style="color: #000;">Projects Showcase</div>
+                                    <div class="item-subtitle" style="color: #999;">Our project portfolio</div>
                                 </div>
                             </div>
                         </a></li>
-                        
                         <li><a href="about/development-pipeline.html" class="dropdown-item smooth-item">
                             <div class="item-content">
-                                
                                 <div class="item-text">
-                                    <div class="item-title">What We're Building</div>
-                                    <div class="item-subtitle">Development pipeline</div>
+                                    <div class="item-title" style="color: #000;">What We're Building</div>
+                                    <div class="item-subtitle" style="color: #999;">Development pipeline</div>
                                 </div>
                             </div>
                         </a></li>
-                        
                         <li><a href="careers.html" class="dropdown-item smooth-item">
                             <div class="item-content">
-                                
                                 <div class="item-text">
-                                    <div class="item-title">Careers</div>
-                                    <div class="item-subtitle">Join our team</div>
+                                    <div class="item-title" style="color: #000;">Careers</div>
+                                    <div class="item-subtitle" style="color: #999;">Join our team</div>
                                 </div>
                             </div>
                         </a></li>
                     </ul>
                 </li>
 
-                <!-- Products Dropdown - Single Column -->
                 <li class="nav-item dropdown dropdown-hover nav-item-enhanced">
                     <a class="nav-link fw-medium font-poppins d-flex align-items-center gap-1 nav-link-enhanced" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <span class="nav-text">Products</span>
                         <i class="bi bi-chevron-down small dropdown-arrow"></i>
                     </a>
-                    <ul class="dropdown-menu single-column-dropdown bg-white border-bottom border-2 border-primary shadow-lg dropdown-animation professional-dropdown">
+                    <ul class="dropdown-menu single-column-dropdown border-bottom border-2 border-primary shadow-lg dropdown-animation professional-dropdown">
                         <li><a href="products/magai.html" class="dropdown-item smooth-item">
                             <div class="item-content">
-                                
                                 <div class="item-text">
-                                    <div class="item-title">MagAI</div>
-                                    <div class="item-subtitle">AI-powered content management</div>
+                                    <div class="item-title" style="color: #000;">MagAI</div>
+                                    <div class="item-subtitle" style="color: #999;">AI-powered content management</div>
                                 </div>
                             </div>
                         </a></li>
-                        
                         <li><a href="products/virtual-naani.html" class="dropdown-item smooth-item">
                             <div class="item-content">
-                               
                                 <div class="item-text">
-                                    <div class="item-title">Virtual Naani</div>
-                                    <div class="item-subtitle">AI grandmother for elderly care</div>
+                                    <div class="item-title" style="color: #000;">Virtual Naani</div>
+                                    <div class="item-subtitle" style="color: #999;">AI grandmother for elderly care</div>
                                 </div>
                             </div>
                         </a></li>
-                        
                         <li><a href="products/ai-lms.html" class="dropdown-item smooth-item">
                             <div class="item-content">
-                                
                                 <div class="item-text">
-                                    <div class="item-title">AI Multilingual LMS</div>
-                                    <div class="item-subtitle">Smart learning management</div>
+                                    <div class="item-title" style="color: #000;">AI Multilingual LMS</div>
+                                    <div class="item-subtitle" style="color: #999;">Smart learning management</div>
                                 </div>
                             </div>
                         </a></li>
-                        
                         <li><a href="products/e-library.html" class="dropdown-item smooth-item">
                             <div class="item-content">
-                                
                                 <div class="item-text">
-                                    <div class="item-title">E-Library</div>
-                                    <div class="item-subtitle">Digital library platform</div>
+                                    <div class="item-title" style="color: #000;">E-Library</div>
+                                    <div class="item-subtitle" style="color: #999;">Digital library platform</div>
                                 </div>
                             </div>
                         </a></li>
-                        
                         <li><a href="products/anukaran-ai.html" class="dropdown-item smooth-item">
                             <div class="item-content">
-                               
                                 <div class="item-text">
-                                    <div class="item-title">Anukaran AI</div>
-                                    <div class="item-subtitle">AI model replication system</div>
+                                    <div class="item-title" style="color: #000;">Anukaran AI</div>
+                                    <div class="item-subtitle" style="color: #999;">AI model replication system</div>
                                 </div>
                             </div>
                         </a></li>
-                        
                         <li><a href="products/sambhasini-ai.html" class="dropdown-item smooth-item">
                             <div class="item-content">
-                                
                                 <div class="item-text">
-                                    <div class="item-title">Sambhasini AI</div>
-                                    <div class="item-subtitle">Multilingual voice AI</div>
+                                    <div class="item-title" style="color: #000;">Sambhasini AI</div>
+                                    <div class="item-subtitle" style="color: #999;">Multilingual voice AI</div>
                                 </div>
                             </div>
                         </a></li>
-                        
                         <li><a href="products/multi-dictionary.html" class="dropdown-item smooth-item">
                             <div class="item-content">
-                               
                                 <div class="item-text">
-                                    <div class="item-title">Multilingual Dictionary</div>
-                                    <div class="item-subtitle">Language translation tool</div>
+                                    <div class="item-title" style="color: #000;">Multilingual Dictionary</div>
+                                    <div class="item-subtitle" style="color: #999;">Language translation tool</div>
                                 </div>
                             </div>
                         </a></li>
-                        
-                        
+                        <li><a href="products/collaborative-digitalisation.html" class="dropdown-item smooth-item">
+                            <div class="item-content">
+                                <div class="item-text">
+                                    <div class="item-title" style="color: #000;">Collaborative Digitalisation</div>
+                                    <div class="item-subtitle" style="color: #999;">Document workflow platform</div>
+                                </div>
+                            </div>
+                        </a></li>
+                        <li><a href="products/virtual-classroom-solution.html" class="dropdown-item smooth-item">
+                            <div class="item-content">
+                                <div class="item-text">
+                                    <div class="item-title" style="color: #000;">Virtual Classroom Solution</div>
+                                    <div class="item-subtitle" style="color: #999;">Online education platform</div>
+                                </div>
+                            </div>
+                        </a></li>
                     </ul>
                 </li>
 
-                <!-- Services Dropdown - Single Column -->
                 <li class="nav-item dropdown dropdown-hover nav-item-enhanced">
                     <a class="nav-link fw-medium font-poppins d-flex align-items-center gap-1 nav-link-enhanced" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <span class="nav-text">Services</span>
                         <i class="bi bi-chevron-down small dropdown-arrow"></i>
                     </a>
-                    <ul class="dropdown-menu single-column-dropdown bg-white border-bottom border-2 border-primary shadow-lg dropdown-animation professional-dropdown">
-                        <!-- Core Technologies Section -->
+                    <ul class="dropdown-menu single-column-dropdown  border-bottom border-2 border-primary shadow-lg dropdown-animation professional-dropdown">
                         <li class="dropdown-header">
                             <i class="bi bi-cpu me-2"></i>Service Overview
                         </li>
-                    
-                        
                         <li><a href="services/cybersecurity.html" class="dropdown-item smooth-item">
                             <div class="item-content">
-                                
                                 <div class="item-text">
-                                    <div class="item-title">Cybersecurity</div>
-                                    <div class="item-subtitle">Comprehensive security solutions</div>
+                                    <div class="item-title" style="color: #000;">Cybersecurity</div>
+                                    <div class="item-subtitle" style="color: #999;">Comprehensive security solutions</div>
                                 </div>
                             </div>
                         </a></li>
-                        
                         <li><a href="services/ai-ml.html" class="dropdown-item smooth-item">
                             <div class="item-content">
-                                
                                 <div class="item-text">
-                                    <div class="item-title">AI/ML Development</div>
-                                    <div class="item-subtitle">Custom AI and ML solutions</div>
+                                    <div class="item-title" style="color: #000;">AI/ML Development</div>
+                                    <div class="item-subtitle" style="color: #999;">Custom AI and ML solutions</div>
                                 </div>
                             </div>
                         </a></li>
-                        
                         <li><a href="services/web-development.html" class="dropdown-item smooth-item">
                             <div class="item-content">
-                                
                                 <div class="item-text">
-                                    <div class="item-title">Web Development</div>
-                                    <div class="item-subtitle">Modern web applications</div>
+                                    <div class="item-title" style="color: #000;">Web Development</div>
+                                    <div class="item-subtitle" style="color: #999;">Modern web applications</div>
                                 </div>
                             </div>
                         </a></li>
-                        
                         <li><a href="services/mobile-development.html" class="dropdown-item smooth-item">
                             <div class="item-content">
-                              
                                 <div class="item-text">
-                                    <div class="item-title">Mobile Development</div>
-                                    <div class="item-subtitle">iOS and Android apps</div>
+                                    <div class="item-title" style="color: #000;">Mobile Development</div>
+                                    <div class="item-subtitle" style="color: #999;">iOS and Android apps</div>
                                 </div>
                             </div>
                         </a></li>
-                        
                         <li><a href="services/cloud-services.html" class="dropdown-item smooth-item">
                             <div class="item-content">
-                                
                                 <div class="item-text">
-                                    <div class="item-title">Cloud Services</div>
-                                    <div class="item-subtitle">Scalable cloud infrastructure</div>
+                                    <div class="item-title" style="color: #000;">Cloud Services</div>
+                                    <div class="item-subtitle" style="color: #999;">Scalable cloud infrastructure</div>
+                                </div>
+                            </div>
+                        </a></li>
+                        <li><a href="services/ecommerce-services.html" class="dropdown-item smooth-item">
+                            <div class="item-content">
+                                <div class="item-text">
+                                    <div class="item-title" style="color: #000;">Ecommerce Services</div>
+                                    <div class="item-subtitle" style="color: #999;">Online store solutions</div>
+                                </div>
+                            </div>
+                        </a></li>
+                        <li><a href="services/ai-research-development.html" class="dropdown-item smooth-item">
+                            <div class="item-content">
+                                <div class="item-text">
+                                    <div class="item-title" style="color: #000;">R&D (AI, ML, DL)</div>
+                                    <div class="item-subtitle" style="color: #999;">AI research & development</div>
                                 </div>
                             </div>
                         </a></li>
                     </ul>
                 </li>
 
-                <!-- Technologies Dropdown - Single Column with Core Tech Subdropdown -->
                 <li class="nav-item dropdown dropdown-hover nav-item-enhanced">
                     <a class="nav-link fw-medium font-poppins d-flex align-items-center gap-1 nav-link-enhanced" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <span class="nav-text">Technologies</span>
                         <i class="bi bi-chevron-down small dropdown-arrow"></i>
                     </a>
-                    <ul class="dropdown-menu single-column-dropdown tech-dropdown bg-white border-bottom border-2 border-primary shadow-lg dropdown-animation professional-dropdown">
-                        <!-- Core Technologies Section -->
+                    <ul class="dropdown-menu single-column-dropdown tech-dropdown  border-bottom border-2 border-primary shadow-lg dropdown-animation professional-dropdown">
                         <li class="dropdown-header">
                             <i class="bi bi-cpu me-2"></i>Core Technologies
                         </li>
-                        
-                      
-                        <!-- Other Resources -->
                         <li><a href="technologies/core.html" class="dropdown-item smooth-item">
                             <div class="item-content">
-                                
                                 <div class="item-text">
-                                    <div class="item-title"> Core Technology </div>
-                                    <div class="item-subtitle">Real-world implementations</div>
+                                    <div class="item-title" style="color: #000;">Core Technology</div>
+                                    <div class="item-subtitle" style="color: #999;">Real-world implementations</div>
                                 </div>
                             </div>
                         </a></li>
                         <li><a href="technologies/case-study.html" class="dropdown-item smooth-item">
                             <div class="item-content">
-                               
                                 <div class="item-text">
-                                    <div class="item-title">Case Studies</div>
-                                    <div class="item-subtitle">Real-world implementations</div>
+                                    <div class="item-title" style="color: #000;">Case Studies</div>
+                                    <div class="item-subtitle" style="color: #999;">Real-world implementations</div>
                                 </div>
                             </div>
                         </a></li>
-                        <li><a href="technologies/case-study.html" class="dropdown-item smooth-item">
-                            <div class="item-content">
-                                
-                                <div class="item-text">
-                                    <div class="item-title">Case Studies</div>
-                                    <div class="item-subtitle">Real-world implementations</div>
-                                </div>
-                            </div>
-                        </a></li>
-                        
                         <li><a href="technologies/innovation.html" class="dropdown-item smooth-item">
                             <div class="item-content">
-                                <
                                 <div class="item-text">
-                                    <div class="item-title">Innovation Lab</div>
-                                    <div class="item-subtitle">Research & development</div>
+                                    <div class="item-title" style="color: #000;">Innovation Lab</div>
+                                    <div class="item-subtitle" style="color: #999;">Research & development</div>
                                 </div>
                             </div>
                         </a></li>
-                      
                     </ul>
                 </li>
 
@@ -468,10 +421,8 @@
             </ul>
         </div>
 
-        <!-- CTA Button (Right side) -->
         <div class="d-flex align-items-left gap-3 order-lg-5 ms-lg-3">
-            <!-- CTA Button -->
-            <a href="contact.html" class="d-none d-lg-inline-block border-1  btn-outline-primary px-2 py-2  text-center text-decoration-none" style="width: 7.5rem; border-bottom: #dd5c00 1px solid; border-radius: 5px;">
+            <a href="contact.html" class="d-none d-lg-inline-block border-1 btn-outline-primary px-2 py-2 text-center text-decoration-none" style="width: 7.5rem; border-bottom: #dd5c00 1px solid; border-radius: 5px;">
                 Talk to Us ->
             </a>
         </div>
@@ -479,7 +430,6 @@
 </nav>
 
 <style>
-/* Navigation-specific styles that need to be inline */
 .dropdown-header {
     font-size: 0.85rem;
     font-weight: 700;
@@ -492,7 +442,6 @@
     background: none !important;
 }
 
-/* Technology Icons */
 .tech-icon {
     width: 24px;
     height: 24px;
@@ -524,12 +473,7 @@
 .azure-icon { background: linear-gradient(135deg, #0078D4, #40E0D0); }
 .gcp-icon { background: linear-gradient(135deg, #4285F4, #34A853); }
 
-.tech-icon::before {
-    content: attr(data-tech);
-    font-size: 9px;
-    font-weight: bold;
-}
-
+.tech-icon::before { content: attr(data-tech); font-size: 9px; font-weight: bold; }
 .react-icon::before { content: "R"; }
 .vue-icon::before { content: "V"; }
 .angular-icon::before { content: "A"; }
@@ -543,158 +487,33 @@
 .azure-icon::before { content: "AZ"; font-size: 7px; }
 .gcp-icon::before { content: "GC"; font-size: 7px; }
 
-/* Technology Categories */
-.tech-category {
-    margin-bottom: 0.5rem;
-    padding: 0 0.5rem;
-}
+.tech-category { margin-bottom: 0.5rem; padding: 0 0.5rem; }
+.category-header { font-size: 0.8rem; font-weight: 600; color: var(--text-secondary); padding: 0.25rem 0.5rem 0.15rem; margin-bottom: 0.25rem; display: flex; align-items: center; border-bottom: 1px solid var(--accent-primary-10); }
+.tech-items { padding-left: 0.25rem; }
+.tech-item { padding: 0.4rem 0.75rem !important; margin: 0.1rem 0 !important; border-radius: 0 !important; transition: all 0.3s ease; font-size: 0.85rem; display: flex; align-items: center; border-bottom: none !important; background: transparent !important; position: relative; }
+.tech-item .item-content { position: relative; }
+.tech-item .item-content span { position: relative; display: inline-block; }
+.tech-item .item-content span::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: var(--accent-primary); transition: width 0.3s ease; }
+.tech-item:hover { background: transparent !important; transform: translateX(0); color: var(--accent-primary) !important; }
+.tech-item:hover .item-content span::after { width: 100%; }
+.dropdown-divider { margin: 0.5rem 1rem; border-color: var(--accent-primary-20); }
 
-.category-header {
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: var(--text-secondary);
-    padding: 0.25rem 0.5rem 0.15rem;
-    margin-bottom: 0.25rem;
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid var(--accent-primary-10);
-}
-
-.tech-items {
-    padding-left: 0.25rem;
-}
-
-.tech-item {
-    padding: 0.4rem 0.75rem !important;
-    margin: 0.1rem 0 !important;
-    border-radius: 0 !important;
-    transition: all 0.3s ease;
-    font-size: 0.85rem;
-    display: flex;
-    align-items: center;
-    border-bottom: none !important;
-    background: transparent !important;
-    position: relative;
-}
-
-.tech-item .item-content {
-    position: relative;
-}
-
-.tech-item .item-content span {
-    position: relative;
-    display: inline-block;
-}
-
-.tech-item .item-content span::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--accent-primary);
-    transition: width 0.3s ease;
-}
-
-.tech-item:hover {
-    background: transparent !important;
-    transform: translateX(0);
-    color: var(--accent-primary) !important;
-}
-
-.tech-item:hover .item-content span::after {
-    width: 100%;
-}
-
-/* Dropdown Divider */
-.dropdown-divider {
-    margin: 0.5rem 1rem;
-    border-color: var(--accent-primary-20);
-}
-
-/* Dropdown Hover Functionality */
 @media (min-width: 992px) {
-    .dropdown-hover {
-        position: relative;
-    }
-    
-    .dropdown-hover:hover > .dropdown-menu,
-    .dropdown-hover .dropdown-menu:hover {
-        display: block !important;
-        opacity: 1 !important;
-        visibility: visible !important;
-        transform: translateX(-50%) translateY(0) scale(1) !important;
-    }
-    
-    .dropdown-hover::after {
-        content: '';
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        height: 10px;
-        background: transparent;
-        z-index: 1000;
-    }
+    .dropdown-hover:hover > .dropdown-menu { display: block !important; opacity: 1 !important; visibility: visible !important; }
 }
 
-/* Smooth Animations */
 @keyframes dropdownSlideIn {
-    0% {
-        opacity: 0;
-        transform: translateX(-50%) translateY(-15px) scale(0.9);
-        visibility: visible;
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(-50%) translateY(0) scale(1);
-        visibility: visible;
-    }
+    0% { opacity: 0; transform: translateX(-50%) translateY(-15px) scale(0.9); visibility: visible; }
+    100% { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); visibility: visible; }
 }
 
 @keyframes itemSlideIn {
-    from {
-        opacity: 0;
-        transform: translateX(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
 }
 
-@keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes slideInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-.dropdown-hover:hover .dropdown-menu {
-    animation: dropdownSlideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-.dropdown-hover:hover .smooth-item {
-    animation: itemSlideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-/* Staggered animation for dropdown items */
+.dropdown-hover:hover .dropdown-menu { animation: dropdownSlideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+.dropdown-hover:hover .smooth-item { animation: itemSlideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
 .smooth-item:nth-child(1) { animation-delay: 0.05s; }
 .smooth-item:nth-child(2) { animation-delay: 0.1s; }
 .smooth-item:nth-child(3) { animation-delay: 0.15s; }
@@ -704,91 +523,30 @@
 .smooth-item:nth-child(7) { animation-delay: 0.35s; }
 .smooth-item:nth-child(8) { animation-delay: 0.4s; }
 
-/* Active State */
-.nav-link-enhanced.active {
-    color: var(--accent-primary) !important;
-    background: transparent !important;
-}
+.nav-link-enhanced.active { color: var(--accent-primary) !important; background: transparent !important; }
+.nav-link-enhanced.active::after { width: 80%; }
 
-.nav-link-enhanced.active::after {
-    width: 80%;
-}
-
-/* Responsive Enhancements */
 @media (max-width: 991.98px) {
-    .professional-nav {
-        padding: 0.5rem 0;
-    }
-    
-    .single-column-dropdown {
-        min-width: 100% !important;
-        left: 0 !important;
-        transform: none !important;
-        border-radius: 0 !important;
-        margin-top: 0 !important;
-    }
-    
-    .single-column-dropdown::before {
-        display: none;
-    }
-    
-    .professional-nav-menu {
-        gap: 0.05rem;
-    }
-    
-    .nav-item-enhanced {
-        margin: 0 0.02rem;
-    }
+    .professional-nav { padding: 0.5rem 0; }
+    .single-column-dropdown { min-width: 100% !important; left: 0 !important; transform: none !important; border-radius: 0 !important; margin-top: 0 !important; }
+    .professional-nav-menu { gap: 0.05rem; }
+    .nav-item-enhanced { margin: 0 0.02rem; }
 }
 
 @media (min-width: 1200px) {
-    .professional-nav-menu {
-        gap: 0.15rem;
-    }
-    
-    .nav-item-enhanced {
-        margin: 0 0.08rem;
-    }
-    
-    .nav-link-enhanced {
-        padding: 0.75rem 0.8rem !important;
-    }
+    .professional-nav-menu { gap: 0.15rem; }
+    .nav-item-enhanced { margin: 0 0.08rem; }
+    .nav-link-enhanced { padding: 0.75rem 0.8rem !important; }
 }
 
-/* Desktop Navbar Layout */
 @media (min-width: 992px) {
-    .navbar > .container {
-        display: flex;
-        align-items: center;
-        flex-wrap: nowrap;
-    }
-    
-    .navbar-brand {
-        flex: 0 0 auto;
-        margin-right: auto;
-    }
-    
-    #navbarNav {
-        flex: 0 0 auto;
-        margin-left: auto !important;
-        margin-right: 0 !important;
-        justify-content: flex-end;
-    }
-    
-    #navbarNav .navbar-nav {
-        margin-left: auto !important;
-        margin-right: 0 !important;
-        flex-direction: row;
-        align-items: center;
-    }
-    
-    .professional-nav-menu {
-        flex-direction: row;
-        align-items: center;
-    }
+    .navbar > .container { display: flex; align-items: center; flex-wrap: nowrap; }
+    .navbar-brand { flex: 0 0 auto; margin-right: auto; }
+    #navbarNav { flex: 0 0 auto; margin-left: auto !important; margin-right: 0 !important; justify-content: flex-end; }
+    #navbarNav .navbar-nav { margin-left: auto !important; margin-right: 0 !important; flex-direction: row; align-items: center; }
+    .professional-nav-menu { flex-direction: row; align-items: center; }
 }
 
-/* Mobile submenu staggered animation */
 .mobile-submenu-link:nth-child(1) { animation-delay: 0.05s; }
 .mobile-submenu-link:nth-child(2) { animation-delay: 0.1s; }
 .mobile-submenu-link:nth-child(3) { animation-delay: 0.15s; }
@@ -797,79 +555,28 @@
 .mobile-submenu-link:nth-child(6) { animation-delay: 0.3s; }
 .mobile-submenu-link:nth-child(7) { animation-delay: 0.35s; }
 .mobile-submenu-link:nth-child(8) { animation-delay: 0.4s; }
-
-/* Navbar height adjustment for mobile */
-@media (max-width: 200px) {
-    .navbar {
-        height: 5rem !important;
-    }
-
-    .navbar-brand img {
-        height: 2.8rem !important;
-    }
-
-    .mobile-toggle {
-        width: 38px;
-        height: 38px;
-    }
-
-    .hamburger-line {
-        width: 18px;
-    }
-
-    .mobile-nav-canvas {
-        width: 100% !important;
-        max-width: 100%;
-    }
-
-    .mobile-nav-header {
-        padding: 1rem;
-    }
-
-    .mobile-nav-body {
-        padding: 1rem;
-    }
-
-    .mobile-nav-link {
-        padding: 0.85rem 1rem;
-        font-size: 0.95rem;
-    }
-
-    .mobile-nav-submenu {
-        padding-left: 2.5rem;
-    }
-}
 </style>
 
 <script>
-// Enhanced Navigation Script
 document.addEventListener('DOMContentLoaded', function() {
     const navbar = document.querySelector('.navbar');
     const navbarNav = document.getElementById('navbarNav');
     const navbarToggler = document.querySelector('.navbar-toggler');
-    
-    // Force show navbar on desktop
+
     function handleNavbarDisplay() {
         const isDesktop = window.innerWidth >= 992;
-        
         if (isDesktop) {
-            // Show navbar on desktop
             navbarNav.classList.add('show');
             navbarToggler.classList.add('collapsed');
             navbarToggler.setAttribute('aria-expanded', 'true');
         } else {
-            // Hide navbar on mobile (let Bootstrap handle it)
             navbarNav.classList.remove('show');
         }
     }
-    
-    // Run on load
+
     handleNavbarDisplay();
-    
-    // Run on resize
     window.addEventListener('resize', handleNavbarDisplay);
-    
-    // Smooth scroll handler
+
     function updateNavbarBackground() {
         if (window.scrollY > 50) {
             navbar.style.background = 'var(--bg-secondary)';
@@ -879,39 +586,26 @@ document.addEventListener('DOMContentLoaded', function() {
             navbar.classList.remove('navbar-scrolled');
         }
     }
-    
+
     updateNavbarBackground();
-    
-    let scrollTimeout;
     window.addEventListener('scroll', function() {
-        if (scrollTimeout) {
-            clearTimeout(scrollTimeout);
-        }
-        scrollTimeout = setTimeout(updateNavbarBackground, 10);
+        setTimeout(updateNavbarBackground, 10);
     });
-    
+
     const mediaQuery = window.matchMedia('(min-width: 992px)');
-    
-    // Enhanced dropdown hover functionality
+
     function handleHoverDropdown(e) {
         const dropdown = e.target.closest('.dropdown-hover');
         if (!dropdown || !mediaQuery.matches) return;
-        
+
         const dropdownMenu = dropdown.querySelector('.dropdown-menu');
         const toggle = dropdown.querySelector('[data-bs-toggle="dropdown"]');
-        
+
         if (e.type === 'mouseenter') {
             if (dropdownMenu && toggle) {
                 toggle.setAttribute('aria-expanded', 'true');
                 dropdownMenu.classList.add('show');
                 dropdown.classList.add('show');
-                
-                // Staggered animation for items
-                const items = dropdownMenu.querySelectorAll('.smooth-item, .tech-item');
-                items.forEach((item, index) => {
-                    item.style.animationDelay = `${index * 0.05}s`;
-                    item.style.animation = 'itemSlideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards';
-                });
             }
         } else if (e.type === 'mouseleave') {
             setTimeout(() => {
@@ -925,28 +619,15 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 150);
         }
     }
-    
+
     const hoverDropdowns = document.querySelectorAll('.dropdown-hover');
     hoverDropdowns.forEach(function(dropdown) {
         dropdown.addEventListener('mouseenter', handleHoverDropdown);
         dropdown.addEventListener('mouseleave', handleHoverDropdown);
-        
-        const dropdownMenu = dropdown.querySelector('.dropdown-menu');
-        if (dropdownMenu) {
-            dropdownMenu.addEventListener('mouseenter', function() {
-                dropdown.classList.add('keep-open');
-            });
-            dropdownMenu.addEventListener('mouseleave', function() {
-                dropdown.classList.remove('keep-open');
-                handleHoverDropdown({ type: 'mouseleave', target: dropdown });
-            });
-        }
     });
-    
-    // Close dropdowns when clicking elsewhere
+
     document.addEventListener('click', function(e) {
         if (!mediaQuery.matches) return;
-        
         const isClickInside = e.target.closest('.dropdown-hover');
         if (!isClickInside) {
             const openDropdowns = document.querySelectorAll('.dropdown-hover.show');
@@ -961,12 +642,10 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     });
-    
-    // Update active state based on current page
+
     function updateActiveState() {
         const currentPage = window.location.pathname.split('/').pop() || 'index.html';
         const navLinks = document.querySelectorAll('.nav-link-enhanced');
-        
         navLinks.forEach(function(link) {
             const href = link.getAttribute('href');
             if (href === currentPage || (currentPage === '' && href === 'index.html')) {
@@ -976,32 +655,26 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-    
+
     updateActiveState();
-    
-    // Mobile menu enhancements
+
     const mobileToggle = document.querySelector('.mobile-toggle');
     if (mobileToggle) {
         mobileToggle.addEventListener('click', function() {
             this.classList.toggle('active');
         });
     }
-    
-    // Smooth scroll for anchor links
+
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
+        anchor.addEventListener('click', function(e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         });
     });
-    
-    // Keyboard navigation support
+
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
             const openDropdowns = document.querySelectorAll('.dropdown-hover.show');
@@ -1016,27 +689,6 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     });
-    
-    // Performance optimization: Intersection Observer for navbar
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0
-    };
-    
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                navbar.classList.add('in-view');
-            }
-        });
-    }, observerOptions);
-    
-    observer.observe(navbar);
-    
-    // Add loading animation completion
-    setTimeout(() => {
-        document.body.classList.add('nav-loaded');
-    }, 1000);
 });
 </script>
+

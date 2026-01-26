@@ -6,34 +6,25 @@
     <title>Privacy Policy - JetHat Cyber Security</title>
     <meta name="description" content="JetHat Cyber Security Privacy Policy. Learn how we collect, use, and protect your personal information.">
 
-    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="../styles/main.css">
-    
-    <!-- Navigation Fix Script -->
+
     <script src="../scripts/navigation-fix.js"></script>
     <script src="../scripts/navbar-scroll.js"></script>
 </head>
 <body >
-    <!-- Navigation -->
     <div id="navigation-component"></div>
 
-    <!-- Right Panel -->
     <div id="right-panel-component"></div>
 
-    <!-- Main Content -->
     <main class="">
-        <!-- Hero Section -->
         <section class="py-5 position-relative overflow-hidden"  style="margin-top: 1.5rem;">
             <div class="container-fluid px-4">
                 <div class="text-center py-5">
@@ -115,7 +106,7 @@
 
     <!-- Footer -->
     <div id="footer-component"></div>
-       <!-- Theme Toggle -->
+
     <button id="theme-toggle" class="btn btn-dark position-fixed bottom-0 start-0 m-4 rounded-circle p-3 shadow-lg" style="z-index: 1050;">
         <i id="sun-icon" class="bi bi-sun-fill d-none"></i>
         <i id="moon-icon" class="bi bi-moon-fill"></i>
@@ -149,8 +140,6 @@
             ];
 
             await Promise.all(components.map(([id, path]) => loadComponent(id, path)));
-            
-            // Trigger navigation fix after components are loaded
             if (window.fixNavigationPaths) {
                 setTimeout(() => {
                     window.fixNavigationPaths();
@@ -161,7 +150,6 @@
             // Dispatch custom event for navigation fix
             document.dispatchEvent(new CustomEvent('navigationLoaded'));
             
-            console.log('✅ Privacy Policy page initialized successfully');
         });
     </script>
 </body>

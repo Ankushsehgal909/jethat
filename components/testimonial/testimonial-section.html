@@ -175,16 +175,16 @@
                             <p class="text-muted small mb-3">Trusted by leading organizations across India</p>
                             <div class="d-flex justify-content-start align-items-center gap-3 flex-wrap">
                                 <div class="trust-badge">
-                                    <span class="badge bg-light text-dark border px-3 py-2">ISO 27001 Certified</span>
+                                    <span class="badge   border px-3 py-2">ISO 27001 Certified</span>
                                 </div>
                                 <div class="trust-badge">
-                                    <span class="badge bg-light text-dark border px-3 py-2">SOC 2 Compliant</span>
+                                    <span class="badge  border px-3 py-2">SOC 2 Compliant</span>
                                 </div>
                                 <div class="trust-badge">
-                                    <span class="badge bg-light text-dark border px-3 py-2">GDPR Ready</span>
+                                    <span class="badge  border px-3 py-2">GDPR Ready</span>
                                 </div>
                                 <div class="trust-badge">
-                                    <span class="badge bg-light text-dark border px-3 py-2">99.9% Uptime</span>
+                                    <span class="badge  border px-3 py-2">99.9% Uptime</span>
                                 </div>
                             </div>
                         </div>
@@ -195,12 +195,8 @@
         </div>
     </div>
 </section>
+
 <style>
-/* ================= TESTIMONIAL SECTION ANIMATIONS ================= */
-
-/* ================= MODERN TESTIMONIAL SECTION STYLES ================= */
-
-/* Base animations */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -242,8 +238,6 @@
         box-shadow: 0 0 20px rgba(255, 140, 0, 0.8), 0 0 30px rgba(255, 140, 0, 0.6);
     }
 }
-
-/* Modern Testimonial Container */
 .testimonial-modern-container {
     max-width: 100%;
     margin: 0 auto;
@@ -257,7 +251,6 @@
     transition: background 0.3s ease;
 }
 
-/* Dark mode content wrapper */
 [data-bs-theme="dark"] .testimonial-content-wrapper,
 .dark-theme .testimonial-content-wrapper {
     background: var(--bg-section);
@@ -268,7 +261,6 @@
     width: 100%;
 }
 
-/* Modern Testimonial Slide */
 .testimonial-modern-slide {
     display: none;
     opacity: 0;
@@ -280,7 +272,6 @@
     opacity: 1;
 }
 
-/* Modern Layout Structure */
 .testimonial-modern-layout {
     background: var(--bg-light-card);
     border-radius: 5px;
@@ -291,21 +282,18 @@
     transition: all 0.3s ease;
 }
 
-/* Dark mode support */
 [data-bs-theme="dark"] .testimonial-modern-layout,
 .dark-theme .testimonial-modern-layout {
     background: var(--bg-card);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
-/* Light mode support */
 [data-bs-theme="light"] .testimonial-modern-layout,
 .light-theme .testimonial-modern-layout {
     background: var(--bg-light-card);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-/* Frame Container */
 .testimonial-frame-container {
     flex-shrink: 0;
     position: relative;
@@ -339,7 +327,6 @@
     transition: all 0.3s ease;
 }
 
-/* Dark mode image wrapper */
 [data-bs-theme="dark"] .testimonial-image-wrapper,
 .dark-theme .testimonial-image-wrapper {
     background: var(--bg-primary);
@@ -353,7 +340,6 @@
     border-radius: 5px;
 }
 
-/* Content Area */
 .testimonial-content-area {
     flex: 1;
     display: flex;
@@ -371,7 +357,6 @@
     transition: color 0.3s ease;
 }
 
-/* Dark mode title */
 [data-bs-theme="dark"] .testimonial-title,
 .dark-theme .testimonial-title {
     color: var(--text-primary);
@@ -385,13 +370,11 @@
     transition: color 0.3s ease;
 }
 
-/* Dark mode description */
 [data-bs-theme="dark"] .testimonial-description,
 .dark-theme .testimonial-description {
     color: var(--text-secondary);
 }
 
-/* Author Section */
 .testimonial-author {
     display: flex;
     align-items: center;
@@ -411,14 +394,11 @@
     color: var(--text-light-primary);
     transition: color 0.3s ease;
 }
-
-/* Dark mode author name */
 [data-bs-theme="dark"] .author-name,
 .dark-theme .author-name {
     color: var(--text-primary);
 }
 
-/* Navigation Dots */
 .testimonial-dots-container {
     display: flex;
     justify-content: flex-end;
@@ -440,7 +420,6 @@
     transition: all 0.3s ease;
 }
 
-/* Dark mode dots */
 [data-bs-theme="dark"] .dot,
 .dark-theme .dot {
     background: var(--text-muted);
@@ -472,7 +451,6 @@
     animation: slideInRight 0.8s ease-out forwards;
 }
 
-/* Animated button */
 .animated-btn {
     position: relative;
     overflow: hidden;
@@ -519,14 +497,12 @@
     transform: translateX(5px);
 }
 
-/* Delay animations */
 [data-delay="0"] { animation-delay: 0ms; }
 [data-delay="200"] { animation-delay: 200ms; }
 [data-delay="400"] { animation-delay: 400ms; }
 [data-delay="600"] { animation-delay: 600ms; }
 [data-delay="800"] { animation-delay: 800ms; }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .testimonial-modern-layout {
         flex-direction: column;
@@ -598,7 +574,6 @@
     }
 }
 
-/* Sticky positioning for right column */
 @media (min-width: 992px) {
     .sticky-top {
         position: sticky !important;

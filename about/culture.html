@@ -6,28 +6,15 @@
     <title>Company Culture - JetHat Cyber Security</title>
     <meta name="description" content="Discover JetHat's cyber-focused company culture, values, and innovative work environment. Learn about our commitment to cybersecurity excellence and team growth.">
 
-    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    
-    <!-- Breadcrumb Badge -->
-    <script src="../scripts/breadcrumb-badge.js"></script>
-    
-    <!-- Universal Loader -->
-    <script src="../scripts/universal-loader.js"></script>
-    <script src="../scripts/about-shared.js"></script>
 
-    <!-- Culture Page Specific Styles -->
     <style>
-        /* Culture-specific styles only - removing duplicates from main.css */
-        
         /* Culture hero section */
         .culture-hero {
             position: relative;
@@ -35,20 +22,6 @@
             min-height: 60vh;
             display: flex;
             align-items: center;
-        }
-        
-        /* Scanning Line Animation - Culture specific */
-        .scanning-line {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, #dc143c, #ffd700, transparent);
-            box-shadow: 0 0 20px rgba(220, 20, 60, 0.8);
-            animation: scan 3s linear infinite;
-            z-index: 10;
-            pointer-events: none;
         }
         
         @keyframes scan {
@@ -227,22 +200,20 @@
         }
     </style>
 
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/about-dark-mode.css">
     <link rel="stylesheet" href="../styles/loader.css">
-    
-    <!-- Navigation Fix Script -->
+
     <script src="../scripts/navigation-fix.js"></script>
     <script src="../scripts/navbar-scroll.js"></script>
-     <!-- Universal Loader -->
     <script src="scripts/universal-loader.js"></script>
-</head>
-<body style="background: linear-gradient(135deg,#fff7ed,#ffffff,#fffbeb); color: #333333;">
-    <!-- Navigation -->
-    <div id="navigation-component"></div>
+    <script src="../scripts/breadcrumb-badge.js"></script>
+    <script src="../scripts/universal-loader.js"></script>
 
-    <!-- Right Panel -->
+</head>
+<body>
+  
+    <div id="navigation-component"></div>
     <div id="right-panel-component"></div>
 
     <!-- Main Content -->
@@ -261,10 +232,7 @@
                         <h1 class="display-3 fw-bold mb-4 reveal-up" 
                         style="color: #333333; line-height: 1.2;">
                             Our <span class="d-block text-gradient">Cyber Culture</span>
-                        </h1>
-                     
-                       
-                        
+                        </h1>                    
                         <div class="d-flex flex-wrap gap-3 mb-4 mt-4 reveal-up stagger-3">
                             <div class="d-flex align-items-center tech-status" style="color: #333333;">
                                 <i class="bi bi-check-circle-fill me-2"></i>
@@ -323,7 +291,7 @@
         </section>
 
         <!-- Core Values Section -->
-        <section class="py-5 position-relative" style="background: linear-gradient(135deg,#fff7ed,#ffffff,#fffbeb);">
+        <section class="py-5 position-relative">
             <div class="cyber-grid" style="opacity: 0.3;"></div>
             
             <div class="container position-relative" style="z-index: 2;">
@@ -431,7 +399,7 @@
         </section>
 
         <!-- Work Environment Section -->
-        <section class="py-5" style="background: white;">
+        <section class="py-5" >
             <div class="container">
                 <div class="text-center mb-5 reveal-up">
                     <h2 class="display-5 fw-bold mb-3" style="color: #333;">
@@ -515,7 +483,7 @@
         </section>
 
         <!-- Benefits Section -->
-        <section class="py-5" style="background: #f8f9fa;">
+        <section class="py-5" >
             <div class="container">
                 <div class="text-center mb-5 reveal-up">
                     <h2 class="display-5 fw-bold mb-3" style="color: #333;">
@@ -577,15 +545,15 @@
         <i id="sun-icon" class="bi bi-sun-fill d-none"></i>
         <i id="moon-icon" class="bi bi-moon-fill"></i>
     </button>
+
     <script src="../scripts/theme-toggle.js"></script>
-
-
     <!-- Bootstrap 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
+    
     <!-- Culture Page Animation Script -->
     <script>
-        // Optimized animation initialization
+        
         function initAdvancedAnimations() {
             const animationElements = document.querySelectorAll([
                 '.reveal-up', '.reveal-left', '.reveal-right', '.reveal-zoom'
@@ -635,7 +603,6 @@
             console.log('✅ Culture page animations initialized');
         });
     </script>
-
     <!-- Component Loader Script -->
     <script type="module">
         async function loadComponent(id, path) {
@@ -671,5 +638,6 @@
             console.log('✅ Culture page initialized successfully');
         });
     </script>
+
 </body>
 </html>

@@ -7,309 +7,58 @@
     <meta name="description" content="JetHat Cyber Security Pvt. Ltd. - Leading cybersecurity, AI/ML, and cloud solutions company. Empowering businesses with secure, scalable digital transformation since 2018.">
     <meta name="keywords" content="cybersecurity, AI, ML, cloud services, web development, mobile apps, JetHat, Noida, India">
     
-    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
-    <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     
-    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/loader.css">
-    
-<style>
-/* Products Section Styling */
-#products-section {
-    position: relative;
-    min-height: 100vh;
-}
-
-/* Card Container */
-#productsSectionCards {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* Card Base Styling */
-#productsSectionCards .card {
-    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    border-radius: 1.5rem;
-    overflow: hidden;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    will-change: transform, opacity;
-    transform-origin: center center;
-}
-
-/* Light theme card styling */
-.light-theme #productsSectionCards .card,
-[data-bs-theme="light"] #productsSectionCards .card {
-    background: rgba(255, 255, 255, 0.95) !important;
-    border: 1px solid rgba(220, 20, 60, 0.1) !important;
-    color: #333 !important;
-}
-
-/* Dark theme card styling */
-.dark-theme #productsSectionCards .card,
-[data-bs-theme="dark"] #productsSectionCards .card {
-    background: rgba(30, 30, 30, 0.95) !important;
-    border: 1px solid rgba(220, 20, 60, 0.2) !important;
-    color: #e0e0e0 !important;
-}
-
-/* Auto theme detection */
-@media (prefers-color-scheme: dark) {
-    #productsSectionCards .card {
-        background: rgba(30, 30, 30, 0.95) !important;
-        border: 1px solid rgba(220, 20, 60, 0.2) !important;
-        color: #e0e0e0 !important;
-    }
-}
-
-/* Card Hover Effects */
-#productsSectionCards .card:hover {
-    transform: translateY(-8px) scale(1.02) !important;
-    box-shadow: 0 30px 60px rgba(220, 20, 60, 0.15) !important;
-    border-color: rgba(220, 20, 60, 0.3) !important;
-}
-
-/* Image Styling */
-#productsSectionCards .card img {
-    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    border-radius: 1rem;
-}
-
-#productsSectionCards .card:hover img {
-    transform: scale(1.05) rotate(1deg);
-}
-
-/* Text Styling for Dark Theme */
-.dark-theme #productsSectionCards .card .card-title,
-.dark-theme #productsSectionCards .card h3 {
-    color: #ffffff !important;
-}
-
-.dark-theme #productsSectionCards .card .text-muted,
-.dark-theme #productsSectionCards .card .list-unstyled li span {
-    color: #b0b0b0 !important;
-}
-
-/* Button Styling */
-#productsSectionCards .card .btn {
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    box-shadow: 0 4px 15px rgba(220, 20, 60, 0.3);
-}
-
-#productsSectionCards .card .btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(220, 20, 60, 0.4);
-}
-
-/* Gradient Elements */
-.gradient-icon {
-    background: linear-gradient(135deg, var(--accent-primary), var(--accent-gold)) !important;
-    transition: all 0.4s ease;
-}
-
-#productsSectionCards .card:hover .gradient-icon {
-    background: linear-gradient(135deg, var(--accent-gold), var(--accent-primary)) !important;
-    transform: rotate(5deg) scale(1.1);
-}
-
-/* Bullet Points */
-.bullet-point {
-    background: linear-gradient(135deg, var(--accent-primary), var(--accent-gold)) !important;
-    transition: all 0.3s ease;
-}
-
-#productsSectionCards .card:hover .bullet-point {
-    transform: scale(1.2);
-    box-shadow: 0 2px 8px rgba(220, 20, 60, 0.3);
-}
-
-/* Loading Animation */
-@keyframes cardSlideIn {
-    from {
-        opacity: 0;
-        transform: translateY(50px) scale(0.9);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-}
-
-#productsSectionCards .card.animate-in {
-    animation: cardSlideIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-}
-
-/* Responsive Design */
-@media (max-width: 991.98px) {
-    #products-section .position-sticky {
-        position: relative !important;
-        top: auto !important;
-    }
-    
-    #productsSectionCards {
-        height: 400px !important;
-    }
-    
-    #productsSectionCards .card {
-        border-radius: 1rem;
-        margin: 0 1rem;
-    }
-    
-    #products-section .container {
-        padding-top: 2rem !important;
-        padding-bottom: 2rem !important;
-    }
-}
-
-@media (max-width: 767.98px) {
-    #productsSectionCards .card {
-        margin: 0 0.5rem;
-        border-radius: 0.75rem;
-    }
-    
-    #productsSectionCards .card .card-body {
-        padding: 1.5rem !important;
-    }
-    
-    #productsSectionCards .card .row {
-        flex-direction: column;
-    }
-    
-    #productsSectionCards .card .col-md-6:first-child {
-        margin-bottom: 1rem;
-    }
-}
-</style>
-    
-    <!-- Universal Loader (Load Immediately) -->
+        
     <script src="scripts/universal-loader.js"></script>
 </head>
-<body style="background: linear-gradient(135deg,#fff7ed,#ffffff,#fffbeb); color: #333333;">
-    <!-- Page Loader will be injected here by loader.js -->
-    
-    <!-- Navigation -->
-    <div id="navigation-component"></div>
 
-    <!-- Right Panel -->
+<body >
+    
+    <div id="navigation-component"></div>
     <div id="right-panel-component"></div>
 
-    <!-- Main Content -->
     <main>
-        <!-- Hero Section -->
         <div id="hero-section"></div>
-
-        <!-- Clients Marquee Section -->
-        <div id="clients-marquee"></div>
-          <!-- Who We Are Section -->
-        <div id="who-we-are-component"></div>
-        
-        <!-- Cybersecurity Section -->
         <div id="cyber-security-component"></div>
-
-        <!-- Services Section -->
+        <div id="who-we-are-component"></div>
         <div id="services"></div>
-
-        <!-- Enhanced Services Section -->
         <div id="enhanced-services"></div>
-
-        <!-- Products Section -->
-        <!-- <div id="products-component"></div> -->
-
-
-
-      
-
-      
-
-        <!-- Video Introduction Section -->
-        <section class="video-intro-section position-relative overflow-hidden py-5" style="background: linear-gradient(135deg, rgba(220, 112, 4, 0), rgba(255, 217, 0, 0)), url('assets/images/cyber.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
-            <div class="overlay position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0, 0, 0, 0.4);"></div>
-            <div class="container position-relative" style="z-index: 2;">
-                <div class="row justify-content-center">
-                    <div class="col-md-8 text-center text-white">
-                        <h2 class="display-4 fw-bold mb-4 text-white" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
-                            Together we will explore new things
-                        </h2>
-                        <p class="lead mb-5 text-white" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">
-                            Join us on a journey of innovation and discovery in cybersecurity and technology
-                        </p>
-                        <a href="#" class="icon-video d-flex align-items-center justify-content-center mx-auto" 
-                           style="width: 80px; height: 80px; background: rgba(255, 255, 255, 0.2); border-radius: 50%; backdrop-filter: blur(10px); border: 2px solid rgba(255, 255, 255, 0.3); transition: all 0.3s ease; text-decoration: none;"
-                           onmouseover="this.style.transform='scale(1.1)'; this.style.background='rgba(255, 255, 255, 0.3)'"
-                           onmouseout="this.style.transform='scale(1)'; this.style.background='rgba(255, 255, 255, 0.2)'">
-                            <i class="bi bi-play-fill text-white" style="font-size: 2rem; margin-left: 4px;"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-          <!-- Advanced Protection Section -->
+        <div id="video-intro-component"></div>
         <div id="advanced-protection"></div>
-        <!-- Career Section -->
         <div id="career-component"></div>
-
-        <!-- Testimonials Section -->
         <div id="testimonials"></div>
-
-        <!-- Registration Section -->
+         <div id="clients-marquee"></div>
         <div id="register-section"></div>
-
-        <!-- Contact CTA -->
-        <div class="text-center mt-5 "   >
-            <div class=" p-5">
-                <h4 class="fw-bold mb-3">Still Have Questions?</h4>
-                <p class="text-muted mb-4">Our cybersecurity experts are here to help you find the right solution for your business.</p>
-                <div class="d-flex flex-wrap gap-3 justify-content-center">
-                    <a href="#contact-form" class="btn btn-gradient px-5 py-3">
-                        <i class="bi bi-chat-dots me-2"></i>
-                        Contact Our Experts
-                    </a>
-                    <a href="tel:+911204188947" class="btn btn-outline-danger px-5 py-3">
-                        <i class="bi bi-telephone me-2"></i>
-                        Schedule a Call
-                    </a>
-                </div>
-            </div>
-        </div>
-      
-        <!-- Footer -->
+        <div id="stay-updated"></div>
+        <div id="cta-component"></div>
         <div id="footer-component"></div>
     </main>
 
-    <!-- Theme Toggle -->
-    <button id="theme-toggle" class=" position-fixed bottom-0 start-0 m-4 rounded-circle p-1 shadow-lg" style="z-index: 1050;">
+    <button id="theme-toggle" class="position-fixed bottom-0 start-0 m-4 rounded-circle p-1 shadow-lg" style="z-index: 1050;">
         <i id="sun-icon" class="bi bi-sun-fill d-none"></i>
         <i id="moon-icon" class="bi bi-moon-fill"></i>
     </button>
 
-    <!-- Scroll Progress -->
     <div id="scroll-progress" class="position-fixed top-0 start-0 w-100 bg-secondary bg-opacity-25" style="height: 4px; z-index: 1050;">
         <div id="scroll-bar" class="h-100 bg-gradient transition-all" style="width: 0%; background: linear-gradient(90deg, var(--accent-primary), var(--accent-gold));"></div>
     </div>
 
-    <!-- Bootstrap 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     
-    <!-- Navigation Loader -->
     <script src="scripts/navigation-loader.js"></script>
     
-    <!-- Custom JavaScript -->
     <script src="scripts/navbar-scroll.js"></script>
     <script src="scripts/theme-toggle.js"></script>
     <script type="module" src="scripts/main.js"></script>
@@ -322,10 +71,9 @@
     <script src="scripts/products.js"></script>
     <script src="scripts/cyber-security-animations.js"></script>
     <script src="scripts/advanced-protection.js"></script>
+    <script src="scripts/industries-animations.js"></script>
 
-    <!-- Component Loader Script -->
     <script type="module">
-        // Component loader functionality with loader integration
         async function loadComponent(id, path) {
             try {
                 const res = await fetch(path);
@@ -336,20 +84,18 @@
                 if (el) {
                     el.style.opacity = '0';
                     el.innerHTML = html;
-                    el.offsetHeight; // Trigger reflow
+                    el.offsetHeight;
                     el.style.transition = 'opacity 0.3s ease';
                     el.style.opacity = '1';
                 } else {
                     console.warn(`Missing container #${id}`);
                 }
                 
-                // Notify loader
                 if (window.loaderManager) {
                     window.loaderManager.componentLoaded();
                 }
             } catch (err) {
                 console.error(`Component load failed: ${path}`, err);
-                // Still notify loader to prevent hanging
                 if (window.loaderManager) {
                     window.loaderManager.componentLoaded();
                 }
@@ -369,26 +115,27 @@
                 ['who-we-are-component', 'components/who-we-are/who-we-are.html'],
                 ['advanced-protection', 'components/advanced-protection/advanced-protection.html'],
                 ['testimonials', 'components/testimonial/testimonial-section.html'],
+                ['video-intro-component', 'components/video-intro/video-intro.html'],
+
                 ['register-section', 'components/register-section/register-section.html'],
                 ['cta-component', 'components/call-to-action/call-to-action.html'],
                 ['footer-component', 'components/footer/footer.html'],
-                ['right-panel-component', 'components/right-panel/right-panel.html']
+                ['right-panel-component', 'components/right-panel/right-panel.html'],
+                ['call-to-action', 'components/stats/call-to-action.html'],
+                ['stay-updated', 'components/new-later/news-later-section.html'],
+                ['industries-section', 'components/industries/industries-section.html'],
             ];
 
-            // Set total components count for loader
             if (window.loaderManager) {
                 window.loaderManager.setComponentsCount(components.length);
             }
 
-            // Load all components
             await Promise.all(components.map(([id, path]) => loadComponent(id, path)));
             
-            // Complete loading
             if (window.loaderManager) {
                 window.loaderManager.completeLoading();
             }
             
-            // Initialize animations after components are loaded
             setTimeout(() => {
                 if (typeof initializeCareerCarousel === 'function') initializeCareerCarousel();
                 if (typeof initializeCareerAnimations === 'function') initializeCareerAnimations();
@@ -397,11 +144,9 @@
                 if (typeof initializeCTAAnimations === 'function') initializeCTAAnimations();
                 if (typeof initializeServicesAnimations === 'function') initializeServicesAnimations();
                 if (typeof initializeEnhancedServices === 'function') initializeEnhancedServices();
+                if (typeof initializeIndustriesAnimations === 'function') initializeIndustriesAnimations();
             }, 100);
         });
     </script>
-
-
-
 </body>
 </html>
