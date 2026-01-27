@@ -187,7 +187,7 @@ body {
   font-family: 'Inter', sans-serif;
   background-color: var(--bg-primary);
   color: var(--text-primary);
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   box-sizing: border-box;
 }
 
