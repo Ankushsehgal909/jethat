@@ -20,7 +20,444 @@
     
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/loader.css">
+
+    <!-- scroller style -->
+    <style>
+        /* Scroll Features Enhanced Theme Styles */
+        .scroll-features-section {
+            background: var(--section-bg-dark);
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        [data-bs-theme="light"] .scroll-features-section {
+            background: var(--section-bg-light);
+        }
+
+        .scroll-container {
+            background: var(--gradient-dark-bg);
+            min-height: 400vh;
+            position: relative;
+        }
+
+        [data-bs-theme="light"] .scroll-container {
+            background: var(--gradient-light-bg);
+        }
+
+        .sticky-section {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding: 2rem 1rem;
+        }
+
+        .cards-container {
+            position: relative;
+            height: 700px;
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 1200px;
+            background: var(--bg-card);
+            border: 1px solid var(--bs-gray-700);
+            border-radius: 5px;
+            box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
+            padding: 2.5rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            color: var(--text-primary);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        [data-bs-theme="light"] .feature-card {
+            background: var(--bg-light-card);
+            border-color: var(--bs-gray-300);
+            box-shadow: 0 1rem 3rem rgba(0,0,0,.1);
+            color: var(--text-light-primary);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 2rem 4rem rgba(220, 100, 20, 0.2);
+            border-color: var(--accent-primary);
+        }
+
+        [data-bs-theme="light"] .feature-card:hover {
+            box-shadow: 0 2rem 4rem rgba(220, 100, 20, 0.15);
+        }
+
+        .scroll-features-section .icon-wrapper {
+            width: 70px;
+            height: 70px;
+            border-radius: var(--bs-border-radius);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,.2);
+            transition: all 0.3s ease;
+        }
+
+        .scroll-features-section .icon-wrapper:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0.75rem 2rem rgba(0,0,0,.3);
+        }
+
+        .scroll-features-section .icon-blue { 
+            background: linear-gradient(135deg, #0d6efd, #0056b3);
+        }
+        .scroll-features-section .icon-green { 
+            background: linear-gradient(135deg, #198754, #146c43);
+        }
+        .scroll-features-section .icon-yellow { 
+            background: linear-gradient(135deg, #ffc107, #ffca2c);
+        }
+        .scroll-features-section .icon-red { 
+            background: linear-gradient(135deg, #dc3545, #b02a37);
+        }
+        .scroll-features-section .icon-purple { 
+            background: linear-gradient(135deg, #6f42c1, #59359a);
+        }
+
+        .scroll-features-section .bullet-point {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 1rem;
+            margin-top: 0.5rem;
+            flex-shrink: 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,.2);
+        }
+
+        .scroll-features-section .bullet-blue { background: var(--accent-info); }
+        .scroll-features-section .bullet-green { background: var(--accent-success); }
+        .scroll-features-section .bullet-yellow { background: var(--accent-warning); }
+        .scroll-features-section .bullet-red { background: var(--accent-danger); }
+        .scroll-features-section .bullet-purple { background: var(--accent-secondary); }
+
+        .scroll-features-section .cta-button {
+            background: var(--bg-card);
+            border: 2px solid var(--accent-primary);
+            border-radius: 2rem;
+            padding: 0.75rem 1.5rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 0.25rem 0.75rem var(--accent-primary-20);
+            font-weight: 600;
+            position: relative;
+            overflow: hidden;
+        }
+
+        [data-bs-theme="light"] .scroll-features-section .cta-button {
+            background: var(--bg-light-card);
+            color: var(--text-light-primary);
+        }
+
+        .scroll-features-section .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-primary);
+            transition: all 0.4s ease;
+            z-index: -1;
+        }
+
+        .scroll-features-section .cta-button:hover::before {
+            left: 0;
+        }
+
+        .scroll-features-section .cta-button:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 0.75rem 1.5rem var(--accent-primary-30);
+            color: white !important;
+            border-color: var(--accent-gold);
+        }
+
+        .scroll-features-section .cta-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .scroll-features-section .feature-image {
+            border-radius: var(--bs-border-radius);
+            box-shadow: 0 0.75rem 1.5rem rgba(0,0,0,.15);
+            transition: all 0.3s ease;
+        }
+
+        .scroll-features-section .feature-image:hover {
+            transform: scale(1.02);
+            box-shadow: 0 1rem 2rem rgba(220, 100, 20, 0.2);
+        }
+
+        .scroll-features-section h2 {
+            color: var(--text-primary);
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
+        }
+
+        [data-bs-theme="light"] .scroll-features-section h2 {
+            color: var(--text-light-primary);
+        }
+
+        .scroll-features-section h3 {
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+
+        [data-bs-theme="light"] .scroll-features-section h3 {
+            color: var(--text-light-primary);
+        }
+
+        .scroll-features-section .text-muted {
+            color: var(--text-muted) !important;
+            font-weight: 500;
+        }
+
+        [data-bs-theme="light"] .scroll-features-section .text-muted {
+            color: var(--text-light-muted) !important;
+        }
+
+        /* Tablet Responsiveness */
+        @media (max-width: 1024px) {
+            .scroll-features-section .feature-card {
+                max-width: 95%;
+                padding: 2rem;
+            }
+            
+            .scroll-features-section h2 {
+                font-size: 2.5rem;
+            }
+            
+            .scroll-features-section .icon-wrapper {
+                width: 65px;
+                height: 65px;
+            }
+        }
+
+        /* Enhanced Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .sticky-section {
+                padding: 1rem 0.5rem;
+            }
+            
+            .scroll-features-section .feature-card {
+                padding: 1.5rem;
+                margin: 0 0.5rem;
+                max-width: calc(100% - 1rem);
+                border-radius: 1rem;
+            }
+            
+            .scroll-features-section .cards-container {
+                height: 400px;
+                min-height: 400px;
+            }
+            
+            .scroll-container {
+                min-height: 250vh;
+            }
+
+            .scroll-features-section .icon-wrapper {
+                width: 60px;
+                height: 60px;
+                margin-bottom: 1rem;
+            }
+
+            .scroll-features-section h2 {
+                font-size: 2rem;
+                line-height: 1.2;
+                margin-bottom: 2rem;
+            }
+
+            .scroll-features-section h3 {
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+            }
+            
+            .scroll-features-section .cta-button {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.9rem;
+            }
+            
+            .scroll-features-section .cta-icon {
+                width: 32px;
+                height: 32px;
+            }
+            
+            .scroll-features-section .bullet-point {
+                width: 6px;
+                height: 6px;
+                margin-right: 0.75rem;
+            }
+            
+            .scroll-features-section .feature-image {
+                margin-top: 1rem;
+                max-width: 200px;
+                max-height: 150px;
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+            }
+            
+            /* Ensure text stays on left, image on right */
+            .scroll-features-section .row {
+                align-items: center;
+            }
+            
+            .scroll-features-section .col-lg-6:first-child {
+                order: 1;
+            }
+            
+            .scroll-features-section .col-lg-6:last-child {
+                order: 2;
+                text-align: center;
+            }
+        }
+
+        /* Small Mobile Devices */
+        @media (max-width: 480px) {
+            .sticky-section {
+                padding: 0.5rem;
+            }
+            
+            .scroll-features-section .feature-card {
+                padding: 1rem;
+                margin: 0 0.25rem;
+                max-width: calc(100% - 0.5rem);
+            }
+            
+            .scroll-features-section .cards-container {
+                height: 350px;
+                min-height: 350px;
+            }
+            
+            .scroll-features-section h2 {
+                font-size: 1.75rem;
+            }
+            
+            .scroll-features-section h3 {
+                font-size: 1.25rem;
+            }
+            
+            .scroll-features-section .icon-wrapper {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .scroll-features-section .cta-button {
+                padding: 0.5rem 1rem;
+                font-size: 0.85rem;
+                gap: 0.5rem;
+            }
+            
+            .scroll-features-section .cta-icon {
+                width: 28px;
+                height: 28px;
+            }
+            
+            .scroll-features-section .feature-image {
+                margin-top: 0.5rem;
+                max-width: 150px;
+                max-height: 120px;
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+            }
+            
+            /* Stack vertically on very small screens if needed */
+            .scroll-features-section .row {
+                flex-direction: row;
+            }
+            
+            .scroll-features-section .col-lg-6 {
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+            
+            .scroll-features-section .col-lg-6:first-child {
+                padding-right: 0.5rem;
+            }
+            
+            .scroll-features-section .col-lg-6:last-child {
+                padding-left: 0.5rem;
+            }
+        }
+
+        /* Large Screens */
+        @media (min-width: 1400px) {
+            .scroll-features-section .feature-card {
+                max-width: 1300px;
+                padding: 3rem;
+            }
+            
+            .scroll-features-section .icon-wrapper {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .scroll-features-section h2 {
+                font-size: 3.5rem;
+            }
+            
+            .scroll-features-section h3 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Performance Optimizations */
+        .scroll-features-section * {
+            will-change: transform, opacity;
+            transform: translateZ(0);
+        }
+
+        /* Prevent horizontal overflow */
+        .scroll-features-section {
+            overflow-x: hidden;
+        }
         
+        .scroll-features-section .container-fluid {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .scroll-features-section .container-fluid {
+                padding-left: 0.5rem;
+                padding-right: 0.5rem;
+            }
+        }
+    </style>
+    <!-- scroller style -->
     <script src="scripts/universal-loader.js"></script>
 </head>
 
@@ -33,7 +470,273 @@
         <div id="hero-section"></div>
         <div id="cyber-security-component"></div>
         <div id="who-we-are-component"></div>
-        <div id="services"></div>
+        
+        <!-- scroller-contaier -->
+        <div class="scroll-container" data-container>
+            <div class="sticky-section" >
+                <div class="container py-5 "style="margin-top: 30%;">
+                    <!-- Header -->
+                    <div class="mb-5 text-start">
+                        <h2 class="fw-bold display-3 mb-4 theme-text">
+                            <span>Scroll</span>
+                            <span class="fw-bold text-gradient">Features</span>
+                        </h2>
+                        <p>
+                            Jethat Cybersecurity Private Limited is a next-generation cybersecurity and software development company delivering secure, scalable, and intelligent technology solutions for modern enterprises.
+
+
+                        </p>
+                    </div>
+
+                    <!-- Cards container -->
+                    <div class="cards-container">
+                        <!-- Card 1: Advanced AI Technology -->
+                        <div class="feature-card" data-index="0">
+                            <div class="row align-items-center">
+                                <!-- Left side - Content -->
+                                <div class="col-lg-6">
+                                    <!-- Icon -->
+                                    <div class="icon-wrapper icon-blue text-white">
+                                        <i class="bi bi-robot fs-4"></i>
+                                    </div>
+
+                                    <h3 class="h2 fw-bold mb-4">
+                                        Advanced AI Technology
+                                    </h3>
+
+                                    <!-- Bullets -->
+                                    <ul class="list-unstyled mb-4">
+                                        <li class="d-flex align-items-start mb-3">
+                                            <span class="bullet-point bullet-blue"></span>
+                                            <span class="text-muted">Powered by cutting-edge natural language processing</span>
+                                        </li>
+                                        <li class="d-flex align-items-start mb-3">
+                                            <span class="bullet-point bullet-blue"></span>
+                                            <span class="text-muted">Machine learning algorithms that improve over time</span>
+                                        </li>
+                                        <li class="d-flex align-items-start mb-3">
+                                            <span class="bullet-point bullet-blue"></span>
+                                            <span class="text-muted">Context-aware responses for natural conversations</span>
+                                        </li>
+                                    </ul>
+
+                                    <!-- CTA -->
+                                    <div>
+                                        <a href="about/index.html" class="text-gradient text-decoration-none d-inline-flex align-items-center fs-6 fs-md-5">
+                                            <i class="bi bi-arrow-right me-2"></i>
+                                                Learn More
+                                        </a>
+                        
+                                    </div>
+                                </div>
+
+                                <!-- Right side - Image -->
+                                <div class="col-lg-6">
+                                    <img src="assets/images/cyber.jpg" alt="Advanced AI Technology"
+                                        class="img-fluid feature-image" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 2: Multi-language Support -->
+                        <div class="feature-card" data-index="1">
+                            <div class="row align-items-center">
+                                <!-- Left side - Content -->
+                                <div class="col-lg-6">
+                                    <!-- Icon -->
+                                    <div class="icon-wrapper icon-green text-white">
+                                        <i class="bi bi-globe fs-4"></i>
+                                    </div>
+
+                                    <h3 class="h2 fw-bold mb-4">
+                                        Multi-Language Support
+                                    </h3>
+
+                                    <!-- Bullets -->
+                                    <ul class="list-unstyled mb-4">
+                                        <li class="d-flex align-items-start mb-3">
+                                            <span class="bullet-point bullet-green"></span>
+                                            <span class="text-muted">Build chatbots that communicate in multiple languages</span>
+                                        </li>
+                                        <li class="d-flex align-items-start mb-3">
+                                            <span class="bullet-point bullet-green"></span>
+                                            <span class="text-muted">Automatic language detection and translation</span>
+                                        </li>
+                                        <li class="d-flex align-items-start mb-3">
+                                            <span class="bullet-point bullet-green"></span>
+                                            <span class="text-muted">Seamless cross-language conversations</span>
+                                        </li>
+                                    </ul>
+
+                                    <!-- CTA -->
+                                    <!-- CTA -->
+                                    <div>
+                                        <a href="about/index.html" class="text-gradient text-decoration-none d-inline-flex align-items-center fs-6 fs-md-5">
+                                            <i class="bi bi-arrow-right me-2"></i>
+                                                Learn More
+                                        </a>
+                        
+                                    </div>
+                                </div>
+
+                                <!-- Right side - Image -->
+                                <div class="col-lg-6">
+                                    <img src="assets/images/innovation1.jpg" alt="Multi-language Support"
+                                        class="img-fluid feature-image" />
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 3: Lightning Fast Performance -->
+                        <div class="feature-card" data-index="2">
+                            <div class="row align-items-center">
+                                <!-- Left side - Content -->
+                                <div class="col-lg-6">
+                                    <!-- Icon -->
+                                    <div class="icon-wrapper icon-yellow text-white">
+                                        <i class="bi bi-lightning-fill fs-4"></i>
+                                    </div>
+
+                                    <h3 class="h2 fw-bold mb-4">
+                                        Lightning-Fast Performance
+                                    </h3>
+
+                                    <!-- Bullets -->
+                                    <ul class="list-unstyled mb-4">
+                                        <li class="d-flex align-items-start mb-3">
+                                            <span class="bullet-point bullet-yellow"></span>
+                                            <span class="text-muted">Optimized for instant response times</span>
+                                        </li>
+                                        <li class="d-flex align-items-start mb-3">
+                                            <span class="bullet-point bullet-yellow"></span>
+                                            <span class="text-muted">Handle thousands of concurrent conversations</span>
+                                        </li>
+                                        <li class="d-flex align-items-start mb-3">
+                                            <span class="bullet-point bullet-yellow"></span>
+                                            <span class="text-muted">Low-latency infrastructure worldwide</span>
+                                        </li>
+                                    </ul>
+
+                                    <!-- CTA -->
+                                    <!-- CTA -->
+                                    <div>
+                                        <a href="about/index.html" class="text-gradient text-decoration-none d-inline-flex align-items-center fs-6 fs-md-5">
+                                            <i class="bi bi-arrow-right me-2"></i>
+                                                Learn More
+                                        </a>
+                        
+                                    </div>
+                                </div>
+
+                                <!-- Right side - Image -->
+                                <div class="col-lg-6">
+                                    <img src="assets/images/cyber3.jpg" alt="Lightning Fast Performance"
+                                        class="img-fluid feature-image" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 4: Enterprise Security -->
+                        <div class="feature-card" data-index="3">
+                            <div class="row align-items-center">
+                                <!-- Left side - Content -->
+                                <div class="col-lg-6">
+                                    <!-- Icon -->
+                                    <div class="icon-wrapper icon-red text-white">
+                                        <i class="bi bi-shield-fill-check fs-4"></i>
+                                    </div>
+
+                                    <h3 class="h2 fw-bold mb-4">
+                                        Enterprise-Grade Security
+                                    </h3>
+
+                                    <!-- Bullets -->
+                                    <ul class="list-unstyled mb-4">
+                                        <li class="d-flex align-items-start mb-3">
+                                            <span class="bullet-point bullet-red"></span>
+                                            <span class="text-muted">End-to-end encryption for all conversations</span>
+                                        </li>
+                                        <li class="d-flex align-items-start mb-3">
+                                            <span class="bullet-point bullet-red"></span>
+                                            <span class="text-muted">GDPR and SOC 2 compliant infrastructure</span>
+                                        </li>
+                                        <li class="d-flex align-items-start mb-3">
+                                            <span class="bullet-point bullet-red"></span>
+                                            <span class="text-muted">Role-based access control and audit logs</span>
+                                        </li>
+                                    </ul>
+
+                                <!-- CTA -->
+                                    <div>
+                                        <a href="about/index.html" class="text-gradient text-decoration-none d-inline-flex align-items-center fs-6 fs-md-5">
+                                            <i class="bi bi-arrow-right me-2"></i>
+                                                Learn More
+                                        </a>
+                        
+                                    </div>
+                                </div>
+
+                                <!-- Right side - Image -->
+                                <div class="col-lg-6">
+                                    <img src="assets/images/cyber1.jpg" alt="Enterprise Security"
+                                        class="img-fluid feature-image" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 5: Analytics & Insights -->
+                        <div class="feature-card" data-index="4">
+                            <div class="row align-items-center">
+                                <!-- Left side - Content -->
+                                <div class="col-lg-6">
+                                    <!-- Icon -->
+                                    <div class="icon-wrapper icon-purple text-white">
+                                        <i class="bi bi-graph-up fs-4"></i>
+                                    </div>
+
+                                    <h3 class="h2 fw-bold mb-4">
+                                        Analytics & Insights
+                                    </h3>
+
+                                    <!-- Bullets -->
+                                    <ul class="list-unstyled mb-4">
+                                        <li class="d-flex align-items-start mb-3">
+                                            <span class="bullet-point bullet-purple"></span>
+                                            <span class="text-muted">Real-time conversation analytics dashboard</span>
+                                        </li>
+                                        <li class="d-flex align-items-start mb-3">
+                                            <span class="bullet-point bullet-purple"></span>
+                                            <span class="text-muted">Track user engagement and satisfaction metrics</span>
+                                        </li>
+                                        <li class="d-flex align-items-start mb-3">
+                                            <span class="bullet-point bullet-purple"></span>
+                                            <span class="text-muted">AI-powered insights to improve performance</span>
+                                        </li>
+                                    </ul>
+
+                                    <!-- CTA -->
+                                    <!-- CTA -->
+                                    <div>
+                                        <a href="about/index.html" class="text-gradient text-decoration-none d-inline-flex align-items-center fs-6 fs-md-5">
+                                            <i class="bi bi-arrow-right me-2"></i>
+                                                Learn More
+                                        </a>
+                        
+                                    </div>
+                                </div>
+
+                                <!-- Right side - Image -->
+                                <div class="col-lg-6">
+                                    <img src="assets/images/cyber2.jpg" alt="Analytics & Insights"
+                                        class="img-fluid feature-image" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- <div id="services"></div> -->
         <div id="enhanced-services"></div>
         <div id="video-intro-component"></div>
         <div id="advanced-protection"></div>
@@ -72,6 +775,7 @@
     <script src="scripts/cyber-security-animations.js"></script>
     <script src="scripts/advanced-protection.js"></script>
     <script src="scripts/industries-animations.js"></script>
+   
 
     <script type="module">
         async function loadComponent(id, path) {
@@ -148,5 +852,92 @@
             }, 100);
         });
     </script>
+
+<!-- scroller js -->
+    <script>
+        const container = document.querySelector('[data-container]');
+        const cards = document.querySelectorAll('.feature-card');
+        const numCards = cards.length;
+        const cardGap = 30;
+        let ticking = false;
+
+        function updateCards() {
+            const start = container.offsetTop;
+            const end = start + container.offsetHeight - window.innerHeight;
+            let progress = 0;
+            if (end > start) {
+                progress = Math.max(0, Math.min(1, (window.scrollY - start) / (end - start)));
+            }
+
+            cards.forEach((card, index) => {
+                const cardStart = index / numCards;
+                const cardEnd = (index + 0.5) / numCards;
+                const stackedPosition = index * cardGap;
+                const isFirst = index === 0;
+
+                // y position
+                let y;
+                if (progress <= cardStart) {
+                    y = isFirst ? stackedPosition : 700;
+                } else if (progress >= cardEnd) {
+                    y = stackedPosition;
+                } else {
+                    const frac = (progress - cardStart) / (cardEnd - cardStart);
+                    y = isFirst ? stackedPosition : 700 + frac * (stackedPosition - 700);
+                }
+
+                // opacity
+                let opacity = 1;
+                if (!isFirst) {
+                    const fadeStart = cardStart;
+                    const fadeEnd = cardStart + 0.1 / numCards;
+                    if (progress <= fadeStart) {
+                        opacity = 0;
+                    } else if (progress < fadeEnd) {
+                        opacity = (progress - fadeStart) / (fadeEnd - fadeStart);
+                    } else {
+                        opacity = 1;
+                    }
+                }
+
+                // scale
+                let scale;
+                if (progress <= cardStart) {
+                    scale = isFirst ? 1 : 0.85;
+                } else if (progress >= cardEnd) {
+                    scale = 1;
+                } else {
+                    const frac = (progress - cardStart) / (cardEnd - cardStart);
+                    scale = isFirst ? 1 : 0.85 + frac * 0.15;
+                }
+
+                card.style.transform = `translateY(${y}px) scale(${scale})`;
+                card.style.opacity = opacity;
+                card.style.zIndex = index + 1;
+            });
+
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(updateCards);
+                ticking = true;
+            }
+        });
+
+        // Initial call
+        updateCards();
+
+        // Theme toggle functionality (optional)
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-bs-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-bs-theme', newTheme);
+        }
+    </script>
+<!-- scroller js -->
+
 </body>
 </html>
