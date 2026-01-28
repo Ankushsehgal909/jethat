@@ -19,7 +19,7 @@ function initializeEnhancedServices() {
     initializeServiceCards();
     
     // Initialize intersection observer for animations
-    initializeScrollAnimations();
+    // initializeScrollAnimations();
     
     // Initialize parallax effects
     initializeParallaxEffects();
@@ -280,7 +280,7 @@ function showLoadingAnimation() {
     const loader = document.createElement('div');
     loader.className = 'service-loader';
     loader.innerHTML = `
-        <div class="loader-spinner"></div>
+        // <div class="loader-spinners"></div>
         <p>Loading service details...</p>
     `;
     
@@ -409,7 +409,7 @@ const additionalStyles = `
     color: white;
 }
 
-.loader-spinner {
+.loader-spinners {
     width: 50px;
     height: 50px;
     border: 3px solid rgba(255, 255, 255, 0.3);
@@ -472,9 +472,9 @@ const additionalStyles = `
     }
 }
 
-.slide-in {
-    animation: slideInUp 0.6s ease-out forwards;
-}
+// .slide-in {
+//     animation: slideInUp 0.6s ease-out forwards;
+// }
 
 @keyframes slideInUp {
     from {

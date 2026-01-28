@@ -40,55 +40,78 @@
 
 /* Loader Logo - Centered in Spinner */
 .loader-logo {
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 10;
-    animation: logoFloat 2s ease-in-out infinite;
-    border-radius: 50%;
-    object-fit: contain;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 8px;
-    backdrop-filter: blur(10px);
+    position: absolute !important;
+    width: 60px !important;
+    height: 60px !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    z-index: 10 !important;
+    animation: logoFloat 2s ease-in-out infinite !important;
+    border-radius: 50% !important;
+    object-fit: contain !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    padding: 8px !important;
+    backdrop-filter: blur(10px) !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 [data-bs-theme="light"] .loader-logo,
 .light-theme .loader-logo {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.9) !important;
 }
 
 @keyframes logoFloat {
     0%, 100% { transform: translate(-50%, -50%) scale(1); }
-    50% { transform: translate(-50%, -50%) scale(1.1); }
+    50% { transform: translate(-50%, -50%) scale(1.05); }
 }
 
 /* Outer Ring */
 .spinner-ring {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border: 4px solid transparent;
-    border-top-color: #ff5100;
-    border-right-color: #ff5100;
-    border-radius: 50%;
-    animation: spinRing 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+    position: absolute !important;
+    width: 100% !important;
+    height: 100% !important;
+    border: 4px solid transparent !important;
+    border-top-color: #ff5100 !important;
+    border-right-color: #ff5100 !important;
+    border-radius: 50% !important;
+    animation: spinRing 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite !important;
+    opacity: 0.9 !important;
+    z-index: 1 !important;
+}
+
+/* Make the outer ring more visible in light theme */
+[data-bs-theme="light"] .spinner-ring,
+.light-theme .spinner-ring {
+    border-top-color: #cc2c00 !important;
+    border-right-color: #cc2c00 !important;
+    opacity: 1 !important;
 }
 
 /* Inner Ring */
 .spinner-ring-inner {
-    position: absolute;
-    width: 80%;
-    height: 80%;
-    top: 10%;
-    left: 10%;
-    border: 4px solid transparent;
-    border-bottom-color: #ffd700;
-    border-left-color: #ffd700;
-    border-radius: 50%;
-    animation: spinRingReverse 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+    position: absolute !important;
+    width: 80% !important;
+    height: 80% !important;
+    top: 10% !important;
+    left: 10% !important;
+    border: 4px solid transparent !important;
+    border-bottom-color: #ffd700 !important;
+    border-left-color: #ffd700 !important;
+    border-radius: 50% !important;
+    animation: spinRingReverse 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite !important;
+    opacity: 0.9 !important;
+    z-index: 2 !important;
+}
+
+/* Make the inner ring more visible in light theme */
+[data-bs-theme="light"] .spinner-ring-inner,
+.light-theme .spinner-ring-inner {
+    border-bottom-color: #ff8800 !important;
+    border-left-color: #ff8800 !important;
+    opacity: 1 !important;
 }
 
 /* Center Dot - Hidden since logo is in center */
@@ -266,5 +289,106 @@
     .mini-loader {
         animation: none !important;
         transition: none !important;
+    }
+}
+
+/* Force spinner visibility for index pages - Override any conflicting styles */
+#page-loader .loader-spinner {
+    position: relative !important;
+    width: 120px !important;
+    height: 120px !important;
+    margin-bottom: 2rem !important;
+}
+
+#page-loader .spinner-ring,
+#page-loader .spinner-ring-inner {
+    display: block !important;
+    visibility: visible !important;
+    pointer-events: none !important;
+}
+
+/* Ensure logo doesn't hide the rings */
+#page-loader .loader-logo {
+    z-index: 10 !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    max-width: 60px !important;
+    max-height: 60px !important;
+    width: 60px !important;
+    height: 60px !important;
+}
+
+/* Force all loader elements to be visible */
+#page-loader * {
+    display: block !important;
+    visibility: visible !important;
+}
+
+#page-loader .loader-text,
+#page-loader .loader-progress {
+    display: block !important;
+}
+
+/* Force logo to stay fixed on index pages - Override any rotating animations */
+#page-loader .loader-logo {
+    animation: logoFloat 2s ease-in-out infinite !important;
+    transform: translate(-50%, -50%) !important;
+}
+
+/* Ensure no other animations affect the logo */
+#page-loader .loader-logo,
+#page-loader img.loader-logo {
+    animation-name: logoFloat !important;
+    animation-duration: 2s !important;
+    animation-timing-function: ease-in-out !important;
+    animation-iteration-count: infinite !important;
+    transform: translate(-50%, -50%) !important;
+}
+
+/* Override any spin animations that might be applied to the logo */
+#page-loader .loader-logo:not(.spinner-ring):not(.spinner-ring-inner) {
+    animation: logoFloat 2s ease-in-out infinite !important;
+}
+
+/* Completely override any rotation or spin animations on loader logo */
+#page-loader .loader-logo,
+#page-loader img[class*="loader-logo"],
+#page-loader .loader-spinner img {
+    animation: logoFloat 2s ease-in-out infinite !important;
+    transform: translate(-50%, -50%) !important;
+}
+
+/* Remove any potential spin classes that might be applied */
+#page-loader .animate-spin-slow,
+#page-loader .animate-spin-slow-reverse,
+#page-loader .loader-logo.animate-spin-slow,
+#page-loader .loader-logo.animate-spin-slow-reverse {
+    animation: logoFloat 2s ease-in-out infinite !important;
+    transform: translate(-50%, -50%) !important;
+}
+
+/* FINAL OVERRIDE - Ensure logo never rotates on any page */
+body #page-loader .loader-spinner .loader-logo,
+html body #page-loader .loader-spinner .loader-logo,
+#page-loader .loader-spinner img.loader-logo {
+    animation: logoFloat 2s ease-in-out infinite !important;
+    transform: translate(-50%, -50%) !important;
+    animation-name: logoFloat !important;
+    animation-duration: 2s !important;
+    animation-timing-function: ease-in-out !important;
+    animation-iteration-count: infinite !important;
+    animation-direction: normal !important;
+    animation-fill-mode: none !important;
+    animation-play-state: running !important;
+}
+
+/* Ensure logoFloat animation is properly defined and can't be overridden */
+@keyframes logoFloat {
+    0%, 100% { 
+        transform: translate(-50%, -50%) scale(1) !important; 
+    }
+    50% { 
+        transform: translate(-50%, -50%) scale(1.05) !important; 
     }
 }
