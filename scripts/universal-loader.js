@@ -1,7 +1,3 @@
-/**
- * Universal Loader for All Pages
- * Include this script in all HTML pages for consistent loading experience
- */
 
 (function() {
     'use strict';
