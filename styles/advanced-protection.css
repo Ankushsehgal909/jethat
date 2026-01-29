@@ -1,69 +1,4 @@
-<section id="advanced-protection" class="py-5 overflow-hidden advanced-protection-theme">
-    <div class="container">
-        <div class="mb-5 text-start">
-            <h2 class="fw-bold display-3 mb-4 theme-text">
-                <span>Protection</span>
-                <span class="fw-bold text-gradient">Systems</span>
-            </h2>
-        </div>
 
-        <div class="row g-4">
-            <div class="col-lg-5">
-                <div class="position-relative d-flex justify-content-center align-items-center p-4 shadow-lg security-visual-card">
-                    <div class="position-absolute top-0 start-0 w-100 h-100 security-bg-image"></div>
-                    <div class="position-absolute top-0 start-0 w-100 h-100 opacity-10">
-                        <div class="h-100 w-100 grid-pattern"></div>
-                    </div>
-
-                    <div class="position-absolute top-0 start-0 w-100 frame-bar-top"></div>
-                    <div class="position-absolute bottom-0 start-0 w-100 frame-bar-bottom"></div>
-
-                    <div class="position-absolute top-0 start-0 w-100 h-100 overflow-hidden">
-                        <div class="scan-line"></div>
-                    </div>
-
-                    <div class="position-absolute bottom-3 start-0 w-100 px-4 d-flex justify-content-between align-items-center small text-warning" style="z-index:6;">
-                        <span><span class="dot pulse"></span> <span id="scan-status">SCANNING ACTIVE</span></span>
-                        <span id="threat-level" class="text-light fw-bold">●●●○○</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-7">
-                <div class="shadow-lg overflow-hidden terminal-container">
-                    <div class="d-flex align-items-center px-3 py-2 terminal-header">
-                        <div class="d-flex gap-2 me-3">
-                            <span class="circle bg-danger"></span>
-                            <span class="circle bg-warning"></span>
-                            <span class="circle bg-success"></span>
-                        </div>
-                        <span class="text-white fw-bold small">Security Terminal</span>
-                        <span class="ms-auto badge threat-badge" id="threat-badge">LOW THREAT</span>
-                    </div>
-
-                    <div class="p-3 text-success small font-monospace terminal-content" id="terminal-output">
-                        <div class="terminal-line">> System initialized.</div>
-                        <div class="terminal-line">> Running initial scan...</div>
-                        <div class="terminal-line text-warning">> Scanning network for vulnerabilities...</div>
-                        <div class="terminal-line">> Firewall: ACTIVE</div>
-                        <div class="terminal-line">> Threat detection: ENABLED</div>
-                        <div class="terminal-line">> All systems secure</div>
-                    </div>
-
-                    <div class="border-top p-2 terminal-input-area">
-                        <span class="text-warning fw-bold">user@security:~$</span>
-                        <input class="bg-transparent border-0 text-warning ms-2 small w-75 terminal-input"
-                               id="terminal-input"
-                               placeholder="Type a command..."
-                               autocomplete="off">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<style>
 .theme-text {
     color: var(--text-light-primary);
 }
@@ -286,5 +221,3 @@
 .terminal-content::-webkit-scrollbar-thumb:hover {
     background: #b91c1c;
 }
-</style>
-

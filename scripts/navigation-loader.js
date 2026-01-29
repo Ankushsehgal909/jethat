@@ -1,12 +1,5 @@
-/**
- * Navigation Loader
- * Shows loading indicator when navigating between pages
- */
-
 (function() {
     'use strict';
-
-    // Create navigation loader
     function createNavLoader() {
         if (document.getElementById('nav-loader')) return;
 
@@ -19,7 +12,6 @@
         document.body.appendChild(navLoader);
     }
 
-    // Show navigation loader
     function showNavLoader() {
         const navLoader = document.getElementById('nav-loader');
         if (navLoader) {
@@ -34,7 +26,6 @@
         }
     }
 
-    // Hide navigation loader
     function hideNavLoader() {
         const navLoader = document.getElementById('nav-loader');
         if (navLoader) {
@@ -44,18 +35,15 @@
         }
     }
 
-    // Initialize on DOM ready
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', createNavLoader);
     } else {
         createNavLoader();
     }
 
-    // Intercept all navigation links
     document.addEventListener('click', function(e) {
         const link = e.target.closest('a');
         
-        // Check if it's an internal navigation link
         if (link && 
             link.href && 
             link.href.startsWith(window.location.origin) &&
@@ -66,7 +54,6 @@
             !e.metaKey && 
             !e.shiftKey) {
             
-            // Show loader for internal navigation
             showNavLoader();
         }
     });

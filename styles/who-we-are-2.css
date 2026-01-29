@@ -1,0 +1,412 @@
+/* Who We Are 2 Section Styles */
+#who-we-are-2 {
+    /* background: var(--gradient-light-bg); */
+    min-height: 100vh;
+}
+
+.dark #who-we-are-2 {
+    background: var(--gradient-dark-bg);
+}
+
+/* Left Panel Styles */
+.who-we-are-2-left-panel {
+    position: sticky;
+    top: 8rem;
+    align-self: flex-start;
+}
+
+.who-we-are-2-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    color: var(--text-light-primary);
+}
+
+.dark .who-we-are-2-title {
+    color: var(--text-primary);
+}
+
+@media (min-width: 768px) {
+    .who-we-are-2-title {
+        font-size: 4rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .who-we-are-2-title {
+        font-size: 5rem;
+    }
+}
+
+.text-gradient-orange {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.who-we-are-2-description {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: var(--text-light-muted);
+    margin-bottom: 2rem;
+}
+
+.dark .who-we-are-2-description {
+    color: var(--text-secondary);
+}
+
+/* Active Section Display */
+.active-section-display {
+    background: var(--bg-dark-card);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--accent-primary-20);
+    border-radius: 2px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 25px var(--accent-primary-10);
+}
+
+.dark .active-section-display {
+    /* background: var(--bg-card); */
+    border: 1px solid var(--accent-primary-30);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.active-section-icon {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+}
+
+.active-section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-light-primary);
+    margin-bottom: 1rem;
+}
+
+.dark .active-section-title {
+    color: var(--text-primary);
+}
+
+.active-section-description {
+    color: var(--text-light-secondary);
+    line-height: 1.6;
+}
+
+.dark .active-section-description {
+    color: var(--text-secondary);
+}
+
+/* Progress Indicator */
+.progress-indicator {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 2rem;
+}
+
+.progress-dot {
+    height: 0.5rem;
+    border-radius: 9999px;
+    transition: all 0.5s ease;
+    background-color: var(--text-light-muted);
+}
+
+.dark .progress-dot {
+    background-color: var(--text-muted);
+}
+
+.progress-dot.active {
+    width: 2rem;
+    background: var(--gradient-primary);
+}
+
+.progress-dot:not(.active) {
+    width: 0.5rem;
+}
+
+/* Right Panel Cards */
+.who-we-are-2-card {
+    position: relative;
+    width: 100%;
+    max-width: 60rem;
+    height: 350px;
+    border-radius: 2px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+    margin: 0 auto;
+    opacity: 0;
+  
+}
+
+
+
+.parallax-image {
+    position: relative;
+    width: 100%;
+    height: 120%;
+    top: -10%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent, rgba(0, 0, 0, 0.3));
+}
+
+.card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 3rem;
+    color: white;
+    z-index: 10;
+}
+
+.card-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.card-description {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+    font-size: 1.125rem;
+    max-width: 32rem;
+    margin-bottom: 1.5rem;
+}
+
+.learn-more-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--accent-primary-30);
+    backdrop-filter: blur(10px);
+    border-radius: 9999px;
+    border: 1px solid var(--accent-primary-40);
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    width: fit-content;
+}
+
+.learn-more-btn:hover {
+    background: var(--accent-primary-40);
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px var(--accent-primary-25);
+}
+
+.learn-more-btn svg {
+    transition: transform 0.3s ease;
+}
+
+.learn-more-btn:hover svg {
+    transform: translateX(0.25rem);
+}
+
+.section-number {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    background: var(--accent-primary-30);
+    backdrop-filter: blur(10px);
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    color: white;
+    font-weight: 700;
+    font-size: 1.125rem;
+    border: 1px solid var(--accent-primary-40);
+}
+
+/* Floating Elements */
+.floating-element {
+    position: absolute;
+    border-radius: 50%;
+    animation: float 3s ease-in-out infinite;
+}
+
+.floating-element:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Mobile Styles */
+@media (max-width: 1023px) {
+    .who-we-are-2-mobile {
+        display: block;
+    }
+    
+    .who-we-are-2-desktop {
+        display: none;
+    }
+    
+    .mobile-card {
+        position: relative;
+        height: 20rem;
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: 0 10px 25px var(--accent-primary-15);
+        opacity: 0;
+        transform: translateY(50px);
+        animation: fadeInUp 0.6s ease forwards;
+    }
+    
+    .mobile-card:nth-child(1) { animation-delay: 0.1s; }
+    .mobile-card:nth-child(2) { animation-delay: 0.2s; }
+    .mobile-card:nth-child(3) { animation-delay: 0.3s; }
+    .mobile-card:nth-child(4) { animation-delay: 0.4s; }
+    .mobile-card:nth-child(5) { animation-delay: 0.5s; }
+    .mobile-card:nth-child(6) { animation-delay: 0.6s; }
+    .mobile-card:nth-child(7) { animation-delay: 0.7s; }
+    .mobile-card:nth-child(8) { animation-delay: 0.8s; }
+    
+    @keyframes fadeInUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    .mobile-card-content {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 1.5rem;
+        color: white;
+        z-index: 10;
+    }
+    
+    .mobile-card-icon {
+        background: var(--accent-primary-30);
+        backdrop-filter: blur(10px);
+        padding: 0.75rem;
+        border-radius: 0.75rem;
+        margin-right: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 3rem;
+        height: 3rem;
+        border: 1px solid var(--accent-primary-40);
+    }
+    
+    .mobile-card-title {
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+    
+    .mobile-card-description {
+        color: rgba(255, 255, 255, 0.9);
+        line-height: 1.6;
+        font-size: 0.875rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .who-we-are-2-mobile {
+        display: none;
+    }
+    
+    .who-we-are-2-desktop {
+        display: block;
+    }
+}
+
+/* Hover Effects */
+.hover-scale {
+    transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.hover-magnetic {
+    transition: transform 0.3s ease;
+}
+
+.hover-magnetic:hover {
+    transform: scale(1.05);
+}
+
+/* Gradient Backgrounds for Icons - Using Theme Colors */
+.gradient-blue {
+    background: var(--gradient-primary);
+}
+
+.gradient-purple {
+    background: var(--gradient-secondary);
+}
+
+.gradient-yellow {
+    background: var(--gradient-gold);
+}
+
+.gradient-green {
+    background: linear-gradient(135deg, var(--accent-success), var(--accent-primary));
+}
+
+.gradient-red {
+    background: linear-gradient(135deg, var(--accent-danger), var(--accent-secondary));
+}
+
+.gradient-indigo {
+    background: linear-gradient(135deg, var(--accent-info), var(--accent-primary));
+}
+
+.gradient-teal {
+    background: linear-gradient(135deg, var(--accent-info), var(--accent-secondary));
+}
+
+.gradient-orange {
+    background: var(--gradient-primary);
+}
+
+/* Scroll Animations */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-in-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-in-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}

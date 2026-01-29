@@ -1,136 +1,100 @@
-<section id="who-we-are" class="position-relative overflow-hidden py-5 section-bg-theme">
-  <div class="container px-3 px-md-4">
-    <div class="row g-4 g-lg-5 align-items-start">
-      <div class="col-lg-5 order-1 order-lg-1">
-        <div class="mt-5">
-          <h2 class="fw-bold display-4 display-md-3 mb-3 mb-md-4 text-dark theme-text animated-title">
-            Who we
-            <span class="fw-bold text-gradient animated-span">Are</span>
-          </h2>
-          <p class="fs-6 fs-md-5 text-muted mt-3 mb-4 animated-text theme-text lh-base">
-            Jethat Cybersecurity Private Limited is a next-generation cybersecurity and software development 
-            company delivering secure, scalable, and intelligent technology solutions for modern enterprises.
-          </p>
-          <div id="active-box" class="bg-card-theme p-3 p-md-4 p-lg-5  shadow-lg border theme-text who-we-are-active-box">
-            <h4 id="active-title" class="fw-bold mb-2 mb-md-3 theme-text fs-5 fs-md-4">Vision</h4>
-            <p id="active-desc" class="theme-text mb-0 fs-6 fs-md-5 lh-base" style="opacity: 0.9;">
-              A digitally secure world where businesses thrive without compromise.
-            </p>
-          </div>
-          <div class="mt-4 mt-md-5">
-            <a href="about/index.html" class="text-gradient text-decoration-none d-inline-flex align-items-center fs-6 fs-md-5">
-              <i class="bi bi-arrow-right me-2"></i>
-              Learn More About Us
-            </a>
-          </div>
-        </div>
-      </div>
+/* ======================who we are */
 
-      <div class="col-lg-7 order-2 order-lg-2">
-        <div id="who-we-are-sections-container" class="who-we-are-sections">
-          
-          <!-- Section 1: Vision -->
-          <section class="who-we-are-card mb-3 mb-md-4" data-index="0">
-            <div class="position-relative shadow-lg overflow-hidden w-100 who-we-are-image-container ">
-              <img src="assets/images/cyber.jpg" 
-                   class="w-100 h-100 object-fit-cover who-we-are-image" 
-                   alt="Vision" 
-                   loading="lazy">
-              <div class="position-absolute top-0 start-0 w-100 h-100 who-we-are-overlay"></div>
-              <div class="position-absolute bottom-0 start-0 w-100 p-3 p-md-4 p-lg-5 text-white who-we-are-content">
-                <h3 class="fw-bold mb-2 mb-md-3 text-light fs-4 fs-md-3 fs-lg-2">Vision</h3>
-                <p class="mb-0 text-light who-we-are-description fs-6 fs-md-5 lh-base">
-                  A digitally secure world where businesses thrive without compromise.
-                </p>
-              </div>
-            </div>
-          </section>
-
-          <!-- Section 2: Expertise -->
-          <section class="who-we-are-card mb-3 mb-md-4" data-index="1">
-            <div class="position-relative shadow-lg overflow-hidden w-100 who-we-are-image-container ">
-              <img src="assets/images/cyber1.jpg" 
-                   class="w-100 h-100 object-fit-cover who-we-are-image" 
-                   alt="Expertise" 
-                   loading="lazy">
-              <div class="position-absolute top-0 start-0 w-100 h-100 who-we-are-overlay"></div>
-              <div class="position-absolute bottom-0 start-0 w-100 p-3 p-md-4 p-lg-5 text-white who-we-are-content">
-                <h3 class="fw-bold mb-2 mb-md-3 text-light fs-4 fs-md-3 fs-lg-2">Expertise</h3>
-                <p class="mb-0 text-light who-we-are-description fs-6 fs-md-5 lh-base">
-                  Deep expertise in cybersecurity and software development with cutting-edge solutions.
-                </p>
-              </div>
-            </div>
-          </section>
-
-          <!-- Section 3: Innovation -->
-          <section class="who-we-are-card mb-3 mb-md-4" data-index="2">
-            <div class="position-relative shadow-lg overflow-hidden w-100 who-we-are-image-container ">
-              <img src="assets/images/cyber2.jpg" 
-                   class="w-100 h-100 object-fit-cover who-we-are-image" 
-                   alt="Innovation" 
-                   loading="lazy">
-              <div class="position-absolute top-0 start-0 w-100 h-100 who-we-are-overlay"></div>
-              <div class="position-absolute bottom-0 start-0 w-100 p-3 p-md-4 p-lg-5 text-white who-we-are-content">
-                <h3 class="fw-bold mb-2 mb-md-3 text-light fs-4 fs-md-3 fs-lg-2">Innovation</h3>
-                <p class="mb-0 text-light who-we-are-description fs-6 fs-md-5 lh-base">
-                  Continuous innovation to stay ahead of evolving cyber threats and technology trends.
-                </p>
-              </div>
-            </div>
-          </section>
-
-          <!-- Section 4: Security -->
-          <section class="who-we-are-card mb-0" data-index="3">
-            <div class="position-relative shadow-lg overflow-hidden w-100 who-we-are-image-container ">
-              <img src="assets/images/cyber3.jpg" 
-                   class="w-100 h-100 object-fit-cover who-we-are-image" 
-                   alt="Security" 
-                   loading="lazy">
-              <div class="position-absolute top-0 start-0 w-100 h-100 who-we-are-overlay"></div>
-              <div class="position-absolute bottom-0 start-0 w-100 p-3 p-md-4 p-lg-5 text-white who-we-are-content">
-                <h3 class="fw-bold mb-2 mb-md-3 text-light fs-4 fs-md-3 fs-lg-2">Security</h3>
-                <p class="mb-0 text-light who-we-are-description fs-6 fs-md-5 lh-base">
-                  Comprehensive protection across all digital ecosystems and business operations.
-                </p>
-              </div>
-            </div>
-          </section>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<style>
 #who-we-are {
-    min-height: auto;
-    padding: 3rem 0;
+    min-height: 100vh;
+    padding: 0;
+    background: linear-gradient(135deg, #fff5f0 0%, #ffffff 50%, #fef7e6 100%);
     overflow: visible !important;
 }
 
-.who-we-are-active-box {
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 2px solid var(--accent-primary);
+[data-bs-theme="dark"] #who-we-are {
+    background: linear-gradient(135deg, #1a1a1a 0%, #000000 50%, #2a2a2a 100%);
+}
+
+/* Left Panel - Fixed/Sticky */
+.who-we-are-left-panel {
+    position: sticky;
+    top: 8rem;
+    height: fit-content;
+    max-width: 500px;
+    z-index: 10;
+}
+
+.who-we-are-main-title {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+.who-we-are-company-desc {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    opacity: 0.8;
+}
+
+.who-we-are-active-section {
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 140, 0, 0.2);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease;
 }
 
-.who-we-are-active-box:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 15px 35px rgba(220, 20, 60, 0.15);
+[data-bs-theme="dark"] .who-we-are-active-section {
+    background: rgba(42, 42, 42, 0.8);
+    border-color: rgba(255, 140, 0, 0.3);
 }
 
-[data-bs-theme="dark"] .who-we-are-active-box,
-.dark-theme .who-we-are-active-box {
-    background: var(--bg-card) !important;
-    border-color: var(--accent-primary);
+.who-we-are-active-icon {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    background: linear-gradient(135deg, #FF8C00, #FFB300);
 }
 
-[data-bs-theme="light"] .who-we-are-active-box,
-.light-theme .who-we-are-active-box {
-    background: var(--bg-light-card) !important;
-    border-color: var(--accent-primary);
+.who-we-are-active-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.who-we-are-active-desc {
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.who-we-are-progress {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 2rem;
+}
+
+.who-we-are-progress-dot {
+    height: 0.5rem;
+    border-radius: 0.25rem;
+    transition: all 0.5s ease;
+    background: rgba(156, 163, 175, 0.5);
+}
+
+.who-we-are-progress-dot.active {
+    width: 2rem;
+    background: linear-gradient(135deg, #FF8C00, #FFB300);
+}
+
+.who-we-are-progress-dot:not(.active) {
+    width: 0.5rem;
+}
+
+[data-bs-theme="dark"] .who-we-are-progress-dot:not(.active) {
+    background: rgba(75, 85, 99, 0.5);
 }
 
 
@@ -199,8 +163,7 @@
         transform: translateY(0);
     }
 }
-</style>
-<style>
+
 @media (max-width: 1199.98px) {
     .who-we-are-image-container {
         height: 260px;
@@ -439,8 +402,7 @@
         background: white !important;
     }
 }
-</style>
-<style>
+
 
 /* ============================================
    WHO WE ARE ANIMATIONS
@@ -760,4 +722,4 @@
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-</style>
+

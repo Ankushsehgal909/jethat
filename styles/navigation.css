@@ -1,0 +1,136 @@
+
+
+.mobile-nav-link span, .mobile-submenu-link span {
+    color: #000 !important;
+}
+
+.mobile-submenu-link {
+    color: #999 !important;
+}
+
+
+.dropdown-header {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--accent-primary) !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0.75rem 1rem 0.5rem !important;
+    margin-bottom: 0.25rem;
+    border-bottom: 2px solid var(--accent-primary-20);
+    background: none !important;
+}
+
+.tech-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: bold;
+    color: white;
+    margin-right: 0.75rem;
+    transition: all 0.3s ease;
+}
+
+.tech-item:hover .tech-icon {
+    transform: scale(1.2) rotate(10deg);
+}
+
+.react-icon { background: linear-gradient(135deg, #61DAFB, #21D4FD); color: #000; }
+.vue-icon { background: linear-gradient(135deg, #4FC08D, #42B883); }
+.angular-icon { background: linear-gradient(135deg, #dd5c00, #c36200); }
+.nodejs-icon { background: linear-gradient(135deg, #339933, #68CC68); }
+.python-icon { background: linear-gradient(135deg, #3776AB, #4B8BBE); }
+.java-icon { background: linear-gradient(135deg, #ED8B00, #F89500); }
+.tensorflow-icon { background: linear-gradient(135deg, #FF6F00, #FF8F00); }
+.pytorch-icon { background: linear-gradient(135deg, #EE4C2C, #FF6B47); }
+.openai-icon { background: linear-gradient(135deg, #412991, #5B2C87); }
+.aws-icon { background: linear-gradient(135deg, #FF9900, #FFAD33); }
+.azure-icon { background: linear-gradient(135deg, #0078D4, #40E0D0); }
+.gcp-icon { background: linear-gradient(135deg, #4285F4, #34A853); }
+
+.tech-icon::before { content: attr(data-tech); font-size: 9px; font-weight: bold; }
+.react-icon::before { content: "R"; }
+.vue-icon::before { content: "V"; }
+.angular-icon::before { content: "A"; }
+.nodejs-icon::before { content: "N"; }
+.python-icon::before { content: "P"; }
+.java-icon::before { content: "J"; }
+.tensorflow-icon::before { content: "T"; }
+.pytorch-icon::before { content: "PT"; font-size: 7px; }
+.openai-icon::before { content: "AI"; font-size: 7px; }
+.aws-icon::before { content: "AWS"; font-size: 6px; }
+.azure-icon::before { content: "AZ"; font-size: 7px; }
+.gcp-icon::before { content: "GC"; font-size: 7px; }
+
+.tech-category { margin-bottom: 0.5rem; padding: 0 0.5rem; }
+.category-header { font-size: 0.8rem; font-weight: 600; color: var(--text-secondary); padding: 0.25rem 0.5rem 0.15rem; margin-bottom: 0.25rem; display: flex; align-items: center; border-bottom: 1px solid var(--accent-primary-10); }
+.tech-items { padding-left: 0.25rem; }
+.tech-item { padding: 0.4rem 0.75rem !important; margin: 0.1rem 0 !important; border-radius: 0 !important; transition: all 0.3s ease; font-size: 0.85rem; display: flex; align-items: center; border-bottom: none !important; background: transparent !important; position: relative; }
+.tech-item .item-content { position: relative; }
+.tech-item .item-content span { position: relative; display: inline-block; }
+.tech-item .item-content span::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: var(--accent-primary); transition: width 0.3s ease; }
+.tech-item:hover { background: transparent !important; transform: translateX(0); color: var(--accent-primary) !important; }
+.tech-item:hover .item-content span::after { width: 100%; }
+.dropdown-divider { margin: 0.5rem 1rem; border-color: var(--accent-primary-20); }
+
+@media (min-width: 992px) {
+    .dropdown-hover:hover > .dropdown-menu { display: block !important; opacity: 1 !important; visibility: visible !important; }
+}
+
+@keyframes dropdownSlideIn {
+    0% { opacity: 0; transform: translateX(-50%) translateY(-15px) scale(0.9); visibility: visible; }
+    100% { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); visibility: visible; }
+}
+
+@keyframes itemSlideIn {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.dropdown-hover:hover .dropdown-menu { animation: dropdownSlideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+.dropdown-hover:hover .smooth-item { animation: itemSlideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+.smooth-item:nth-child(1) { animation-delay: 0.05s; }
+.smooth-item:nth-child(2) { animation-delay: 0.1s; }
+.smooth-item:nth-child(3) { animation-delay: 0.15s; }
+.smooth-item:nth-child(4) { animation-delay: 0.2s; }
+.smooth-item:nth-child(5) { animation-delay: 0.25s; }
+.smooth-item:nth-child(6) { animation-delay: 0.3s; }
+.smooth-item:nth-child(7) { animation-delay: 0.35s; }
+.smooth-item:nth-child(8) { animation-delay: 0.4s; }
+
+.nav-link-enhanced.active { color: var(--accent-primary) !important; background: transparent !important; }
+.nav-link-enhanced.active::after { width: 80%; }
+
+@media (max-width: 991.98px) {
+    .professional-nav { padding: 0.5rem 0; }
+    .single-column-dropdown { min-width: 100% !important; left: 0 !important; transform: none !important; border-radius: 0 !important; margin-top: 0 !important; }
+    .professional-nav-menu { gap: 0.05rem; }
+    .nav-item-enhanced { margin: 0 0.02rem; }
+}
+
+@media (min-width: 1200px) {
+    .professional-nav-menu { gap: 0.15rem; }
+    .nav-item-enhanced { margin: 0 0.08rem; }
+    .nav-link-enhanced { padding: 0.75rem 0.8rem !important; }
+}
+
+@media (min-width: 992px) {
+    .navbar > .container { display: flex; align-items: center; flex-wrap: nowrap; }
+    .navbar-brand { flex: 0 0 auto; margin-right: auto; }
+    #navbarNav { flex: 0 0 auto; margin-left: auto !important; margin-right: 0 !important; justify-content: flex-end; }
+    #navbarNav .navbar-nav { margin-left: auto !important; margin-right: 0 !important; flex-direction: row; align-items: center; }
+    .professional-nav-menu { flex-direction: row; align-items: center; }
+}
+
+.mobile-submenu-link:nth-child(1) { animation-delay: 0.05s; }
+.mobile-submenu-link:nth-child(2) { animation-delay: 0.1s; }
+.mobile-submenu-link:nth-child(3) { animation-delay: 0.15s; }
+.mobile-submenu-link:nth-child(4) { animation-delay: 0.2s; }
+.mobile-submenu-link:nth-child(5) { animation-delay: 0.25s; }
+.mobile-submenu-link:nth-child(6) { animation-delay: 0.3s; }
+.mobile-submenu-link:nth-child(7) { animation-delay: 0.35s; }
+.mobile-submenu-link:nth-child(8) { animation-delay: 0.4s; }

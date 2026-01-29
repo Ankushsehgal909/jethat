@@ -20,924 +20,2525 @@
     
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/loader.css">
-
-    <!-- scroller style -->
-    <style>
-        /* Scroll Features Enhanced Theme Styles */
-        .scroll-features-section {
-            background: var(--section-bg-dark);
-            min-height: 100vh;
-            position: relative;
-            overflow: hidden;
-        }
-
-        [data-bs-theme="light"] .scroll-features-section {
-            background: var(--section-bg-light);
-        }
-
-        .scroll-container {
-            background: var(--gradient-dark-bg);
-            min-height: 400vh;
-            position: relative;
-        }
-
-        [data-bs-theme="light"] .scroll-container {
-            background: var(--gradient-light-bg);
-        }
-
-        .sticky-section {
-            position: sticky;
-            top: 0;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            padding: 2rem 1rem;
-        }
-
-        .cards-container {
-            position: relative;
-            height: 700px;
-            width: 100%;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .feature-card {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            margin: 0 auto;
-            width: 100%;
-            max-width: 1200px;
-            background: var(--bg-card);
-            border: 1px solid var(--bs-gray-700);
-            border-radius: 5px;
-            box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
-            padding: 2.5rem;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            color: var(--text-primary);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-        }
-
-        [data-bs-theme="light"] .feature-card {
-            background: var(--bg-light-card);
-            border-color: var(--bs-gray-300);
-            box-shadow: 0 1rem 3rem rgba(0,0,0,.1);
-            color: var(--text-light-primary);
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 2rem 4rem rgba(220, 100, 20, 0.2);
-            border-color: var(--accent-primary);
-        }
-
-        [data-bs-theme="light"] .feature-card:hover {
-            box-shadow: 0 2rem 4rem rgba(220, 100, 20, 0.15);
-        }
-
-        .scroll-features-section .icon-wrapper {
-            width: 70px;
-            height: 70px;
-            border-radius: var(--bs-border-radius);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,.2);
-            transition: all 0.3s ease;
-        }
-
-        .scroll-features-section .icon-wrapper:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0.75rem 2rem rgba(0,0,0,.3);
-        }
-
-        .scroll-features-section .icon-blue { 
-            background: linear-gradient(135deg, #0d6efd, #0056b3);
-        }
-        .scroll-features-section .icon-green { 
-            background: linear-gradient(135deg, #198754, #146c43);
-        }
-        .scroll-features-section .icon-yellow { 
-            background: linear-gradient(135deg, #ffc107, #ffca2c);
-        }
-        .scroll-features-section .icon-red { 
-            background: linear-gradient(135deg, #dc3545, #b02a37);
-        }
-        .scroll-features-section .icon-purple { 
-            background: linear-gradient(135deg, #6f42c1, #59359a);
-        }
-
-        .scroll-features-section .bullet-point {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            display: inline-block;
-            margin-right: 1rem;
-            margin-top: 0.5rem;
-            flex-shrink: 0;
-            box-shadow: 0 2px 4px rgba(0,0,0,.2);
-        }
-
-        .scroll-features-section .bullet-blue { background: var(--accent-info); }
-        .scroll-features-section .bullet-green { background: var(--accent-success); }
-        .scroll-features-section .bullet-yellow { background: var(--accent-warning); }
-        .scroll-features-section .bullet-red { background: var(--accent-danger); }
-        .scroll-features-section .bullet-purple { background: var(--accent-secondary); }
-
-        .scroll-features-section .cta-button {
-            background: var(--bg-card);
-            border: 2px solid var(--accent-primary);
-            border-radius: 2rem;
-            padding: 0.75rem 1.5rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            text-decoration: none;
-            color: var(--text-primary);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 0.25rem 0.75rem var(--accent-primary-20);
-            font-weight: 600;
-            position: relative;
-            overflow: hidden;
-        }
-
-        [data-bs-theme="light"] .scroll-features-section .cta-button {
-            background: var(--bg-light-card);
-            color: var(--text-light-primary);
-        }
-
-        .scroll-features-section .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: var(--gradient-primary);
-            transition: all 0.4s ease;
-            z-index: -1;
-        }
-
-        .scroll-features-section .cta-button:hover::before {
-            left: 0;
-        }
-
-        .scroll-features-section .cta-button:hover {
-            transform: translateY(-2px) scale(1.05);
-            box-shadow: 0 0.75rem 1.5rem var(--accent-primary-30);
-            color: white !important;
-            border-color: var(--accent-gold);
-        }
-
-        .scroll-features-section .cta-icon {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            transition: all 0.3s ease;
-        }
-
-        .scroll-features-section .feature-image {
-            border-radius: var(--bs-border-radius);
-            box-shadow: 0 0.75rem 1.5rem rgba(0,0,0,.15);
-            transition: all 0.3s ease;
-        }
-
-        .scroll-features-section .feature-image:hover {
-            transform: scale(1.02);
-            box-shadow: 0 1rem 2rem rgba(220, 100, 20, 0.2);
-        }
-
-        .scroll-features-section h2 {
-            color: var(--text-primary);
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-weight: 800;
-        }
-
-        [data-bs-theme="light"] .scroll-features-section h2 {
-            color: var(--text-light-primary);
-        }
-
-        .scroll-features-section h3 {
-            color: var(--text-primary);
-            font-weight: 700;
-        }
-
-        [data-bs-theme="light"] .scroll-features-section h3 {
-            color: var(--text-light-primary);
-        }
-
-        .scroll-features-section .text-muted {
-            color: var(--text-muted) !important;
-            font-weight: 500;
-        }
-
-        [data-bs-theme="light"] .scroll-features-section .text-muted {
-            color: var(--text-light-muted) !important;
-        }
-
-        /* Tablet Responsiveness */
-        @media (max-width: 1024px) {
-            .scroll-features-section .feature-card {
-                max-width: 95%;
-                padding: 2rem;
-            }
-            
-            .scroll-features-section h2 {
-                font-size: 2.5rem;
-            }
-            
-            .scroll-features-section .icon-wrapper {
-                width: 65px;
-                height: 65px;
-            }
-        }
-
-        /* Enhanced Mobile Responsiveness */
-        @media (max-width: 768px) {
-            .sticky-section {
-                padding: 1rem 0.5rem;
-            }
-            
-            .scroll-features-section .feature-card {
-                padding: 1.5rem;
-                margin: 0 0.5rem;
-                max-width: calc(100% - 1rem);
-                border-radius: 1rem;
-            }
-            
-            .scroll-features-section .cards-container {
-                height: 400px;
-                min-height: 400px;
-            }
-            
-            .scroll-container {
-                min-height: 250vh;
-            }
-
-            .scroll-features-section .icon-wrapper {
-                width: 60px;
-                height: 60px;
-                margin-bottom: 1rem;
-            }
-
-            .scroll-features-section h2 {
-                font-size: 2rem;
-                line-height: 1.2;
-                margin-bottom: 2rem;
-            }
-
-            .scroll-features-section h3 {
-                font-size: 1.5rem;
-                margin-bottom: 1rem;
-            }
-            
-            .scroll-features-section .cta-button {
-                padding: 0.6rem 1.2rem;
-                font-size: 0.9rem;
-            }
-            
-            .scroll-features-section .cta-icon {
-                width: 32px;
-                height: 32px;
-            }
-            
-            .scroll-features-section .bullet-point {
-                width: 6px;
-                height: 6px;
-                margin-right: 0.75rem;
-            }
-            
-            .scroll-features-section .feature-image {
-                margin-top: 1rem;
-                max-width: 200px;
-                max-height: 150px;
-                width: 100%;
-                height: auto;
-                object-fit: cover;
-            }
-            
-            /* Ensure text stays on left, image on right */
-            .scroll-features-section .row {
-                align-items: center;
-            }
-            
-            .scroll-features-section .col-lg-6:first-child {
-                order: 1;
-            }
-            
-            .scroll-features-section .col-lg-6:last-child {
-                order: 2;
-                text-align: center;
-            }
-        }
-
-        /* Small Mobile Devices */
-        @media (max-width: 480px) {
-            .sticky-section {
-                padding: 0.5rem;
-            }
-            
-            .scroll-features-section .feature-card {
-                padding: 1rem;
-                margin: 0 0.25rem;
-                max-width: calc(100% - 0.5rem);
-            }
-            
-            .scroll-features-section .cards-container {
-                height: 350px;
-                min-height: 350px;
-            }
-            
-            .scroll-features-section h2 {
-                font-size: 1.75rem;
-            }
-            
-            .scroll-features-section h3 {
-                font-size: 1.25rem;
-            }
-            
-            .scroll-features-section .icon-wrapper {
-                width: 50px;
-                height: 50px;
-            }
-            
-            .scroll-features-section .cta-button {
-                padding: 0.5rem 1rem;
-                font-size: 0.85rem;
-                gap: 0.5rem;
-            }
-            
-            .scroll-features-section .cta-icon {
-                width: 28px;
-                height: 28px;
-            }
-            
-            .scroll-features-section .feature-image {
-                margin-top: 0.5rem;
-                max-width: 150px;
-                max-height: 120px;
-                width: 100%;
-                height: auto;
-                object-fit: cover;
-            }
-            
-            /* Stack vertically on very small screens if needed */
-            .scroll-features-section .row {
-                flex-direction: row;
-            }
-            
-            .scroll-features-section .col-lg-6 {
-                flex: 0 0 50%;
-                max-width: 50%;
-            }
-            
-            .scroll-features-section .col-lg-6:first-child {
-                padding-right: 0.5rem;
-            }
-            
-            .scroll-features-section .col-lg-6:last-child {
-                padding-left: 0.5rem;
-            }
-        }
-
-        /* Large Screens */
-        @media (min-width: 1400px) {
-            .scroll-features-section .feature-card {
-                max-width: 1300px;
-                padding: 3rem;
-            }
-            
-            .scroll-features-section .icon-wrapper {
-                width: 80px;
-                height: 80px;
-            }
-            
-            .scroll-features-section h2 {
-                font-size: 3.5rem;
-            }
-            
-            .scroll-features-section h3 {
-                font-size: 2rem;
-            }
-        }
-
-        /* Performance Optimizations */
-        .scroll-features-section * {
-            will-change: transform, opacity;
-            transform: translateZ(0);
-        }
-
-        /* Prevent horizontal overflow */
-        .scroll-features-section {
-            overflow-x: hidden;
-        }
-        
-        .scroll-features-section .container-fluid {
-            padding-left: 1rem;
-            padding-right: 1rem;
-        }
-        
-        @media (max-width: 768px) {
-            .scroll-features-section .container-fluid {
-                padding-left: 0.5rem;
-                padding-right: 0.5rem;
-            }
-        }
-    </style>
-    <!-- scroller style -->
-    <script src="scripts/universal-loader.js"></script>
+    <link rel="stylesheet" href="styles/cyber.css">
+    <link rel="stylesheet" href="styles/who-we-are.css">
+    <link rel="stylesheet" href="styles/service-section.css">
+    <link rel="stylesheet" href="styles/scroll-feature.css">
+    <link rel="stylesheet" href="styles/advanced-protection.css">
+    <link rel="stylesheet" href="styles/testimonial-section.css">
+    <link rel="stylesheet" href="styles/marquee.css">
+    <link rel="stylesheet" href="styles/register-section.css">
+    <link rel="stylesheet" href="styles/career-section.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/navigation.css">
 </head>
 
 <body >
     
-    <div id="navigation-component"></div>
-    <div id="right-panel-component"></div>
+<!-- Navigation -->
+<section>
+    <div class="offcanvas offcanvas-end mobile-nav-canvas" id="mobileMenu" tabindex="-1">
+        <div class="offcanvas-header mobile-nav-header">
+            <div class="d-flex align-items-center gap-2">
+                <img src="assets/images/logo.png" alt="JetHat Logo" style="height: 3.5rem;">
+                <div>
+                    <h5 class="mb-0 fw-bold" style="color: black; " >JetHat</h5>
+                    <small >Cyber Security</small>
+                </div>
+            </div>
+            <button type="button" class="btn-close mobile-nav-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
 
-    <main>
-        <div id="hero-section"></div>
-        <div id="cyber-security-component"></div>
-        <div id="who-we-are-component"></div>
-        
-        <!-- scroller-contaier -->
-        <div class="scroll-container" data-container>
-            <div class="sticky-section" >
-                <div class="container py-5 "style="margin-top: 5%;">
-                    <!-- Header -->
-                    <div class="mb-5 text-start">
-                        <h2 class="fw-bold display-3 mb-4 theme-text">
-                            <span>Scroll</span>
-                            <span class="fw-bold text-gradient">Features</span>
-                        </h2>
-                        <p>
-                            Jethat Cybersecurity Private Limited is a next-generation cybersecurity and software development company delivering secure, scalable, and intelligent technology solutions for modern enterprises.
+        <div class="offcanvas-body mobile-nav-body">
+            <nav class="mobile-nav" id="mobileAccordion">
+                <div class="mobile-nav-item">
+                    <a href="index.html" class="mobile-nav-link">
+                        <span>Home</span>
+                    </a>
+                </div>
 
-
-                        </p>
+                <div class="mobile-nav-group">
+                    <button class="mobile-nav-group-toggle" data-bs-toggle="collapse" data-bs-target="#mobileCompany" aria-expanded="false" data-bs-parent="#mobileAccordion">
+                        <div class="mobile-nav-link">
+                            <span>Company</span>
+                        </div>
+                        <i class="bi bi-chevron-down mobile-arrow"></i>
+                    </button>
+                    <div class="collapse mobile-nav-collapse" id="mobileCompany" data-bs-parent="#mobileAccordion">
+                        <div class="mobile-nav-submenu">
+                            <a href="about/index.html" class="mobile-submenu-link"><i class="bi bi-arrow-right"></i><span>About Us</span></a>
+                            <a href="about/team.html" class="mobile-submenu-link"><i class="bi bi-arrow-right"></i><span>Our Team</span></a>
+                            <a href="about/culture.html" class="mobile-submenu-link"><i class="bi bi-arrow-right"></i><span>Company Culture</span></a>
+                            <a href="about/success-stories.html" class="mobile-submenu-link"><i class="bi bi-arrow-right"></i><span>Success Stories</span></a>
+                            <a href="about/projects-showcase.html" class="mobile-submenu-link"><i class="bi bi-arrow-right"></i><span>Projects Showcase</span></a>
+                            <a href="about/development-pipeline.html" class="mobile-submenu-link"><i class="bi bi-arrow-right"></i><span>What We're Building</span></a>
+                            <a href="careers.html" class="mobile-submenu-link"><i class="bi bi-arrow-right"></i><span>Careers</span></a>
+                        </div>
                     </div>
+                </div>
 
-                    <!-- Cards container -->
-                    <div class="cards-container">
-                        <!-- Card 1: Advanced AI Technology -->
-                        <div class="feature-card" data-index="0">
-                            <div class="row align-items-center">
-                                <!-- Left side - Content -->
-                                <div class="col-lg-6">
-                                    <!-- Icon -->
-                                    <div class="icon-wrapper icon-blue text-white">
-                                        <i class="bi bi-robot fs-4"></i>
-                                    </div>
-
-                                    <h3 class="h2 fw-bold mb-4">
-                                        Advanced AI Technology
-                                    </h3>
-
-                                    <!-- Bullets -->
-                                    <ul class="list-unstyled mb-4">
-                                        <li class="d-flex align-items-start mb-3">
-                                            <span class="bullet-point bullet-blue"></span>
-                                            <span class="text-muted">Powered by cutting-edge natural language processing</span>
-                                        </li>
-                                        <li class="d-flex align-items-start mb-3">
-                                            <span class="bullet-point bullet-blue"></span>
-                                            <span class="text-muted">Machine learning algorithms that improve over time</span>
-                                        </li>
-                                        <li class="d-flex align-items-start mb-3">
-                                            <span class="bullet-point bullet-blue"></span>
-                                            <span class="text-muted">Context-aware responses for natural conversations</span>
-                                        </li>
-                                    </ul>
-
-                                    <!-- CTA -->
-                                    <div>
-                                        <a href="about/index.html" class="text-gradient text-decoration-none d-inline-flex align-items-center fs-6 fs-md-5">
-                                            <i class="bi bi-arrow-right me-2"></i>
-                                                Learn More
-                                        </a>
-                        
-                                    </div>
-                                </div>
-
-                                <!-- Right side - Image -->
-                                <div class="col-lg-6">
-                                    <img src="assets/images/cyber.jpg" alt="Advanced AI Technology"
-                                        class="img-fluid feature-image" />
-                                </div>
-                            </div>
+                <div class="mobile-nav-group">
+                    <button class="mobile-nav-group-toggle" data-bs-toggle="collapse" data-bs-target="#mobileProducts" aria-expanded="false" data-bs-parent="#mobileAccordion">
+                        <div class="mobile-nav-link">
+                            <span>Products</span>
                         </div>
-
-                        <!-- Card 2: Multi-language Support -->
-                        <div class="feature-card" data-index="1">
-                            <div class="row align-items-center">
-                                <!-- Left side - Content -->
-                                <div class="col-lg-6">
-                                    <!-- Icon -->
-                                    <div class="icon-wrapper icon-green text-white">
-                                        <i class="bi bi-globe fs-4"></i>
-                                    </div>
-
-                                    <h3 class="h2 fw-bold mb-4">
-                                        Multi-Language Support
-                                    </h3>
-
-                                    <!-- Bullets -->
-                                    <ul class="list-unstyled mb-4">
-                                        <li class="d-flex align-items-start mb-3">
-                                            <span class="bullet-point bullet-green"></span>
-                                            <span class="text-muted">Build chatbots that communicate in multiple languages</span>
-                                        </li>
-                                        <li class="d-flex align-items-start mb-3">
-                                            <span class="bullet-point bullet-green"></span>
-                                            <span class="text-muted">Automatic language detection and translation</span>
-                                        </li>
-                                        <li class="d-flex align-items-start mb-3">
-                                            <span class="bullet-point bullet-green"></span>
-                                            <span class="text-muted">Seamless cross-language conversations</span>
-                                        </li>
-                                    </ul>
-
-                                    <!-- CTA -->
-                                    <!-- CTA -->
-                                    <div>
-                                        <a href="about/index.html" class="text-gradient text-decoration-none d-inline-flex align-items-center fs-6 fs-md-5">
-                                            <i class="bi bi-arrow-right me-2"></i>
-                                                Learn More
-                                        </a>
-                        
-                                    </div>
-                                </div>
-
-                                <!-- Right side - Image -->
-                                <div class="col-lg-6">
-                                    <img src="assets/images/innovation1.jpg" alt="Multi-language Support"
-                                        class="img-fluid feature-image" />
-                                </div>
-                            </div>
+                        <i class="bi bi-chevron-down mobile-arrow"></i>
+                    </button>
+                    <div class="collapse mobile-nav-collapse" id="mobileProducts" data-bs-parent="#mobileAccordion">
+                        <div class="mobile-nav-submenu">
+                            <a href="products/magai.html" class="mobile-submenu-link"><i class="bi bi-magic"></i><span>MagAI</span></a>
+                            <a href="products/virtual-naani.html" class="mobile-submenu-link"><i class="bi bi-person-heart"></i><span>Virtual Naani</span></a>
+                            <a href="products/ai-lms.html" class="mobile-submenu-link"><i class="bi bi-book"></i><span>AI Multilingual LMS</span></a>
+                            <a href="products/e-library.html" class="mobile-submenu-link"><i class="bi bi-journal-bookmark"></i><span>E-Library</span></a>
+                            <a href="products/anukaran-ai.html" class="mobile-submenu-link"><i class="bi bi-cpu"></i><span>Anukaran AI</span></a>
+                            <a href="products/sambhasini-ai.html" class="mobile-submenu-link"><i class="bi bi-mic"></i><span>Sambhasini AI</span></a>
+                            <a href="products/multi-dictionary.html" class="mobile-submenu-link"><i class="bi bi-translate"></i><span>Multilingual Dictionary</span></a>
+                            <a href="products/collaborative-digitalisation.html" class="mobile-submenu-link"><i class="bi bi-file-earmark-text"></i><span>Collaborative Digitalisation</span></a>
+                            <a href="products/virtual-classroom-solution.html" class="mobile-submenu-link"><i class="bi bi-camera-video"></i><span>Virtual Classroom Solution</span></a>
                         </div>
-                        <!-- Card 3: Lightning Fast Performance -->
-                        <div class="feature-card" data-index="2">
-                            <div class="row align-items-center">
-                                <!-- Left side - Content -->
-                                <div class="col-lg-6">
-                                    <!-- Icon -->
-                                    <div class="icon-wrapper icon-yellow text-white">
-                                        <i class="bi bi-lightning-fill fs-4"></i>
-                                    </div>
+                    </div>
+                </div>
 
-                                    <h3 class="h2 fw-bold mb-4">
-                                        Lightning-Fast Performance
-                                    </h3>
-
-                                    <!-- Bullets -->
-                                    <ul class="list-unstyled mb-4">
-                                        <li class="d-flex align-items-start mb-3">
-                                            <span class="bullet-point bullet-yellow"></span>
-                                            <span class="text-muted">Optimized for instant response times</span>
-                                        </li>
-                                        <li class="d-flex align-items-start mb-3">
-                                            <span class="bullet-point bullet-yellow"></span>
-                                            <span class="text-muted">Handle thousands of concurrent conversations</span>
-                                        </li>
-                                        <li class="d-flex align-items-start mb-3">
-                                            <span class="bullet-point bullet-yellow"></span>
-                                            <span class="text-muted">Low-latency infrastructure worldwide</span>
-                                        </li>
-                                    </ul>
-
-                                    <!-- CTA -->
-                                    <!-- CTA -->
-                                    <div>
-                                        <a href="about/index.html" class="text-gradient text-decoration-none d-inline-flex align-items-center fs-6 fs-md-5">
-                                            <i class="bi bi-arrow-right me-2"></i>
-                                                Learn More
-                                        </a>
-                        
-                                    </div>
-                                </div>
-
-                                <!-- Right side - Image -->
-                                <div class="col-lg-6">
-                                    <img src="assets/images/cyber3.jpg" alt="Lightning Fast Performance"
-                                        class="img-fluid feature-image" />
-                                </div>
-                            </div>
+                <div class="mobile-nav-group">
+                    <button class="mobile-nav-group-toggle" data-bs-toggle="collapse" data-bs-target="#mobileServices" aria-expanded="false" data-bs-parent="#mobileAccordion">
+                        <div class="mobile-nav-link">
+                            <span>Services</span>
                         </div>
-
-                        <!-- Card 4: Enterprise Security -->
-                        <div class="feature-card" data-index="3">
-                            <div class="row align-items-center">
-                                <!-- Left side - Content -->
-                                <div class="col-lg-6">
-                                    <!-- Icon -->
-                                    <div class="icon-wrapper icon-red text-white">
-                                        <i class="bi bi-shield-fill-check fs-4"></i>
-                                    </div>
-
-                                    <h3 class="h2 fw-bold mb-4">
-                                        Enterprise-Grade Security
-                                    </h3>
-
-                                    <!-- Bullets -->
-                                    <ul class="list-unstyled mb-4">
-                                        <li class="d-flex align-items-start mb-3">
-                                            <span class="bullet-point bullet-red"></span>
-                                            <span class="text-muted">End-to-end encryption for all conversations</span>
-                                        </li>
-                                        <li class="d-flex align-items-start mb-3">
-                                            <span class="bullet-point bullet-red"></span>
-                                            <span class="text-muted">GDPR and SOC 2 compliant infrastructure</span>
-                                        </li>
-                                        <li class="d-flex align-items-start mb-3">
-                                            <span class="bullet-point bullet-red"></span>
-                                            <span class="text-muted">Role-based access control and audit logs</span>
-                                        </li>
-                                    </ul>
-
-                                <!-- CTA -->
-                                    <div>
-                                        <a href="about/index.html" class="text-gradient text-decoration-none d-inline-flex align-items-center fs-6 fs-md-5">
-                                            <i class="bi bi-arrow-right me-2"></i>
-                                                Learn More
-                                        </a>
-                        
-                                    </div>
-                                </div>
-
-                                <!-- Right side - Image -->
-                                <div class="col-lg-6">
-                                    <img src="assets/images/cyber1.jpg" alt="Enterprise Security"
-                                        class="img-fluid feature-image" />
-                                </div>
-                            </div>
+                        <i class="bi bi-chevron-down mobile-arrow"></i>
+                    </button>
+                    <div class="collapse mobile-nav-collapse" id="mobileServices" data-bs-parent="#mobileAccordion">
+                        <div class="mobile-nav-submenu">
+                            <a href="services/cybersecurity.html" class="mobile-submenu-link"><i class="bi bi-shield-check"></i><span>Cybersecurity</span></a>
+                            <a href="services/ai-ml.html" class="mobile-submenu-link"><i class="bi bi-robot"></i><span>AI/ML Development</span></a>
+                            <a href="services/web-development.html" class="mobile-submenu-link"><i class="bi bi-globe"></i><span>Web Development</span></a>
+                            <a href="services/mobile-development.html" class="mobile-submenu-link"><i class="bi bi-phone"></i><span>Mobile Development</span></a>
+                            <a href="services/cloud-services.html" class="mobile-submenu-link"><i class="bi bi-cloud"></i><span>Cloud Services</span></a>
+                            <a href="services/ecommerce-services.html" class="mobile-submenu-link"><i class="bi bi-cart"></i><span>Ecommerce Services</span></a>
+                            <a href="services/ai-research-development.html" class="mobile-submenu-link"><i class="bi bi-cpu"></i><span>R&D (AI, ML, DL)</span></a>
                         </div>
+                    </div>
+                </div>
 
-                        <!-- Card 5: Analytics & Insights -->
-                        <div class="feature-card" data-index="4">
-                            <div class="row align-items-center">
-                                <!-- Left side - Content -->
-                                <div class="col-lg-6">
-                                    <!-- Icon -->
-                                    <div class="icon-wrapper icon-purple text-white">
-                                        <i class="bi bi-graph-up fs-4"></i>
-                                    </div>
-
-                                    <h3 class="h2 fw-bold mb-4">
-                                        Analytics & Insights
-                                    </h3>
-
-                                    <!-- Bullets -->
-                                    <ul class="list-unstyled mb-4">
-                                        <li class="d-flex align-items-start mb-3">
-                                            <span class="bullet-point bullet-purple"></span>
-                                            <span class="text-muted">Real-time conversation analytics dashboard</span>
-                                        </li>
-                                        <li class="d-flex align-items-start mb-3">
-                                            <span class="bullet-point bullet-purple"></span>
-                                            <span class="text-muted">Track user engagement and satisfaction metrics</span>
-                                        </li>
-                                        <li class="d-flex align-items-start mb-3">
-                                            <span class="bullet-point bullet-purple"></span>
-                                            <span class="text-muted">AI-powered insights to improve performance</span>
-                                        </li>
-                                    </ul>
-
-                                    <!-- CTA -->
-                                    <!-- CTA -->
-                                    <div>
-                                        <a href="about/index.html" class="text-gradient text-decoration-none d-inline-flex align-items-center fs-6 fs-md-5">
-                                            <i class="bi bi-arrow-right me-2"></i>
-                                                Learn More
-                                        </a>
-                        
-                                    </div>
-                                </div>
-
-                                <!-- Right side - Image -->
-                                <div class="col-lg-6">
-                                    <img src="assets/images/cyber2.jpg" alt="Analytics & Insights"
-                                        class="img-fluid feature-image" />
-                                </div>
-                            </div>
+                <div class="mobile-nav-group">
+                    <button class="mobile-nav-group-toggle" data-bs-toggle="collapse" data-bs-target="#mobileTechnologies" aria-expanded="false" data-bs-parent="#mobileAccordion">
+                        <div class="mobile-nav-link">
+                            <span>Technologies</span>
                         </div>
+                        <i class="bi bi-chevron-down mobile-arrow"></i>
+                    </button>
+                    <div class="collapse mobile-nav-collapse" id="mobileTechnologies" data-bs-parent="#mobileAccordion">
+                        <div class="mobile-nav-submenu">
+                            <a href="technologies/core.html" class="mobile-submenu-link"><i class="bi bi-cpu"></i><span>Core Technology</span></a>
+                            <a href="technologies/case-study.html" class="mobile-submenu-link"><i class="bi bi-file-earmark-text"></i><span>Case Studies</span></a>
+                            <a href="technologies/innovation.html" class="mobile-submenu-link"><i class="bi bi-rocket"></i><span>Innovation Lab</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile-nav-group">
+                    <a href="careers.html" class="mobile-nav-link">
+                        <span>Careers</span>
+                    </a>
+                </div>
+                <div class="mobile-nav-group">
+                <a href="contact.html" class="mobile-nav-link">
+                        <span>Contact</span>
+                    </a>
+                </div>
+
+            </nav>
+
+            <div class="mobile-nav-cta">
+                <a href="contact.html" class="btn btn-gradient w-100 py-3">
+                    <i class="bi bi-chat-dots-fill me-2"></i>
+                    Get a Quote
+                </a>
+            </div>
+
+            <div class="mobile-nav-social">
+                <a href="https://facebook.com/jethat" class="social-link" target="_blank" rel="noopener noreferrer"><i class="bi bi-facebook"></i></a>
+                <a href="https://twitter.com/jethat" class="social-link" target="_blank" rel="noopener noreferrer"><i class="bi bi-twitter-x"></i></a>
+                <a href="https://linkedin.com/company/jethat" class="social-link" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i></a>
+                <a href="https://instagram.com/jethat" class="social-link" target="_blank" rel="noopener noreferrer"><i class="bi bi-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg fixed-top py-3  navbar-theme">
+        <div class="container d-flex align-items-center">
+            <a class="d-flex navbar-brand me-auto align-items-center" href="index.html">
+                <img src="assets/images/logo.png" alt="JetHat Logo" style="height: 3rem; margin-right: 6px;">
+                <div class="d-flex flex-column" style="line-height: 1;">
+                    <span class="fw-bold" style="font-size: 1.5rem;">JetHat</span>
+                    <small style="color: var(--text-secondary) !important; font-size: 0.75rem;">Cyber Security</small>
+                </div>
+            </a>
+
+            <button class="navbar-toggler d-lg-none border-0 order-3 mobile-toggle ms-auto" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+
+            <div class="collapse navbar-collapse order-lg-4" id="navbarNav">
+                <ul class="navbar-nav ms-auto professional-nav-menu">
+                    <li class="nav-item nav-item-enhanced">
+                        <a class="nav-link fw-medium font-poppins nav-link-enhanced" href="index.html">
+                            <span class="nav-text">Home</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item dropdown dropdown-hover nav-item-enhanced">
+                        <a class="nav-link fw-medium font-poppins d-flex align-items-center gap-1 nav-link-enhanced" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="nav-text">Company</span>
+                            <i class="bi bi-chevron-down small dropdown-arrow"></i>
+                        </a>
+                        <ul class="dropdown-menu single-column-dropdown  dropdown-menu-theme    shadow-lg dropdown-animation ">
+                            <li><a href="about/index.html" class="dropdown-item smooth-item">
+                                <div class="item-content">
+                                    <div class="item-text">
+                                        <div class="item-title" style="color: #000;">About Us</div>
+                                        <div class="item-subtitle" style="color: #999;">Learn more about JetHat</div>
+                                    </div>
+                                </div>
+                            </a></li>
+                            <li><a href="about/team.html" class="dropdown-item smooth-item">
+                                <div class="item-content">
+                                    <div class="item-text">
+                                        <div class="item-title" style="color: #000;">Our Team</div>
+                                        <div class="item-subtitle" style="color: #999;">Meet our experts</div>
+                                    </div>
+                                </div>
+                            </a></li>
+                            <li><a href="about/culture.html" class="dropdown-item smooth-item">
+                                <div class="item-content">
+                                    <div class="item-text">
+                                        <div class="item-title" style="color: #000;">Company Culture</div>
+                                        <div class="item-subtitle" style="color: #999;">Our values and environment</div>
+                                    </div>
+                                </div>
+                            </a></li>
+                            <li><a href="about/success-stories.html" class="dropdown-item smooth-item">
+                                <div class="item-content">
+                                    <div class="item-text">
+                                        <div class="item-title" style="color: #000;">Success Stories</div>
+                                        <div class="item-subtitle" style="color: #999;">Case studies & achievements</div>
+                                    </div>
+                                </div>
+                            </a></li>
+                            <li><a href="about/projects-showcase.html" class="dropdown-item smooth-item">
+                                <div class="item-content">
+                                    <div class="item-text">
+                                        <div class="item-title" style="color: #000;">Projects Showcase</div>
+                                        <div class="item-subtitle" style="color: #999;">Our project portfolio</div>
+                                    </div>
+                                </div>
+                            </a></li>
+                            <li><a href="about/development-pipeline.html" class="dropdown-item smooth-item">
+                                <div class="item-content">
+                                    <div class="item-text">
+                                        <div class="item-title" style="color: #000;">What We're Building</div>
+                                        <div class="item-subtitle" style="color: #999;">Development pipeline</div>
+                                    </div>
+                                </div>
+                            </a></li>
+                            <li><a href="careers.html" class="dropdown-item smooth-item">
+                                <div class="item-content">
+                                    <div class="item-text">
+                                        <div class="item-title" style="color: #000;">Careers</div>
+                                        <div class="item-subtitle" style="color: #999;">Join our team</div>
+                                    </div>
+                                </div>
+                            </a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown dropdown-hover nav-item-enhanced">
+                        <a class="nav-link fw-medium font-poppins d-flex align-items-center gap-1 nav-link-enhanced" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="nav-text">Products</span>
+                            <i class="bi bi-chevron-down small dropdown-arrow"></i>
+                        </a>
+                        <ul class="dropdown-menu single-column-dropdown border-bottom border-2 border-primary shadow-lg dropdown-animation ">
+                            <li><a href="products/magai.html" class="dropdown-item smooth-item">
+                                <div class="item-content">
+                                    <div class="item-text">
+                                        <div class="item-title" style="color: #000;">MagAI</div>
+                                        <div class="item-subtitle" style="color: #999;">AI-powered content management</div>
+                                    </div>
+                                </div>
+                            </a></li>
+                            <li><a href="products/virtual-naani.html" class="dropdown-item smooth-item">
+                                <div class="item-content">
+                                    <div class="item-text">
+                                        <div class="item-title" style="color: #000;">Virtual Naani</div>
+                                        <div class="item-subtitle" style="color: #999;">AI grandmother for elderly care</div>
+                                    </div>
+                                </div>
+                            </a></li>
+                            <li><a href="products/ai-lms.html" class="dropdown-item smooth-item">
+                                <div class="item-content">
+                                    <div class="item-text">
+                                        <div class="item-title" style="color: #000;">AI Multilingual LMS</div>
+                                        <div class="item-subtitle" style="color: #999;">Smart learning management</div>
+                                    </div>
+                                </div>
+                            </a></li>
+                            <li><a href="products/e-library.html" class="dropdown-item smooth-item">
+                                <div class="item-content">
+                                    <div class="item-text">
+                                        <div class="item-title" style="color: #000;">E-Library</div>
+                                        <div class="item-subtitle" style="color: #999;">Digital library platform</div>
+                                    </div>
+                                </div>
+                            </a></li>
+                            <li><a href="products/anukaran-ai.html" class="dropdown-item smooth-item">
+                                <div class="item-content">
+                                    <div class="item-text">
+                                        <div class="item-title" style="color: #000;">Anukaran AI</div>
+                                        <div class="item-subtitle" style="color: #999;">AI model replication system</div>
+                                    </div>
+                                </div>
+                            </a></li>
+                            <li><a href="products/sambhasini-ai.html" class="dropdown-item smooth-item">
+                                <div class="item-content">
+                                    <div class="item-text">
+                                        <div class="item-title" style="color: #000;">Sambhasini AI</div>
+                                        <div class="item-subtitle" style="color: #999;">Multilingual voice AI</div>
+                                    </div>
+                                </div>
+                            </a></li>
+                            <li><a href="products/multi-dictionary.html" class="dropdown-item smooth-item">
+                                <div class="item-content">
+                                    <div class="item-text">
+                                        <div class="item-title" style="color: #000;">Multilingual Dictionary</div>
+                                        <div class="item-subtitle" style="color: #999;">Language translation tool</div>
+                                    </div>
+                                </div>
+                            </a></li>
+                            <li><a href="products/collaborative-digitalisation.html" class="dropdown-item smooth-item">
+                                <div class="item-content">
+                                    <div class="item-text">
+                                        <div class="item-title" style="color: #000;">Collaborative Digitalisation</div>
+                                        <div class="item-subtitle" style="color: #999;">Document workflow platform</div>
+                                    </div>
+                                </div>
+                            </a></li>
+                            <li><a href="products/virtual-classroom-solution.html" class="dropdown-item smooth-item">
+                                <div class="item-content">
+                                    <div class="item-text">
+                                        <div class="item-title" style="color: #000;">Virtual Classroom Solution</div>
+                                        <div class="item-subtitle" style="color: #999;">Online education platform</div>
+                                    </div>
+                                </div>
+                            </a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown dropdown-hover nav-item-enhanced">
+                        <a class="nav-link fw-medium font-poppins d-flex align-items-center gap-1 nav-link-enhanced" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="nav-text">Services</span>
+                            <i class="bi bi-chevron-down small dropdown-arrow"></i>
+                        </a>
+                        <ul class="dropdown-menu single-column-dropdown  border-bottom border-2 border-primary shadow-lg dropdown-animation">
+                            <li class="dropdown-header">
+                                <i class="bi bi-cpu me-2"></i>Service Overview
+                            </li>
+                            <li><a href="services/cybersecurity.html" class="dropdown-item smooth-item">
+                                <div class="item-content">
+                                    <div class="item-text">
+                                        <div class="item-title" style="color: #000;">Cybersecurity</div>
+                                        <div class="item-subtitle" style="color: #999;">Comprehensive security solutions</div>
+                                    </div>
+                                </div>
+                            </a></li>
+                            <li><a href="services/ai-ml.html" class="dropdown-item smooth-item">
+                                <div class="item-content">
+                                    <div class="item-text">
+                                        <div class="item-title" style="color: #000;">AI/ML Development</div>
+                                        <div class="item-subtitle" style="color: #999;">Custom AI and ML solutions</div>
+                                    </div>
+                                </div>
+                            </a></li>
+                            <li><a href="services/web-development.html" class="dropdown-item smooth-item">
+                                <div class="item-content">
+                                    <div class="item-text">
+                                        <div class="item-title" style="color: #000;">Web Development</div>
+                                        <div class="item-subtitle" style="color: #999;">Modern web applications</div>
+                                    </div>
+                                </div>
+                            </a></li>
+                            <li><a href="services/mobile-development.html" class="dropdown-item smooth-item">
+                                <div class="item-content">
+                                    <div class="item-text">
+                                        <div class="item-title" style="color: #000;">Mobile Development</div>
+                                        <div class="item-subtitle" style="color: #999;">iOS and Android apps</div>
+                                    </div>
+                                </div>
+                            </a></li>
+                            <li><a href="services/cloud-services.html" class="dropdown-item smooth-item">
+                                <div class="item-content">
+                                    <div class="item-text">
+                                        <div class="item-title" style="color: #000;">Cloud Services</div>
+                                        <div class="item-subtitle" style="color: #999;">Scalable cloud infrastructure</div>
+                                    </div>
+                                </div>
+                            </a></li>
+                            <li><a href="services/ecommerce-services.html" class="dropdown-item smooth-item">
+                                <div class="item-content">
+                                    <div class="item-text">
+                                        <div class="item-title" style="color: #000;">Ecommerce Services</div>
+                                        <div class="item-subtitle" style="color: #999;">Online store solutions</div>
+                                    </div>
+                                </div>
+                            </a></li>
+                            <li><a href="services/ai-research-development.html" class="dropdown-item smooth-item">
+                                <div class="item-content">
+                                    <div class="item-text">
+                                        <div class="item-title" style="color: #000;">R&D (AI, ML, DL)</div>
+                                        <div class="item-subtitle" style="color: #999;">AI research & development</div>
+                                    </div>
+                                </div>
+                            </a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown dropdown-hover nav-item-enhanced">
+                        <a class="nav-link fw-medium font-poppins d-flex align-items-center gap-1 nav-link-enhanced" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="nav-text">Technologies</span>
+                            <i class="bi bi-chevron-down small dropdown-arrow"></i>
+                        </a>
+                        <ul class="dropdown-menu single-column-dropdown tech-dropdown   shadow-lg dropdown-animation ">
+                            <li class="dropdown-header">
+                                <i class="bi bi-cpu me-2"></i>Core Technologies
+                            </li>
+                            <li><a href="technologies/core.html" class="dropdown-item smooth-item">
+                                <div class="item-content">
+                                    <div class="item-text">
+                                        <div class="item-title" style="color: #000;">Core Technology</div>
+                                        <div class="item-subtitle" style="color: #999;">Real-world implementations</div>
+                                    </div>
+                                </div>
+                            </a></li>
+                            <li><a href="technologies/case-study.html" class="dropdown-item smooth-item">
+                                <div class="item-content">
+                                    <div class="item-text">
+                                        <div class="item-title" style="color: #000;">Case Studies</div>
+                                        <div class="item-subtitle" style="color: #999;">Real-world implementations</div>
+                                    </div>
+                                </div>
+                            </a></li>
+                            <li><a href="technologies/innovation.html" class="dropdown-item smooth-item">
+                                <div class="item-content">
+                                    <div class="item-text">
+                                        <div class="item-title" style="color: #000;">Innovation Lab</div>
+                                        <div class="item-subtitle" style="color: #999;">Research & development</div>
+                                    </div>
+                                </div>
+                            </a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item nav-item-enhanced">
+                        <a class="nav-link fw-medium font-poppins nav-link-enhanced" href="careers.html">
+                            <span class="nav-text">Career</span>
+                        </a>
+                    </li>
+                    <li class="nav-item nav-item-enhanced">
+                        <a class="nav-link fw-medium font-poppins nav-link-enhanced" href="contact.html">
+                            <span class="nav-text">Contact</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="d-flex align-items-left gap-3 order-lg-5 ms-lg-3">
+                <a href="contact.html" class="d-none d-lg-inline-block border-1 btn-outline-primary px-2 py-2 text-center text-decoration-none" style="width: 7.5rem; border-bottom: #dd5c00 1px solid; border-radius: 5px;">
+                    Talk to Us ->
+                </a>
+            </div>
+        </div>
+    </nav>
+</section>
+<!-- right panel -->
+<section>
+    <button id="rightArrowBtn" class="btn position-fixed d-flex align-items-center justify-content-center shadow-lg" 
+        data-bs-toggle="offcanvas" data-bs-target="#rightPanel"
+        style="right: 0; top: 50%; transform: translateY(-50%); width: 15px; height: 60px; border-radius: 5px 0 0 20px; z-index: 1040; border: none;">
+    <i class="bi bi-chevron-left fs-4 text-white"></i>
+</button>
+
+<div class="offcanvas offcanvas-end right-panel-theme" tabindex="-1" id="rightPanel" aria-labelledby="rightPanelLabel" style="z-index: 9999;">
+    <div class="offcanvas-header right-panel-header">
+        <h5 class="offcanvas-title text-white fw-bold" id="rightPanelLabel">
+           <img src="assets/images/logo.png" alt="" srcset="" height="50px">
+            JetHat Solutions
+        </h5>
+        <button type="button" class="btn-close right-panel-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body right-panel-body" onclick="event.stopPropagation();">
+      
+        <div class="mb-4">
+            <h6 class="right-panel-section-title mb-3">
+              
+                Company Stats
+            </h6>
+            <div class="row g-2 text-center">
+                <div class="col-4">
+                    <div class="">
+                        <div class=" fw-bold mb-1">500+</div>
+                        <small class="text-muted">Projects</small>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="">
+                        <div class=" fw-bold mb-1">50+</div>
+                        <small class="text-muted">Clients</small>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="">
+                        <div class=" fw-bold mb-1">6+</div>
+                        <small class="text-muted">Years</small>
                     </div>
                 </div>
             </div>
         </div>
-        
-        <!-- <div id="services"></div> -->
-        <div id="enhanced-services"></div>
-        <div id="video-intro-component"></div>
-        <div id="advanced-protection"></div>
-        <div id="career-component"></div>
-        <div id="testimonials"></div>
-         <div id="clients-marquee"></div>
-        <div id="register-section"></div>
-        <div id="stay-updated"></div>
-        <div id="cta-component"></div>
-        <div id="footer-component"></div>
-    </main>
+        <div class="mb-4">
+            <h6 class="right-panel-section-title mb-3">
+             
+                Quick Access
+            </h6>
+            <div class="row g-2">
+                <div class="col-6">
+                    <a href="services/cybersecurity.html" class="right-panel-btn w-100" onclick="event.stopPropagation();">
+                        <i class="bi bi-shield-check me-1"></i>
+                        Security
+                    </a>
+                </div>
+                <div class="col-6">
+                    <a href="services/ai-ml.html" class="right-panel-btn w-100" onclick="event.stopPropagation();">
+                        <i class="bi bi-brain me-1"></i>
+                        AI/ML
+                    </a>
+                </div>
+                <div class="col-6">
+                    <a href="services/web-development.html" class="right-panel-btn w-100" onclick="event.stopPropagation();">
+                        <i class="bi bi-code-slash me-1"></i>
+                        Web Dev
+                    </a>
+                </div>
+                <div class="col-6">
+                    <a href="services/mobile-development.html" class="right-panel-btn w-100" onclick="event.stopPropagation();">
+                        <i class="bi bi-phone me-1"></i>
+                        Mobile
+                    </a>
+                </div>
+            </div>
+        </div>       
+        <div class="mb-4">
+            <h6 class="right-panel-section-title mb-3">
+             
+                Contact Info
+            </h6>
+            <div class="right-panel-contact-item mb-2" onclick="event.stopPropagation();">
+                <i class="bi bi-telephone me-2"></i>
+                <a href="tel:+911204188947" class="right-panel-contact-link" onclick="event.stopPropagation();">+91-120-4188947</a>
+            </div>
+            <div class="right-panel-contact-item mb-2" onclick="event.stopPropagation();">
+                <i class="bi bi-envelope me-2"></i>
+                <a href="mailto:info@jethat.in" class="right-panel-contact-link" onclick="event.stopPropagation();">info@jethat.in</a>
+            </div>
+            <div class="right-panel-contact-item" onclick="event.stopPropagation();">
+                <i class="bi bi-geo-alt me-2"></i>
+                <span class="right-panel-contact-text">Noida, India</span>
+            </div>
+        </div>
+        <div class="mb-4">
+            <h6 class="right-panel-section-title mb-3">
+                <i class="bi bi-share me-2"></i>
+                Follow Us
+            </h6>
+            <div class="d-flex justify-content-center gap-2">
+                <a href="#" class="right-panel-social-btn" onclick="event.stopPropagation();">
+                    <i class="bi bi-twitter"></i>
+                </a>
+                <a href="#" class="right-panel-social-btn" onclick="event.stopPropagation();">
+                    <i class="bi bi-linkedin"></i>
+                </a>
+                <a href="#" class="right-panel-social-btn" onclick="event.stopPropagation();">
+                    <i class="bi bi-github"></i>
+                </a>
+                <a href="#" class="right-panel-social-btn" onclick="event.stopPropagation();">
+                    <i class="bi bi-instagram"></i>
+                </a>
+            </div>
+        </div>
 
-    <button id="theme-toggle" class="position-fixed bottom-0 start-0 m-4 rounded-circle p-1 shadow-lg" style="z-index: 1050;">
-        <i id="sun-icon" class="bi bi-sun-fill d-none"></i>
-        <i id="moon-icon" class="bi bi-moon-fill"></i>
-    </button>
+        <div class="mt-auto">
+            <button class="right-panel-cta-secondary w-100 mb-2" onclick="event.stopPropagation(); window.open('tel:+911204188947');">
+                <i class="bi bi-telephone me-2"></i>
+                Call Now
+            </button>
+           
+        </div>
+    </div>
+</div>
+</section>
 
-    <div id="scroll-progress" class="position-fixed top-0 start-0 w-100 bg-secondary bg-opacity-25" style="height: 4px; z-index: 1050;">
-        <div id="scroll-bar" class="h-100 bg-gradient transition-all" style="width: 0%; background: linear-gradient(90deg, var(--accent-primary), var(--accent-gold));"></div>
+<main>
+<!-- Hero-Section -->
+<section class="min-vh-100 d-flex flex-column justify-content-center position-relative overflow-hidden hero-section-theme" data-hero-container>
+
+<div class="position-absolute top-0 start-0 w-100 h-100 overflow-hidden" style="z-index: 0;">
+<!-- Fallback gradient background -->
+<div class="position-absolute top-0 start-0 w-100 h-100 video-fallback-theme"></div>
+    <video id="hero-video" autoplay loop muted playsinline preload="auto" 
+            class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover" 
+            style="transform: scale(1.1); will-change: transform;" 
+            onerror="this.style.display='none'; document.getElementById('video-fallback').classList.remove('d-none');">
+        <source src="assets/videos/jet_video_5.mp4" type="video/mp4">
+    </video>
+
+    <div id="video-fallback" class="position-absolute top-0 start-0 w-100 h-100 video-fallback-theme d-none d-flex align-items-center justify-content-center">
+        <div class="text-center text-white">
+            <div class="mx-auto mb-4 rounded-circle bg-gradient d-flex align-items-center justify-content-center animate-pulse" 
+                    style="width: 6rem; height: 6rem; background: linear-gradient(135deg, #FF8C00, #FFB300);">
+                <i class="bi bi-play-fill fs-1"></i>
+            </div>
+            <h3 class="h4 fw-semibold mb-2">Cybersecurity Innovation</h3>
+            <p class="text-muted">Securing Tomorrow's Digital Landscape</p>
+        </div>
+    </div>
+<!-- Overlay -->
+<div class="position-absolute top-0 start-0 w-100 h-100 hero-overlay" style="z-index: 1;"></div>
+</div>
+
+<!-- Hero Content -->
+<div class="container px-4 position-relative" style="z-index: 10;">
+<div class="row align-items-center g-4 g-lg-5">
+    <div class="col-lg-6 text-left text-lg-start">
+        <div class="mb-4">
+            <h1 class="hero-title display-1 fw-bold text-white text-hero mb-4">
+                <span class="">Empowering Tomorrow,</span> 
+                <span class="text-gradient display-1 ">Securing Today</span>
+            </h1>
+            <p class="hero-subtitle fs-5 text-white mb-4 font-quicksand" style="max-width: 600px;">
+                Innovate boldly with JetHat Cyber—where cybersecurity,
+                AI, and cloud solutions protect your 
+            <p class="fs-4 accent-gold fw-semibold font-caveat">
+                <span id="typing-text"></span><span class="typing-cursor">|</span>
+            </p>
+        </div>
+        <div class="hero-buttons d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start">
+            <button class=" rounded-2 btn-primary btn-lg px-3 py-2 fw-semibold font-poppins">
+                Free Consulting
+            </button>
+            <button class="rounded-2 btn-outline-primary btn-lg px-3 py-2 fw-semibold font-montserrat">
+                Learn More
+            </button>
+        </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <script src="scripts/navigation-loader.js"></script>
-    
-    <script src="scripts/navbar-scroll.js"></script>
-    <script src="scripts/theme-toggle.js"></script>
-    <script type="module" src="scripts/main.js"></script>
-    <script src="scripts/career-carousel.js"></script>
-    <script src="scripts/testimonial-carousel.js"></script>
-    <script src="scripts/cta-animations.js"></script>
-    <script src="scripts/services-animations.js"></script>
-    <script src="scripts/enhanced-services.js"></script>
-    <script src="scripts/who-we-are.js"></script>
-    <script src="scripts/products.js"></script>
-    <script src="scripts/cyber-security-animations.js"></script>
-    <script src="scripts/advanced-protection.js"></script>
-    <script src="scripts/industries-animations.js"></script>
-   
-
-    <script type="module">
-        async function loadComponent(id, path) {
-            try {
-                const res = await fetch(path);
-                if (!res.ok) throw new Error(`${path} (${res.status})`);
-                const html = await res.text();
-
-                const el = document.getElementById(id);
-                if (el) {
-                    el.style.opacity = '0';
-                    el.innerHTML = html;
-                    el.offsetHeight;
-                    el.style.transition = 'opacity 0.3s ease';
-                    el.style.opacity = '1';
-                } else {
-                    console.warn(`Missing container #${id}`);
-                }
+    <!-- Visual Elements -->
+    <div class="col-lg-6 d-none d-lg-block">
+        <div class="position-relative d-flex align-items-center justify-content-center" style="height: 24rem;">
+            <!-- Central Security Sphere -->
+            <div class="position-relative" style="width: 18rem; height: 18rem;">
+                <!-- Outer Gradient Ring -->
+                <div class="position-absolute top-0 start-0 w-100 h-100 border border-3 rounded-circle animate-spin-slow" style="border-color: transparent transparent var(--accent-gold) transparent;"></div>
                 
-                if (window.loaderManager) {
-                    window.loaderManager.componentLoaded();
-                }
-            } catch (err) {
-                console.error(`Component load failed: ${path}`, err);
-                if (window.loaderManager) {
-                    window.loaderManager.componentLoaded();
-                }
-            }
-        }
+                <!-- Second Outer Ring -->
+                <div class="position-absolute top-0 start-0 w-100 h-100 border border-2 border-warning border-opacity-30 rounded-circle animate-spin-slow-reverse"></div>
+                
+                <!-- Middle Ring -->
+                <div class="position-absolute border border-3 rounded-circle animate-spin-slow border-primary-theme border-opacity-75" 
+                        style="top: 2rem; left: 2rem; right: 2rem; bottom: 2rem;"></div>
+                
+                <!-- Inner Ring -->
+                <div class="position-absolute border border-2 border-primary border-opacity-50 rounded-circle animate-spin-slow-reverse" 
+                        style="top: 4rem; left: 4rem; right: 4rem; bottom: 4rem;"></div>
+                
+                <!-- Stacked Text Animation -->
+                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center overflow-hidden" style="z-index: 9999;">
+                    <div id="stacked-text-1" class="display-4 fw-bold font-monospace text-gradient text-opacity-75 animate-stack-slide-down" 
+                            style="animation-delay: 0s; animation-duration: 2s;">
+                        अनुक्षणं
+                    </div>
+                    <div id="stacked-text-2" class="display-4 fw-bold font-monospace text-gradient text-opacity-75 animate-stack-slide-down" 
+                            style="animation-delay: 1s; animation-duration: 2s;">
+                        रक्षामहे
+                    </div>
+                </div>
 
-        document.addEventListener('DOMContentLoaded', async () => {
-            const components = [
-                ['navigation-component', 'components/navigation/navigation.html'],
-                ['hero-section', 'components/hero-section/hero-section.html'],
-                ['clients-marquee', 'components/marque-section/marque-section.html'],
-                ['products-component', 'components/products/products-section.html'],
-                ['services', 'components/services/services.html'],
-                ['enhanced-services', 'components/services/enhanced-services.html'],
-                ['cyber-security-component', 'components/cyber-security/cyber-security-section.html'],
-                ['career-component', 'components/career/career-section.html'],
-                ['who-we-are-component', 'components/who-we-are/who-we-are.html'],
-                ['advanced-protection', 'components/advanced-protection/advanced-protection.html'],
-                ['testimonials', 'components/testimonial/testimonial-section.html'],
-                ['video-intro-component', 'components/video-intro/video-intro.html'],
+                <!-- Orbiting Elements - Outer Orbit -->
+                <div class="position-absolute top-0 start-0 w-100 h-100 animate-orbit-container">
+                    <div class="orbit-item orbit-item-1">
+                        <div class="bg-primary-20 rounded-circle d-flex align-items-center justify-content-center" 
+                                style="width: 2.5rem; height: 2.5rem;">
+                            <i class="bi bi-lock-fill text-gradient"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Orbiting Elements - Inner Orbit -->
+                <div class="position-absolute top-0 start-0 w-100 h-100 animate-orbit-inner-reverse">
+                    <div class="orbit-item orbit-item-4">
+                        <div class="bg-secondary-20 rounded-circle d-flex align-items-center justify-content-center" 
+                                style="width: 2rem; height: 2rem;">
+                            <i class="bi bi-cpu accent-primary"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Additional Small Orbiting Particles -->
+                <div class="position-absolute top-0 start-0 w-100 h-100 animate-particle-orbit">
+                    <div class="particle particle-1" style="background: var(--accent-gold); box-shadow: 0 0 10px var(--accent-gold);"></div>
+                </div>
+                <div class="position-absolute top-0 start-0 w-100 h-100 animate-particle-orbit-reverse">
+                    <div class="particle particle-2" style="background: var(--accent-primary); box-shadow: 0 0 10px var(--accent-primary);"></div>
+                </div>
+                <div class="position-absolute top-0 start-0 w-100 h-100 animate-particle-orbit-delayed">
+                    <div class="particle particle-3" style="background: var(--accent-secondary); box-shadow: 0 0 10px var(--accent-secondary);"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</section>
 
-                ['register-section', 'components/register-section/register-section.html'],
-                ['cta-component', 'components/call-to-action/call-to-action.html'],
-                ['footer-component', 'components/footer/footer.html'],
-                ['right-panel-component', 'components/right-panel/right-panel.html'],
-                ['call-to-action', 'components/stats/call-to-action.html'],
-                ['stay-updated', 'components/new-later/news-later-section.html'],
-                ['industries-section', 'components/industries/industries-section.html'],
-            ];
+<!-- Cyber Security Section -->
+<section id="cyber-security-component" class="position-relative overflow-hidden py-5 " >
+<section class="py-lg-6 py-5 slideUp">
+<div class="container">
+<div class="row align-items-center g-5">
+<div class="col-lg-6 order-2 order-lg-1">
+    <div class="position-relative">
+    <div class="cyber-card-main position-relative mb-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="cyber-image-container" style="width: 500px; height: 350px; background: white; border-radius: 20px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); overflow: hidden; position: relative;">
+        <img src="assets/images/cyber.jpg" alt="AI Cybersecurity" class="cyber-main-image" style="width: 100%; height: 100%; object-fit: cover; transition: all 0.6s ease;" />
+        <div class="cyber-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(124, 58, 237, 0.2), rgba(236, 72, 153, 0.2)); opacity: 0; transition: all 0.4s ease;"></div>
+        <div class="cyber-content" style="position: absolute; bottom: 20px; left: 20px; color: white; z-index: 2; transform: translateY(20px); opacity: 0; transition: all 0.4s ease;">
+            <h4 class="fw-bold mb-2">Advanced Protection</h4>
+            <p class="mb-0">AI-Powered Security Solutions</p>
+        </div>
+        </div>
+    </div>
 
-            if (window.loaderManager) {
-                window.loaderManager.setComponentsCount(components.length);
-            }
+    <div class="cyber-card-secondary position-absolute" style="top: 50px; right: -30px; z-index: 2" data-aos="fade-left" data-aos-delay="300">
+        <div class="cyber-image-container" style="width: 350px; height: 250px; background: white; border-radius: 15px; box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); overflow: hidden; position: relative;">
+        <img src="assets/images/cyber.jpg" alt="Threat Detection" class="cyber-secondary-image" style="width: 100%; height: 100%; object-fit: cover; transition: all 0.6s ease;" />
+        <div class="cyber-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(239, 68, 68, 0.2), rgba(249, 115, 22, 0.2)); opacity: 0; transition: all 0.4s ease;"></div>
+        <div class="cyber-badge" style="position: absolute; top: 15px; right: 15px; background: rgba(255, 255, 255, 0.9); padding: 8px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; color: #1f2937;">
+            Real-time Monitoring
+        </div>
+        </div>
+    </div>
 
-            await Promise.all(components.map(([id, path]) => loadComponent(id, path)));
+    <div class="cyber-card-mini position-absolute" style="bottom: 30px; left: -30px; z-index: 3" data-aos="zoom-in" data-aos-delay="500">
+        <div class="cyber-image-container" style="width: 120px; height: 120px; background: white; border-radius: 50%; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); overflow: hidden; position: relative;">
+        <img src="assets/images/cyber.jpg" alt="AI Shield" class="cyber-mini-image" style="width: 100%; height: 100%; object-fit: cover; transition: all 0.6s ease;" />
+        <div class="cyber-pulse" style="position: absolute; top: -2px; left: -2px; width: calc(100% + 4px); height: calc(100% + 4px); border: 2px solid #7c3aed; border-radius: 50%; animation: pulse 2s infinite;"></div>
+        </div>
+    </div>
+    </div>
+</div>
+
+<div class="col-lg-6 order-1 order-lg-2">
+    <h2 class="fw-bold display-3 mb-4 text-dark theme-text">
+    AI-Driven Cyber
+    <span class="d-block fw-bold display-2 text-gradient">
+        <span class="d-block fw-bold text-gradient">Security</span>
+    </span>
+    </h2>
+
+    <p class="fs-5 text-muted mb-5" style="max-width: 520px">
+    AI engine continuously analyzes billions of events to understand attack patterns, and deliver predictive protection across your infrastructure.
+    </p>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+<!-- Who we Are Section  -->
+<section id="who-we-are" class="position-relative overflow-hidden py-5 section-bg-theme">
+  <div class="container px-3 px-md-4">
+    <div class="row g-4 g-lg-5 align-items-start">
+      <div class="col-lg-5 order-1 order-lg-1">
+        <div class="mt-5">
+          <h2 class="fw-bold display-4 display-md-3 mb-3 mb-md-4 text-dark theme-text animated-title">
+            Who we
+            <span class="fw-bold text-gradient animated-span">Are</span>
+          </h2>
+          <p class="fs-6 fs-md-5 text-muted mt-3 mb-4 animated-text theme-text lh-base">
+            Jethat Cybersecurity Private Limited is a next-generation cybersecurity and software development 
+            company delivering secure, scalable, and intelligent technology solutions for modern enterprises.
+          </p>
+          <div id="active-box" class="bg-card-theme p-3 p-md-4 p-lg-5  shadow-lg border theme-text who-we-are-active-box">
+            <h4 id="active-title" class="fw-bold mb-2 mb-md-3 theme-text fs-5 fs-md-4">Vision</h4>
+            <p id="active-desc" class="theme-text mb-0 fs-6 fs-md-5 lh-base" style="opacity: 0.9;">
+              A digitally secure world where businesses thrive without compromise.
+            </p>
+          </div>
+          <div class="mt-4 mt-md-5">
+            <a href="about/index.html" class="text-gradient text-decoration-none d-inline-flex align-items-center fs-6 fs-md-5">
+              <i class="bi bi-arrow-right me-2"></i>
+              Learn More About Us
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-7 order-2 order-lg-2">
+        <div id="who-we-are-sections-container" class="who-we-are-sections">
+          
+          <!-- Section 1: Vision -->
+          <section class="who-we-are-card mb-3 mb-md-4" data-index="0">
+            <div class="position-relative shadow-lg overflow-hidden w-100 who-we-are-image-container ">
+              <img src="assets/images/cyber.jpg" 
+                   class="w-100 h-100 object-fit-cover who-we-are-image" 
+                   alt="Vision" 
+                   loading="lazy">
+              <div class="position-absolute top-0 start-0 w-100 h-100 who-we-are-overlay"></div>
+              <div class="position-absolute bottom-0 start-0 w-100 p-3 p-md-4 p-lg-5 text-white who-we-are-content">
+                <h3 class="fw-bold mb-2 mb-md-3 text-light fs-4 fs-md-3 fs-lg-2">Vision</h3>
+                <p class="mb-0 text-light who-we-are-description fs-6 fs-md-5 lh-base">
+                  A digitally secure world where businesses thrive without compromise.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Section 2: Expertise -->
+          <section class="who-we-are-card mb-3 mb-md-4" data-index="1">
+            <div class="position-relative shadow-lg overflow-hidden w-100 who-we-are-image-container ">
+              <img src="assets/images/cyber1.jpg" 
+                   class="w-100 h-100 object-fit-cover who-we-are-image" 
+                   alt="Expertise" 
+                   loading="lazy">
+              <div class="position-absolute top-0 start-0 w-100 h-100 who-we-are-overlay"></div>
+              <div class="position-absolute bottom-0 start-0 w-100 p-3 p-md-4 p-lg-5 text-white who-we-are-content">
+                <h3 class="fw-bold mb-2 mb-md-3 text-light fs-4 fs-md-3 fs-lg-2">Expertise</h3>
+                <p class="mb-0 text-light who-we-are-description fs-6 fs-md-5 lh-base">
+                  Deep expertise in cybersecurity and software development with cutting-edge solutions.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Section 3: Innovation -->
+          <section class="who-we-are-card mb-3 mb-md-4" data-index="2">
+            <div class="position-relative shadow-lg overflow-hidden w-100 who-we-are-image-container ">
+              <img src="assets/images/cyber2.jpg" 
+                   class="w-100 h-100 object-fit-cover who-we-are-image" 
+                   alt="Innovation" 
+                   loading="lazy">
+              <div class="position-absolute top-0 start-0 w-100 h-100 who-we-are-overlay"></div>
+              <div class="position-absolute bottom-0 start-0 w-100 p-3 p-md-4 p-lg-5 text-white who-we-are-content">
+                <h3 class="fw-bold mb-2 mb-md-3 text-light fs-4 fs-md-3 fs-lg-2">Innovation</h3>
+                <p class="mb-0 text-light who-we-are-description fs-6 fs-md-5 lh-base">
+                  Continuous innovation to stay ahead of evolving cyber threats and technology trends.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Section 4: Security -->
+          <section class="who-we-are-card mb-0" data-index="3">
+            <div class="position-relative shadow-lg overflow-hidden w-100 who-we-are-image-container ">
+              <img src="assets/images/cyber3.jpg" 
+                   class="w-100 h-100 object-fit-cover who-we-are-image" 
+                   alt="Security" 
+                   loading="lazy">
+              <div class="position-absolute top-0 start-0 w-100 h-100 who-we-are-overlay"></div>
+              <div class="position-absolute bottom-0 start-0 w-100 p-3 p-md-4 p-lg-5 text-white who-we-are-content">
+                <h3 class="fw-bold mb-2 mb-md-3 text-light fs-4 fs-md-3 fs-lg-2">Security</h3>
+                <p class="mb-0 text-light who-we-are-description fs-6 fs-md-5 lh-base">
+                  Comprehensive protection across all digital ecosystems and business operations.
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+        
+<!-- scroller-contaier -->
+<section>
+<div class="scroll-container" data-container>
+<div class="sticky-section" >
+    <div class="container py-5 "style="margin-top: 5%;">
+        <!-- Header -->
+        <div class="mb-5 text-start">
+            <h2 class="fw-bold display-3 mb-4 theme-text">
+                <span>Scroll</span>
+                <span class="fw-bold text-gradient">Features</span>
+            </h2>
+            <p>
+                Jethat Cybersecurity Private Limited is a next-generation cybersecurity and software development company delivering secure, scalable, and intelligent technology solutions for modern enterprises.
+
+
+            </p>
+        </div>
+
+        <!-- Cards container -->
+        <div class="cards-container">
+            <!-- Card 1: Advanced AI Technology -->
+            <div class="feature-card" data-index="0">
+                <div class="row align-items-center">
+                    <!-- Left side - Content -->
+                    <div class="col-lg-6">
+                        <!-- Icon -->
+                        <div class="icon-wrapper icon-blue text-white">
+                            <i class="bi bi-robot fs-4"></i>
+                        </div>
+
+                        <h3 class="h2 fw-bold mb-4">
+                            Advanced AI Technology
+                        </h3>
+
+                        <!-- Bullets -->
+                        <ul class="list-unstyled mb-4">
+                            <li class="d-flex align-items-start mb-3">
+                                <span class="bullet-point bullet-blue"></span>
+                                <span class="text-muted">Powered by cutting-edge natural language processing</span>
+                            </li>
+                            <li class="d-flex align-items-start mb-3">
+                                <span class="bullet-point bullet-blue"></span>
+                                <span class="text-muted">Machine learning algorithms that improve over time</span>
+                            </li>
+                            <li class="d-flex align-items-start mb-3">
+                                <span class="bullet-point bullet-blue"></span>
+                                <span class="text-muted">Context-aware responses for natural conversations</span>
+                            </li>
+                        </ul>
+
+                        <!-- CTA -->
+                        <div>
+                            <a href="about/index.html" class="text-gradient text-decoration-none d-inline-flex align-items-center fs-6 fs-md-5">
+                                <i class="bi bi-arrow-right me-2"></i>
+                                    Learn More
+                            </a>
             
-            if (window.loaderManager) {
-                window.loaderManager.completeLoading();
-            }
+                        </div>
+                    </div>
+
+                    <!-- Right side - Image -->
+                    <div class="col-lg-6">
+                        <img src="assets/images/cyber.jpg" alt="Advanced AI Technology"
+                            class="img-fluid feature-image" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2: Multi-language Support -->
+            <div class="feature-card" data-index="1">
+                <div class="row align-items-center">
+                    <!-- Left side - Content -->
+                    <div class="col-lg-6">
+                        <!-- Icon -->
+                        <div class="icon-wrapper icon-green text-white">
+                            <i class="bi bi-globe fs-4"></i>
+                        </div>
+
+                        <h3 class="h2 fw-bold mb-4">
+                            Multi-Language Support
+                        </h3>
+
+                        <!-- Bullets -->
+                        <ul class="list-unstyled mb-4">
+                            <li class="d-flex align-items-start mb-3">
+                                <span class="bullet-point bullet-green"></span>
+                                <span class="text-muted">Build chatbots that communicate in multiple languages</span>
+                            </li>
+                            <li class="d-flex align-items-start mb-3">
+                                <span class="bullet-point bullet-green"></span>
+                                <span class="text-muted">Automatic language detection and translation</span>
+                            </li>
+                            <li class="d-flex align-items-start mb-3">
+                                <span class="bullet-point bullet-green"></span>
+                                <span class="text-muted">Seamless cross-language conversations</span>
+                            </li>
+                        </ul>
+
+                        <!-- CTA -->
+                        <!-- CTA -->
+                        <div>
+                            <a href="about/index.html" class="text-gradient text-decoration-none d-inline-flex align-items-center fs-6 fs-md-5">
+                                <i class="bi bi-arrow-right me-2"></i>
+                                    Learn More
+                            </a>
             
-            setTimeout(() => {
-                if (typeof initializeCareerCarousel === 'function') initializeCareerCarousel();
-                if (typeof initializeCareerAnimations === 'function') initializeCareerAnimations();
-                if (typeof initializeTestimonialCarousel === 'function') initializeTestimonialCarousel();
-                if (typeof initializeTestimonialAnimations === 'function') initializeTestimonialAnimations();
-                if (typeof initializeCTAAnimations === 'function') initializeCTAAnimations();
-                if (typeof initializeServicesAnimations === 'function') initializeServicesAnimations();
-                if (typeof initializeEnhancedServices === 'function') initializeEnhancedServices();
-                if (typeof initializeIndustriesAnimations === 'function') initializeIndustriesAnimations();
-            }, 100);
-        });
-    </script>
+                        </div>
+                    </div>
 
-<!-- scroller js -->
-    <script>
-        const container = document.querySelector('[data-container]');
-        const cards = document.querySelectorAll('.feature-card');
-        const numCards = cards.length;
-        const cardGap = 30;
-        let ticking = false;
+                    <!-- Right side - Image -->
+                    <div class="col-lg-6">
+                        <img src="assets/images/innovation1.jpg" alt="Multi-language Support"
+                            class="img-fluid feature-image" />
+                    </div>
+                </div>
+            </div>
+            <!-- Card 3: Lightning Fast Performance -->
+            <div class="feature-card" data-index="2">
+                <div class="row align-items-center">
+                    <!-- Left side - Content -->
+                    <div class="col-lg-6">
+                        <!-- Icon -->
+                        <div class="icon-wrapper icon-yellow text-white">
+                            <i class="bi bi-lightning-fill fs-4"></i>
+                        </div>
 
-        function updateCards() {
-            const start = container.offsetTop;
-            const end = start + container.offsetHeight - window.innerHeight;
-            let progress = 0;
-            if (end > start) {
-                progress = Math.max(0, Math.min(1, (window.scrollY - start) / (end - start)));
-            }
+                        <h3 class="h2 fw-bold mb-4">
+                            Lightning-Fast Performance
+                        </h3>
 
-            cards.forEach((card, index) => {
-                const cardStart = index / numCards;
-                const cardEnd = (index + 0.5) / numCards;
-                const stackedPosition = index * cardGap;
-                const isFirst = index === 0;
+                        <!-- Bullets -->
+                        <ul class="list-unstyled mb-4">
+                            <li class="d-flex align-items-start mb-3">
+                                <span class="bullet-point bullet-yellow"></span>
+                                <span class="text-muted">Optimized for instant response times</span>
+                            </li>
+                            <li class="d-flex align-items-start mb-3">
+                                <span class="bullet-point bullet-yellow"></span>
+                                <span class="text-muted">Handle thousands of concurrent conversations</span>
+                            </li>
+                            <li class="d-flex align-items-start mb-3">
+                                <span class="bullet-point bullet-yellow"></span>
+                                <span class="text-muted">Low-latency infrastructure worldwide</span>
+                            </li>
+                        </ul>
 
-                // y position
-                let y;
-                if (progress <= cardStart) {
-                    y = isFirst ? stackedPosition : 700;
-                } else if (progress >= cardEnd) {
-                    y = stackedPosition;
-                } else {
-                    const frac = (progress - cardStart) / (cardEnd - cardStart);
-                    y = isFirst ? stackedPosition : 700 + frac * (stackedPosition - 700);
-                }
+                        <!-- CTA -->
+                        <!-- CTA -->
+                        <div>
+                            <a href="about/index.html" class="text-gradient text-decoration-none d-inline-flex align-items-center fs-6 fs-md-5">
+                                <i class="bi bi-arrow-right me-2"></i>
+                                    Learn More
+                            </a>
+            
+                        </div>
+                    </div>
 
-                // opacity
-                let opacity = 1;
-                if (!isFirst) {
-                    const fadeStart = cardStart;
-                    const fadeEnd = cardStart + 0.1 / numCards;
-                    if (progress <= fadeStart) {
-                        opacity = 0;
-                    } else if (progress < fadeEnd) {
-                        opacity = (progress - fadeStart) / (fadeEnd - fadeStart);
-                    } else {
-                        opacity = 1;
-                    }
-                }
+                    <!-- Right side - Image -->
+                    <div class="col-lg-6">
+                        <img src="assets/images/cyber3.jpg" alt="Lightning Fast Performance"
+                            class="img-fluid feature-image" />
+                    </div>
+                </div>
+            </div>
 
-                // scale
-                let scale;
-                if (progress <= cardStart) {
-                    scale = isFirst ? 1 : 0.85;
-                } else if (progress >= cardEnd) {
-                    scale = 1;
-                } else {
-                    const frac = (progress - cardStart) / (cardEnd - cardStart);
-                    scale = isFirst ? 1 : 0.85 + frac * 0.15;
-                }
+            <!-- Card 4: Enterprise Security -->
+            <div class="feature-card" data-index="3">
+                <div class="row align-items-center">
+                    <!-- Left side - Content -->
+                    <div class="col-lg-6">
+                        <!-- Icon -->
+                        <div class="icon-wrapper icon-red text-white">
+                            <i class="bi bi-shield-fill-check fs-4"></i>
+                        </div>
 
-                card.style.transform = `translateY(${y}px) scale(${scale})`;
-                card.style.opacity = opacity;
-                card.style.zIndex = index + 1;
-            });
+                        <h3 class="h2 fw-bold mb-4">
+                            Enterprise-Grade Security
+                        </h3>
 
-            ticking = false;
-        }
+                        <!-- Bullets -->
+                        <ul class="list-unstyled mb-4">
+                            <li class="d-flex align-items-start mb-3">
+                                <span class="bullet-point bullet-red"></span>
+                                <span class="text-muted">End-to-end encryption for all conversations</span>
+                            </li>
+                            <li class="d-flex align-items-start mb-3">
+                                <span class="bullet-point bullet-red"></span>
+                                <span class="text-muted">GDPR and SOC 2 compliant infrastructure</span>
+                            </li>
+                            <li class="d-flex align-items-start mb-3">
+                                <span class="bullet-point bullet-red"></span>
+                                <span class="text-muted">Role-based access control and audit logs</span>
+                            </li>
+                        </ul>
 
-        window.addEventListener('scroll', () => {
-            if (!ticking) {
-                requestAnimationFrame(updateCards);
-                ticking = true;
-            }
-        });
+                    <!-- CTA -->
+                        <div>
+                            <a href="about/index.html" class="text-gradient text-decoration-none d-inline-flex align-items-center fs-6 fs-md-5">
+                                <i class="bi bi-arrow-right me-2"></i>
+                                    Learn More
+                            </a>
+            
+                        </div>
+                    </div>
 
-        // Initial call
-        updateCards();
+                    <!-- Right side - Image -->
+                    <div class="col-lg-6">
+                        <img src="assets/images/cyber1.jpg" alt="Enterprise Security"
+                            class="img-fluid feature-image" />
+                    </div>
+                </div>
+            </div>
 
-        // Theme toggle functionality (optional)
-        function toggleTheme() {
-            const html = document.documentElement;
-            const currentTheme = html.getAttribute('data-bs-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            html.setAttribute('data-bs-theme', newTheme);
-        }
-    </script>
-<!-- scroller js -->
+            <!-- Card 5: Analytics & Insights -->
+            <div class="feature-card" data-index="4">
+                <div class="row align-items-center">
+                    <!-- Left side - Content -->
+                    <div class="col-lg-6">
+                        <!-- Icon -->
+                        <div class="icon-wrapper icon-purple text-white">
+                            <i class="bi bi-graph-up fs-4"></i>
+                        </div>
+
+                        <h3 class="h2 fw-bold mb-4">
+                            Analytics & Insights
+                        </h3>
+
+                        <!-- Bullets -->
+                        <ul class="list-unstyled mb-4">
+                            <li class="d-flex align-items-start mb-3">
+                                <span class="bullet-point bullet-purple"></span>
+                                <span class="text-muted">Real-time conversation analytics dashboard</span>
+                            </li>
+                            <li class="d-flex align-items-start mb-3">
+                                <span class="bullet-point bullet-purple"></span>
+                                <span class="text-muted">Track user engagement and satisfaction metrics</span>
+                            </li>
+                            <li class="d-flex align-items-start mb-3">
+                                <span class="bullet-point bullet-purple"></span>
+                                <span class="text-muted">AI-powered insights to improve performance</span>
+                            </li>
+                        </ul>
+
+                        <!-- CTA -->
+                        <!-- CTA -->
+                        <div>
+                            <a href="about/index.html" class="text-gradient text-decoration-none d-inline-flex align-items-center fs-6 fs-md-5">
+                                <i class="bi bi-arrow-right me-2"></i>
+                                    Learn More
+                            </a>
+            
+                        </div>
+                    </div>
+
+                    <!-- Right side - Image -->
+                    <div class="col-lg-6">
+                        <img src="assets/images/cyber2.jpg" alt="Analytics & Insights"
+                            class="img-fluid feature-image" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</section>
+
+<!-- Service Section -->
+<section  class="position-relative overflow-hidden py-5">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12 text-left">
+                  <h2 class="fw-bold display-3 mb-4 text-dark theme-text animated-title">
+                         Our 
+                        <span class=" fw-bold text-gradient animated-span" >
+                            Services
+                        </span>
+                    </h2>
+          <p class="fs-5 text-muted mt-3 mb-4 animated-text theme-text">
+            Jethat Cybersecurity Private Limited is a next-generation cybersecurity and software development 
+            company delivering secure, scalable, and intelligent technology solutions for modern enterprises.
+            <br>
+          </p>
+            </div>
+        </div>
+        <!-- Services Grid -->
+        <div class="row g-4">
+            <!-- Service 1: Cybersecurity -->
+            <div class="col-md-6 col-lg-4" >
+            <div class="enhanced-service-card" data-service="cybersecurity">
+                <div class="service-image-wrapper">
+                <img src="assets/images/cyber.jpg" alt="Cybersecurity Base" class="service-image-base">
+                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Cybersecurity Solutions" class="service-image-hover">
+                <div class="service-overlay"></div>
+                <div class="service-badge">Security</div>
+                </div>
+                
+                <div class="service-content">
+                <div class="service-header">
+                    <h4 class="service-title text-dark">Cybersecurity Solutions</h4>
+                    <div class="service-rating">
+                    <span class="stars">★★★★★</span>
+                    <span class="rating-label">Premium</span>
+                    </div>
+                </div>
+                
+                <p class="service-description text-dark">
+                    Advanced protection against modern cyber threats with 24/7 monitoring, 
+                    threat detection, and incident response capabilities for complete security.
+                </p>
+                
+                <div class="service-features">
+                    <span class="feature-tag">24/7 Monitoring</span>
+                    <span class="feature-tag">Threat Detection</span>
+                    <span class="feature-tag">Incident Response</span>
+                </div>
+                
+                <div class="service-footer">
+                    <button class="explore-btn" onclick="exploreService('cybersecurity')">
+                    <span class="btn-text">Explore</span>
+                    <span class="btn-icon">→</span>
+                    </button>
+                </div>
+                </div>
+            </div>
+            </div>
+            <!-- Service 2: AI/ML Development -->
+            <div class="col-md-6 col-lg-4" >
+            <div class="enhanced-service-card" data-service="ai-ml">
+                <div class="service-image-wrapper">
+                <img src="assets/images/cyber.jpg" alt="AI/ML Base" class="service-image-base">
+                <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="AI & Machine Learning" class="service-image-hover">
+                <div class="service-overlay ai-overlay"></div>
+                <div class="service-badge ai-badge">AI/ML</div>
+                </div>
+                
+                <div class="service-content">
+                <div class="service-header">
+                    <h4 class="service-title text-dark">AI & Machine Learning</h4>
+                    <div class="service-rating">
+                    <span class="stars">★★★★★</span>
+                    <span class="rating-label">Advanced</span>
+                    </div>
+                </div>
+                
+                <p class="service-description text-dark">
+                    Intelligent automation and predictive analytics solutions that transform 
+                    data into actionable insights for smarter business decisions.
+                </p>
+                
+                <div class="service-features">
+                    <span class="feature-tag">Predictive Analytics</span>
+                    <span class="feature-tag">Automation</span>
+                    <span class="feature-tag">Data Insights</span>
+                </div>
+                
+                <div class="service-footer">
+                    <button class="explore-btn" onclick="exploreService('ai-ml')">
+                    <span class="btn-text">Explore</span>
+                    <span class="btn-icon">→</span>
+                    </button>
+                </div>
+                </div>
+            </div>
+            </div>
+            <!-- Service 3: Web Development -->
+            <div class="col-md-6 col-lg-4" >
+            <div class="enhanced-service-card" data-service="web-development">
+                <div class="service-image-wrapper">
+                <img src="assets/images/cyber.jpg" alt="Web Development Base" class="service-image-base">
+                <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Web Development" class="service-image-hover">
+                <div class="service-overlay web-overlay"></div>
+                <div class="service-badge web-badge">Development</div>
+                </div>
+                
+                <div class="service-content">
+                <div class="service-header">
+                    <h4 class="service-title text-dark">Web Development</h4>
+                    <div class="service-rating">
+                    <span class="stars">★★★★★</span>
+                    <span class="rating-label">Modern</span>
+                    </div>
+                </div>
+                
+                <p class="service-description text-dark">
+                    Modern, scalable web applications built with cutting-edge technologies 
+                    for optimal performance, security, and exceptional user experience.
+                </p>
+                
+                <div class="service-features">
+                    <span class="feature-tag">Responsive Design</span>
+                    <span class="feature-tag">Performance</span>
+                    <span class="feature-tag">Security</span>
+                </div>
+                
+                <div class="service-footer">
+                    <button class="explore-btn" onclick="exploreService('web-development')">
+                    <span class="btn-text">Explore</span>
+                    <span class="btn-icon">→</span>
+                    </button>
+                </div>
+                </div>
+            </div>
+            </div>
+            <!-- Service 4: Cloud Services -->
+            <div class="col-md-6 col-lg-4" >
+            <div class="enhanced-service-card" data-service="cloud-services">
+                <div class="service-image-wrapper">
+                <img src="assets/images/cyber.jpg" alt="Cloud Services Base" class="service-image-base">
+                <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Cloud Services" class="service-image-hover">
+                <div class="service-overlay cloud-overlay"></div>
+                <div class="service-badge cloud-badge">Cloud</div>
+                </div>
+                
+                <div class="service-content">
+                <div class="service-header">
+                    <h4 class="service-title text-dark">Cloud Services</h4>
+                    <div class="service-rating">
+                    <span class="stars">★★★★★</span>
+                    <span class="rating-label">Scalable</span>
+                    </div>
+                </div>
+                
+                <p class="service-description text-dark">
+                    Scalable cloud infrastructure and migration services that ensure 
+                    high availability, cost-effective operations, and seamless scalability.
+                </p>
+                
+                <div class="service-features">
+                    <span class="feature-tag">High Availability</span>
+                    <span class="feature-tag">Cost Effective</span>
+                    <span class="feature-tag">Migration</span>
+                </div>
+                
+                <div class="service-footer">
+                    <button class="explore-btn" onclick="exploreService('cloud-services')">
+                    <span class="btn-text">Explore</span>
+                    <span class="btn-icon">→</span>
+                    </button>
+                </div>
+                </div>
+            </div>
+            </div>
+            <!-- Service 5: Mobile Development -->
+            <div class="col-md-6 col-lg-4" >
+            <div class="enhanced-service-card" data-service="mobile-development">
+                <div class="service-image-wrapper">
+                <img src="assets/images/cyber.jpg" alt="Mobile Development Base" class="service-image-base">
+                <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Mobile Development" class="service-image-hover">
+                <div class="service-overlay mobile-overlay"></div>
+                <div class="service-badge mobile-badge">Mobile</div>
+                </div>
+                
+                <div class="service-content">
+                <div class="service-header">
+                    <h4 class="service-title text-dark">Mobile Development</h4>
+                    <div class="service-rating">
+                    <span class="stars">★★★★★</span>
+                    <span class="rating-label">Native</span>
+                    </div>
+                </div>
+                
+                <p class="service-description text-dark">
+                    Native and cross-platform mobile applications that deliver exceptional 
+                    performance across iOS and Android platforms with seamless user experience.
+                </p>
+                
+                <div class="service-features">
+                    <span class="feature-tag">iOS & Android</span>
+                    <span class="feature-tag">Cross-Platform</span>
+                    <span class="feature-tag">Performance</span>
+                </div>
+                
+                <div class="service-footer">
+                    <button class="explore-btn" onclick="exploreService('mobile-development')">
+                    <span class="btn-text">Explore</span>
+                    <span class="btn-icon">→</span>
+                    </button>
+                </div>
+                </div>
+            </div>
+            </div>
+            <!-- Service 6: Digital Consulting -->
+            <div class="col-md-6 col-lg-4" >
+            <div class="enhanced-service-card" data-service="digital-consulting">
+                <div class="service-image-wrapper">
+                <img src="assets/images/cyber.jpg" alt="Digital Consulting Base" class="service-image-base">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Digital Consulting" class="service-image-hover">
+                <div class="service-overlay consulting-overlay"></div>
+                <div class="service-badge consulting-badge">Consulting</div>
+                </div>
+                
+                <div class="service-content">
+                <div class="service-header">
+                    <h4 class="service-title text-dark">Digital Consulting</h4>
+                    <div class="service-rating">
+                    <span class="stars">★★★★★</span>
+                    <span class="rating-label">Expert</span>
+                    </div>
+                </div>
+                
+                <p class="service-description text-dark">
+                    Strategic digital transformation consulting to leverage technology 
+                    for business growth, operational excellence, and competitive advantage.
+                </p>
+                
+                <div class="service-features">
+                    <span class="feature-tag">Strategy</span>
+                    <span class="feature-tag">Transformation</span>
+                    <span class="feature-tag">Growth</span>
+                </div>
+                
+                <div class="service-footer">
+                    <button class="explore-btn" onclick="exploreService('digital-consulting')">
+                    <span class="btn-text">Explore</span>
+                    <span class="btn-icon">→</span>
+                    </button>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Video Intro Section -->
+<section id="video-intro-component" class="video-intro-section position-relative overflow-hidden py-5" style="background: linear-gradient(135deg, rgba(220, 112, 4, 0), rgba(255, 217, 0, 0)), url('assets/images/cyber.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
+<div class="overlay position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0, 0, 0, 0.4);"></div>
+<div class="container position-relative" style="z-index: 2;">
+<div class="row justify-content-center">
+    <div class="col-md-8 text-center text-white">
+        <h2 class="display-4 fw-bold mb-4 text-white" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
+            Together we will explore new things
+        </h2>
+        <p class="lead mb-5 text-white" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">
+            Join us on a journey of innovation and discovery in cybersecurity and technology
+        </p>
+        <a href="#" class="icon-video d-flex align-items-center justify-content-center mx-auto" 
+            style="width: 80px; height: 80px; background: rgba(255, 255, 255, 0.2); border-radius: 50%; backdrop-filter: blur(10px); border: 2px solid rgba(255, 255, 255, 0.3); transition: all 0.3s ease; text-decoration: none;"
+            onmouseover="this.style.transform='scale(1.1)'; this.style.background='rgba(255, 255, 255, 0.3)'"
+            onmouseout="this.style.transform='scale(1)'; this.style.background='rgba(255, 255, 255, 0.2)'">
+            <i class="bi bi-play-fill text-white" style="font-size: 2rem; margin-left: 4px;"></i>
+        </a>
+    </div>
+</div>
+</div>
+</section>
+
+<!-- Advanced Protection Section -->
+<section class="py-5 overflow-hidden advanced-protection-theme">
+<div class="container">
+<div class="mb-5 text-start">
+<h2 class="fw-bold display-3 mb-4 theme-text">
+    <span>Protection</span>
+    <span class="fw-bold text-gradient">Systems</span>
+</h2>
+</div>
+
+<div class="row g-4">
+<div class="col-lg-5">
+    <div class="position-relative d-flex justify-content-center align-items-center p-4 shadow-lg security-visual-card">
+        <div class="position-absolute top-0 start-0 w-100 h-100 security-bg-image"></div>
+        <div class="position-absolute top-0 start-0 w-100 h-100 opacity-10">
+            <div class="h-100 w-100 grid-pattern"></div>
+        </div>
+
+        <div class="position-absolute top-0 start-0 w-100 frame-bar-top"></div>
+        <div class="position-absolute bottom-0 start-0 w-100 frame-bar-bottom"></div>
+
+        <div class="position-absolute top-0 start-0 w-100 h-100 overflow-hidden">
+            <div class="scan-line"></div>
+        </div>
+
+        <div class="position-absolute bottom-3 start-0 w-100 px-4 d-flex justify-content-between align-items-center small text-warning" style="z-index:6;">
+            <span><span class="dot pulse"></span> <span id="scan-status">SCANNING ACTIVE</span></span>
+            <span id="threat-level" class="text-light fw-bold">●●●○○</span>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-7">
+    <div class="shadow-lg overflow-hidden terminal-container">
+        <div class="d-flex align-items-center px-3 py-2 terminal-header">
+            <div class="d-flex gap-2 me-3">
+                <span class="circle bg-danger"></span>
+                <span class="circle bg-warning"></span>
+                <span class="circle bg-success"></span>
+            </div>
+            <span class="text-white fw-bold small">Security Terminal</span>
+            <span class="ms-auto badge threat-badge" id="threat-badge">LOW THREAT</span>
+        </div>
+
+        <div class="p-3 text-success small font-monospace terminal-content" id="terminal-output">
+            <div class="terminal-line">> System initialized.</div>
+            <div class="terminal-line">> Running initial scan...</div>
+            <div class="terminal-line text-warning">> Scanning network for vulnerabilities...</div>
+            <div class="terminal-line">> Firewall: ACTIVE</div>
+            <div class="terminal-line">> Threat detection: ENABLED</div>
+            <div class="terminal-line">> All systems secure</div>
+        </div>
+
+        <div class="border-top p-2 terminal-input-area">
+            <span class="text-warning fw-bold">user@security:~$</span>
+            <input class="bg-transparent border-0 text-warning ms-2 small w-75 terminal-input"
+                    id="terminal-input"
+                    placeholder="Type a command..."
+                    autocomplete="off">
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Career Insight Section -->
+<section class="py-5 overflow-hidden">
+<div class="container">
+<div class="align-items-center">
+<section class="d-flex align-items-left">
+<div class="row w-100 justify-content-left">
+<div class="col-lg-10 slide-in-left" data-delay="600">
+<h3 class="fw-bold display-5 mb-4 g-2 d-flex text-dark theme-text">
+    Join The
+    <span class="d-block fw-bold text-gradient">
+    Elite Cyber
+    </span>
+</h3>
+
+<div class="row mt-5">
+    <div class="col-md-4 mb-4 value-item slide-in-right" data-delay="1000">
+    <div class="d-flex gap-3">
+        <div class="rounded-circle d-flex align-items-center justify-content-center check-icon" style="width:28px;height:28px;background:#dcfce7;color:#16a34a;">
+        ✓
+        </div>
+        <div>
+        <h6 class="fw-semibold mb-1">Integrity First</h6>
+        <p class="text-muted small mb-0">
+            Every action we take upholds confidentiality and trust.
+        </p>
+        </div>
+    </div>
+    </div>
+
+    <div class="col-md-4 mb-4 value-item slide-in-right" data-delay="1100">
+    <div class="d-flex gap-3">
+        <div class="rounded-circle d-flex align-items-center justify-content-center check-icon" style="width:28px;height:28px;background:#dcfce7;color:#16a34a;">
+        ✓
+        </div>
+        <div>
+        <h6 class="fw-semibold mb-1">Innovation At Scale</h6>
+        <p class="text-muted small mb-0">
+            Creativity, automation, and smarter defense.
+        </p>
+        </div>
+    </div>
+    </div>
+
+    <div class="col-md-4 mb-4 value-item slide-in-right" data-delay="1200">
+    <div class="d-flex gap-3">
+        <div class="rounded-circle d-flex align-items-center justify-content-center check-icon" style="width:28px;height:28px;background:#dcfce7;color:#16a34a;">
+        ✓
+        </div>
+        <div>
+        <h6 class="fw-semibold mb-1">Collaboration Always</h6>
+        <p class="text-muted small mb-0">
+            Security is a shared responsibility.
+        </p>
+        </div>
+    </div>
+    </div>
+</div>
+
+<button class="btn btn-primary text-white px-5 py-3 shadow-lg animated-btn glow-btn primary-btn">
+    <span class="btn-text">View All Open Role</span>
+    <span class="btn-arrow">→</span>
+</button>
+</div>
+</div>
+</section>
+</div>
+
+<div class="mb-5 mb-lg-6 fade-in-up" data-delay="0">
+<div class="d-flex align-items-center justify-content-between mb-4">
+<div class="slide-in-left" data-delay="200">
+<h2 class="fw-bold display-3 mb-4 text-dark theme-text"></h2>
+<span class="d-block fw-bold text-gradient">
+Cyber Security Insight
+</span>
+</div>
+
+<div class="d-flex gap-2 slide-in-right" data-delay="400">
+<button id="insights-prev" class="btn btn-light rounded-circle border shadow-sm hover-scale pulse-btn">
+‹
+</button>
+<button id="insights-next" class="btn btn-light rounded-circle border shadow-sm hover-scale pulse-btn">
+›
+</button>
+</div>
+</div>
+
+<div class="carousel-container position-relative">
+<div class="carousel-track-container overflow-hidden">
+<div id="insights-carousel-track" class="carousel-track d-flex transition-transform">
+<div class="carousel-slide flex-shrink-0 px-2">
+    <div class="card h-100 border shadow-sm insight-card floating-card rounded-0">
+    <div class="position-relative card-image-container" style="height:190px; background:linear-gradient(135deg,#FF8C00,#FFB300);">
+        <div class="position-absolute inset-0 gradient-overlay" style="background:linear-gradient(135deg,rgba(255,140,0,.8),rgba(255,179,0,.8));">
+        </div>
+        <div class="position-absolute top-50 start-50 translate-middle">
+        <div class="rounded-circle d-flex align-items-center justify-content-center icon-bounce" style="width:64px;height:64px;background:rgba(255,255,255,.2);backdrop-filter:blur(6px);">
+            🤖
+        </div>
+        </div>
+    </div>
+    <div class="card-body p-4">
+        <span class="badge bg-danger mb-3 badge-glow">AI & Automation</span>
+        <div class="d-flex align-items-center text-muted small mb-2">
+        📅 February 12, 2025
+        </div>
+        <h6 class="fw-semibold text-dark mb-2 insight-title">
+        How AI Is Revolutionizing Cyber Defense
+        </h6>
+        <p class="text-muted small mb-0">
+        From predictive analytics to autonomous response, explore how AI transforms security.
+        </p>
+    </div>
+    </div>
+</div>
+
+<div class="carousel-slide flex-shrink-0 px-2">
+    <div class="card h-100 border shadow-sm insight-card floating-card rounded-0">
+    <div class="position-relative card-image-container" style="height:190px; background:linear-gradient(135deg,#DC143C,#FF6B6B);">
+        <div class="position-absolute inset-0 gradient-overlay" style="background:linear-gradient(135deg,rgba(220,20,60,.8),rgba(255,107,107,.8));">
+        </div>
+        <div class="position-absolute top-50 start-50 translate-middle">
+        <div class="rounded-circle d-flex align-items-center justify-content-center icon-bounce" style="width:64px;height:64px;background:rgba(255,255,255,.2);backdrop-filter:blur(6px);">
+            🛡️
+        </div>
+        </div>
+    </div>
+    <div class="card-body p-4">
+        <span class="badge bg-primary mb-3 badge-glow">Threat Intelligence</span>
+        <div class="d-flex align-items-center text-muted small mb-2">
+        📅 February 10, 2025
+        </div>
+        <h6 class="fw-semibold text-dark mb-2 insight-title">
+        Advanced Threat Detection Strategies
+        </h6>
+        <p class="text-muted small mb-0">
+        Discover cutting-edge methods for identifying and neutralizing cyber threats.
+        </p>
+    </div>
+    </div>
+</div>
+
+<div class="carousel-slide flex-shrink-0 px-2">
+    <div class="card h-100 border shadow-sm insight-card floating-card rounded-0">
+    <div class="position-relative card-image-container" style="height:190px; background:linear-gradient(135deg,#FFD700,#FFA500);">
+        <div class="position-absolute inset-0 gradient-overlay" style="background:linear-gradient(135deg,rgba(255,215,0,.8),rgba(255,165,0,.8));">
+        </div>
+        <div class="position-absolute top-50 start-50 translate-middle">
+        <div class="rounded-circle d-flex align-items-center justify-content-center icon-bounce" style="width:64px;height:64px;background:rgba(255,255,255,.2);backdrop-filter:blur(6px);">
+            🔐
+        </div>
+        </div>
+    </div>
+    <div class="card-body p-4">
+        <span class="badge bg-warning mb-3 badge-glow">Zero Trust</span>
+        <div class="d-flex align-items-center text-muted small mb-2">
+        📅 February 8, 2025
+        </div>
+        <h6 class="fw-semibold text-dark mb-2 insight-title">
+        Zero Trust Architecture Implementation
+        </h6>
+        <p class="text-muted small mb-0">
+        Building secure networks with never trust, always verify principles.
+        </p>
+    </div>
+    </div>
+</div>
+
+<div class="carousel-slide flex-shrink-0 px-2">
+    <div class="card h-100 border shadow-sm insight-card floating-card rounded-0">
+    <div class="position-relative card-image-container" style="height:190px; background:linear-gradient(135deg,#8A2BE2,#9370DB);">
+        <div class="position-absolute inset-0 gradient-overlay" style="background:linear-gradient(135deg,rgba(138,43,226,.8),rgba(147,112,219,.8));">
+        </div>
+        <div class="position-absolute top-50 start-50 translate-middle">
+        <div class="rounded-circle d-flex align-items-center justify-content-center icon-bounce" style="width:64px;height:64px;background:rgba(255,255,255,.2);backdrop-filter:blur(6px);">
+            ⚡
+        </div>
+        </div>
+    </div>
+    <div class="card-body p-4">
+        <span class="badge bg-info mb-3 badge-glow">Cloud Security</span>
+        <div class="d-flex align-items-center text-muted small mb-2">
+        📅 February 6, 2025
+        </div>
+        <h6 class="fw-semibold text-dark mb-2 insight-title">
+        Cloud Security Best Practices
+        </h6>
+        <p class="text-muted small mb-0">
+        Securing cloud infrastructure with modern security frameworks.
+        </p>
+    </div>
+    </div>
+</div>
+
+<div class="carousel-slide flex-shrink-0 px-2">
+    <div class="card h-100 border shadow-sm insight-card floating-card rounded-0">
+    <div class="position-relative card-image-container" style="height:190px; background:linear-gradient(135deg,#20B2AA,#48D1CC);">
+        <div class="position-absolute inset-0 gradient-overlay" style="background:linear-gradient(135deg,rgba(32,178,170,.8),rgba(72,209,204,.8));">
+        </div>
+        <div class="position-absolute top-50 start-50 translate-middle">
+        <div class="rounded-circle d-flex align-items-center justify-content-center icon-bounce" style="width:64px;height:64px;background:rgba(255,255,255,.2);backdrop-filter:blur(6px);">
+            🔍
+        </div>
+        </div>
+    </div>
+    <div class="card-body p-4">
+        <span class="badge bg-success mb-3 badge-glow">Incident Response</span>
+        <div class="d-flex align-items-center text-muted small mb-2">
+        📅 February 4, 2025
+        </div>
+        <h6 class="fw-semibold text-dark mb-2 insight-title">
+        Rapid Incident Response Protocols
+        </h6>
+        <p class="text-muted small mb-0">
+        Streamlined processes for quick threat containment and recovery.
+        </p>
+    </div>
+    </div>
+</div>
+
+<div class="carousel-slide flex-shrink-0 px-2">
+    <div class="card h-100 border shadow-sm insight-card floating-card rounded-0">
+    <div class="position-relative card-image-container" style="height:190px; background:linear-gradient(135deg,#FF4500,#FF6347);">
+        <div class="position-absolute inset-0 gradient-overlay" style="background:linear-gradient(135deg,rgba(255,69,0,.8),rgba(255,99,71,.8));">
+        </div>
+        <div class="position-absolute top-50 start-50 translate-middle">
+        <div class="rounded-circle d-flex align-items-center justify-content-center icon-bounce" style="width:64px;height:64px;background:rgba(255,255,255,.2);backdrop-filter:blur(6px);">
+            🎯
+        </div>
+        </div>
+    </div>
+    <div class="card-body p-4">
+        <span class="badge bg-dark mb-3 badge-glow">Penetration Testing</span>
+        <div class="d-flex align-items-center text-muted small mb-2">
+        📅 February 2, 2025
+        </div>
+        <h6 class="fw-semibold text-dark mb-2 insight-title">
+        Advanced Penetration Testing Methods
+        </h6>
+        <p class="text-muted small mb-0">
+        Comprehensive security testing to identify vulnerabilities.
+        </p>
+    </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Testimonial Section -->
+<section  class="position-relative overflow-hidden py-5">
+<div class="container px-4">
+<div class="row align-items-start col-lg-12">
+
+
+
+<!-- Left Side - Testimonial Content -->
+<div class="col-lg-12  order-lg-1">
+    <!-- Testimonial Container -->
+    <div class="testimonial-modern-container position-relative">
+        <div class="testimonial-content-wrapper">
+            <div id="testimonials-modern-track" class="testimonial-modern-track">
+                
+                <!-- Testimonial 1 -->
+                <div class="testimonial-modern-slide active">
+                    <div class="testimonial-modern-layout d-flex align-items-center">
+                        <!-- Left Frame with Image -->
+                        <div class="testimonial-frame-container">
+                            <div class="testimonial-frame" style="background-color: var(--accent-primary);">
+                                <div class="testimonial-image-wrapper">
+                                    <img src="assets/images/jethat-logo.svg" 
+                                            alt="JetHat Logo" 
+                                            class="testimonial-image">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Right Content -->
+                        <div class="testimonial-content-area">
+                            <h3 class="testimonial-title">Budget Friendly</h3>
+                            <p class="testimonial-description">
+                                Seamless multilingual Sanskrit learning platform with enhanced student engagement and exceptional security measures. The AI-powered features have revolutionized our educational approach.
+                            </p>
+                            <div class="testimonial-author">
+                                <span class="author-line"></span>
+                                <span class="author-name">Shri Lakshminarasimhan</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-modern-slide">
+                    <div class="testimonial-modern-layout d-flex align-items-center">
+                        <!-- Left Frame with Image -->
+                        <div class="testimonial-frame-container">
+                            <div class="testimonial-frame" style="background-color: var(--accent-secondary);">
+                                <div class="testimonial-image-wrapper">
+                                    <img src="assets/images/jethat-logo.svg" 
+                                            alt="JetHat Logo" 
+                                            class="testimonial-image">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Right Content -->
+                        <div class="testimonial-content-area">
+                            <h3 class="testimonial-title">Efficient Support</h3>
+                            <p class="testimonial-description">
+                                Streamlined multilingual customer support with improved efficiency, satisfaction, and robust cybersecurity protocols. Outstanding technical expertise and support.
+                            </p>
+                            <div class="testimonial-author">
+                                <span class="author-line"></span>
+                                <span class="author-name">Amit Kumar Tiwari</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-modern-slide">
+                    <div class="testimonial-modern-layout d-flex align-items-center">
+                        <!-- Left Frame with Image -->
+                        <div class="testimonial-frame-container">
+                            <div class="testimonial-frame" style="background-color: var(--accent-gold);">
+                                <div class="testimonial-image-wrapper">
+                                    <img src="assets/images/jethat-logo.svg" 
+                                            alt="JetHat Logo" 
+                                            class="testimonial-image">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Right Content -->
+                        <div class="testimonial-content-area">
+                            <h3 class="testimonial-title">Secure Solutions</h3>
+                            <p class="testimonial-description">
+                                Exceptional AI-powered security solutions that transformed our digital infrastructure. The team's expertise in cybersecurity is unmatched in the industry.
+                            </p>
+                            <div class="testimonial-author">
+                                <span class="author-line"></span>
+                                <span class="author-name">Priya Sharma</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <!-- Testimonial 5 -->
+                <div class="testimonial-modern-slide">
+                    <div class="testimonial-modern-layout d-flex align-items-center">
+                        <!-- Left Frame with Image -->
+                        <div class="testimonial-frame-container">
+                            <div class="testimonial-frame" style="background-color: var(--accent-info);">
+                                <div class="testimonial-image-wrapper">
+                                    <img src="assets/images/jethat-logo.svg" 
+                                            alt="JetHat Logo" 
+                                            class="testimonial-image">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Right Content -->
+                        <div class="testimonial-content-area">
+                            <h3 class="testimonial-title">AI Analytics</h3>
+                            <p class="testimonial-description">
+                                Outstanding AI-driven analytics platform that provides real-time insights into our business operations. The machine learning capabilities are truly impressive.
+                            </p>
+                            <div class="testimonial-author">
+                                <span class="author-line"></span>
+                                <span class="author-name">Meera Patel</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 6 -->
+                <div class="testimonial-modern-slide">
+                    <div class="testimonial-modern-layout d-flex align-items-center">
+                        <!-- Left Frame with Image -->
+                        <div class="testimonial-frame-container">
+                            <div class="testimonial-frame" style="background-color: var(--accent-danger);">
+                                <div class="testimonial-image-wrapper">
+                                    <img src="assets/images/jethat-logo.svg" 
+                                            alt="JetHat Logo" 
+                                            class="testimonial-image">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Right Content -->
+                        <div class="testimonial-content-area">
+                            <h3 class="testimonial-title">Security Audit</h3>
+                            <p class="testimonial-description">
+                                Comprehensive penetration testing services that identified critical vulnerabilities before they could be exploited. Their security audit was thorough and professional.
+                            </p>
+                            <div class="testimonial-author">
+                                <span class="author-line"></span>
+                                <span class="author-name">Vikram Singh</span>
+                            </div>
+                        </div>
+                    
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Navigation Dots -->
+        <div class="testimonial-dots-container">
+            <div class="testimonial-dots">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+                <span class="dot" data-slide="2"></span>
+                <span class="dot" data-slide="3"></span>
+                <span class="dot" data-slide="4"></span>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Trust Badges -->
+    <div class="row mt-3 fade-in-up" data-delay="800">
+        <div class="col-12">
+            <div class="text-start">
+                <p class="text-muted small mb-3">Trusted by leading organizations across India</p>
+                <div class="d-flex justify-content-start align-items-center gap-3 flex-wrap">
+                    <div class="trust-badge">
+                        <span class="badge   border px-3 py-2">ISO 27001 Certified</span>
+                    </div>
+                    <div class="trust-badge">
+                        <span class="badge  border px-3 py-2">SOC 2 Compliant</span>
+                    </div>
+                    <div class="trust-badge">
+                        <span class="badge  border px-3 py-2">GDPR Ready</span>
+                    </div>
+                    <div class="trust-badge">
+                        <span class="badge  border px-3 py-2">99.9% Uptime</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- <div id="clients-marquee"></div> -->
+<section  class="overflow-hidden">
+<div class="container">
+<div class="position-relative overflow-hidden" style="width: 100%;">
+<div class="d-flex marquee-container" style="animation: marquee 30s linear infinite; width: max-content;">
+<div class="client-logo-container me-4">
+    <div class="client-logo-circle">
+        <img src="assets/images/cyber.jpg" alt="Tech Innovations" class="client-logo grayscale"
+                onmouseover="this.classList.remove('grayscale')"
+                onmouseout="this.classList.add('grayscale')">
+    </div>
+</div>
+
+<div class="client-logo-container me-4">
+    <div class="client-logo-circle">
+        <img src="assets/images/logo.png" alt="Global Banking" class="client-logo grayscale"
+                onmouseover="this.classList.remove('grayscale')"
+                onmouseout="this.classList.add('grayscale')">
+    </div>
+</div>
+
+<div class="client-logo-container me-4">
+    <div class="client-logo-circle">
+        <img src="assets/images/cyber.jpg" alt="Healthcare Solutions" class="client-logo grayscale"
+                onmouseover="this.classList.remove('grayscale')"
+                onmouseout="this.classList.add('grayscale')">
+    </div>
+</div>
+
+<div class="client-logo-container me-4">
+    <div class="client-logo-circle">
+        <img src="assets/images/logo.png" alt="E-commerce Platform" class="client-logo grayscale"
+                onmouseover="this.classList.remove('grayscale')"
+                onmouseout="this.classList.add('grayscale')">
+    </div>
+</div>
+
+<div class="client-logo-container me-4">
+    <div class="client-logo-circle">
+        <img src="assets/images/cyber.jpg" alt="Manufacturing Corp" class="client-logo grayscale"
+                onmouseover="this.classList.remove('grayscale')"
+                onmouseout="this.classList.add('grayscale')">
+    </div>
+</div>
+
+<div class="client-logo-container me-4">
+    <div class="client-logo-circle">
+        <img src="assets/images/logo.png" alt="Education Institute" class="client-logo grayscale"
+                onmouseover="this.classList.remove('grayscale')"
+                onmouseout="this.classList.add('grayscale')">
+    </div>
+</div>
+
+<div class="client-logo-container me-4">
+    <div class="client-logo-circle">
+        <img src="assets/images/cyber.jpg" alt="Tech Innovations" class="client-logo grayscale"
+                onmouseover="this.classList.remove('grayscale')"
+                onmouseout="this.classList.add('grayscale')">
+    </div>
+</div>
+
+<div class="client-logo-container me-4">
+    <div class="client-logo-circle">
+        <img src="assets/images/logo.png" alt="Global Banking" class="client-logo grayscale"
+                onmouseover="this.classList.remove('grayscale')"
+                onmouseout="this.classList.add('grayscale')">
+    </div>
+</div>
+
+<div class="client-logo-container me-4">
+    <div class="client-logo-circle">
+        <img src="assets/images/cyber.jpg" alt="Healthcare Solutions" class="client-logo grayscale"
+                onmouseover="this.classList.remove('grayscale')"
+                onmouseout="this.classList.add('grayscale')">
+    </div>
+</div>
+
+<div class="client-logo-container me-4">
+    <div class="client-logo-circle">
+        <img src="assets/images/logo.png" alt="E-commerce Platform" class="client-logo grayscale"
+                onmouseover="this.classList.remove('grayscale')"
+                onmouseout="this.classList.add('grayscale')">
+    </div>
+</div>
+
+<div class="client-logo-container me-4">
+    <div class="client-logo-circle">
+        <img src="assets/images/cyber.jpg" alt="Manufacturing Corp" class="client-logo grayscale"
+                onmouseover="this.classList.remove('grayscale')"
+                onmouseout="this.classList.add('grayscale')">
+    </div>
+</div>
+
+<div class="client-logo-container me-4">
+    <div class="client-logo-circle">
+        <img src="assets/images/logo.png" alt="Education Institute" class="client-logo grayscale"
+                onmouseover="this.classList.remove('grayscale')"
+                onmouseout="this.classList.add('grayscale')">
+    </div>
+</div>
+
+<div class="client-logo-container me-4">
+    <div class="client-logo-circle">
+        <img src="assets/images/cyber.jpg" alt="Tech Innovations" class="client-logo grayscale"
+                onmouseover="this.classList.remove('grayscale')"
+                onmouseout="this.classList.add('grayscale')">
+    </div>
+</div>
+
+<div class="client-logo-container me-4">
+    <div class="client-logo-circle">
+        <img src="assets/images/logo.png" alt="Global Banking" class="client-logo grayscale"
+                onmouseover="this.classList.remove('grayscale')"
+                onmouseout="this.classList.add('grayscale')">
+    </div>
+</div>
+
+<div class="client-logo-container me-4">
+    <div class="client-logo-circle">
+        <img src="assets/images/cyber.jpg" alt="Healthcare Solutions" class="client-logo grayscale"
+                onmouseover="this.classList.remove('grayscale')"
+                onmouseout="this.classList.add('grayscale')">
+    </div>
+</div>
+</div>
+</div>
+</div>
+</section>  
+
+<!-- Register Section -->
+<section class="position-relative overflow-hidden" >
+
+<!-- Marquee Background - Behind Registration Cards -->
+<div class="position-absolute top-50 start-0 w-100 translate-middle-y overflow-hidden" style="z-index: 0; opacity: 0.08;">
+<div class="d-flex" style="width: max-content; animation: marquee-seamless 40s linear infinite;">
+<span class="display-4 fw-bold font-monospace mx-4 text-gradient">अनुक्षणं रक्षामहे</span>
+<span class="display-4 fw-bold font-monospace mx-4 text-gradient">अनुक्षणं रक्षामहे</span>
+<span class="display-4 fw-bold font-monospace mx-4 text-gradient">अनुक्षणं रक्षामहे</span>
+<span class="display-4 fw-bold font-monospace mx-4 text-gradient">अनुक्षणं रक्षामहे</span>
+<span class="display-4 fw-bold font-monospace mx-4 text-gradient">अनुक्षणं रक्षामहे</span>
+<span class="display-4 fw-bold font-monospace mx-4 text-gradient">अनुक्षणं रक्षामहे</span>
+<span class="display-4 fw-bold font-monospace mx-4 text-gradient">अनुक्षणं रक्षामहे</span>
+<span class="display-4 fw-bold font-monospace mx-4 text-gradient">अनुक्षणं रक्षामहे</span>
+<span class="display-4 fw-bold font-monospace mx-4 text-gradient">अनुक्षणं रक्षामहे</span>
+<span class="display-4 fw-bold font-monospace mx-4 text-gradient">अनुक्षणं रक्षामहे</span>
+<!-- Duplicate for seamless loop -->
+<span class="display-4 fw-bold font-monospace mx-4 text-gradient">अनुक्षणं रक्षामहे</span>
+<span class="display-4 fw-bold font-monospace mx-4 text-gradient">अनुक्षणं रक्षामहे</span>
+<span class="display-4 fw-bold font-monospace mx-4 text-gradient">अनुक्षणं रक्षामहे</span>
+<span class="display-4 fw-bold font-monospace mx-4 text-gradient">अनुक्षणं रक्षामहे</span>
+<span class="display-4 fw-bold font-monospace mx-4 text-gradient">अनुक्षणं रक्षामहे</span>
+<span class="display-4 fw-bold font-monospace mx-4 text-gradient">अनुक्षणं रक्षामहे</span>
+<span class="display-4 fw-bold font-monospace mx-4 text-gradient">अनुक्षणं रक्षामहे</span>
+<span class="display-4 fw-bold font-monospace mx-4 text-gradient">अनुक्षणं रक्षामहे</span>
+<span class="display-4 fw-bold font-monospace mx-4 text-gradient">अनुक्षणं रक्षामहे</span>
+<span class="display-4 fw-bold font-monospace mx-4 text-gradient">अनुक्षणं रक्षामहे</span>
+</div>
+</div>
+
+
+
+<div class="container position-relative" style="z-index: 1;">
+
+<!-- Header -->
+<div class="mb-5 text-left">
+
+</div>
+
+<!-- Registration Cards Grid -->
+<div class="row row-cols-4 row-cols-md-3 row-cols-lg-4 g-3 g-md-4 justify-content-center">
+
+<!-- Registration 1 -->
+<div class="col text-center">
+<div class="position-relative d-inline-block">
+<div class="rounded-circle overflow-hidden shadow-lg" style="width:70px; height:70px;">
+<img src="assets/images/iso-27001.png" alt="ISO 27001" class="img-fluid w-100 h-100 object-fit-contain grayscale" onmouseover="this.classList.remove('grayscale')" onmouseout="this.classList.add('grayscale')">
+</div>
+<div class="position-absolute bottom-0 end-0 rounded-circle bg-success border border-white d-flex align-items-center justify-content-center" style="width:20px; height:20px; font-size: 12px;">
+<i class="bi bi-check text-white"></i>
+</div>
+</div>
+<div class="mt-2 d-none d-md-block">
+<h6 class="fw-bold mb-1 theme-text small">ISO 27001:2013</h6>
+<p class="text-muted small mb-0" style="font-size: 11px;">Information Security</p>
+</div>
+</div>
+
+<!-- Registration 2 -->
+<div class="col text-center">
+<div class="position-relative d-inline-block">
+<div class="rounded-circle overflow-hidden shadow-lg" style="width:70px; height:70px;">
+<img src="assets/images/iso-9001.png" alt="ISO 9001" class="img-fluid w-100 h-100 object-fit-contain grayscale" onmouseover="this.classList.remove('grayscale')" onmouseout="this.classList.add('grayscale')">
+</div>
+<div class="position-absolute bottom-0 end-0 rounded-circle bg-success border border-white d-flex align-items-center justify-content-center" style="width:20px; height:20px; font-size: 12px;">
+<i class="bi bi-check text-white"></i>
+</div>
+</div>
+<div class="mt-2 d-none d-md-block">
+<h6 class="fw-bold mb-1 theme-text small">ISO 9001</h6>
+<p class="text-muted small mb-0" style="font-size: 11px;">Quality Management</p>
+</div>
+</div>
+
+<!-- Registration 3 -->
+<div class="col text-center">
+<div class="position-relative d-inline-block">
+<div class="rounded-circle overflow-hidden shadow-lg" style="width:70px; height:70px;">
+<img src="assets/images/msme.png" alt="MSME" class="img-fluid w-100 h-100 object-fit-contain grayscale" onmouseover="this.classList.remove('grayscale')" onmouseout="this.classList.add('grayscale')">
+</div>
+<div class="position-absolute bottom-0 end-0 rounded-circle bg-success border border-white d-flex align-items-center justify-content-center" style="width:20px; height:20px; font-size: 12px;">
+<i class="bi bi-check text-white"></i>
+</div>
+</div>
+<div class="mt-2 d-none d-md-block">
+<h6 class="fw-bold mb-1 theme-text small">MSME</h6>
+<p class="text-muted small mb-0" style="font-size: 11px;">Registered</p>
+</div>
+</div>
+
+<!-- Registration 4 -->
+<div class="col text-center">
+<div class="position-relative d-inline-block">
+<div class="rounded-circle overflow-hidden shadow-lg" style="width:70px; height:70px;">
+<img src="assets/images/msme.png" alt="GeM" class="img-fluid w-100 h-100 object-fit-contain grayscale" onmouseover="this.classList.remove('grayscale')" onmouseout="this.classList.add('grayscale')">
+</div>
+<div class="position-absolute bottom-0 end-0 rounded-circle bg-success border border-white d-flex align-items-center justify-content-center" style="width:20px; height:20px; font-size: 12px;">
+<i class="bi bi-check text-white"></i>
+</div>
+</div>
+<div class="mt-2 d-none d-md-block">
+<h6 class="fw-bold mb-1 theme-text small">GeM</h6>
+<p class="text-muted small mb-0" style="font-size: 11px;">Government eMarketplace</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<!-- Stats -->
+<section id="stats" class=" ">
+  <div class="container">
+    <div class="row text-center g-4 py-3">
+      <div class="col-3 col-md-3">
+        <div class="display-5 fw-bold text-primary">
+          <span class="counter" data-target="2018">0</span>
+        </div>
+        <div class="text-muted small">Founded Company</div>
+      </div>
+      <div class="col-3 col-md-3">
+        <div class="display-5 fw-bold text-primary">
+          <span class="counter" data-target="22">0</span><small>+</small>
+        </div>
+        <div class="text-muted small">Languages Supported</div>
+      </div>
+      <div class="col-3 col-md-3">
+        <div class="display-5 fw-bold text-primary">
+          <span class="counter" data-target="24">0</span><small>/7</small>
+        </div>
+        <div class="text-muted small">Live Support</div>
+      </div>
+      <div class="col-3 col-md-3">
+        <div class="display-5 fw-bold text-primary">
+          <span class="counter" data-target="500">0</span><small>+</small>
+        </div>
+        <div class="text-muted small">Projects Completed</div>
+      </div>
+    </div>
+    <hr class="my-4">
+  </div>
+</section>
+
+<!-- <NEWSLETTER SUBSCRIPTION-->
+<section id="stay-updated" class="py-5 newsletter-section">
+<div class="container">
+<div class="row align-items-center g-5">
+<!-- Left Side - Newsletter Content -->
+<div class="col-lg-6 slide-in-left" data-delay="1000">
+<div class="newsletter-content">
+    
+
+    <h2 class="fw-bold display-6 mb-3 gradient-text">
+    Stay Updated with Latest
+    <span
+        class="gradient-text-animated"
+        style="
+        background: linear-gradient(to right, #dc143c, #ff6b6b);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        "
+    >
+        Security Insights
+    </span>
+    </h2>
+
+</div>
+</div>
+
+<!-- Right Side - Subscription Form -->
+<div class="col-lg-6 slide-in-right" data-delay="1100">
+<div class="subscription-form-container">
+    
+
+    <div class="input-group mb-3 animated-input">
+        <input
+        type="email"
+        class="form-control py-3 email-input"
+        placeholder="Enter your email address"
+        style="border-color: rgba(255, 140, 0, 0.3)"
+        />
+        <button
+        class="btn px-4 fw-medium animated-btn subscribe-btn"
+        style="
+            background: linear-gradient(to right, #ff8c00, #ffb300);
+            color: white;
+        "
+        >
+        <span class="btn-text">Subscribe</span>
+        <span class="btn-arrow">✉️</span>
+        </button>
+    </div>
+
+    <div class="d-flex align-items-center gap-2 mb-3">
+        <input
+        type="checkbox"
+        class="form-check-input"
+        id="privacy-check"
+        />
+        <label
+        for="privacy-check"
+        class="form-check-label small text-muted"
+        >
+        I agree to receive security updates and newsletters
+        </label>
+    </div>
+
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<div class="cta-bg-elements">
+    <div class="bg-element bg-element-1"></div>
+    <div class="bg-element bg-element-2"></div>
+    <div class="bg-element bg-element-3"></div>
+</div>
+
+<!-- CTA Section  -->
+<section  class=" overflow-hidden cta-theme">
+<div class="py-5 position-relative">
+<section class="text-dark">
+<div class="container">
+<div class="row align-items-center g-5">
+<div class="col-lg-12 slide-in-left" data-delay="0">
+<div class="cta-content">
+<h2 class="fw-bold display-3 mb-4 text-dark theme-text">
+Ready to Transform
+<span class="d-block fw-bold text-gradient">
+    Your Security?
+</span>
+</h2>
+
+<div class="row mb-4">
+<div class="col-lg-4 col-md-6 mb-3">
+    <div class="d-flex gap-3 feature-item slide-in-right" data-delay="600">
+    <div class="rounded-circle d-flex align-items-center justify-content-center check-icon bg-accent-success" style="width: 24px; height: 24px; color: white;">
+        ✓
+    </div>
+    <div>
+        <span class="fw-semibold">Free Security Assessment</span>
+        <p class="text-muted small mb-0">
+        Comprehensive analysis of your current security posture
+        </p>
+    </div>
+    </div>
+</div>
+
+<div class="col-lg-4 col-md-6 mb-3">
+    <div class="d-flex gap-3 feature-item slide-in-right" data-delay="700">
+    <div class="rounded-circle d-flex align-items-center justify-content-center check-icon bg-accent-success" style="width: 24px; height: 24px; color: white;">
+        ✓
+    </div>
+    <div>
+        <span class="fw-semibold">24/7 Expert Support</span>
+        <p class="text-muted small mb-0">
+        Round-the-clock monitoring and incident response
+        </p>
+    </div>
+    </div>
+</div>
+
+<div class="col-lg-4 col-md-6 mb-3">
+    <div class="d-flex gap-3 feature-item slide-in-right" data-delay="800">
+    <div class="rounded-circle d-flex align-items-center justify-content-center check-icon bg-accent-success" style="width: 24px; height: 24px; color: white;">
+        ✓
+    </div>
+    <div>
+        <span class="fw-semibold">Custom Solutions</span>
+        <p class="text-muted small mb-0">
+        Tailored security strategies for your business needs
+        </p>
+    </div>
+    </div>
+</div>
+</div>
+
+<div class="d-flex gap-3 flex-wrap fade-in-up" data-delay="900">
+<button class="btn btn-primary text-white px-5 py-3 shadow-lg animated-btn glow-btn primary-btn">
+    <span class="btn-text">Schedule a Consultation</span>
+    <span class="btn-arrow">→</span>
+</button>
+
+<button class="btn btn-outline-warning px-5 py-3 shadow-sm animated-btn secondary-btn">
+    <span class="btn-text">Explore Services</span>
+    <span class="btn-icon">🔍</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</section>
+
+<!-- Footer Section -->
+<footer id="footer-component" class="position-relative overflow-hidden footer-theme" style="background-color: #0f1419;">
+<div class="border-top" style="border-color: rgba(255, 255, 255, 0.1) !important;"></div>
+<div class="position-absolute top-0 start-0 w-100 h-100 hero-overlay-theme" style="z-index: 1;"></div>
+<div class="position-absolute top-0 start-0 w-100 h-100 hero-gradient-theme" style="z-index: 1;"></div>
+
+<div class="container position-relative" style="z-index: 2;">
+<div class="py-5">
+<div class="row">
+<div class="col-lg-3 col-md-4">
+    <div class="footer-section footer-logo-section">
+        <div class="mb-2">
+            <div class="d-flex align-items-center justify-content-between mb-3 flex-wrap">
+                <div class="d-flex align-items-center">
+                    <a class="d-flex navbar-brand me-auto align-items-center" href="index.html">
+                        <img src="assets/images/logo.png" alt="JetHat Logo" style="height: 3rem; margin-right: 6px; filter: brightness(1.2);">
+                        <div class="d-flex flex-column" style="line-height: 1;">
+                            <span class="fw-bold" style="font-size: 1.5rem; color: #ffffff;">JetHat</span>
+                            <small style="color: #ffffff; font-size: 0.75rem;">Cyber Security</small>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="d-flex gap-2 social-icons-mobile d-lg-none">
+                    <a href="#" class="social-link d-flex align-items-center justify-content-center" title="Facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="social-link d-flex align-items-center justify-content-center" title="Twitter"><i class="bi bi-twitter"></i></a>
+                    <a href="#" class="social-link d-flex align-items-center justify-content-center" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                    <a href="#" class="social-link d-flex align-items-center justify-content-center" title="YouTube"><i class="bi bi-youtube"></i></a>
+                </div>
+            </div>
+
+            <p class="text-footer-theme mb-4 lh-relaxed" style="font-size: 0.9rem;">
+                JetHat Cyber Security provides cutting-edge cybersecurity, AI/ML, and cloud solutions.
+            </p>
+
+            <div class="d-none d-lg-flex gap-2 social-icons-desktop">
+                <a href="#" class="social-link d-flex align-items-center justify-content-center" title="Facebook"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="social-link d-flex align-items-center justify-content-center" title="Twitter"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="social-link d-flex align-items-center justify-content-center" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                <a href="#" class="social-link d-flex align-items-center justify-content-center" title="YouTube"><i class="bi bi-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-2 col-md-4">
+    <div class="footer-section">
+        <h6 class="fw-bold mb-4 footer-heading">Company <i class="bi bi-chevron-right ms-1"></i></h6>
+        <ul class="list-unstyled footer-links">
+            <li class="mb-2"><a href="about/index.html" class="footer-link">• About Us</a></li>
+            <li class="mb-2"><a href="about/team.html" class="footer-link">• Our Team</a></li>
+            <li class="mb-2"><a href="about/culture.html" class="footer-link">• Company Culture</a></li>
+            <li class="mb-2"><a href="about/success-stories.html" class="footer-link">• Success Stories</a></li>
+            <li class="mb-2"><a href="careers.html" class="footer-link">• Careers</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="col-lg-2 col-md-4">
+    <div class="footer-section">
+        <h6 class="fw-bold mb-4 footer-heading">Services <i class="bi bi-chevron-right ms-1"></i></h6>
+        <ul class="list-unstyled footer-links">
+            <li class="mb-2"><a href="services/cybersecurity.html" class="footer-link">• Cybersecurity</a></li>
+            <li class="mb-2"><a href="services/ai-ml.html" class="footer-link">• AI/ML Development</a></li>
+            <li class="mb-2"><a href="services/web-development.html" class="footer-link">• Web Development</a></li>
+            <li class="mb-2"><a href="services/mobile-development.html" class="footer-link">• Mobile Development</a></li>
+            <li class="mb-2"><a href="services/cloud-services.html" class="footer-link">• Cloud Services</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="col-lg-2 col-md-4">
+    <div class="footer-section">
+        <h6 class="fw-bold mb-4 footer-heading">Products <i class="bi bi-chevron-right ms-1"></i></h6>
+        <ul class="list-unstyled footer-links">
+            <li class="mb-2"><a href="products/magai.html" class="footer-link">• MagAI</a></li>
+            <li class="mb-2"><a href="products/virtual-naani.html" class="footer-link">• Virtual Naani</a></li>
+            <li class="mb-2"><a href="products/ai-lms.html" class="footer-link">• AI LMS</a></li>
+            <li class="mb-2"><a href="products/sambhasini-ai.html" class="footer-link">• Sambhasini AI</a></li>
+            <li class="mb-2"><a href="products/jetpay.html" class="footer-link">• JetPay</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="col-lg-3 col-md-4">
+    <div class="footer-section">
+        <h6 class="fw-bold mb-4 footer-heading">Contact Us <i class="bi bi-chevron-right ms-1"></i></h6>
+
+        <div class="contact-info">
+            <div class="d-flex align-items-start mb-3">
+                <div class="contact-icon me-2"><i class="bi bi-geo-alt-fill"></i></div>
+                <div>
+                    <p class="mb-0 small text-footer-theme" style="line-height: 1.6;">
+                        Bhutani Technopark B-508, Sector 127, Noida<br>
+                        Uttar Pradesh - 201301, India
+                    </p>
+                </div>
+            </div>
+
+            <div class="d-flex align-items-start mb-3">
+                <div class="contact-icon me-2"><i class="bi bi-telephone-fill"></i></div>
+                <div>
+                    <p class="mb-0 small text-footer-theme">+91-120-4188947</p>
+                    <p class="mb-0 small text-footer-theme">24/7 Support Available</p>
+                </div>
+            </div>
+
+            <div class="d-flex align-items-start mb-3">
+                <div class="contact-icon me-2"><i class="bi bi-envelope-fill"></i></div>
+                <div>
+                    <p class="mb-0 small"><a href="mailto:info@jethat.in" class="text-decoration-none text-footer-theme">info@jethat.in</a></p>
+                </div>
+            </div>
+
+            <div class="mt-4 d-none d-lg-block">
+                <a href="contact.html" class="d-inline-flex align-items-center text-decoration-none gov-badge">
+                    <span class="small fw-semibold">Get in Touch</span>
+                    <i class="bi bi-arrow-right ms-2"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+<div class="border-top py-4 footer-bottom-bar" style="border-color: rgba(255,255,255,0.1) !important;">
+<div class="row align-items-center">
+<div class="col-md-6">
+    <p class="mb-0 text-footer-theme small">© 2026 JetHat Cyber Security Pvt. Ltd. All rights reserved.</p>
+</div>
+<div class="col-md-6 text-md-end mt-3 mt-md-0">
+    <div class="d-flex flex-wrap justify-content-md-end gap-3">
+        <a href="legal/privacy-policy.html" class="footer-link small">Privacy Policy</a>
+        <a href="legal/terms-of-use.html" class="footer-link small">Terms of Use</a>
+        <a href="legal/terms-conditions.html" class="footer-link small">Terms & Conditions</a>
+        <a href="legal/cancellation-policy.html" class="footer-link small">Cancellation Policy</a>
+    </div>
+</div>
+</div>
+<div class="row mt-2">
+<div class="col-12 text-center">
+    <p class="mb-0 text-footer-theme" style="font-size: 0.75rem;">Last Updated: 14 January 2026</p>
+</div>
+</div>
+</div>
+</div>
+
+<button id="scrollToTop" class="btn position-fixed bottom-0 end-0 m-4 d-none scroll-top-btn">
+<i class="bi bi-arrow-up text-white"></i>
+</button>
+</footer>
+</main>
+<!-- theme togle   -->
+<button id="theme-toggle" class="position-fixed bottom-0 start-0 m-4 rounded-circle p-1 shadow-lg" style="z-index: 1050;">
+    <i id="sun-icon" class="bi bi-sun-fill d-none"></i>
+    <i id="moon-icon" class="bi bi-moon-fill"></i>
+</button>
+<!-- progressbar -->
+<div id="scroll-progress" class="position-fixed top-0 start-0 w-100 bg-secondary bg-opacity-25" style="height: 4px; z-index: 1050;">
+    <div id="scroll-bar" class="h-100 bg-gradient transition-all" style="width: 0%; background: linear-gradient(90deg, var(--accent-primary), var(--accent-gold));"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="scripts/universal-loader.js"></script>
+<script src="scripts/navigation-loader.js"></script>
+<script src="scripts/navigation.js"></script>
+<script src="scripts/navbar-scroll.js"></script>
+<script src="scripts/theme-toggle.js"></script>
+<script src="scripts/main.js"></script>
+<script src="scripts/career-carousel.js"></script>
+<script src="scripts/testimonial-carousel.js"></script>
+<script src="scripts/cta-animations.js"></script>
+<script src="scripts/services-animations.js"></script>
+<script src="scripts/enhanced-services.js"></script>
+<script src="scripts/who-we-are.js"></script>
+<script src="scripts/products.js"></script>
+<script src="scripts/cyber-security-animations.js"></script>
+<script src="scripts/advanced-protection.js"></script>
+<script src="scripts/scroll-feature.js"></script>
+<script src="scripts/cyber-security-animations.js"></script>
+<script src="scripts/stats-counter.js"></script>
 
 </body>
 </html>
