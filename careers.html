@@ -23,1164 +23,1161 @@
     <link rel="stylesheet" href="styles/careers.css">
     <link rel="stylesheet" href="styles/footer.css">
     <link rel="stylesheet" href="styles/navigation.css">
-    <!-- <link rel="stylesheet" href="styles/.css"> -->
-
     
 </head>
 <body>
-    <!-- Navigation -->
+<!-- Navigation -->
 <section>
-    <div class="offcanvas offcanvas-end mobile-nav-canvas" id="mobileMenu" tabindex="-1">
-        <div class="offcanvas-header mobile-nav-header">
-            <div class="d-flex align-items-center gap-2">
-                <img src="assets/images/logo.png" alt="JetHat Logo" style="height: 3.5rem;">
-                <div>
-                    <h5 class="mb-0 fw-bold" style="color: black; " >JetHat</h5>
-                    <small >Cyber Security</small>
-                </div>
+<div class="offcanvas offcanvas-end mobile-nav-canvas" id="mobileMenu" tabindex="-1">
+    <div class="offcanvas-header mobile-nav-header">
+        <div class="d-flex align-items-center gap-2">
+            <img src="assets/images/logo.png" alt="JetHat Logo" style="height: 3.5rem;">
+            <div>
+                <h5 class="mb-0 fw-bold" style="color: black; " >JetHat</h5>
+                <small >Cyber Security</small>
             </div>
-            <button type="button" class="btn-close mobile-nav-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
+        <button type="button" class="btn-close mobile-nav-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
 
-        <div class="offcanvas-body mobile-nav-body">
-            <nav class="mobile-nav" id="mobileAccordion">
-                <div class="mobile-nav-item">
-                    <a href="index.html" class="mobile-nav-link">
-                        <span>Home</span>
-                    </a>
-                </div>
-
-                <div class="mobile-nav-group">
-                    <button class="mobile-nav-group-toggle" data-bs-toggle="collapse" data-bs-target="#mobileCompany" aria-expanded="false" data-bs-parent="#mobileAccordion">
-                        <div class="mobile-nav-link">
-                            <span>Company</span>
-                        </div>
-                        <i class="bi bi-chevron-down mobile-arrow"></i>
-                    </button>
-                    <div class="collapse mobile-nav-collapse" id="mobileCompany" data-bs-parent="#mobileAccordion">
-                        <div class="mobile-nav-submenu">
-                            <a href="about/index.html" class="mobile-submenu-link"><i class="bi bi-arrow-right"></i><span>About Us</span></a>
-                            <a href="about/team.html" class="mobile-submenu-link"><i class="bi bi-arrow-right"></i><span>Our Team</span></a>
-                            <a href="about/culture.html" class="mobile-submenu-link"><i class="bi bi-arrow-right"></i><span>Company Culture</span></a>
-                            <a href="about/success-stories.html" class="mobile-submenu-link"><i class="bi bi-arrow-right"></i><span>Success Stories</span></a>
-                            <a href="about/projects-showcase.html" class="mobile-submenu-link"><i class="bi bi-arrow-right"></i><span>Projects Showcase</span></a>
-                            <a href="about/development-pipeline.html" class="mobile-submenu-link"><i class="bi bi-arrow-right"></i><span>What We're Building</span></a>
-                            <a href="careers.html" class="mobile-submenu-link"><i class="bi bi-arrow-right"></i><span>Careers</span></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mobile-nav-group">
-                    <button class="mobile-nav-group-toggle" data-bs-toggle="collapse" data-bs-target="#mobileProducts" aria-expanded="false" data-bs-parent="#mobileAccordion">
-                        <div class="mobile-nav-link">
-                            <span>Products</span>
-                        </div>
-                        <i class="bi bi-chevron-down mobile-arrow"></i>
-                    </button>
-                    <div class="collapse mobile-nav-collapse" id="mobileProducts" data-bs-parent="#mobileAccordion">
-                        <div class="mobile-nav-submenu">
-                            <a href="products/magai.html" class="mobile-submenu-link"><i class="bi bi-magic"></i><span>MagAI</span></a>
-                            <a href="products/virtual-naani.html" class="mobile-submenu-link"><i class="bi bi-person-heart"></i><span>Virtual Naani</span></a>
-                            <a href="products/ai-lms.html" class="mobile-submenu-link"><i class="bi bi-book"></i><span>AI Multilingual LMS</span></a>
-                            <a href="products/e-library.html" class="mobile-submenu-link"><i class="bi bi-journal-bookmark"></i><span>E-Library</span></a>
-                            <a href="products/anukaran-ai.html" class="mobile-submenu-link"><i class="bi bi-cpu"></i><span>Anukaran AI</span></a>
-                            <a href="products/sambhasini-ai.html" class="mobile-submenu-link"><i class="bi bi-mic"></i><span>Sambhasini AI</span></a>
-                            <a href="products/multi-dictionary.html" class="mobile-submenu-link"><i class="bi bi-translate"></i><span>Multilingual Dictionary</span></a>
-                            <a href="products/collaborative-digitalisation.html" class="mobile-submenu-link"><i class="bi bi-file-earmark-text"></i><span>Collaborative Digitalisation</span></a>
-                            <a href="products/virtual-classroom-solution.html" class="mobile-submenu-link"><i class="bi bi-camera-video"></i><span>Virtual Classroom Solution</span></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mobile-nav-group">
-                    <button class="mobile-nav-group-toggle" data-bs-toggle="collapse" data-bs-target="#mobileServices" aria-expanded="false" data-bs-parent="#mobileAccordion">
-                        <div class="mobile-nav-link">
-                            <span>Services</span>
-                        </div>
-                        <i class="bi bi-chevron-down mobile-arrow"></i>
-                    </button>
-                    <div class="collapse mobile-nav-collapse" id="mobileServices" data-bs-parent="#mobileAccordion">
-                        <div class="mobile-nav-submenu">
-                            <a href="services/cybersecurity.html" class="mobile-submenu-link"><i class="bi bi-shield-check"></i><span>Cybersecurity</span></a>
-                            <a href="services/ai-ml.html" class="mobile-submenu-link"><i class="bi bi-robot"></i><span>AI/ML Development</span></a>
-                            <a href="services/web-development.html" class="mobile-submenu-link"><i class="bi bi-globe"></i><span>Web Development</span></a>
-                            <a href="services/mobile-development.html" class="mobile-submenu-link"><i class="bi bi-phone"></i><span>Mobile Development</span></a>
-                            <a href="services/cloud-services.html" class="mobile-submenu-link"><i class="bi bi-cloud"></i><span>Cloud Services</span></a>
-                            <a href="services/ecommerce-services.html" class="mobile-submenu-link"><i class="bi bi-cart"></i><span>Ecommerce Services</span></a>
-                            <a href="services/ai-research-development.html" class="mobile-submenu-link"><i class="bi bi-cpu"></i><span>R&D (AI, ML, DL)</span></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mobile-nav-group">
-                    <button class="mobile-nav-group-toggle" data-bs-toggle="collapse" data-bs-target="#mobileTechnologies" aria-expanded="false" data-bs-parent="#mobileAccordion">
-                        <div class="mobile-nav-link">
-                            <span>Technologies</span>
-                        </div>
-                        <i class="bi bi-chevron-down mobile-arrow"></i>
-                    </button>
-                    <div class="collapse mobile-nav-collapse" id="mobileTechnologies" data-bs-parent="#mobileAccordion">
-                        <div class="mobile-nav-submenu">
-                            <a href="technologies/core.html" class="mobile-submenu-link"><i class="bi bi-cpu"></i><span>Core Technology</span></a>
-                            <a href="technologies/case-study.html" class="mobile-submenu-link"><i class="bi bi-file-earmark-text"></i><span>Case Studies</span></a>
-                            <a href="technologies/innovation.html" class="mobile-submenu-link"><i class="bi bi-rocket"></i><span>Innovation Lab</span></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="mobile-nav-group">
-                    <a href="careers.html" class="mobile-nav-link">
-                        <span>Careers</span>
-                    </a>
-                </div>
-                <div class="mobile-nav-group">
-                <a href="contact.html" class="mobile-nav-link">
-                        <span>Contact</span>
-                    </a>
-                </div>
-
-            </nav>
-
-            <div class="mobile-nav-cta">
-                <a href="contact.html" class="btn btn-gradient w-100 py-3">
-                    <i class="bi bi-chat-dots-fill me-2"></i>
-                    Get a Quote
+    <div class="offcanvas-body mobile-nav-body">
+        <nav class="mobile-nav" id="mobileAccordion">
+            <div class="mobile-nav-item">
+                <a href="index.html" class="mobile-nav-link">
+                    <span>Home</span>
                 </a>
             </div>
 
-            <div class="mobile-nav-social">
-                <a href="https://facebook.com/jethat" class="social-link" target="_blank" rel="noopener noreferrer"><i class="bi bi-facebook"></i></a>
-                <a href="https://twitter.com/jethat" class="social-link" target="_blank" rel="noopener noreferrer"><i class="bi bi-twitter-x"></i></a>
-                <a href="https://linkedin.com/company/jethat" class="social-link" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i></a>
-                <a href="https://instagram.com/jethat" class="social-link" target="_blank" rel="noopener noreferrer"><i class="bi bi-instagram"></i></a>
-            </div>
-        </div>
-    </div>
-    <nav class="navbar navbar-expand-lg fixed-top py-3  navbar-theme">
-        <div class="container d-flex align-items-center">
-            <a class="d-flex navbar-brand me-auto align-items-center" href="index.html">
-                <img src="assets/images/logo.png" alt="JetHat Logo" style="height: 3rem; margin-right: 6px;">
-                <div class="d-flex flex-column" style="line-height: 1;">
-                    <span class="fw-bold" style="font-size: 1.5rem;">JetHat</span>
-                    <small style="color: var(--text-secondary) !important; font-size: 0.75rem;">Cyber Security</small>
+            <div class="mobile-nav-group">
+                <button class="mobile-nav-group-toggle" data-bs-toggle="collapse" data-bs-target="#mobileCompany" aria-expanded="false" data-bs-parent="#mobileAccordion">
+                    <div class="mobile-nav-link">
+                        <span>Company</span>
+                    </div>
+                    <i class="bi bi-chevron-down mobile-arrow"></i>
+                </button>
+                <div class="collapse mobile-nav-collapse" id="mobileCompany" data-bs-parent="#mobileAccordion">
+                    <div class="mobile-nav-submenu">
+                        <a href="about/index.html" class="mobile-submenu-link"><i class="bi bi-arrow-right"></i><span>About Us</span></a>
+                        <a href="about/team.html" class="mobile-submenu-link"><i class="bi bi-arrow-right"></i><span>Our Team</span></a>
+                        <a href="about/culture.html" class="mobile-submenu-link"><i class="bi bi-arrow-right"></i><span>Company Culture</span></a>
+                        <a href="about/success-stories.html" class="mobile-submenu-link"><i class="bi bi-arrow-right"></i><span>Success Stories</span></a>
+                        <a href="about/projects-showcase.html" class="mobile-submenu-link"><i class="bi bi-arrow-right"></i><span>Projects Showcase</span></a>
+                        <a href="about/development-pipeline.html" class="mobile-submenu-link"><i class="bi bi-arrow-right"></i><span>What We're Building</span></a>
+                        <a href="careers.html" class="mobile-submenu-link"><i class="bi bi-arrow-right"></i><span>Careers</span></a>
+                    </div>
                 </div>
+            </div>
+
+            <div class="mobile-nav-group">
+                <button class="mobile-nav-group-toggle" data-bs-toggle="collapse" data-bs-target="#mobileProducts" aria-expanded="false" data-bs-parent="#mobileAccordion">
+                    <div class="mobile-nav-link">
+                        <span>Products</span>
+                    </div>
+                    <i class="bi bi-chevron-down mobile-arrow"></i>
+                </button>
+                <div class="collapse mobile-nav-collapse" id="mobileProducts" data-bs-parent="#mobileAccordion">
+                    <div class="mobile-nav-submenu">
+                        <a href="products/magai.html" class="mobile-submenu-link"><i class="bi bi-magic"></i><span>MagAI</span></a>
+                        <a href="products/virtual-naani.html" class="mobile-submenu-link"><i class="bi bi-person-heart"></i><span>Virtual Naani</span></a>
+                        <a href="products/ai-lms.html" class="mobile-submenu-link"><i class="bi bi-book"></i><span>AI Multilingual LMS</span></a>
+                        <a href="products/e-library.html" class="mobile-submenu-link"><i class="bi bi-journal-bookmark"></i><span>E-Library</span></a>
+                        <a href="products/anukaran-ai.html" class="mobile-submenu-link"><i class="bi bi-cpu"></i><span>Anukaran AI</span></a>
+                        <a href="products/sambhasini-ai.html" class="mobile-submenu-link"><i class="bi bi-mic"></i><span>Sambhasini AI</span></a>
+                        <a href="products/multi-dictionary.html" class="mobile-submenu-link"><i class="bi bi-translate"></i><span>Multilingual Dictionary</span></a>
+                        <a href="products/collaborative-digitalisation.html" class="mobile-submenu-link"><i class="bi bi-file-earmark-text"></i><span>Collaborative Digitalisation</span></a>
+                        <a href="products/virtual-classroom-solution.html" class="mobile-submenu-link"><i class="bi bi-camera-video"></i><span>Virtual Classroom Solution</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mobile-nav-group">
+                <button class="mobile-nav-group-toggle" data-bs-toggle="collapse" data-bs-target="#mobileServices" aria-expanded="false" data-bs-parent="#mobileAccordion">
+                    <div class="mobile-nav-link">
+                        <span>Services</span>
+                    </div>
+                    <i class="bi bi-chevron-down mobile-arrow"></i>
+                </button>
+                <div class="collapse mobile-nav-collapse" id="mobileServices" data-bs-parent="#mobileAccordion">
+                    <div class="mobile-nav-submenu">
+                        <a href="services/cybersecurity.html" class="mobile-submenu-link"><i class="bi bi-shield-check"></i><span>Cybersecurity</span></a>
+                        <a href="services/ai-ml.html" class="mobile-submenu-link"><i class="bi bi-robot"></i><span>AI/ML Development</span></a>
+                        <a href="services/web-development.html" class="mobile-submenu-link"><i class="bi bi-globe"></i><span>Web Development</span></a>
+                        <a href="services/mobile-development.html" class="mobile-submenu-link"><i class="bi bi-phone"></i><span>Mobile Development</span></a>
+                        <a href="services/cloud-services.html" class="mobile-submenu-link"><i class="bi bi-cloud"></i><span>Cloud Services</span></a>
+                        <a href="services/ecommerce-services.html" class="mobile-submenu-link"><i class="bi bi-cart"></i><span>Ecommerce Services</span></a>
+                        <a href="services/ai-research-development.html" class="mobile-submenu-link"><i class="bi bi-cpu"></i><span>R&D (AI, ML, DL)</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mobile-nav-group">
+                <button class="mobile-nav-group-toggle" data-bs-toggle="collapse" data-bs-target="#mobileTechnologies" aria-expanded="false" data-bs-parent="#mobileAccordion">
+                    <div class="mobile-nav-link">
+                        <span>Technologies</span>
+                    </div>
+                    <i class="bi bi-chevron-down mobile-arrow"></i>
+                </button>
+                <div class="collapse mobile-nav-collapse" id="mobileTechnologies" data-bs-parent="#mobileAccordion">
+                    <div class="mobile-nav-submenu">
+                        <a href="technologies/core.html" class="mobile-submenu-link"><i class="bi bi-cpu"></i><span>Core Technology</span></a>
+                        <a href="technologies/case-study.html" class="mobile-submenu-link"><i class="bi bi-file-earmark-text"></i><span>Case Studies</span></a>
+                        <a href="technologies/innovation.html" class="mobile-submenu-link"><i class="bi bi-rocket"></i><span>Innovation Lab</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-nav-group">
+                <a href="careers.html" class="mobile-nav-link">
+                    <span>Careers</span>
+                </a>
+            </div>
+            <div class="mobile-nav-group">
+            <a href="contact.html" class="mobile-nav-link">
+                    <span>Contact</span>
+                </a>
+            </div>
+
+        </nav>
+
+        <div class="mobile-nav-cta">
+            <a href="contact.html" class="btn btn-gradient w-100 py-3">
+                <i class="bi bi-chat-dots-fill me-2"></i>
+                Get a Quote
             </a>
-
-            <button class="navbar-toggler d-lg-none border-0 order-3 mobile-toggle ms-auto" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-            </button>
-
-            <div class="collapse navbar-collapse order-lg-4" id="navbarNav">
-                <ul class="navbar-nav ms-auto professional-nav-menu">
-                    <li class="nav-item nav-item-enhanced">
-                        <a class="nav-link fw-medium font-poppins nav-link-enhanced" href="index.html">
-                            <span class="nav-text">Home</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-item dropdown dropdown-hover nav-item-enhanced">
-                        <a class="nav-link fw-medium font-poppins d-flex align-items-center gap-1 nav-link-enhanced" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <span class="nav-text">Company</span>
-                            <i class="bi bi-chevron-down small dropdown-arrow"></i>
-                        </a>
-                        <ul class="dropdown-menu single-column-dropdown  dropdown-menu-theme    shadow-lg dropdown-animation ">
-                            <li><a href="about/index.html" class="dropdown-item smooth-item">
-                                <div class="item-content">
-                                    <div class="item-text">
-                                        <div class="item-title" style="color: #000;">About Us</div>
-                                        <div class="item-subtitle" style="color: #999;">Learn more about JetHat</div>
-                                    </div>
-                                </div>
-                            </a></li>
-                            <li><a href="about/team.html" class="dropdown-item smooth-item">
-                                <div class="item-content">
-                                    <div class="item-text">
-                                        <div class="item-title" style="color: #000;">Our Team</div>
-                                        <div class="item-subtitle" style="color: #999;">Meet our experts</div>
-                                    </div>
-                                </div>
-                            </a></li>
-                            <li><a href="about/culture.html" class="dropdown-item smooth-item">
-                                <div class="item-content">
-                                    <div class="item-text">
-                                        <div class="item-title" style="color: #000;">Company Culture</div>
-                                        <div class="item-subtitle" style="color: #999;">Our values and environment</div>
-                                    </div>
-                                </div>
-                            </a></li>
-                            <li><a href="about/success-stories.html" class="dropdown-item smooth-item">
-                                <div class="item-content">
-                                    <div class="item-text">
-                                        <div class="item-title" style="color: #000;">Success Stories</div>
-                                        <div class="item-subtitle" style="color: #999;">Case studies & achievements</div>
-                                    </div>
-                                </div>
-                            </a></li>
-                            <li><a href="about/projects-showcase.html" class="dropdown-item smooth-item">
-                                <div class="item-content">
-                                    <div class="item-text">
-                                        <div class="item-title" style="color: #000;">Projects Showcase</div>
-                                        <div class="item-subtitle" style="color: #999;">Our project portfolio</div>
-                                    </div>
-                                </div>
-                            </a></li>
-                            <li><a href="about/development-pipeline.html" class="dropdown-item smooth-item">
-                                <div class="item-content">
-                                    <div class="item-text">
-                                        <div class="item-title" style="color: #000;">What We're Building</div>
-                                        <div class="item-subtitle" style="color: #999;">Development pipeline</div>
-                                    </div>
-                                </div>
-                            </a></li>
-                            <li><a href="careers.html" class="dropdown-item smooth-item">
-                                <div class="item-content">
-                                    <div class="item-text">
-                                        <div class="item-title" style="color: #000;">Careers</div>
-                                        <div class="item-subtitle" style="color: #999;">Join our team</div>
-                                    </div>
-                                </div>
-                            </a></li>
-                        </ul>
-                    </li>
-
-                    <li class="nav-item dropdown dropdown-hover nav-item-enhanced">
-                        <a class="nav-link fw-medium font-poppins d-flex align-items-center gap-1 nav-link-enhanced" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <span class="nav-text">Products</span>
-                            <i class="bi bi-chevron-down small dropdown-arrow"></i>
-                        </a>
-                        <ul class="dropdown-menu single-column-dropdown border-bottom border-2 border-primary shadow-lg dropdown-animation ">
-                            <li><a href="products/magai.html" class="dropdown-item smooth-item">
-                                <div class="item-content">
-                                    <div class="item-text">
-                                        <div class="item-title" style="color: #000;">MagAI</div>
-                                        <div class="item-subtitle" style="color: #999;">AI-powered content management</div>
-                                    </div>
-                                </div>
-                            </a></li>
-                            <li><a href="products/virtual-naani.html" class="dropdown-item smooth-item">
-                                <div class="item-content">
-                                    <div class="item-text">
-                                        <div class="item-title" style="color: #000;">Virtual Naani</div>
-                                        <div class="item-subtitle" style="color: #999;">AI grandmother for elderly care</div>
-                                    </div>
-                                </div>
-                            </a></li>
-                            <li><a href="products/ai-lms.html" class="dropdown-item smooth-item">
-                                <div class="item-content">
-                                    <div class="item-text">
-                                        <div class="item-title" style="color: #000;">AI Multilingual LMS</div>
-                                        <div class="item-subtitle" style="color: #999;">Smart learning management</div>
-                                    </div>
-                                </div>
-                            </a></li>
-                            <li><a href="products/e-library.html" class="dropdown-item smooth-item">
-                                <div class="item-content">
-                                    <div class="item-text">
-                                        <div class="item-title" style="color: #000;">E-Library</div>
-                                        <div class="item-subtitle" style="color: #999;">Digital library platform</div>
-                                    </div>
-                                </div>
-                            </a></li>
-                            <li><a href="products/anukaran-ai.html" class="dropdown-item smooth-item">
-                                <div class="item-content">
-                                    <div class="item-text">
-                                        <div class="item-title" style="color: #000;">Anukaran AI</div>
-                                        <div class="item-subtitle" style="color: #999;">AI model replication system</div>
-                                    </div>
-                                </div>
-                            </a></li>
-                            <li><a href="products/sambhasini-ai.html" class="dropdown-item smooth-item">
-                                <div class="item-content">
-                                    <div class="item-text">
-                                        <div class="item-title" style="color: #000;">Sambhasini AI</div>
-                                        <div class="item-subtitle" style="color: #999;">Multilingual voice AI</div>
-                                    </div>
-                                </div>
-                            </a></li>
-                            <li><a href="products/multi-dictionary.html" class="dropdown-item smooth-item">
-                                <div class="item-content">
-                                    <div class="item-text">
-                                        <div class="item-title" style="color: #000;">Multilingual Dictionary</div>
-                                        <div class="item-subtitle" style="color: #999;">Language translation tool</div>
-                                    </div>
-                                </div>
-                            </a></li>
-                            <li><a href="products/collaborative-digitalisation.html" class="dropdown-item smooth-item">
-                                <div class="item-content">
-                                    <div class="item-text">
-                                        <div class="item-title" style="color: #000;">Collaborative Digitalisation</div>
-                                        <div class="item-subtitle" style="color: #999;">Document workflow platform</div>
-                                    </div>
-                                </div>
-                            </a></li>
-                            <li><a href="products/virtual-classroom-solution.html" class="dropdown-item smooth-item">
-                                <div class="item-content">
-                                    <div class="item-text">
-                                        <div class="item-title" style="color: #000;">Virtual Classroom Solution</div>
-                                        <div class="item-subtitle" style="color: #999;">Online education platform</div>
-                                    </div>
-                                </div>
-                            </a></li>
-                        </ul>
-                    </li>
-
-                    <li class="nav-item dropdown dropdown-hover nav-item-enhanced">
-                        <a class="nav-link fw-medium font-poppins d-flex align-items-center gap-1 nav-link-enhanced" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <span class="nav-text">Services</span>
-                            <i class="bi bi-chevron-down small dropdown-arrow"></i>
-                        </a>
-                        <ul class="dropdown-menu single-column-dropdown  border-bottom border-2 border-primary shadow-lg dropdown-animation">
-                            <li class="dropdown-header">
-                                <i class="bi bi-cpu me-2"></i>Service Overview
-                            </li>
-                            <li><a href="services/cybersecurity.html" class="dropdown-item smooth-item">
-                                <div class="item-content">
-                                    <div class="item-text">
-                                        <div class="item-title" style="color: #000;">Cybersecurity</div>
-                                        <div class="item-subtitle" style="color: #999;">Comprehensive security solutions</div>
-                                    </div>
-                                </div>
-                            </a></li>
-                            <li><a href="services/ai-ml.html" class="dropdown-item smooth-item">
-                                <div class="item-content">
-                                    <div class="item-text">
-                                        <div class="item-title" style="color: #000;">AI/ML Development</div>
-                                        <div class="item-subtitle" style="color: #999;">Custom AI and ML solutions</div>
-                                    </div>
-                                </div>
-                            </a></li>
-                            <li><a href="services/web-development.html" class="dropdown-item smooth-item">
-                                <div class="item-content">
-                                    <div class="item-text">
-                                        <div class="item-title" style="color: #000;">Web Development</div>
-                                        <div class="item-subtitle" style="color: #999;">Modern web applications</div>
-                                    </div>
-                                </div>
-                            </a></li>
-                            <li><a href="services/mobile-development.html" class="dropdown-item smooth-item">
-                                <div class="item-content">
-                                    <div class="item-text">
-                                        <div class="item-title" style="color: #000;">Mobile Development</div>
-                                        <div class="item-subtitle" style="color: #999;">iOS and Android apps</div>
-                                    </div>
-                                </div>
-                            </a></li>
-                            <li><a href="services/cloud-services.html" class="dropdown-item smooth-item">
-                                <div class="item-content">
-                                    <div class="item-text">
-                                        <div class="item-title" style="color: #000;">Cloud Services</div>
-                                        <div class="item-subtitle" style="color: #999;">Scalable cloud infrastructure</div>
-                                    </div>
-                                </div>
-                            </a></li>
-                            <li><a href="services/ecommerce-services.html" class="dropdown-item smooth-item">
-                                <div class="item-content">
-                                    <div class="item-text">
-                                        <div class="item-title" style="color: #000;">Ecommerce Services</div>
-                                        <div class="item-subtitle" style="color: #999;">Online store solutions</div>
-                                    </div>
-                                </div>
-                            </a></li>
-                            <li><a href="services/ai-research-development.html" class="dropdown-item smooth-item">
-                                <div class="item-content">
-                                    <div class="item-text">
-                                        <div class="item-title" style="color: #000;">R&D (AI, ML, DL)</div>
-                                        <div class="item-subtitle" style="color: #999;">AI research & development</div>
-                                    </div>
-                                </div>
-                            </a></li>
-                        </ul>
-                    </li>
-
-                    <li class="nav-item dropdown dropdown-hover nav-item-enhanced">
-                        <a class="nav-link fw-medium font-poppins d-flex align-items-center gap-1 nav-link-enhanced" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <span class="nav-text">Technologies</span>
-                            <i class="bi bi-chevron-down small dropdown-arrow"></i>
-                        </a>
-                        <ul class="dropdown-menu single-column-dropdown tech-dropdown   shadow-lg dropdown-animation ">
-                            <li class="dropdown-header">
-                                <i class="bi bi-cpu me-2"></i>Core Technologies
-                            </li>
-                            <li><a href="technologies/core.html" class="dropdown-item smooth-item">
-                                <div class="item-content">
-                                    <div class="item-text">
-                                        <div class="item-title" style="color: #000;">Core Technology</div>
-                                        <div class="item-subtitle" style="color: #999;">Real-world implementations</div>
-                                    </div>
-                                </div>
-                            </a></li>
-                            <li><a href="technologies/case-study.html" class="dropdown-item smooth-item">
-                                <div class="item-content">
-                                    <div class="item-text">
-                                        <div class="item-title" style="color: #000;">Case Studies</div>
-                                        <div class="item-subtitle" style="color: #999;">Real-world implementations</div>
-                                    </div>
-                                </div>
-                            </a></li>
-                            <li><a href="technologies/innovation.html" class="dropdown-item smooth-item">
-                                <div class="item-content">
-                                    <div class="item-text">
-                                        <div class="item-title" style="color: #000;">Innovation Lab</div>
-                                        <div class="item-subtitle" style="color: #999;">Research & development</div>
-                                    </div>
-                                </div>
-                            </a></li>
-                        </ul>
-                    </li>
-
-                    <li class="nav-item nav-item-enhanced">
-                        <a class="nav-link fw-medium font-poppins nav-link-enhanced" href="careers.html">
-                            <span class="nav-text">Career</span>
-                        </a>
-                    </li>
-                    <li class="nav-item nav-item-enhanced">
-                        <a class="nav-link fw-medium font-poppins nav-link-enhanced" href="contact.html">
-                            <span class="nav-text">Contact</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="d-flex align-items-left gap-3 order-lg-5 ms-lg-3">
-                <a href="contact.html" class="d-none d-lg-inline-block border-1 btn-outline-primary px-2 py-2 text-center text-decoration-none" style="width: 7.5rem; border-bottom: #dd5c00 1px solid; border-radius: 5px;">
-                    Talk to Us ->
-                </a>
-            </div>
-        </div>
-    </nav>
-</section>
-<!-- right panel -->
-<section>
-    <button id="rightArrowBtn" class="btn position-fixed d-flex align-items-center justify-content-center shadow-lg" 
-        data-bs-toggle="offcanvas" data-bs-target="#rightPanel"
-        style="right: 0; top: 50%; transform: translateY(-50%); width: 15px; height: 60px; border-radius: 5px 0 0 20px; z-index: 1040; border: none;">
-    <i class="bi bi-chevron-left fs-4 text-white"></i>
-</button>
-
-<div class="offcanvas offcanvas-end right-panel-theme" tabindex="-1" id="rightPanel" aria-labelledby="rightPanelLabel" style="z-index: 9999;">
-    <div class="offcanvas-header right-panel-header">
-        <h5 class="offcanvas-title text-white fw-bold" id="rightPanelLabel">
-           <img src="assets/images/logo.png" alt="" srcset="" height="50px">
-            JetHat Solutions
-        </h5>
-        <button type="button" class="btn-close right-panel-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body right-panel-body" onclick="event.stopPropagation();">
-      
-        <div class="mb-4">
-            <h6 class="right-panel-section-title mb-3">
-              
-                Company Stats
-            </h6>
-            <div class="row g-2 text-center">
-                <div class="col-4">
-                    <div class="">
-                        <div class=" fw-bold mb-1">500+</div>
-                        <small class="text-muted">Projects</small>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="">
-                        <div class=" fw-bold mb-1">50+</div>
-                        <small class="text-muted">Clients</small>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="">
-                        <div class=" fw-bold mb-1">6+</div>
-                        <small class="text-muted">Years</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="mb-4">
-            <h6 class="right-panel-section-title mb-3">
-             
-                Quick Access
-            </h6>
-            <div class="row g-2">
-                <div class="col-6">
-                    <a href="services/cybersecurity.html" class="right-panel-btn w-100" onclick="event.stopPropagation();">
-                        <i class="bi bi-shield-check me-1"></i>
-                        Security
-                    </a>
-                </div>
-                <div class="col-6">
-                    <a href="services/ai-ml.html" class="right-panel-btn w-100" onclick="event.stopPropagation();">
-                        <i class="bi bi-brain me-1"></i>
-                        AI/ML
-                    </a>
-                </div>
-                <div class="col-6">
-                    <a href="services/web-development.html" class="right-panel-btn w-100" onclick="event.stopPropagation();">
-                        <i class="bi bi-code-slash me-1"></i>
-                        Web Dev
-                    </a>
-                </div>
-                <div class="col-6">
-                    <a href="services/mobile-development.html" class="right-panel-btn w-100" onclick="event.stopPropagation();">
-                        <i class="bi bi-phone me-1"></i>
-                        Mobile
-                    </a>
-                </div>
-            </div>
-        </div>       
-        <div class="mb-4">
-            <h6 class="right-panel-section-title mb-3">
-             
-                Contact Info
-            </h6>
-            <div class="right-panel-contact-item mb-2" onclick="event.stopPropagation();">
-                <i class="bi bi-telephone me-2"></i>
-                <a href="tel:+911204188947" class="right-panel-contact-link" onclick="event.stopPropagation();">+91-120-4188947</a>
-            </div>
-            <div class="right-panel-contact-item mb-2" onclick="event.stopPropagation();">
-                <i class="bi bi-envelope me-2"></i>
-                <a href="mailto:info@jethat.in" class="right-panel-contact-link" onclick="event.stopPropagation();">info@jethat.in</a>
-            </div>
-            <div class="right-panel-contact-item" onclick="event.stopPropagation();">
-                <i class="bi bi-geo-alt me-2"></i>
-                <span class="right-panel-contact-text">Noida, India</span>
-            </div>
-        </div>
-        <div class="mb-4">
-            <h6 class="right-panel-section-title mb-3">
-                <i class="bi bi-share me-2"></i>
-                Follow Us
-            </h6>
-            <div class="d-flex justify-content-center gap-2">
-                <a href="#" class="right-panel-social-btn" onclick="event.stopPropagation();">
-                    <i class="bi bi-twitter"></i>
-                </a>
-                <a href="#" class="right-panel-social-btn" onclick="event.stopPropagation();">
-                    <i class="bi bi-linkedin"></i>
-                </a>
-                <a href="#" class="right-panel-social-btn" onclick="event.stopPropagation();">
-                    <i class="bi bi-github"></i>
-                </a>
-                <a href="#" class="right-panel-social-btn" onclick="event.stopPropagation();">
-                    <i class="bi bi-instagram"></i>
-                </a>
-            </div>
         </div>
 
-        <div class="mt-auto">
-            <button class="right-panel-cta-secondary w-100 mb-2" onclick="event.stopPropagation(); window.open('tel:+911204188947');">
-                <i class="bi bi-telephone me-2"></i>
-                Call Now
-            </button>
-           
+        <div class="mobile-nav-social">
+            <a href="https://facebook.com/jethat" class="social-link" target="_blank" rel="noopener noreferrer"><i class="bi bi-facebook"></i></a>
+            <a href="https://twitter.com/jethat" class="social-link" target="_blank" rel="noopener noreferrer"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://linkedin.com/company/jethat" class="social-link" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i></a>
+            <a href="https://instagram.com/jethat" class="social-link" target="_blank" rel="noopener noreferrer"><i class="bi bi-instagram"></i></a>
         </div>
     </div>
 </div>
+<nav class="navbar navbar-expand-lg fixed-top py-3  navbar-theme">
+    <div class="container d-flex align-items-center">
+        <a class="d-flex navbar-brand me-auto align-items-center" href="index.html">
+            <img src="assets/images/logo.png" alt="JetHat Logo" style="height: 3rem; margin-right: 6px;">
+            <div class="d-flex flex-column" style="line-height: 1;">
+                <span class="fw-bold" style="font-size: 1.5rem;">JetHat</span>
+                <small style="color: var(--text-secondary) !important; font-size: 0.75rem;">Cyber Security</small>
+            </div>
+        </a>
+
+        <button class="navbar-toggler d-lg-none border-0 order-3 mobile-toggle ms-auto" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+
+        <div class="collapse navbar-collapse order-lg-4" id="navbarNav">
+            <ul class="navbar-nav ms-auto professional-nav-menu">
+                <li class="nav-item nav-item-enhanced">
+                    <a class="nav-link fw-medium font-poppins nav-link-enhanced" href="index.html">
+                        <span class="nav-text">Home</span>
+                    </a>
+                </li>
+
+                <li class="nav-item dropdown dropdown-hover nav-item-enhanced">
+                    <a class="nav-link fw-medium font-poppins d-flex align-items-center gap-1 nav-link-enhanced" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span class="nav-text">Company</span>
+                        <i class="bi bi-chevron-down small dropdown-arrow"></i>
+                    </a>
+                    <ul class="dropdown-menu single-column-dropdown  dropdown-menu-theme    shadow-lg dropdown-animation ">
+                        <li><a href="about/index.html" class="dropdown-item smooth-item">
+                            <div class="item-content">
+                                <div class="item-text">
+                                    <div class="item-title" style="color: #000;">About Us</div>
+                                    <div class="item-subtitle" style="color: #999;">Learn more about JetHat</div>
+                                </div>
+                            </div>
+                        </a></li>
+                        <li><a href="about/team.html" class="dropdown-item smooth-item">
+                            <div class="item-content">
+                                <div class="item-text">
+                                    <div class="item-title" style="color: #000;">Our Team</div>
+                                    <div class="item-subtitle" style="color: #999;">Meet our experts</div>
+                                </div>
+                            </div>
+                        </a></li>
+                        <li><a href="about/culture.html" class="dropdown-item smooth-item">
+                            <div class="item-content">
+                                <div class="item-text">
+                                    <div class="item-title" style="color: #000;">Company Culture</div>
+                                    <div class="item-subtitle" style="color: #999;">Our values and environment</div>
+                                </div>
+                            </div>
+                        </a></li>
+                        <li><a href="about/success-stories.html" class="dropdown-item smooth-item">
+                            <div class="item-content">
+                                <div class="item-text">
+                                    <div class="item-title" style="color: #000;">Success Stories</div>
+                                    <div class="item-subtitle" style="color: #999;">Case studies & achievements</div>
+                                </div>
+                            </div>
+                        </a></li>
+                        <li><a href="about/projects-showcase.html" class="dropdown-item smooth-item">
+                            <div class="item-content">
+                                <div class="item-text">
+                                    <div class="item-title" style="color: #000;">Projects Showcase</div>
+                                    <div class="item-subtitle" style="color: #999;">Our project portfolio</div>
+                                </div>
+                            </div>
+                        </a></li>
+                        <li><a href="about/development-pipeline.html" class="dropdown-item smooth-item">
+                            <div class="item-content">
+                                <div class="item-text">
+                                    <div class="item-title" style="color: #000;">What We're Building</div>
+                                    <div class="item-subtitle" style="color: #999;">Development pipeline</div>
+                                </div>
+                            </div>
+                        </a></li>
+                        <li><a href="careers.html" class="dropdown-item smooth-item">
+                            <div class="item-content">
+                                <div class="item-text">
+                                    <div class="item-title" style="color: #000;">Careers</div>
+                                    <div class="item-subtitle" style="color: #999;">Join our team</div>
+                                </div>
+                            </div>
+                        </a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown dropdown-hover nav-item-enhanced">
+                    <a class="nav-link fw-medium font-poppins d-flex align-items-center gap-1 nav-link-enhanced" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span class="nav-text">Products</span>
+                        <i class="bi bi-chevron-down small dropdown-arrow"></i>
+                    </a>
+                    <ul class="dropdown-menu single-column-dropdown border-bottom border-2 border-primary shadow-lg dropdown-animation ">
+                        <li><a href="products/magai.html" class="dropdown-item smooth-item">
+                            <div class="item-content">
+                                <div class="item-text">
+                                    <div class="item-title" style="color: #000;">MagAI</div>
+                                    <div class="item-subtitle" style="color: #999;">AI-powered content management</div>
+                                </div>
+                            </div>
+                        </a></li>
+                        <li><a href="products/virtual-naani.html" class="dropdown-item smooth-item">
+                            <div class="item-content">
+                                <div class="item-text">
+                                    <div class="item-title" style="color: #000;">Virtual Naani</div>
+                                    <div class="item-subtitle" style="color: #999;">AI grandmother for elderly care</div>
+                                </div>
+                            </div>
+                        </a></li>
+                        <li><a href="products/ai-lms.html" class="dropdown-item smooth-item">
+                            <div class="item-content">
+                                <div class="item-text">
+                                    <div class="item-title" style="color: #000;">AI Multilingual LMS</div>
+                                    <div class="item-subtitle" style="color: #999;">Smart learning management</div>
+                                </div>
+                            </div>
+                        </a></li>
+                        <li><a href="products/e-library.html" class="dropdown-item smooth-item">
+                            <div class="item-content">
+                                <div class="item-text">
+                                    <div class="item-title" style="color: #000;">E-Library</div>
+                                    <div class="item-subtitle" style="color: #999;">Digital library platform</div>
+                                </div>
+                            </div>
+                        </a></li>
+                        <li><a href="products/anukaran-ai.html" class="dropdown-item smooth-item">
+                            <div class="item-content">
+                                <div class="item-text">
+                                    <div class="item-title" style="color: #000;">Anukaran AI</div>
+                                    <div class="item-subtitle" style="color: #999;">AI model replication system</div>
+                                </div>
+                            </div>
+                        </a></li>
+                        <li><a href="products/sambhasini-ai.html" class="dropdown-item smooth-item">
+                            <div class="item-content">
+                                <div class="item-text">
+                                    <div class="item-title" style="color: #000;">Sambhasini AI</div>
+                                    <div class="item-subtitle" style="color: #999;">Multilingual voice AI</div>
+                                </div>
+                            </div>
+                        </a></li>
+                        <li><a href="products/multi-dictionary.html" class="dropdown-item smooth-item">
+                            <div class="item-content">
+                                <div class="item-text">
+                                    <div class="item-title" style="color: #000;">Multilingual Dictionary</div>
+                                    <div class="item-subtitle" style="color: #999;">Language translation tool</div>
+                                </div>
+                            </div>
+                        </a></li>
+                        <li><a href="products/collaborative-digitalisation.html" class="dropdown-item smooth-item">
+                            <div class="item-content">
+                                <div class="item-text">
+                                    <div class="item-title" style="color: #000;">Collaborative Digitalisation</div>
+                                    <div class="item-subtitle" style="color: #999;">Document workflow platform</div>
+                                </div>
+                            </div>
+                        </a></li>
+                        <li><a href="products/virtual-classroom-solution.html" class="dropdown-item smooth-item">
+                            <div class="item-content">
+                                <div class="item-text">
+                                    <div class="item-title" style="color: #000;">Virtual Classroom Solution</div>
+                                    <div class="item-subtitle" style="color: #999;">Online education platform</div>
+                                </div>
+                            </div>
+                        </a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown dropdown-hover nav-item-enhanced">
+                    <a class="nav-link fw-medium font-poppins d-flex align-items-center gap-1 nav-link-enhanced" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span class="nav-text">Services</span>
+                        <i class="bi bi-chevron-down small dropdown-arrow"></i>
+                    </a>
+                    <ul class="dropdown-menu single-column-dropdown  border-bottom border-2 border-primary shadow-lg dropdown-animation">
+                        <li class="dropdown-header">
+                            <i class="bi bi-cpu me-2"></i>Service Overview
+                        </li>
+                        <li><a href="services/cybersecurity.html" class="dropdown-item smooth-item">
+                            <div class="item-content">
+                                <div class="item-text">
+                                    <div class="item-title" style="color: #000;">Cybersecurity</div>
+                                    <div class="item-subtitle" style="color: #999;">Comprehensive security solutions</div>
+                                </div>
+                            </div>
+                        </a></li>
+                        <li><a href="services/ai-ml.html" class="dropdown-item smooth-item">
+                            <div class="item-content">
+                                <div class="item-text">
+                                    <div class="item-title" style="color: #000;">AI/ML Development</div>
+                                    <div class="item-subtitle" style="color: #999;">Custom AI and ML solutions</div>
+                                </div>
+                            </div>
+                        </a></li>
+                        <li><a href="services/web-development.html" class="dropdown-item smooth-item">
+                            <div class="item-content">
+                                <div class="item-text">
+                                    <div class="item-title" style="color: #000;">Web Development</div>
+                                    <div class="item-subtitle" style="color: #999;">Modern web applications</div>
+                                </div>
+                            </div>
+                        </a></li>
+                        <li><a href="services/mobile-development.html" class="dropdown-item smooth-item">
+                            <div class="item-content">
+                                <div class="item-text">
+                                    <div class="item-title" style="color: #000;">Mobile Development</div>
+                                    <div class="item-subtitle" style="color: #999;">iOS and Android apps</div>
+                                </div>
+                            </div>
+                        </a></li>
+                        <li><a href="services/cloud-services.html" class="dropdown-item smooth-item">
+                            <div class="item-content">
+                                <div class="item-text">
+                                    <div class="item-title" style="color: #000;">Cloud Services</div>
+                                    <div class="item-subtitle" style="color: #999;">Scalable cloud infrastructure</div>
+                                </div>
+                            </div>
+                        </a></li>
+                        <li><a href="services/ecommerce-services.html" class="dropdown-item smooth-item">
+                            <div class="item-content">
+                                <div class="item-text">
+                                    <div class="item-title" style="color: #000;">Ecommerce Services</div>
+                                    <div class="item-subtitle" style="color: #999;">Online store solutions</div>
+                                </div>
+                            </div>
+                        </a></li>
+                        <li><a href="services/ai-research-development.html" class="dropdown-item smooth-item">
+                            <div class="item-content">
+                                <div class="item-text">
+                                    <div class="item-title" style="color: #000;">R&D (AI, ML, DL)</div>
+                                    <div class="item-subtitle" style="color: #999;">AI research & development</div>
+                                </div>
+                            </div>
+                        </a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown dropdown-hover nav-item-enhanced">
+                    <a class="nav-link fw-medium font-poppins d-flex align-items-center gap-1 nav-link-enhanced" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span class="nav-text">Technologies</span>
+                        <i class="bi bi-chevron-down small dropdown-arrow"></i>
+                    </a>
+                    <ul class="dropdown-menu single-column-dropdown tech-dropdown   shadow-lg dropdown-animation ">
+                        <li class="dropdown-header">
+                            <i class="bi bi-cpu me-2"></i>Core Technologies
+                        </li>
+                        <li><a href="technologies/core.html" class="dropdown-item smooth-item">
+                            <div class="item-content">
+                                <div class="item-text">
+                                    <div class="item-title" style="color: #000;">Core Technology</div>
+                                    <div class="item-subtitle" style="color: #999;">Real-world implementations</div>
+                                </div>
+                            </div>
+                        </a></li>
+                        <li><a href="technologies/case-study.html" class="dropdown-item smooth-item">
+                            <div class="item-content">
+                                <div class="item-text">
+                                    <div class="item-title" style="color: #000;">Case Studies</div>
+                                    <div class="item-subtitle" style="color: #999;">Real-world implementations</div>
+                                </div>
+                            </div>
+                        </a></li>
+                        <li><a href="technologies/innovation.html" class="dropdown-item smooth-item">
+                            <div class="item-content">
+                                <div class="item-text">
+                                    <div class="item-title" style="color: #000;">Innovation Lab</div>
+                                    <div class="item-subtitle" style="color: #999;">Research & development</div>
+                                </div>
+                            </div>
+                        </a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item nav-item-enhanced">
+                    <a class="nav-link fw-medium font-poppins nav-link-enhanced" href="careers.html">
+                        <span class="nav-text">Career</span>
+                    </a>
+                </li>
+                <li class="nav-item nav-item-enhanced">
+                    <a class="nav-link fw-medium font-poppins nav-link-enhanced" href="contact.html">
+                        <span class="nav-text">Contact</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="d-flex align-items-left gap-3 order-lg-5 ms-lg-3">
+            <a href="contact.html" class="d-none d-lg-inline-block border-1 btn-outline-primary px-2 py-2 text-center text-decoration-none" style="width: 7.5rem; border-bottom: #dd5c00 1px solid; border-radius: 5px;">
+                Talk to Us ->
+            </a>
+        </div>
+    </div>
+</nav>
+</section>
+<!-- right panel -->
+<section>
+<button id="rightArrowBtn" class="btn position-fixed d-flex align-items-center justify-content-center shadow-lg" 
+    data-bs-toggle="offcanvas" data-bs-target="#rightPanel"
+    style="right: 0; top: 50%; transform: translateY(-50%); width: 15px; height: 60px; border-radius: 5px 0 0 20px; z-index: 1040; border: none;">
+<i class="bi bi-chevron-left fs-4 text-white"></i>
+</button>
+
+<div class="offcanvas offcanvas-end right-panel-theme" tabindex="-1" id="rightPanel" aria-labelledby="rightPanelLabel" style="z-index: 9999;">
+<div class="offcanvas-header right-panel-header">
+    <h5 class="offcanvas-title text-white fw-bold" id="rightPanelLabel">
+        <img src="assets/images/logo.png" alt="" srcset="" height="50px">
+        JetHat Solutions
+    </h5>
+    <button type="button" class="btn-close right-panel-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+</div>
+<div class="offcanvas-body right-panel-body" onclick="event.stopPropagation();">
+    
+    <div class="mb-4">
+        <h6 class="right-panel-section-title mb-3">
+            
+            Company Stats
+        </h6>
+        <div class="row g-2 text-center">
+            <div class="col-4">
+                <div class="">
+                    <div class=" fw-bold mb-1">500+</div>
+                    <small class="text-muted">Projects</small>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="">
+                    <div class=" fw-bold mb-1">50+</div>
+                    <small class="text-muted">Clients</small>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="">
+                    <div class=" fw-bold mb-1">6+</div>
+                    <small class="text-muted">Years</small>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mb-4">
+        <h6 class="right-panel-section-title mb-3">
+            
+            Quick Access
+        </h6>
+        <div class="row g-2">
+            <div class="col-6">
+                <a href="services/cybersecurity.html" class="right-panel-btn w-100" onclick="event.stopPropagation();">
+                    <i class="bi bi-shield-check me-1"></i>
+                    Security
+                </a>
+            </div>
+            <div class="col-6">
+                <a href="services/ai-ml.html" class="right-panel-btn w-100" onclick="event.stopPropagation();">
+                    <i class="bi bi-brain me-1"></i>
+                    AI/ML
+                </a>
+            </div>
+            <div class="col-6">
+                <a href="services/web-development.html" class="right-panel-btn w-100" onclick="event.stopPropagation();">
+                    <i class="bi bi-code-slash me-1"></i>
+                    Web Dev
+                </a>
+            </div>
+            <div class="col-6">
+                <a href="services/mobile-development.html" class="right-panel-btn w-100" onclick="event.stopPropagation();">
+                    <i class="bi bi-phone me-1"></i>
+                    Mobile
+                </a>
+            </div>
+        </div>
+    </div>       
+    <div class="mb-4">
+        <h6 class="right-panel-section-title mb-3">
+            
+            Contact Info
+        </h6>
+        <div class="right-panel-contact-item mb-2" onclick="event.stopPropagation();">
+            <i class="bi bi-telephone me-2"></i>
+            <a href="tel:+911204188947" class="right-panel-contact-link" onclick="event.stopPropagation();">+91-120-4188947</a>
+        </div>
+        <div class="right-panel-contact-item mb-2" onclick="event.stopPropagation();">
+            <i class="bi bi-envelope me-2"></i>
+            <a href="mailto:info@jethat.in" class="right-panel-contact-link" onclick="event.stopPropagation();">info@jethat.in</a>
+        </div>
+        <div class="right-panel-contact-item" onclick="event.stopPropagation();">
+            <i class="bi bi-geo-alt me-2"></i>
+            <span class="right-panel-contact-text">Noida, India</span>
+        </div>
+    </div>
+    <div class="mb-4">
+        <h6 class="right-panel-section-title mb-3">
+            <i class="bi bi-share me-2"></i>
+            Follow Us
+        </h6>
+        <div class="d-flex justify-content-center gap-2">
+            <a href="#" class="right-panel-social-btn" onclick="event.stopPropagation();">
+                <i class="bi bi-twitter"></i>
+            </a>
+            <a href="#" class="right-panel-social-btn" onclick="event.stopPropagation();">
+                <i class="bi bi-linkedin"></i>
+            </a>
+            <a href="#" class="right-panel-social-btn" onclick="event.stopPropagation();">
+                <i class="bi bi-github"></i>
+            </a>
+            <a href="#" class="right-panel-social-btn" onclick="event.stopPropagation();">
+                <i class="bi bi-instagram"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="mt-auto">
+        <button class="right-panel-cta-secondary w-100 mb-2" onclick="event.stopPropagation(); window.open('tel:+911204188947');">
+            <i class="bi bi-telephone me-2"></i>
+            Call Now
+        </button>
+        
+    </div>
+</div>
+</div>
 </section>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Hero Section -->
-        <section class="contact-hero position-relative overflow-hidden">
-        
-            <div class="container position-relative " style="z-index: 2; padding-top: 2.5rem; margin-top: 2.5rem;">
-                <div class="row align-items-center py-5">
-                    <div class="mb-4" data-breadcrumb data-separator="arrow">
-                        <!-- Breadcrumb will be dynamically generated here -->
-                    </div>
-                    
-                    <!-- Left Side Content -->
-                    <div class="col-lg-6">
-                        <h1 class="display-3 fw-bold mb-4 reveal-up" style="color: #333333; line-height: 1.2;">
-                            Shape the Future of
-                            <span class="d-block text-gradient">Cybersecurity</span>
-                        </h1>
-                        
-                       
-                        
-                        <div class="d-flex flex-wrap gap-3 mb-4 mt-4 reveal-up stagger-3">
-                            <div class="d-flex align-items-center tech-status" style="color: #333333;">
-                                <i class="bi bi-check-circle-fill me-2"></i>
-                                <span>15+ Elite Positions</span>
-                            </div>
-                            <div class="d-flex align-items-center tech-status" style="color: #333333;">
-                                <i class="bi bi-check-circle-fill me-2"></i>
-                                <span>Remote/Hybrid Options</span>
-                            </div>
-                            <div class="d-flex align-items-center tech-status" style="color: #333333;">
-                                <i class="bi bi-check-circle-fill me-2"></i>
-                                <span>Growth Opportunities</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Right Side - Animated Image Cards -->
-                    <div class="col-lg-6 order-1 order-lg-1 position-relative">
-                        <div class="position-relative">
-                            
-                            <!-- Main Large Card -->
-                            <div class="contact-card-main position-relative mb-4">
-                                <div class="contact-image-container" style="width: 400px; height: 250px; background: white; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); overflow: hidden; position: relative;">
-                                    <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902" alt="Career Opportunities" class="contact-main-image" style="width: 100%; height: 100%; object-fit: cover; transition: all 0.6s ease;">
-                                    <div class="contact-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(124,58,237,0.2), rgba(236,72,153,0.2)); opacity: 0; transition: all 0.4s ease;"></div>
-                                    <div class="contact-content" style="position: absolute; bottom: 20px; left: 20px; color: white; z-index: 2; transform: translateY(20px); opacity: 0; transition: all 0.4s ease;">
-                                        <h4 class="fw-bold mb-2">Join Our Team</h4>
-                                        <p class="mb-0">Elite Cyber Defense Careers</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Secondary Card -->
-                            <div class="contact-card-secondary position-absolute" style="top: 50px; right: 20px; z-index: 2;">
-                                <div class="contact-image-container" style="width: 200px; height: 150px; background: white; border-radius: 15px; box-shadow: 0 15px 30px rgba(0,0,0,0.15); overflow: hidden; position: relative;">
-                                    <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72" alt="Team Growth" class="contact-secondary-image" style="width: 100%; height: 100%; object-fit: cover; transition: all 0.6s ease;">
-                                    <div class="contact-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(239,68,68,0.2), rgba(249,115,22,0.2)); opacity: 0; transition: all 0.4s ease;"></div>
-                                    <div class="contact-badge" style="position: absolute; top: 15px; right: 15px; background: rgba(255,255,255,0.9); padding: 8px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; color: #1f2937;">
-                                        Team Growth
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Floating Mini Card -->
-                            <div class="contact-card-mini position-absolute" style="bottom: 30px; left: -30px; z-index: 3;">
-                                <div class="contact-image-container" style="width: 120px; height: 120px; background: white; border-radius: 50%; box-shadow: 0 10px 25px rgba(0,0,0,0.2); overflow: hidden; position: relative;">
-                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d" alt="Career Success" class="contact-mini-image" style="width: 100%; height: 100%; object-fit: cover; transition: all 0.6s ease;">
-                                    <div class="contact-pulse" style="position: absolute; top: -2px; left: -2px; width: calc(100% + 4px); height: calc(100% + 4px); border: 2px solid #7c3aed; border-radius: 50%; animation: pulse 2s infinite;"></div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-         <!-- Elite Positions Section -->
-        <section class="py-5">
-            <div class="container">
-                <!-- Upper Section: Heading and Content -->
-                <div class="elite-upper-section mb-4">
-                    <h2 class="elite-heading fw-bold mb-3">
-                        <span class="text-gradient">Elite Positions</span> Available
-                    </h2>
-                    <p class="elite-content mb-0">
-                        Join specialized units in our cyber defense force. We're looking for talented individuals 
-                        to protect organizations from next-generation threats. 
-                    </p>
-                    
-                </div>
-
-                <div class="row">
-                    <!-- Left Sidebar: Filters Only -->
-                    <div class="col-lg-3">
-                        <div class="filter-sidebar">
-                            <div class="filter-section">
-                                <h5 class="filter-title">Search</h5>
-                                <div class="filter-search">
-                                    <i class="bi bi-search filter-search-icon"></i>
-                                    <input type="text" id="jobSearch" placeholder="Search positions..." aria-label="Search positions">
-                                </div>
-                            </div>
-
-                            <div class="filter-section">
-                                <h5 class="filter-title">Department</h5>
-                                <select class="filter-select" id="departmentFilter" aria-label="Select Department">
-                                    <option value="">All Departments</option>
-                                    <option value="cybersecurity">Cybersecurity</option>
-                                    <option value="ai-ml"> AI/ML Research</option>
-                                    <option value="development">Development</option>
-                                    <option value="cloud">Cloud Security</option>
-                                </select>
-                            </div>
-
-                            <div class="filter-section">
-                                <h5 class="filter-title">Work Model</h5>
-                                <select class="filter-select" id="workModelFilter" aria-label="Select Work Model">
-                                    <option value="">All Locations</option>
-                                    <option value="onsite">On-site</option>
-                                    <option value="remote">Remote</option>
-                                    <option value="hybrid">Hybrid</option>
-                                </select>
-                            </div>
-
-                            <div class="filter-section">
-                                <h5 class="filter-title">Experience Level</h5>
-                                <div class="filter-checkbox-group">
-                                    <label class="filter-checkbox-item">
-                                        <input type="checkbox" value="entry" class="experience-filter">
-                                        <span>Entry Level</span>
-                                        <span class="filter-count">2</span>
-                                    </label>
-                                    <label class="filter-checkbox-item">
-                                        <input type="checkbox" value="mid" class="experience-filter">
-                                        <span>Mid Level</span>
-                                        <span class="filter-count">5</span>
-                                    </label>
-                                    <label class="filter-checkbox-item">
-                                        <input type="checkbox" value="senior" class="experience-filter">
-                                        <span>Senior Level</span>
-                                        <span class="filter-count">6</span>
-                                    </label>
-                                    <label class="filter-checkbox-item">
-                                        <input type="checkbox" value="lead" class="experience-filter">
-                                        <span>Lead / Manager</span>
-                                        <span class="filter-count">2</span>
-                                    </label>
-                                </div>
-                            </div>
-
-                            <button class="filter-clear-btn" id="clearFilters">
-                                <i class="bi bi-arrow-clockwise me-2"></i>Clear All Filters
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <!-- Right Side: Job Listings (Simple List Format) -->
-                    <div class="col-lg-9">
-                        <!-- Results Count -->
-                        <div class="results-count">
-                            <i class="bi bi-briefcase-fill text-danger"></i>
-                            <span id="jobCount">6</span>
-                            <small>positions found</small>
-                        </div>
-
-                        <!-- Job List Items -->
-                        <div id="jobListContainer">
-                            <!-- Senior Cybersecurity Analyst -->
-                            <div class="job-list-item" data-department="cybersecurity" data-work-model="onsite" data-experience="senior">
-                                <div class="job-list-content">
-                                    <h5 class="job-list-title">Senior Cybersecurity Analyst</h5>
-                                    <div class="job-list-meta">
-                                        <span class="job-list-badge">Cybersecurity</span>
-                                        <span class="job-list-badge location"> Noida, UP</span>
-                                        <span class="job-list-badge type">Full-time</span>
-                                        <span class="job-list-badge salary"> ₹8-15 LPA</span>
-                                    </div>
-                                </div>
-                                <div class="job-list-actions">
-                                    <button class="btn job-list-btn job-list-btn-outline">
-                                        <i class="bi bi-eye me-1"></i>Details
-                                    </button>
-                                    <button class="btn job-list-btn job-list-btn-primary">
-                                        <i class="bi bi-send me-1"></i>Apply Now
-                                    </button>
-                                </div>
-                            </div>
-
-                            <!-- AI/ML Security Researcher -->
-                            <div class="job-list-item" data-department="ai-ml" data-work-model="remote" data-experience="senior">
-                                <div class="job-list-content">
-                                    <h5 class="job-list-title">AI/ML Security Researcher</h5>
-                                    <div class="job-list-meta">
-                                        <span class="job-list-badge">AI/ML Research</span>
-                                        <span class="job-list-badge location"> Remote</span>
-                                        <span class="job-list-badge type"> Full-time</span>
-                                        <span class="job-list-badge salary">₹12-20 LPA</span>
-                                    </div>
-                                </div>
-                                <div class="job-list-actions">
-                                    <button class="btn job-list-btn job-list-btn-outline">
-                                        <i class="bi bi-eye me-1"></i>Details
-                                    </button>
-                                    <button class="btn job-list-btn job-list-btn-primary">
-                                        <i class="bi bi-send me-1"></i>Apply Now
-                                    </button>
-                                </div>
-                            </div>
-
-                            <!-- DevSecOps Engineer -->
-                            <div class="job-list-item" data-department="development" data-work-model="onsite" data-experience="mid">
-                                <div class="job-list-content">
-                                    <h5 class="job-list-title">DevSecOps Engineer</h5>
-                                    <div class="job-list-meta">
-                                        <span class="job-list-badge"> Development</span>
-                                        <span class="job-list-badge location">Noida, UP</span>
-                                        <span class="job-list-badge type">Full-time</span>
-                                        <span class="job-list-badge salary">₹10-18 LPA</span>
-                                    </div>
-                                </div>
-                                <div class="job-list-actions">
-                                    <button class="btn job-list-btn job-list-btn-outline">
-                                        <i class="bi bi-eye me-1"></i>Details
-                                    </button>
-                                    <button class="btn job-list-btn job-list-btn-primary">
-                                        <i class="bi bi-send me-1"></i>Apply Now
-                                    </button>
-                                </div>
-                            </div>
-
-                            <!-- Cloud Security Architect -->
-                            <div class="job-list-item" data-department="cloud" data-work-model="hybrid" data-experience="lead">
-                                <div class="job-list-content">
-                                    <h5 class="job-list-title">Cloud Security Architect</h5>
-                                    <div class="job-list-meta">
-                                        <span class="job-list-badge">Cloud Security</span>
-                                        <span class="job-list-badge location"> Hybrid</span>
-                                        <span class="job-list-badge type">Full-time</span>
-                                        <span class="job-list-badge salary">₹15-25 LPA</span>
-                                    </div>
-                                </div>
-                                <div class="job-list-actions">
-                                    <button class="btn job-list-btn job-list-btn-outline">
-                                        <i class="bi bi-eye me-1"></i>Details
-                                    </button>
-                                    <button class="btn job-list-btn job-list-btn-primary">
-                                        <i class="bi bi-send me-1"></i>Apply Now
-                                    </button>
-                                </div>
-                            </div>
-
-                            <!-- Incident Response Specialist -->
-                            <div class="job-list-item" data-department="cybersecurity" data-work-model="onsite" data-experience="mid">
-                                <div class="job-list-content">
-                                    <h5 class="job-list-title">Incident Response Specialist</h5>
-                                    <div class="job-list-meta">
-                                        <span class="job-list-badge">Cybersecurity</span>
-                                        <span class="job-list-badge location"> Noida, UP</span>
-                                        <span class="job-list-badge type"> Full-time</span>
-                                        <span class="job-list-badge salary"> ₹9-16 LPA</span>
-                                    </div>
-                                </div>
-                                <div class="job-list-actions">
-                                    <button class="btn job-list-btn job-list-btn-outline">
-                                        <i class="bi bi-eye me-1"></i>Details
-                                    </button>
-                                    <button class="btn job-list-btn job-list-btn-primary">
-                                        <i class="bi bi-send me-1"></i>Apply Now
-                                    </button>
-                                </div>
-                            </div>
-
-                            <!-- Full Stack Developer -->
-                            <div class="job-list-item" data-department="development" data-work-model="onsite" data-experience="entry">
-                                <div class="job-list-content">
-                                    <h5 class="job-list-title">Full Stack Developer</h5>
-                                    <div class="job-list-meta">
-                                        <span class="job-list-badge"> Development</span>
-                                        <span class="job-list-badge location">Noida, UP</span>
-                                        <span class="job-list-badge type"> Full-time</span>
-                                        <span class="job-list-badge salary"> ₹5-10 LPA</span>
-                                    </div>
-                                </div>
-                                <div class="job-list-actions">
-                                    <button class="btn job-list-btn job-list-btn-outline">
-                                        <i class="bi bi-eye me-1"></i>Details
-                                    </button>
-                                    <button class="btn job-list-btn job-list-btn-primary">
-                                        <i class="bi bi-send me-1"></i>Apply Now
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- No Results Message (Hidden by default) -->
-                        <div class="no-results" id="noResults" style="display: none;">
-                            <div class="no-results-icon">🔍</div>
-                            <h4>No positions found</h4>
-                            <p>Try adjusting your filters or search terms</p>
-                        </div>
-
-                        <!-- Load More -->
-                        <div class="text-center mt-4">
-                            <button class="btn btn-outline-gradient btn-lg">
-                                <i class="bi bi-plus-circle me-2"></i>Load More Positions
-                            </button>
-                            <p class="text-muted small mt-2">Showing 6 of 15+ available positions</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Why JetHat Section -->
-        <section class="px-5 py-5">
-            <div class="container">
-                <div class="text-start mb-5">
-                    <h2 class="display-3 fw-bold mb-4 fade-in-up">
-                        Why Choose <span class="text-gradient">JetHat</span>?
-                    </h2>
-                    <p class="lead text-muted fade-in-up delay-100">
-                        We're not just another cybersecurity company. We're pioneers building the future of digital defense.
-                    </p>
+<!-- Main Content -->
+<main>
+    <!-- Hero Section -->
+    <section class="contact-hero position-relative overflow-hidden">
+    
+        <div class="container position-relative " style="z-index: 2; padding-top: 2.5rem; margin-top: 2.5rem;">
+            <div class="row align-items-center py-5">
+                <div class="mb-4" data-breadcrumb data-separator="arrow">
+                    <!-- Breadcrumb will be dynamically generated here -->
                 </div>
                 
-                <div class="row g-4">
-                    <div class="col-lg-4 col-md-6 col-sm-12 fade-in-up delay-200">
-                        <div class="cyber-card text-start h-100 px-5 py-5">
-                            <div class="job-icon text-start mb-3">
-                                <i class="bi bi-lightning-charge text-white fs-3"></i>
-                            </div>
-                            <h4 class="fw-bold mb-3 text-start">Cutting-Edge Technology</h4>
-                            <p class="text-muted text-start">
-                                We leverage the latest in AI-powered security systems, quantum computing capabilities, and advanced threat detection algorithms to stay ahead of emerging cyber threats. Our technology stack represents the cutting edge of cybersecurity innovation.
-                            </p>
-                        </div>
-                    </div>
+                <!-- Left Side Content -->
+                <div class="col-lg-6">
+                    <h1 class="display-3 fw-bold mb-4 reveal-up" style="color: #333333; line-height: 1.2;">
+                        Shape the Future of
+                        <span class="d-block text-gradient">Cybersecurity</span>
+                    </h1>
                     
-                    <div class="col-lg-4 col-md-6 col-sm-12 fade-in-up delay-300">
-                        <div class="cyber-card text-start h-100 px-5 py-5">
-                            <div class="job-icon text-start mb-3">
-                                <i class="bi bi-people text-white fs-3"></i>
-                            </div>
-                            <h4 class="fw-bold mb-3 text-start">World-Class Team</h4>
-                            <p class="text-muted text-start">
-                                Join a team of exceptional professionals including ex-FAANG engineers, certified security experts, and renowned research scientists. Our diverse team brings together decades of experience from the world's leading technology companies.
-                            </p>
-                        </div>
-                    </div>
                     
-                    <div class="col-lg-4 col-md-12 col-sm-12 fade-in-up delay-400">
-                        <div class="cyber-card text-start h-100 px-5 py-5">
-                            <div class="job-icon text-start mb-3">
-                                <i class="bi bi-graph-up-arrow text-white fs-3"></i>
-                            </div>
-                            <h4 class="fw-bold mb-3 text-start">Accelerated Growth</h4>
-                            <p class="text-muted text-start">
-                                We invest heavily in your professional development with unlimited learning budgets, conference sponsorships, and leadership fast-track programs. Your career growth is our priority, with clear pathways to advancement.
-                            </p>
+                    
+                    <div class="d-flex flex-wrap gap-3 mb-4 mt-4 reveal-up stagger-3">
+                        <div class="d-flex align-items-center tech-status" style="color: #333333;">
+                            <i class="bi bi-check-circle-fill me-2"></i>
+                            <span>15+ Elite Positions</span>
+                        </div>
+                        <div class="d-flex align-items-center tech-status" style="color: #333333;">
+                            <i class="bi bi-check-circle-fill me-2"></i>
+                            <span>Remote/Hybrid Options</span>
+                        </div>
+                        <div class="d-flex align-items-center tech-status" style="color: #333333;">
+                            <i class="bi bi-check-circle-fill me-2"></i>
+                            <span>Growth Opportunities</span>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
-        <!-- Application Process -->
-        <section class="py-5 bg-light">
-            <div class="container px-4">
-                <div class="text-center mb-5 reveal-up">
-                    <h2 class="display-5 fw-bold text-light-primary-theme mb-3">Your Journey to <span class="text-gradient">Elite Status</span></h2>
-                    <p class="fs-5 text-light-secondary-theme">Our streamlined process ensures we find the perfect match between your skills and our mission-critical roles</p>
                 </div>
                 
-                <div class="row">
-                    <div class="col-lg-10 mx-auto">
-                        <!-- Timeline -->
-                        <div class="position-relative">
-                            <!-- Timeline Line -->
-                            <div class="position-absolute start-50 translate-middle-x" style="width: 4px; height: 100%; top: 0; background: linear-gradient(180deg, #dc143c, #ffd700); border-radius: 2px;"></div>
-                            
-                            <!-- Step 1 - Apply Online (Left) -->
-                            <div class="d-flex align-items-center mb-5 reveal-up stagger-1">
-                                <div class="flex-shrink-0 me-4 text-end" style="width: 45%;">
-                                    <div class="cyber-info-card p-4 shadow-sm">
-                                        <h6 class="fw-bold text-gradient mb-2">Step 1</h6>
-                                        <h5 class="fw-semibold mb-2">Apply Online</h5>
-                                        <p class="text-muted small mb-0">Submit your application and showcase your cybersecurity expertise through our intelligent matching system. Upload your resume and complete our skills assessment.</p>
-                                    </div>
-                                </div>
-                                <div class="flex-shrink-0 bg-gradient rounded-circle p-3 position-relative" style="z-index: 2; background: linear-gradient(135deg, #dc143c, #ffd700); width: 70px; height: 70px; display: flex; align-items: center; justify-content: center;">
-                                    <i class="bi bi-file-earmark-person text-white fs-4"></i>
-                                </div>
-                                <div class="flex-grow-1 ms-4" style="width: 45%;"></div>
-                            </div>
-                            
-                            <!-- Step 2 - Security Assessment (Right) -->
-                            <div class="d-flex align-items-center mb-5 reveal-up stagger-2">
-                                <div class="flex-grow-1 me-4" style="width: 45%;"></div>
-                                <div class="flex-shrink-0 bg-gradient rounded-circle p-3 position-relative" style="z-index: 2; background: linear-gradient(135deg, #28a745, #20c997); width: 70px; height: 70px; display: flex; align-items: center; justify-content: center;">
-                                    <i class="bi bi-shield-check text-white fs-4"></i>
-                                </div>
-                                <div class="flex-shrink-0 ms-4" style="width: 45%;">
-                                    <div class="cyber-info-card p-4 shadow-sm">
-                                        <h6 class="fw-bold text-gradient mb-2">Step 2</h6>
-                                        <h5 class="fw-semibold mb-2">Security Assessment</h5>
-                                        <p class="text-muted small mb-0">Complete technical challenges and security scenario evaluations designed by our expert team. Demonstrate your problem-solving skills in real-world cybersecurity situations.</p>
-                                    </div>
+                <!-- Right Side - Animated Image Cards -->
+                <div class="col-lg-6 order-1 order-lg-1 position-relative">
+                    <div class="position-relative">
+                        
+                        <!-- Main Large Card -->
+                        <div class="contact-card-main position-relative mb-4">
+                            <div class="contact-image-container" style="width: 400px; height: 250px; background: white; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); overflow: hidden; position: relative;">
+                                <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902" alt="Career Opportunities" class="contact-main-image" style="width: 100%; height: 100%; object-fit: cover; transition: all 0.6s ease;">
+                                <div class="contact-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(124,58,237,0.2), rgba(236,72,153,0.2)); opacity: 0; transition: all 0.4s ease;"></div>
+                                <div class="contact-content" style="position: absolute; bottom: 20px; left: 20px; color: white; z-index: 2; transform: translateY(20px); opacity: 0; transition: all 0.4s ease;">
+                                    <h4 class="fw-bold mb-2">Join Our Team</h4>
+                                    <p class="mb-0">Elite Cyber Defense Careers</p>
                                 </div>
                             </div>
-                            
-                            <!-- Step 3 - Elite Interview (Left) -->
-                            <div class="d-flex align-items-center mb-5 reveal-up stagger-3">
-                                <div class="flex-shrink-0 me-4 text-end" style="width: 45%;">
-                                    <div class="cyber-info-card p-4 shadow-sm">
-                                        <h6 class="fw-bold text-gradient mb-2">Step 3</h6>
-                                        <h5 class="fw-semibold mb-2">Elite Interview</h5>
-                                        <p class="text-muted small mb-0">Meet with our cyber defense leaders and potential teammates in a collaborative interview process. Discuss your vision for cybersecurity and cultural fit.</p>
-                                    </div>
+                        </div>
+
+                        <!-- Secondary Card -->
+                        <div class="contact-card-secondary position-absolute" style="top: 50px; right: 20px; z-index: 2;">
+                            <div class="contact-image-container" style="width: 200px; height: 150px; background: white; border-radius: 15px; box-shadow: 0 15px 30px rgba(0,0,0,0.15); overflow: hidden; position: relative;">
+                                <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72" alt="Team Growth" class="contact-secondary-image" style="width: 100%; height: 100%; object-fit: cover; transition: all 0.6s ease;">
+                                <div class="contact-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(239,68,68,0.2), rgba(249,115,22,0.2)); opacity: 0; transition: all 0.4s ease;"></div>
+                                <div class="contact-badge" style="position: absolute; top: 15px; right: 15px; background: rgba(255,255,255,0.9); padding: 8px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; color: #1f2937;">
+                                    Team Growth
                                 </div>
-                                <div class="flex-shrink-0 bg-gradient rounded-circle p-3 position-relative" style="z-index: 2; background: linear-gradient(135deg, #6f42c1, #e83e8c); width: 70px; height: 70px; display: flex; align-items: center; justify-content: center;">
-                                    <i class="bi bi-people text-white fs-4"></i>
-                                </div>
-                                <div class="flex-grow-1 ms-4" style="width: 45%;"></div>
                             </div>
-                            
-                            <!-- Step 4 - Mission Start (Right) -->
-                            <div class="d-flex align-items-center mb-5 reveal-up stagger-4">
-                                <div class="flex-grow-1 me-4" style="width: 45%;"></div>
-                                <div class="flex-shrink-0 bg-gradient rounded-circle p-3 position-relative" style="z-index: 2; background: linear-gradient(135deg, #fd7e14, #ffc107); width: 70px; height: 70px; display: flex; align-items: center; justify-content: center;">
-                                    <i class="bi bi-rocket-takeoff text-white fs-4"></i>
+                        </div>
+
+                        <!-- Floating Mini Card -->
+                        <div class="contact-card-mini position-absolute" style="bottom: 30px; left: -30px; z-index: 3;">
+                            <div class="contact-image-container" style="width: 120px; height: 120px; background: white; border-radius: 50%; box-shadow: 0 10px 25px rgba(0,0,0,0.2); overflow: hidden; position: relative;">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d" alt="Career Success" class="contact-mini-image" style="width: 100%; height: 100%; object-fit: cover; transition: all 0.6s ease;">
+                                <div class="contact-pulse" style="position: absolute; top: -2px; left: -2px; width: calc(100% + 4px); height: calc(100% + 4px); border: 2px solid #7c3aed; border-radius: 50%; animation: pulse 2s infinite;"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- Elite Positions Section -->
+    <section class="py-5">
+        <div class="container">
+            <!-- Upper Section: Heading and Content -->
+            <div class="elite-upper-section mb-4">
+                <h2 class="elite-heading fw-bold mb-3">
+                    <span class="text-gradient">Elite Positions</span> Available
+                </h2>
+                <p class="elite-content mb-0">
+                    Join specialized units in our cyber defense force. We're looking for talented individuals 
+                    to protect organizations from next-generation threats. 
+                </p>
+                
+            </div>
+
+            <div class="row">
+                <!-- Left Sidebar: Filters Only -->
+                <div class="col-lg-3">
+                    <div class="filter-sidebar">
+                        <div class="filter-section">
+                            <h5 class="filter-title">Search</h5>
+                            <div class="filter-search">
+                                <i class="bi bi-search filter-search-icon"></i>
+                                <input type="text" id="jobSearch" placeholder="Search positions..." aria-label="Search positions">
+                            </div>
+                        </div>
+
+                        <div class="filter-section">
+                            <h5 class="filter-title">Department</h5>
+                            <select class="filter-select" id="departmentFilter" aria-label="Select Department">
+                                <option value="">All Departments</option>
+                                <option value="cybersecurity">Cybersecurity</option>
+                                <option value="ai-ml"> AI/ML Research</option>
+                                <option value="development">Development</option>
+                                <option value="cloud">Cloud Security</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-section">
+                            <h5 class="filter-title">Work Model</h5>
+                            <select class="filter-select" id="workModelFilter" aria-label="Select Work Model">
+                                <option value="">All Locations</option>
+                                <option value="onsite">On-site</option>
+                                <option value="remote">Remote</option>
+                                <option value="hybrid">Hybrid</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-section">
+                            <h5 class="filter-title">Experience Level</h5>
+                            <div class="filter-checkbox-group">
+                                <label class="filter-checkbox-item">
+                                    <input type="checkbox" value="entry" class="experience-filter">
+                                    <span>Entry Level</span>
+                                    <span class="filter-count">2</span>
+                                </label>
+                                <label class="filter-checkbox-item">
+                                    <input type="checkbox" value="mid" class="experience-filter">
+                                    <span>Mid Level</span>
+                                    <span class="filter-count">5</span>
+                                </label>
+                                <label class="filter-checkbox-item">
+                                    <input type="checkbox" value="senior" class="experience-filter">
+                                    <span>Senior Level</span>
+                                    <span class="filter-count">6</span>
+                                </label>
+                                <label class="filter-checkbox-item">
+                                    <input type="checkbox" value="lead" class="experience-filter">
+                                    <span>Lead / Manager</span>
+                                    <span class="filter-count">2</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <button class="filter-clear-btn" id="clearFilters">
+                            <i class="bi bi-arrow-clockwise me-2"></i>Clear All Filters
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Right Side: Job Listings (Simple List Format) -->
+                <div class="col-lg-9">
+                    <!-- Results Count -->
+                    <div class="results-count">
+                        <i class="bi bi-briefcase-fill text-danger"></i>
+                        <span id="jobCount">6</span>
+                        <small>positions found</small>
+                    </div>
+
+                    <!-- Job List Items -->
+                    <div id="jobListContainer">
+                        <!-- Senior Cybersecurity Analyst -->
+                        <div class="job-list-item" data-department="cybersecurity" data-work-model="onsite" data-experience="senior">
+                            <div class="job-list-content">
+                                <h5 class="job-list-title">Senior Cybersecurity Analyst</h5>
+                                <div class="job-list-meta">
+                                    <span class="job-list-badge">Cybersecurity</span>
+                                    <span class="job-list-badge location"> Noida, UP</span>
+                                    <span class="job-list-badge type">Full-time</span>
+                                    <span class="job-list-badge salary"> ₹8-15 LPA</span>
                                 </div>
-                                <div class="flex-shrink-0 ms-4" style="width: 45%;">
-                                    <div class="cyber-info-card p-4 shadow-sm">
-                                        <h6 class="fw-bold text-gradient mb-2">Step 4</h6>
-                                        <h5 class="fw-semibold mb-2">Mission Start</h5>
-                                        <p class="text-muted small mb-0">Begin your cybersecurity career with comprehensive onboarding and immediate access to cutting-edge projects. Welcome to the JetHat elite team!</p>
-                                    </div>
+                            </div>
+                            <div class="job-list-actions">
+                                <button class="btn job-list-btn job-list-btn-outline">
+                                    <i class="bi bi-eye me-1"></i>Details
+                                </button>
+                                <button class="btn job-list-btn job-list-btn-primary">
+                                    <i class="bi bi-send me-1"></i>Apply Now
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- AI/ML Security Researcher -->
+                        <div class="job-list-item" data-department="ai-ml" data-work-model="remote" data-experience="senior">
+                            <div class="job-list-content">
+                                <h5 class="job-list-title">AI/ML Security Researcher</h5>
+                                <div class="job-list-meta">
+                                    <span class="job-list-badge">AI/ML Research</span>
+                                    <span class="job-list-badge location"> Remote</span>
+                                    <span class="job-list-badge type"> Full-time</span>
+                                    <span class="job-list-badge salary">₹12-20 LPA</span>
+                                </div>
+                            </div>
+                            <div class="job-list-actions">
+                                <button class="btn job-list-btn job-list-btn-outline">
+                                    <i class="bi bi-eye me-1"></i>Details
+                                </button>
+                                <button class="btn job-list-btn job-list-btn-primary">
+                                    <i class="bi bi-send me-1"></i>Apply Now
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- DevSecOps Engineer -->
+                        <div class="job-list-item" data-department="development" data-work-model="onsite" data-experience="mid">
+                            <div class="job-list-content">
+                                <h5 class="job-list-title">DevSecOps Engineer</h5>
+                                <div class="job-list-meta">
+                                    <span class="job-list-badge"> Development</span>
+                                    <span class="job-list-badge location">Noida, UP</span>
+                                    <span class="job-list-badge type">Full-time</span>
+                                    <span class="job-list-badge salary">₹10-18 LPA</span>
+                                </div>
+                            </div>
+                            <div class="job-list-actions">
+                                <button class="btn job-list-btn job-list-btn-outline">
+                                    <i class="bi bi-eye me-1"></i>Details
+                                </button>
+                                <button class="btn job-list-btn job-list-btn-primary">
+                                    <i class="bi bi-send me-1"></i>Apply Now
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Cloud Security Architect -->
+                        <div class="job-list-item" data-department="cloud" data-work-model="hybrid" data-experience="lead">
+                            <div class="job-list-content">
+                                <h5 class="job-list-title">Cloud Security Architect</h5>
+                                <div class="job-list-meta">
+                                    <span class="job-list-badge">Cloud Security</span>
+                                    <span class="job-list-badge location"> Hybrid</span>
+                                    <span class="job-list-badge type">Full-time</span>
+                                    <span class="job-list-badge salary">₹15-25 LPA</span>
+                                </div>
+                            </div>
+                            <div class="job-list-actions">
+                                <button class="btn job-list-btn job-list-btn-outline">
+                                    <i class="bi bi-eye me-1"></i>Details
+                                </button>
+                                <button class="btn job-list-btn job-list-btn-primary">
+                                    <i class="bi bi-send me-1"></i>Apply Now
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Incident Response Specialist -->
+                        <div class="job-list-item" data-department="cybersecurity" data-work-model="onsite" data-experience="mid">
+                            <div class="job-list-content">
+                                <h5 class="job-list-title">Incident Response Specialist</h5>
+                                <div class="job-list-meta">
+                                    <span class="job-list-badge">Cybersecurity</span>
+                                    <span class="job-list-badge location"> Noida, UP</span>
+                                    <span class="job-list-badge type"> Full-time</span>
+                                    <span class="job-list-badge salary"> ₹9-16 LPA</span>
+                                </div>
+                            </div>
+                            <div class="job-list-actions">
+                                <button class="btn job-list-btn job-list-btn-outline">
+                                    <i class="bi bi-eye me-1"></i>Details
+                                </button>
+                                <button class="btn job-list-btn job-list-btn-primary">
+                                    <i class="bi bi-send me-1"></i>Apply Now
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Full Stack Developer -->
+                        <div class="job-list-item" data-department="development" data-work-model="onsite" data-experience="entry">
+                            <div class="job-list-content">
+                                <h5 class="job-list-title">Full Stack Developer</h5>
+                                <div class="job-list-meta">
+                                    <span class="job-list-badge"> Development</span>
+                                    <span class="job-list-badge location">Noida, UP</span>
+                                    <span class="job-list-badge type"> Full-time</span>
+                                    <span class="job-list-badge salary"> ₹5-10 LPA</span>
+                                </div>
+                            </div>
+                            <div class="job-list-actions">
+                                <button class="btn job-list-btn job-list-btn-outline">
+                                    <i class="bi bi-eye me-1"></i>Details
+                                </button>
+                                <button class="btn job-list-btn job-list-btn-primary">
+                                    <i class="bi bi-send me-1"></i>Apply Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- No Results Message (Hidden by default) -->
+                    <div class="no-results" id="noResults" style="display: none;">
+                        <div class="no-results-icon">🔍</div>
+                        <h4>No positions found</h4>
+                        <p>Try adjusting your filters or search terms</p>
+                    </div>
+
+                    <!-- Load More -->
+                    <div class="text-center mt-4">
+                        <button class="btn btn-outline-gradient btn-lg">
+                            <i class="bi bi-plus-circle me-2"></i>Load More Positions
+                        </button>
+                        <p class="text-muted small mt-2">Showing 6 of 15+ available positions</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Why JetHat Section -->
+    <section class="px-5 py-5">
+        <div class="container">
+            <div class="text-start mb-5">
+                <h2 class="display-3 fw-bold mb-4 fade-in-up">
+                    Why Choose <span class="text-gradient">JetHat</span>?
+                </h2>
+                <p class="lead text-muted fade-in-up delay-100">
+                    We're not just another cybersecurity company. We're pioneers building the future of digital defense.
+                </p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 col-sm-12 fade-in-up delay-200">
+                    <div class="cyber-card text-start h-100 px-5 py-5">
+                        <div class="job-icon text-start mb-3">
+                            <i class="bi bi-lightning-charge text-white fs-3"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3 text-start">Cutting-Edge Technology</h4>
+                        <p class="text-muted text-start">
+                            We leverage the latest in AI-powered security systems, quantum computing capabilities, and advanced threat detection algorithms to stay ahead of emerging cyber threats. Our technology stack represents the cutting edge of cybersecurity innovation.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 col-sm-12 fade-in-up delay-300">
+                    <div class="cyber-card text-start h-100 px-5 py-5">
+                        <div class="job-icon text-start mb-3">
+                            <i class="bi bi-people text-white fs-3"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3 text-start">World-Class Team</h4>
+                        <p class="text-muted text-start">
+                            Join a team of exceptional professionals including ex-FAANG engineers, certified security experts, and renowned research scientists. Our diverse team brings together decades of experience from the world's leading technology companies.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-12 col-sm-12 fade-in-up delay-400">
+                    <div class="cyber-card text-start h-100 px-5 py-5">
+                        <div class="job-icon text-start mb-3">
+                            <i class="bi bi-graph-up-arrow text-white fs-3"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3 text-start">Accelerated Growth</h4>
+                        <p class="text-muted text-start">
+                            We invest heavily in your professional development with unlimited learning budgets, conference sponsorships, and leadership fast-track programs. Your career growth is our priority, with clear pathways to advancement.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Application Process -->
+    <section class="py-5 bg-light">
+        <div class="container px-4">
+            <div class="text-center mb-5 reveal-up">
+                <h2 class="display-5 fw-bold text-light-primary-theme mb-3">Your Journey to <span class="text-gradient">Elite Status</span></h2>
+                <p class="fs-5 text-light-secondary-theme">Our streamlined process ensures we find the perfect match between your skills and our mission-critical roles</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <!-- Timeline -->
+                    <div class="position-relative">
+                        <!-- Timeline Line -->
+                        <div class="position-absolute start-50 translate-middle-x" style="width: 4px; height: 100%; top: 0; background: linear-gradient(180deg, #dc143c, #ffd700); border-radius: 2px;"></div>
+                        
+                        <!-- Step 1 - Apply Online (Left) -->
+                        <div class="d-flex align-items-center mb-5 reveal-up stagger-1">
+                            <div class="flex-shrink-0 me-4 text-end" style="width: 45%;">
+                                <div class="cyber-info-card p-4 shadow-sm">
+                                    <h6 class="fw-bold text-gradient mb-2">Step 1</h6>
+                                    <h5 class="fw-semibold mb-2">Apply Online</h5>
+                                    <p class="text-muted small mb-0">Submit your application and showcase your cybersecurity expertise through our intelligent matching system. Upload your resume and complete our skills assessment.</p>
+                                </div>
+                            </div>
+                            <div class="flex-shrink-0 bg-gradient rounded-circle p-3 position-relative" style="z-index: 2; background: linear-gradient(135deg, #dc143c, #ffd700); width: 70px; height: 70px; display: flex; align-items: center; justify-content: center;">
+                                <i class="bi bi-file-earmark-person text-white fs-4"></i>
+                            </div>
+                            <div class="flex-grow-1 ms-4" style="width: 45%;"></div>
+                        </div>
+                        
+                        <!-- Step 2 - Security Assessment (Right) -->
+                        <div class="d-flex align-items-center mb-5 reveal-up stagger-2">
+                            <div class="flex-grow-1 me-4" style="width: 45%;"></div>
+                            <div class="flex-shrink-0 bg-gradient rounded-circle p-3 position-relative" style="z-index: 2; background: linear-gradient(135deg, #28a745, #20c997); width: 70px; height: 70px; display: flex; align-items: center; justify-content: center;">
+                                <i class="bi bi-shield-check text-white fs-4"></i>
+                            </div>
+                            <div class="flex-shrink-0 ms-4" style="width: 45%;">
+                                <div class="cyber-info-card p-4 shadow-sm">
+                                    <h6 class="fw-bold text-gradient mb-2">Step 2</h6>
+                                    <h5 class="fw-semibold mb-2">Security Assessment</h5>
+                                    <p class="text-muted small mb-0">Complete technical challenges and security scenario evaluations designed by our expert team. Demonstrate your problem-solving skills in real-world cybersecurity situations.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 3 - Elite Interview (Left) -->
+                        <div class="d-flex align-items-center mb-5 reveal-up stagger-3">
+                            <div class="flex-shrink-0 me-4 text-end" style="width: 45%;">
+                                <div class="cyber-info-card p-4 shadow-sm">
+                                    <h6 class="fw-bold text-gradient mb-2">Step 3</h6>
+                                    <h5 class="fw-semibold mb-2">Elite Interview</h5>
+                                    <p class="text-muted small mb-0">Meet with our cyber defense leaders and potential teammates in a collaborative interview process. Discuss your vision for cybersecurity and cultural fit.</p>
+                                </div>
+                            </div>
+                            <div class="flex-shrink-0 bg-gradient rounded-circle p-3 position-relative" style="z-index: 2; background: linear-gradient(135deg, #6f42c1, #e83e8c); width: 70px; height: 70px; display: flex; align-items: center; justify-content: center;">
+                                <i class="bi bi-people text-white fs-4"></i>
+                            </div>
+                            <div class="flex-grow-1 ms-4" style="width: 45%;"></div>
+                        </div>
+                        
+                        <!-- Step 4 - Mission Start (Right) -->
+                        <div class="d-flex align-items-center mb-5 reveal-up stagger-4">
+                            <div class="flex-grow-1 me-4" style="width: 45%;"></div>
+                            <div class="flex-shrink-0 bg-gradient rounded-circle p-3 position-relative" style="z-index: 2; background: linear-gradient(135deg, #fd7e14, #ffc107); width: 70px; height: 70px; display: flex; align-items: center; justify-content: center;">
+                                <i class="bi bi-rocket-takeoff text-white fs-4"></i>
+                            </div>
+                            <div class="flex-shrink-0 ms-4" style="width: 45%;">
+                                <div class="cyber-info-card p-4 shadow-sm">
+                                    <h6 class="fw-bold text-gradient mb-2">Step 4</h6>
+                                    <h5 class="fw-semibold mb-2">Mission Start</h5>
+                                    <p class="text-muted small mb-0">Begin your cybersecurity career with comprehensive onboarding and immediate access to cutting-edge projects. Welcome to the JetHat elite team!</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-        <!-- Footer Section -->
-        <footer id="footer-component" class="position-relative overflow-hidden footer-theme" style="background-color: #0f1419;">
-        <div class="border-top" style="border-color: rgba(255, 255, 255, 0.1) !important;"></div>
-        <div class="position-absolute top-0 start-0 w-100 h-100 hero-overlay-theme" style="z-index: 1;"></div>
-        <div class="position-absolute top-0 start-0 w-100 h-100 hero-gradient-theme" style="z-index: 1;"></div>
+        </div>
+    </section>
+    <!-- Footer Section -->
+    <footer id="footer-component" class="position-relative overflow-hidden footer-theme" style="background-color: #0f1419;">
+    <div class="border-top" style="border-color: rgba(255, 255, 255, 0.1) !important;"></div>
+    <div class="position-absolute top-0 start-0 w-100 h-100 hero-overlay-theme" style="z-index: 1;"></div>
+    <div class="position-absolute top-0 start-0 w-100 h-100 hero-gradient-theme" style="z-index: 1;"></div>
 
-        <div class="container position-relative" style="z-index: 2;">
-        <div class="py-5">
-        <div class="row">
-        <div class="col-lg-3 col-md-4">
-            <div class="footer-section footer-logo-section">
-                <div class="mb-2">
-                    <div class="d-flex align-items-center justify-content-between mb-3 flex-wrap">
-                        <div class="d-flex align-items-center">
-                            <a class="d-flex navbar-brand me-auto align-items-center" href="index.html">
-                                <img src="assets/images/logo.png" alt="JetHat Logo" style="height: 3rem; margin-right: 6px; filter: brightness(1.2);">
-                                <div class="d-flex flex-column" style="line-height: 1;">
-                                    <span class="fw-bold" style="font-size: 1.5rem; color: #ffffff;">JetHat</span>
-                                    <small style="color: #ffffff; font-size: 0.75rem;">Cyber Security</small>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="d-flex gap-2 social-icons-mobile d-lg-none">
-                            <a href="#" class="social-link d-flex align-items-center justify-content-center" title="Facebook"><i class="bi bi-facebook"></i></a>
-                            <a href="#" class="social-link d-flex align-items-center justify-content-center" title="Twitter"><i class="bi bi-twitter"></i></a>
-                            <a href="#" class="social-link d-flex align-items-center justify-content-center" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
-                            <a href="#" class="social-link d-flex align-items-center justify-content-center" title="YouTube"><i class="bi bi-youtube"></i></a>
-                        </div>
+    <div class="container position-relative" style="z-index: 2;">
+    <div class="py-5">
+    <div class="row">
+    <div class="col-lg-3 col-md-4">
+        <div class="footer-section footer-logo-section">
+            <div class="mb-2">
+                <div class="d-flex align-items-center justify-content-between mb-3 flex-wrap">
+                    <div class="d-flex align-items-center">
+                        <a class="d-flex navbar-brand me-auto align-items-center" href="index.html">
+                            <img src="assets/images/logo.png" alt="JetHat Logo" style="height: 3rem; margin-right: 6px; filter: brightness(1.2);">
+                            <div class="d-flex flex-column" style="line-height: 1;">
+                                <span class="fw-bold" style="font-size: 1.5rem; color: #ffffff;">JetHat</span>
+                                <small style="color: #ffffff; font-size: 0.75rem;">Cyber Security</small>
+                            </div>
+                        </a>
                     </div>
 
-                    <p class="text-footer-theme mb-4 lh-relaxed" style="font-size: 0.9rem;">
-                        JetHat Cyber Security provides cutting-edge cybersecurity, AI/ML, and cloud solutions.
-                    </p>
-
-                    <div class="d-none d-lg-flex gap-2 social-icons-desktop">
+                    <div class="d-flex gap-2 social-icons-mobile d-lg-none">
                         <a href="#" class="social-link d-flex align-items-center justify-content-center" title="Facebook"><i class="bi bi-facebook"></i></a>
                         <a href="#" class="social-link d-flex align-items-center justify-content-center" title="Twitter"><i class="bi bi-twitter"></i></a>
                         <a href="#" class="social-link d-flex align-items-center justify-content-center" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
                         <a href="#" class="social-link d-flex align-items-center justify-content-center" title="YouTube"><i class="bi bi-youtube"></i></a>
                     </div>
                 </div>
-            </div>
-        </div>
 
-        <div class="col-lg-2 col-md-4">
-            <div class="footer-section">
-                <h6 class="fw-bold mb-4 footer-heading">Company <i class="bi bi-chevron-right ms-1"></i></h6>
-                <ul class="list-unstyled footer-links">
-                    <li class="mb-2"><a href="about/index.html" class="footer-link">• About Us</a></li>
-                    <li class="mb-2"><a href="about/team.html" class="footer-link">• Our Team</a></li>
-                    <li class="mb-2"><a href="about/culture.html" class="footer-link">• Company Culture</a></li>
-                    <li class="mb-2"><a href="about/success-stories.html" class="footer-link">• Success Stories</a></li>
-                    <li class="mb-2"><a href="careers.html" class="footer-link">• Careers</a></li>
-                </ul>
-            </div>
-        </div>
+                <p class="text-footer-theme mb-4 lh-relaxed" style="font-size: 0.9rem;">
+                    JetHat Cyber Security provides cutting-edge cybersecurity, AI/ML, and cloud solutions.
+                </p>
 
-        <div class="col-lg-2 col-md-4">
-            <div class="footer-section">
-                <h6 class="fw-bold mb-4 footer-heading">Services <i class="bi bi-chevron-right ms-1"></i></h6>
-                <ul class="list-unstyled footer-links">
-                    <li class="mb-2"><a href="services/cybersecurity.html" class="footer-link">• Cybersecurity</a></li>
-                    <li class="mb-2"><a href="services/ai-ml.html" class="footer-link">• AI/ML Development</a></li>
-                    <li class="mb-2"><a href="services/web-development.html" class="footer-link">• Web Development</a></li>
-                    <li class="mb-2"><a href="services/mobile-development.html" class="footer-link">• Mobile Development</a></li>
-                    <li class="mb-2"><a href="services/cloud-services.html" class="footer-link">• Cloud Services</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="col-lg-2 col-md-4">
-            <div class="footer-section">
-                <h6 class="fw-bold mb-4 footer-heading">Products <i class="bi bi-chevron-right ms-1"></i></h6>
-                <ul class="list-unstyled footer-links">
-                    <li class="mb-2"><a href="products/magai.html" class="footer-link">• MagAI</a></li>
-                    <li class="mb-2"><a href="products/virtual-naani.html" class="footer-link">• Virtual Naani</a></li>
-                    <li class="mb-2"><a href="products/ai-lms.html" class="footer-link">• AI LMS</a></li>
-                    <li class="mb-2"><a href="products/sambhasini-ai.html" class="footer-link">• Sambhasini AI</a></li>
-                    <li class="mb-2"><a href="products/jetpay.html" class="footer-link">• JetPay</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="col-lg-3 col-md-4">
-            <div class="footer-section">
-                <h6 class="fw-bold mb-4 footer-heading">Contact Us <i class="bi bi-chevron-right ms-1"></i></h6>
-
-                <div class="contact-info">
-                    <div class="d-flex align-items-start mb-3">
-                        <div class="contact-icon me-2"><i class="bi bi-geo-alt-fill"></i></div>
-                        <div>
-                            <p class="mb-0 small text-footer-theme" style="line-height: 1.6;">
-                                Bhutani Technopark B-508, Sector 127, Noida<br>
-                                Uttar Pradesh - 201301, India
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="d-flex align-items-start mb-3">
-                        <div class="contact-icon me-2"><i class="bi bi-telephone-fill"></i></div>
-                        <div>
-                            <p class="mb-0 small text-footer-theme">+91-120-4188947</p>
-                            <p class="mb-0 small text-footer-theme">24/7 Support Available</p>
-                        </div>
-                    </div>
-
-                    <div class="d-flex align-items-start mb-3">
-                        <div class="contact-icon me-2"><i class="bi bi-envelope-fill"></i></div>
-                        <div>
-                            <p class="mb-0 small"><a href="mailto:info@jethat.in" class="text-decoration-none text-footer-theme">info@jethat.in</a></p>
-                        </div>
-                    </div>
-
-                    <div class="mt-4 d-none d-lg-block">
-                        <a href="contact.html" class="d-inline-flex align-items-center text-decoration-none gov-badge">
-                            <span class="small fw-semibold">Get in Touch</span>
-                            <i class="bi bi-arrow-right ms-2"></i>
-                        </a>
-                    </div>
+                <div class="d-none d-lg-flex gap-2 social-icons-desktop">
+                    <a href="#" class="social-link d-flex align-items-center justify-content-center" title="Facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="social-link d-flex align-items-center justify-content-center" title="Twitter"><i class="bi bi-twitter"></i></a>
+                    <a href="#" class="social-link d-flex align-items-center justify-content-center" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                    <a href="#" class="social-link d-flex align-items-center justify-content-center" title="YouTube"><i class="bi bi-youtube"></i></a>
                 </div>
             </div>
         </div>
-        </div>
-        </div>
+    </div>
 
-        <div class="border-top py-4 footer-bottom-bar" style="border-color: rgba(255,255,255,0.1) !important;">
-        <div class="row align-items-center">
-        <div class="col-md-6">
-            <p class="mb-0 text-footer-theme small">© 2026 JetHat Cyber Security Pvt. Ltd. All rights reserved.</p>
+    <div class="col-lg-2 col-md-4">
+        <div class="footer-section">
+            <h6 class="fw-bold mb-4 footer-heading">Company <i class="bi bi-chevron-right ms-1"></i></h6>
+            <ul class="list-unstyled footer-links">
+                <li class="mb-2"><a href="about/index.html" class="footer-link">• About Us</a></li>
+                <li class="mb-2"><a href="about/team.html" class="footer-link">• Our Team</a></li>
+                <li class="mb-2"><a href="about/culture.html" class="footer-link">• Company Culture</a></li>
+                <li class="mb-2"><a href="about/success-stories.html" class="footer-link">• Success Stories</a></li>
+                <li class="mb-2"><a href="careers.html" class="footer-link">• Careers</a></li>
+            </ul>
         </div>
-        <div class="col-md-6 text-md-end mt-3 mt-md-0">
-            <div class="d-flex flex-wrap justify-content-md-end gap-3">
-                <a href="legal/privacy-policy.html" class="footer-link small">Privacy Policy</a>
-                <a href="legal/terms-of-use.html" class="footer-link small">Terms of Use</a>
-                <a href="legal/terms-conditions.html" class="footer-link small">Terms & Conditions</a>
-                <a href="legal/cancellation-policy.html" class="footer-link small">Cancellation Policy</a>
+    </div>
+
+    <div class="col-lg-2 col-md-4">
+        <div class="footer-section">
+            <h6 class="fw-bold mb-4 footer-heading">Services <i class="bi bi-chevron-right ms-1"></i></h6>
+            <ul class="list-unstyled footer-links">
+                <li class="mb-2"><a href="services/cybersecurity.html" class="footer-link">• Cybersecurity</a></li>
+                <li class="mb-2"><a href="services/ai-ml.html" class="footer-link">• AI/ML Development</a></li>
+                <li class="mb-2"><a href="services/web-development.html" class="footer-link">• Web Development</a></li>
+                <li class="mb-2"><a href="services/mobile-development.html" class="footer-link">• Mobile Development</a></li>
+                <li class="mb-2"><a href="services/cloud-services.html" class="footer-link">• Cloud Services</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="col-lg-2 col-md-4">
+        <div class="footer-section">
+            <h6 class="fw-bold mb-4 footer-heading">Products <i class="bi bi-chevron-right ms-1"></i></h6>
+            <ul class="list-unstyled footer-links">
+                <li class="mb-2"><a href="products/magai.html" class="footer-link">• MagAI</a></li>
+                <li class="mb-2"><a href="products/virtual-naani.html" class="footer-link">• Virtual Naani</a></li>
+                <li class="mb-2"><a href="products/ai-lms.html" class="footer-link">• AI LMS</a></li>
+                <li class="mb-2"><a href="products/sambhasini-ai.html" class="footer-link">• Sambhasini AI</a></li>
+                <li class="mb-2"><a href="products/jetpay.html" class="footer-link">• JetPay</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-4">
+        <div class="footer-section">
+            <h6 class="fw-bold mb-4 footer-heading">Contact Us <i class="bi bi-chevron-right ms-1"></i></h6>
+
+            <div class="contact-info">
+                <div class="d-flex align-items-start mb-3">
+                    <div class="contact-icon me-2"><i class="bi bi-geo-alt-fill"></i></div>
+                    <div>
+                        <p class="mb-0 small text-footer-theme" style="line-height: 1.6;">
+                            Bhutani Technopark B-508, Sector 127, Noida<br>
+                            Uttar Pradesh - 201301, India
+                        </p>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-start mb-3">
+                    <div class="contact-icon me-2"><i class="bi bi-telephone-fill"></i></div>
+                    <div>
+                        <p class="mb-0 small text-footer-theme">+91-120-4188947</p>
+                        <p class="mb-0 small text-footer-theme">24/7 Support Available</p>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-start mb-3">
+                    <div class="contact-icon me-2"><i class="bi bi-envelope-fill"></i></div>
+                    <div>
+                        <p class="mb-0 small"><a href="mailto:info@jethat.in" class="text-decoration-none text-footer-theme">info@jethat.in</a></p>
+                    </div>
+                </div>
+
+                <div class="mt-4 d-none d-lg-block">
+                    <a href="contact.html" class="d-inline-flex align-items-center text-decoration-none gov-badge">
+                        <span class="small fw-semibold">Get in Touch</span>
+                        <i class="bi bi-arrow-right ms-2"></i>
+                    </a>
+                </div>
             </div>
         </div>
-        </div>
-        <div class="row mt-2">
-        <div class="col-12 text-center">
-            <p class="mb-0 text-footer-theme" style="font-size: 0.75rem;">Last Updated: 14 January 2026</p>
-        </div>
-        </div>
-        </div>
-        </div>
-
-        <button id="scrollToTop" class="btn position-fixed bottom-0 end-0 m-4 d-none scroll-top-btn">
-        <i class="bi bi-arrow-up text-white"></i>
-        </button>
-        </footer>
-    </main>
-
-    
-    <button id="theme-toggle" class=" position-fixed bottom-0 start-0 m-4 rounded-circle p-1 shadow-lg" style="z-index: 1050;">
-        <i id="sun-icon" class="bi bi-sun-fill d-none"></i>
-        <i id="moon-icon" class="bi bi-moon-fill"></i>
-    </button>
-
-    <div id="scroll-progress" class="position-fixed top-0 start-0 w-100 bg-secondary bg-opacity-25" style="height: 4px; z-index: 1050;">
-        <div id="scroll-bar" class="h-100 bg-gradient transition-all" style="width: 0%; background: linear-gradient(90deg, var(--accent-primary), var(--accent-gold));"></div>
     </div>
+    </div>
+    </div>
+
+    <div class="border-top py-4 footer-bottom-bar" style="border-color: rgba(255,255,255,0.1) !important;">
+    <div class="row align-items-center">
+    <div class="col-md-6">
+        <p class="mb-0 text-footer-theme small">© 2026 JetHat Cyber Security Pvt. Ltd. All rights reserved.</p>
+    </div>
+    <div class="col-md-6 text-md-end mt-3 mt-md-0">
+        <div class="d-flex flex-wrap justify-content-md-end gap-3">
+            <a href="legal/privacy-policy.html" class="footer-link small">Privacy Policy</a>
+            <a href="legal/terms-of-use.html" class="footer-link small">Terms of Use</a>
+            <a href="legal/terms-conditions.html" class="footer-link small">Terms & Conditions</a>
+            <a href="legal/cancellation-policy.html" class="footer-link small">Cancellation Policy</a>
+        </div>
+    </div>
+    </div>
+    <div class="row mt-2">
+    <div class="col-12 text-center">
+        <p class="mb-0 text-footer-theme" style="font-size: 0.75rem;">Last Updated: 14 January 2026</p>
+    </div>
+    </div>
+    </div>
+    </div>
+
+    <button id="scrollToTop" class="btn position-fixed bottom-0 end-0 m-4 d-none scroll-top-btn">
+    <i class="bi bi-arrow-up text-white"></i>
+    </button>
+    </footer>
+</main>
+
+<button id="theme-toggle" class=" position-fixed bottom-0 start-0 m-4 rounded-circle p-1 shadow-lg" style="z-index: 1050;">
+    <i id="sun-icon" class="bi bi-sun-fill d-none"></i>
+    <i id="moon-icon" class="bi bi-moon-fill"></i>
+</button>
+
+<div id="scroll-progress" class="position-fixed top-0 start-0 w-100 bg-secondary bg-opacity-25" style="height: 4px; z-index: 1050;">
+    <div id="scroll-bar" class="h-100 bg-gradient transition-all" style="width: 0%; background: linear-gradient(90deg, var(--accent-primary), var(--accent-gold));"></div>
+</div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     
