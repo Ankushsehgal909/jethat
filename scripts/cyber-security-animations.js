@@ -28,30 +28,30 @@ document.addEventListener('DOMContentLoaded', function() {
     }, observerOptions);
 
     // Observe all elements with data-aos attributes
-    const animatedElements = document.querySelectorAll('[data-aos]');
-    animatedElements.forEach(el => {
-        // Set initial state
-        el.style.opacity = '0';
-        el.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+    // const animatedElements = document.querySelectorAll('[data-aos]');
+    // animatedElements.forEach(el => {
+    //     // Set initial state
+    //     el.style.opacity = '0';
+    //     el.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
         
-        // Set initial transforms based on animation type
-        const animationType = el.getAttribute('data-aos');
-        switch(animationType) {
-            case 'fade-up':
-                el.style.transform = 'translateY(50px)';
-                break;
-            case 'fade-left':
-                el.style.transform = 'translateX(100px)';
-                break;
-            case 'zoom-in':
-                el.style.transform = 'scale(0.8)';
-                break;
-            default:
-                el.style.transform = 'translateY(30px)';
-        }
+    //     // Set initial transforms based on animation type
+    //     const animationType = el.getAttribute('data-aos');
+    //     switch(animationType) {
+    //         case 'fade-up':
+    //             el.style.transform = 'translateY(50px)';
+    //             break;
+    //         case 'fade-left':
+    //             el.style.transform = 'translateX(100px)';
+    //             break;
+    //         case 'zoom-in':
+    //             el.style.transform = 'scale(0.8)';
+    //             break;
+    //         default:
+    //             el.style.transform = 'translateY(30px)';
+    //     }
         
-        observer.observe(el);
-    });
+    //     observer.observe(el);
+    // });
 
     // Enhanced hover effects for cyber cards
     const cyberCards = document.querySelectorAll('.cyber-image-container');

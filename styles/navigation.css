@@ -78,7 +78,35 @@
 .dropdown-divider { margin: 0.5rem 1rem; border-color: var(--accent-primary-20); }
 
 @media (min-width: 992px) {
-    .dropdown-hover:hover > .dropdown-menu { display: block !important; opacity: 1 !important; visibility: visible !important; }
+    .dropdown-hover:hover > .dropdown-menu { 
+        display: block !important; 
+        opacity: 1 !important; 
+        visibility: visible !important; 
+    }
+    
+    /* Add a small invisible bridge between nav item and dropdown */
+    .dropdown-hover .dropdown-menu::before {
+        content: '';
+        position: absolute;
+        top: -10px;
+        left: 0;
+        right: 0;
+        height: 10px;
+        background: transparent;
+        z-index: 1000;
+    }
+    
+    /* Smooth transition for dropdown visibility */
+    .dropdown-menu {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.2s ease, visibility 0.2s ease;
+    }
+    
+    .dropdown-menu.show {
+        opacity: 1;
+        visibility: visible;
+    }
 }
 
 @keyframes dropdownSlideIn {

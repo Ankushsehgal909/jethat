@@ -42,13 +42,21 @@ document.addEventListener('DOMContentLoaded', function() {
         const toggle = dropdown.querySelector('[data-bs-toggle="dropdown"]');
 
         if (e.type === 'mouseenter') {
+            // Clear any existing timeout for this dropdown
+            if (dropdown.hideTimeout) {
+                clearTimeout(dropdown.hideTimeout);
+                dropdown.hideTimeout = null;
+            }
+            
             if (dropdownMenu && toggle) {
                 toggle.setAttribute('aria-expanded', 'true');
                 dropdownMenu.classList.add('show');
                 dropdown.classList.add('show');
             }
         } else if (e.type === 'mouseleave') {
-            setTimeout(() => {
+            // Set a timeout to hide the dropdown
+            dropdown.hideTimeout = setTimeout(() => {
+                // Double-check if mouse is still not over the dropdown area
                 if (!dropdown.matches(':hover')) {
                     if (dropdownMenu && toggle) {
                         toggle.setAttribute('aria-expanded', 'false');
@@ -56,7 +64,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         dropdown.classList.remove('show');
                     }
                 }
-            }, 150);
+                dropdown.hideTimeout = null;
+            }, 200);
         }
     }
 
@@ -64,6 +73,33 @@ document.addEventListener('DOMContentLoaded', function() {
     hoverDropdowns.forEach(function(dropdown) {
         dropdown.addEventListener('mouseenter', handleHoverDropdown);
         dropdown.addEventListener('mouseleave', handleHoverDropdown);
+        
+        // Also add hover handling to the dropdown menu itself
+        const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+        if (dropdownMenu) {
+            dropdownMenu.addEventListener('mouseenter', function() {
+                // Clear any hide timeout when mouse enters dropdown menu
+                if (dropdown.hideTimeout) {
+                    clearTimeout(dropdown.hideTimeout);
+                    dropdown.hideTimeout = null;
+                }
+            });
+            
+            dropdownMenu.addEventListener('mouseleave', function() {
+                // Set timeout to hide when mouse leaves dropdown menu
+                dropdown.hideTimeout = setTimeout(() => {
+                    if (!dropdown.matches(':hover')) {
+                        const toggle = dropdown.querySelector('[data-bs-toggle="dropdown"]');
+                        if (dropdownMenu && toggle) {
+                            toggle.setAttribute('aria-expanded', 'false');
+                            dropdownMenu.classList.remove('show');
+                            dropdown.classList.remove('show');
+                        }
+                    }
+                    dropdown.hideTimeout = null;
+                }, 200);
+            });
+        }
     });
 
     document.addEventListener('click', function(e) {
